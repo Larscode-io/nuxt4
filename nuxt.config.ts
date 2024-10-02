@@ -1,8 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    "@nuxtjs/i18n",
-  ],
+content: { locales: ['en', 'fr', 'nl', 'de'] },
+  modules: ["@nuxtjs/i18n", '@nuxt/content'],
   i18n: {
     vueI18n: './i18n.config.ts',
     lazy: true,
