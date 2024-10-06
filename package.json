@@ -10,8 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "latest",
+    "knex": "^3.1.0",
+    "mysql2": "^3.11.3",
     "nuxt": "^3.13.0",
-    "vue": "latest",
-    "@nuxtjs/i18n": "latest"
+    "vue": "latest"
   }
 }
