@@ -1,0 +1,203 @@
+#!/bin/bash
+
+PROJECT_DIR="$1"
+
+if [ -z "$1" ]; then
+  echo "Error: PROJECT_DIR parameter is missing, for example nuxt3."
+  echo "Usage: $0 <project_directory>"
+  exit 1
+fi
+
+cd "$PROJECT_DIR" || { echo "Error: Could not change directory to $PROJECT_DIR."; exit 1; }
+
+export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.nvm}"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  . "$NVM_DIR/nvm.sh"
+  nvm use
+else
+  echo "Error: NVM is not installed or could not be loaded."
+  exit 1
+fi
+
+# Check if the major version is 18
+node_version=$(node -v 2>/dev/null | grep -oP '(?<=^v)\d+')
+if [ -z "$node_version" ]; then
+  echo "Error: Node.js is not installed."
+  exit 1
+fi
+
+if [ "$node_version" -eq 18 ]; then
+  echo "You are using Node.js version 18."
+else
+  echo "Warning: You are not using Node.js version 18. Your version is v$node_version."
+  exit 1
+fi
+
+# copy language files from old site
+if [ ! -d "../const-court/lang/json" ]; then
+  echo "Error: Source directory ../const-court/lang/json does not exist."
+  exit 1
+fi
+cp -r ../const-court/lang/json/* app/lang/json/ || { echo "Error: Failed to copy language files."; exit 1; }
+
+# issue with VENICE, delete entry for now
+find app/lang/json/ -type f -name "*.json" -exec sed -i '/venice/d' {} + || { echo "Error: Failed to process JSON files."; exit 1; }
+
+#npm install @nuxtjs/i18n --save-dev
+#jq '.dependencies["@nuxtjs/i18n"] = "latest"' package.json > tmp.json && mv tmp.json package.json
+
+# Use jq to add/update the dependency "@nuxtjs/i18n" in package.json
+PACKAGE_NAME="@nuxtjs/i18n"
+PACKAGE_VERSION="latest"
+jq --arg pkg "$PACKAGE_NAME" --arg version "$PACKAGE_VERSION" \
+   '.dependencies[$pkg] = $version' package.json > tmp.json && mv tmp.json package.json
+
+echo "Added or updated $PACKAGE_NAME to version $PACKAGE_VERSION in dependencies."
+
+MODULE_TO_ADD="'@nuxtjs/i18n'"
+
+if [ ! -f "./nuxt.config.ts" ]; then
+  echo "Error: nuxt.config.ts not found in the current directory."
+  exit 1
+elif [ ! -w "./nuxt.config.ts" ]; then
+  echo "Error: No write permission for nuxt.config.ts."
+  exit 1
+fi
+
+# File to modify
+config_file="nuxt.config.ts"
+
+# i18n configuration part to insert
+i18n_config=$(cat <<'EOT'
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    lazy: true,
+    langDir: 'lang/json',
+    defaultLocale: 'nl',
+    strategy: 'prefix',
+    locales: [
+      { code: 'en', language: 'en-US', file: 'en.json', name: 'English (US)' },
+      { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français (FR)' },
+      { code: 'nl', language: 'nl-BE', file: 'nl.json', name: 'Nederlands (BE)' },
+      { code: 'de', language: 'de-DE', file: 'de.json', name: 'Deutsch (DE)' },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      fallbackLocale: 'fr',
+      redirectOn: 'root',
+    },
+  },
+EOT
+)
+
+# Modules part to insert
+modules_part='
+  modules: [
+    "@nuxtjs/i18n",
+  ],
+'
+
+# 1. Insert i18n configuration
+awk -v i18n_config="$i18n_config" '/defineNuxtConfig\({/ { print; print i18n_config; next }1' "$config_file" > temp && mv temp "$config_file"
+
+# 2. Insert modules part
+awk -v modules_part="$modules_part" '/defineNuxtConfig\({/ { match($0, /{/) ; printf "%s", substr($0, 1, RSTART) modules_part substr($0, RSTART+1); next }1' "$config_file" > temp && mv temp "$config_file"
+
+# add i18n basic configuration
+mkdir -p ./types
+cat <<EOF > ./i18n.config.ts
+export default defineI18nConfig(() => ({
+  legacy: false,
+  globalInjection: true,
+  locale: "nl",
+  fallbackLocale: "fr",
+  silentTranslationWarn: false,
+}));
+EOF
+
+# activate auto-complete for language files
+mkdir -p ./types
+cat <<EOF > ./types/i18n.ts
+// types/i18n.ts
+import type nl from "~/lang/json/nl.json";
+
+export type MessageSchema = typeof nl;
+EOF
+
+# demo page
+echo '<script setup lang="ts">
+import type { MessageSchema } from "~~/types/i18n";
+
+definePageMeta({
+  layout: "default"
+})
+
+const { t } = useI18n<[MessageSchema], "nl" | "fr" | "en" | "de">();
+const _$t = useI18n<MessageSchema>().t;
+
+t("aria.label.dropdown.input");
+</script>
+
+<template>
+  <div>
+    <nav>
+      <NuxtLink to="/nl/demo/languages">NL</NuxtLink>
+      <NuxtLink to="/fr/demo/languages">FR</NuxtLink>
+      <NuxtLink to="/de/demo/languages">DE</NuxtLink>
+      <NuxtLink to="/en/demo/languages">EN</NuxtLink>
+    </nav>
+    <p>{{ t("alt.banner.books") }}</p>
+    <NuxtPage />
+  </div>
+</template>
+
+<style>
+nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+</style>
+' > ./app/pages/demo/languages.vue
+
+# a composable for language stuff
+echo 'import { useI18n, useSwitchLocalePath } from "#imports";
+import type { MessageSchema } from "~~/types/i18n"; // ~~ is an alias for the src directory
+
+export enum Languages {
+  ENGLISH = "en",
+  FRENCH = "fr",
+  DUTCH = "nl",
+  GERMAN = "de",
+}
+
+export const languageLabels: Record<Languages, string> = {
+  [Languages.DUTCH]: "Nederlands",
+  [Languages.FRENCH]: "Français",
+  [Languages.GERMAN]: "Deutsch",
+  [Languages.ENGLISH]: "English",
+};
+
+export const defaultListLang: Record<string, string> = {
+  [Languages.DUTCH]: "info_nl",
+  [Languages.FRENCH]: "info_fr",
+  [Languages.GERMAN]: "pdf_de",
+};
+
+export function useLanguage() {
+  const { t, locale, setLocale } = useI18n<
+    [MessageSchema],
+    Languages.DUTCH | Languages.FRENCH | Languages.ENGLISH | Languages.GERMAN
+  >();
+  const switchLocalePath = useSwitchLocalePath();
+
+  return {
+    t,
+    locale,
+    switchLocalePath,
+    setLocale,
+  };
+}
+' > ./app/composables/useLanguage.ts
+
