@@ -30,7 +30,7 @@
     * **Database:** Integrate MySQL using Knex
     * **Juportal:** API for the Juportal robot
     * **Search:** Solr integration
-    * **Auth:** CSAM authentication
+    * **Auth:** Federal BE CSAM/FAS authentication
 
 2. **Plugins and Middleware**
     * Limited in scope, address as needed 
