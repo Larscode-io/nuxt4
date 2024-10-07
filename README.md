@@ -78,6 +78,8 @@
   - [X] Demo: [https://www.const-court.be/nuxt/api/fm/publications/persberichten](https://www.const-court.be/nuxt/api/fm/publications/persberichten)
   - [X] Newsletter subscription via Mailman server [https://mailman.const-court.be/](https://mailman.const-court.be/)
   - [X] Demo: [https://www.const-court.be/nuxt/en/demo/mailman](https://www.const-court.be/nuxt/en/demo/mailman)
+  - [X] An implementation of CSAM/FAS authentication process (OAuth 2.0 Authorization Code flow with OpenID Connect) to authenticate a user and retrieve their information
+  - [ ] Todo: Fix SSR handling of FAS redirect to properly process authentication code on initial load.  Implement proper routing mechanism to catch and handle FAS callback URL without requiring page refresh.
 
 - **Static pages via Nuxt Content from Markdown (.md) files**
   - [X] Install and test Nuxt Content v2 for content/nl, content/fr, content/de, content.en
@@ -134,4 +136,7 @@
 
 - [Claris FileMaker Data API Guide](https://help.claris.com/en/data-api-guide/content/index.html) 
   The FileMaker Data API allows web services to access databases hosted by FileMaker Server.
+
+- [FASxxx](https://bosa.belgium.be/sites/default/files/content/documents/FAS%2520OIDC%2520-%2520Integration%2520Guide.pdf)
+  A guide OpenID Connect (OIDC) integration guide created to help FPS BOSA’s Federal Authentication Service (FAS).
 
