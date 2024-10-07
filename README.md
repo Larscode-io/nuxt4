@@ -137,6 +137,5 @@
 - [Claris FileMaker Data API Guide](https://help.claris.com/en/data-api-guide/content/index.html) 
   The FileMaker Data API allows web services to access databases hosted by FileMaker Server.
 
-- [FASxxx](https://bosa.belgium.be/sites/default/files/content/documents/FAS%2520OIDC%2520-%2520Integration%2520Guide.pdf)
-  A guide OpenID Connect (OIDC) integration guide created to help FPS BOSA’s Federal Authentication Service (FAS).
-
+- [FAS OIDC Integration Guide](https://bosa.belgium.be/sites/default/files/content/documents/FAS%2520OIDC%2520-%2520Integration%2520Guide.pdf)
+  An OpenID Connect integration guide created to help using FPS BOSA’s Federal Authentication Service (FAS). It's complicated.
