@@ -1,4 +1,4 @@
-## Migration from Nuxt 2 to Nuxt 3 with compatibility Version 4
+## Migration from Nuxt 2 to Nuxt 3 with compatibility version 4
 <img src="./app/assets/img/ScreenshotHome.png" alt="Screenshot Home page" height="600">
 
 ### Prerequisites
