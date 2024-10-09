@@ -79,7 +79,7 @@
   - [X] Newsletter subscription via Mailman server [https://mailman.const-court.be/](https://mailman.const-court.be/)
   - [X] Demo: [https://www.const-court.be/nuxt/en/demo/mailman](https://www.const-court.be/nuxt/en/demo/mailman)
   - [X] An implementation of CSAM/FAS authentication process (OAuth 2.0 Authorization Code flow with OpenID Connect) to authenticate a user and retrieve their information.
-  - [X] Demo: [callback.ts](./app/pages/auth/login)
+  - [X] Demo: [Basic CSAM login page](./app/pages/auth/login.vue)
   - [ ] Todo: Fix SSR handling of FAS redirect to properly process authentication code on initial load.  Implement proper routing mechanism to catch and handle FAS callback URL without requiring page refresh.
 
 - **Static pages via Nuxt Content from Markdown (.md) files**
