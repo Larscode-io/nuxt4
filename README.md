@@ -117,11 +117,8 @@
 - [Pages and Layouts](https://nuxt.com/docs/migration/pages-and-layouts)
   Learn how to migrate from Nuxt 2 to Nuxt 3 pages and layouts.
 
-- [Nuxt 2 to Nuxt 3 Migration Guide: Official Nuxt doc](https://nuxt.com/docs/migration/overview)  
-  Official Nuxt documentation covering the key steps for migrating from Nuxt 2 to Nuxt 3.
-
-- [How to migrate from Nuxt 2 components options to Nuxt 3 composables](https://nuxt.com/docs/migration/component-options)
-  Nuxt 3 provides new composables for fetching data: `useAsyncData` and `useFetch`.
+- [Component Options](https://nuxt.com/docs/migration/component-options)
+  Learn how to migrate from Nuxt 2 components options to Nuxt 3 composables.
 
 - [Nuxt Content](https://content.nuxt.com/) 
   Nuxt Content reads the content/ directory in your project, parses .md, .yml, .csv and .json files to create a data layer for your application.
