@@ -1,0 +1,196 @@
+#! /bin/bash
+
+set -e 
+export NVM_DIR="/home/lars/.nvm"
+
+# Source the NVM script
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Source NVM bash completion (optional)
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+nvm use 18
+
+echo "############"
+echo "Running NUXI"
+echo "############"
+PROJECT_NAME="nuxt4"
+
+rm -rf $PROJECT_NAME
+rm -rf nuxt-app
+
+COMMAND="npx nuxi init --package-manager npm --git-init --prefer-offline --no-install"
+
+# Echo the command to be executed
+echo "Executing command: $COMMAND"
+
+# Execute the command
+if ! $COMMAND; then
+    echo "Failed to initialize Nuxt project."
+    exit 1
+fi
+
+mv nuxt-app $PROJECT_NAME
+
+[ ! -d "$PROJECT_NAME" ] && { echo "Directory does not exist. Exiting."; exit 1; }
+
+
+cd $PROJECT_NAME
+echo '18' > ./.nvmrc
+nvm use
+#npm install
+
+echo "############"
+echo "we make a backup of orgin/main"
+echo "############"
+git remote add origin https://github.com/Larscode-io/${PROJECT_NAME}.git
+git fetch origin
+timestamp=$(date +'%Y%m%d-%H%M%S')
+git push origin origin/main:refs/heads/backup-main-dirty-$timestamp
+
+echo "############"
+echo "Recovering README.md"
+echo "############"
+
+git fetch origin
+remote_readme_hash=$(git rev-parse origin/main:README.md)
+# Get the hash of the local README.md (if it exists)
+if [ -f README.md ]; then
+  local_readme_hash=$(git hash-object README.md)
+else
+  local_readme_hash=""  # Set to empty string if the file doesn't exist locally
+fi
+# Compare the hashes
+if [ "$remote_readme_hash" != "$local_readme_hash" ]; then
+  echo "### README.md has changed on the remote. Updating... ###"
+  git show origin/main:README.md > README.md
+  git add README.md
+else
+  echo "### README.md is up-to-date. No changes needed. ###"
+fi
+
+echo "############"
+echo "making backup of scripts"
+echo "############"
+# backup my scripts
+cp ../iNuxt.sh ./iNuxt.sh.backup
+cp ../setup_nuxt.sh ./setup_nuxt.sh.backup
+cp ../setup_lang.sh ./setup_lang.sh.backup
+git add .
+
+echo "#######--------------------#####"
+echo "adding .env from template"
+echo "#######--------------------#####"
+cp ../.env.template ./.env
+if [ $? -eq 0 ]; then
+  if [ -f ".env" ]; then
+    echo ".env file has been created with the specified content."
+  else
+    echo "Failed to verify the creation of .env file."
+  fi
+else
+  echo "Failed to copy env.template to .env."
+fi
+echo "#######--------------------#####"
+
+echo "############"
+echo "Nuxi cleanup"
+echo "############"
+#npx nuxi cleanup
+
+echo "############"
+echo "GIT init"
+echo "############"
+git init
+git add .
+git commit -m "Clean Nuxt 3 install with restored README.md"
+git checkout -b main
+git branch --set-upstream-to=origin/main main
+git push -f origin main
+
+echo "############"
+echo "### setup nuxt script ###"
+echo "############"
+cd ..
+./setup_nuxt.sh $PROJECT_NAME
+cd $PROJECT_NAME
+git add .
+git commit -m "Basic starter templates"
+git push -f origin main
+
+echo "############"
+echo "### setup lang script ###"
+echo "############"
+cd ..
+./setup_lang.sh $PROJECT_NAME
+cd $PROJECT_NAME
+git add .
+git commit -m "i18n files"
+git push -f origin main
+
+# copy some Nuxt 2 files to Nuxt 3: activate later
+#shopt -s dotglob nullglob
+
+#nohup cp -r ~/const-court/static/* ~/$PROJECT_NAME/public &
+#nohup cp -r ~/const-court/assets/* ~/$PROJECT_NAME/app/assets > /dev/null 2>&1 &
+mkdir ~/$PROJECT_NAME/app/assets/img
+cp ~/const-court/assets/img/ScreenshotHome.png ~/$PROJECT_NAME/app/assets/img
+git add .
+git commit -m "Static (public) and Assets (app/assets) files"
+git push -f origin main
+
+# later bekijken
+# cp -r ~/const-court/content/ ~/nuxt3/content/
+
+# copy demo files
+cp -rf ../demo/mailman.vue ./app/pages/demo/
+cp -rf ../demo/serverSQL/api/sqltest/affzak.js ./server/api/sqltest/
+git add ./app/pages/demo/mailman.vue
+git add ./server/api/sqltest/affzak.js
+git commit -m "demo pages: mailman.vue and affzak.js"
+git push -f origin main
+
+# Filemaker demo file
+cp -rf ../demo/serverFM/* ./server
+git add ./server/*
+git commit -m "mailman demo page"
+git push -f origin main
+
+# FAS CSAM demo files
+mkdir ~/$PROJECT_NAME/app/pages/auth
+mkdir ~/$PROJECT_NAME/server/routes/auth
+cp -rf ../demo/FAS/login.vue ./app/pages/auth/
+cp -rf ../demo/FAS/callback.vue ./app/pages/auth/
+cp -rf ../demo/FAS/tok.ts ./server/routes/auth/
+git add ./server/routes/*
+git commit -m "FAS(CSAM) auth  demo api"
+git push -f origin main
+
+# Nuxt Content demo files
+cp -rf ../demo/NuxtContent/content/* ./content
+cp -rf ../demo/NuxtContent/pages/* ./app/pages
+git add ./content/*
+git add ./app/pages/*
+git commit -m "Nuxt Content demo pages"
+git push -f origin main
+
+echo "###############################################"
+echo "DONE"
+echo "public and app/assets folders are cp-ied in the background if activated"
+
+echo "todo: in NUXT project folder:"
+echo "copy .env to local dev"
+
+echo "cd nuxt4"
+echo "nvm use; npm i knex mysql2"
+echo "nvm use; rm -rf node_modules package-lock.json; npm i; npx nuxi cleanup"
+
+echo "npx nuxi@latest module add content; npx nuxi cleanup"
+echo "content: { locales: ['en', 'fr', 'nl', 'de'] },"
+echo "rename the catch all file /app/pages/_disabled_[...slug].vue to activate it"
+
+echo "npm i jwt-decode"
+
+echo "after npm i we have a package lock json... is not done"
+echo "npm install -D vitest happy-dom @testing-library/vue"
+echo "###############################################"
