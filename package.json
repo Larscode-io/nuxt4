@@ -10,8 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "latest",
+    "jwt-decode": "^4.0.0",
     "nuxt": "^3.13.0",
-    "vue": "latest",
-    "@nuxtjs/i18n": "latest"
+    "vue": "latest"
   }
 }
