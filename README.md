@@ -30,7 +30,7 @@
     * **Database:** Integrate MySQL using Knex
     * **Juportal:** API for the Juportal robot
     * **Search:** Solr integration
-    * **Auth:** Federal CSAM/FAS authentication with the Belgian e-id with OpenId & Oauth2
+    * **Auth:** FAS/CSAM (Federal Authentication Service/Common Secure Access Management) authentication with the Belgian e-id
 
 2. **Plugins and Middleware**
     * Limited in scope, address as needed 
