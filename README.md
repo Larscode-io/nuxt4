@@ -114,9 +114,9 @@
 - [Nuxt Upgrade Guide](https://nuxt.com/docs/getting-started/upgrade)
   Learn how to upgrade to the latest Nuxt version.
 
-- [How to migrate from Nuxt 2 to Nuxt 3 pages and layouts](https://nuxt.com/docs/migration/pages-and-layouts)
-  In Nuxt 3, layouts use slots.
-  
+- [Pages and Layouts](https://nuxt.com/docs/migration/pages-and-layouts)
+  Learn how to migrate from Nuxt 2 to Nuxt 3 pages and layouts.
+
 - [Nuxt 2 to Nuxt 3 Migration Guide: Official Nuxt doc](https://nuxt.com/docs/migration/overview)  
   Official Nuxt documentation covering the key steps for migrating from Nuxt 2 to Nuxt 3.
 
