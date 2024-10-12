@@ -32,18 +32,21 @@
     * **Search:** Solr integration
     * **Auth:** FAS/CSAM (Federal Authentication Service/Common Secure Access Management) authentication with the Belgian e-id
 
-2. **Plugins and Middleware**
+2. **Dependencies**
+    * Carefully select the needed dependencies and remove the unneeded.
+
+3. **Plugins and Middleware**
     * Limited in scope, address as needed 
      
-3. **Next Steps**
+4. **Next Steps**
     * **migrate Vuetify** Use npm install `eslint-plugin-vuetify --save-dev --legacy-peer-deps` ?
     * **migrate Nuxt content in content/nl, etc**
     * **copy assets, fonts and other config files f.ex. with constants and utils**
     * **Components and Pages:** Migrate and adapt to Nuxt 3
     * **Composition API:** Convert Options API
-    * **Testing:** Implement unit, integration, and E2E tests (Vue Test Utils, Vitest, Cypress)
+    * **Testing:** Implement unit, integration, and E2E tests (Vue Test Utils / Vitest / Cypress)
 
-## Work in Progress
+### Work in Progress: here we focus on the framework and less on the content.
 
 - **Install Nuxt 3 with Compatibility Version 4**
   - [X] Create the folder structure: move `public` to `static`, and `assets` to `app/assets`.
@@ -97,7 +100,13 @@
   
 - **Code Quality and Tools**
   - [ ] Update `nuxt.config.ts` with CSS paths if necessary.
-  - [ ] Install ESLint and Prettier for code linting.
+  - [ ] Install Volar, ESLint and Prettier for code linting.
+  - [ ] Introduce Typescript: Nuxt 3 has better Typescript support.
+  - [X] Use Github Co-Pilot
+  - [ ] AI tools like [ChatGPT](https://chat.openai.com/) or [Anthropic's Claude](https://www.anthropic.com/claude)
+  - [ ] [Marker](https://marker.io/) for bug reporting.
+  - [ ] [Quokka](https://quokkajs.com/) and [Console Ninja](https://console-ninja.com/)
+  - [ ] Vue Migration Helper
   
 - **Additional Installations**
   - [ ] Install and configure Solr.
@@ -109,7 +118,65 @@
 - **Component Migration**
   - [ ] Migrate Nuxt 2 components to Nuxt 3. Consider using AI assistance.
 
- ### References
+### Nuxt 2 + Vuetify 2 to Nuxt 3 + Vuetify 3 strategy: here we focus on the content.
+
+#### 1. Simplify `default.vue` Layout
+- Start with a **simplified version** of the `default.vue` layout.
+- Ensure basic layout and navigation work across screen sizes without introducing complex features yet.
+
+#### 2. Set Up Basic Nuxt 3 Project Structure
+- Ensure **basic SSR and routing** works properly.
+- Introduce **automatic component imports** to simplify the project structure.
+- Avoid using too many new Nuxt 3 features initially—focus on getting the basics running.
+- Introduce vitest.
+
+#### 3. Migrate Components Gradually
+- Migrate components **one by one**, starting with simple, standalone components that have fewer dependencies.
+- Test each component individually to ensure it works correctly with **Vuetify 3**.
+- Avoid migrating complex components (those with API calls or heavy logic) until the simpler ones are working.
+
+#### 4. Keep the Options API initially, Gradually introduce the Composition API
+- To avoid complexity, start by continuing to use the **Options API**.
+- Gradually introduce **Vue 3's Composition API** in smaller or simpler components where it makes sense.
+
+#### 5. Migrate Nuxt Content and API Pages Gradually
+- Once the basic layout and components are stable, migrate pages that use **Nuxt Content** and **APIs**.
+- Content pages: Begin with static content pages using Nuxt Content, as they typically have fewer dependencies.
+- API-driven pages: Migrate these next, updating API calls from the old `asyncData` to `useFetch` or `useAsyncData`.
+- Be sure to update error handling accordingly.
+- Test API-driven pages carefully in SSR mode to make sure that data fetching is handled correctly in Nuxt 3.
+- Complex component-based pages: Leave these for last, as they may require more extensive refactoring.
+  
+#### 6. Step-by-Step Vuetify 3 Refactoring (CSS Grid Refactor!)
+- Refactor Vuetify components in stages:
+- Start with simple components like **buttons** and **layouts**.
+- Gradually refactor more complex components as you become familiar with **Vuetify 3’s breaking changes** (e.g., new grid system, renamed props).
+- Avoid deprecated features and use Vuetify 3's new CSS Grid system where applicable.
+
+#### 7. Introduce Nuxt 3 features incrementally:
+- Start with auto-imports for components and composables.
+- Gradually implement server-side rendering (SSR) for pages that benefit most from it.
+- Introduce other Nuxt 3 features like middleware, plugins, and modules as needed.
+- Keep the Options API initially and focus on getting your components working with Nuxt 3 and Vuetify 3.
+
+#### 9. Regular Testing and Incremental Feature Adoption
+- Test regularly after each major step to ensure nothing breaks.
+- Gradually introduce **Nuxt 3 features** like composables, server middleware, and meta options after confirming that basic features like layouts and components are working.
+
+#### 10. Final Step: Full Migration to Composition API
+- After most components are migrated and the project is stable, begin converting remaining components to the **Composition API** for improved flexibility and performance.
+- For some complex components, it might make sense to refactor to the Composition API earlier if it simplifies logic. 
+- Leverage full **Nuxt 3 features** like middleware, server-side composables, and advanced SSR handling.
+
+#### Samenvatting:
+1. Basic layout and navigation
+2. Static content pages
+3. Simple components
+4. API-driven pages
+5. Complex component-based pages
+6. Gradual refactoring to Composition API
+   
+### References
 
 - [Nuxt Upgrade Guide](https://nuxt.com/docs/getting-started/upgrade)
   Learn how to upgrade to the latest Nuxt version.
