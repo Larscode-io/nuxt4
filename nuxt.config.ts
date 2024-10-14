@@ -1,5 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: [
+    "@nuxtjs/i18n",
+  ],
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    lazy: true,
+    langDir: 'lang/json',
+    defaultLocale: 'nl',
+    strategy: 'prefix',
+    locales: [
+      { code: 'en', language: 'en-US', file: 'en.json', name: 'English (US)' },
+      { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français (FR)' },
+      { code: 'nl', language: 'nl-BE', file: 'nl.json', name: 'Nederlands (BE)' },
+      { code: 'de', language: 'de-DE', file: 'de.json', name: 'Deutsch (DE)' },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      fallbackLocale: 'fr',
+      redirectOn: 'root',
+    },
+  },
   future: {
     compatibilityVersion: 4,
   },
