@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { ref, onMounted } from 'vue'
+// import { useAuth } from '~/composables/useAuth'
+
+const { locale } = useI18n()
 
 const route = useRoute()
-
+const { handleCallback } = useAuth()
 const { code = '', state = '', scope = '', iss = '', client_id = '' } = route.query
-const url = ref(`/auth/tok?code=${code}&scope=${scope}&iss=${iss}&state=${state}&client_id=${client_id}`)
 const missingParams = [code, state, scope, iss, client_id].some(param => !param)
 
 interface _Response {
@@ -23,15 +25,36 @@ interface _Response {
   assurance_level: string
 }
 
-const response = ref<_Response | { statusCode: number, body: string } | null>(null)
+const response = ref<_Response | null>(null)
 
 onMounted(async () => {
   if (import.meta.client) {
     try {
-      response.value = await $fetch<_Response>(url.value)
+      const tokenResponse = await $fetch(`/auth/exchangeCodeForToken?code=${code}&state=${state}&scope=${scope}&iss=${iss}&client_id=${client_id}`)
+      const { statusCode, body: { access_token, intendedDestination } } = tokenResponse
+      //
+      console.log('access_token:', access_token)
+      console.log('intendedDestination:', intendedDestination)
+      handleCallback(access_token, intendedDestination)
+
+      if (statusCode === 200 && access_token) {
+        const userInfoResponse = await $fetch(`/auth/getUserInfo?access_token=${access_token}`)
+        const { statusCode: userInfoStatusCode, body } = userInfoResponse
+
+        if (userInfoStatusCode === 200) {
+          response.value = body as _Response
+        }
+        else {
+          response.value = { statusCode: userInfoStatusCode, body } as any
+        }
+      }
+      else {
+        response.value = { statusCode, body: tokenResponse.body } as any
+      }
     }
     catch (error) {
       console.error('Fetch error:', error)
+      response.value = { statusCode: 500, body: error.message } as any
     }
   }
 })
@@ -47,7 +70,7 @@ onMounted(async () => {
     <p>client_id: {{ route.query.client_id }}</p>
   </div>
   <div v-else>
-    <h1>Callback received these parameters from the auth server:</h1>
+    <h1>Callback received code parameters from the auth server:</h1>
     <p>code: {{ route.query.code }}</p>
     <p>state: {{ route.query.state }}</p>
     <p>scope: {{ route.query.scope }}</p>
@@ -62,6 +85,9 @@ onMounted(async () => {
 
       <div v-else-if="response && 'egovNRN' in response">
         <h2>Good Response</h2>
+        <NuxtLink :to="localePath('/auth/x', locale)">
+          /authxxx
+        </NuxtLink>
         <p>aud: {{ response.aud }}</p>
         <p>sub: {{ response.sub }}</p>
         <p>prefLanguage: {{ response.prefLanguage }}</p>
@@ -86,4 +112,3 @@ onMounted(async () => {
     </div>
   </div>
 </template>
-

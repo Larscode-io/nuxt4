@@ -1,8 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    "@nuxtjs/i18n",
-  ],
+  modules: ["@nuxtjs/i18n", '@nuxt/eslint'],
   i18n: {
     vueI18n: './i18n.config.ts',
     lazy: true,
@@ -34,7 +32,7 @@ export default defineNuxtConfig({
   },
   devServer: {
     host: "localhost",
-    port: 3001
+    port: 3000
   },
   runtimeConfig: {
     xapiBaseUrl: process.env.SERVER_API_BASE_URL || "http://" + process.env.SERVERIP + ":" + process.env.SERVERPORT,
