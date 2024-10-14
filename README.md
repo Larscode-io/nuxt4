@@ -83,7 +83,7 @@
   - [X] Demo: [https://www.const-court.be/nuxt/en/demo/mailman](https://www.const-court.be/nuxt/en/demo/mailman)
   - [X] A basic implementation of CSAM/FAS authentication process (OAuth 2.0 Authorization Code flow with OpenID Connect): to authenticate a user and retrieve their information.
   - [X] Demo: [Basic CSAM login page](./app/pages/auth/login.vue), first [create](https://iamapps.int.belgium.be/sma/generalinfo?redirectUrl=/sma/&language=en) a demo profile profile with Belgian **eID** card.
-  - [ ] Todo: Save token, set a dynamic state, move url params into body of [callback.vue](./app/pages/auth/callback.vue) to call [tok.ts](./server/routes/auth/tok.ts).
+  - [ ] Todo: Use state and nonce for security, move url params into body of [callback.vue](./app/pages/auth/callback.vue) to call [tok.ts](./server/routes/auth/tok.ts).
 
 - **Static pages via Nuxt Content from Markdown (.md) files**
   - [X] Install and test Nuxt Content v2 for content/nl, content/fr, content/de, content.en
