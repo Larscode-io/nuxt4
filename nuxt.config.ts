@@ -1,41 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/i18n", '@nuxt/eslint'],
-  i18n: {
-    vueI18n: './i18n.config.ts',
-    lazy: true,
-    langDir: 'lang/json',
-    defaultLocale: 'nl',
-    strategy: 'prefix',
-    locales: [
-      { code: 'en', language: 'en-US', file: 'en.json', name: 'English (US)' },
-      { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français (FR)' },
-      { code: 'nl', language: 'nl-BE', file: 'nl.json', name: 'Nederlands (BE)' },
-      { code: 'de', language: 'de-DE', file: 'de.json', name: 'Deutsch (DE)' },
-    ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      fallbackLocale: 'fr',
-      redirectOn: 'root',
-    },
-  },
-  future: {
-    compatibilityVersion: 4,
-  },
+  modules: ['@nuxtjs/i18n', '@nuxt/eslint'],
+  devtools: { enabled: true },
   app: {
     baseURL: '/nuxt/',
   },
-  server: {
-    host: "0.0.0.0",
-    port: 3001
-  },
-  devServer: {
-    host: "localhost",
-    port: 3000
-  },
   runtimeConfig: {
-    xapiBaseUrl: process.env.SERVER_API_BASE_URL || "http://" + process.env.SERVERIP + ":" + process.env.SERVERPORT,
+    xapiBaseUrl: process.env.SERVER_API_BASE_URL || 'http://' + process.env.SERVERIP + ':' + process.env.SERVERPORT,
     authSecret: process.env.AUTH_SECRET,
     csamPass: process.env.CSAM_PASS,
     dbHost: process.env.DB_HOST,
@@ -71,6 +42,35 @@ export default defineNuxtConfig({
       mailmanProxyUrl: process.env.MAILMAN_PROXY_URL,
     },
   },
+  devServer: {
+    host: 'localhost',
+    port: 3000,
+  },
+  future: {
+    compatibilityVersion: 4,
+  },
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: true }
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    lazy: true,
+    langDir: 'lang/json',
+    defaultLocale: 'nl',
+    strategy: 'prefix',
+    locales: [
+      { code: 'en', language: 'en-US', file: 'en.json', name: 'English (US)' },
+      { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français (FR)' },
+      { code: 'nl', language: 'nl-BE', file: 'nl.json', name: 'Nederlands (BE)' },
+      { code: 'de', language: 'de-DE', file: 'de.json', name: 'Deutsch (DE)' },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      fallbackLocale: 'fr',
+      redirectOn: 'root',
+    },
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 3001,
+  },
 })

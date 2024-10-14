@@ -1,6 +1,12 @@
 <template>
   <div style="text-align: center; margin-top: 50px;">
     <h1>Login</h1>
+    <NuxtLink :to="localePath('/auth/login', locale)">
+      Go to login page
+    </NuxtLink>
+    <NuxtLink :to="localePath('/auth/otherPage', locale)">
+      Go to another page
+    </NuxtLink>
     <div style="color: darkblue;">
       <a
         href="https://iamapps.int.belgium.be/sma/generalinfo?redirectUrl=/sma/"
