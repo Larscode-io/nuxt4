@@ -187,10 +187,7 @@
 5. Complex component-based pages
 6. Gradual refactoring to Composition API
 
-### Develop the new backend API's
-- We were using the legacy API backend, now we start developing all API's in Nuxt 3.
-- Configure and update the nuxt config.
-- Incrementally develop new API's and update the pages that were using legacy API's.
+### Develop all API's in Nuxt 3.
 
 ### References
 
