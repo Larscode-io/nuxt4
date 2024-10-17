@@ -22,29 +22,38 @@
 
 ### Migration Strategy
 
-1. **Key Challenges**
+1. **Divide and conquer**
+    * To manage the complexity of upgrading we will gradually replacing parts of the legacy system with new components, running the old and new systems in parallel until the legacy parts are completely replaced.
+    * **Step 1**: A clean installation of the Nuxt 3 environment.
+    * **Step 2**: Keep the existing Nuxt 2 APIs while building the interface in Nuxt 3 on the new installation until all pages are properly transitioned and functional. This allows us to focus on migrating the UI and user experience first.
+    * **Step 3**: Once the pages are successfully migrated, we proceed with migrating the APIs to Nuxt 3's built-in Nitro server. This sequence minimizes disruptions and allows for incremental testing of each component.
+    * Avoid reversing this approach by creating new APIs for legacy pages first, as this can lead to increased complexity in managing two environments concurrently.
+  
+2. **Technical Key Challenges**
     * **i18n:** Implement for multi-language support
     * **@nuxt/content v2:** Adapt to Nuxt 3's Content module changes
-    * **UI:** Vuetify latest version, significant migration process ?
+    * **UI:** Vuetify latest version, a significant migration process
     * **Routing:** Port Fastify routes to Nuxt API routes
     * **Database:** Integrate MySQL using Knex
     * **Juportal:** API for the Juportal robot
     * **Search:** Solr integration
     * **Auth:** FAS/CSAM (Federal Authentication Service/Common Secure Access Management) authentication with the Belgian e-id
 
-2. **Dependencies**
+3. **Dependencies**
     * Carefully select the needed dependencies and remove the unneeded.
 
-3. **Plugins and Middleware**
-    * Limited in scope, address as needed 
+4. **Plugins and Middleware**
+    * We don't use many plugins or middleware.
+    * Address plugins and middleware only if required to achieve specific functionalities.
+    * For example, consider updating or replacing plugins that are incompatible with Nuxt 3 or modifying middleware to support new API structures. 
      
-4. **Next Steps**
-    * **migrate Vuetify** Use npm install `eslint-plugin-vuetify --save-dev --legacy-peer-deps` ?
+5. **Next Steps**
+    * **migrate Vuetify** Use npm install `eslint-plugin-vuetify --save-dev --legacy-peer-deps`. This plugin is used to enforce best practices and linting rules specific to Vuetify components, which helps during the migration. We want to maintain code quality and consistency.
     * **migrate Nuxt content in content/nl, etc**
     * **copy assets, fonts and other config files f.ex. with constants and utils**
     * **Components and Pages:** Migrate and adapt to Nuxt 3
     * **Composition API:** Convert Options API
-    * **Testing:** Implement unit, integration, and E2E tests (Vue Test Utils / Vitest / Cypress)
+    * **Testing:** Implement unit, integration, and E2E tests (Vue Test Utils / Vitest / Cypress, don't use @testing-library/vue)
 
 ### Work in Progress: here we focus on the framework and less on the content.
 
@@ -68,7 +77,7 @@
   - [X] Enable i18n `.json` translation file based autocompletion in VS Code.
   - [X] Demo in VSC: when typing a . after `alt` or `banner` as in `t("alt.banner.books")` auto-suggestion will come to live
  
-- **API's**
+- **Make Nuxt 3 API-ready**
   - [X] Install and test Knex for MySQL database integration.
   - [X] Demo: [https://www.const-court.be/nuxt/api/sqltest/affzak](https://www.const-court.be/nuxt/api/sqltest/affzak)
   - [X] Set up and test middleware for FileMaker API token management.
@@ -117,6 +126,9 @@
 
 - **Component Migration**
   - [ ] Migrate Nuxt 2 components to Nuxt 3. Consider using AI assistance.
+
+### Configure Nuxt 3 to use the legacy API backend
+- configure and update the nuxt config.
 
 ### Nuxt 2 + Vuetify 2 to Nuxt 3 + Vuetify 3 strategy: here we focus on the content.
 
@@ -168,14 +180,19 @@
 - For some complex components, it might make sense to refactor to the Composition API earlier if it simplifies logic. 
 - Leverage full **Nuxt 3 features** like middleware, server-side composables, and advanced SSR handling.
 
-#### Samenvatting:
+#### Overview:
 1. Basic layout and navigation
 2. Static content pages
 3. Simple components
 4. API-driven pages
 5. Complex component-based pages
 6. Gradual refactoring to Composition API
-   
+
+### Develop the new backend API's
+- We were using the legacy API backend, now we start developing all API's in Nuxt 3.
+- Configure and update the nuxt config.
+- Incrementally develop new API's and update the pages that were using legacy API's.
+
 ### References
 
 - [Nuxt Upgrade Guide](https://nuxt.com/docs/getting-started/upgrade)
