@@ -27,7 +27,6 @@
     * **Step 1**: A clean installation of the Nuxt 3 environment.
     * **Step 2**: Keep the existing Nuxt 2 APIs while building the interface in Nuxt 3 on the new installation until all pages are properly transitioned and functional. This allows us to focus on migrating the UI and user experience first.
     * **Step 3**: Once the pages are successfully migrated, we proceed with migrating the APIs to Nuxt 3's built-in Nitro server. This sequence minimizes disruptions and allows for incremental testing of each component.
-    * Avoid reversing this approach by creating new APIs for legacy pages first, as this can lead to increased complexity in managing two environments concurrently.
   
 2. **Technical Key Challenges**
     * **i18n:** Implement for multi-language support
