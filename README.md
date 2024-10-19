@@ -54,7 +54,7 @@
     * **Composition API:** Convert Options API
     * **Testing:** Implement unit, integration, and E2E tests (Vue Test Utils / Vitest / Cypress, don't use @testing-library/vue)
 
-### Work in Progress: here we focus on the framework and less on the content.
+### Work in Progress: here we focus on the framework (and less on the content).
 
 - **Install Nuxt 3 with Compatibility Version 4**
   - [X] Create the folder structure: move `public` to `static`, and `assets` to `app/assets`.
@@ -104,7 +104,8 @@
   - [X] Extend github/pull-and-build.sh to automatically rebuild nuxt 4 installation.
 
 - **Routing and Layout**
-  - [ ] Implement routing and test with a navigation bar.
+  - [X] Implement a basic default.vue layout.
+  - [ ] Inplement and test routing
   
 - **Code Quality and Tools**
   - [ ] Update `nuxt.config.ts` with CSS paths if necessary.
@@ -126,12 +127,15 @@
 - **Component Migration**
   - [ ] Migrate Nuxt 2 components to Nuxt 3. Consider using AI assistance.
 
-### Configure Nuxt 3 to use the legacy API backend
-- configure and update the nuxt config.
+### Configure Nuxt 3 to use the Nuxt 2 legacy API backend
+- configure and update the config to use the legacy API backend
+- Create a few .vue pages that use these API's
 
 ### Nuxt 2 + Vuetify 2 to Nuxt 3 + Vuetify 3 strategy: here we focus on the content.
 
 #### 1. Simplify `default.vue` Layout
+- Install Vuetify: vuetify, vite-plugin-vuetify and @mdi/font.
+- Update nuxt.config.ts, and don't forget to place vuetify.ts in app/plugins/vuetify.ts (compatibility version 4 folder)
 - Start with a **simplified version** of the `default.vue` layout.
 - Ensure basic layout and navigation work across screen sizes without introducing complex features yet.
 
