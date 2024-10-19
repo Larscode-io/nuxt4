@@ -94,17 +94,17 @@
   - [ ] Todo: Use state and nonce for security, move url params into body of [callback.vue](./app/pages/auth/callback.vue) to call [tok.ts](./server/routes/auth/tok.ts).
 
 - **Static pages via Nuxt Content from Markdown (.md) files**
-  - [X] Install and test Nuxt Content v2 for content/nl, content/fr, content/de, content.en
-  - [X] Demo: Catch-all page to server static .md from content folder: [https://www.const-court.be/nuxt/fr/hello](https://www.const-court.be/nuxt/fr/hello)
+  - [X] Install and test Nuxt Content v2 for content/nl`, `content/fr`, `content/de`, `content/en`
+  - [X] Demo: Catch-all page to server static `.md` from content folder: [https://www.const-court.be/nuxt/fr/hello](https://www.const-court.be/nuxt/fr/hello)
   - [X] Demo: fetch api data from Nux 2 server: [https://www.const-court.be/nuxt/de/legacyContent](https://www.const-court.be/nuxt/de/legacyContent)
 
 - **Automation and Integration**
   - [X] Write a Bash script for automatic installation of the above components.
   - [X] Set up a GitHub webhook for automated production builds.
-  - [X] Extend github/pull-and-build.sh to automatically rebuild nuxt 4 installation.
+  - [X] Extend `github/pull-and-build.sh` to automatically rebuild nuxt 4 installation.
 
 - **Routing and Layout**
-  - [X] Implement a basic default.vue layout.
+  - [X] Implement a basic `default.vue` layout.
   - [ ] Inplement and test routing
   
 - **Code Quality and Tools**
