@@ -10,7 +10,7 @@
 
 ### Migration Considerations
 
-* **Nuxt:** `compatibilityVersion: 4`
+* **Nuxt:** `compatibilityVersion: 4`: the new Nuxt default `srcDir` is `app/` by default
 * **API Server:** Migrate Fastify to Nuxt 3's built-in Nitro server
 * **State Management:** migrate from Vuex to Pinia
 * **Databases:** MariaDB with Knex and Filemaker API
