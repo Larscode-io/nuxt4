@@ -210,7 +210,7 @@ interface Decision {
 
 #index-banner {
   width: 100%;
-  background-image: url('~/assets/img/banner-index.jpeg');
+  // background-image: url('~/assets/img/banner-index.jpeg');
   background-size: cover;
   height: 60vh;
   // background-position: 50% 40% indien niet: position: fixed;
