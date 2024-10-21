@@ -10,8 +10,15 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@nuxtjs/i18n": "latest",
+    "jwt-decode": "^4.0.0",
     "nuxt": "^3.13.0",
-    "vue": "latest",
-    "@nuxtjs/i18n": "latest"
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "sass": "^1.80.3",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vuetify": "^3.7.3"
   }
 }

@@ -3,7 +3,9 @@
   <NuxtLayout>
     <header></header>
     <main>
-      <NuxtPage />
+      <v-app>
+        <NuxtPage />
+      </v-app>
     </main>
     <footer></footer>
   </NuxtLayout>

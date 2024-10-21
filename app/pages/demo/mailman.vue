@@ -1,20 +1,9 @@
 <script setup lang="ts">
 import { watch, ref, reactive, computed } from 'vue';
 
-import { useLanguage, Languages, defaultListLang, languageLabels } from '@/composables/useLanguage';
+import { useLanguage, Languages, defaultListLang } from '@/composables/useLanguage';
+const { t, locale } = useLanguage();
 
-const { t, locale, switchLocalePath } = useLanguage();
-
-const mailinglistLabels = (lang: Languages) => {
-    const langMap = {
-        [Languages.DUTCH]: "general.message.mailman.letter.nl",
-        [Languages.FRENCH]: "general.message.mailman.letter.fr",
-        [Languages.GERMAN]: "general.message.mailman.letter.de",
-        [Languages.ENGLISH]: "general.message.mailman.letter.en",
-    };
-
-    return langMap[lang] || "Onbekend";
-};
 
 const form = reactive({
     usermail: '',
@@ -207,12 +196,6 @@ const userFeedbackMessages: Record<Locale, string> = {
 
 <template>
     <div class="container">
-        <nav>
-            <NuxtLink :to="switchLocalePath(Languages.DUTCH)">{{ languageLabels[Languages.DUTCH] }}</NuxtLink>
-            <NuxtLink :to="switchLocalePath(Languages.FRENCH)">{{ languageLabels[Languages.FRENCH] }}</NuxtLink>
-            <NuxtLink :to="switchLocalePath(Languages.GERMAN)">{{ languageLabels[Languages.GERMAN] }}</NuxtLink>
-            <NuxtLink :to="switchLocalePath(Languages.ENGLISH)">{{ languageLabels[Languages.ENGLISH] }}</NuxtLink>
-        </nav>
         <p class="description">
             {{ titelMessage[locale as Locale] }}
         </p>
@@ -229,7 +212,7 @@ const userFeedbackMessages: Record<Locale, string> = {
                 </p>
                 <select v-model="form.selected" class="form-input" @change="formDirty.mailinglist = true">
                     <option v-for="(value, lang) in defaultListLang" :key="lang" :value="defaultListLang[lang]">
-                        {{ t(mailinglistLabels(lang as Languages)) }}
+                        {{ t(`general.message.mailman.letter.${lang}`) }}
                     </option>
                 </select>
             </div>

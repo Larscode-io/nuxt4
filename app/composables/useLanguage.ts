@@ -1,5 +1,6 @@
 import { useI18n, useSwitchLocalePath } from "#imports";
 import type { MessageSchema } from "~~/types/i18n"; // ~~ is an alias for the src directory
+import { useRouter } from 'vue-router';
 
 export enum Languages {
   ENGLISH = "en",
@@ -21,18 +22,32 @@ export const defaultListLang: Record<string, string> = {
   [Languages.GERMAN]: "pdf_de",
 };
 
+
 export function useLanguage() {
-  const { t, locale, setLocale } = useI18n<
+  const router = useRouter();
+  
+  const { t, locales, locale, setLocale } = useI18n<
     [MessageSchema],
     Languages.DUTCH | Languages.FRENCH | Languages.ENGLISH | Languages.GERMAN
   >();
   const switchLocalePath = useSwitchLocalePath();
+  const localePath = useLocalePath();
 
+  const availableLocales = computed(() => {
+    return locales.value.filter(i => i.code !== locale.value)
+  })
+
+const switchLanguage = (lang: any) => {
+  router.push({ path: `${switchLocalePath(lang)}` });
+};
   return {
     t,
     locale,
     switchLocalePath,
+    localePath,
     setLocale,
+    availableLocales,
+    switchLanguage,
   };
 }
 
