@@ -1,1 +1,5 @@
-
+User-agent: *
+Disallow: /search/ #geen toegang tot interne zoekresutlaat pagina's.
+Disallow: *?term=* #geen toegang tot interne zoekresutlaat pagina's.
+Sitemap: https://www.const-court.be/sitemap.xml
+#Sitemap: https://www.const-court.be/sitemap2.xml

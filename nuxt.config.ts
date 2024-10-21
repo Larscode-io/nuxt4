@@ -11,6 +11,7 @@ export default defineNuxtConfig({
       })
     },
   ],
+  content: { locales: ['en', 'fr', 'nl', 'de'] },
   build: { transpile: ['vuetify'] },
   vite: {
     css: {

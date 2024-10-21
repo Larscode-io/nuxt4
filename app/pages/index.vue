@@ -11,6 +11,7 @@ const { t, locale, switchLocalePath } = useLanguage();
 
 const { data: combinedData, status } = await useAsyncData(async () => {
   console.log('Fetching data...')
+  console.log(baseURL)
   const [judgments, pleadings, decisions] = await Promise.all([
     $fetch<Judgment[]>(`${baseURL}/api/v1/juris/judgments?lang=${locale.value}`),
     $fetch<Pleading[]>(`${baseURL}/api/v1/press/pleadings?lang=${locale.value}`),
