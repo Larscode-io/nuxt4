@@ -1,5 +1,9 @@
 ## Migration from Nuxt 2 to Nuxt 3 with compatibility version 4x
-<img src="./app/assets/img/ScreenshotHome.png" alt="Screenshot Home page" height="600">
+<a href="https://www.const-court.be/"
+  <img src="./app/assets/img/ScreenshotHome.png" alt="Screenshot Home page" height="600">
+</a>
+
+[The new version](https://www.const-court.be/nuxt/nl)
 
 ### Prerequisites
 
