@@ -19,6 +19,17 @@ const gotoMediaPage = (id: number) => {
   console.log(`Navigating to media page for media with id: ${id}`)
   // Add your navigation logic here
 }
+
+const handleMediaCardClick = (id: number, description: string) => {
+  if (!description) {
+    gotoMediaPage(id)
+  }
+}
+
+const mediaDisplayMode = ref<('full' | 'short')[]>(Array(20).fill('short'))
+const toggleDisplayMediaDisplayMode = (index: number) => {
+  mediaDisplayMode.value[index] = mediaDisplayMode.value[index] === 'short' ? 'full' : 'short'
+}
 </script>
 
 <template>
@@ -30,7 +41,9 @@ const gotoMediaPage = (id: number) => {
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
       >
-        <template #item="{ item: { id, formatedJudmentDate, nr, courtVerdict, description, availablePart } }: { item: Judgment }">
+        <template
+          #item="{ item: { id, formatedJudmentDate, nr, courtVerdict, description, availablePart } }: { item: Judgment }"
+        >
           <v-card class="equal-height-card highlighted-card libra-image d-flex flex-column">
             <div class="flex-grow-1">
               <v-card-text>
@@ -63,30 +76,37 @@ const gotoMediaPage = (id: number) => {
       <MediaCard
         :api-url-release="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
-        :max-items="6"
+        :max-items="3"
+        :display-modes="mediaDisplayMode"
       >
-        <template #item="{ item: { title, shortDescription, description, showFullDescription, id } }: { item: GeneralPressRelease | GeneralPressJudgment }">
+        <template #item="{ title, shortDescription, description, id, displayMode, index } ">
           <v-card class="equal-height-card">
-            <v-card-title class="media-card-title">
+            <v-card-title
+              class="media-card-title"
+              :style="{ position: 'relative', cursor: !description ? 'pointer' : 'default' }"
+              @click="!description && gotoMediaPage(id)"
+            >
               {{ title }}
             </v-card-title>
 
             <v-card-text>
               <div :style="{ position: 'relative' }">
                 <v-expand-transition>
-                  <div v-if="!showFullDescription.value">
-                    <div>
-                      {{ shortDescription }}
+                  <div>
+                    <div v-if="displayMode === 'short'">
+                      <div>
+                        {{ shortDescription }}
+                      </div>
                     </div>
-                  </div>
-                  <div v-else>
-                    <div>
-                      {{ description }}
-                    </div>
-                    <div>
-                      <v-btn @click="gotoMediaPage(id)">
-                        {{ t('general.message.read-more') }}
-                      </v-btn>
+                    <div v-else>
+                      <div>
+                        {{ description }}
+                      </div>
+                      <div>
+                        <v-btn @click="gotoMediaPage(id)">
+                          {{ t('general.message.read-more') }}
+                        </v-btn>
+                      </div>
                     </div>
                   </div>
                 </v-expand-transition>
@@ -97,15 +117,16 @@ const gotoMediaPage = (id: number) => {
                   <v-btn
                     color="transparent"
                     elevation="0"
-                    @click="showFullDescription.value = !showFullDescription.value"
+                    @click="toggleDisplayMediaDisplayMode(index)"
                   >
-                    <v-icon>{{ showFullDescription.value ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                    <v-icon>{{ true ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
                   </v-btn>
                 </div>
-                <div
-                  v-else
-                >
-                  <v-btn @click="gotoMediaPage(id)">
+                <div v-else>
+                  <v-btn
+                    v-if="description"
+                    @click="gotoMediaPage(id)"
+                  >
                     {{ t('general.message.read-more') }}
                   </v-btn>
                 </div>

@@ -15,36 +15,26 @@ const props = defineProps({
     type: Number,
     required: false,
   },
+  displayModes: {
+    type: Array,
+    required: true,
+  },
 })
 
 interface ExtendedGeneralPressRelease extends GeneralPressRelease {
   shortDescription: string
-  showFullDescription: boolean
   type: MediaType
 }
 interface ExtendedGeneralPressJudgment extends GeneralPressJudgment {
   shortDescription: string
-  showFullDescription: boolean
   type: MediaType
 }
 
-const transform_GeneralPressJudgment = (items: GeneralPressJudgment[]): ExtendedGeneralPressJudgment[] => {
-  const limitedItems = props.maxItems ? items.slice(0, props.maxItems) : items
-  return limitedItems.map(item => ({
-    ...item,
-    shortDescription: item.description?.substring(0, 90).concat('...'),
-    showFullDescription: false,
-    type: MediaType.pressReleaseForJudgments,
-  }))
+const transform_GeneralPressJudgment = (items: GeneralPressJudgment[]): GeneralPressJudgment[] => {
+  return props.maxItems ? items.slice(0, props.maxItems) : items
 }
-const transform_GeneralPressRelease = (items: GeneralPressRelease[]): ExtendedGeneralPressRelease[] => {
-  const limitedItems = props.maxItems ? items.slice(0, props.maxItems) : items
-  return limitedItems.map(item => ({
-    ...item,
-    shortDescription: item.description?.substring(0, 90).concat('...'),
-    showFullDescription: false,
-    type: MediaType.generalPressRelease,
-  }))
+const transform_GeneralPressRelease = (items: GeneralPressRelease[]): GeneralPressRelease[] => {
+  return props.maxItems ? items.slice(0, props.maxItems) : items
 }
 
 const { data: generalPressRelease, error: generalPressReleaseError } = await useFetch<GeneralPressRelease[]>(props.apiUrlRelease, { transform: transform_GeneralPressRelease }) as { data: Ref<GeneralPressRelease[]>, error: Ref<Error> }
@@ -54,13 +44,17 @@ if (generalPressReleaseError.value || generalPressJudgmentsError.value) {
   throw createError({ statusCode: 404, statusMessage: 'We have a issue with fetching data in MediaCard' })
 }
 
-const medias = computed(() => {
+const medias = computed<ExtendedGeneralPressRelease[] | ExtendedGeneralPressJudgment[]>(() => {
   const combinedMedias = [
     ...generalPressJudgments.value?.map(media => ({
       ...media,
+      shortDescription: media.description?.substring(0, 90).concat('...'),
+      type: MediaType.pressReleaseForJudgments,
     })) || [],
     ...generalPressRelease.value?.map(media => ({
       ...media,
+      shortDescription: media.description?.substring(0, 90).concat('...'),
+      type: MediaType.generalPressRelease,
     })) || [],
   ]
   return props.maxItems ? combinedMedias.slice(0, props.maxItems) : combinedMedias
@@ -78,8 +72,8 @@ const medias = computed(() => {
       xl="2"
     >
       <slot
+        v-bind="{ ...item, displayMode: props.displayModes[index], index }"
         name="item"
-        :item="item"
       />
     </v-col>
   </v-row>
