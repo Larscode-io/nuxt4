@@ -38,6 +38,10 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const intendedDestination = route.query.intendedDestination || '/http://nowhere.be'
 
+import { useLanguage } from '@/composables/useLanguage';
+const { locale, localePath } = useLanguage();
+
+
 const authorizationUrl = ref('')
 authorizationUrl.value = await $fetch(`/auth/generateAuthUrl?intendedDestination=${intendedDestination}`)
 function navigateTo(url) {

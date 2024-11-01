@@ -1,303 +1,427 @@
 <script setup lang="ts">
+import { useLanguage } from '@/composables/useLanguage'
+import { ApiUrl } from '@/core/constants'
+import type { GeneralPressJudgment, GeneralPressRelease, Judgment, Pleading, Decision } from '@/core/constants'
+
 definePageMeta({
   layout: 'default',
 })
 
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
+const { t, locale } = useLanguage()
 
-import { useLanguage } from '@/composables/useLanguage';
-const { t, locale, switchLocalePath } = useLanguage();
-
-const { data: combinedData, status } = await useAsyncData(async () => {
-  console.log('Fetching data...')
-  console.log(baseURL)
-  const [judgments, pleadings, decisions] = await Promise.all([
-    $fetch<Judgment[]>(`${baseURL}/api/v1/juris/judgments?lang=${locale.value}`),
-    $fetch<Pleading[]>(`${baseURL}/api/v1/press/pleadings?lang=${locale.value}`),
-    $fetch<Decision[]>(`${baseURL}/api/v1/press/judgments?lang=${locale.value}`)
-  ]);
-  return { judgments, pleadings, decisions };
-});
-
-const judgments = combinedData.value?.judgments?.slice(0, 6) || [];
-const pleadings = combinedData.value?.pleadings?.slice(0, 6) || [];
-const decisions = combinedData.value?.decisions?.slice(0, 6) || [];
-
-interface Judgment {
-  id: number;
-  description: string;
-  courtVerdict: string;
-  nr: string;
-  fileName: string;
-  path: string;
-  judmentDate: string;
-  formatedJudmentDate: string;
-  filePath: string;
-  summary: string;
-  idsRole: number[];
-  availablePart: string;
-  keywords: string;
-
+const goToAgendaPageJudgments = (id: number) => {
+  console.log(`Navigating to agenda page for judgment with id: ${id}`)
+  // Add your navigation logic here
 }
-interface Pleading {
-  id: number;
-  zuluDate: string;
-  date: string;
-  processingLanguage: string;
-  description: string;
-  day: string;
-  month: string;
-  hora: string;
-  maxOfDates: string;
-}
-interface Decision {
-  distance: number;
-  id: number;
-  joinedcases: any[];
-  processingLanguage: string;
-  description: string;
-  day: string;
-  month: string;
-  nr: string;
-  master: any;
-  kenmerk: string;
-  encinz: string;
-  type: string;
-  norm: string;
-  date: string;
-  formatedJudmentDate: string;
-  dateLong: string;
+const gotoMediaPage = (id: number) => {
+  console.log(`Navigating to media page for media with id: ${id}`)
+  // Add your navigation logic here
 }
 </script>
 
 <template>
   <div>
-      <h1>Welcome to the new Home Page</h1>
-      <h1>Built with Nuxt 3 Compatibility Version 4</h1>
-      <h2>Here are our recent judgments:</h2>
-    <v-container class="fill-height" fluid>
-      <v-row align="center" justify="center">
-        <v-col class="text-center">
-          <div class="d-flex flex-wrap justify-center">
-            <DecisionBox v-for="judgment of judgments" :id="judgment.id" :key="judgment.id" class="decisionBox"
-              :reference="judgment.nr" :date="judgment.formatedJudmentDate" :zuludate="judgment.judmentDate"
-              :title="judgment.courtVerdict" role="button" :description="judgment.description"
-              :state="judgment.availablePart" @click-decision="goToJudgmentPage(judgment.id)" />
-          </div>
-        </v-col>
-      </v-row>
+    <span class="index-banner" />
+    <v-container>
+      <h2>Recent judgments:</h2>
+      <DecisionBox
+        :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
+        :max-items="6"
+      >
+        <template #item="{ item: { id, formatedJudmentDate, nr, courtVerdict, description, availablePart } }: { item: Judgment }">
+          <v-card class="equal-height-card highlighted-card libra-image d-flex flex-column">
+            <div class="flex-grow-1">
+              <v-card-text>
+                <v-row>
+                  <v-col cols="5">
+                    <span>{{ formatedJudmentDate }}</span>
+                  </v-col>
+                  <v-col
+                    cols="7"
+                    class="d-flex justify-end"
+                  >
+                    <span>{{ t('general.message.add-judgment-number-label') }} {{ nr }}</span>
+                  </v-col>
+                </v-row>
+              </v-card-text>
+              <v-card-title>{{ courtVerdict }}</v-card-title>
+              <v-card-text>{{ description }}</v-card-text>
+            </div>
+            <v-card-title>{{ availablePart }}</v-card-title>
+            <v-card-actions>
+              <v-btn @click="goToAgendaPageJudgments(id)">
+                {{ t('general.message.read-more') }}
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </template>
+      </DecisionBox>
+
+      <h2>Press releases:</h2>
+      <MediaCard
+        :api-url-release="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
+        :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
+        :max-items="6"
+      >
+        <template #item="{ item: { title, shortDescription, description, showFullDescription, id } }: { item: GeneralPressRelease | GeneralPressJudgment }">
+          <v-card class="equal-height-card">
+            <v-card-title class="media-card-title">
+              {{ title }}
+            </v-card-title>
+
+            <v-card-text>
+              <div :style="{ position: 'relative' }">
+                <v-expand-transition>
+                  <div v-if="!showFullDescription.value">
+                    <div>
+                      {{ shortDescription }}
+                    </div>
+                  </div>
+                  <div v-else>
+                    <div>
+                      {{ description }}
+                    </div>
+                    <div>
+                      <v-btn @click="gotoMediaPage(id)">
+                        {{ t('general.message.read-more') }}
+                      </v-btn>
+                    </div>
+                  </div>
+                </v-expand-transition>
+                <div
+                  v-if="description"
+                  :style="{ position: 'absolute', top: 0, right: 0 }"
+                >
+                  <v-btn
+                    color="transparent"
+                    elevation="0"
+                    @click="showFullDescription.value = !showFullDescription.value"
+                  >
+                    <v-icon>{{ showFullDescription.value ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                  </v-btn>
+                </div>
+                <div
+                  v-else
+                >
+                  <v-btn @click="gotoMediaPage(id)">
+                    {{ t('general.message.read-more') }}
+                  </v-btn>
+                </div>
+              </div>
+            </v-card-text>
+          </v-card>
+        </template>
+      </MediaCard>
+
+      <h2>Decisions:</h2>
+      <AgendaCard
+        :api-url="`${baseURL}${ApiUrl.pressJudgment}?lang=${locale}`"
+        :max-items="0"
+      >
+        <template #item="{ item: { day, month, shortDescription, id, joinedcases } }: { item: Decision }">
+          <v-card class="hammer-image equal-height-card">
+            <v-card-text>
+              <v-row>
+                <v-col
+                  cols="4"
+                  class="date-box1 d-flex flex-column align-center justify-center"
+                >
+                  <div class="day1">
+                    {{ day }}
+                  </div>
+                  <div class="month1">
+                    {{ month }}
+                  </div>
+                </v-col>
+                <v-col
+                  cols="8"
+                  class="d-flex flex-column"
+                >
+                  <v-row>
+                    <v-card-title class="font-weight-bold">
+                      {{ t('menu.decisions.title2') }}
+                    </v-card-title>
+                  </v-row>
+                  <v-row>
+                    <v-card-text>
+                      <v-icon
+                        class="mr-1"
+                        color="#F4A261"
+                      >
+                        mdi-file-document-outline
+                      </v-icon> {{ id }}
+                    </v-card-text>
+                  </v-row>
+                </v-col>
+              </v-row>
+            </v-card-text>
+
+            <v-card-text>
+              <div>{{ shortDescription }}</div>
+            </v-card-text>
+            <v-card-text v-if="joinedcases.length !== 0">
+              <v-icon
+                class="mr-1"
+                color="primary"
+              >
+                mdi-link-variant
+              </v-icon> {{ joinedcases }}
+            </v-card-text>
+          </v-card>
+        </template>
+      </AgendaCard>
+
+      <h2>Public hearings:</h2>
+      <PleadingCard
+        :api-url="`${baseURL}${ApiUrl.pressPleadings}?lang=${locale}`"
+        :max-items="0"
+      >
+        <template #item="{ item: { id, processingLanguage, day, month, hora, shortDescription } }: { item: Pleading } ">
+          <v-card
+            class="equal-height-card "
+            :style="{ maxWidth: '300px' }"
+            @click="gotoMediaPage(id)"
+          >
+            <v-card-text>
+              <v-row>
+                <!-- Date Box -->
+                <v-col
+                  cols="4"
+                  class="date-box d-flex flex-column align-center justify-center"
+                >
+                  <div class="day">
+                    {{ day }}
+                  </div>
+                  <div class="month">
+                    {{ month }}
+                  </div>
+                </v-col>
+
+                <!-- Time and Location -->
+                <v-col
+                  cols="6"
+                  class="d-flex flex-column"
+                >
+                  <div class="d-flex align-center mb-2">
+                    <v-icon
+                      class="mr-1"
+                      color="primary"
+                    >
+                      mdi-clock-time-four-outline
+                    </v-icon>
+                    <span>{{ hora || '14-17h' }}</span>
+                  </div>
+                  <div class="d-flex align-center mb-2">
+                    <v-icon
+                      class="mr-1"
+                      color="primary"
+                    >
+                      mdi-map-marker
+                    </v-icon>
+                    {{ t('general.brussels') }}
+                  </div>
+                  <div class="d-flex align-center">
+                    <v-icon
+                      class="mr-1"
+                      color="primary"
+                    >
+                      mdi-file-document-outline
+                    </v-icon>
+                    {{ id }} ({{ processingLanguage }})
+                  </div>
+                </v-col>
+              </v-row>
+            </v-card-text>
+            <v-card-title class="font-weight-bold">
+              {{ t('general.message.public-hearing') }}
+            </v-card-title>
+            <v-card-text>
+              <div>{{ shortDescription }}</div>
+            </v-card-text>
+          </v-card>
+        </template>
+      </pleadingCard>
     </v-container>
-    <div v-if="judgments">
-      <ul class="judgment-list">
-        <li v-for="({ id, nr, formatedJudmentDate, description }) in judgments" :key="id">
-          Nr: {{ nr }}, Date: {{ formatedJudmentDate }}, description: {{ description }}
-        </li>
-      </ul>
-    </div>
-    <div v-if="pleadings">
-      <h2>Here are our upcoming pleadings:</h2>
-      <ul class="pleading-list">
-        <li v-for="({ id, day, month, description }) in pleadings" :key="id">
-          {{ day }} {{ month }}, Id: {{ id }} Description: {{ description?.slice(0, 50) }}
-        </li>
-      </ul>
-    </div>
-    <div v-if="decisions">
-      <h2>Here are our upcoming decisions:</h2>
-      <ul class="pleading-list">
-        <li v-for="({ id, day, month, encinz, nr }) in decisions" :key="id">
-          {{ day }} {{ month }}, Id: {{ id }}, En cause: {{ encinz?.slice(0,50)}}, Nr: {{ nr }}
-        </li>
-      </ul>
-    </div>
   </div>
 </template>
 
-
-
 <style scoped lang="scss">
-* {
-  box-sizing: border-box;
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-}
-
-.judgment-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  /* Adjust the gap as needed */
-}
-
-.judgment-list li {
-  border: 1px solid #ccc;
-  /* Optional: Add border to each item */
-  padding: 10px;
-  /* Optional: Add padding to each item */
-}
-
-.pleading-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-}
-
-.pleading-list li {
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.container {
-  padding: 0 !important;
-
-  // @include mobile {
-  //   padding: 32px;
-  // }
-}
-
-.d-flex {
-  max-width: 1260px;
-  margin: auto;
-  margin-bottom: 40px;
-
-  // @include mobile {
-  //   margin-bottom: 24px;
-  // }
-}
-
-// .margins-tablet {
-//   @include tablet {
-//     margin-left: 16px;
-//   }
-// }
-
-.decisionBox:focus,
-.mediaCard:focus {
-  outline: 3px solid black;
-}
-
-.v-card--link:focus:before {
-  opacity: 0 !important;
-}
-
-.agenda-container {
+.full-width-image {
   width: 100%;
-  max-width: 760px;
-  // margin: 0;
-  display: flex;
+  height: auto;
 }
 
-.session-container {
-  width: 100%;
+.index-banner {
+  display: block;
+  height: 60vh;
+  background-image: url('~~/app/assets/img/banner-index.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 90%;
+  background-attachment: fixed;
+  margin: 0;
+
+  // General tablet settings because fixed background-attachment often is not supported
+  @media (max-width: 1366px) {
+    background-attachment: scroll;
+  }
+  // Specific settings for normal iPad in landscape mode
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    background-position: 50% 50%; // Center the image vertically
+  }
+
+  // Specific settings for iPad Pro in landscape mode
+  @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    background-position: 50% 70%;
+  }
+
+  // Specific settings for smartphones
+  @media (max-width: 768px) {
+    background-image: url('~~/app/assets/img/banner-index-small.jpg');
+    background-position: 30% 90%;
+  }
 }
 
-.v-application--wrap {
+.prDesc {
+  position: relative;
+}
+
+.btt {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.highlighted-card {
+  background-color: $rajahLight !important;
+  color: $textOnRajah !important;
+}
+
+.hammer-image {
+  background-image: url('~~/app/assets/img/hammer.svg');
+  background-position: top right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.libra-image {
+  background: url('~~/app/assets/img/libra.svg') no-repeat;
+  background-position: 124%;
+}
+
+.equal-height-card {
+  max-width: 100%;
   overflow: hidden;
 }
 
-// .v-parallax__image {
-//   transform: none !important;
-//   // top: 50%;
-//   // width: 100% !important;
-// }
-
-#index-banner {
-  width: 100%;
-  // background-image: url('~/assets/img/banner-index.jpeg');
-  background-size: cover;
-  height: 60vh;
-  // background-position: 50% 40% indien niet: position: fixed;
-  // background-position: 50% 53%; alternatief: banner-index-2
-  background-position: 50% 45%;
-  background-attachment: fixed;
-
-  // @include tablet {
-  //   background-image: url('~/assets/img/banner-index-tablet.png');
-  //   background-size: cover;
-  //   height: 450px;
-  //   background-position: center center;
-  //   background-attachment: scroll;
-  // }
+.v-card {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-#parallax-banner {
-  width: 100%;
-  height: 70vh;
-  background-image: url('~/assets/img/banner-parallax.png');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: 50% 25%;
+.equal-height-card {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  flex-direction: column;
+  height: 100%;
+}
 
-  .heading-h2 {
-    color: white;
-    text-shadow: 0px 0px 3px $logoColor;
+.date-box1 {
+  background: $rajahExtraLight;
+  border: 4px solid $rajahYellow;
+  border-radius: 4px;
+  margin-right: 8px;
+  color: $textOnRajah;
+  margin-top: 5px;
+  padding-top: 5px;
+  max-width: 80px;
+  /* Adjust as necessary */
+  min-width: 80px;
 
-
-    // @include mobile {
-    //   font-size: 1.25rem;
-    //   width: calc(100% - 32px);
-    // }
+  p:first-of-type {
+    font-size: 2.5rem;
+    margin: 0;
+    line-height: 32px;
+    padding: 11px 0 2px 0;
   }
 
-  // @include tablet {
-  //   background: url('~/assets/img/banner-parallax-tablet.png') no-repeat center center scroll;
-  //   background-size: cover;
-  //   height: 70vh;
-  //   // background-position: 0 15%;
-  // }
+  p:last-of-type {
+    font-size: 1.25rem;
+    margin: 0;
+    text-transform: uppercase;
+  }
 }
 
-#parallax-banner>* {
-  z-index: 2;
+.date-box {
+  background: $indigoExtraLight;
+  border: 4px solid $indigoExtraLight;
+  border-radius: 4px;
+  margin-right: 8px;
+  color: $indigo;
+  margin-top: 5px;
+  padding-top: 5px;
+  max-width: 80px;
+  /* Adjust as necessary */
+  min-width: 80px;
+
+  p:first-of-type {
+    font-size: 2.5rem;
+    margin: 0;
+    line-height: 32px;
+    padding: 11px 0 2px 0;
+  }
+
+  p:last-of-type {
+    font-size: 1.25rem;
+    margin: 0;
+    text-transform: uppercase;
+  }
 }
 
-#parallax-banner::after {
-  content: '';
-  background: $indigoMediumLight;
-  width: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 1;
+.day1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: $rajahYellow;
 }
 
-#parallax-banner>* {
-  z-index: 2;
+.month1 {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: $rajahYellow;
 }
 
-#parallax-banner::after {
-  content: '';
-  background: $indigoMediumLight;
-  width: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 1;
+.day {
+  font-size: 32px;
+  font-weight: bold;
+  color: #00529b;
+  /* Darker blue color */
 }
 
-.myq:before {
-  content: '\201C';
-  font-size: 1.5em;
+.month {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #00529b;
+  /* Darker blue color */
 }
 
-.myq:after {
-  content: '\201D';
-  font-size: 1.5em;
+.v-card-title {
+  font-weight: bold;
+}
+
+.media-card-title {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.v-card-text {
+  padding: 8px 16px;
+}
+
+.v-card-actions {
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
