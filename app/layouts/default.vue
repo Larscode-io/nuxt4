@@ -42,17 +42,27 @@ const drawerItems = ref([
       fluid
     >
       <v-app-bar
-        color="primary"
-        prominent
+        :elevation="5"
+        height="80"
       >
         <nuxt-link :to="localePath('/')">
-          <v-btn icon>
-            <v-icon left>
-              mdi-home
-            </v-icon>
+          <v-btn
+            icon
+            class="logo-btn"
+            width="64"
+            height="64"
+          >
+            <div
+              class="logo-container"
+              alt=""
+            />
           </v-btn>
         </nuxt-link>
-        <v-toolbar-title>{{ t('general.message.consts-court') }}</v-toolbar-title>
+        <v-toolbar-title>
+          <h1>
+            {{ t('general.message.consts-court') }}
+          </h1>
+        </v-toolbar-title>
 
         <v-spacer />
 
@@ -145,4 +155,23 @@ const drawerItems = ref([
 </template>
 
 <style lang="scss">
+h1 {
+  color: $logoColor;
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: 'Tiempos Headline';
+      margin-left: 16px;
+}
+
+.logo-btn {
+  margin: 8px;
+  padding: 0 !important;
+}
+
+.logo-container {
+  width: 64px;
+  height: 64px;
+  background: url('~~/app/assets/icons/fed.svg') no-repeat center center;
+  background-size: contain;
+}
 </style>
