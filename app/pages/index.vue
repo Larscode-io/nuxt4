@@ -40,6 +40,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
+        @vueerror="handleError"
       >
         <template
           #item="{ item: { id, formatedJudmentDate, nr, courtVerdict, description, availablePart } }: { item: Judgment }"
@@ -76,7 +77,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
       <MediaCard
         :api-url-release="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
-        :max-items="3"
+        :max-items="6"
         :display-modes="mediaDisplayMode"
       >
         <template #item="{ title, shortDescription, description, id, displayMode, index } ">
@@ -263,7 +264,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
             </v-card-text>
           </v-card>
         </template>
-      </pleadingCard>
+      </PleadingCard>
     </v-container>
   </div>
 </template>

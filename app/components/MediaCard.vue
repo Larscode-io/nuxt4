@@ -2,6 +2,8 @@
 import { MediaType } from '@/core/constants'
 import type { GeneralPressJudgment, GeneralPressRelease } from '@/core/constants'
 
+const { t } = useLanguage()
+
 const props = defineProps({
   apiUrlRelease: {
     type: String,
@@ -37,32 +39,63 @@ const transform_GeneralPressRelease = (items: GeneralPressRelease[]): GeneralPre
   return props.maxItems ? items.slice(0, props.maxItems) : items
 }
 
-const { data: generalPressRelease, error: generalPressReleaseError } = await useFetch<GeneralPressRelease[]>(props.apiUrlRelease, { transform: transform_GeneralPressRelease }) as { data: Ref<GeneralPressRelease[]>, error: Ref<Error> }
-const { data: generalPressJudgments, error: generalPressJudgmentsError } = await useFetch<GeneralPressJudgment[]>(props.apiUrlJudgments, { transform: transform_GeneralPressJudgment }) as { data: Ref<GeneralPressJudgment[]>, error: Ref<Error> }
+const { data: generalPressRelease, error: generalPressReleaseError, execute: fetchPressReleases }
+  = await useFetch<GeneralPressRelease[]>(props.apiUrlRelease,
+    { transform: transform_GeneralPressRelease, immediate: false, watch: false }) as { data: Ref<GeneralPressRelease[]>, error: Ref<Error>, execute: () => Promise<void> }
+const { data: generalPressJudgments, error: generalPressJudgmentsError, execute: fetchJudgments }
+  = await useFetch<GeneralPressJudgment[]>(props.apiUrlJudgments,
+    { transform: transform_GeneralPressJudgment, immediate: false, watch: false }) as { data: Ref<GeneralPressJudgment[]>, error: Ref<Error>, execute: () => Promise<void> }
 
-if (generalPressReleaseError.value || generalPressJudgmentsError.value) {
-  throw createError({ statusCode: 404, statusMessage: 'We have a issue with fetching data in MediaCard' })
+const medias = ref<(ExtendedGeneralPressRelease | ExtendedGeneralPressJudgment)[]>([])
+const isLoading = ref(true)
+const hasError = ref(false)
+
+async function fetchData() {
+  try {
+    isLoading.value = true
+    await Promise.all([fetchPressReleases(), fetchJudgments()])
+    if (generalPressReleaseError.value || generalPressJudgmentsError.value) {
+      hasError.value = true
+    }
+    else {
+      medias.value = [
+        ...generalPressJudgments.value?.map(media => ({
+          ...media,
+          shortDescription: media.description?.substring(0, 90).concat('...'),
+          type: MediaType.pressReleaseForJudgments,
+        })) || [],
+        ...generalPressRelease.value?.map(media => ({
+          ...media,
+          shortDescription: media.description?.substring(0, 90).concat('...'),
+          type: MediaType.generalPressRelease,
+        })) || [],
+      ].slice(0, props.maxItems ?? medias.value.length)
+    }
+  }
+  catch (error) {
+    hasError.value = true
+    console.error(error)
+  }
+  finally {
+    isLoading.value = false
+  }
 }
 
-const medias = computed<ExtendedGeneralPressRelease[] | ExtendedGeneralPressJudgment[]>(() => {
-  const combinedMedias = [
-    ...generalPressJudgments.value?.map(media => ({
-      ...media,
-      shortDescription: media.description?.substring(0, 90).concat('...'),
-      type: MediaType.pressReleaseForJudgments,
-    })) || [],
-    ...generalPressRelease.value?.map(media => ({
-      ...media,
-      shortDescription: media.description?.substring(0, 90).concat('...'),
-      type: MediaType.generalPressRelease,
-    })) || [],
-  ]
-  return props.maxItems ? combinedMedias.slice(0, props.maxItems) : combinedMedias
-})
+onMounted(fetchData)
 </script>
 
 <template>
   <v-row>
+    <v-col v-if="isLoading">
+      {{
+        t('general.loading')
+      }}
+    </v-col>
+    <v-col v-else-if="hasError">
+      {{
+        t('error.fetching-data')
+      }}
+    </v-col>
     <v-col
       v-for="(item, index) in medias ?? []"
       :key="index"
