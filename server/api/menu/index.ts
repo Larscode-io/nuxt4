@@ -192,28 +192,29 @@ export default defineEventHandler(async (_event) => {
           title: 'menu.prize.title',
           condition: 'is-german',
         },
+        {
+          title: 'DEV',
+          subMenu: [
+            {
+              to: RoutePathKeys.demoMailman,
+              title: 'menu.demo-mailman',
+            },
+            {
+              to: RoutePathKeys.demoLanguages,
+              title: 'menu.demo-languages',
+            },
+            {
+              to: RoutePathKeys.authLogin,
+              title: 'menu.auth-login',
+            },
+            {
+              to: RoutePathKeys.legacyContent,
+              title: 'menu.legacy-content',
+            },
+          ],
+        },
       ],
     },
-    {
-      title: 'DEV',
-      subMenu: [
-        {
-          to: RoutePathKeys.demoMailman,
-          title: 'menu.demo-mailman',
-        },
-        {
-          to: RoutePathKeys.demoLanguages,
-          title: 'menu.demo-languages',
-        },
-        {
-          to: RoutePathKeys.authLogin,
-          title: 'menu.auth-login',
-        },
-        {
-          to: RoutePathKeys.legacyContent,
-          title: 'menu.legacy-content',
-        },
-      ],
-    },
+
   ]
 })
