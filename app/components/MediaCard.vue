@@ -58,15 +58,21 @@ async function fetchData() {
       hasError.value = true
     }
     else {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       medias.value = [
-        ...generalPressJudgments.value?.map(media => ({
-          ...media,
-          shortDescription: media.description?.substring(0, 90).concat('...'),
+        ...generalPressJudgments.value?.map(({ title, id, description, ..._removeRest }) => ({
+          title,
+          id,
+          description,
+          shortDescription: description?.substring(0, 90).concat('...'),
           type: MediaType.pressReleaseForJudgments,
         })) || [],
-        ...generalPressRelease.value?.map(media => ({
-          ...media,
-          shortDescription: media.description?.substring(0, 90).concat('...'),
+        ...generalPressRelease.value?.map(({ title, id, description, ..._removeRest }) => ({
+          title,
+          id,
+          description,
+          shortDescription: description?.substring(0, 90).concat('...'),
           type: MediaType.generalPressRelease,
         })) || [],
       ].slice(0, props.maxItems ?? medias.value.length)
@@ -80,7 +86,6 @@ async function fetchData() {
     isLoading.value = false
   }
 }
-
 onMounted(fetchData)
 </script>
 
