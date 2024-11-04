@@ -40,7 +40,6 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
-        @vueerror="handleError"
       >
         <template
           #item="{ item: { id, formatedJudmentDate, nr, courtVerdict, description, availablePart } }: { item: Judgment }"
@@ -84,7 +83,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
           <v-card class="equal-height-card">
             <v-card-title
               class="media-card-title"
-              :style="{ position: 'relative', cursor: !description ? 'pointer' : 'default' }"
+              :style="{ cursor: !description ? 'pointer' : 'default' }"
               @click="!description && gotoMediaPage(id)"
             >
               {{ title }}
@@ -169,8 +168,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
                   <v-row>
                     <v-card-text>
                       <v-icon
-                        class="mr-1"
-                        color="#F4A261"
+                        class="mr-1 ray"
                       >
                         mdi-file-document-outline
                       </v-icon> {{ id }}
@@ -224,12 +222,11 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
                 <!-- Time and Location -->
                 <v-col
                   cols="6"
-                  class="d-flex flex-column"
+                  class="d-flex flex-column indi"
                 >
                   <div class="d-flex align-center mb-2">
                     <v-icon
                       class="mr-1"
-                      color="primary"
                     >
                       mdi-clock-time-four-outline
                     </v-icon>
@@ -238,7 +235,6 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
                   <div class="d-flex align-center mb-2">
                     <v-icon
                       class="mr-1"
-                      color="primary"
                     >
                       mdi-map-marker
                     </v-icon>
@@ -247,7 +243,6 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
                   <div class="d-flex align-center">
                     <v-icon
                       class="mr-1"
-                      color="primary"
                     >
                       mdi-file-document-outline
                     </v-icon>
@@ -404,29 +399,28 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
 .day1 {
   font-size: 32px;
   font-weight: bold;
-  color: $rajahYellow;
 }
 
 .month1 {
   font-size: 16px;
   text-transform: uppercase;
+}
+.ray {
   color: $rajahYellow;
 }
-
 .day {
   font-size: 32px;
   font-weight: bold;
-  color: #00529b;
-  /* Darker blue color */
 }
 
 .month {
   font-size: 16px;
   text-transform: uppercase;
-  color: #00529b;
-  /* Darker blue color */
 }
 
+.indi {
+  color: $indigo;
+}
 .v-card-title {
   font-weight: bold;
 }
