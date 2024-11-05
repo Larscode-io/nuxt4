@@ -36,7 +36,11 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
   <div>
     <span class="index-banner" />
     <v-container>
-      <h2>Recent judgments:</h2>
+      <div class="mt-2 title-container">
+        <h2 class="title-h2">
+          {{ t('menu.decisions.title') }}
+        </h2>
+      </div>
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
@@ -72,7 +76,11 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </template>
       </DecisionBox>
 
-      <h2>Press releases:</h2>
+      <div class="mt-2 title-container">
+        <h2 class="title-h2">
+          {{ t('general.message.latest-press-release') }}
+        </h2>
+      </div>
       <MediaCard
         :api-url-release="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
@@ -136,7 +144,12 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </template>
       </MediaCard>
 
-      <h2>Decisions:</h2>
+      <div class="mt-2 title-container">
+        <h2 class="title-h2">
+          {{ t('menu.agenda.title') }}
+        </h2>
+      </div>
+
       <AgendaCard
         :api-url="`${baseURL}${ApiUrl.pressJudgment}?lang=${locale}`"
         :max-items="0"
@@ -167,9 +180,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
                   </v-row>
                   <v-row>
                     <v-card-text>
-                      <v-icon
-                        class="mr-1 ray"
-                      >
+                      <v-icon class="mr-1 ray">
                         mdi-file-document-outline
                       </v-icon> {{ id }}
                     </v-card-text>
@@ -193,12 +204,13 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </template>
       </AgendaCard>
 
-      <h2>Public hearings:</h2>
       <PleadingCard
         :api-url="`${baseURL}${ApiUrl.pressPleadings}?lang=${locale}`"
         :max-items="0"
       >
-        <template #item="{ item: { id, processingLanguage, day, month, hora, shortDescription } }: { item: Pleading } ">
+        <template
+          #item="{ item: { id, processingLanguage, day, month, hora, shortDescription } }: { item: Pleading } "
+        >
           <v-card
             class="equal-height-card "
             :style="{ maxWidth: '300px' }"
@@ -225,25 +237,19 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
                   class="d-flex flex-column indi"
                 >
                   <div class="d-flex align-center mb-2">
-                    <v-icon
-                      class="mr-1"
-                    >
+                    <v-icon class="mr-1">
                       mdi-clock-time-four-outline
                     </v-icon>
                     <span>{{ hora || '14-17h' }}</span>
                   </div>
                   <div class="d-flex align-center mb-2">
-                    <v-icon
-                      class="mr-1"
-                    >
+                    <v-icon class="mr-1">
                       mdi-map-marker
                     </v-icon>
                     {{ t('general.brussels') }}
                   </div>
                   <div class="d-flex align-center">
-                    <v-icon
-                      class="mr-1"
-                    >
+                    <v-icon class="mr-1">
                       mdi-file-document-outline
                     </v-icon>
                     {{ id }} ({{ processingLanguage }})
