@@ -85,7 +85,7 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           api: 'modern',
-          additionalData: `@use "@/assets/scss/colors.scss" as *; @use "@/assets/scss/fonts.scss" as *;`,
+          additionalData: `@use "@/assets/scss/colors.scss" as *; @use "@/assets/scss/fonts.scss" as *; @use "@/assets/scss/media.scss" as *;`,
         },
       },
     },
