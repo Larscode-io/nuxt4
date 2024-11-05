@@ -40,10 +40,10 @@ const transform_GeneralPressRelease = (items: GeneralPressRelease[]): GeneralPre
 }
 
 const { data: generalPressRelease, error: generalPressReleaseError, execute: fetchPressReleases }
-  = await useFetch<GeneralPressRelease[]>(props.apiUrlRelease,
+  = useFetch<GeneralPressRelease[]>(props.apiUrlRelease,
     { transform: transform_GeneralPressRelease, immediate: false, watch: false }) as { data: Ref<GeneralPressRelease[]>, error: Ref<Error>, execute: () => Promise<void> }
 const { data: generalPressJudgments, error: generalPressJudgmentsError, execute: fetchJudgments }
-  = await useFetch<GeneralPressJudgment[]>(props.apiUrlJudgments,
+  = useFetch<GeneralPressJudgment[]>(props.apiUrlJudgments,
     { transform: transform_GeneralPressJudgment, immediate: false, watch: false }) as { data: Ref<GeneralPressJudgment[]>, error: Ref<Error>, execute: () => Promise<void> }
 
 const medias = ref<(ExtendedGeneralPressRelease | ExtendedGeneralPressJudgment)[]>([])
