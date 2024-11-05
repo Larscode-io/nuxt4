@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
@@ -8,23 +7,22 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }))
+        config.plugins?.push(vuetify({ autoImport: true }))
       })
     }],
   $development: {
     runtimeConfig: {
       public: {
-        redirectUri: process.env.REDIRECT_URI_DEV,
-        apiBaseUrl: process.env.API_URL_DEV || 'https://node04.const-court.be:443',
+        redirectUri: import.meta.env.REDIRECT_URI_DEV,
+        apiBaseUrl: import.meta.env.API_URL_DEV || 'https://node04.const-court.be:443',
       },
     },
   },
   $production: {
     runtimeConfig: {
       public: {
-        redirectUri: process.env.REDIRECT_URI_PROD,
-        apiBaseUrl: process.env.API_URL_PROD || 'https://node04.const-court.be:443',
+        redirectUri: import.meta.env.REDIRECT_URI_PROD,
+        apiBaseUrl: import.meta.env.API_URL_PROD || 'https://node04.const-court.be:443',
       },
     },
   },
@@ -32,41 +30,46 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     baseURL: '/nuxt/',
+    head: {
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    },
   },
+  // Global CSS: fonts.css is included globally
+  css: ['@/assets/css/fonts.css'],
   content: { locales: ['en', 'fr', 'nl', 'de'] },
   runtimeConfig: {
-    xapiBaseUrl: process.env.SERVER_API_BASE_URL || 'http://' + process.env.SERVERIP + ':' + process.env.SERVERPORT,
-    authSecret: process.env.AUTH_SECRET,
-    csamPass: process.env.CSAM_PASS,
-    dbHost: process.env.DB_HOST,
-    dbUser: process.env.DB_USER,
-    dbPassword: process.env.DB_PASSWORD,
-    dbName: process.env.DB_NAME,
-    solrLogin: process.env.SOLR_LOGIN,
-    solrPassword: process.env.SOLR_PASSWORD,
-    auDatabase: process.env.AU_DATABASE,
-    auPassword: process.env.AU_PASSWORD,
-    auServername: process.env.AU_SERVERNAME,
-    auUsername: process.env.AU_USERNAME,
-    fakeSecret: process.env.FAKE_SECRET,
-    solrHost: process.env.SOLR_HOST,
-    solrPort: process.env.SOLR_PORT,
-    baseUrl: process.env.BASE_URL,
-    fm1ProxyUrl: process.env.FM1_PROXY_URL,
-    fm2ProxyUrl: process.env.FM2_PROXY_URL,
+    xapiBaseUrl: import.meta.env.SERVER_API_BASE_URL || 'http://' + import.meta.env.SERVERIP + ':' + import.meta.env.SERVERPORT,
+    authSecret: import.meta.env.AUTH_SECRET,
+    csamPass: import.meta.env.CSAM_PASS,
+    dbHost: import.meta.env.DB_HOST,
+    dbUser: import.meta.env.DB_USER,
+    dbPassword: import.meta.env.DB_PASSWORD,
+    dbName: import.meta.env.DB_NAME,
+    solrLogin: import.meta.env.SOLR_LOGIN,
+    solrPassword: import.meta.env.SOLR_PASSWORD,
+    auDatabase: import.meta.env.AU_DATABASE,
+    auPassword: import.meta.env.AU_PASSWORD,
+    auServername: import.meta.env.AU_SERVERNAME,
+    auUsername: import.meta.env.AU_USERNAME,
+    fakeSecret: import.meta.env.FAKE_SECRET,
+    solrHost: import.meta.env.SOLR_HOST,
+    solrPort: import.meta.env.SOLR_PORT,
+    baseUrl: import.meta.env.BASE_URL,
+    fm1ProxyUrl: import.meta.env.FM1_PROXY_URL,
+    fm2ProxyUrl: import.meta.env.FM2_PROXY_URL,
     public: {
-      clientId: process.env.CLIENT_ID,
-      csamUser: process.env.CSAM_USER,
-      logoutRedirectUri: process.env.LOGOUT_REDIRECT_URI,
-      csamBaseUrl: process.env.CSAM_BASE_URL,
-      accessTokenUri: process.env.ACCESSTOKEN_URI,
-      userinfoUri: process.env.USERINFO_URI,
-      authorizeUri: process.env.AUTHORIZE_URI,
-      tokeninfoUri: process.env.TOKENINFO_URI,
-      introspectUri: process.env.INTROSPECT_URI,
-      endSession: process.env.ENDSESSION,
-      fakePublic: process.env.FAKE_PUBLIC,
-      mailmanProxyUrl: process.env.MAILMAN_PROXY_URL,
+      clientId: import.meta.env.CLIENT_ID,
+      csamUser: import.meta.env.CSAM_USER,
+      logoutRedirectUri: import.meta.env.LOGOUT_REDIRECT_URI,
+      csamBaseUrl: import.meta.env.CSAM_BASE_URL,
+      accessTokenUri: import.meta.env.ACCESSTOKEN_URI,
+      userinfoUri: import.meta.env.USERINFO_URI,
+      authorizeUri: import.meta.env.AUTHORIZE_URI,
+      tokeninfoUri: import.meta.env.TOKENINFO_URI,
+      introspectUri: import.meta.env.INTROSPECT_URI,
+      endSession: import.meta.env.ENDSESSION,
+      fakePublic: import.meta.env.FAKE_PUBLIC,
+      mailmanProxyUrl: import.meta.env.MAILMAN_PROXY_URL,
     },
   },
   build: { transpile: ['vuetify'] },
@@ -83,7 +86,8 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           api: 'modern',
-          additionalData: `@use "@/assets/scss/colors.scss" as *;`,
+          // SCSS Preprocessing: colors.scss and fonts.scss are automatically included in every SCSS file.
+          additionalData: `@use "@/assets/scss/colors.scss" as *; @use "@/assets/scss/fonts.scss" as *;`,
         },
       },
     },
@@ -93,7 +97,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  // css: [ '~/assets/colors.scss', ],
   i18n: {
     vueI18n: './i18n.config.ts',
     lazy: true,
