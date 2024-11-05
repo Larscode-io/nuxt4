@@ -34,7 +34,6 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
-  // Global CSS: fonts.css is included globally
   css: ['@/assets/css/fonts.css'],
   content: { locales: ['en', 'fr', 'nl', 'de'] },
   runtimeConfig: {
@@ -86,7 +85,6 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           api: 'modern',
-          // SCSS Preprocessing: colors.scss and fonts.scss are automatically included in every SCSS file.
           additionalData: `@use "@/assets/scss/colors.scss" as *; @use "@/assets/scss/fonts.scss" as *;`,
         },
       },
