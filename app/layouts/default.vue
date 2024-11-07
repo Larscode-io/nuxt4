@@ -5,19 +5,19 @@ import { useLanguage } from '@/composables/useLanguage'
 
 import ogImageUrl from '~/assets/img/ogImage.jpg'
 
+const { t, locale, switchLocalePath, availableLocales, switchLanguage, localePath } = useLanguage()
 useSeoMeta({
-  title: 'About Us - My Nuxt App',
-  description: 'Learn more about our team and values at My Nuxt App.',
-  ogTitle: 'About Us - My Nuxt App',
-  ogDescription: 'Learn more about our team and values at My Nuxt App.',
+  title: t('general.message.consts-court'),
+  description: t('general.banner'),
+  ogTitle: t('general.message.consts-court'),
+  ogDescription: t('general.banner'),
   ogImage: ogImageUrl,
   twitterCard: 'summary_large_image',
-  twitterTitle: 'About Us - My Nuxt App',
-  twitterDescription: 'Our mission and values at My Nuxt App.',
-  twitterImage: 'https://yourdomain.com/images/about-us.jpg',
+  twitterTitle: t('general.message.consts-court'),
+  twitterDescription: t('general.banner'),
+  twitterImage: ogImageUrl,
 })
 const router = useRouter()
-const { t, locale, switchLocalePath, availableLocales, switchLanguage, localePath } = useLanguage()
 
 const config = useRuntimeConfig()
 const baseURL = config.app.baseURL || '/' // Default to '/' if baseURL is not set
