@@ -9,11 +9,18 @@ const { t, locale, switchLocalePath, availableLocales, switchLanguage, localePat
 useSeoMeta({
   title: t('general.message.consts-court'),
   description: t('general.banner'),
+  lang: locale,
+  icon: '/favicon.ico',
   ogUrl: 'https://www.const-court.be/',
   ogType: 'website',
   ogTitle: t('general.message.consts-court'),
   ogDescription: t('general.banner'),
   ogImage: ogImageUrl,
+})
+useHead({
+  htmlAttrs: {
+    lang: locale.value,
+  },
 })
 const router = useRouter()
 
