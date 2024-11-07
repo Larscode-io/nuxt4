@@ -1,9 +1,19 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-
 import { useRouter } from 'vue-router'
-
 import { useLanguage } from '@/composables/useLanguage'
+
+useSeoMeta({
+  title: 'About Us - My Nuxt App',
+  description: 'Learn more about our team and values at My Nuxt App.',
+  ogTitle: 'About Us - My Nuxt App',
+  ogDescription: 'Learn more about our team and values at My Nuxt App.',
+  ogImage: 'https://yourdomain.com/images/about-us.jpg',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'About Us - My Nuxt App',
+  twitterDescription: 'Our mission and values at My Nuxt App.',
+  twitterImage: 'https://yourdomain.com/images/about-us.jpg',
+})
 
 const router = useRouter()
 const { t, locale, switchLocalePath, availableLocales, switchLanguage, localePath } = useLanguage()
