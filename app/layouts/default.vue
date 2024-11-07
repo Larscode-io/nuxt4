@@ -9,13 +9,11 @@ const { t, locale, switchLocalePath, availableLocales, switchLanguage, localePat
 useSeoMeta({
   title: t('general.message.consts-court'),
   description: t('general.banner'),
+  ogUrl: 'https://www.const-court.be/',
+  ogType: 'website',
   ogTitle: t('general.message.consts-court'),
   ogDescription: t('general.banner'),
   ogImage: ogImageUrl,
-  twitterCard: 'summary_large_image',
-  twitterTitle: t('general.message.consts-court'),
-  twitterDescription: t('general.banner'),
-  twitterImage: ogImageUrl,
 })
 const router = useRouter()
 
