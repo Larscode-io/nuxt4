@@ -3,18 +3,19 @@ import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLanguage } from '@/composables/useLanguage'
 
+import ogImageUrl from '~/assets/img/ogImage.jpg'
+
 useSeoMeta({
   title: 'About Us - My Nuxt App',
   description: 'Learn more about our team and values at My Nuxt App.',
   ogTitle: 'About Us - My Nuxt App',
   ogDescription: 'Learn more about our team and values at My Nuxt App.',
-  ogImage: 'https://yourdomain.com/images/about-us.jpg',
+  ogImage: ogImageUrl,
   twitterCard: 'summary_large_image',
   twitterTitle: 'About Us - My Nuxt App',
   twitterDescription: 'Our mission and values at My Nuxt App.',
   twitterImage: 'https://yourdomain.com/images/about-us.jpg',
 })
-
 const router = useRouter()
 const { t, locale, switchLocalePath, availableLocales, switchLanguage, localePath } = useLanguage()
 
