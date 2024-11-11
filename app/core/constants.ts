@@ -152,7 +152,7 @@ export enum RoutePathKeys {
   ruleAnonymizationPolicy = 'rule-anonymization-policy',
   rulePleadingsProcedure = 'rule-pleadings-procedure',
   ruleOthersInfo = 'rule-others-info',
-  informed = 'stay-informed',
+  informed = 'court-stay-informed',
   // PRIZE - Page : To delete - START
   prizeEN = 'prize',
   prizeFR = 'prix',
