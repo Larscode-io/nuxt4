@@ -61,7 +61,7 @@
 ### Work in Progress: here we focus on the framework (and less on the content).
 
 - **Install Nuxt 3 with Compatibility Version 4**
-  - [X] Create the folder structure: move `public` to `static`, and `assets` to `app/assets`.
+  - [X] Create the folder structure: move `static` to `public`, and `assets` to `app/assets`.
   - [X] Set up basic files: `app.vue`, `layouts/default.vue`, and `pages/index.vue`.
 
 - **Redirect Nuxt 4 installation as subpath of https://www.const-court.be**
