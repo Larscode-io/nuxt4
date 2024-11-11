@@ -45,12 +45,10 @@ const props = defineProps({
 
 const i = ref('')
 
-const imgSrc = computed(() => {
+const imgSrc = () => {
   try {
-    return new URL(props.src, import.meta.url).href
-  }
-  catch (error) {
-    console.error('Error computing image URL:', error)
+    return require(`~/assets/img/${props.src}`)
+  } catch (error) {
     return null
   }
 })
@@ -58,7 +56,6 @@ const imgSrc = computed(() => {
 onMounted(() => {
   try {
     i.value = new URL(props.src, import.meta.url).href
-    console.log('i.value:', i.value)
   }
   catch (error) {
     console.error('Error loading image URL:', error)
