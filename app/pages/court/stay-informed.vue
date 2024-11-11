@@ -150,21 +150,25 @@ onUpdated(() => {
     }
 }
 
-::v-deep .nuxt-content {
+::v-deep(.nuxt-content h3) {
+  padding-top: 32px;
+  padding-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 600;
 
-    h2,
-    h3 {
-        padding-top: 32px;
-        padding-bottom: 24px;
-        font-size: 2rem;
-        font-weight: 600;
+  @media (max-width: 960px) {
+    padding-top: 24px;
+    padding-bottom: 16px;
+    font-size: 1.5rem;
+  }
+}
 
-        @include tablet-portrait {
-            padding-top: 24px;
-            padding-bottom: 16px;
-            font-size: 1.5rem;
-        }
-    }
+::v-deep(.nuxt-content h3 a) {
+  text-decoration: none;
+}
+
+::v-deep(.nuxt-content p) {
+  padding: 10px;
 }
 
 .space {
