@@ -3,7 +3,6 @@
     justify="center"
     align="center"
   >
-    {{ props }}
     <v-img
       :src="i"
       :alt="alt"
@@ -39,6 +38,7 @@ const i = ref('')
 onMounted(() => {
   try {
     i.value = new URL(props.src, import.meta.url).href
+    console.log('i.value:', i.value)
   }
   catch (error) {
     console.error('Error loading image URL:', error)
