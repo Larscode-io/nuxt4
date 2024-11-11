@@ -5,9 +5,6 @@ locale: nl
 ---
 <br><br>
 
-![my image](public/court-transparent.png)
-
-
 <foto-component-prize
 id="prize-content-img-court"
 max-width="50%"
