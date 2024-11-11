@@ -1,9 +1,16 @@
 <template>
-  <v-img
-    :src="i"
-    :alt="alt"
-    :max-width="maxWidth"
-  />
+  <v-container>
+    <v-row
+      justify="center"
+      align="center"
+    >
+      <v-img
+        :src="i"
+        :alt="alt"
+        :max-width="maxWidth"
+      />
+    </v-row>
+  </v-container>
 </template>
 
 <script setup>
