@@ -1,15 +1,22 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
     '@nuxtjs/i18n',
-    (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) => {
-        config.plugins?.push(vuetify({ autoImport: true }))
-      })
-    }],
+    // configure Vite to use Vuetify as a plugin
+    // (_options, nuxt) => {
+    //   nuxt.hooks.hook('vite:extendConfig', (config) => {
+    //     config.plugins?.push(
+    //       vuetify({ autoImport: true }))
+    //   })
+    // },
+  ],
+  plugins: [
+    '~/plugins/vuetify',
+  ],
   $development: {
     runtimeConfig: {
       public: {
@@ -34,8 +41,15 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
-  css: ['@/assets/css/fonts.css'],
-  content: { locales: ['en', 'fr', 'nl', 'de'] },
+  css: [
+    // 'vuetify/lib/styles/main.sass',
+    'vuetify/styles',
+    '~/assets/css/fonts.css',
+    '~/assets/scss/vuetify-variables.scss',
+    '@mdi/font/css/materialdesignicons.css', // MDI icons
+
+  ],
+  // content: { locales: ['en', 'fr', 'nl', 'de'] },
   runtimeConfig: {
     xapiBaseUrl: import.meta.env.SERVER_API_BASE_URL || 'http://' + import.meta.env.SERVERIP + ':' + import.meta.env.SERVERPORT,
     authSecret: import.meta.env.AUTH_SECRET,
@@ -85,7 +99,11 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           api: 'modern',
-          additionalData: `@use "@/assets/scss/colors.scss" as *; @use "@/assets/scss/fonts.scss" as *; @use "@/assets/scss/media.scss" as *;`,
+          additionalData: `
+            @use "@/assets/scss/colors.scss" as *;
+            @use "@/assets/scss/fonts.scss" as *;
+            @use "@/assets/scss/media.scss" as *;
+          `,
         },
       },
     },
@@ -93,6 +111,9 @@ export default defineNuxtConfig({
       template: {
         transformAssetUrls,
       },
+    },
+    ssr: {
+      noExternal: ['vuetify'],
     },
   },
   i18n: {
