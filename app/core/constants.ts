@@ -108,7 +108,7 @@ export enum ContentKeys {
   ruleOthersInfo = 'rule-others-info',
   fullTextSearchExplanation = 'full-text-search-explanation',
   informed = 'stay-informed',
-
+  prize = 'prize',
 }
 
 export enum RoutePathKeys {
@@ -154,10 +154,7 @@ export enum RoutePathKeys {
   ruleOthersInfo = 'rule-others-info',
   informed = 'court-stay-informed',
   // PRIZE - Page : To delete - START
-  prizeEN = 'prize',
-  prizeFR = 'prix',
-  prizeNL = 'prijs',
-  prizeDE = 'preis',
+  prize = 'court-media-prix',
   // PRIZE - Page : To delete - END
   demoMailman = 'demo-mailman',
   demoLanguages = 'demo-languages',

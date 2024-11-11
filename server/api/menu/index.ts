@@ -15,10 +15,10 @@ export default defineEventHandler(async (_event) => {
               to: RoutePathKeys.presentationSituation,
               title: 'menu.court.presentation.history-of-court',
             },
-            {
-              to: RoutePathKeys.presentationOrganization,
-              title: 'menu.court.presentation.organization',
-            },
+            // {
+            //   to: RoutePathKeys.presentationOrganization,
+            //   title: 'menu.court.presentation.organization',
+            // },
             {
               to: RoutePathKeys.presentationJurisdiction,
               title: 'menu.court.presentation.jurisdiction',
@@ -151,46 +151,8 @@ export default defineEventHandler(async (_event) => {
           to: RoutePathKeys.media,
           title: 'menu.press-and-media.media-unit',
         },
-      ],
-    },
-    {
-      title: 'menu.rule.title',
-      subMenu: [
         {
-          to: RoutePathKeys.ruleRecommendationsToTheJudgesAQuoAndTheParties,
-          title: 'menu.rule.recommendations-to-the-judges-a-quo-and-the-parties',
-        },
-        {
-          to: RoutePathKeys.ruleAnonymizationPolicy,
-          title: 'menu.rule.anonymization-policy',
-        },
-        {
-          to: RoutePathKeys.rulePleadingsProcedure,
-          title: 'menu.rule.pleadings-procedure',
-        },
-      ],
-    },
-    { to: RoutePathKeys.informed, title: 'menu.informed' },
-    {
-      title: 'menu.prize.title',
-      subMenu: [
-        {
-          to: RoutePathKeys.prizeFR,
-          title: 'menu.prize.title',
-          condition: 'is-french',
-        },
-        {
-          to: RoutePathKeys.prizeNL,
-          title: 'menu.prize.title',
-          condition: 'is-dutch',
-        },
-        {
-          to: RoutePathKeys.prizeDE,
-          title: 'menu.prize.title',
-          condition: 'is-german',
-        },
-        {
-          title: 'DEV',
+          title: 'DEVELOPMENT ONLY',
           subMenu: [
             {
               to: RoutePathKeys.demoMailman,
@@ -212,6 +174,28 @@ export default defineEventHandler(async (_event) => {
         },
       ],
     },
+    {
+      title: 'menu.rule.title',
+      subMenu: [
+        {
+          to: RoutePathKeys.ruleRecommendationsToTheJudgesAQuoAndTheParties,
+          title: 'menu.rule.recommendations-to-the-judges-a-quo-and-the-parties',
+        },
+        {
+          to: RoutePathKeys.ruleAnonymizationPolicy,
+          title: 'menu.rule.anonymization-policy',
+        },
+        {
+          to: RoutePathKeys.rulePleadingsProcedure,
+          title: 'menu.rule.pleadings-procedure',
+        },
+      ],
+    },
+    { to: RoutePathKeys.informed, title: 'menu.informed' },
 
+    {
+      to: RoutePathKeys.prize,
+      title: 'menu.prize.title',
+    },
   ]
 })
