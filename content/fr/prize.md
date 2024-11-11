@@ -5,47 +5,27 @@ locale: fr
 ---
 <br><br>
 
-
-
-
 <foto-component-prize
 id="prize-content-img-court"
 max-width="50%"
-src="prize/court-transparent.png"
-lazy="prize/court-transparent.png"
+src="../assets/img/prize/court-transparent.png"
 alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle"
 link="">
 </foto-component-prize>
-
-<!--
-<img id="prize-content-img-court" src="/_nuxt/assets/img/prize/court-transparent.png" alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle" />
--->
-
 
 <p id="prize-content-title">Prix en vue du 40e anniversaire de la Cour constitutionnelle</p>
 
-
 <foto-component-prize
 id="prize-content-img-deco"
-max-width="10%"
-src="prize/deco-transparent.png"
-lazy="prize/deco-transparent.png"
+max-width="60%"
+src="../assets/img/prize/deco-transparent.png"
 alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle"
 link="">
 </foto-component-prize>
-
-<!--
-<img id="prize-content-img-deco" src="/_nuxt/assets/img/prize/deco-transparent.png" alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle" />
--->
-
 
 <br>
 
 <p class="prize-content-text prize-content-text-wide" id="prize-content-text-1">En 2025, la Cour constitutionnelle fêtera le quarantième anniversaire de son premier arrêt. Sa mission consiste principalement à préserver la paix entre les communautés de notre pays et à veiller à ce que nos concitoyens puissent jouir de tous les droits fondamentaux garantis par la Constitution. Afin de marquer le coup pour son 40e anniversaire, <b>la Cour constitutionnelle a pris l’initiative de décerner quatre prix : deux prix pour des dissertations rédigées au cours de la période 2024-2025 par des élèves de dernière année de l’enseignement secondaire et deux prix pour des essais rédigés au cours de la même période par des étudiants de master en droit,</b> sachant que seront récompensés, pour chaque catégorie, un texte rédigé en français et un texte rédigé en néerlandais. Les dissertations et essais rédigés en allemand pourront donner lieu à la remise d’un prix supplémentaire.</p>
-
-<!--
-<img id="prize-content-img-flyer" src="/_nuxt/assets/img/prize/prize-flyer-a4-fr.jpeg" alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle" />
--->
 
 <br>
 
@@ -69,26 +49,17 @@ link="">
 
 <br>
 
-<!-- Adresse e-mail pour soumettre les textes : [prix@const-court.be](mailto:prix%40const-court.be).-->
-
 <p class="prize-content-text prize-content-text-wide" id="prize-content-text-7">Les lauréats se verront remettre un petit souvenir et auront l’opportunité de présenter brièvement leur dissertation ou essai lors de la célébration du 40e anniversaire de la Cour constitutionnelle. Ils recevront également un chèque, qui s’élèvera à (500) euros pour les élèves de dernière année de l’enseignement secondaire et à (1000) euros pour les étudiants de master.</p>
 
 <br>
 
 <foto-component-prize
 id="prize-content-img-deco"
-max-width="10%"
-src="prize/deco-transparent.png"
-lazy="prize/deco-transparent.png"
+max-width="60%"
+src="../assets/img/prize/deco-transparent.png"
 alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle"
 link="">
 </foto-component-prize>
-
-<!--
-<img id="prize-content-img-deco" src="/_nuxt/assets/img/prize/deco-transparent.png" alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle" />
--->
-
-
 
 <style scoped>
 

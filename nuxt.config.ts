@@ -50,6 +50,14 @@ export default defineNuxtConfig({
 
   ],
   // content: { locales: ['en', 'fr', 'nl', 'de'] },
+  content: {
+    markdown: {
+      remarkPlugins: [],
+      rehypePlugins: [],
+      // Enable Vue components in Markdown
+      mdc: true,
+    },
+  },
   runtimeConfig: {
     xapiBaseUrl: import.meta.env.SERVER_API_BASE_URL || 'http://' + import.meta.env.SERVERIP + ':' + import.meta.env.SERVERPORT,
     authSecret: import.meta.env.AUTH_SECRET,
@@ -95,6 +103,11 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   vite: {
+    server: {
+      hmr: {
+        overlay: false,
+      },
+    },
     css: {
       preprocessorOptions: {
         scss: {

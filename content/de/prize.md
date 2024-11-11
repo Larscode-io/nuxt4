@@ -5,31 +5,21 @@ locale: de
 ---
 <br><br>
 
-
-
-
 <foto-component-prize
 id="prize-content-img-court"
 max-width="50%"
-src="prize/court-transparent.png"
-lazy="prize/court-transparent.png"
+src="../assets/img/prize/court-transparent.png"
 alt="Preis zum 40-jährigen Bestehen des Verfassungsgerichtshofes"
 link="">
 </foto-component-prize>
-
-<!--
-<img id="prize-content-img-court" src="/_nuxt/assets/img/prize/court-transparent.png" alt="Preis zum 40-jährigen Bestehen des Verfassungsgerichtshofes" />
--->
-
 
 <p id="prize-content-title">Preis zum 40-jährigen Bestehen des Verfassungsgerichtshofes</p>
 
 
 <foto-component-prize
 id="prize-content-img-deco"
-max-width="10%"
-src="prize/deco-transparent.png"
-lazy="prize/deco-transparent.png"
+max-width="60%"
+src="../assets/img/prize/deco-transparent.png"
 alt="Preis zum 40-jährigen Bestehen des Verfassungsgerichtshofes"
 link="">
 </foto-component-prize>
@@ -77,21 +67,11 @@ link="">
 
 <foto-component-prize
 id="prize-content-img-deco"
-max-width="10%"
-src="prize/deco-transparent.png"
-lazy="prize/deco-transparent.png"
+max-width="60%"
+src="../assets/img/prize/deco-transparent.png"
 alt="Preis zum 40-jährigen Bestehen des Verfassungsgerichtshofes"
 link="">
 </foto-component-prize>
-
-<!--
-<img id="prize-content-img-deco" src="/_nuxt/assets/img/prize/deco-transparent.png" alt="Preis zum 40-jährigen Bestehen des Verfassungsgerichtshofes" />
--->
-
-
-
-
-
 
 <style scoped>
 

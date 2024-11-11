@@ -5,46 +5,27 @@ locale: nl
 ---
 <br><br>
 
-
-
-
 <foto-component-prize
 id="prize-content-img-court"
 max-width="50%"
-src="prize/court-transparent.png"
-lazy="prize/court-transparent.png"
+src="../assets/img/prize/court-transparent.png"
 alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof"
 link="">
 </foto-component-prize>
-
-<!--
-<img id="prize-content-img-court" src="/_nuxt/assets/img/prize/court-transparent.png" alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof" />
--->
-
 
 <p id="prize-content-title">Prijs naar aanleiding van de 40ste verjaardag van het Grondwettelijk Hof</p>
 
-
 <foto-component-prize
 id="prize-content-img-deco"
-max-width="10%"
-src="prize/deco-transparent.png"
-lazy="prize/deco-transparent.png"
+max-width="60%"
+src="../assets/img/prize/deco-transparent.png"
 alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof"
 link="">
 </foto-component-prize>
-
-<!--
-<img id="prize-content-img-deco" src="/_nuxt/assets/img/prize/deco-transparent.png" alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof" />
--->
 
 <br>
 
 <p class="prize-content-text prize-content-text-wide" id="prize-content-text-1">In 2025 viert het Grondwettelijk Hof de veertigste verjaardag van zijn eerste arrest. Zijn taak bestaat er hoofdzakelijk in de vrede tussen de gemeenschappen van dit land te bewaren en ervoor te zorgen dat mensen die in ons land leven alle door de Grondwet gewaarborgde grondrechten kunnen genieten. Om zijn 40ste verjaardag luister bij te zetten, <b>heeft het Grondwettelijk Hof het initiatief genomen om vier prijzen uit te reiken, twee voor verhandelingen van laatstejaarsleerlingen van het secundair onderwijs in 2024-2025, en twee voor essays van masterstudenten rechten in 2024-2025</b>, waarbij in elke categorie één werkstuk in het Frans en één werkstuk in het Nederlands bekroond worden. Werkstukken die in het Duits zijn gesteld, kunnen aanleiding geven tot de toekenning van een bijkomende prijs.</p>
-
-<!--
-<img id="prize-content-img-flyer" src="/_nuxt/assets/img/prize/prize-flyer-a4-nl.jpeg" alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof" />
--->
 
 <br>
 
@@ -77,20 +58,11 @@ link="">
 
 <foto-component-prize
 id="prize-content-img-deco"
-max-width="10%"
-src="prize/deco-transparent.png"
-lazy="prize/deco-transparent.png"
+max-width="60%"
+src="../assets/img/prize/deco-transparent.png"
 alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof"
 link="">
 </foto-component-prize>
-
-<!--
-<img id="prize-content-img-deco" src="/_nuxt/assets/img/prize/deco-transparent.png" alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof" />
--->
-
-
-
-
 
 <style scoped>
 
