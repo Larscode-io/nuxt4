@@ -3,6 +3,7 @@
     justify="center"
     align="center"
   >
+    {{ props }}
     <v-img
       :src="i"
       :alt="alt"
