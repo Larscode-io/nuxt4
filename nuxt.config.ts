@@ -6,13 +6,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/eslint',
     '@nuxtjs/i18n',
-    // configure Vite to use Vuetify as a plugin
-    // (_options, nuxt) => {
-    //   nuxt.hooks.hook('vite:extendConfig', (config) => {
-    //     config.plugins?.push(
-    //       vuetify({ autoImport: true }))
-    //   })
-    // },
   ],
   plugins: [
     '~/plugins/vuetify',
@@ -46,15 +39,13 @@ export default defineNuxtConfig({
     'vuetify/styles',
     '~/assets/css/fonts.css',
     '~/assets/scss/vuetify-variables.scss',
-    '@mdi/font/css/materialdesignicons.css', // MDI icons
+    '@mdi/font/css/materialdesignicons.css',
 
   ],
-  // content: { locales: ['en', 'fr', 'nl', 'de'] },
   content: {
     markdown: {
       remarkPlugins: [],
       rehypePlugins: [],
-      // Enable Vue components in Markdown
       mdc: true,
     },
   },
