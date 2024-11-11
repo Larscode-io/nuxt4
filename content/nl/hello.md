@@ -1,6 +1,7 @@
 ---
 title: Catch-All Pagina voor Markdown Inhoud
 year: 2024
+locale: nl
 ---
 
 ### Catch-All Pagina voor Markdown Inhoud
