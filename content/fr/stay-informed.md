@@ -1,6 +1,6 @@
 ---
 title: "Rester informé(e)"
-description: ""
+description: "Restez informé des dernières mises à jour et informations de la Cour."
 posterUrl: ~/assets/img/newsletter-background.png
 locale: fr
 ---

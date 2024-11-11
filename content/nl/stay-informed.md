@@ -1,6 +1,6 @@
 ---
 title: "Blijf op de hoogte"
-description: ""
+description: "Blijf op de hoogte van de laatste updates en informatie van het Hof."
 posterUrl: ~/assets/img/newsletter-background.png
 locale: nl
 ---
