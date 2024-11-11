@@ -1,24 +1,9 @@
 <template>
-  <v-row
-    justify="center"
-    align="center"
-  >
-    <v-img
-      :src="i"
-      :alt="alt"
-      :max-width="maxWidth"
-    />
-    <img
-      :src="i"
-      :alt="alt"
-      :max-width="maxWidth"
-    >
-    <v-img
-      :src="imgSrc"
-      :alt="alt"
-      :max-width="maxWidth"
-    />
-  </v-row>
+  <v-img
+    :src="i"
+    :alt="alt"
+    :max-width="maxWidth"
+  />
 </template>
 
 <script setup>
@@ -44,14 +29,6 @@ const props = defineProps({
 })
 
 const i = ref('')
-
-const imgSrc = () => {
-  try {
-    return require(`~/assets/img/${props.src}`)
-  } catch (error) {
-    return null
-  }
-})
 
 onMounted(() => {
   try {
