@@ -15,13 +15,11 @@ link="">
 
 <p id="prize-content-title">Prijs naar aanleiding van de 40ste verjaardag van het Grondwettelijk Hof</p>
 
-<foto-component-prize
+<img
 id="prize-content-img-deco"
-max-width="60%"
+style="max-width: 60%;"
 src="../assets/img/prize/deco-transparent.png"
-alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof"
-link="">
-</foto-component-prize>
+alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof">
 
 <br>
 
