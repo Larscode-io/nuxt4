@@ -1,45 +1,43 @@
 @font-face {
   font-family: 'Tiempos Headline';
-  src: url('~static/fonts/TiemposHeadline/TiemposHeadline-Semibold.woff')
-    format('woff');
+  src: url('/fonts/TiemposHeadline/TiemposHeadline-Semibold.woff') format('woff');
   font-display: swap;
 
 }
 
 @font-face {
   font-family: 'Tiempos Headline Italic';
-  src: url('~static/fonts/TiemposHeadline/TiemposHeadline-SemiboldItalic.woff')
-    format('woff');
-  font-display: swap;
+  src: url('/fonts/TiemposHeadline/TiemposHeadline-SemiboldItalic.woff');
+  src: url('/fonts/TiemposHeadline/TiemposHeadline-SemiboldItalic.woff') format('woff');
 
 }
 
 @font-face {
   font-family: 'Proxima Nova';
-  src: url('~static/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
-    url('~static/fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2');
-  font-display: swap;
-
+  src: url('/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
+    url('/fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2');
+  src: url('/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
+    url('/fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Proxima Nova Semibold';
-  src: url('~static/fonts/ProximaNova/ProximaNova-SemiBold.woff') format('woff'),
-  url('~static/fonts/ProximaNova/ProximaNova-SemiBold.woff2') format('woff2');
-  font-display: swap;
-
+  src: url('/fonts/ProximaNova/ProximaNova-SemiBold.woff') format('woff'),
+  url('/fonts/ProximaNova/ProximaNova-SemiBold.woff2') format('woff2');
+  src: url('/fonts/ProximaNova/ProximaNova-SemiBold.woff') format('woff'),
+  url('/fonts/ProximaNova/ProximaNova-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Proxima Nova Bold';
-  src: url('~static/fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
-  url('~static/fonts/ProximaNova/ProximaNova-Bold.woff2') format('woff2');
-  font-display: swap;
-
+  src: url('/fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
+  url('/fonts/ProximaNova/ProximaNova-Bold.woff2') format('woff2');
+  src: url('/fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
+  url('/fonts/ProximaNova/ProximaNova-Bold.woff2') format('woff2');
 }
 
-* {
+/* * {
   box-sizing: border-box;
   font-family: proxima-nova, sans-serif;
   font-weight: 400;
-}
+} */
