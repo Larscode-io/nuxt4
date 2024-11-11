@@ -5,7 +5,7 @@ locale: nl
 ---
 <br><br>
 
-![my image](/public/court-transparent.png)
+![my image](public/court-transparent.png)
 
 
 <foto-component-prize
