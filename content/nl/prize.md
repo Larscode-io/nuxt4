@@ -8,7 +8,7 @@ locale: nl
 <foto-component-prize
 id="prize-content-img-court"
 max-width="50%"
-src="../assets/img/prize/court-transparent.png"
+src="/prize/court-transparent.png"
 alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof"
 link="">
 </foto-component-prize>
