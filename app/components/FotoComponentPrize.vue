@@ -10,14 +10,6 @@
         :max-width="maxWidth"
       />
     </v-row>
-    <v-row>
-      <img
-        v-row
-        :src="i"
-        :alt="alt"
-        :max-width="maxWidth"
-      >
-    </v-row>
   </v-container>
 </template>
 
