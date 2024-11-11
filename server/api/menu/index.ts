@@ -170,10 +170,7 @@ export default defineEventHandler(async (_event) => {
         },
       ],
     },
-    {
-      to: RoutePathKeys.informed,
-      title: 'menu.informed',
-    },
+    { to: RoutePathKeys.informed, title: 'menu.informed' },
     {
       title: 'menu.prize.title',
       subMenu: [
