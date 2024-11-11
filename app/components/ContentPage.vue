@@ -49,8 +49,6 @@ const { t, locale } = useLanguage()
 const currentActiveContentInToc = ref<string>('')
 const { data: page } = await useAsyncData('content', async () => {
   try {
-    console.error('props.contentPath', props.contentPath)
-    console.error('locale.value', locale.value)
     const doc = await queryContent(`${locale.value}/${props.contentPath}`)
       .findOne()
     const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
