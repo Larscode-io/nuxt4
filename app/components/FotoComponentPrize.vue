@@ -13,11 +13,16 @@
       :alt="alt"
       :max-width="maxWidth"
     >
+    <v-img
+      :src="imgSrc"
+      :alt="alt"
+      :max-width="maxWidth"
+    />
   </v-row>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
 
 const props = defineProps({
   alt: {
@@ -39,6 +44,16 @@ const props = defineProps({
 })
 
 const i = ref('')
+
+const imgSrc = computed(() => {
+  try {
+    return new URL(props.src, import.meta.url).href
+  }
+  catch (error) {
+    console.error('Error computing image URL:', error)
+    return null
+  }
+})
 
 onMounted(() => {
   try {
