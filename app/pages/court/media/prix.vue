@@ -12,27 +12,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUpdated } from 'vue'
-import FotoComponentPrize from '@/components/FotoComponentPrize'
+import { ref } from 'vue'
+import FotoComponentPrize from '~/components/FotoComponentPrize.vue'
 // // import ErrorCard from '../components/ErrorCard.vue'
-import imgX from '~/assets/img/prize/prize-banner.jpg'
-import prizeImgCourt from '~/assets/img/prize/court-transparent.png'
-import prizeImgFlyer from '~/assets/img/prize/prize-flyer-a4-fr.jpeg'
-import prizeImgDeco from '~/assets/img/prize/deco-transparent.png'
-
-import img from '~/assets/img/newsletter-background-opt.png'
 import { ContentKeys } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
-const { t, locale } = useLanguage()
-
-const route = useRoute()
+const { locale } = useLanguage()
 
 const contentPath = ref(`${ContentKeys.prize}`)
 const { data: page } = await useAsyncData('content', async () => {
   try {
-    // const doc = await queryContent(`${locale.value}/${contentPath.value}`)
-    const doc = await queryContent(`${locale.value}/prize`)
+    const doc = await queryContent(`${locale.value}/${contentPath.value}`)
       .findOne()
     return doc
   }
@@ -41,7 +32,7 @@ const { data: page } = await useAsyncData('content', async () => {
     return null
   }
 })
-// Define the components to be used in the Markdown renderer
+// The components used in the Markdown renderer
 const components = {
   FotoComponentPrize,
 }
