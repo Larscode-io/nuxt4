@@ -8,6 +8,11 @@
       :alt="alt"
       :max-width="maxWidth"
     />
+    <img
+      :src="i"
+      :alt="alt"
+      :max-width="maxWidth"
+    >
   </v-row>
 </template>
 
