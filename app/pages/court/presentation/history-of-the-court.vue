@@ -52,7 +52,9 @@ const { data: page } = await useAsyncData('content', async () => {
   try {
     const doc = await queryContent(`${locale.value}/${contentPath.value}`)
       .findOne()
+    console.log('doc', doc)
     const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
+    console.log('idsTo', idsTo)
     const hash = route.hash.substring(1)
 
     currentActiveContentInToc.value
