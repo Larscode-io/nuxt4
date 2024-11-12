@@ -1,13 +1,15 @@
 <template>
   <div>
     <BannerImage
-      v-if="page"
       :title="page?.title"
       :description="page?.description"
       :image="img"
       alt=""
     />
-    <v-container class="flex-column align-start flex-nowrap">
+    <v-container
+      v-if="status === 'success'"
+      class="flex-column align-start flex-nowrap"
+    >
       <v-row>
         <v-col
           v-if="hasSidebarLinks"
@@ -33,6 +35,11 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-container v-else-if="status === 'error'">
+      <v-alert type="error">
+        {{ error?.message || 'An error occurred while loading the content.' }}
+      </v-alert>
+    </v-container>
   </div>
 </template>
 
@@ -48,8 +55,9 @@ const { t, locale } = useLanguage()
 const currentActiveContentInToc = ref<string>('')
 const contentPath = ref(`${ContentKeys.presentationSituation}`)
 
-const { data: page } = await useAsyncData('content', async () => {
+const { data: page, status, error } = await useAsyncData('content', async () => {
   try {
+    await new Promise(resolve => setTimeout(resolve, 1000))
     const doc = await queryContent(`${locale.value}/${contentPath.value}`)
       .findOne()
     const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
@@ -61,7 +69,7 @@ const { data: page } = await useAsyncData('content', async () => {
   }
   catch (error) {
     console.error('Error fetching content:', error)
-    return null
+    throw error
   }
 })
 
@@ -75,7 +83,7 @@ const sideBarLinks = computed(() => {
       return {
         ...toc,
         id: toc.id,
-        text: toc.text ? toc.text.split('.')[1]?.trim() : '',
+        text: toc.text ? toc.text.split('.')[1]?.trim() : 'Untitled',
       }
     }) || []
 })

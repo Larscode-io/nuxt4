@@ -4,7 +4,7 @@
     fluid
   >
     <ContentRendererMarkdown
-      :value="page.body"
+      :value="page?.body || {}"
       :components="components"
       class="nuxt-content content-renderer"
     />

@@ -6,6 +6,8 @@ import { useLanguage } from '@/composables/useLanguage'
 
 import ogImageUrl from '~/assets/img/ogImage.jpg'
 
+import { useNuxtApp } from '#app'
+
 const { t, locale, availableLocales, switchLanguage, localePath } = useLanguage()
 useSeoMeta({
   title: t('general.message.consts-court'),
@@ -54,6 +56,18 @@ onMounted(() => {
 })
 const h = useTemplateRef('appBarRef')
 provide('menuHeight', menuHeight)
+
+const isLoading = ref(false)
+
+const nuxtApp = useNuxtApp()
+
+nuxtApp.hook('page:start', () => {
+  isLoading.value = true
+})
+
+nuxtApp.hook('page:finish', () => {
+  isLoading.value = false
+})
 </script>
 
 <template>
@@ -167,6 +181,16 @@ provide('menuHeight', menuHeight)
     </v-navigation-drawer>
 
     <v-main class="main-content">
+      <v-overlay
+        :model-value="isLoading"
+        class="align-center justify-center"
+      >
+        <v-progress-circular
+          indeterminate
+          size="64"
+        />
+      </v-overlay>
+
       <NuxtPage />
     </v-main>
   </v-app>
