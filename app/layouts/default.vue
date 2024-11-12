@@ -182,7 +182,7 @@ nuxtApp.hook('page:finish', () => {
 
     <v-main class="main-content">
       <v-overlay
-        :model-value="isLoading"
+        :value="isLoading"
         class="align-center justify-center"
       >
         <v-progress-circular

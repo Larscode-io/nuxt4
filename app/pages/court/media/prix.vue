@@ -13,8 +13,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+// Ensure that the component is correctly imported and passed to the Markdown renderer.
 import FotoComponentPrize from '~/components/FotoComponentPrize.vue'
-// // import ErrorCard from '../components/ErrorCard.vue'
 import { ContentKeys } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
