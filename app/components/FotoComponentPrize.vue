@@ -1,20 +1,16 @@
 <template>
-  <v-container>
-    <v-row
-      justify="center"
-      align="center"
-    >
-      <v-img
-        :src="i"
-        :alt="alt"
-        :max-width="maxWidth"
-      />
-    </v-row>
-  </v-container>
+  <v-row class="d-flex justify-center align-center">
+    <v-img
+      v-if="iSrc"
+      :src="iSrc"
+      :alt
+      :max-width
+    />
+  </v-row>
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const props = defineProps({
   alt: {
@@ -25,24 +21,19 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  lazy: {
-    type: String,
-    required: false,
-  },
   maxWidth: {
     type: String,
     required: true,
   },
 })
 
-const i = ref('')
+const iSrc = ref('')
 
-onMounted(() => {
-  try {
-    i.value = new URL(props.src, import.meta.url).href
-  }
-  catch (error) {
-    console.error('Error loading image URL:', error)
-  }
-})
+const loadImage = async () => {
+  const imagePath = props.src || ''
+  const images2 = import.meta.glob('../assets/img/prize/*.png', { eager: true, import: 'default' })
+  iSrc.value = images2[imagePath] || 'Image not available'
+}
+
+onMounted(loadImage)
 </script>
