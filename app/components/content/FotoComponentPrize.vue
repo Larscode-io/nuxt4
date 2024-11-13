@@ -6,6 +6,13 @@
       :alt
       :max-width
     />
+
+    <div v-else>
+      <v-progress-circular
+        indeterminate
+        color="primary"
+      />
+    </div>
   </v-row>
 </template>
 
@@ -32,7 +39,7 @@ const iSrc = ref('')
 const loadImage = async () => {
   const imagePath = props.src || ''
   const images2 = import.meta.glob('../../assets/img/prize/*.png', { eager: true, import: 'default' })
-  iSrc.value = images2[imagePath] || 'Image not available'
+  iSrc.value = images2[imagePath]
 }
 
 onMounted(loadImage)
