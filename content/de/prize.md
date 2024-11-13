@@ -8,7 +8,7 @@ locale: de
 <foto-component-prize
 id="prize-content-img-court"
 max-width="50%"
-src="../assets/img/prize/court-transparent.png"
+src="../../assets/img/prize/court-transparent.png"
 alt="Preis zum 40-jährigen Bestehen des Verfassungsgerichtshofes"
 link="">
 </foto-component-prize>
@@ -19,7 +19,7 @@ link="">
 <foto-component-prize
 id="prize-content-img-deco"
 max-width="60%"
-src="../assets/img/prize/deco-transparent.png"
+src="../../assets/img/prize/deco-transparent.png"
 alt="Preis zum 40-jährigen Bestehen des Verfassungsgerichtshofes"
 link="">
 </foto-component-prize>
@@ -68,7 +68,7 @@ link="">
 <foto-component-prize
 id="prize-content-img-deco"
 max-width="60%"
-src="../assets/img/prize/deco-transparent.png"
+src="../../assets/img/prize/deco-transparent.png"
 alt="Preis zum 40-jährigen Bestehen des Verfassungsgerichtshofes"
 link="">
 </foto-component-prize>

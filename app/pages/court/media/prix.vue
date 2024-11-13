@@ -5,7 +5,6 @@
   >
     <ContentRendererMarkdown
       :value="page?.body || {}"
-      :components="components"
       class="nuxt-content content-renderer"
     />
   </v-container>
@@ -13,8 +12,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-// Ensure that the component is correctly imported and passed to the Markdown renderer.
-import FotoComponentPrize from '~/components/FotoComponentPrize.vue'
 import { ContentKeys } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
@@ -32,10 +29,6 @@ const { data: page } = await useAsyncData('content', async () => {
     return null
   }
 })
-// The components used in the Markdown renderer
-const components = {
-  FotoComponentPrize,
-}
 </script>
 
 <style lang="scss" scoped>

@@ -8,7 +8,7 @@ locale: fr
 <foto-component-prize
 id="prize-content-img-court"
 max-width="50%"
-src="../assets/img/prize/court-transparent.png"
+src="../../assets/img/prize/court-transparent.png"
 alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle"
 link="">
 </foto-component-prize>
@@ -18,7 +18,7 @@ link="">
 <foto-component-prize
 id="prize-content-img-deco"
 max-width="60%"
-src="../assets/img/prize/deco-transparent.png"
+src="../../assets/img/prize/deco-transparent.png"
 alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle"
 link="">
 </foto-component-prize>
@@ -56,7 +56,7 @@ link="">
 <foto-component-prize
 id="prize-content-img-deco"
 max-width="60%"
-src="../assets/img/prize/deco-transparent.png"
+src="../../assets/img/prize/deco-transparent.png"
 alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle"
 link="">
 </foto-component-prize>

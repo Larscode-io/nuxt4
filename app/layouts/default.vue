@@ -131,7 +131,6 @@ nuxtApp.hook('page:finish', () => {
         </template>
 
         <v-spacer />
-
         <v-btn
           icon="mdi-magnify"
           variant="text"
@@ -181,16 +180,18 @@ nuxtApp.hook('page:finish', () => {
     </v-navigation-drawer>
 
     <v-main class="main-content">
+      <!-- Overlay to show loading spinner -->
       <v-overlay
-        :value="isLoading"
-        class="align-center justify-center"
+        v-model="isLoading"
+        absolute
+        class="d-flex align-center justify-center"
       >
         <v-progress-circular
           indeterminate
           size="64"
         />
       </v-overlay>
-
+      <!-- NuxtPage is the component that will be rendered by Nuxt -->
       <NuxtPage />
     </v-main>
   </v-app>
@@ -201,7 +202,7 @@ nuxtApp.hook('page:finish', () => {
   min-height: calc(100vh - 80px);
   /* Based on the height of app bar */
   padding-bottom: 190px;
-  /* Add some padding at the bottom so the Sidebar can highlight also the last item */
+  /* Added some padding at the bottom so the Sidebar can highlight also the last item */
 }
 h1 {
   color: $logoColor;

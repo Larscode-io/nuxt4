@@ -31,7 +31,7 @@ const iSrc = ref('')
 
 const loadImage = async () => {
   const imagePath = props.src || ''
-  const images2 = import.meta.glob('../assets/img/prize/*.png', { eager: true, import: 'default' })
+  const images2 = import.meta.glob('../../assets/img/prize/*.png', { eager: true, import: 'default' })
   iSrc.value = images2[imagePath] || 'Image not available'
 }
 
