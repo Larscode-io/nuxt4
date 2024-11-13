@@ -1,31 +1,30 @@
 <script setup lang="ts">
 import { ref, useTemplateRef } from 'vue'
-import { useRouter } from 'vue-router'
 import type { VAppBar } from 'vuetify/components'
 import { useLanguage } from '@/composables/useLanguage'
 
 import ogImageUrl from '~/assets/img/ogImage.jpg'
 
-import { useNuxtApp } from '#app'
+const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage, localePath } = useLanguage()
+const description = computed(() => t('general.banner'))
+const ogTitle = computed(() => t('general.message.consts-court'))
 
-const { t, locale, availableLocales, switchLanguage, localePath } = useLanguage()
 useSeoMeta({
-  title: t('general.message.consts-court'),
-  description: t('general.banner'),
-  lang: locale,
-  icon: '/favicon.ico',
-  ogUrl: 'https://www.const-court.be/',
+  ogTitle,
+  ogLocale,
+  description,
   ogType: 'website',
-  ogTitle: t('general.message.consts-court'),
-  ogDescription: t('general.banner'),
+  ogLocaleAlternate,
   ogImage: ogImageUrl,
+  ogDescription: description,
+  ogUrl: 'https://www.const-court.be/',
+  title: t('general.message.consts-court'),
 })
 useHead({
   htmlAttrs: {
     lang: locale.value,
   },
 })
-
 const drawer = ref(false)
 const menuHeight = ref(0)
 const { data: courtItems } = await useFetch('/api/menu')
@@ -56,18 +55,6 @@ onMounted(() => {
 })
 const h = useTemplateRef('appBarRef')
 provide('menuHeight', menuHeight)
-
-const isLoading = ref(false)
-
-const nuxtApp = useNuxtApp()
-
-nuxtApp.hook('page:start', () => {
-  isLoading.value = true
-})
-
-nuxtApp.hook('page:finish', () => {
-  isLoading.value = false
-})
 </script>
 
 <template>
@@ -75,7 +62,7 @@ nuxtApp.hook('page:finish', () => {
     <v-app-bar
       ref="appBarRef"
       :elevation="5"
-      height="80"
+      height="130"
     >
       <nuxt-link :to="localePath('/')">
         <v-btn
@@ -129,7 +116,6 @@ nuxtApp.hook('page:finish', () => {
             />
           </v-menu>
         </template>
-
         <v-spacer />
         <v-btn
           icon="mdi-magnify"
@@ -180,18 +166,6 @@ nuxtApp.hook('page:finish', () => {
     </v-navigation-drawer>
 
     <v-main class="main-content">
-      <!-- Overlay to show loading spinner -->
-      <v-overlay
-        v-model="isLoading"
-        absolute
-        class="d-flex align-center justify-center"
-      >
-        <v-progress-circular
-          indeterminate
-          size="64"
-        />
-      </v-overlay>
-      <!-- NuxtPage is the component that will be rendered by Nuxt -->
       <NuxtPage />
     </v-main>
   </v-app>
