@@ -2,7 +2,7 @@
 import { ref, useTemplateRef } from 'vue'
 import type { VAppBar } from 'vuetify/components'
 import { useLanguage } from '@/composables/useLanguage'
-
+import type { CourtItem } from '@/core/constants'
 import ogImageUrl from '~/assets/img/ogImage.jpg'
 
 const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage, localePath } = useLanguage()
@@ -27,7 +27,8 @@ useHead({
 })
 const drawer = ref(false)
 const menuHeight = ref(0)
-const { data: courtItems } = await useFetch('/api/menu')
+
+const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu')
 
 const drawerItems = ref([
   {

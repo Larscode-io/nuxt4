@@ -280,3 +280,9 @@ export interface GeneralPressJudgment {
   archived: boolean
   picId: null
 }
+
+export interface CourtItem {
+  title: string
+  to?: string
+  subMenu?: CourtItem[]
+}
