@@ -44,7 +44,7 @@ import { useLanguage } from '@/composables/useLanguage'
 const props = defineProps<{ contentPath: string }>()
 
 const route = useRoute()
-const { t, locale } = useLanguage()
+const { locale } = useLanguage()
 
 const currentActiveContentInToc = ref<string>('')
 const { data: page } = await useAsyncData('content', async () => {
