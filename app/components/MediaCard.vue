@@ -86,7 +86,7 @@ async function fetchData() {
     isLoading.value = false
   }
 }
-onMounted(fetchData)
+fetchData()
 </script>
 
 <template>
