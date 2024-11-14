@@ -6,39 +6,41 @@
       :image="img"
       alt=""
     />
-    <v-container
-      v-if="status === 'success'"
-      class="flex-column align-start flex-nowrap"
-    >
-      <v-row>
-        <v-col
-          v-if="hasSidebarLinks"
-          cols="12"
-          md="4"
-        >
-          <Sidebar
-            :active="currentActiveContentInToc"
-            :toc="sideBarLinks"
-            @click="updateCurrentActiveContentInToc"
-          />
-        </v-col>
-        <v-col
-          cols="12"
-          md="8"
-        >
-          <article v-if="page">
-            <ContentRendererMarkdown
-              :value="page.body"
-              class="nuxt-content content-renderer"
+    <v-container>
+      <div
+        v-if="status === 'success'"
+        class="flex-column align-start flex-nowrap"
+      >
+        <v-row>
+          <v-col
+            v-if="hasSidebarLinks"
+            cols="12"
+            md="4"
+          >
+            <Sidebar
+              :active="currentActiveContentInToc"
+              :toc="sideBarLinks"
+              @click="updateCurrentActiveContentInToc"
             />
-          </article>
-        </v-col>
-      </v-row>
-    </v-container>
-    <v-container v-else-if="status === 'error'">
-      <v-alert type="error">
-        {{ error?.message || 'An error occurred while loading the content.' }}
-      </v-alert>
+          </v-col>
+          <v-col
+            cols="12"
+            md="8"
+          >
+            <article v-if="page">
+              <ContentRendererMarkdown
+                :value="page.body"
+                class="nuxt-content content-renderer"
+              />
+            </article>
+          </v-col>
+        </v-row>
+      </div>
+      <div v-else-if="status === 'error'">
+        <v-alert type="error">
+          {{ error?.message || 'An error occurred while loading the content.' }}
+        </v-alert>
+      </div>
     </v-container>
   </div>
 </template>
@@ -55,9 +57,8 @@ const { t, locale } = useLanguage()
 const currentActiveContentInToc = ref<string>('')
 const contentPath = ref(`${ContentKeys.presentationSituation}`)
 
-const { data: page, status, error } = await useAsyncData('content', async () => {
+const { data: page, pending, error } = await useLazyAsyncData('content', async () => {
   try {
-    await new Promise(resolve => setTimeout(resolve, 1000))
     const doc = await queryContent(`${locale.value}/${contentPath.value}`)
       .findOne()
     const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
@@ -71,6 +72,15 @@ const { data: page, status, error } = await useAsyncData('content', async () => 
     console.error('Error fetching content:', error)
     throw error
   }
+})
+const status = computed(() => {
+  if (pending.value) {
+    return 'loading'
+  }
+  if (error.value) {
+    return 'error'
+  }
+  return 'success'
 })
 
 const sideBarLinks = computed(() => {
