@@ -23,7 +23,9 @@
           >
             <v-card class="d-flex flex-column justify-center">
               <v-card-title>
-                <v-icon color="#FF0000">mdi-file-pdf-box</v-icon>
+                <v-icon
+                  color="#C90304"
+                >mdi-file-pdf-box</v-icon>
                 {{ description }}
               </v-card-title>
             </v-card>
