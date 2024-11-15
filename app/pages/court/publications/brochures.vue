@@ -1,14 +1,14 @@
 <template>
   <div>
     <BannerImage
-      :title="t('menu.court.publications.annual-reports', 2)"
-      :description="t('menu.court.publications.annual-reports-title-description')"
+      :title="t('menu.court.publications.brochure')"
+      :description="t('menu.court.publications.brochure-title-description')"
       :image="img"
       alt=""
     />
     <v-container fluid>
       <v-row
-        v-for="{ id, filePath, description } in reports"
+        v-for="{ id, filePath, description } in brochures"
         :key="id"
         class="justify-center"
       >
@@ -46,23 +46,22 @@ const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
-const { data, error } = useLazyFetch(`${baseURL}${ApiUrl.publicationsAnnualReports}?lang=${locale.value}`)
+const { data, error } = useLazyFetch(`${baseURL}${ApiUrl.publicationsBrochures}?lang=${locale.value}`)
 if (error.value) {
   console.error(error.value)
 }
-const reports = computed(() => data.value)
+const brochures = computed(() => data.value)
 
 useHead({
-  title: t('menu.court.publications.annual-reports') || '',
+  title: t('menu.court.publications.brochure') || '',
   meta: [
     {
       hid: 'description',
       name: 'description',
-      content: t('menu.court.publications.annualReportsTitleDescription') || '',
+      content: t('menu.court.publications.brochure-title-description') || '',
     },
   ],
 })
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
