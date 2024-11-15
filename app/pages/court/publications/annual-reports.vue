@@ -1,32 +1,37 @@
 <template>
-  <v-container
-    class="flex-column align-start flex-nowrap"
-    fluid
-  >
+  <div>
     <BannerImage
       :title="t('menu.court.publications.annual-reports', 2)"
       :description="t('menu.court.publications.annual-reports-title-description')"
       :image="img"
       alt=""
     />
-    <v-row
-      v-for="{ id, filePath, description } of reports"
-      :key="id"
-      class="d-flex flex-column"
-      align="start"
-      justify="center"
-    >
-      <a
-        :href="`${baseURL}${filePath}`"
-        target="_blank"
-        rel="noopener noreferrer"
+    <v-container fluid>
+      <v-row
+        v-for="{ id, filePath, description } in reports"
+        :key="id"
+        class="justify-center"
       >
-        <v-card>
-          <v-card-title>{{ description }}</v-card-title>
-        </v-card>
-      </a>
-    </v-row>
-  </v-container>
+        <v-col
+          cols="12"
+          md="6"
+        >
+          <a
+            :href="`${baseURL}${filePath}`"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <v-card class="d-flex flex-column align-center justify-center">
+              <v-card-title>
+                <v-icon color="error">mdi-file-pdf-box</v-icon>
+                {{ description }}
+              </v-card-title>
+            </v-card>
+          </a>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -60,19 +65,4 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
-.container {
-  padding: 0 !important;
-  @include mobile {
-    padding: 32px;
-  }
-}
-.d-flex {
-  max-width: 1260px !important;
-  margin: auto;
-  margin-bottom: 80px;
-  @include mobile {
-    width: 100%;
-    margin-bottom: 40px;
-  }
-}
 </style>
