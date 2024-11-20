@@ -13,11 +13,10 @@
       >
         <v-btn
           v-if="item.to"
-          v-bind="props"
-          variant="text"
+          elevation="0"
           style="text-transform: none;"
         >
-          {{ t(item.title) }}
+          {{ t(item.title || 'Untitled') }}
         </v-btn>
       </nuxt-link>
       <!-- else we have more subMenus so we add a new menu and recursively call this component  -->
@@ -28,7 +27,10 @@
             elevation="0"
             style="text-transform: none;"
           >
-            {{ t(item.title) }}
+            {{ t(item.title || 'Untitled') }}
+            <v-icon v-if="item.subMenu">
+              mdi-chevron-down
+            </v-icon>
           </v-btn>
         </template>
         <recursive-menu :items="item.subMenu" />
@@ -40,6 +42,7 @@
 <script setup>
 import { useLanguage } from '@/composables/useLanguage'
 
+const { t, localePath } = useLanguage()
 defineProps({
   items: {
     type: Array,
@@ -47,5 +50,10 @@ defineProps({
     default: () => [],
   },
 })
-const { t, localePath } = useLanguage()
+const f = (path) => {
+  console.log('path', path)
+  console.log(localePath(path))
+  console.log('x', x)
+  return x
+}
 </script>

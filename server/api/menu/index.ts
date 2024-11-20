@@ -53,11 +53,11 @@ export default defineEventHandler(async (_event) => {
           title: 'menu.court.official-text.title',
           subMenu: [
             {
-              to: `${RoutePathKeys.presentationBasicTexts}#1-la-constitution-de-la-belgique-federale`,
+              to: `${RoutePathKeys.presentationBasicTexts}`,
               title: 'menu.court.official-text.constitution',
             },
             {
-              to: `${RoutePathKeys.presentationBasicTexts}#2-legislation-organique`,
+              to: `${RoutePathKeys.presentationBasicTexts}`,
               title: 'menu.court.official-text.organic-legislation',
             },
             {

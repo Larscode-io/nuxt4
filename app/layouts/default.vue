@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, useTemplateRef } from 'vue'
-import type { VAppBar } from 'vuetify/components'
 import { useLanguage } from '@/composables/useLanguage'
 import type { CourtItem } from '@/core/constants'
 import ogImageUrl from '~/assets/img/ogImage.jpg'
@@ -26,7 +25,6 @@ useHead({
   },
 })
 const drawer = ref(false)
-const menuHeight = ref(0)
 
 const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu')
 
@@ -54,12 +52,13 @@ onMounted(() => {
     menuHeight.value = Number(h.value.height) || 40
   }
 })
+const menuHeight = ref(0)
 const h = useTemplateRef('appBarRef')
 provide('menuHeight', menuHeight)
 </script>
 
 <template>
-  <v-app>
+  <v-app app>
     <v-app-bar
       ref="appBarRef"
       :elevation="5"
@@ -91,41 +90,33 @@ provide('menuHeight', menuHeight)
           v-for="(item, index) in courtItems"
           :key="index"
         >
-          <!-- when the item has a to link, that means it's a direct link so we use nuxt-link -->
           <nuxt-link
             v-if="item.to"
             :to="localePath(item.to)"
           >
-            <v-btn style="text-transform: none;">
-              {{ t(item.title) }}
+            <v-btn class="menu-button">
+              {{ t(item.title || 'Untitled') }}
             </v-btn>
           </nuxt-link>
-          <!-- else we have more subMenus so we add a new menu and recursively call this component  -->
           <v-menu v-else>
             <template #activator="{ props }">
               <v-btn
                 v-bind="props"
-                style="text-transform: none;"
+                class="menu-button"
               >
                 {{ t(item.title) }}
+                <v-icon v-if="item.subMenu">
+                  mdi-chevron-down
+                </v-icon>
               </v-btn>
             </template>
-            <!-- items in the subMenu are recursively displayed because it can have more subMenus -->
             <recursive-menu
-              v-if="item.subMenu"
+              v-if="item.subMenu && item.subMenu.length"
               :items="item.subMenu"
             />
           </v-menu>
         </template>
         <v-spacer />
-        <v-btn
-          icon="mdi-magnify"
-          variant="text"
-        />
-        <v-btn
-          icon="mdi-bank"
-          variant="text"
-        />
       </template>
 
       <v-app-bar-nav-icon
@@ -158,7 +149,9 @@ provide('menuHeight', menuHeight)
       </v-menu>
     </v-app-bar>
 
+    <!-- mobile menu -->
     <v-navigation-drawer
+      v-if="drawer"
       v-model="drawer"
       :location="$vuetify.display.mobile ? 'bottom' : undefined"
       temporary
@@ -167,8 +160,12 @@ provide('menuHeight', menuHeight)
     </v-navigation-drawer>
 
     <v-main class="main-content">
-      <NuxtPage />
+      <slot />
     </v-main>
+
+    <v-footer app>
+      <!-- Footer content -->
+    </v-footer>
   </v-app>
 </template>
 
