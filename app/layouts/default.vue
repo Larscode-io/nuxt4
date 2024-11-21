@@ -136,7 +136,10 @@ const toggleChevron = (e: Event) => {
         <v-spacer />
       </template>
 
-      <nuxt-link :to="localePath(RoutePathKeys.informed)">
+      <nuxt-link
+        v-if="$vuetify.display.mdAndUp"
+        :to="localePath(RoutePathKeys.informed)"
+      >
         <v-btn class="menu-button">
           {{ t('menu.informed') }}
           <v-icon style="margin-left: 8px;">
