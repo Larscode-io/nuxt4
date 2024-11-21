@@ -1,3 +1,26 @@
+<script setup lang="ts">
+import { useLanguage } from '@/composables/useLanguage'
+
+const { t, localePath } = useLanguage()
+defineProps({
+  items: {
+    type: Array,
+    required: true,
+    default: () => [],
+  },
+})
+const activeChevron = ref<HTMLElement | null>(null)
+
+const toggleChevron = (e: Event) => {
+  const target = e.target as HTMLElement
+  if (activeChevron.value && activeChevron.value !== target) {
+    activeChevron.value.style.transform = ''
+  }
+  target.style.transform = target.style.transform === 'rotate(-90deg)' ? '' : 'rotate(-90deg)'
+  activeChevron.value = target.style.transform ? target : null
+}
+</script>
+
 <template>
   <v-list v-if="items">
     <v-list-item
@@ -42,20 +65,3 @@
     </v-list-item>
   </v-list>
 </template>
-
-<script setup lang="ts">
-import { useLanguage } from '@/composables/useLanguage'
-
-const { t, localePath } = useLanguage()
-defineProps({
-  items: {
-    type: Array,
-    required: true,
-    default: () => [],
-  },
-})
-const toggleChevron = (e: Event) => {
-  const target = e.target as HTMLElement
-  target.style.transform = target.style.transform === 'rotate(-90deg)' ? '' : 'rotate(-90deg)'
-}
-</script>

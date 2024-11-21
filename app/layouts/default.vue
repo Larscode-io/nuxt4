@@ -56,9 +56,15 @@ const menuHeight = ref(0)
 const h = useTemplateRef('appBarRef')
 provide('menuHeight', menuHeight)
 
+const activeChevron = ref<HTMLElement | null>(null)
+
 const toggleChevron = (e: Event) => {
   const target = e.target as HTMLElement
+  if (activeChevron.value && activeChevron.value !== target) {
+    activeChevron.value.style.transform = ''
+  }
   target.style.transform = target.style.transform === 'rotate(-90deg)' ? '' : 'rotate(-90deg)'
+  activeChevron.value = target.style.transform ? target : null
 }
 </script>
 

@@ -44,6 +44,7 @@ import { useLanguage } from '@/composables/useLanguage'
 const props = defineProps<{ contentPath: string }>()
 
 const route = useRoute()
+const hash = route.hash.substring(1)
 const { locale } = useLanguage()
 
 const currentActiveContentInToc = ref<string>('')
@@ -52,8 +53,6 @@ const { data: page } = await useAsyncData('content', async () => {
     const doc = await queryContent(`${locale.value}/${props.contentPath}`)
       .findOne()
     const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
-    const hash = route.hash.substring(1)
-
     currentActiveContentInToc.value
             = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
     return doc
