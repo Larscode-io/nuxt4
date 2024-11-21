@@ -134,19 +134,19 @@ const toggleChevron = (e: Event) => {
           </v-menu>
         </template>
         <v-spacer />
+
+        <nuxt-link
+          :to="localePath(RoutePathKeys.informed)"
+        >
+          <v-btn class="menu-button">
+            {{ t('menu.informed') }}
+            <v-icon style="margin-left: 8px;">
+              mdi-bank
+            </v-icon>
+          </v-btn>
+        </nuxt-link>
       </template>
 
-      <nuxt-link
-        v-if="$vuetify.display.mdAndUp"
-        :to="localePath(RoutePathKeys.informed)"
-      >
-        <v-btn class="menu-button">
-          {{ t('menu.informed') }}
-          <v-icon style="margin-left: 8px;">
-            mdi-bank
-          </v-icon>
-        </v-btn>
-      </nuxt-link>
       <v-app-bar-nav-icon
         v-if="$vuetify.display.mobile"
         variant="text"
