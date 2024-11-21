@@ -55,6 +55,11 @@ onMounted(() => {
 const menuHeight = ref(0)
 const h = useTemplateRef('appBarRef')
 provide('menuHeight', menuHeight)
+
+const toggleChevron = (e: Event) => {
+  const target = e.target as HTMLElement
+  target.style.transform = target.style.transform === 'rotate(-90deg)' ? '' : 'rotate(-90deg)'
+}
 </script>
 
 <template>
@@ -105,9 +110,14 @@ provide('menuHeight', menuHeight)
                 class="menu-button"
               >
                 {{ t(item.title) }}
-                <v-icon v-if="item.subMenu">
-                  mdi-chevron-down
-                </v-icon>
+                <div
+                  v-if="item.subMenu"
+                  @click="toggleChevron"
+                >
+                  <v-icon>
+                    mdi-chevron-down
+                  </v-icon>
+                </div>
               </v-btn>
             </template>
             <recursive-menu
@@ -194,5 +204,8 @@ h1 {
   height: 64px;
   background: url('~~/app/assets/icons/fed.svg') no-repeat center center;
   background-size: contain;
+}
+.v-icon {
+  transition: transform 0.3s ease;
 }
 </style>

@@ -3,7 +3,6 @@
     <v-list-item
       v-for="(item, index) in items"
       :key="index"
-      :to="item.to"
     >
       <!-- we are in a subMenu but without more subMenus -->
       <!-- we have a to link so no more subMenu, we activate the link directly -->
@@ -28,9 +27,14 @@
             style="text-transform: none;"
           >
             {{ t(item.title || 'Untitled') }}
-            <v-icon v-if="item.subMenu">
-              mdi-chevron-down
-            </v-icon>
+            <div
+              v-if="item.subMenu"
+              @click="toggleChevron"
+            >
+              <v-icon>
+                mdi-chevron-down
+              </v-icon>
+            </div>
           </v-btn>
         </template>
         <recursive-menu :items="item.subMenu" />
@@ -39,7 +43,7 @@
   </v-list>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useLanguage } from '@/composables/useLanguage'
 
 const { t, localePath } = useLanguage()
@@ -50,10 +54,8 @@ defineProps({
     default: () => [],
   },
 })
-const f = (path) => {
-  console.log('path', path)
-  console.log(localePath(path))
-  console.log('x', x)
-  return x
+const toggleChevron = (e: Event) => {
+  const target = e.target as HTMLElement
+  target.style.transform = target.style.transform === 'rotate(-90deg)' ? '' : 'rotate(-90deg)'
 }
 </script>

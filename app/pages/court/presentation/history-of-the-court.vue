@@ -30,7 +30,7 @@
             <article v-if="page">
               <ContentRendererMarkdown
                 :value="page.body"
-                class="nuxt-content content-renderer"
+                class="nuxt-content"
               />
             </article>
           </v-col>
@@ -52,7 +52,8 @@ import { ContentKeys } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 const route = useRoute()
-const { t, locale } = useLanguage()
+const hash = route.hash.substring(1)
+const { locale } = useLanguage()
 
 const currentActiveContentInToc = ref<string>('')
 const contentPath = ref(`${ContentKeys.presentationSituation}`)
@@ -62,8 +63,6 @@ const { data: page, pending, error } = await useLazyAsyncData('content', async (
     const doc = await queryContent(`${locale.value}/${contentPath.value}`)
       .findOne()
     const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
-    const hash = route.hash.substring(1)
-
     currentActiveContentInToc.value
       = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
     return doc
@@ -157,7 +156,7 @@ onUpdated(() => {
   }
 }
 
-::v-deep(.nuxt-content h3) {
+:deep(.nuxt-content h3) {
   padding-top: 32px;
   padding-bottom: 24px;
   font-size: 2rem;
