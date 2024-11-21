@@ -3,6 +3,7 @@ import { ref, useTemplateRef } from 'vue'
 import { useLanguage } from '@/composables/useLanguage'
 import type { CourtItem } from '@/core/constants'
 import ogImageUrl from '~/assets/img/ogImage.jpg'
+import { RoutePathKeys } from '~/core/constants'
 
 const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage, localePath } = useLanguage()
 const description = computed(() => t('general.banner'))
@@ -135,6 +136,12 @@ const toggleChevron = (e: Event) => {
         <v-spacer />
       </template>
 
+      <nuxt-link :to="localePath(RoutePathKeys.informed)">
+        <v-btn class="menu-button">
+          {{ t('menu.informed') }}
+        </v-btn>
+      </nuxt-link>
+      <v-icon> mdi-bank</v-icon>
       <v-app-bar-nav-icon
         v-if="$vuetify.display.mobile"
         variant="text"
