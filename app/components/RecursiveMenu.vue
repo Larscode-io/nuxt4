@@ -12,12 +12,17 @@ defineProps({
 const activeChevron = ref<HTMLElement | null>(null)
 
 const toggleChevron = (e: Event) => {
-  const target = e.target as HTMLElement
-  if (activeChevron.value && activeChevron.value !== target) {
-    activeChevron.value.style.transform = ''
+  const target = e.currentTarget as HTMLElement
+  const chevronIcon = target.querySelector('.v-icon') as HTMLElement | null
+
+  if (chevronIcon) {
+    if (activeChevron.value && activeChevron.value !== chevronIcon) {
+      activeChevron.value.style.transform = ''
+    }
+
+    chevronIcon.style.transform = chevronIcon.style.transform === 'rotate(-90deg)' ? '' : 'rotate(-90deg)'
+    activeChevron.value = chevronIcon.style.transform ? chevronIcon : null
   }
-  target.style.transform = target.style.transform === 'rotate(-90deg)' ? '' : 'rotate(-90deg)'
-  activeChevron.value = target.style.transform ? target : null
 }
 </script>
 
@@ -48,11 +53,11 @@ const toggleChevron = (e: Event) => {
             v-bind="props"
             elevation="0"
             style="text-transform: none;"
+            @click="toggleChevron"
           >
             {{ t(item.title || 'Untitled') }}
             <div
               v-if="item.subMenu"
-              @click="toggleChevron"
             >
               <v-icon>
                 mdi-chevron-down

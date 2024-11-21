@@ -60,7 +60,7 @@ provide('menuHeight', menuHeight)
 const activeChevron = ref<HTMLElement | null>(null)
 
 const toggleChevron = (e: Event) => {
-  const target = e.target as HTMLElement
+  const target = (e.target as HTMLElement).closest('.menu-button')?.querySelector('.v-icon') as HTMLElement
   if (activeChevron.value && activeChevron.value !== target) {
     activeChevron.value.style.transform = ''
   }
@@ -115,11 +115,11 @@ const toggleChevron = (e: Event) => {
               <v-btn
                 v-bind="props"
                 class="menu-button"
+                @click="toggleChevron"
               >
                 {{ t(item.title) }}
                 <div
                   v-if="item.subMenu"
-                  @click="toggleChevron"
                 >
                   <v-icon>
                     mdi-chevron-down
@@ -139,9 +139,11 @@ const toggleChevron = (e: Event) => {
       <nuxt-link :to="localePath(RoutePathKeys.informed)">
         <v-btn class="menu-button">
           {{ t('menu.informed') }}
+          <v-icon style="margin-left: 8px;">
+            mdi-bank
+          </v-icon>
         </v-btn>
       </nuxt-link>
-      <v-icon> mdi-bank</v-icon>
       <v-app-bar-nav-icon
         v-if="$vuetify.display.mobile"
         variant="text"
