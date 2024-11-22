@@ -11,6 +11,12 @@
       class="flex-column align-start flex-nowrap"
       fluid
     >
+      <article v-if="page">
+        <ContentRendererMarkdown
+          :value="page.body"
+          class="nuxt-content"
+        />
+      </article>
       <!-- <v-row v-if="$fetchState.pending" class="d-flex" align="flex-start" justify="center">
         <div class="col-12 col-md-12">
           <v-skeleton-loader class="mx-auto" max-width="300" type="article" />
@@ -49,23 +55,41 @@ import { ContentKeys } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useI18n()
+const route = useRoute()
+const hash = route.hash.substring(1)
+const currentActiveContentInToc = ref<string>('')
+const contentPath = ref(`${ContentKeys.ruleRecommendationsToTheJudgesAQuoAndTheParties}`)
 
-const currentActiveContentInToc = ref('')
-const page = ref(null)
-
-const fetchPage = async () => {
-  const content = useContent()
-  const fetchedPage = await content.fetch(
-    `${locale.value}/${ContentKeys.ruleRecommendationsToTheJudgesAQuoAndTheParties}`,
-  )
-
-  if (!fetchedPage) {
-    throw new Error('No Content')
+const { data: page, pending, error } = await useLazyAsyncData('content', async () => {
+  try {
+    const doc = await queryContent(`${locale.value}/${contentPath.value}`)
+      .findOne()
+    const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
+    currentActiveContentInToc.value
+      = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
+    console.log('currentActiveContentInToc', currentActiveContentInToc.value)
+    console.log('doc', doc)
+    return doc
   }
+  catch (error) {
+    console.error('Error fetching content:', error)
+    throw error
+  }
+})
 
-  page.value = fetchedPage
-  currentActiveContentInToc.value = getAnchor(fetchedPage)
-}
+// const fetchPage = async () => {
+//   const content = useContent()
+//   const fetchedPage = await content.fetch(
+//     `${locale.value}/${ContentKeys.ruleRecommendationsToTheJudgesAQuoAndTheParties}`,
+//   )
+
+//   if (!fetchedPage) {
+//     throw new Error('No Content')
+//   }
+
+//   page.value = fetchedPage
+//   currentActiveContentInToc.value = getAnchor(fetchedPage)
+// }
 
 // const sideBarLinks = computed(() => {
 //   if (!page.value) {
