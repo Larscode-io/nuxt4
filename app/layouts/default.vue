@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useTemplateRef } from 'vue'
+import { ref, useTemplateRef, onMounted } from 'vue'
 import { useLanguage } from '@/composables/useLanguage'
 import type { CourtItem } from '@/core/constants'
 import ogImageUrl from '~/assets/img/ogImage.jpg'
@@ -27,7 +27,21 @@ useHead({
 })
 const drawer = ref(false)
 
-const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu')
+const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu', {
+  transform: (data) => {
+    return applyTranslationToTitles(data)
+  },
+})
+
+function applyTranslationToTitles(menu: CourtItem[]) {
+  return menu.map((item: CourtItem) => {
+    const translatedItem = { ...item, title: t(item.title) }
+    if (item.subMenu) {
+      translatedItem.subMenu = applyTranslationToTitles(item.subMenu)
+    }
+    return translatedItem
+  })
+}
 
 const drawerItems = ref([
   {
@@ -107,7 +121,7 @@ const toggleChevron = (e: Event) => {
             :to="localePath(item.to)"
           >
             <v-btn class="menu-button">
-              {{ t(item.title || 'Untitled') }}
+              {{ item.title || 'Untitled' }}
             </v-btn>
           </nuxt-link>
           <v-menu v-else>
@@ -117,7 +131,7 @@ const toggleChevron = (e: Event) => {
                 class="menu-button"
                 @click="toggleChevron"
               >
-                {{ t(item.title) }}
+                {{ item.title }}
                 <div
                   v-if="item.subMenu"
                 >

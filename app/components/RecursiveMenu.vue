@@ -43,7 +43,7 @@ const toggleChevron = (e: Event) => {
           elevation="0"
           style="text-transform: none;"
         >
-          {{ t(item.title || 'Untitled') }}
+          {{ item.title || 'Untitled' }}
         </v-btn>
       </nuxt-link>
       <!-- else we have more subMenus so we add a new menu and recursively call this component  -->
@@ -55,7 +55,7 @@ const toggleChevron = (e: Event) => {
             style="text-transform: none;"
             @click="toggleChevron"
           >
-            {{ t(item.title || 'Untitled') }}
+            {{ item.title || 'Untitled' }}
             <div
               v-if="item.subMenu"
             >

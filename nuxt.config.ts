@@ -14,6 +14,10 @@ export default defineNuxtConfig({
     runtimeConfig: {
       public: {
         redirectUri: import.meta.env.REDIRECT_URI_DEV,
+        // Falling back to legacy server URL as long as the .env variable is not set.
+        // This is to develop pages without the need to have api's ready (next step).
+        // to run with another server, set the API_URL_DEV variable in the .env file or in the command line like this:
+        // API_URL_DEV=http://localhost:3000 nuxt dev --port 3001
         apiBaseUrl: import.meta.env.API_URL_DEV || 'https://node04.const-court.be:443',
       },
     },
