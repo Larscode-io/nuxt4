@@ -15,6 +15,59 @@
             class="nuxt-content"
           />
         </article>
+        <ContactCard
+          :headline-level="3"
+          name="Tim SOUVERIJNS"
+          :jobtitle="`
+                ${t('contact.lawClerk')}, (NL)
+                `
+          "
+          :image="contactImgTim"
+          phone="+32(0)2/500.12.21"
+        />
+
+        <ContactCard
+          :headline-level="3"
+          name="Martin VRANCKEN"
+          :image="contactImgMartin"
+          :jobtitle="`
+                ${t('contact.lawClerk')}, (NL)
+                `
+          "
+          phone="+32(0)2/500.12.87"
+        />
+        <ContactCard
+          :headline-level="3"
+          name="Frank MEERSSCHAUT"
+          :jobtitle="`${t('general.message.registrars', 1)},
+                ${t('contact.generalMediaCoordination')},
+                (NL)
+                `
+          "
+          :image="contactImgFrank"
+          phone="+32(0)475/32.52.18"
+        />
+        <ContactCard
+          :headline-level="3"
+          name="Thomas LEYS"
+          :jobtitle="`
+                ${t('contact.lawClerk')}, (NL)
+                `
+          "
+          phone="+32(0)2/500.12.60"
+          :aria-label="$t('aria.label.phone.number')"
+          :image="contactImgThomas"
+        />
+        <ContactCard
+          :headline-level="3"
+          name="Romain VANDERBECK"
+          :jobtitle="`
+                ${t('contact.lawClerk')}, (NL)
+                `
+          "
+          :image="contactImgRom"
+          phone="+32(0)2/500.13.28"
+        />
       </v-row>
     </v-container>
   </div>
