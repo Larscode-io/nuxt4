@@ -109,6 +109,7 @@ export default defineEventHandler(async () => {
         {
           to: RoutePathKeys.judgmentsPendingCases,
           title: 'menu.decisions.pending-cases',
+          count: 2,
         },
         {
           to: RoutePathKeys.searchJudgment,
@@ -117,6 +118,7 @@ export default defineEventHandler(async () => {
         {
           to: RoutePathKeys.judgmentsHome,
           title: 'menu.decisions.judgment',
+          count: 2,
         },
         {
           to: RoutePathKeys.judgmentsPreliminaryRulingsFromCourtJusticeEU,

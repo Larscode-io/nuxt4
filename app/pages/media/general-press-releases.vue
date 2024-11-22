@@ -1,14 +1,14 @@
 <template>
   <div>
     <BannerImage
-      :title="t('menu.court.publications.speeches', 2)"
-      :description="t('menu.court.publications.speeches-title-description')"
+      :title="t('menu.press-and-media.general-press-releases')"
+      :description="t('menu.press-and-media.general-press-releases-title-description')"
       :image="img"
       alt=""
     />
     <v-container fluid>
       <v-row
-        v-for="{ id, title, filePath } in reports"
+        v-for="{ id, title, filePath } in releases"
         :key="id"
         class="justify-center"
       >
@@ -38,41 +38,47 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import BannerImage from '~/components/BannerImage.vue'
-import img from '~/assets/img/newsletter-background-opt.png'
+import { ref, onMounted, watch } from 'vue'
+// import AnnualReportCard from '../../components/AnnualReportCard.vue'
+import img from '~/assets/img/banner-media.png'
 import { ApiUrl, DISCOURS_WORDS_FOR_FILTERING } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useLanguage()
+
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
+// const i18nKeysRef = ref(i18nKeys)
+
 // during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
-const { data, error } = useLazyFetch<{ id: number, title: string, filePath: string, description: string }[]>(`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale.value}`)
+const { data, error } = useLazyFetch(`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale.value}`)
 if (error.value) {
   console.error(error.value)
 }
-const reports = computed(() => {
-  return data.value
-    ? data.value.filter((report: { title: string }) => {
-      const title = report.title?.toLowerCase()
-      return (
-        DISCOURS_WORDS_FOR_FILTERING.map(key =>
+
+const releases = computed(() => {
+  return data.value && Array.isArray(data.value)
+    ? data.value.filter((release: { title: string }) => {
+      const title = release.title?.toLowerCase()
+      const hasDiscours
+        = DISCOURS_WORDS_FOR_FILTERING.map(key =>
           title?.includes(key?.toLowerCase()),
         ).filter(Boolean)?.length > 0
-      )
+
+      return !hasDiscours
     })
     : []
 })
 
+// todo: print
 useHead({
-  title: t('menu.court.publications.speeches') || '',
+  title: t('menu.press-and-media.general-press-releases') || '',
   meta: [
     {
       hid: 'description',
       name: 'description',
-      content: t('menu.court.publications.speeches-title-description') || '',
+      content: t('menu.press-and-media.general-press-releases-title-description') || '',
     },
   ],
 })
