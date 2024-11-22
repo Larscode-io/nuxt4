@@ -30,7 +30,11 @@
     * To manage the complexity of upgrading we will gradually replacing parts of the legacy system with new components, running the old and new systems in parallel until the legacy parts are completely replaced.
     * **Step 1**: A clean installation of the Nuxt 3 environment.
     * **Step 2**: Keep the existing Nuxt 2 APIs while building the interface in Nuxt 3 on the new installation until all pages are properly transitioned and functional. This allows us to focus on migrating the UI and user experience first.
-    * **Step 3**: Once the pages are successfully migrated, we proceed with migrating the APIs to Nuxt 3's built-in Nitro server. This sequence minimizes disruptions and allows for incremental testing of each component.
+    * **Step 3**: Create a basic default.vue layout
+    * **Step 4**: Migrate simple pages (get comfortable with Nuxt 3, the Composition API, and Vuetify 3 and focus on critical functionality)
+    * **Step 5**: Migrate complexer pages and check against the original design for consistency.
+    * **Step 2**: 2nd pass: apply lessons learned from the earlier pages: refine the design, improve accessibility, handle edge cases and improve performance.
+    * **Step 6**: Once the pages are successfully migrated, we proceed with migrating the APIs to Nuxt 3's built-in Nitro server. This sequence minimizes disruptions and allows for incremental testing of each component.
   
 2. **Technical Key Challenges**
     * **i18n:** Implement for multi-language support
