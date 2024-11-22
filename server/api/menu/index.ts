@@ -2,8 +2,7 @@ import { RoutePathKeys } from '~/core/constants'
 
 // server/api/menu/index.ts
 // use this api as folows: const { data: courtItems } = await useFetch('/api/menu')
-
-export default defineEventHandler(async (_event) => {
+export default defineEventHandler(async () => {
   return [
     {
       title: 'menu.court.title',
@@ -51,6 +50,7 @@ export default defineEventHandler(async (_event) => {
         },
         {
           title: 'menu.court.official-text.title',
+          count: 2,
           subMenu: [
             {
               to: `${RoutePathKeys.presentationBasicTexts}`,
@@ -93,6 +93,7 @@ export default defineEventHandler(async (_event) => {
         },
         {
           title: 'menu.court.job-offers.title',
+          count: 2,
           subMenu: [
             {
               to: RoutePathKeys.presentationJobOffers,

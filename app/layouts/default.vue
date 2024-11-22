@@ -35,7 +35,8 @@ const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu', {
 
 function applyTranslationToTitles(menu: CourtItem[]) {
   return menu.map((item: CourtItem) => {
-    const translatedItem = { ...item, title: t(item.title) }
+    const translatedTitle = item.count !== undefined ? t(item.title, item.count) : t(item.title)
+    const translatedItem = { ...item, title: translatedTitle }
     if (item.subMenu) {
       translatedItem.subMenu = applyTranslationToTitles(item.subMenu)
     }
