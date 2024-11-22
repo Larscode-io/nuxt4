@@ -47,6 +47,7 @@ const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
+// during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
 const { data, error } = useLazyFetch<{ id: number, title: string, filePath: string, description: string }[]>(`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale.value}`)
 if (error.value) {
   console.error(error.value)

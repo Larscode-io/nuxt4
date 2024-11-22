@@ -38,16 +38,19 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+// todo: error card ?
 import BannerImage from '~/components/BannerImage.vue'
 import img from '~/assets/img/newsletter-background-opt.png'
 import { ApiUrl } from '~/core/constants'
 
 import { useLanguage } from '@/composables/useLanguage'
 
+definePageMeta({ layout: 'default' })
 const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
+// during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
 const { data, error } = useLazyFetch(`${baseURL}${ApiUrl.publicationsBrochures}?lang=${locale.value}`)
 if (error.value) {
   console.error(error.value)
@@ -64,6 +67,8 @@ useHead({
     },
   ],
 })
+// If you encounter issues with VS Code not recognizing TypeScript features, press
+// CTRL + SHIFT + P and run Developer: Reload Window to refresh VS Code's internal state.
 </script>
 
 <style lang="scss" scoped></style>

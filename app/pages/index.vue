@@ -41,6 +41,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
           {{ t('menu.decisions.title') }}
         </h2>
       </div>
+      <!-- during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts). -->
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
@@ -81,6 +82,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
           {{ t('general.message.latest-press-release') }}
         </h2>
       </div>
+      <!-- during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts). -->
       <MediaCard
         :api-url-release="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
@@ -150,6 +152,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </h2>
       </div>
 
+      <!-- during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts). -->
       <AgendaCard
         :api-url="`${baseURL}${ApiUrl.pressJudgment}?lang=${locale}`"
         :max-items="0"
@@ -204,6 +207,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </template>
       </AgendaCard>
 
+      <!-- during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts). -->
       <PleadingCard
         :api-url="`${baseURL}${ApiUrl.pressPleadings}?lang=${locale}`"
         :max-items="0"
