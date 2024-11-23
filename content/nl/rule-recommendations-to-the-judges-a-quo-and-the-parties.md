@@ -7,7 +7,7 @@ locale: nl
 
 ### 1\. Aanbevelingen aan de rechtscolleges die een prejudiciële vraag stellen aan het Grondwettelijk Hof
 
-<a href="https://www.const-court.be/public/common/nl/aanbevelingenrechters.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> <v-icon color="red">mdi-file-pdf-box</v-icon> PDF</a><br/>
+<a href="https://www.const-court.be/public/common/nl/aanbevelingenrechters.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> <v-icon color="#C90304">mdi-file-pdf-box</v-icon> PDF</a><br/>
 <br/>
 
 Dit document bevat **aanbevelingen** aan de rechtscolleges die aan het Hof een prejudiciële vraag stellen. Gelet op het groeiende aantal zaken die het Hof dient te behandelen, strekken deze aanbevelingen ertoe een efficiëntere behandeling van de zaken te bevorderen, in het belang van een goede rechtsbedeling.

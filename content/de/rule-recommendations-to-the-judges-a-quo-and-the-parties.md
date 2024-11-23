@@ -7,7 +7,7 @@ locale: de
 
 ### 1\. Empfehlungen an die Rechtsprechungsorgane, die dem Verfassungsgerichtshof eine Vorabentscheidungsfrage stellen
 
-<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Klicken Sie auf den Link, um das PDF herunterzuladen" target="blank"> <v-icon color="red">mdi-file-pdf-box</v-icon> PDF</a><br/>
+<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Klicken Sie auf den Link, um das PDF herunterzuladen" target="blank"> <v-icon color="#C90304">mdi-file-pdf-box</v-icon> PDF</a><br/>
 <br/>
 
 Das vorliegende Dokument enthält **Empfehlungen** an die Rechtsprechungsorgane, die dem Gerichtshof eine Vorabentscheidungsfrage stellen. In Anbetracht der zunehmenden Anzahl der Rechtssachen, die der Gerichtshof zu behandeln hat, sollen diese Empfehlungen dazu beitragen, die Behandlung der Rechtssachen im Interesse einer geordneten Rechtspflege effizienter zu gestalten.
