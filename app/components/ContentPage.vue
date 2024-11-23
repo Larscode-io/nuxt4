@@ -44,10 +44,12 @@ import { useLanguage } from '@/composables/useLanguage'
 const props = defineProps<{ contentPath: string }>()
 
 const route = useRoute()
+const router = useRouter()
 const hash = route.hash.substring(1)
 const { locale } = useLanguage()
 
 const currentActiveContentInToc = ref<string>('')
+
 const { data: page } = await useAsyncData('content', async () => {
   try {
     const doc = await queryContent(`${locale.value}/${props.contentPath}`)
@@ -67,7 +69,7 @@ const sideBarLinks = computed(() => {
   if (!page.value) {
     return []
   }
-  return page.value?.body?.toc?.links
+  const r = page.value?.body?.toc?.links
     ?.filter(toc => toc.depth === 3)
     ?.map((toc) => {
       return {
@@ -76,23 +78,30 @@ const sideBarLinks = computed(() => {
         text: toc.text ? toc.text.split('.')[1]?.trim() || '' : '',
       }
     }) || []
+  console.log('sideBarLinks', r)
+  return r
 })
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
 
 const updateCurrentActiveContentInToc = (section: string) => {
+  // router.push({ hash: `#${section}` })
   currentActiveContentInToc.value = section
 }
 
 const startIntersectionObserver = () => {
   const options = {
-    threshold: 0.9,
-    rootMargin: '0px 0px -60% 0px',
+    root: null,
+    rootMargin: '0px', // margin around the root (top, right, bottom, left)
+    threshold: 0.5, // 0.5 means when 50% of the element is visible
   }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        console.log('entry is intersecting', entry)
+        console.log(`entry.target.id`, entry.target.id)
+        console.log(`entry.intersectionRatio`, entry.intersectionRatio)
         const elem = entry.target
 
         if (entry.intersectionRatio >= 0) {
@@ -102,7 +111,8 @@ const startIntersectionObserver = () => {
     })
   }, options)
 
-  document.querySelectorAll('h3').forEach((el) => {
+  const sections = document.querySelectorAll('h3')
+  sections.forEach((el) => {
     if (ids.value.includes(el.id)) {
       observer.observe(el)
     }
