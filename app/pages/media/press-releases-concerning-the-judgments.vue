@@ -27,7 +27,8 @@
               <v-list-item>
                 <v-list-item-content>
                   <div class=" mb-3">
-                    <v-icon color="red">mdi-file-pdf-box</v-icon>
+                    <v-icon color="#C90304">mdi-file-pdf-box</v-icon>
+
                     <h3>
                       {{ t('general.message.add-judgment-number-label') }}
                       {{ nr }}

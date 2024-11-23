@@ -56,7 +56,8 @@ The referring judge is invited:
 
 ### 2\. Recommendations to the parties to proceedings before the Constitutional Court
 
-<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Click on the link to download the pdf" target="blank"> <v-icon color="red">mdi-file-pdf-box</v-icon> PDF</a><br/>
+<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Click on the link to download the pdf" target="blank"> <v-icon color="#C90304">mdi-file-pdf-box</v-icon>
+ PDF</a><br/>
 <br/>
 
 This document contains **recommendations** for the attention of parties to preliminary ruling or annulment proceedings before the Court. In view of the growing number of cases which the Court is called upon to deal with, those recommendations are intended to promote more efficient handling of cases in the interests of the proper administration of justice.

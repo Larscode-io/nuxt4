@@ -7,7 +7,8 @@ locale: fr
 
 ### Directive du 25 mai 2022 concernant le déroulement des plaidoiries dans le cadre de l’organisation des audiences
 
-<v-icon color="red">mdi-file-pdf-box</v-icon> [Directive du 25 mai 2022](https://www.const-court.be/public/base/fr/directive-plaidoiries-audiences.pdf)
+<v-icon color="#C90304">mdi-file-pdf-box</v-icon>
+ [Directive du 25 mai 2022](https://www.const-court.be/public/base/fr/directive-plaidoiries-audiences.pdf)
 
 <br/>
 <br/>

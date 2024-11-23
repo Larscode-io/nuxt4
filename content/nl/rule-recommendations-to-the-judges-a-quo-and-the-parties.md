@@ -56,7 +56,7 @@ De verwijzende rechter wordt verzocht om :
 
 ### 2\. Aanbevelingen aan de partijen in een procedure voor het Grondwettelijk Hof
 
-<a href="https://www.const-court.be/public/common/nl/aanbevelingenpartijen.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> <v-icon color="red">mdi-file-pdf-box</v-icon> PDF</a><br/>
+<a href="https://www.const-court.be/public/common/nl/aanbevelingenpartijen.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> <v-icon color="#C90304">mdi-file-pdf-box</v-icon> PDF</a><br/>
 <br/>
 
 **Aanbevelingen aan de partijen**
