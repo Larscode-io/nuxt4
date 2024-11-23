@@ -78,7 +78,6 @@ const sideBarLinks = computed(() => {
         text: toc.text ? toc.text.split('.')[1]?.trim() || '' : '',
       }
     }) || []
-  console.log('sideBarLinks', r)
   return r
 })
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
@@ -99,9 +98,6 @@ const startIntersectionObserver = () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log('entry is intersecting', entry)
-        console.log(`entry.target.id`, entry.target.id)
-        console.log(`entry.intersectionRatio`, entry.intersectionRatio)
         const elem = entry.target
 
         if (entry.intersectionRatio >= 0) {
