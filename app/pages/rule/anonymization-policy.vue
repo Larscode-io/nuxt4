@@ -1,11 +1,10 @@
 <template>
   <div>
     <BannerImage
-      v-if="page"
-      :title="page?.title || ''"
-      :description="page?.description"
+      :title="t('menu.rule.anonymization-policy')"
+      :description="t('menu.rule.anonymization-policy-description')"
       :image="img"
-      alt=""
+      :alt="t('alt.banner.judge')"
     />
     <v-container class="flex-column align-start flex-nowrap">
       <v-row>
@@ -37,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUpdated, defineProps } from 'vue'
+import { ref, computed, onMounted, onUpdated } from 'vue'
 import img from '~/assets/img/newsletter-background-opt.png'
 import { useLanguage } from '@/composables/useLanguage'
 import { ContentKeys } from '~/core/constants'
@@ -46,7 +45,7 @@ import { ContentKeys } from '~/core/constants'
 
 const route = useRoute()
 const hash = route.hash.substring(1)
-const { locale } = useLanguage()
+const { t, locale } = useLanguage()
 
 const currentActiveContentInToc = ref<string>('')
 
