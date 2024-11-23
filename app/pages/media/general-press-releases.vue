@@ -1,3 +1,4 @@
+<!-- API based page -->
 <template>
   <div>
     <BannerImage

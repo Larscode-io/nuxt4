@@ -2,7 +2,7 @@
   <div>
     <BannerImage
       v-if="page"
-      :title="page?.title"
+      :title="page?.title || ''"
       :description="page?.description"
       :image="img"
       alt=""
@@ -26,7 +26,7 @@
         >
           <article v-if="page">
             <ContentRendererMarkdown
-              :value="page.body"
+              :value="page.body || {}"
               class="nuxt-content content-renderer"
             />
           </article>
@@ -73,14 +73,14 @@ const sideBarLinks = computed(() => {
       return {
         ...toc,
         id: toc.id,
-        text: toc.text ? toc.text.split('.')[1]?.trim() : '',
+        text: toc.text ? toc.text.split('.')[1]?.trim() || '' : '',
       }
     }) || []
 })
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
 
-const updateCurrentActiveContentInToc = (section) => {
+const updateCurrentActiveContentInToc = (section: string) => {
   currentActiveContentInToc.value = section
 }
 
