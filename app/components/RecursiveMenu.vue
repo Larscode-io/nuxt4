@@ -32,11 +32,10 @@ const toggleChevron = (e: Event) => {
       v-for="(item, index) in items"
       :key="index"
     >
-      <!-- we are in a subMenu but without more subMenus -->
-      <!-- we have a to link so no more subMenu, we activate the link directly -->
+      <!-- bottom level menu because we have direct link in item.to, so no more subMenus -->
       <nuxt-link
         v-if="item.to"
-        :to="localePath(item.to)"
+        :to="localePath(item.to) || 'https://item.to.noLocale'"
       >
         <v-btn
           v-if="item.to"
@@ -70,3 +69,9 @@ const toggleChevron = (e: Event) => {
     </v-list-item>
   </v-list>
 </template>
+
+<style lang="scss" scoped>
+    .v-icon {
+      transition: transform 0.2s linear;
+    }
+</style>

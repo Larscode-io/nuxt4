@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useTemplateRef, onMounted } from 'vue'
+import { ref, useTemplateRef, onMounted, computed } from 'vue'
 import { useLanguage } from '@/composables/useLanguage'
 import type { CourtItem } from '@/core/constants'
 import ogImageUrl from '~/assets/img/ogImage.jpg'
@@ -28,9 +28,6 @@ useHead({
 const drawer = ref(false)
 
 const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu', {
-  transform: (data) => {
-    return applyTranslationToTitles(data)
-  },
 })
 
 function applyTranslationToTitles(menu: CourtItem[]) {
@@ -43,6 +40,9 @@ function applyTranslationToTitles(menu: CourtItem[]) {
     return translatedItem
   })
 }
+const translatedItems = computed(() => {
+  return applyTranslationToTitles(courtItems.value)
+})
 
 const drawerItems = ref([
   {
@@ -103,7 +103,7 @@ provide('menuHeight', menuHeight)
 
       <template v-if="$vuetify.display.mdAndUp">
         <template
-          v-for="(item, index) in courtItems"
+          v-for="(item, index) in translatedItems"
           :key="index"
         >
           <nuxt-link
@@ -223,8 +223,5 @@ h1 {
   height: 64px;
   background: url('~~/app/assets/icons/fed.svg') no-repeat center center;
   background-size: contain;
-}
-.v-icon {
-  transition: transform 0.3s ease;
 }
 </style>
