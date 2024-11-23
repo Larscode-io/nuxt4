@@ -71,17 +71,6 @@ onMounted(() => {
 const menuHeight = ref(0)
 const h = useTemplateRef('appBarRef')
 provide('menuHeight', menuHeight)
-
-const activeChevron = ref<HTMLElement | null>(null)
-
-const toggleChevron = (e: Event) => {
-  const target = (e.target as HTMLElement).closest('.menu-button')?.querySelector('.v-icon') as HTMLElement
-  if (activeChevron.value && activeChevron.value !== target) {
-    activeChevron.value.style.transform = ''
-  }
-  target.style.transform = target.style.transform === 'rotate(-90deg)' ? '' : 'rotate(-90deg)'
-  activeChevron.value = target.style.transform ? target : null
-}
 </script>
 
 <template>
@@ -126,22 +115,19 @@ const toggleChevron = (e: Event) => {
             </v-btn>
           </nuxt-link>
           <v-menu v-else>
+            <!-- top level menu -->
             <template #activator="{ props }">
               <v-btn
                 v-bind="props"
                 class="menu-button"
-                @click="toggleChevron"
               >
                 {{ item.title }}
                 <div
                   v-if="item.subMenu"
-                >
-                  <v-icon>
-                    mdi-chevron-down
-                  </v-icon>
-                </div>
+                />
               </v-btn>
             </template>
+            <!-- sublevel menu's recursive component -->
             <recursive-menu
               v-if="item.subMenu && item.subMenu.length"
               :items="item.subMenu"
