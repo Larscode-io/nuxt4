@@ -20,4 +20,4 @@ Lorsqu'il prend sa décision, le président doit tenir compte des explications f
 
 Si le président fait droit à la demande, il décidera également les mesures à prendre qui sont les plus appropriées pour protéger la partie ou le tiers intéressé de toute identification.
 
-<v-icon>mdi-file-pdf-box</v-icon>  [Télécharger le texte au format PDF](https://www.const-court.be/public/common/fr/anonymisation.pdf)
+<v-icon color="#C90304">mdi-file-pdf-box</v-icon>  [Télécharger le texte au format PDF](https://www.const-court.be/public/common/fr/anonymisation.pdf)

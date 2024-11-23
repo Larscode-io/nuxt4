@@ -17,4 +17,4 @@ Bij het nemen van een beslissing zal de voorzitter rekening houden met de toelic
 
 Indien de voorzitter het verzoek inwilligt, zal hij ook beslissen over de meest passende maatregelen die moeten worden ondernomen om de partij of de belanghebbende derde te beschermen tegen identificatie.
 
-<v-icon>mdi-file-pdf-box</v-icon>  [Tekst als PDF downloaden](https://www.const-court.be/public/common/nl/anonimisering.pdf)
+<v-icon color="#C90304">mdi-file-pdf-box</v-icon> [Tekst als PDF downloaden](https://www.const-court.be/public/common/nl/anonimisering.pdf)
