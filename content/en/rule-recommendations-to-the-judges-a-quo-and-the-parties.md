@@ -1,6 +1,6 @@
 ---
-title: ''
-description: ''
+title: 'Recommendations to the referring judges and the partie'
+description: 'On June 18, 2020, the Court adopted recommendations for the attention, on the one hand, of jurisdictions, which may ask it a preliminary question and, on the other hand, to parties to proceedings before the Court. Given the growing number of cases that the Court is called upon to deal with, these recommendations are intended to promote more efficient handling of cases, in the interest of the good administration of justice.'
 posterUrl: ~/assets/img/newsletter-background.png
 locale: en
 ---

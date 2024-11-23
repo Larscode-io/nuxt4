@@ -1,6 +1,6 @@
 ---
-title: ''
-description: ''
+title: 'Recommandations aux juges a quo et aux parties'
+description: Le 18 juin 2020, la Cour a adopté des recommandations à l’attention, d’une part, des juridictions susceptibles de lui poser une question préjudicielle et, d’autre part, des parties à une procédure devant la Cour. Eu égard au nombre croissant d’affaires que la Cour est appelée à traiter, ces recommandations ont vocation à favoriser un traitement plus efficace des affaires, dans l’intérêt d’une bonne administration de la justice.'
 posterUrl: ~/assets/img/newsletter-background.png
 locale: fr
 ---

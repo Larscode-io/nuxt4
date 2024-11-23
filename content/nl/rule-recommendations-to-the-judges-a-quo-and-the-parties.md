@@ -1,6 +1,6 @@
 ---
-title: ''
-description: ''
+title: 'Aanbevelingen aan de verwijzende rechters en aan de partijen'
+description: 'Op 18 juni 2020 heeft het Hof aanbevelingen aangenomen ter attentie van, enerzijds, de rechtscolleges die het een prejudiciële vraag kunnen stellen en, anderzijds, de partijen in een procedure voor het Hof. Gelet op het groeiend aantal zaken dat het Hof moet behandelen, zijn deze aanbevelingen bedoeld om een ​​efficiëntere behandeling van de zaken te bevorderen, in het belang van een goede rechtsbedeling.'
 posterUrl: ~/assets/img/newsletter-background.png
 locale: nl
 ---

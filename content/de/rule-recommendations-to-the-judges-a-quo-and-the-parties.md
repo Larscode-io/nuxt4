@@ -1,6 +1,6 @@
 ---
-title: ''
-description: ''
+title: 'Empfehlungen an die vorlegenden Richter und die Parteien'
+description: 'Am 18. Juni 2020 hat der Gerichtshof Empfehlungen an die Rechtsprechungsorgane, die ihm eine Vorabentscheidungsfrage stellen können, einerseits und an die Parteien in einem Verfahren vor dem Gerichtshof andererseits angenommen. In Anbetracht der zunehmenden Anzahl der Rechtssachen, die der Gerichtshof zu behandeln hat, sollen diese Empfehlungen dazu beitragen, die Behandlung der Rechtssachen im Interesse einer geordneten Rechtspflege effizienter zu gestalten.'
 posterUrl: ~/assets/img/newsletter-background.png
 locale: de
 ---
