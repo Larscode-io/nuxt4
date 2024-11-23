@@ -44,7 +44,6 @@ import { useLanguage } from '@/composables/useLanguage'
 const props = defineProps<{ contentPath: string }>()
 
 const route = useRoute()
-const router = useRouter()
 const hash = route.hash.substring(1)
 const { locale } = useLanguage()
 
