@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useLanguage } from '@/composables/useLanguage'
 
-const { t, localePath } = useLanguage()
+const { localePath } = useLanguage()
 defineProps({
   items: {
     type: Array,
