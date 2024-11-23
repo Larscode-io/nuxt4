@@ -1,3 +1,4 @@
+<!-- Nuxt Content Page -->
 <template>
   <div>
     <BannerImage

@@ -1,3 +1,4 @@
+<!-- Nuxt Content Page -->
 <template>
   <div>
     <BannerImage
@@ -63,6 +64,7 @@ const { data: page, pending, error } = await useLazyAsyncData('content', async (
     const doc = await queryContent(`${locale.value}/${contentPath.value}`)
       .findOne()
     const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
+    console.log('idsTo', idsTo)
     currentActiveContentInToc.value
       = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
     return doc
