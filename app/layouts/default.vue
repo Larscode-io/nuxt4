@@ -64,7 +64,10 @@
         <v-spacer />
 
         <nuxt-link :to="localePath(RoutePathKeys.informed)">
-          <v-btn class="menu-button">
+          <v-btn
+            style="text-transform: none;"
+            class="menu-button"
+          >
             {{ t('menu.informed') }}
             <v-icon style="margin-left: 8px;">
               mdi-bank
@@ -166,7 +169,7 @@ function applyTranslationToTitles(menu: CourtItem[]) {
   })
 }
 const translatedItems = computed(() => {
-  return applyTranslationToTitles(courtItems.value)
+  return applyTranslationToTitles(courtItems.value || [])
 })
 
 const drawerItems = ref([
