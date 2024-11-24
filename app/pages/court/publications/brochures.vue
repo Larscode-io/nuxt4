@@ -1,3 +1,4 @@
+<!-- API based page -->
 <template>
   <div>
     <BannerImage
@@ -24,7 +25,7 @@
             <v-card class="d-flex flex-column justify-center">
               <v-card-title>
                 <v-icon
-                  color="#C90304"
+                  color="rgb(var(--v-theme-customRed))"
                 >mdi-file-pdf-box</v-icon>
                 {{ description }}
               </v-card-title>

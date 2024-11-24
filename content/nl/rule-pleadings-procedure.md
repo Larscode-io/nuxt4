@@ -7,7 +7,7 @@ locale: nl
 
 ### Richtlijn van 25 mei 2022 betreffende het verloop van de pleidooien in het kader van de organisatie van de terechtzittingen
 
-<v-icon color="#C90304">mdi-file-pdf-box</v-icon>
+<v-icon color="rgb(var(--v-theme-customRed))">mdi-file-pdf-box</v-icon>
  [Richtlijn van 25 mei 2022](https://www.const-court.be/public/base/nl/richtlijn-pleidooien-terechtzittingen.pdf)
 
 <br/>

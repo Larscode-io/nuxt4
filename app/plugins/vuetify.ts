@@ -17,7 +17,18 @@ export default defineNuxtPlugin((nuxtApp) => {
         mdi,
       },
     },
+    theme: {
+      themes: {
+        light: {
+          colors: {
+            customRed: '#C90304',
+          },
+        },
+      },
+    },
   })
-
+  // .custom-redtext {color: rgb(var(--v-theme-customRed)); }
+  // :style="{ color: 'rgb(var(--v-theme-customRed))' }"
+  // in vuetify elements: color = "rgb(var(--v-theme-customRed))"
   nuxtApp.vueApp.use(vuetify)
 })

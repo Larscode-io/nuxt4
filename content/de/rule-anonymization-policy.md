@@ -17,4 +17,4 @@ Bei der Entscheidungsfindung berücksichtigt der Präsident die Begründung der 
 
 Gibt der Präsident dem Antrag statt, so entscheidet er auch über die geeigneten Maßnahmen zum Schutz der Partei bzw. des Interesse habenden Dritten vor Identifizierung.
 
-<v-icon color="#C90304">mdi-file-pdf-box</v-icon>  [Laden Sie den Text als PDF herunter](https://www.const-court.be/public/common/de/anonymisierung.pdf)
+<v-icon color="rgb(var(--v-theme-customRed))">mdi-file-pdf-box</v-icon>  [Laden Sie den Text als PDF herunter](https://www.const-court.be/public/common/de/anonymisierung.pdf)
