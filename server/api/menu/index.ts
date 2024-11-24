@@ -201,6 +201,10 @@ export default defineEventHandler(async () => {
           to: '/demo/fm',
           title: 'FileMaker demo',
         },
+        {
+          to: '/demo/Juportal',
+          title: 'Juportal demo',
+        },
       ],
     },
     {
