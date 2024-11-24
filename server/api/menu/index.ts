@@ -175,6 +175,10 @@ export default defineEventHandler(async () => {
       ],
     },
     {
+      to: RoutePathKeys.prize,
+      title: 'menu.prize.title',
+    },
+    {
       title: 'DEV',
       subMenu: [
         {
@@ -207,9 +211,6 @@ export default defineEventHandler(async () => {
         },
       ],
     },
-    {
-      to: RoutePathKeys.prize,
-      title: 'menu.prize.title',
-    },
+
   ]
 })
