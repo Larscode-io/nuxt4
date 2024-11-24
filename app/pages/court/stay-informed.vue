@@ -16,7 +16,7 @@
         >
           <Sidebar
             :active="currentActiveContentInToc"
-            :toc="sideBarLinks"
+            :toc="sideBarLinks || []"
             @click="updateCurrentActiveContentInToc"
           />
         </v-col>
@@ -86,7 +86,7 @@ const sideBarLinks = computed(() => {
       return {
         ...toc,
         id: toc.id,
-        text: toc.text ? toc.text.split('.')[1]?.trim() : 'Untitled',
+        text: toc.text ? toc.text.split('.')[1]?.trim() || 'Untitled' : 'Untitled',
       }
     }) || []
 })
