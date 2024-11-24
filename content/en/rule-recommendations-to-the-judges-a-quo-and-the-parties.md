@@ -7,7 +7,7 @@ locale: en
 
 ### 1\. Recommendations for the attention of the courts that refer a question to the Constitutional Court for a preliminary ruling
 
-These <a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Click to download the recommendations for the parties" target="_blank">recommendations for the parties</a> in a preliminary ruling or annulment procedure before the Court contain guidelines to promote more efficient handling of cases, in the interest of the proper administration of justice, given the growing number of cases the Court is called upon to deal with.
+These <a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Click to download the recommendations for the parties" target="_blank">recommendations for the attention of courts</a> in a preliminary ruling or annulment procedure before the Court contain guidelines to promote more efficient handling of cases, in the interest of the proper administration of justice, given the growing number of cases the Court is called upon to deal with.
 
 They do not replace either the Constitution or the Special Act of 6 January 1989 on the Constitutional Court (hereinafter: the Special Act of 6 January 1989).
 
@@ -53,7 +53,7 @@ The referring judge is invited:
 
 ### 2\. Recommendations to the parties to proceedings before the Constitutional Court
 
-These <a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Download the recommendations for the parties" target="_blank">recommendations for the parties</a> in a preliminary ruling or annulment procedure before the Court contain guidelines to promote more efficient handling of cases, in the interest of the proper administration of justice, given the growing number of cases the Court is called upon to deal with.
+These <a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Download the recommendations for the parties" target="_blank">recommendations for the attention of parties</a> in a preliminary ruling or annulment procedure before the Court contain guidelines to promote more efficient handling of cases, in the interest of the proper administration of justice, given the growing number of cases the Court is called upon to deal with.
 
 They do not replace either the Constitution or the Special Act of 6 January 1989 on the Constitutional Court (hereinafter: the Special Act of 6 January 1989).
 
