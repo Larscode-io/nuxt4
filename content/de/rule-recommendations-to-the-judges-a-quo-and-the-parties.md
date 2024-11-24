@@ -7,10 +7,7 @@ locale: de
 
 ### 1\. Empfehlungen an die Rechtsprechungsorgane, die dem Verfassungsgerichtshof eine Vorabentscheidungsfrage stellen
 
-<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Klicken Sie auf den Link, um das PDF herunterzuladen" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
-<br/>
-
-Das vorliegende Dokument enthält **Empfehlungen** an die Rechtsprechungsorgane, die dem Gerichtshof eine Vorabentscheidungsfrage stellen. In Anbetracht der zunehmenden Anzahl der Rechtssachen, die der Gerichtshof zu behandeln hat, sollen diese Empfehlungen dazu beitragen, die Behandlung der Rechtssachen im Interesse einer geordneten Rechtspflege effizienter zu gestalten.
+Diese <a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Klicken Sie, um die Empfehlungen für die Rechtsprechungsorgane herunterzuladen" target="_blank">Empfehlungen für die Rechtsprechungsorgane</a> enthalten Richtlinien, um eine effizientere Behandlung der Rechtssachen im Interesse einer geordneten Rechtspflege zu fördern, angesichts der zunehmenden Anzahl der Rechtssachen, die der Gerichtshof zu behandeln hat.
 
 Sie treten weder an die Stelle der Verfassung, noch an die Stelle des Sondergesetzes vom 6. Januar 1989 über den Verfassungsgerichtshof (nachstehend: Sondergesetz vom 6. Januar 1989).
 
@@ -56,10 +53,7 @@ Der vorlegende Richter wird gebeten,
 
 ### 2\. Empfehlungen an die Parteien in einem Verfahren vor dem Verfassungsgerichtshof
 
-<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Klicken Sie auf den Link, um das PDF herunterzuladen" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon>
- PDF</a><br/>
-<br/>
-Das vorliegende Dokument enthält **Empfehlungen** an die Parteien, die dazu veranlasst sind, in einem Vorabentscheidungs‑ oder Nichtigkeitsverfahren vor dem Gerichtshof aufzutreten. In Anbetracht der zunehmenden Anzahl der Rechtssachen, die der Gerichtshof zu behandeln hat, sollen diese Empfehlungen dazu beitragen, die Behandlung der Rechtssachen im Interesse einer geordneten Rechtspflege effizienter zu gestalten.
+Diese <a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Klicken Sie, um die Empfehlungen für die Parteien herunterzuladen" target="_blank">Empfehlungen für die Parteien</a> in einem Vorabentscheidungs- oder Nichtigkeitsverfahren vor dem Gerichtshof enthalten Richtlinien, um eine effizientere Behandlung der Rechtssachen im Interesse einer geordneten Rechtspflege zu fördern, angesichts der zunehmenden Anzahl der Rechtssachen, die der Gerichtshof zu behandeln hat.
 
 Sie treten weder an die Stelle der Verfassung, noch an die Stelle des Sondergesetzes vom 6. Januar 1989 über den Verfassungsgerichtshof (nachstehend: Sondergesetz vom 6. Januar 1989).
 

@@ -7,10 +7,7 @@ locale: nl
 
 ### 1\. Aanbevelingen aan de rechtscolleges die een prejudiciële vraag stellen aan het Grondwettelijk Hof
 
-<a href="https://www.const-court.be/public/common/nl/aanbevelingenrechters.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
-<br/>
-
-Dit document bevat **aanbevelingen** aan de rechtscolleges die aan het Hof een prejudiciële vraag stellen. Gelet op het groeiende aantal zaken die het Hof dient te behandelen, strekken deze aanbevelingen ertoe een efficiëntere behandeling van de zaken te bevorderen, in het belang van een goede rechtsbedeling.
+Deze <a href="https://www.const-court.be/public/common/nl/aanbevelingenrechters.pdf" aria-label="Aanbevelingen voor de rechtspartijen PDF downloaden" target="_blank">aanbevelingen voor de rechtspartijen</a> bevatten richtlijnen aan de rechtscolleges die aan het Hof een prejudiciële vraag stellen. Gelet op het groeiende aantal zaken die het Hof dient te behandelen, strekken deze aanbevelingen ertoe een efficiëntere behandeling van de zaken te bevorderen, in het belang van een goede rechtsbedeling.
 
 Zij komen niet in de plaats van de Grondwet, noch van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof (hierna : de bijzondere wet van 6 januari 1989).
 
@@ -56,14 +53,11 @@ De verwijzende rechter wordt verzocht om :
 
 ### 2\. Aanbevelingen aan de partijen in een procedure voor het Grondwettelijk Hof
 
-<a href="https://www.const-court.be/public/common/nl/aanbevelingenpartijen.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
-<br/>
+Deze <a href="https://www.const-court.be/public/common/nl/aanbevelingenpartijen.pdf" aria-label="Klik om de aanbevelingen voor partijen te downloaden" target="_blank">aanbevelingen voor de partijen</a> in een prejudiciële procedure of in een vernietigingsprocedure voor het Hof bevat richtlijnen om een efficiëntere behandeling van de zaken te bevorderen, in het belang van een goede rechtsbedeling, gelet op het groeiende aantal zaken die het Hof dient te behandelen.
 
 **Aanbevelingen aan de partijen**
 
 **in een procedure voor het Grondwettelijk Hof**
-
-Dit document bevat **aanbevelingen** ter attentie van de partijen in een prejudiciële procedure of in een vernietigingsprocedure voor het Hof. Gelet op het groeiende aantal zaken die het Hof dient te behandelen, strekken deze aanbevelingen ertoe een efficiëntere behandeling van de zaken te bevorderen, in het belang van een goede rechtsbedeling.
 
 Zij komen niet in de plaats van de Grondwet, noch van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof (hierna : de bijzondere wet van 6 januari 1989).
 

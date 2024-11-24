@@ -7,10 +7,7 @@ locale: fr
 
 ### 1\. Recommandations à l’attention des juridictions qui posent une question préjudicielle à la Cour constitutionnelle
 
-<a href="https://www.const-court.be/public/common/fr/recommandationsjuges.pdf" aria-label="Cliquez sur le lien pour télécharger le pdf" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
-<br/>
-
-Le présent document contient des **recommandations** à l’attention des juridictions qui posent une question préjudicielle à la Cour. Eu égard au nombre croissant d’affaires que la Cour est appelée à traiter, ces recommandations ont vocation à favoriser un traitement plus efficace des affaires, dans l’intérêt d’une bonne administration de la justice.
+Ces <a href="https://www.const-court.be/public/common/fr/recommandationsjuges.pdf" aria-label="Télécharger les recommandations pour les juges" target="_blank">recommandations pour les juges</a> qui posent une question préjudicielle à la Cour contiennent des directives pour favoriser un traitement plus efficace des affaires, dans l’intérêt d’une bonne administration de la justice, eu égard au nombre croissant d’affaires que la Cour est appelée à traiter.
 
 Elles ne se substituent ni à la Constitution et ni à la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle (ci-après : la loi spéciale du 6 janvier 1989).
 
@@ -56,10 +53,7 @@ Le juge _a quo_ est invité à :
 
 ### 2\. Recommandations à l’attention des parties à une procédure devant la Cour constitutionnelle
 
-<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Cliquez sur le lien pour télécharger le pdf" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
-<br/>
-
-Le présent document contient des **recommandations** à l’attention des parties qui sont amenées à agir dans une procédure préjudicielle ou en annulation devant la Cour. Eu égard au nombre croissant d’affaires que la Cour est appelée à traiter, ces recommandations ont vocation à favoriser un traitement plus efficace des affaires, dans l’intérêt d’une bonne administration de la justice.
+Ces <a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Télécharger les recommandations pour les parties" target="_blank">recommandations pour les parties</a> qui sont amenées à agir dans une procédure préjudicielle ou en annulation devant la Cour contiennent des directives pour favoriser un traitement plus efficace des affaires, dans l’intérêt d’une bonne administration de la justice, eu égard au nombre croissant d’affaires que la Cour est appelée à traiter.
 
 Elles ne se substituent ni à la Constitution ni à la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle (ci-après : la loi spéciale du 6 janvier 1989).
 

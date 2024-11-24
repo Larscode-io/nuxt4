@@ -29,6 +29,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   })
   // .custom-redtext {color: rgb(var(--v-theme-pdfRed)); }
   // :style="{ color: 'rgb(var(--v-theme-pdfRed))' }"
-  // in vuetify elements: color = "rgb(var(--v-theme-pdfRed))"
+  // in vuetify elements: color="rgb(var(--v-theme-pdfRed))"
   nuxtApp.vueApp.use(vuetify)
 })
