@@ -21,7 +21,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       themes: {
         light: {
           colors: {
-            pdfRed: '#C90304',
+            pdfRed: '#F40F02',
           },
         },
       },
