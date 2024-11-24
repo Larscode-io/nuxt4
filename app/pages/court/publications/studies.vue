@@ -25,7 +25,7 @@
               <v-card-title class="d-flex align-center">
                 <v-icon
                   class="me-2"
-                  color="rgb(var(--v-theme-customRed))"
+                  color="rgb(var(--v-theme-pdfRed))"
                 >mdi-file-pdf-box</v-icon>
                 <span class="description-text">{{ description }}</span>
               </v-card-title>

@@ -28,7 +28,7 @@
                 <v-list-item-content>
                   <div class=" mb-3">
                     <v-icon
-                      color="rgb(var(--v-theme-customRed))"
+                      color="rgb(var(--v-theme-pdfRed))"
                     >mdi-file-pdf-box</v-icon>
 
                     <h3>

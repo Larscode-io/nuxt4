@@ -7,7 +7,7 @@ locale: fr
 
 ### 1\. Recommandations à l’attention des juridictions qui posent une question préjudicielle à la Cour constitutionnelle
 
-<a href="https://www.const-court.be/public/common/fr/recommandationsjuges.pdf" aria-label="Cliquez sur le lien pour télécharger le pdf" target="blank"> <v-icon color="rgb(var(--v-theme-customRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
+<a href="https://www.const-court.be/public/common/fr/recommandationsjuges.pdf" aria-label="Cliquez sur le lien pour télécharger le pdf" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
 <br/>
 
 Le présent document contient des **recommandations** à l’attention des juridictions qui posent une question préjudicielle à la Cour. Eu égard au nombre croissant d’affaires que la Cour est appelée à traiter, ces recommandations ont vocation à favoriser un traitement plus efficace des affaires, dans l’intérêt d’une bonne administration de la justice.
@@ -56,7 +56,7 @@ Le juge _a quo_ est invité à :
 
 ### 2\. Recommandations à l’attention des parties à une procédure devant la Cour constitutionnelle
 
-<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Cliquez sur le lien pour télécharger le pdf" target="blank"> <v-icon color="rgb(var(--v-theme-customRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
+<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Cliquez sur le lien pour télécharger le pdf" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
 <br/>
 
 Le présent document contient des **recommandations** à l’attention des parties qui sont amenées à agir dans une procédure préjudicielle ou en annulation devant la Cour. Eu égard au nombre croissant d’affaires que la Cour est appelée à traiter, ces recommandations ont vocation à favoriser un traitement plus efficace des affaires, dans l’intérêt d’une bonne administration de la justice.

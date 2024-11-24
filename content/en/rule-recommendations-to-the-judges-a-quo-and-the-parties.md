@@ -7,7 +7,7 @@ locale: en
 
 ### 1\. Recommendations for the attention of the courts that refer a question to the Constitutional Court for a preliminary ruling
 
-<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Click on the link to download the pdf" target="blank"> <v-icon color="rgb(var(--v-theme-customRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
+<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Click on the link to download the pdf" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
 <br/>
 
 This document contains **recommendations** for the attention of courts that refer questions to the Court for a preliminary ruling. In view of the growing number of cases which the Court is called upon to deal with, these recommendations are intended to promote more efficient handling of cases in the interests of the proper administration of justice.
@@ -56,7 +56,7 @@ The referring judge is invited:
 
 ### 2\. Recommendations to the parties to proceedings before the Constitutional Court
 
-<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Click on the link to download the pdf" target="blank"> <v-icon color="rgb(var(--v-theme-customRed))">mdi-file-pdf-box</v-icon>
+<a href="https://www.const-court.be/public/common/fr/recommandationsparties.pdf" aria-label="Click on the link to download the pdf" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon>
  PDF</a><br/>
 <br/>
 

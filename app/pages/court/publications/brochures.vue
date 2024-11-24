@@ -25,7 +25,7 @@
             <v-card class="d-flex flex-column justify-center">
               <v-card-title>
                 <v-icon
-                  color="rgb(var(--v-theme-customRed))"
+                  color="rgb(var(--v-theme-pdfRed))"
                 >mdi-file-pdf-box</v-icon>
                 {{ description }}
               </v-card-title>

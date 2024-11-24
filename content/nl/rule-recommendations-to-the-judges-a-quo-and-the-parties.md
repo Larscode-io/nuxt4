@@ -7,7 +7,7 @@ locale: nl
 
 ### 1\. Aanbevelingen aan de rechtscolleges die een prejudiciële vraag stellen aan het Grondwettelijk Hof
 
-<a href="https://www.const-court.be/public/common/nl/aanbevelingenrechters.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> <v-icon color="rgb(var(--v-theme-customRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
+<a href="https://www.const-court.be/public/common/nl/aanbevelingenrechters.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
 <br/>
 
 Dit document bevat **aanbevelingen** aan de rechtscolleges die aan het Hof een prejudiciële vraag stellen. Gelet op het groeiende aantal zaken die het Hof dient te behandelen, strekken deze aanbevelingen ertoe een efficiëntere behandeling van de zaken te bevorderen, in het belang van een goede rechtsbedeling.
@@ -56,7 +56,7 @@ De verwijzende rechter wordt verzocht om :
 
 ### 2\. Aanbevelingen aan de partijen in een procedure voor het Grondwettelijk Hof
 
-<a href="https://www.const-court.be/public/common/nl/aanbevelingenpartijen.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> <v-icon color="rgb(var(--v-theme-customRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
+<a href="https://www.const-court.be/public/common/nl/aanbevelingenpartijen.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon> PDF</a><br/>
 <br/>
 
 **Aanbevelingen aan de partijen**

@@ -21,14 +21,14 @@ export default defineNuxtPlugin((nuxtApp) => {
       themes: {
         light: {
           colors: {
-            customRed: '#C90304',
+            pdfRed: '#C90304',
           },
         },
       },
     },
   })
-  // .custom-redtext {color: rgb(var(--v-theme-customRed)); }
-  // :style="{ color: 'rgb(var(--v-theme-customRed))' }"
-  // in vuetify elements: color = "rgb(var(--v-theme-customRed))"
+  // .custom-redtext {color: rgb(var(--v-theme-pdfRed)); }
+  // :style="{ color: 'rgb(var(--v-theme-pdfRed))' }"
+  // in vuetify elements: color = "rgb(var(--v-theme-pdfRed))"
   nuxtApp.vueApp.use(vuetify)
 })
