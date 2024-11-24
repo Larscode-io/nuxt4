@@ -7,10 +7,11 @@ locale: de
 
 ### 1\. Suche in der Rechtsprechung
 Es gibt mehrere Möglichkeiten, sich über die Entscheide und Tätigkeiten des Gerichtshofes zu informieren. Suche in der Rechtsprechung – Ein [Suchmotor](search/judgment) ermöglicht die Suche in der bestehenden Rechtsprechung des Gerichtshofes. Sie können anhand verschiedener Parameter – darunter die Nummer des Entscheids, die Geschäftsverzeichnisnummer, das Datum des Entscheids, Textfragmente und Stichwörter – eine gezielte Suche durchführen. Es ist auch ein [vollständiger Überblick](judgments) über die Entscheide des Gerichtshofes pro Jahr vorhanden. 
+<SubscribeLists />
 
 ### 2\. Newsletter 
 Sie können sich auf den Newsletter des Gerichtshofes abonnieren, indem Sie unten Ihre E-Mail-Adresse eintragen.
-<NewsletterSubscription/>
+<!-- <NewsletterSubscription :x="`aTitle`"/> -->
 
 Sie erhalten anschließend eine E-Mail von der E-Mail-Adresse [ info_nl-request @ mailman.const-court.be ], in der Sie gebeten werden, Ihre Anmeldung zu bestätigen, indem Sie einen Link anklicken. Sofort danach erhalten Sie von derselben E-Mail-Adresse eine Bestätigung. Bitte beachten Sie, dass diese E-Mails (sowohl die E-Mail, in der Sie gebeten werden, Ihre Anmeldung zu bestätigen, als auch die E-Mail zur Bestätigung und die E-Mails mit den Newsletters) möglicherweise im Spam-Ordner landen. Dem können Sie abhelfen, indem Sie die E-Mail-Adresse der Liste Ihrer vertrauten Absender hinzufügen.
 

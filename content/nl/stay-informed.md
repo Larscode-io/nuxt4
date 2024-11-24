@@ -10,9 +10,9 @@ Om te zoeken in de bestaande rechtspraak van het Hof is er een [zoekmotor beschi
 
 ### 2\. Nieuwsbrief
 U kan zich abonneren op de nieuwsbrief van het Hof door uw e-mailadres hieronder in te voeren.
-<!-- <NewsletterSubscription :x="`aTitle`"/> -->
+<SubscribeLists />
 
-U ontvangt vervolgens een e-mail van het e-mailadres [ info_nl-request @ mailman.const-court.be ], waarin u wordt gevraagd om uw inschrijving te bevestigen door op een link te klikken. Onmiddellijk daarna ontvangt u van hetzelfde e-mailadres een bevestiging. Opgelet, deze e-mails (zowel de e-mail waarin u wordt gevraagd om uw inschrijving te bevestigen als de e-mail ter bevestiging en de e-mails met de nieuwsbrieven) komen mogelijk in de map “ongewenste e-mail” terecht. U kan dit verhelpen door het e-mailadres toe te voegen aan uw vertrouwde afzenders.
+U ontvangt vervolgens een e-mail van het e-mailadres [info_nl-request@mailman.const-court.be], waarin u wordt gevraagd om uw inschrijving te bevestigen door op een link te klikken. Onmiddellijk daarna ontvangt u van hetzelfde e-mailadres een bevestiging. Opgelet, deze e-mails (zowel de e-mail waarin u wordt gevraagd om uw inschrijving te bevestigen als de e-mail ter bevestiging en de e-mails met de nieuwsbrieven) komen mogelijk in de map “ongewenste e-mail” terecht. U kan dit verhelpen door het e-mailadres toe te voegen aan uw vertrouwde afzenders.
 
 ### 3\. Persberichten
 Het Hof publiceert algemene persberichten en persberichten over arresten, die worden opgesteld door de cel “Media”. De [algemene persberichten](media/general-press-releases) geven met informatie over de werkzaamheden en organisatie van het Hof. [Persberichten over arresten](media/press-releases-concerning-the-judgments?with-archive=true) die het Hof bijzonder belangrijk acht of die de bevolking zouden kunnen interesseren, bestaan ​​uit een samenvattend verslag van de arresten. Vanwege hun aard bevatten persberichten niet de redenering die in de arresten is ontwikkeld, noch de specifieke nuances die eigen zijn aan elk arrest. Zij zijn niet bindend voor het Hof.
