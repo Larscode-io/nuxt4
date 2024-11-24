@@ -154,27 +154,7 @@ export default defineEventHandler(async () => {
           to: RoutePathKeys.media,
           title: 'menu.press-and-media.media-unit',
         },
-        {
-          title: 'DEVELOPMENT ONLY',
-          subMenu: [
-            {
-              to: RoutePathKeys.demoMailman,
-              title: 'menu.demo-mailman',
-            },
-            {
-              to: RoutePathKeys.demoLanguages,
-              title: 'menu.demo-languages',
-            },
-            {
-              to: RoutePathKeys.authLogin,
-              title: 'menu.auth-login',
-            },
-            {
-              to: RoutePathKeys.legacyContent,
-              title: 'menu.legacy-content',
-            },
-          ],
-        },
+
       ],
     },
     {
@@ -191,6 +171,35 @@ export default defineEventHandler(async () => {
         {
           to: RoutePathKeys.rulePleadingsProcedure,
           title: 'menu.rule.pleadings-procedure',
+        },
+      ],
+    },
+    {
+      title: 'DEV',
+      subMenu: [
+        {
+          to: RoutePathKeys.demoMailman,
+          title: 'Mailman subscription demo',
+        },
+        {
+          to: RoutePathKeys.demoLanguages,
+          title: 'i18n and languages demo',
+        },
+        {
+          to: RoutePathKeys.authLogin,
+          title: 'EID authentication demo',
+        },
+        {
+          to: RoutePathKeys.legacyContent,
+          title: 'LegacyContent demo',
+        },
+        {
+          to: '/demo/sql',
+          title: 'SQL demo',
+        },
+        {
+          to: '/demo/fm',
+          title: 'FileMaker demo',
         },
       ],
     },
