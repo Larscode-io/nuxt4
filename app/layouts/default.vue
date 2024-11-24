@@ -35,7 +35,10 @@
             v-if="item.to"
             :to="localePath(item.to)"
           >
-            <v-btn class="menu-button">
+            <v-btn
+              style="text-transform: none;"
+              class="menu-button"
+            >
               {{ item.title || 'Untitled' }}
             </v-btn>
           </nuxt-link>
@@ -44,6 +47,7 @@
             <template #activator="{ props }">
               <v-btn
                 v-bind="props"
+                style="text-transform: none;"
                 class="menu-button"
               >
                 {{ item.title }}
