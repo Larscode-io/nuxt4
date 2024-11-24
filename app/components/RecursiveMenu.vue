@@ -2,13 +2,15 @@
 import { useLanguage } from '@/composables/useLanguage'
 
 const { localePath } = useLanguage()
-defineProps({
-  items: {
-    type: Array,
-    required: true,
-    default: () => [],
-  },
-})
+interface MenuItem {
+  title?: string
+  to?: string
+  subMenu?: MenuItem[]
+}
+
+defineProps<{
+  items: MenuItem[]
+}>()
 const activeChevron = ref<HTMLElement | null>(null)
 
 const toggleChevron = (e: Event) => {
@@ -64,7 +66,10 @@ const toggleChevron = (e: Event) => {
             </div>
           </v-btn>
         </template>
-        <recursive-menu :items="item.subMenu" />
+        <recursive-menu
+          v-if="item.subMenu"
+          :items="item.subMenu"
+        />
       </v-menu>
     </v-list-item>
   </v-list>
