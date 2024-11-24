@@ -18,11 +18,9 @@
 </template>
 
 <script setup lang="ts">
+// http://localhost:3000/nuxt/api/sqltest/affzak
 const url = '/api/sqltest/affzak'
 const { data } = await useFetch(url, {
   lazy: true,
 })
 </script>
-  <!-- // .custom-redtext {color: rgb(var(--v-theme-pdfRed)); } -->
-  <!-- // :style="{ color: 'rgb(var(--v-theme-pdfRed))' }" -->
-  <!-- // in vuetify elements: color="rgb(var(--v-theme-pdfRed))" -->

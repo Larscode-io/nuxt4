@@ -42,6 +42,7 @@ interface Brochure {
 }
 
 const brochures = ref<Brochure[]>([])
+// http://localhost:3000/nuxt/api/fm/example
 const url = '/api/fm/example'
 const { data } = await useFetch(url)
 
