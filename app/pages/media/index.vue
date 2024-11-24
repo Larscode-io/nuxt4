@@ -47,7 +47,7 @@
             :headline-level="3"
             name="Frank MEERSSCHAUT"
             :jobtitle="`${t('general.message.registrars', 1)},
-                  ${t('contact.generalMediaCoordination')},
+                  ${t('contact.general-media-coordination')},
                   (NL)
                   `
             "
@@ -83,117 +83,10 @@
       </v-row>
     </v-container>
   </div>
-
-  <!-- <v-container
-    class="flex-column align-start flex-nowrap"
-    fluid
-  >
-    <v-row
-      v-if="$fetchState.pending"
-      class="d-flex"
-      align="flex-start"
-      justify="center"
-    >
-      <div class="col-12 col-md-12">
-        <v-skeleton-loader
-          class="mx-auto"
-          max-width="300"
-          type="article"
-        />
-      </div>
-    </v-row>
-    <v-row
-      v-else-if="$fetchState.error"
-      class="d-flex"
-      align="flex-start"
-      justify="center"
-    >
-      <div class="col-12 col-md-12">
-        <ErrorCard
-          :message="$t($i18nKeys.error.fetchingData)"
-          :show-go-home="false"
-        />
-      </div>
-    </v-row>
-    <v-row
-      v-else
-      class="d-flex"
-      align="flex-start"
-      justify="center"
-    >
-      <div class="col-12 col-md-12">
-        <section>
-          <nuxt-content
-            :document="page"
-            class="section-content"
-          />
-          <div class="d-flex justify-space-between flex-wrap">
-            <ContactCard
-              :headline-level="3"
-              name="Tim SOUVERIJNS"
-              :jobtitle="
-                `
-                ${$t($i18nKeys.contact.lawClerk)}, (NL)
-                `
-              "
-              :image="contactImgTim"
-              phone="+32(0)2/500.12.21"
-            />
-            <ContactCard
-              :headline-level="3"
-              name="Martin VRANCKEN"
-              :image="contactImgMartin"
-              :jobtitle="
-                `
-                ${$t($i18nKeys.contact.lawClerk)}, (FR)
-                `
-              "
-              phone="+32(0)2/500.12.87"
-            />
-            <ContactCard
-              :headline-level="3"
-              name="Frank MEERSSCHAUT"
-              :jobtitle="
-                `${$tc($i18nKeys.general.message.registrars, 1)},
-                ${$t($i18nKeys.contact.generalMediaCoordination)},
-                (NL)
-                `
-              "
-              :image="contactImgFrank"
-              phone="+32(0)475/32.52.18"
-            />
-            <ContactCard
-              :headline-level="3"
-              name="Thomas LEYS"
-              :jobtitle="
-                `
-                ${$t($i18nKeys.contact.lawClerk)}, (NL-EN)
-                `
-              "
-              phone="+32(0)2/500.12.60"
-              :aria-label="$tc(i18nKeys.aria.label.phone.number)"
-              :image="contactImgThomas"
-            />
-            <ContactCard
-              :headline-level="3"
-              name="Romain VANDERBECK"
-              :jobtitle="
-                `
-                ${$t($i18nKeys.contact.lawClerk)}, (FR)
-                `
-              "
-              :image="contactImgRom"
-              phone="+32(0)2/500.13.28"
-            />
-          </div>
-        </section>
-      </div>
-    </v-row>
-  </v-container> -->
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 // import { useContent } from '@nuxt/content'
 import img from '~/assets/img/banner-media.png'
 
@@ -230,39 +123,6 @@ const { data: page, pending, error } = await useLazyAsyncData('content', async (
     throw error
   }
 })
-
-// const page = ref(null)
-// const { t, tc } = useI18n()
-
-// onMounted(async () => {
-//   const content = useContent()
-//   const fetchedPage = await content(`${t('locale')}/${ContentKeys.mediaMediaUnit}`).fetch()
-
-//   if (!fetchedPage) {
-//     throw new Error('No Content')
-//   }
-
-//   page.value = fetchedPage
-// })
-
-// useHead(() => {
-//   const title = page.value?.title?.trim() || tc(i18nKeys.general.message.constsCourt)
-//   const description = page.value?.description?.trim() || ''
-
-//   return {
-//     title,
-//     htmlAttrs: {
-//       title,
-//     },
-//     meta: [
-//       {
-//         hid: 'description',
-//         name: 'description',
-//         content: description,
-//       },
-//     ],
-//   }
-// })
 </script>
 
 <style lang="scss" scoped>
