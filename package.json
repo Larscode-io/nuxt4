@@ -12,6 +12,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.2.0",
     "@mdi/font": "^7.4.47",
     "@nuxt/content": "^2.13.4",
     "@nuxtjs/i18n": "latest",
@@ -21,7 +22,6 @@
     "vue": "latest"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.2.0",
     "@nuxt/eslint": "^0.6.0",
     "@nuxt/types": "^2.18.1",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
