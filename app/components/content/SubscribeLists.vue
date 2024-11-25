@@ -206,7 +206,7 @@ watch(() => form.selected, () => {
         <input
           id="mailid"
           v-model="form.usermail"
-          type="text"
+          type="email"
           class="form-input"
           :class="{ error: formFieldsErrorIndicator?.email }"
           :placeholder="randomEmail || 'John'"
@@ -235,16 +235,6 @@ watch(() => form.selected, () => {
       </div>
     </form>
 
-    <div
-      v-if="form.userFeedbackMessage"
-      class="feedback-message"
-    >
-      {{ form.userFeedbackMessage }}
-    </div>
-    <div v-else>
-      {{ t("newsletter.declaration") }}
-    </div>
-
     <div class="form-footer">
       <button
         :disabled="form.isSubmitting || !formIsValid"
@@ -255,6 +245,16 @@ watch(() => form.selected, () => {
           ? t("general.message.mailman.subscribe-short") + "..."
           : t("general.message.mailman.subscribe-short") }}
       </button>
+    </div>
+
+    <div
+      v-if="form.userFeedbackMessage"
+      class="feedback-message"
+    >
+      {{ form.userFeedbackMessage }}
+    </div>
+    <div v-else>
+      {{ t("newsletter.declaration") }}
     </div>
   </div>
 </template>
@@ -317,7 +317,7 @@ nav {
 
 .form-footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding-top: 16px;
     border-top: 1px solid #ccc;
 }
