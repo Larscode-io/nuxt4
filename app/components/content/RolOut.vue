@@ -174,7 +174,7 @@ watch(() => form.selected, () => {
               type="text"
               class="form-input"
               :class="{ error: formFieldsErrorIndicator?.email }"
-              :placeholder="randomEmail"
+              :placeholder="randomEmail || 'John'"
               required
               @blur="formDirty.email = true"
             >
