@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { watch, ref, reactive, computed } from 'vue'
+import { ref, reactive, computed } from 'vue'
 
-import type { Languages } from '@/composables/useLanguage'
-import { useLanguage, defaultListLang } from '@/composables/useLanguage'
+import { useLanguage } from '@/composables/useLanguage'
 import { useFaker } from '@/composables/useFaker'
 
 const { t, locale } = useLanguage()
@@ -12,108 +11,31 @@ const randomEmail = ref('')
 
 const form = reactive({
   usermail: '',
-  selected: '', // has value like 'info_nl', 'info_fr', 'pdf_de'
   isSubmitting: false,
   userFeedbackMessage: '',
 })
 
-const _resetForm = () => {
-  form.usermail = ''
-  form.selected = defaultListLang[form.selected] || ''
-  form.isSubmitting = false
-  form.userFeedbackMessage = ''
-}
-
-// locale determins the default list, for example if locale is 'nl' the default list will be 'info_nl'
-const defaultList = computed(() => {
-  return defaultListLang[locale.value as Languages]
+const formDirty = ref({
+  email: false,
 })
 
-// fill form.selected with the defaultList value depending on the locale
-form.selected = defaultList.value || 'info_fr'
-
-// Validation PRE submit request to mailman
 const emailIsValid = computed(() => {
   const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  // todo: check if the emailPattern is correct
   return true
   return form.usermail.length > 0 && emailPattern.test(form.usermail.toLowerCase())
 })
-const isSelectedListValid = computed(() => {
-  return Object.values(defaultListLang).includes(form.selected)
-})
-const formIsValid = computed(() => {
-  return emailIsValid.value && isSelectedListValid.value
-})
-
-const formDirty = ref({
-  email: false,
-  mailinglist: false,
-})
-
-const _learAllDirty = () => {
-  Object.entries(formDirty.value).forEach((el) => {
-    const [k] = el
-    formDirty.value[k] = false
-  })
-}
-const makeAllDirty = () => {
-  Object.entries(formDirty.value).forEach((el) => {
-    const [k] = el
-    formDirty.value[k] = true
-  })
-}
 
 const formFieldsErrorIndicator = computed(() => {
   return {
     email: formDirty.value.email && !emailIsValid.value,
-    mailinglist: formDirty.value.mailinglist && !isSelectedListValid.value,
   }
 })
 
-const params = computed(() => {
-  return {
-    'email': form.usermail?.replace(/(["'|])/g, '\\'),
-    'login-remind': 'Subscribe',
-  }
-})
-
-const queryString = computed(() => {
-  return Object.entries(params.value)
-    .map(([key, val]) => `${key}=${encodeURIComponent(val)}`)
-    .join('&')
-})
-
-const fetchData = async () => {
-  try {
-    const response = await fetch(
-      `https://mailman.const-court.be/mailman/subscribe/${form.selected}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: queryString.value,
-      },
-    )
-
-    if (!response.ok) {
-      throw new Error(`Network response was not ok: ${response.statusText}`)
-    }
-
-    responseData.value = await response.text()
-  }
-  catch (error) {
-    console.error('Error fetching data:', error)
-    // todo: implement a better message for this case and add the translations
-    form.userFeedbackMessage = 'Er is een fout opgetreden bij het aanmelden. Probeer het later opnieuw.'
-  }
-}
-
-const submitRequest = async () => {
+const submitForm = async () => {
   form.isSubmitting = true
-
-  makeAllDirty()
   await fetchData()
+  form.isSubmitting = false
   console.log(`mailmanSubmitIsValid.value: ${mailmanSubmitIsValid.value}`)
   console.log(`emailsSeemsInvalid.value: ${emailsSeemsInvalid.value}`)
   if (mailmanSubmitIsValid.value) {
@@ -129,8 +51,23 @@ const submitRequest = async () => {
   else {
     form.userFeedbackMessage = t('general.message.mailman.subscription-failure')
   }
-  form.isSubmitting = false
 }
+// The email address you supplied is not valid. (E.g. it must contain an `@'.)
+// Your subscription request has been received, and will soon be acted upon.
+
+const params = computed(() => {
+  return {
+    'email': form.usermail?.replace(/(["'|])/g, '\\'),
+    'language': locale.value || 'en',
+    'email-button': 'Subscribe',
+  }
+})
+
+const queryString = computed(() => {
+  return Object.entries(params.value)
+    .map(([key, val]) => `${key}=${encodeURIComponent(val)}`)
+    .join('&')
+})
 
 // POST request stuff
 const responseData = ref('')
@@ -185,78 +122,91 @@ const mailmanSubmitIsValid = computed(() => {
 })
 
 watch(() => form.userFeedbackMessage, () => {
-  setTimeout(() => { form.userFeedbackMessage = '' }, 8000)
+  setTimeout(() => {
+    form.userFeedbackMessage = ''
+  }, 8000)
 })
 
+const fetchData = async () => {
+  try {
+    const response = await fetch(
+      `https://mailman.const-court.be/mailman/subscribe/rolout`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString.value,
+      },
+    )
+
+    if (!response.ok) {
+      throw new Error(`Network response was not ok: ${response.statusText}`)
+    }
+
+    responseData.value = await response.text()
+  }
+  catch (error) {
+    console.error('Error fetching data:', error)
+    form.userFeedbackMessage = 'Er is een fout opgetreden bij het aanmelden. Probeer het later opnieuw.'
+  }
+}
 watch(() => form.selected, () => {
   randomEmail.value = faker.internet.email()
 }, { immediate: true })
 </script>
 
 <template>
-  <div class="container">
-    <form>
-      <div class="form-group">
-        <label
-          for="mailid"
-          class="form-label"
-        >
-          {{ t("general.email") }}
-        </label>
-        <input
-          id="mailid"
-          v-model="form.usermail"
-          type="text"
-          class="form-input"
-          :class="{ error: formFieldsErrorIndicator?.email }"
-          :placeholder="randomEmail"
-          required
-          @blur="formDirty.email = true"
-        >
-        <p
-          v-if="formFieldsErrorIndicator?.email"
-          class="error-text"
-        >
-          Een geldig email adres is nodig.
-        </p>
-        <select
-          v-model="form.selected"
-          class="form-input"
-          @change="formDirty.mailinglist = true"
-        >
-          <option
-            v-for="(value, lang) in defaultListLang"
-            :key="lang"
-            :value="defaultListLang[lang]"
+  <v-container>
+    <v-row>
+      <div>
+        <form @submit.prevent="submitForm">
+          <div>
+            <label
+              for="mailid"
+              class="form-label"
+            >
+              {{ t("general.email") }}
+            </label>
+            <input
+              id="mailid"
+              v-model="form.usermail"
+              type="text"
+              class="form-input"
+              :class="{ error: formFieldsErrorIndicator?.email }"
+              :placeholder="randomEmail"
+              required
+              @blur="formDirty.email = true"
+            >
+            <p
+              v-if="formFieldsErrorIndicator?.email"
+              class="error-text"
+            >
+              Een geldig email adres is nodig.
+            </p>
+          </div>
+          <button
+            :disabled="form.isSubmitting || !emailIsValid"
+            class="submit-button"
+            type="submit"
           >
-            {{ t(`general.message.mailman.letter.${lang}`) }}
-          </option>
-        </select>
+            {{ form.isSubmitting
+              ? t("general.message.mailman.subscribe-short") + "..."
+              : t("general.message.mailman.subscribe-short") }}
+          </button>
+        </form>
+        <div
+          v-if="form.userFeedbackMessage"
+          class="feedback-message"
+        >
+          {{ form.userFeedbackMessage }}
+        </div>
+        <div v-else>
+          {{ t("newsletter.declaration") }}
+        </div>
       </div>
-    </form>
-
-    <div
-      v-if="form.userFeedbackMessage"
-      class="feedback-message"
-    >
-      {{ form.userFeedbackMessage }}
-    </div>
-    <div v-else>
-      {{ t("newsletter.declaration") }}
-    </div>
-
-    <div class="form-footer">
-      <button
-        :disabled="form.isSubmitting || !formIsValid"
-        class="submit-button"
-        @click="submitRequest"
-      >
-        {{ form.isSubmitting
-          ? t("general.message.mailman.subscribe-short") + "..."
-          : t("general.message.mailman.subscribe-short") }}
-      </button>
-    </div>
-  </div>
+    </v-row>
+  </v-container>
 </template>
 
 <style scoped>
