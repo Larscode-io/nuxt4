@@ -35,9 +35,10 @@
             >
               <div
                 v-if="item.subMenu"
-                :class="['menu-title']"
+                class="menu-title"
                 @mouseenter="hoverMenu(index)"
               >
+                <!-- 1st level -->
                 {{ item.title }}
                 <div
                   v-if="hoveredMenu === index && item.subMenu"
@@ -73,14 +74,19 @@
                             </v-row>
                           </div>
                         </div>
-                        <nuxt-link
+                        <v-row
                           v-else
-                          :to="subItem.to ? localePath(subItem.to) : '#'"
-                          @click="closeMenu"
                         >
-                          <v-bt>
-                            {{ subItem.title }}
-                          </v-bt></nuxt-link>
+                          <v-col>
+                            <nuxt-link
+                              :to="subItem.to ? localePath(subItem.to) : '#'"
+                              @click="closeMenu"
+                            >
+                              <!-- 2nd level -->
+                              {{ subItem.title }}
+                            </nuxt-link>
+                          </v-col>
+                        </v-row>
                       </v-col>
                     </v-row>
                   </v-container>
@@ -90,9 +96,8 @@
                 v-else
                 :to="item.to ? localePath(item.to) : '#'"
               >
-                <v-btn :style="{ textTransform: 'none' }">
-                  {{ item.title || 'Untitled' }}
-                </v-btn>
+                <!-- 1st level but no submenu -->
+                {{ item.title || 'Untitled' }}
               </nuxt-link>
             </v-col>
           </v-row>
