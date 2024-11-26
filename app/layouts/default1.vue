@@ -26,67 +26,43 @@
 
       <v-spacer />
       <template v-if="$vuetify.display.mdAndUp">
-        <v-container>
-          <v-row>
-            <v-col
-              v-for="(item, index) in translatedItems"
-              :key="item.title"
-              class="menu-item"
+        <template
+          v-for="(item, index) in translatedItems"
+          :key="index"
+        >
+          <!-- item with to: property gets a direct link -->
+          <nuxt-link
+            v-if="item.to"
+            :to="localePath(item.to)"
+          >
+            <v-btn
+              style="text-transform: none;"
+              class="menu-button"
             >
-              <div
-                v-if="item.subMenu"
-                class="menu-title"
-                @mouseenter="hoverMenu(index)"
-                @mouseleave="hoverMenu(null)"
+              {{ item.title || 'Untitled' }}
+            </v-btn>
+          </nuxt-link>
+          <v-menu v-else>
+            <!-- top level menu -->
+            <template #activator="{ props }">
+              <v-btn
+                v-bind="props"
+                style="text-transform: none;"
+                class="menu-button"
               >
                 {{ item.title }}
-                <div
-                  v-if="hoveredMenu === index && item.subMenu"
-                  class="submenu-container"
-                >
-                  <v-container fluid>
-                    <v-row class="d-flex flex-row justify-space-evenly ">
-                      <v-col
-                        v-for="(subItem) in item.subMenu"
-                        :key="subItem.title"
-                        cols="auto toEnableJustifyInRow"
-                      >
-                        <div v-if="subItem.subMenu">
-                          <span class="submenu-title">{{ subItem.title }}</span>
-                          <div
-                            v-if="subItem.subMenu"
-                            class="mega-menu"
-                          >
-                            <v-row class="d-flex flex-column">
-                              <v-col
-                                v-for=" (thirdLevelItem) in subItem.subMenu"
-                                :key="thirdLevelItem.title"
-                              >
-                                <nuxt-link :to="localePath(thirdLevelItem.to)">
-                                  {{ thirdLevelItem.title }}
-                                </nuxt-link>
-                              </v-col>
-                            </v-row>
-                          </div>
-                        </div>
-                        <nuxt-link
-                          v-else
-                          :to="localePath(subItem.to)"
-                          class="full-width-link"
-                        >{{ subItem.title }}
-                        </nuxt-link>
-                      </v-col>
-                    </v-row>
-                  </v-container>
-                </div>
-              </div>
-              <button v-else>
-                {{ item.title }}
-              </button>
-            </v-col>
-          </v-row>
-        </v-container>
+                <div v-if="item.subMenu" />
+              </v-btn>
+            </template>
+            <!-- sublevel menu's recursive component -->
+            <recursive-menu
+              v-if="item.subMenu && item.subMenu.length"
+              :items="item.subMenu"
+            />
+          </v-menu>
+        </template>
         <v-spacer />
+
         <nuxt-link :to="localePath(RoutePathKeys.informed)">
           <v-btn
             style="text-transform: none;"
@@ -129,6 +105,7 @@
         </v-list>
       </v-menu>
     </v-app-bar>
+    <v-spacer />
 
     <!-- mobile menu -->
     <v-navigation-drawer
@@ -151,7 +128,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, useTemplateRef, onMounted, computed } from 'vue'
+import { ref, useTemplateRef, onMounted, computed, watch } from 'vue'
 import { useLanguage } from '@/composables/useLanguage'
 import type { CourtItem } from '@/core/constants'
 import ogImageUrl from '~/assets/img/ogImage.jpg'
@@ -193,8 +170,7 @@ function applyTranslationToTitles(menu: CourtItem[]) {
   })
 }
 const translatedItems = computed(() => {
-  const x = applyTranslationToTitles(courtItems.value || [])
-  return x
+  return applyTranslationToTitles(courtItems.value || [])
 })
 
 const drawerItems = ref([
@@ -224,44 +200,9 @@ onMounted(() => {
 const menuHeight = ref(0)
 const h = useTemplateRef('appBarRef')
 provide('menuHeight', menuHeight)
-const hoveredMenu = ref(null)
-function hoverMenu(index) {
-  hoveredMenu.value = index
-}
 </script>
 
 <style lang="scss">
-.full-width-link {
-  display: block;
-  width: 100%;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.menu-title {
-  cursor: pointer;
-  position: relative;
-}
-
-.submenu-container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  background: white;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-  padding: 10px;
-}
-
-.menu-item {
-  position: relative;
-}
-
-.v-row.d-flex.flex-row {
-  flex-wrap: nowrap;
-}
 .main-content {
   min-height: calc(100vh - 80px);
   /* Based on the height of app bar */

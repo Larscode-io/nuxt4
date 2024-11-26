@@ -8,17 +8,32 @@ The dropdown is not absolute to the parent button, but rather to the top of the 
 
 <!-- todo: add media queries to adjust the submenu's styling for mobile devices. -->
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { useLanguage } from '@/composables/useLanguage'
+import type { CourtItem } from '@/core/constants'
 
 const { t } = useLanguage()
 definePageMeta({
   layout: 'leeg',
 })
 
-const menu = [{ title: 'menu.court.title', subMenu: [{ title: 'menu.court.presentation.title', subMenu: [{ to: 'court-presentation-history-of-the-court', title: 'menu.court.presentation.history-of-court' }, { to: 'court-presentation-jurisdiction', title: 'menu.court.presentation.jurisdiction' }, { to: 'court-presentation-procedure', title: 'menu.court.presentation.procedure' }, { to: 'court-presentation-how-the-court-operates', title: 'menu.court.presentation.how-the-court-works' }, { to: 'court-presentation-accomodation', title: 'menu.court.presentation.building' }, { to: 'court-presentation-publications-on-the-court', title: 'menu.court.presentation.publication-on-the-court' }, { to: 'court-presentation-international-relations-of-the-court', title: 'menu.court.presentation.international-relations-of-the-court' }, { to: 'court-presentation-eproc', title: 'menu.court.presentation.eproc' }] }, { title: 'menu.court.official-text.title', count: 2, subMenu: [{ to: 'court-basic-text', title: 'menu.court.official-text.constitution' }, { to: 'court-basic-text', title: 'menu.court.official-text.organic-legislation' }, { to: 'court-basic-text#3-arrets-organiques', title: 'menu.court.official-text.organic-judgment' }, { to: 'court-basic-text#4-reglements', title: 'menu.court.official-text.regulations-and-directives' }] }, { title: 'menu.court.publications.title', subMenu: [{ to: 'court-publications-annual-reports', title: 'menu.court.publications.annual-reports' }, { to: 'court-publications-brochures', title: 'menu.court.publications.brochure' }, { to: 'court-publications-studies', title: 'menu.court.publications.studies' }, { to: 'court-publications-speeches', title: 'menu.court.publications.speeches' }] }, { title: 'menu.court.job-offers.title', count: 2, subMenu: [{ to: 'court-job-offers', title: 'menu.court.job-offers.offers' }] }] }, { title: 'menu.decisions.title', subMenu: [{ to: 'judgments-pending-cases', title: 'menu.decisions.pending-cases', count: 2 }, { to: 'search-judgment', title: 'menu.search.title' }, { to: 'judgments', title: 'menu.decisions.judgment', count: 2 }, { to: 'judgments-preliminary-rulings-from-the-court-of-justice-of-the-european-union', title: 'menu.decisions.preliminary-rulings-from-the-court-of-justice-of-the-eu' }] }, { title: 'menu.agenda.title', subMenu: [{ to: 'agenda#menu.decisions.title', title: 'menu.agenda.upcoming-decisions' }, { to: 'agenda#general.message.public-hearing', title: 'menu.agenda.scheduled-public-hearings' }] }, { title: 'menu.press-and-media.title', subMenu: [{ to: 'media-general-press-releases', title: 'menu.press-and-media.general-press-releases' }, { to: 'media-press-releases-concerning-the-judgments', title: 'menu.press-and-media.press-releases-concerning-the-judgments' }, { to: 'media', title: 'menu.press-and-media.media-unit' }] }, { title: 'menu.rule.title', subMenu: [{ to: 'rule-recommendations-to-the-judges-a-quo-and-the-parties', title: 'menu.rule.recommendations-to-the-judges-a-quo-and-the-parties' }, { to: 'rule-anonymization-policy', title: 'menu.rule.anonymization-policy' }, { to: 'rule-pleadings-procedure', title: 'menu.rule.pleadings-procedure' }] }, { to: 'media-prix', title: 'menu.prize.title' }, { title: 'DEV', subMenu: [{ to: 'demo-mailman', title: 'Mailman subscription demo' }, { to: 'demo-languages', title: 'i18n and languages demo' }, { to: 'auth-login', title: 'EID authentication demo' }, { to: 'legacyContent', title: 'LegacyContent demo' }, { to: '/demo/sql', title: 'SQL demo' }, { to: '/demo/fm', title: 'FileMaker demo' }, { to: '/demo/Juportal', title: 'Juportal demo' }] }]
+const { data: courtItems } = await useFetch < CourtItem[] > ('/api/menu', {
+})
 
+function applyTranslationToTitles(menu: CourtItem[]) {
+  return menu.map((item: CourtItem) => {
+    const translatedTitle = item.count !== undefined ? t(item.title, item.count) : t(item.title)
+    const translatedItem = { ...item, title: translatedTitle }
+    if (item.subMenu) {
+      translatedItem.subMenu = applyTranslationToTitles(item.subMenu)
+    }
+    return translatedItem
+  })
+}
+const translatedItems = computed(() => {
+  return applyTranslationToTitles(courtItems.value || [])
+})
 const hoveredMenu = ref(null)
 function hoverMenu(index) {
   hoveredMenu.value = index
@@ -29,7 +44,7 @@ function hoverMenu(index) {
   <v-container>
     <v-row>
       <v-col
-        v-for="(item, index) in menu"
+        v-for="(item, index) in translatedItems"
         :key="item.title"
         class="menu-item"
       >
