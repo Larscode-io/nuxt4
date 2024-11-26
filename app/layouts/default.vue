@@ -35,17 +35,18 @@
             >
               <div
                 v-if="item.subMenu"
-                class="menu-title"
+                :class="['menu-title']"
                 @mouseenter="hoverMenu(index)"
-                @mouseleave="hoverMenu(null)"
               >
                 {{ item.title }}
                 <div
                   v-if="hoveredMenu === index && item.subMenu"
                   class="submenu-container"
+                  :style="{ top: `${menuHeight}px` }"
+                  @mouseleave="hoverMenu(null)"
                 >
                   <v-container fluid>
-                    <v-row class="d-flex flex-row justify-space-evenly ">
+                    <v-row class="d-flex flex-row justify-space-evenly">
                       <v-col
                         v-for="(subItem) in item.subMenu"
                         :key="subItem.title"
@@ -62,7 +63,10 @@
                                 v-for=" (thirdLevelItem) in subItem.subMenu"
                                 :key="thirdLevelItem.title"
                               >
-                                <nuxt-link :to="localePath(thirdLevelItem.to)">
+                                <nuxt-link
+                                  :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
+                                  @click="closeMenu"
+                                >
                                   {{ thirdLevelItem.title }}
                                 </nuxt-link>
                               </v-col>
@@ -71,27 +75,33 @@
                         </div>
                         <nuxt-link
                           v-else
-                          :to="localePath(subItem.to)"
-                          class="full-width-link"
-                        >{{ subItem.title }}
-                        </nuxt-link>
+                          :to="subItem.to ? localePath(subItem.to) : '#'"
+                          @click="closeMenu"
+                        >
+                          <v-bt>
+                            {{ subItem.title }}
+                          </v-bt></nuxt-link>
                       </v-col>
                     </v-row>
                   </v-container>
                 </div>
               </div>
-              <button v-else>
-                {{ item.title }}
-              </button>
+              <nuxt-link
+                v-else
+                :to="item.to ? localePath(item.to) : '#'"
+              >
+                <v-btn :style="{ textTransform: 'none' }">
+                  {{ item.title || 'Untitled' }}
+                </v-btn>
+              </nuxt-link>
             </v-col>
           </v-row>
         </v-container>
+
         <v-spacer />
+
         <nuxt-link :to="localePath(RoutePathKeys.informed)">
-          <v-btn
-            style="text-transform: none;"
-            class="menu-button"
-          >
+          <v-btn :style="{ textTransform: 'none' }">
             {{ t('menu.informed') }}
             <v-icon style="margin-left: 8px;">
               mdi-bank
@@ -224,9 +234,13 @@ onMounted(() => {
 const menuHeight = ref(0)
 const h = useTemplateRef('appBarRef')
 provide('menuHeight', menuHeight)
-const hoveredMenu = ref(null)
-function hoverMenu(index) {
+
+const hoveredMenu = ref<number | null>(null)
+function hoverMenu(index: number | null): void {
   hoveredMenu.value = index
+}
+function closeMenu() {
+  hoveredMenu.value = null
 }
 </script>
 
@@ -235,7 +249,6 @@ function hoverMenu(index) {
   display: block;
   width: 100%;
   text-align: center;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -243,6 +256,11 @@ function hoverMenu(index) {
 .menu-title {
   cursor: pointer;
   position: relative;
+  text-align: center;
+}
+
+.menu-title-hovered {
+  border-bottom: 2px solid #000; /* Adjust the color and thickness as needed */
 }
 
 .submenu-container {
