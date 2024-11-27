@@ -77,7 +77,7 @@
                               >
                                 <nuxt-link
                                   :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
-                                  @click="closeMenu"
+                                  @click="handleMenuClick"
                                 >
                                   <!-- 3th level -->
                                   {{ thirdLevelItem.title }}
@@ -90,7 +90,7 @@
                           <v-col>
                             <nuxt-link
                               :to="subItem.to ? localePath(subItem.to) : '#'"
-                              @click="closeMenu"
+                              @click="handleMenuClick"
                             >
                               <!-- 2nd level -->
                               {{ subItem.title }}
@@ -251,11 +251,17 @@ const h = useTemplateRef('appBarRef')
 provide('menuHeight', menuHeight)
 
 const hoveredMenu = ref<number | null>(null)
+
 function hoverMenu(index: number | null): void {
   hoveredMenu.value = index
 }
 function closeMenu() {
   hoveredMenu.value = null
+}
+
+function handleMenuClick() {
+  closeMenu()
+  toggleMenu()
 }
 function toggleMenu() {
   hoveredMenu.value = hoveredMenu.value === null ? 0 : null
