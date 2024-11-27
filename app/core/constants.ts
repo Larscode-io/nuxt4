@@ -287,3 +287,31 @@ export interface CourtItem {
   subMenu?: CourtItem[]
   count?: number
 }
+
+export interface QuestionPreliminaryRuling {
+  id: number
+  judgmentId: number
+  sortId: number
+  title: string
+  referringJudgmentNumberOfTheConstitutionalCourt: string
+  referringJudgmentDateOfTheConstitutionalCourt: string
+  formatedReferringJudgmentDateOfTheConstitutionalCourt: string
+  referringJudgmentOfTheConstitutionalCourtIds: number[]
+  referringJudgmentOfTheConstitutionalCourtLink: string
+  noticeInTheOfficialJournalLink: string | null
+  noticeInTheOfficialJournalId: string
+  noticeDateInTheOfficialJournal: string | null
+  formatedNoticeDateInTheOfficialJournal: string
+  opinionDateOfTheAdvocateGeneral: string | null
+  formatedOpinionDateOfTheAdvocateGeneral: string
+  opinionOfTheAdvocateGeneralLink: string | null
+  judgmentNumberOfTheCourtOfJustice: string
+  judgmentDateOfTheCourtOfJustice: string | null
+  formatedJudgmentDateOfTheCourtOfJustice: string
+  judgmentOfTheCourtOfJusticeLink: string | null
+  judgmentNumberOfTheConstitutionalCourt: string
+  judgmentDateOfTheConstitutionalCourt: string
+  formatedjudgmentDateOfTheConstitutionalCourt: string
+  judgmentOfTheConstitutionalCourtPath: string
+  judgmentOfTheConstitutionalCourtSummaryEnglish: string
+}

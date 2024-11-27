@@ -7,39 +7,12 @@ import BannerImage from '~/components/BannerImage.vue'
 // import ErrorCard from '~/components/ErrorCard.vue'
 // import EmptyComponent from '~/components/EmptyComponent.vue'
 import { ApiUrl } from '~/core/constants'
+import type { QuestionPreliminaryRuling as Question } from '~/core/types'
 
 const { t, locale } = useLanguage()
 
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
-
-interface Question {
-  id: number
-  judgmentId: number
-  sortId: number
-  title: string
-  referringJudgmentNumberOfTheConstitutionalCourt: string
-  referringJudgmentDateOfTheConstitutionalCourt: string
-  formatedReferringJudgmentDateOfTheConstitutionalCourt: string
-  referringJudgmentOfTheConstitutionalCourtIds: number[]
-  referringJudgmentOfTheConstitutionalCourtLink: string
-  noticeInTheOfficialJournalLink: string | null
-  noticeInTheOfficialJournalId: string
-  noticeDateInTheOfficialJournal: string | null
-  formatedNoticeDateInTheOfficialJournal: string
-  opinionDateOfTheAdvocateGeneral: string | null
-  formatedOpinionDateOfTheAdvocateGeneral: string
-  opinionOfTheAdvocateGeneralLink: string | null
-  judgmentNumberOfTheCourtOfJustice: string
-  judgmentDateOfTheCourtOfJustice: string | null
-  formatedJudgmentDateOfTheCourtOfJustice: string
-  judgmentOfTheCourtOfJusticeLink: string | null
-  judgmentNumberOfTheConstitutionalCourt: string
-  judgmentDateOfTheConstitutionalCourt: string
-  formatedjudgmentDateOfTheConstitutionalCourt: string
-  judgmentOfTheConstitutionalCourtPath: string
-  judgmentOfTheConstitutionalCourtSummaryEnglish: string
-}
 
 // during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
 const { data: questions = ref<Question[]>([]), error } = useLazyFetch<Question[]>(`${baseURL}${ApiUrl.questionsReferred}?lang=${locale.value}`)
