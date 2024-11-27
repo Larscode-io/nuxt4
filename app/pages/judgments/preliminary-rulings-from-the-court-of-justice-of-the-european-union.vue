@@ -36,6 +36,7 @@ interface Question {
   judgmentOfTheCourtOfJusticeLink: string | null
   judgmentNumberOfTheConstitutionalCourt: string
   judgmentDateOfTheConstitutionalCourt: string
+  formatedjudgmentDateOfTheConstitutionalCourt: string
   judgmentOfTheConstitutionalCourtPath: string
   judgmentOfTheConstitutionalCourtSummaryEnglish: string
 }
@@ -50,7 +51,7 @@ const hasQuestion = computed(() => (questions.value ?? []).length > 0)
 
 // todo: print, also check in all other pages
 
-const description = t('menu.decisions.preliminary-rulings-from-the-court-of-justice-of-the-eu-title-description') || '';
+const description = t('menu.decisions.preliminary-rulings-from-the-court-of-justice-of-the-eu-title-description') || ''
 useHead({
   title: t('menu.decisions.preliminary-rulings-from-the-court-of-justice-of-the-eu-title') || '',
   meta: [
@@ -61,25 +62,6 @@ useHead({
     },
   ],
 })
-
-head() {
-
-
-  return {
-    title,
-    htmlAttrs: {
-      title
-    },
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: description
-      }
-    ]
-  };
-},
-
 </script>
 
 <template>
