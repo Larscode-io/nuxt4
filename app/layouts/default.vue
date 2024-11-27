@@ -67,6 +67,7 @@
                               <v-col
                                 class="submenu-title bold"
                                 align="start"
+                                @click="closeMenu"
                               >
                                 {{ subItem.title }}
                               </v-col>
