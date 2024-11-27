@@ -1,5 +1,5 @@
 <template>
-  <ContentPage :content-path="`${ContentKeys.presentationJurisdiction}`" />
+  <ContentPage :content-path="`${ContentKeys.presentationSituation}`" />
 </template>
 
 <script setup lang="ts">

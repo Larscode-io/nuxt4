@@ -37,6 +37,7 @@
                 v-if="item.subMenu"
                 class="menu-title"
                 @mouseenter="hoverMenu(index)"
+                @click="toggleMenu"
               >
                 <!-- 1st level -->
                 {{ item.title }}
@@ -47,36 +48,45 @@
                   @mouseleave="hoverMenu(null)"
                 >
                   <v-container fluid>
-                    <v-row class="d-flex flex-row justify-space-evenly">
+                    <v-row
+                      class="d-flex flex-row justify-space-evenly"
+                    >
                       <v-col
                         v-for="(subItem) in item.subMenu"
                         :key="subItem.title"
                         cols="auto toEnableJustifyInRow"
                       >
+                        <!-- 2nd level with 3rd level in a mega menu -->
                         <div v-if="subItem.subMenu">
-                          <span class="submenu-title">{{ subItem.title }}</span>
                           <div
                             v-if="subItem.subMenu"
-                            class="mega-menu"
+                            class="_mega-menu"
                           >
-                            <v-row class="d-flex flex-column">
+                            <v-row class="flex flex-column">
+                              <!-- 2n level title -->
+                              <v-col
+                                class="submenu-title bold"
+                                align="start"
+                              >
+                                {{ subItem.title }}
+                              </v-col>
                               <v-col
                                 v-for=" (thirdLevelItem) in subItem.subMenu"
                                 :key="thirdLevelItem.title"
+                                align="start"
                               >
                                 <nuxt-link
                                   :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
                                   @click="closeMenu"
                                 >
+                                  <!-- 3th level -->
                                   {{ thirdLevelItem.title }}
                                 </nuxt-link>
                               </v-col>
                             </v-row>
                           </div>
                         </div>
-                        <v-row
-                          v-else
-                        >
+                        <v-row v-else>
                           <v-col>
                             <nuxt-link
                               :to="subItem.to ? localePath(subItem.to) : '#'"
@@ -247,13 +257,15 @@ function hoverMenu(index: number | null): void {
 function closeMenu() {
   hoveredMenu.value = null
 }
+function toggleMenu() {
+  hoveredMenu.value = hoveredMenu.value === null ? 0 : null
+}
 </script>
 
 <style lang="scss">
 .full-width-link {
   display: block;
   width: 100%;
-  text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -266,6 +278,10 @@ function closeMenu() {
 
 .menu-title-hovered {
   border-bottom: 2px solid #000; /* Adjust the color and thickness as needed */
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .submenu-container {
