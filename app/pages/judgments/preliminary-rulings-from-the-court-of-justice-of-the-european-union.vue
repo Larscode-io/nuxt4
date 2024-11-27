@@ -131,7 +131,7 @@ useHead({
               </a>
             </li>
             <li v-else-if="question.opinionOfTheAdvocateGeneralLink === ''">
-              {{ t('error.opinionAdvocateGeneralNotPublished') }}
+              {{ t('error.opinion-advocate-general-not-published') }}
             </li>
             <li v-else>
               {{ t('error.opinion-advocate-general-not-available') }}
