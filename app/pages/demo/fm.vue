@@ -1,5 +1,3 @@
-// api/fm/example
-
 <template>
   <div>
     <v-container>
@@ -35,6 +33,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useFetch } from '#imports'
 
 interface Brochure {
   title_n: string
@@ -43,6 +42,7 @@ interface Brochure {
 
 const brochures = ref<Brochure[]>([])
 // http://localhost:3000/nuxt/api/fm/example
+// 'x-nuxt-client': 'nuxt-app',
 const url = '/api/fm/example'
 const { data } = await useFetch(url)
 
