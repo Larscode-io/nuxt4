@@ -6,7 +6,7 @@ import { ApiUrl } from '~/core/constants'
 
 import { useLanguage } from '@/composables/useLanguage'
 
-import type { PubAnnualReport } from '~/core/constants'
+import type { PubAnnualReportData } from '~/core/constants'
 
 const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
@@ -18,7 +18,7 @@ interface Record {
   description: string
 }
 
-function desc(record: PubAnnualReport): string {
+function desc(record: PubAnnualReportData): string {
   switch (locale.value) {
     case 'fr': return record.title_f
     case 'nl': return record.title_n
@@ -30,8 +30,8 @@ function desc(record: PubAnnualReport): string {
 
 const url = `${ApiUrl.publicationsAnnualReports}?lang=${locale.value}`
 const { data, error, status, refresh } = await useFetch(url, {
-  transform: (data: PubAnnualReport[]): Record[] => {
-    return data.map((item: PubAnnualReport) => {
+  transform: (data: PubAnnualReportData[]): Record[] => {
+    return data.map((item: PubAnnualReportData) => {
       return {
         id: item._k1_Jaarverslag_id,
         filePath: item.filename,

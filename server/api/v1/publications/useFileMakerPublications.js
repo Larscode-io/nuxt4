@@ -25,7 +25,7 @@ const fieldMappings = {
     'title_d',
     'offline',
   ],
-  jaarverslagen: [
+  annualReports: [
     'filename',
     'new_filename_cu',
     '_k1_Jaarverslag_id',
@@ -79,7 +79,7 @@ export function useFileMakerPublications(token, tokenExpiration) {
         brochures:
           fileMakerService.getPublicaties_Brochures.bind(fileMakerService),
         studies: fileMakerService.getPublicaties_Studies.bind(fileMakerService),
-        jaarverslagen:
+        annualReports:
           fileMakerService.getPublicaties_Jaarverslagen.bind(fileMakerService),
         persberichten:
           fileMakerService.getPublicaties_Persberichten.bind(fileMakerService),
@@ -92,7 +92,7 @@ export function useFileMakerPublications(token, tokenExpiration) {
       return {
         expires: tokenExpiration,
         ...dataInfo,
-        publications: mapFields(data, type),
+        fmdata: mapFields(data, type),
       }
     }
     catch (error) {

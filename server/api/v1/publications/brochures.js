@@ -1,4 +1,4 @@
-// api/annual-reports.js
+// api/brochures.js
 import { useFileMakerPublications } from './useFileMakerPublications'
 import { defineEventHandler } from '#imports'
 
@@ -11,11 +11,12 @@ export default defineEventHandler(async (event) => {
       token,
       tokenExpiration,
     )
-    const result = await fetchPublications('annualReports')
+    const result = await fetchPublications('brochures')
+
     return result.fmdata
   }
   catch (error) {
-    console.error(error.message || 'Error in persberichten API')
+    console.error(error.message || 'Error in brochures API')
     return {
       status: 'error',
       code: 401,
