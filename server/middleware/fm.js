@@ -82,7 +82,7 @@ const scheduleTokenDeletion = (url) => {
 
 export default defineEventHandler(async (event) => {
   const filemakerRoutePattern
-    = /^\/api\/fm\/(?:publications\/(?:persberichten|jaarverslagen|studies|brochures)|example|getArrestDateMinus10|getJuportalData)/
+    = /^\/api\/v1\/(?:publications\/(?:persberichten|annual-reports|studies|brochures|example)|example|getArrestDateMinus10|getJuportalData)/
 
   if (!filemakerRoutePattern.test(event.node.req.url)) return
 

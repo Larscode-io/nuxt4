@@ -1,25 +1,13 @@
- <!-- demo for this api: http://localhost:3000/nuxt/api/fm/example -->
+ <!-- demo for this api: http://localhost:3000/nuxt/api/fm/publications/example -->
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-
-interface Brochure {
-  title_n: string
-  filename: string
-}
-
-const brochures = ref<Brochure[]>([])
-const url = '/api/fm/example'
+const url = '/api/v1/publications/example'
 const { data, error, status, refresh } = await useLazyFetch(url)
 
 if (error.value) {
   console.error(error.value)
 }
-onMounted(() => {
-  if (data.value && data.value.brochures) {
-    brochures.value = data.value.brochures
-  }
-})
+const brochures = computed(() => data.value.brochures)
 </script>
 
 <template>
