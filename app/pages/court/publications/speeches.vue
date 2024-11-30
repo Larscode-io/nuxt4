@@ -8,32 +8,62 @@
       alt=""
     />
     <v-container fluid>
-      <v-row
-        v-for="{ id, title, filePath } in reports"
-        :key="id"
-        class="justify-center"
-      >
-        <v-col
-          cols="12"
-          md="6"
+      <div v-if="status === 'pending'">
+        <v-row>
+          <v-col>
+            <v-skeleton-loader
+              v-for="n in 10"
+              :key="n"
+              type="list-item-two-line"
+            />
+          </v-col>
+        </v-row>
+      </div>
+      <div v-else-if="error">
+        <v-alert
+          type="error"
+          dismissible
         >
-          <a
-            :href="`${baseURL}${filePath}`"
-            target="_blank"
-            rel="noopener noreferrer"
+          <v-row>
+            <v-col>
+              <p>Error: {{ error.message }}</p>
+            </v-col>
+            <v-col class="d-flex justify-end">
+              <v-btn
+                color="primary"
+                @click="refresh"
+              >
+                Retry
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-alert>
+      </div>
+      <div v-else>
+        <v-row
+          v-for="{ id, title, filePath } in reports"
+          :key="id"
+          class="justify-center"
+        >
+          <v-col
+            cols="12"
+            md="6"
           >
-            <v-card class="d-flex flex-column justify-center">
-              <v-card-title class="d-flex align-center">
-                <v-icon
-                  class="me-2"
-                  color="rgb(var(--v-theme-pdfRed))"
-                >mdi-file-pdf-box</v-icon>
-                <span class="description-text">{{ title }}</span>
-              </v-card-title>
-            </v-card>
-          </a>
-        </v-col>
-      </v-row>
+            <a
+              :href="`${baseURL}${filePath}`"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <v-card class="d-flex flex-column justify-center">
+                <v-card-title>
+                  <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon>
+                  <span class="description-text">{{ title }}</span>
+                </v-card-title>
+              </v-card>
+            </a>
+          </v-col>
+        </v-row>
+      </div>
     </v-container>
   </div>
 </template>
@@ -44,13 +74,47 @@ import BannerImage from '~/components/BannerImage.vue'
 import img from '~/assets/img/newsletter-background-opt.png'
 import { ApiUrl, DISCOURS_WORDS_FOR_FILTERING } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
+import type { PubSpeechesData } from '~/core/constants'
 
 const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
-// during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
-const { data, error } = useLazyFetch<{ id: number, title: string, filePath: string, description: string }[]>(`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale.value}`)
+const titleByLang = {
+  [Languages.DUTCH]: 'title_n',
+  [Languages.FRENCH]: 'title_f',
+  [Languages.ENGLISH]: 'title_e',
+  [Languages.GERMAN]: 'title_d',
+}
+const titleDbKey = titleByLang[locale.value]
+
+const fileExtensionByLang = {
+  [Languages.DUTCH]: 'n.pdf',
+  [Languages.FRENCH]: 'f.pdf',
+  [Languages.ENGLISH]: 'e.pdf',
+  [Languages.GERMAN]: 'd.pdf',
+}
+interface Record {
+  id: number
+  title: string
+  fileName: string
+  filePath: string
+}
+const url = `${ApiUrl.pressGeneralRelease}?lang=${locale.value}`
+const { data, error, status, refresh } = await useFetch(url, {
+  transform: (data: PubSpeechesData[]): Record[] => {
+    const r = data.map(({ _k1_pbcp_id, filename, ...rest }: PubSpeechesData) => {
+      return {
+        id: _k1_pbcp_id,
+        title: rest[titleDbKey],
+        fileName: `${filename.split('.pdf')[0]}${fileExtensionByLang[locale.value]}`,
+        filePath: filename,
+      }
+    })
+    return r
+  },
+})
+
 if (error.value) {
   console.error(error.value)
 }

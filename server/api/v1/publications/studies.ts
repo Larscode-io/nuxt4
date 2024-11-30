@@ -1,3 +1,4 @@
+// api/jaarverslagen.js
 import { useFileMakerPublications } from './useFileMakerPublications'
 import { defineEventHandler } from '#imports'
 
@@ -10,14 +11,14 @@ export default defineEventHandler(async (event) => {
       token,
       tokenExpiration,
     )
-    return (await fetchPublications('persberichten')).fmdata
+    return (await fetchPublications('studies')).fmdata
   }
   catch (error) {
     if (error instanceof Error) {
-      console.error(error.message || 'Error in persberichten API')
+      console.error(error.message || 'Error in studies API')
     }
     else {
-      console.error('Error in persberichten API')
+      console.error('Error in studies API')
     }
     return {
       status: 'error',

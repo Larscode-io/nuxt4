@@ -11,9 +11,7 @@ export default defineEventHandler(async (event) => {
       token,
       tokenExpiration,
     )
-    const result = await fetchPublications('brochures')
-
-    return result.fmdata
+    return (await fetchPublications('brochures')).fmdata
   }
   catch (error) {
     console.error(error.message || 'Error in brochures API')
