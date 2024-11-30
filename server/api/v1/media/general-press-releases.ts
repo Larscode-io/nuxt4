@@ -1,10 +1,11 @@
 import knex from 'knex'
 import type { PbcpWebsite } from '../../pages.type'
+import { DEFAULT_LANGUAGE } from '../../../constants'
 import { Languages } from '~/core/constants'
 import { useRuntimeConfig, defineEventHandler } from '#imports'
 
 export default defineEventHandler(async (event) => {
-  const { lang, withArchive } = getQuery(event)
+  const { lang = DEFAULT_LANGUAGE, withArchive = true } = getQuery(event) as { lang: Languages, withArchive: boolean }
   const config = useRuntimeConfig()
 
   const titleByLang = {
@@ -39,17 +40,17 @@ export default defineEventHandler(async (event) => {
       database: config.dbName,
     },
   })
-
   const records = await db('pbcp_website')
   const views = records?.map((record: PbcpWebsite) => {
+    const fileName = record.filename.replace('.pdf', fileExtensionByLang[lang])
     return {
       id: record._k1_pbcp_id,
       title: record[titleDbKey],
       description: record[introDbKey],
-      filename: record.filename,
-      fileName: record.filename.replace('.pdf', fileExtensionByLang[lang]),
-      filePath: getPublicPathPDFFileGeneralPressRelease(lang, record.filename),
-      archived: withArchive !== 'false',
+      fileName,
+      fileName2: fileName,
+      filePath: getPublicPathPDFFileGeneralPressRelease(lang, fileName),
+      archived: withArchive !== false,
     }
   })
   return views
