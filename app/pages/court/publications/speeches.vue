@@ -101,19 +101,24 @@ interface Record {
   filePath: string
 }
 const url = `${ApiUrl.pressGeneralRelease}?lang=${locale.value}`
-const { data, error, status, refresh } = await useFetch(url, {
-  transform: (data: PubSpeechesData[]): Record[] => {
-    const r = data.map(({ _k1_pbcp_id, filename, ...rest }: PubSpeechesData) => {
-      return {
-        id: _k1_pbcp_id,
-        title: rest[titleDbKey],
-        fileName: `${filename.split('.pdf')[0]}${fileExtensionByLang[locale.value]}`,
-        filePath: filename,
-      }
-    })
-    return r
-  },
-})
+const { data, error, status, refresh } = await useFetch(url)
+// this is done in the api instead of here
+// transform: (data: PubSpeechesData[]): Record[] => {
+//   console.log(data)
+//   const r = data.map(({ _k1_pbcp_id, filename, ...rest }: PubSpeechesData) => {
+//     return {
+//       id: _k1_pbcp_id,
+//       title: rest[titleDbKey],
+//       fileName: filename.replace('.pdf', fileExtensionByLang[locale.value]),
+//       filePath: filename,
+//       filePath: getPublicPathPDFFileGeneralPressRelease(lang, record.filename),
+//       archived: withArchive !== 'false',
+//     }
+//   })
+//   console.log(r)
+//   return r
+// },
+// })
 
 if (error.value) {
   console.error(error.value)
