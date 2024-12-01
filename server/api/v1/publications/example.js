@@ -1,11 +1,16 @@
 // This is an example of how to fetch data from FileMaker and return it as JSON.
+// http://localhost:3000/nuxt/api/v1/publications/example
 
 // all the Publicaties_Brochures, Publicaties_Jaarverslagen, Publicaties_Persberichten and Publicaties_Studies are
-// refactored with a composable useFileMakerPublicaties
+// refactored with a useFileMakerPublicaties
 
 import { createError } from 'h3'
+import { FileMakerAPI } from '../../../utils/fileMakerApiHelper'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler } from '#imports'
+
+const config = useRuntimeConfig()
+const FileMaker = new FileMakerAPI(config, fetchWithFallback)
 
 const fieldNames = [
   'filename',
@@ -24,9 +29,6 @@ const mapFields = data =>
   )
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig()
-  const fileMakerService = new FileMakerService(config, fetchWithFallback)
-
   const token = event.context.filemakerToken
   const tokenExpiration = event.context.filemakerTokenExpiration
 
@@ -45,7 +47,7 @@ export default defineEventHandler(async (event) => {
     const {
       response: { dataInfo, data },
       // messages,
-    } = await fileMakerService.getPublicaties_Brochures(token)
+    } = await FileMaker.getPublicaties_Brochures(token)
 
     return {
       expires: tokenExpiration,
