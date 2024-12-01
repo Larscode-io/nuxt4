@@ -73,7 +73,6 @@ import { computed } from 'vue'
 import BannerImage from '~/components/BannerImage.vue'
 import img from '~/assets/img/newsletter-background-opt.png'
 import { ApiUrl, DISCOURS_WORDS_FOR_FILTERING } from '~/core/constants'
-import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useLanguage()
 const config = useRuntimeConfig()

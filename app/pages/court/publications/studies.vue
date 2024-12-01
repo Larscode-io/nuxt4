@@ -7,32 +7,62 @@
       alt=""
     />
     <v-container fluid>
-      <v-row
-        v-for="{ id, filePath, description } in studies"
-        :key="id"
-        class="justify-center"
-      >
-        <v-col
-          cols="12"
-          md="8"
+      <div v-if="status === 'pending'">
+        <v-row>
+          <v-col>
+            <v-skeleton-loader
+              v-for="n in 10"
+              :key="n"
+              type="list-item-two-line"
+            />
+          </v-col>
+        </v-row>
+      </div>
+      <div v-else-if="error">
+        <v-alert
+          type="error"
+          dismissible
         >
-          <a
-            :href="`${baseURL}${filePath}`"
-            target="_blank"
-            rel="noopener noreferrer"
+          <v-row>
+            <v-col>
+              <p>Error: {{ error.message }}</p>
+            </v-col>
+            <v-col class="d-flex justify-end">
+              <v-btn
+                color="primary"
+                @click="refresh"
+              >
+                Retry
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-alert>
+      </div>
+      <div v-else>
+        <v-row
+          v-for="{ id, filePath, description } in studies"
+          :key="id"
+          class="justify-center"
+        >
+          <v-col
+            cols="12"
+            md="6"
           >
-            <v-card class="d-flex flex-column justify-center">
-              <v-card-title class="d-flex align-center">
-                <v-icon
-                  class="me-2"
-                  color="rgb(var(--v-theme-pdfRed))"
-                >mdi-file-pdf-box</v-icon>
-                <span class="description-text">{{ description }}</span>
-              </v-card-title>
-            </v-card>
-          </a>
-        </v-col>
-      </v-row>
+            <a
+              :href="`${baseURL}${filePath}`"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <v-card class="d-flex flex-column justify-center">
+                <v-card-title>
+                  <v-icon color="rgb(var(--v-theme-pdfRed))">mdi-file-pdf-box</v-icon>
+                  <span class="description-text">{{ description }}</span>
+                </v-card-title>
+              </v-card>
+            </a>
+          </v-col>
+        </v-row>
+      </div>
     </v-container>
   </div>
 </template>
@@ -41,16 +71,38 @@
 import { computed } from 'vue'
 import BannerImage from '~/components/BannerImage.vue'
 import img from '~/assets/img/newsletter-background-opt.png'
+import type { PubStudiesData } from '~/core/constants'
 import { ApiUrl } from '~/core/constants'
-
-import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
+function desc(record: PubStudiesData): string {
+  switch (locale.value) {
+    case 'fr': return record.title_f
+    case 'nl': return record.title_n
+    case 'de': return record.title_d || ''
+    case 'en': return record.title_e || ''
+    default: return record.title_n
+  }
+}
+
+const url = `${ApiUrl.publicationsStudies}?lang=${locale.value}`
+const { data, error, status, refresh } = await useFetch(url, {
+  transform: (data: PubStudiesData[]): Record[] => {
+    return data.map((item: PubStudiesData) => {
+      return {
+        id: item._k1_Jaarverslag_id,
+        filePath: item.filename,
+        description: desc(item),
+      }
+    })
+  },
+})
 // during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
-const { data, error } = useLazyFetch(`${baseURL}${ApiUrl.publicationsStudies}?lang=${locale.value}`)
+// const { data, error } = useLazyFetch(`${baseURL}${ApiUrl.publicationsStudies}?lang=${locale.value}`)
+
 if (error.value) {
   console.error(error.value)
 }
@@ -62,7 +114,7 @@ useHead({
     {
       hid: 'description',
       name: 'description',
-      content: t('menu.court.publications.studiesTitleDescription') || '',
+      content: t('menu.court.publications.studies-title-description') || '',
     },
   ],
 })

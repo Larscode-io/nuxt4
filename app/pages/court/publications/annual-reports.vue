@@ -4,8 +4,6 @@ import BannerImage from '~/components/BannerImage.vue'
 import img from '~/assets/img/newsletter-background-opt.png'
 import { ApiUrl } from '~/core/constants'
 
-import { useLanguage } from '@/composables/useLanguage'
-
 import type { PubAnnualReportData } from '~/core/constants'
 
 const { t, locale } = useLanguage()
