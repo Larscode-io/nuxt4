@@ -82,9 +82,14 @@ const scheduleTokenDeletion = (url) => {
 
 export default defineEventHandler(async (event) => {
   const filemakerRoutePattern
-    = /^\/api\/v1\/(?:publications\/(?:persberichten|annual-reports|studies|brochures|example)|example|getArrestDateMinus10|getJuportalData)/
+    = /^\/api\/v1\/(?:publications\/(?:annual-reports|studies|brochures|example)|media\/general-press-releases|example)|^\/api\/fm\/(?:getArrestDateMinus10|getJuportalData)/
 
-  if (!filemakerRoutePattern.test(event.node.req.url)) return
+  if (!filemakerRoutePattern.test(event.node.req.url)) {
+    console.error(
+      'This route is excluded from the FileMaker middleware, don\'t forget to include this api url in the middleware in server/middleware/fm.js.',
+    )
+    return
+  }
 
   if (!token || Date.now() > tokenExpiration) {
     await getToken()
