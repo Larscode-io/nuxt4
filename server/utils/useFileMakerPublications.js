@@ -76,7 +76,8 @@ export function useFileMakerPublications(token, tokenExpiration) {
       const serviceMethodMap = {
         brochures:
           fileMakerService.getPublicaties_Brochures.bind(fileMakerService),
-        studies: fileMakerService.getPublicaties_Studies.bind(fileMakerService),
+        studies:
+          fileMakerService.getPublicaties_Studies.bind(fileMakerService),
         annualReports:
           fileMakerService.getPublicaties_Jaarverslagen.bind(fileMakerService),
         persberichten:
