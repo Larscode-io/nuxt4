@@ -1,5 +1,4 @@
 // http://localhost:3000/nuxt/api/fm/getJuportalData
-import { FileMakerService } from '../../services/fileMakerService'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler, createError } from '#imports'
 
