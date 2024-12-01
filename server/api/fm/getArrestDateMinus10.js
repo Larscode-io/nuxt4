@@ -1,4 +1,5 @@
 // http://localhost:3000/nuxt/api/fm/getArrestDateMinus10
+import { FileMakerAPI } from '../../utils/fileMakerApiHelper'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler } from '#imports'
 
@@ -103,12 +104,12 @@ export default defineEventHandler(async (event) => {
   }
 
   const config = useRuntimeConfig()
-  const FileMakerAPI = new FileMakerAPI(config, fetchWithFallback)
+  const FileMaker = new FileMakerAPI(config, fetchWithFallback)
 
   try {
     const {
       response: { data },
-    } = await FileMakerAPI.getArrestDateMinus10(token)
+    } = await FileMaker.getArrestDateMinus10(token)
     const ArrestDateMinus10 = getMaxArrestDateMinus10_cu(data)
     // ArrestDateMinus10 will be a string date in format MM/DD/YYYY or '' if no records are found !
     return {

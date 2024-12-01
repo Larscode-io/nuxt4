@@ -1,4 +1,5 @@
 // http://localhost:3000/nuxt/api/fm/getJuportalData
+import { FileMakerAPI } from '../../utils/fileMakerApiHelper'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler, createError } from '#imports'
 
@@ -24,7 +25,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const config = useRuntimeConfig()
-  const FileMakerAPI = new FileMakerAPI(config, fetchWithFallback)
+  const FileMaker = new FileMakerAPI(config, fetchWithFallback)
 
   try {
     let ArrestDateMinus10 = null
@@ -46,7 +47,7 @@ export default defineEventHandler(async (event) => {
     // response has this signature: { dataInfo: { foundCount, returnedCount, layout }, data: [ { recordId, fieldData: { Arrest_xml: xml } } ] }
     const {
       response: { dataInfo, data },
-    } = await FileMakerAPI.findJuportalData(token, ArrestDateMinus10)
+    } = await FileMaker.findJuportalData(token, ArrestDateMinus10)
     const arresten = mapJuportalData(data)
 
     const result = {
