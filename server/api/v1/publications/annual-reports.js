@@ -1,5 +1,3 @@
-// api/annual-reports.js
-import { useFileMakerPublications } from './useFileMakerPublications'
 import { defineEventHandler } from '#imports'
 
 export default defineEventHandler(async (event) => {

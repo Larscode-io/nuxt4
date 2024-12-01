@@ -4,7 +4,6 @@
 // refactored with a composable useFileMakerPublicaties
 
 import { createError } from 'h3'
-import { FileMakerService } from '../../../services/fileMakerService'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler } from '#imports'
 
