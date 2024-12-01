@@ -1,7 +1,9 @@
-// composable for FileMaker API calls to fetch publications
-
+import { FileMakerAPI } from './fileMakerApiHelper'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback } from '#imports'
+
+const config = useRuntimeConfig()
+const fileMakerService = new FileMakerAPI(config, fetchWithFallback)
 
 const fieldMappings = {
   brochures: [
@@ -59,9 +61,6 @@ const mapFields = (data, type) =>
   )
 
 export function useFileMakerPublications(token, tokenExpiration) {
-  const config = useRuntimeConfig()
-  const fileMakerService = new FileMakerService(config, fetchWithFallback)
-
   if (!token) {
     throw new Error(
       'No token found. Ensure the API URL includes the middleware to set the token.',

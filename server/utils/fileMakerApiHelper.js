@@ -1,6 +1,4 @@
-// todo: rename to FileMakerService.js
-
-export class FileMakerService {
+export class FileMakerAPI {
   constructor(config, fetchFn) {
     this.config = config
     this.fetch = fetchFn

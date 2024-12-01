@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const config = useRuntimeConfig()
-  const fileMakerService = new FileMakerService(config, fetchWithFallback)
+  const FileMakerAPI = new FileMakerAPI(config, fetchWithFallback)
 
   try {
     let ArrestDateMinus10 = null
@@ -46,7 +46,7 @@ export default defineEventHandler(async (event) => {
     // response has this signature: { dataInfo: { foundCount, returnedCount, layout }, data: [ { recordId, fieldData: { Arrest_xml: xml } } ] }
     const {
       response: { dataInfo, data },
-    } = await fileMakerService.findJuportalData(token, ArrestDateMinus10)
+    } = await FileMakerAPI.findJuportalData(token, ArrestDateMinus10)
     const arresten = mapJuportalData(data)
 
     const result = {

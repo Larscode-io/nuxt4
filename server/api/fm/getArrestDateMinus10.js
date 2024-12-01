@@ -103,12 +103,12 @@ export default defineEventHandler(async (event) => {
   }
 
   const config = useRuntimeConfig()
-  const fileMakerService = new FileMakerService(config, fetchWithFallback)
+  const FileMakerAPI = new FileMakerAPI(config, fetchWithFallback)
 
   try {
     const {
       response: { data },
-    } = await fileMakerService.getArrestDateMinus10(token)
+    } = await FileMakerAPI.getArrestDateMinus10(token)
     const ArrestDateMinus10 = getMaxArrestDateMinus10_cu(data)
     // ArrestDateMinus10 will be a string date in format MM/DD/YYYY or '' if no records are found !
     return {

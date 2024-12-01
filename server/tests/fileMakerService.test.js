@@ -1,8 +1,8 @@
 import { describe, it, expect, vi } from 'vitest'
-import { FileMakerService } from '../services/fileMakerService";
+import { FileMakerAPI } from '../services/FileMakerAPI";
 import { describe, it, expect, vi } from "vitest";
 
-describe("FileMakerService", () => {
+describe("FileMakerAPI", () => {
   const config = {
     auServername: "example.com",
     auDatabase: "testDB",
@@ -37,7 +37,7 @@ describe("FileMakerService", () => {
     };
 
     mockFetch.mockResolvedValueOnce(mockResponse);
-    const service = new FileMakerService(config, mockFetch);
+    const service = new FileMakerAPI(config, mockFetch);
     const result = await service.getArrestDateMinus10(token);
 
     expect(result).toHaveProperty("dataInfo");
@@ -82,8 +82,8 @@ describe("FileMakerService", () => {
     };
 
     mockFetch.mockResolvedValue(mockResponse);
-    const fileMakerService = new FileMakerService(config, mockFetch);
-    const response = await fileMakerService.getPublicaties_Jaarverslagen(
+    const FileMakerAPI = new FileMakerAPI(config, mockFetch);
+    const response = await FileMakerAPI.getPublicaties_Jaarverslagen(
       "testToken"
     );
 
