@@ -1,7 +1,7 @@
 // Provides a higher-level utility for fetching and processing Filemaker data.
 
 import { useRuntimeConfig } from '#nitro'
-import { fetchWithFallback } from '#imports'
+import { fetchWithFallback, FilemakerApi } from '#imports'
 
 const config = useRuntimeConfig()
 const fileMakerService = new FilemakerApi(config, fetchWithFallback)
