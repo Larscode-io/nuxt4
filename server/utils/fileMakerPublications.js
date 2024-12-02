@@ -61,7 +61,7 @@ const mapFields = (data, type) =>
     ),
   )
 
-export function fileMakerPublications(token, tokenExpiration) {
+export function filemakerPublications(token, tokenExpiration) {
   if (!token) {
     throw new Error(
       'No token found. Ensure the API URL includes the middleware to set the token.',
