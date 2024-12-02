@@ -1,3 +1,5 @@
+// Provides a higher-level utility for fetching and processing Filemaker data.
+
 import { FileMakerAPI } from './fileMakerApiHelper'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback } from '#imports'
@@ -60,7 +62,7 @@ const mapFields = (data, type) =>
     ),
   )
 
-export function useFileMakerPublications(token, tokenExpiration) {
+export function fileMakerPublications(token, tokenExpiration) {
   if (!token) {
     throw new Error(
       'No token found. Ensure the API URL includes the middleware to set the token.',
