@@ -5,12 +5,12 @@
 // refactored with a useFileMakerPublicaties
 
 import { createError } from 'h3'
-import { FileMakerAPI } from '../../../utils/fileMakerApiHelper'
+import { FilemakerApi } from '../../../utils/FilemakerApi'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler } from '#imports'
 
 const config = useRuntimeConfig()
-const FileMaker = new FileMakerAPI(config, fetchWithFallback)
+const FileMaker = new FilemakerApi(config, fetchWithFallback)
 
 const fieldNames = [
   'filename',

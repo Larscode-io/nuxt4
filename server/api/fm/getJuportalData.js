@@ -1,5 +1,5 @@
 // http://localhost:3000/nuxt/api/fm/getJuportalData
-import { FileMakerAPI } from '../../utils/fileMakerApiHelper'
+import { FilemakerApi } from '../../utils/FilemakerApi'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler, createError } from '#imports'
 
@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const config = useRuntimeConfig()
-  const FileMaker = new FileMakerAPI(config, fetchWithFallback)
+  const FileMaker = new FilemakerApi(config, fetchWithFallback)
 
   try {
     let ArrestDateMinus10 = null

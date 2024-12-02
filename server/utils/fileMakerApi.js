@@ -1,4 +1,7 @@
-export class FileMakerAPI {
+// Handles the low-level details of making API requests to the FileMaker server.
+// It manages the construction of requests, communication, and initial error handling.
+
+export class FilemakerApi {
   constructor(config, fetchFn) {
     this.config = config
     this.fetch = fetchFn
