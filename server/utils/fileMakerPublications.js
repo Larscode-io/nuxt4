@@ -1,6 +1,5 @@
 // Provides a higher-level utility for fetching and processing Filemaker data.
 
-import { FilemakerApi } from './FilemakerApi'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback } from '#imports'
 
