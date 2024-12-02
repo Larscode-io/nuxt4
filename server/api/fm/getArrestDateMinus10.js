@@ -1,5 +1,4 @@
 // http://localhost:3000/nuxt/api/fm/getArrestDateMinus10
-import { FilemakerApi } from '../../utils/FilemakerApi'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler } from '#imports'
 
