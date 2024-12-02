@@ -5,7 +5,6 @@
 // refactored with a useFileMakerPublicaties
 
 import { createError } from 'h3'
-import { FilemakerApi } from '../../../utils/FilemakerApi'
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler } from '#imports'
 
