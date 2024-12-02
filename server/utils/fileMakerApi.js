@@ -18,6 +18,7 @@ export class FilemakerApi {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
+          'x-nuxt-client': 'nuxt-app',
         },
       })
       return response
