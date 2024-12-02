@@ -9,6 +9,24 @@ export class FilemakerApi {
     this.baseUrl = `https://${this.config.auServername}/fmi/data/v1/databases/${this.config.auDatabase}/layouts`
   }
 
+  async getArrestDateMinus10(token) {
+    const url = `${this.baseUrl}/popup_XML_FOD_Justitie_Arrest/records?_offset=1&_limit=1`
+
+    try {
+      const response = await this.fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+      })
+      return response
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
+
   async makeRequest(layout, token, query, sort, additionalParams = {}) {
     const url = `${this.baseUrl}/${layout}/_find`
     const body = {
@@ -71,25 +89,6 @@ export class FilemakerApi {
       ],
       [{ fieldName: 'Studies::_k1_Studie_id', sortOrder: 'descend' }],
     )
-  }
-
-  async getArrestDateMinus10(token) {
-    // we don't use makeRequest because the endpoint has a different structure
-    const url = `${this.baseUrl}/popup_XML_FOD_Justitie_Arrest/records?_offset=1&_limit=1`
-
-    try {
-      const response = await this.fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-      })
-      return response
-    }
-    catch (error) {
-      console.log(error)
-    }
   }
 
   async findJuportalData(token, arrestDate) {
