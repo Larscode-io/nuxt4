@@ -74,7 +74,7 @@ export class FilemakerApi {
   }
 
   async getArrestDateMinus10(token) {
-    // we don't use makeRequest because it the endpoint has a different structure
+    // we don't use makeRequest because the endpoint has a different structure
     const url = `${this.baseUrl}/popup_XML_FOD_Justitie_Arrest/records?_offset=1&_limit=1`
 
     try {
