@@ -1,3 +1,59 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import BannerImage from '~/components/BannerImage.vue'
+import img from '~/assets/img/newsletter-background-opt.png'
+import type { PubStudiesData } from '~/core/constants'
+import { ApiUrl } from '~/core/constants'
+
+const { t, locale } = useLanguage()
+const config = useRuntimeConfig()
+const baseURL = config.public.apiBaseUrl
+
+function desc(record: PubStudiesData): string {
+  switch (locale.value) {
+    case 'fr': return record.title_f
+    case 'nl': return record.title_n
+    case 'de': return record.title_d || ''
+    case 'en': return record.title_e || ''
+    default: return record.title_n
+  }
+}
+interface Record {
+  id: number
+  filePath: string
+  description: string
+}
+
+const url = `${ApiUrl.publicationsStudies}?lang=${locale.value}`
+const { data, error, status, refresh } = await useFetch(url, {
+  transform: (data: PubStudiesData[]): Record[] => {
+    return data.map((item: PubStudiesData) => {
+      return {
+        id: item._k1_Studie_id,
+        filePath: item.filename,
+        description: desc(item),
+      }
+    })
+  },
+})
+
+if (error.value) {
+  console.error(error.value)
+}
+const studies = computed(() => data.value)
+
+useHead({
+  title: t('menu.court.publications.studies') || '',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: t('menu.court.publications.studies-title-description') || '',
+    },
+  ],
+})
+</script>
+
 <template>
   <div>
     <BannerImage
@@ -66,59 +122,6 @@
     </v-container>
   </div>
 </template>
-
-<script setup lang="ts">
-import { computed } from 'vue'
-import BannerImage from '~/components/BannerImage.vue'
-import img from '~/assets/img/newsletter-background-opt.png'
-import type { PubStudiesData } from '~/core/constants'
-import { ApiUrl } from '~/core/constants'
-
-const { t, locale } = useLanguage()
-const config = useRuntimeConfig()
-const baseURL = config.public.apiBaseUrl
-
-function desc(record: PubStudiesData): string {
-  switch (locale.value) {
-    case 'fr': return record.title_f
-    case 'nl': return record.title_n
-    case 'de': return record.title_d || ''
-    case 'en': return record.title_e || ''
-    default: return record.title_n
-  }
-}
-
-const url = `${ApiUrl.publicationsStudies}?lang=${locale.value}`
-const { data, error, status, refresh } = await useFetch(url, {
-  transform: (data: PubStudiesData[]): Record[] => {
-    return data.map((item: PubStudiesData) => {
-      return {
-        id: item._k1_Jaarverslag_id,
-        filePath: item.filename,
-        description: desc(item),
-      }
-    })
-  },
-})
-// during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
-// const { data, error } = useLazyFetch(`${baseURL}${ApiUrl.publicationsStudies}?lang=${locale.value}`)
-
-if (error.value) {
-  console.error(error.value)
-}
-const studies = computed(() => data.value)
-
-useHead({
-  title: t('menu.court.publications.studies') || '',
-  meta: [
-    {
-      hid: 'description',
-      name: 'description',
-      content: t('menu.court.publications.studies-title-description') || '',
-    },
-  ],
-})
-</script>
 
 <style lang="scss" scoped>
 .description-text {

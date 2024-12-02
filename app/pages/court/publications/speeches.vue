@@ -1,4 +1,51 @@
 <!-- API based page -->
+<script setup lang="ts">
+import { computed } from 'vue'
+import BannerImage from '~/components/BannerImage.vue'
+import img from '~/assets/img/newsletter-background-opt.png'
+import { ApiUrl, DISCOURS_WORDS_FOR_FILTERING } from '~/core/constants'
+
+const { t, locale } = useLanguage()
+const config = useRuntimeConfig()
+const baseURL = config.public.apiBaseUrl
+
+interface Record {
+  id: number
+  title: string
+  fileName: string
+  filePath: string
+}
+const url = `${ApiUrl.pressGeneralRelease}?lang=${locale.value}`
+const { data, error, status, refresh } = await useFetch<Record[]>(url)
+
+if (error.value) {
+  console.error(error.value)
+}
+const reports = computed(() => {
+  return data.value
+    ? data.value.filter((report: { title: string }) => {
+      const title = report.title?.toLowerCase()
+      return (
+        DISCOURS_WORDS_FOR_FILTERING.map(key =>
+          title?.includes(key?.toLowerCase()),
+        ).filter(Boolean)?.length > 0
+      )
+    })
+    : []
+})
+
+useHead({
+  title: t('menu.court.publications.speeches') || '',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: t('menu.court.publications.speeches-title-description') || '',
+    },
+  ],
+})
+</script>
+
 <template>
   <div>
     <BannerImage
@@ -67,53 +114,6 @@
     </v-container>
   </div>
 </template>
-
-<script setup lang="ts">
-import { computed } from 'vue'
-import BannerImage from '~/components/BannerImage.vue'
-import img from '~/assets/img/newsletter-background-opt.png'
-import { ApiUrl, DISCOURS_WORDS_FOR_FILTERING } from '~/core/constants'
-
-const { t, locale } = useLanguage()
-const config = useRuntimeConfig()
-const baseURL = config.public.apiBaseUrl
-
-interface Record {
-  id: number
-  title: string
-  fileName: string
-  filePath: string
-}
-const url = `${ApiUrl.pressGeneralRelease}?lang=${locale.value}`
-const { data, error, status, refresh } = await useFetch<Record[]>(url)
-
-if (error.value) {
-  console.error(error.value)
-}
-const reports = computed(() => {
-  return data.value
-    ? data.value.filter((report: { title: string }) => {
-      const title = report.title?.toLowerCase()
-      return (
-        DISCOURS_WORDS_FOR_FILTERING.map(key =>
-          title?.includes(key?.toLowerCase()),
-        ).filter(Boolean)?.length > 0
-      )
-    })
-    : []
-})
-
-useHead({
-  title: t('menu.court.publications.speeches') || '',
-  meta: [
-    {
-      hid: 'description',
-      name: 'description',
-      content: t('menu.court.publications.speeches-title-description') || '',
-    },
-  ],
-})
-</script>
 
 <style lang="scss" scoped>
 .description-text {

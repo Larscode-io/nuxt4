@@ -1,4 +1,64 @@
 <!-- API based page -->
+<script setup lang="ts">
+// todo: error card ?
+import BannerImage from '~/components/BannerImage.vue'
+import img from '~/assets/img/newsletter-background-opt.png'
+import { ApiUrl } from '~/core/constants'
+
+import type { PubBrochuresData } from '~/core/constants'
+
+const { t, locale } = useLanguage()
+
+const config = useRuntimeConfig()
+const baseURL = config.public.apiBaseUrl
+
+interface Record {
+  id: number
+  filePath: string
+  description: string
+}
+
+function desc(record: PubBrochuresData): string {
+  switch (locale.value) {
+    case 'fr': return record.title_f
+    case 'nl': return record.title_n
+    case 'de': return record.title_d || ''
+    case 'en': return record.title_e || ''
+    default: return record.title_n
+  }
+}
+
+// const { data: brochures, error } = useLazyFetch(`${baseURL}${ApiUrl.publicationsBrochures}?lang=${locale.value}`)
+
+const url = `${ApiUrl.publicationsBrochures}?lang=${locale.value}`
+const { data, error, status, refresh } = await useFetch(url, {
+  transform: (data: PubBrochuresData[]): Record[] => {
+    return data.map((item: PubBrochuresData) => {
+      return {
+        id: item._k1_Brochure_id,
+        filePath: item.filename,
+        description: desc(item),
+      }
+    })
+  },
+})
+const brochures = computed(() => data.value)
+
+if (error.value) {
+  console.error(error.value)
+}
+useHead({
+  title: t('menu.court.publications.brochure') || '',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: t('menu.court.publications.brochure-title-description') || '',
+    },
+  ],
+})
+</script>
+
 <template>
   <div>
     <BannerImage
@@ -67,65 +127,5 @@
     </v-container>
   </div>
 </template>
-
-<script setup lang="ts">
-// todo: error card ?
-import BannerImage from '~/components/BannerImage.vue'
-import img from '~/assets/img/newsletter-background-opt.png'
-import { ApiUrl } from '~/core/constants'
-
-import type { PubBrochuresData } from '~/core/constants'
-
-const { t, locale } = useLanguage()
-
-const config = useRuntimeConfig()
-const baseURL = config.public.apiBaseUrl
-
-interface Record {
-  id: number
-  filePath: string
-  description: string
-}
-
-function desc(record: PubBrochuresData): string {
-  switch (locale.value) {
-    case 'fr': return record.title_f
-    case 'nl': return record.title_n
-    case 'de': return record.title_d || ''
-    case 'en': return record.title_e || ''
-    default: return record.title_n
-  }
-}
-
-// const { data: brochures, error } = useLazyFetch(`${baseURL}${ApiUrl.publicationsBrochures}?lang=${locale.value}`)
-
-const url = `${ApiUrl.publicationsBrochures}?lang=${locale.value}`
-const { data, error, status, refresh } = await useFetch(url, {
-  transform: (data: PubBrochuresData[]): Record[] => {
-    return data.map((item: PubBrochuresData) => {
-      return {
-        id: item._k1_Brochure_id,
-        filePath: item.filename,
-        description: desc(item),
-      }
-    })
-  },
-})
-const brochures = computed(() => data.value)
-
-if (error.value) {
-  console.error(error.value)
-}
-useHead({
-  title: t('menu.court.publications.brochure') || '',
-  meta: [
-    {
-      hid: 'description',
-      name: 'description',
-      content: t('menu.court.publications.brochure-title-description') || '',
-    },
-  ],
-})
-</script>
 
 <style lang="scss" scoped></style>
