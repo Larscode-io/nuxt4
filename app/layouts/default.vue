@@ -65,7 +65,7 @@
                             <v-row class="flex flex-column">
                               <!-- 2n level title -->
                               <v-col
-                                class="submenu-title bold"
+                                class="submenu-title bold pa-1 pb-5"
                                 align="start"
                               >
                                 {{ subItem.title }}
