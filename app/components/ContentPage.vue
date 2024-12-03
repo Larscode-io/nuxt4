@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUpdated, defineProps } from 'vue'
+import { ref, computed, onMounted, onUpdated } from 'vue'
 import img from '~/assets/img/newsletter-background-opt.png'
 import { useLanguage } from '@/composables/useLanguage'
 
