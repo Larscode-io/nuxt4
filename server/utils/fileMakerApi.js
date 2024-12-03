@@ -54,6 +54,29 @@ export class FilemakerApi {
     }
   }
 
+  async getPublicaties_Brochures(token) {
+    return this.makeRequest(
+      'Publicaties_Brochures',
+      token,
+      [{ 'Brochures::offline': '==' }],
+      [{ fieldName: 'Brochures::_k1_Brochure_id', sortOrder: 'descend' }],
+    )
+  }
+
+  async getPublicaties_Studies(token, lang, descriptionValue) {
+    return this.makeRequest(
+      'Publicaties_Studies',
+      token,
+      [
+        {
+          'Studies::offline': '==',
+          [lang]: descriptionValue,
+        },
+      ],
+      [{ fieldName: 'Studies::_k1_Studie_id', sortOrder: 'descend' }],
+    )
+  }
+
   async getPublicaties_Jaarverslagen(token) {
     return this.makeRequest(
       'Publicaties_Jaarverslagen',
@@ -78,20 +101,6 @@ export class FilemakerApi {
     )
   }
 
-  async getPublicaties_Studies(token, lang, descriptionValue) {
-    return this.makeRequest(
-      'Publicaties_Studies',
-      token,
-      [
-        {
-          'Studies::offline': '==',
-          [lang]: descriptionValue,
-        },
-      ],
-      [{ fieldName: 'Studies::_k1_Studie_id', sortOrder: 'descend' }],
-    )
-  }
-
   async findJuportalData(token, arrestDate) {
     arrestDate = arrestDate ?? '09/19/2024' // default date is demo data
     return this.makeRequest(
@@ -103,15 +112,6 @@ export class FilemakerApi {
         { fieldName: 'Arrest_Sorteernummer', sortOrder: 'descend' },
       ],
       { limit: '200' },
-    )
-  }
-
-  async getPublicaties_Brochures(token) {
-    return this.makeRequest(
-      'Publicaties_Brochures',
-      token,
-      [{ 'Brochures::offline': '==' }],
-      [{ fieldName: 'Brochures::_k1_Brochure_id', sortOrder: 'descend' }],
     )
   }
 }
