@@ -74,6 +74,7 @@
                                 v-for=" (thirdLevelItem) in subItem.subMenu"
                                 :key="thirdLevelItem.title"
                                 align="start"
+                                class="pa-1"
                               >
                                 <nuxt-link
                                   :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
