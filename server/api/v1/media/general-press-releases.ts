@@ -40,7 +40,16 @@ export default defineEventHandler(async (event) => {
       database: config.dbName,
     },
   })
-  const records = await db('pbcp_website')
+  let query = db <PbcpWebsite>('pbcp_website')
+    .whereNotNull(titleDbKey)
+    .whereNull('offline')
+
+  if (withArchive === false) {
+    query = query.whereNull('archive')
+  }
+
+  const records = await query.orderBy('_k1_pbcp_id', 'desc')
+
   const views = records?.map((record: PbcpWebsite) => {
     const fileName = record.filename.replace('.pdf', fileExtensionByLang[lang])
     return {
