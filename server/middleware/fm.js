@@ -82,20 +82,19 @@ const scheduleTokenDeletion = (url) => {
 
 export default defineEventHandler(async (event) => {
   const filemakerRoutePattern
-    = /^\/api\/v1\/(?:publications\/(?:annual-reports|studies|brochures|example)|media\/general-press-releases|example)|^\/api\/fm\/(?:getArrestDateMinus10|getJuportalData)/
+    = /^\/api\/v1\/(?:publications\/(?:annual-reports|studies|brochures|example|persberichten)|media\/general-press-releases|example)|^\/api\/fm\/(?:getArrestDateMinus10|getJuportalData)/
 
+  // if the route is not a FileMaker route, do nothing, else get a token and add it to the context
   if (!filemakerRoutePattern.test(event.node.req.url)) {
-    console.error(
-      'This route is excluded from the FileMaker middleware, don\'t forget to include this api url in the middleware in server/middleware/fm.js.',
-    )
     return
   }
-
-  if (!token || Date.now() > tokenExpiration) {
-    await getToken()
+  else {
+    if (!token || Date.now() > tokenExpiration) {
+      await getToken()
+    }
+    event.context.filemakerToken = token
+    event.context.filemakerTokenExpiration = new Date(
+      tokenExpiration,
+    ).toLocaleTimeString('nl-BE')
   }
-  event.context.filemakerToken = token
-  event.context.filemakerTokenExpiration = new Date(
-    tokenExpiration,
-  ).toLocaleTimeString('nl-BE')
 })
