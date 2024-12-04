@@ -8,7 +8,7 @@
       <nuxt-link
         :to="localePath('/')"
       >
-        <button class="w-16 h-16 mx-2 p-0 border-0 bg-transparent">
+        <button class="mx-2 p-0 border-0 bg-transparent">
           <img
             src="~/assets/icons/fed.svg"
             :style="{ width: '64px', height: '64px' }"
