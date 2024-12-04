@@ -12,6 +12,7 @@
           <img
             src="~/assets/icons/fed.svg"
             :style="{ width: '64px', height: '64px' }"
+            alt="Logo"
           >
         </button>
       </nuxt-link>
