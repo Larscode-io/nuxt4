@@ -52,7 +52,7 @@
                         :key="subItem.title"
                         cols="auto toEnableJustifyInRow"
                       >
-                        <!-- 2nd level with 3rd level in a mega menu -->
+                        <!-- 2nd level and 3rd level open together in a mega menu -->
                         <div v-if="subItem.subMenu">
                           <div
                             v-if="subItem.subMenu"
@@ -77,7 +77,6 @@
                                   :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
                                   @click="handleMenuClick"
                                 >
-                                  <!-- 3th level -->
                                   {{ thirdLevelItem.title }}
                                 </nuxt-link>
                               </v-col>
