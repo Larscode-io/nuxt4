@@ -8,13 +8,15 @@
       <nuxt-link :to="localePath('/')">
         <v-btn
           icon
-          class="logo-btn"
           width="64"
           height="64"
+          class="mx-2 pa-0"
         >
-          <div
-            class="logo-container"
-            alt=""
+          <v-img
+            src="~/assets/icons/fed.svg"
+            class="logo-container d-flex align-center justify-center"
+            width="64"
+            height="64"
           />
         </v-btn>
       </nuxt-link>
@@ -31,11 +33,11 @@
             <v-col
               v-for="(item, index) in translatedItems"
               :key="item.title"
-              class="menu-item"
+              class="position-relative"
             >
               <div
                 v-if="item.subMenu"
-                class="menu-title"
+                class="cursor-pointer position-relative text-center"
                 @mouseenter="hoverMenu(index)"
                 @click="toggleMenu"
               >
@@ -43,14 +45,12 @@
                 {{ item.title }}
                 <div
                   v-if="hoveredMenu === index && item.subMenu"
-                  class="submenu-container"
+                  class=" position-fixed left-0 right-0 bg-white elevation-2 pa-2 "
                   :style="{ top: `${menuHeight}px` }"
                   @mouseleave="hoverMenu(null)"
                 >
                   <v-container fluid>
-                    <v-row
-                      class="d-flex flex-row justify-space-evenly"
-                    >
+                    <v-row class="d-flex flex-row justify-space-evenly">
                       <v-col
                         v-for="(subItem) in item.subMenu"
                         :key="subItem.title"
@@ -64,8 +64,9 @@
                           >
                             <v-row class="flex flex-column">
                               <!-- 2n level title -->
+
                               <v-col
-                                class="submenu-title bold pa-1 pb-5"
+                                class="font-weight-bold pa-1 pb-5"
                                 align="start"
                               >
                                 {{ subItem.title }}
@@ -270,70 +271,11 @@ function toggleMenu() {
 </script>
 
 <style lang="scss">
-.full-width-link {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.menu-title {
-  cursor: pointer;
-  position: relative;
-  text-align: center;
-}
-
-.menu-title-hovered {
-  border-bottom: 2px solid #000; /* Adjust the color and thickness as needed */
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.submenu-container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  background: white;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-  padding: 10px;
-}
-
-.menu-item {
-  position: relative;
-}
-
-.v-row.d-flex.flex-row {
-  flex-wrap: nowrap;
-}
-.main-content {
-  min-height: calc(100vh - 80px);
-  /* Based on the height of app bar */
-  padding-bottom: 190px;
-  /* Added some padding at the bottom so the Sidebar can highlight also the last item */
-}
 h1 {
   color: $logoColor;
       font-weight: 600;
       font-size: 1rem;
       font-family: 'Tiempos Headline';
       margin-left: 16px;
-}
-
-.logo-btn {
-  margin: 8px;
-  padding: 0 !important;
-}
-
-.logo-container {
-  width: 64px;
-  height: 64px;
-  background: url('~~/app/assets/icons/fed.svg') no-repeat center center;
-  background-size: contain;
-}
-.v-icon {
-  transition: transform 0.3s ease;
 }
 </style>
