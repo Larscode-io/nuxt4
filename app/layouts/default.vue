@@ -2,23 +2,17 @@
   <v-app app>
     <v-app-bar
       ref="appBarRef"
-      :elevation="5"
       height="130"
+      class="elevation-3"
     >
       <nuxt-link :to="localePath('/')">
-        <v-btn
-          icon
-          width="64"
-          height="64"
-          class="mx-2 pa-0"
+        <button
+          class="w-16 h-16 mx-2 p-0 border-0 bg-transparent"
         >
-          <v-img
+          <img
             src="~/assets/icons/fed.svg"
-            class="logo-container d-flex align-center justify-center"
-            width="64"
-            height="64"
-          />
-        </v-btn>
+            style="width: 64px; height: 64px;"
+          ></button>
       </nuxt-link>
       <v-toolbar-title>
         <h1>
@@ -27,7 +21,7 @@
       </v-toolbar-title>
 
       <v-spacer />
-      <template v-if="$vuetify.display.mdAndUp">
+      <template v-if="mdAndUp">
         <v-container>
           <v-row>
             <v-col
@@ -179,6 +173,7 @@
 
 <script setup lang="ts">
 import { ref, useTemplateRef, onMounted, computed } from 'vue'
+import { useDisplay } from 'vuetify'
 import { useLanguage } from '@/composables/useLanguage'
 import type { CourtItem } from '@/core/constants'
 import ogImageUrl from '~/assets/img/ogImage.jpg'
@@ -268,6 +263,8 @@ function handleMenuClick() {
 function toggleMenu() {
   hoveredMenu.value = hoveredMenu.value === null ? 0 : null
 }
+
+const { mdAndUp } = useDisplay()
 </script>
 
 <style lang="scss">
