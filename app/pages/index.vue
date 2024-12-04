@@ -271,6 +271,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </template>
       </PleadingCard>
     </v-container>
+    <NewsletterSection fluid />
   </div>
 </template>
 
