@@ -2,16 +2,14 @@
   <v-app app>
     <v-app-bar
       ref="appBarRef"
-      height="130"
       class="elevation-3"
+      :style="{ height: '130px' }"
     >
       <nuxt-link :to="localePath('/')">
-        <button
-          class="w-16 h-16 mx-2 p-0 border-0 bg-transparent"
-        >
+        <button class="w-16 h-16 mx-2 p-0 border-0 bg-transparent">
           <img
             src="~/assets/icons/fed.svg"
-            style="width: 64px; height: 64px;"
+            :style="{ width: '64px', height: '64px' }"
           ></button>
       </nuxt-link>
       <v-toolbar-title>
@@ -88,7 +86,7 @@
                               :to="subItem.to ? localePath(subItem.to) : '#'"
                               @click="handleMenuClick"
                             >
-                              <!-- 2nd level -->
+                              <!-- 2nd level when no 3th level needed -->
                               {{ subItem.title }}
                             </nuxt-link>
                           </v-col>
@@ -112,7 +110,9 @@
         <v-spacer />
 
         <nuxt-link :to="localePath(RoutePathKeys.informed)">
-          <v-btn :style="{ textTransform: 'none' }">
+          <v-btn
+            :style="{ textTransform: 'none' }"
+          >
             {{ t('menu.informed') }}
             <v-icon style="margin-left: 8px;">
               mdi-bank
@@ -122,8 +122,7 @@
       </template>
 
       <v-app-bar-nav-icon
-        v-if="$vuetify.display.mobile"
-        variant="text"
+        v-if="mobile"
         @click.stop="drawer = !drawer"
       />
 
@@ -264,7 +263,7 @@ function toggleMenu() {
   hoveredMenu.value = hoveredMenu.value === null ? 0 : null
 }
 
-const { mdAndUp } = useDisplay()
+const { mdAndUp, mobile } = useDisplay()
 </script>
 
 <style lang="scss">
