@@ -5,9 +5,7 @@
       class="elevation-3"
       :height="130"
     >
-      <nuxt-link
-        :to="localePath('/')"
-      >
+      <nuxt-link :to="localePath('/')">
         <button class="mx-2 p-0 border-0 bg-transparent">
           <img
             src="~/assets/icons/fed.svg"
@@ -17,7 +15,7 @@
         </button>
       </nuxt-link>
       <v-toolbar-title>
-        <h1>
+        <h1 :aria-label="t('aria.label.menu.homelink')">
           {{ t('general.message.consts-court') }}
         </h1>
       </v-toolbar-title>
@@ -115,6 +113,7 @@
         <nuxt-link :to="localePath(RoutePathKeys.informed)">
           <v-btn
             :style="{ textTransform: 'none' }"
+            :aria-label="t('aria.label.menu.informed')"
           >
             {{ t('menu.informed') }}
             <v-icon style="margin-left: 8px;">
@@ -135,6 +134,7 @@
             v-bind="props"
             icon="mdi-translate"
             variant="text"
+            :aria-label="t('aria.label.menu.language')"
           >
             {{ locale }}
           </v-btn>
@@ -166,10 +166,73 @@
     <v-main class="main-content">
       <slot />
     </v-main>
+    <footer>
+      <v-container fluid>
+        <v-row class="d-flex justify-space-between">
+          <v-col cols="auto">
+            <nuxt-link
+              class="pa-2"
+              :to="localePath('contact')"
+            >
+              {{ t('menu.footer.contact') }}
+            </nuxt-link>
+            <nuxt-link
+              class="pa-2"
+              :to="localePath('legalDisclaimer')"
+            >
+              {{ t('menu.footer.disclaimer') }}
+            </nuxt-link>
+            <nuxt-link
+              :to="{ path: 'https://www.const-court.be/public/' }"
+              target="_blank"
+              rel="noopener noreferrer"
+              :aria-label="t('aria.label.menu.footer.documentenserver')"
+              aria-describedby="tooltiptext"
+              class="pa-2"
+            >
+              {{ t('menu.footer.documents-download') }}
+            </nuxt-link>
 
-    <v-footer app>
-      <!-- Footer content -->
-    </v-footer>
+            <nuxt-link
+              class="pa-2"
+              :to="localePath('privacyPolicy')"
+            >
+              {{ t('menu.footer.term-of-use-privacy-policy2') }}
+            </nuxt-link>
+          </v-col>
+          <v-col cols="auto">
+            <div class="d-flex align-center">
+              <span class="mr-2">{{ t('menu.footer.twitter') }}</span>
+              <nuxt-link
+                to="https://x.com/ConstCourtBE"
+                target="_blank"
+                rel="noopener noreferrer"
+                :aria-label="t('aria.label.landing.twitter')"
+                class="mr-2"
+              >
+                <img
+                  src="~/assets/img/twitter.svg"
+                  :style="{ width: '32px', height: '32px' }"
+                  alt="Twitter"
+                >
+              </nuxt-link>
+              <nuxt-link
+                to="https://www.linkedin.com/company/const-court-be"
+                target="_blank"
+                rel="noopener noreferrer"
+                :aria-label="t('aria.label.landing.linkedin')"
+              >
+                <img
+                  src="~/assets/img/linkedin.svg"
+                  :style="{ width: '32px', height: '32px' }"
+                  alt="LinkedIn"
+                >
+              </nuxt-link>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </footer>
   </v-app>
 </template>
 
