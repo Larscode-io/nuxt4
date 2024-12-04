@@ -3,14 +3,17 @@
     <v-app-bar
       ref="appBarRef"
       class="elevation-3"
-      :style="{ height: '130px' }"
+      :height="130"
     >
-      <nuxt-link :to="localePath('/')">
+      <nuxt-link
+        :to="localePath('/')"
+      >
         <button class="w-16 h-16 mx-2 p-0 border-0 bg-transparent">
           <img
             src="~/assets/icons/fed.svg"
             :style="{ width: '64px', height: '64px' }"
-          ></button>
+          >
+        </button>
       </nuxt-link>
       <v-toolbar-title>
         <h1>
