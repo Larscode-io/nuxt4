@@ -2,7 +2,7 @@
   <div>
     <BannerImage
       :title="t('menu.press-and-media.press-releases-concerning-the-judgments')"
-      :description="$t('press-and-media.press-releases-concerning-the-judgments-title-description')"
+      :description="t('menu.press-and-media.press-releases-concerning-the-judgments-title-description')"
       :image="img"
       :alt="t('alt.banner.flag')"
     />
