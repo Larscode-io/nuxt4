@@ -4,9 +4,14 @@
       ref="appBarRef"
       class="elevation-3"
       :height="130"
+      role="navigation"
+      aria-label="Main Navigation"
     >
       <nuxt-link :to="localePath('/')">
-        <button class="mx-2 p-0 border-0 bg-transparent">
+        <button
+          class="mx-2 p-0 border-0 bg-transparent"
+          aria-label="Home"
+        >
           <img
             src="~/assets/icons/fed.svg"
             :style="{ width: '64px', height: '64px' }"
@@ -23,71 +28,81 @@
       <v-spacer />
       <template v-if="mdAndUp">
         <v-container>
-          <v-row>
+          <v-row role="menu">
             <v-col
               v-for="(item, index) in translatedItems"
               :key="item.title"
               class="position-relative"
+              role="menuitem"
             >
               <div
                 v-if="item.subMenu"
+                :id="`menu-${t(item.title)}`"
                 class="cursor-pointer position-relative text-center"
+                :aria-label="`level 1 menu title ${item.title}`"
+                role="link"
+                tabindex="0"
+                :aria-expanded="hoveredMenu === index"
+                :aria-controls="`submenu-${index}`"
                 @mouseenter="hoverMenu(index)"
                 @click="toggleMenu"
               >
-                <!-- 1st level -->
                 {{ item.title }}
                 <div
                   v-if="hoveredMenu === index && item.subMenu"
-                  class=" position-fixed left-0 right-0 bg-white elevation-2 pa-2 "
+                  :id="`submenu-${index}`"
+                  class="position-fixed left-0 right-0 bg-white elevation-2 pa-2"
                   :style="{ top: `${menuHeight}px` }"
                   @mouseleave="hoverMenu(null)"
                 >
                   <v-container fluid>
-                    <v-row class="d-flex flex-row justify-space-evenly">
+                    <v-row
+                      :aria-labelledby="`menu-${t(item.title)}`"
+                      class="d-flex flex-row justify-space-evenly"
+                    >
                       <v-col
                         v-for="(subItem) in item.subMenu"
                         :key="subItem.title"
                         cols="auto toEnableJustifyInRow"
+                        role="menuitem"
                       >
-                        <!-- 2nd level and 3rd level open together in a mega menu -->
-                        <div v-if="subItem.subMenu">
-                          <div
-                            v-if="subItem.subMenu"
-                            class="_mega-menu"
-                          >
-                            <v-row class="flex flex-column">
-                              <!-- 2n level title -->
-
-                              <v-col
-                                class="font-weight-bold pa-1 pb-5"
-                                align="start"
+                        <div
+                          v-if="subItem.subMenu"
+                          class="_mega-menu"
+                        >
+                          <v-row class="flex flex-column">
+                            <v-col
+                              class="font-weight-bold pa-1 pb-5"
+                              align="start"
+                              aria-label="level 2 menu title"
+                            >
+                              {{ subItem.title }}
+                            </v-col>
+                            <v-col
+                              v-for="(thirdLevelItem) in subItem.subMenu"
+                              :key="thirdLevelItem.title"
+                              align="start"
+                              class="pa-1"
+                            >
+                              <nuxt-link
+                                :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
+                                aria-label="`level 3 menu item ${thirdLevelItem.title}"
+                                @click="handleMenuClick"
                               >
-                                {{ subItem.title }}
-                              </v-col>
-                              <v-col
-                                v-for=" (thirdLevelItem) in subItem.subMenu"
-                                :key="thirdLevelItem.title"
-                                align="start"
-                                class="pa-1"
-                              >
-                                <nuxt-link
-                                  :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
-                                  @click="handleMenuClick"
-                                >
-                                  {{ thirdLevelItem.title }}
-                                </nuxt-link>
-                              </v-col>
-                            </v-row>
-                          </div>
+                                {{ thirdLevelItem.title }}
+                              </nuxt-link>
+                            </v-col>
+                          </v-row>
                         </div>
                         <v-row v-else>
                           <v-col>
                             <nuxt-link
                               :to="subItem.to ? localePath(subItem.to) : '#'"
+                              :aria-label="`level 2 menu item ${subItem.title}`"
+                              role="link"
+                              tabindex="0"
                               @click="handleMenuClick"
                             >
-                              <!-- 2nd level when no 3th level needed -->
                               {{ subItem.title }}
                             </nuxt-link>
                           </v-col>
@@ -100,8 +115,10 @@
               <nuxt-link
                 v-else
                 :to="item.to ? localePath(item.to) : '#'"
+                :aria-label="`top menu item ${item.title}`"
+                role="link"
+                tabindex="0"
               >
-                <!-- 1st level but no submenu -->
                 {{ item.title || 'Untitled' }}
               </nuxt-link>
             </v-col>
@@ -125,6 +142,7 @@
 
       <v-app-bar-nav-icon
         v-if="mobile"
+        aria-label="Toggle Navigation Drawer"
         @click.stop="drawer = !drawer"
       />
 
@@ -139,10 +157,12 @@
             {{ locale }}
           </v-btn>
         </template>
-        <v-list>
+        <v-list role="menu">
           <v-list-item
             v-for="(lang) in availableLocales"
             :key="lang.code"
+            role="menuitem"
+            :aria-label="lang.name"
             @click="switchLanguage(lang.code)"
           >
             <v-list-item-title>
@@ -153,14 +173,27 @@
       </v-menu>
     </v-app-bar>
 
-    <!-- mobile menu -->
     <v-navigation-drawer
       v-if="drawer"
       v-model="drawer"
       :location="$vuetify.display.mobile ? 'bottom' : undefined"
       temporary
+      role="navigation"
+      aria-label="Mobile Navigation Drawer"
     >
-      <v-list :items="drawerItems" />
+      <v-list
+        :items="drawerItems"
+        role="menu"
+      >
+        <v-list-item
+          v-for="item in drawerItems"
+          :key="item.value"
+          role="menuitem"
+          :aria-label="item.title"
+        >
+          {{ item.title }}
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
 
     <v-main class="main-content">
@@ -173,12 +206,14 @@
             <nuxt-link
               class="pa-2"
               :to="localePath('contact')"
+              aria-label="Contact"
             >
               {{ t('menu.footer.contact') }}
             </nuxt-link>
             <nuxt-link
               class="pa-2"
               :to="localePath('legalDisclaimer')"
+              aria-label="Legal Disclaimer"
             >
               {{ t('menu.footer.disclaimer') }}
             </nuxt-link>
@@ -196,6 +231,7 @@
             <nuxt-link
               class="pa-2"
               :to="localePath('privacyPolicy')"
+              aria-label="Privacy Policy"
             >
               {{ t('menu.footer.term-of-use-privacy-policy2') }}
             </nuxt-link>
