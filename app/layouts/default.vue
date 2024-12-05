@@ -118,6 +118,7 @@
                 :aria-label="`top menu item ${item.title}`"
                 role="link"
                 tabindex="0"
+                @mouseenter="hoverMenu(index)"
               >
                 {{ item.title || 'Untitled' }}
               </nuxt-link>
