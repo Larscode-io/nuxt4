@@ -72,6 +72,7 @@ const releases = computed(() => {
 })
 
 // todo: print, also check in all other pages
+
 useHead({
   title: t('menu.press-and-media.general-press-releases') || '',
   meta: [
