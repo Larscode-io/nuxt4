@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import img from '~/assets/img/newsletter-background-opt.png'
 import { useLanguage } from '@/composables/useLanguage'
 import { ContentKeys } from '~/core/constants'

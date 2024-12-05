@@ -4,8 +4,6 @@ import { ref, computed } from 'vue'
 import img from '~/assets/img/banner-judgment.png'
 import { useLanguage } from '@/composables/useLanguage'
 import BannerImage from '~/components/BannerImage.vue'
-// import ErrorCard from '~/components/ErrorCard.vue'
-// import EmptyComponent from '~/components/EmptyComponent.vue'
 import { ApiUrl } from '~/core/constants'
 import type { QuestionPreliminaryRuling as Question } from '~/core/types'
 
@@ -15,7 +13,8 @@ const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
 // during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
-const { data: questions = ref<Question[]>([]), error } = useLazyFetch<Question[]>(`${baseURL}${ApiUrl.questionsReferred}?lang=${locale.value}`)
+const { data: questions = ref<Question[]>([]), error }
+  = useLazyFetch<Question[]>(`${baseURL}${ApiUrl.questionsReferred}?lang=${locale.value}`)
 if (error.value) {
   console.error(error.value)
 }
@@ -72,7 +71,8 @@ useHead({
               </a>
               (
               {{
-                `${t('general.message.roll-number', 2)}${t('general.message.colon')} ${question.referringJudgmentOfTheConstitutionalCourtIds[0]
+                `${t('general.message.roll-number', 2)}${t('general.message.colon')}
+              ${question.referringJudgmentOfTheConstitutionalCourtIds[0]
                 } `
               }})
               {{ t('general.of') }}
@@ -89,7 +89,8 @@ useHead({
               <span v-if="question.noticeInTheOfficialJournalId">
                 (
                 {{
-                  `${t('general.message.case', 2).toLowerCase()}${t('general.message.colon')} ${question.noticeInTheOfficialJournalId} `
+                  `${t('general.message.case', 2).toLowerCase()}${t('general.message.colon')}
+                ${question.noticeInTheOfficialJournalId} `
                 }})
               </span>
             </li>
@@ -147,6 +148,13 @@ useHead({
           </ul>
         </v-card-text>
       </v-card>
+    </div>
+    <div
+      v-else
+      ref="list"
+      class="col-12 col-md-9"
+    >
+      <EmptyComponent />
     </div>
   </div>
 </template>
