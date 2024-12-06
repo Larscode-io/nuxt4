@@ -134,7 +134,7 @@ export default defineEventHandler(async () => {
           title: 'menu.agenda.upcoming-decisions',
         },
         {
-          to: `${RoutePathKeys.agenda}#general.message.public-hearing`,
+          to: `${RoutePathKeys.agenda}`,
           title: 'menu.agenda.scheduled-public-hearings',
         },
       ],
