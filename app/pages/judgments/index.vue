@@ -13,18 +13,18 @@ const withArchive = ref(true)
 
 interface LegalCase {
   id: number
-  processingLanguage: string
-  dateReceived: string
-  dateOfHearing: string | null
-  dateDelivered: string | null
   description: string
-  dateArt74: string | null
-  art74Link: string | null
-  linkedCaseNumber: number | null
-  joinedCases: any[] | null
+  availablePart: string
+  courtVerdict: string
+  fileName: string
+  filePath: string
+  formatedJudmentDate: string
+  idsRole: number[]
+  judmentDate: string
   keywords: string
-  requestForSuspensionOrInterlocutoryJudgment: string | null
-  type: string
+  nr: string
+  path: string
+  summary: string | null
 }
 
 // during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
@@ -101,7 +101,7 @@ if (error.value) {
                   </div>
                   <v-list-item-title class="headline mb-1">
                     {{
-                      title
+                      description
                     }}
                   </v-list-item-title>
                   <v-list-item-subtitle>
