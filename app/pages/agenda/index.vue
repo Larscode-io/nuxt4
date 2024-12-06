@@ -39,7 +39,6 @@ interface Judgment {
   dateLong: string
 }
 
-// Making Parallel Requests
 const { data, error, status, refresh } = useAsyncData<[Pleading[], Judgment[]]>(() => {
   return Promise.all([
     $fetch<Pleading[]>(`${baseURL}${ApiUrl.pressPleadings}?lang=${locale.value}`),
@@ -120,10 +119,6 @@ const pleadings = computed<Pleading[]>(() => {
               <v-list-item>
                 <v-list-item-content>
                   <div class=" mb-3">
-                    <v-icon color="rgb(var(--v-theme-pdfRed))">
-                      mdi-file-pdf-box
-                    </v-icon>
-
                     <h3> {{ nr }} </h3>
                     <h3> {{ availablePart }} </h3>
                   </div>
@@ -160,10 +155,6 @@ const pleadings = computed<Pleading[]>(() => {
               <v-list-item>
                 <v-list-item-content>
                   <div class=" mb-3">
-                    <v-icon color="rgb(var(--v-theme-pdfRed))">
-                      mdi-file-pdf-box
-                    </v-icon>
-
                     <h3> {{ nr }} </h3>
                     <h3> {{ availablePart }} </h3>
                   </div>
