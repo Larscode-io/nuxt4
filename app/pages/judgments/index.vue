@@ -76,7 +76,7 @@ if (error.value) {
       </div>
       <div v-else>
         <v-row
-          v-for="{ id, nr, description } in judgments"
+          v-for="{ id, availablePart, nr, description } in judgments"
           :key="id"
           class="justify-center"
         >
@@ -96,9 +96,8 @@ if (error.value) {
                       mdi-file-pdf-box
                     </v-icon>
 
-                    <h3>
-                      {{ nr }}
-                    </h3>
+                    <h3> {{ nr }} </h3>
+                    <h3> {{ availablePart }} </h3>
                   </div>
                   <v-list-item-title class="headline mb-1">
                     {{
