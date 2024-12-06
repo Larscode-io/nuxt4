@@ -9,27 +9,41 @@ const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
-interface LegalCase {
+interface Pleading {
   id: number
+  zuluDate: string
+  date: string
+  processingLanguage: string
   description: string
-  availablePart: string
-  courtVerdict: string
-  fileName: string
-  filePath: string
-  formatedJudmentDate: string
-  idsRole: number[]
-  judmentDate: string
-  keywords: string
+  day: string
+  month: string
+  hora: string
+  maxOfDates: string
+}
+interface Judgment {
+  distance: number
+  id: number
+  joinedcases: any[]
+  processingLanguage: string
+  description: string
+  day: string
+  month: string
   nr: string
-  path: string
-  summary: string | null
+  master: any
+  kenmerk: string
+  encinz: string
+  type: string
+  norm: string
+  date: string
+  formatedJudmentDate: string
+  dateLong: string
 }
 
 // during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
 // const { data: pleadings, error, status, refresh } = useLazyFetch<LegalCase[]>(`${baseURL}${ApiUrl.pressPleadings}?lang=${locale.value}`)
 // const { data: judgments } = useLazyFetch<LegalCase[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`)
 
-const { data, error, status, refresh } = useAsyncData(() => {
+const { data, error, status, refresh } = useAsyncData<[Pleading[], Judgment[]]>(() => {
   return Promise.all([
     $fetch(`${baseURL}${ApiUrl.pressPleadings}?lang=${locale.value}`),
     $fetch(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`),
@@ -81,6 +95,7 @@ const judgments = computed(() => data.value[1])
         </v-alert>
       </div>
       <div v-else>
+        <h2>Pleadings</h2>
         <v-row
           v-for="{ id, availablePart, nr, description } in pleadings"
           :key="id"
@@ -120,6 +135,7 @@ const judgments = computed(() => data.value[1])
             </v-card>
           </v-col>
         </v-row>
+        <h2>Judgments</h2>
         <v-row
           v-for="{ id, availablePart, nr, description } in judgments"
           :key="id"
