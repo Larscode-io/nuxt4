@@ -1,7 +1,6 @@
 <template>
   <p :style="{ textDecoration: !betweenDates ? 'line-through' : 'none' }">
     {{ description }}<br>
-    {{ description }}<br>
     <a
       :href="vacLink"
       target="_blank"
