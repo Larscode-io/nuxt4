@@ -39,19 +39,26 @@ interface Judgment {
   dateLong: string
 }
 
-// during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
-// const { data: pleadings, error, status, refresh } = useLazyFetch<LegalCase[]>(`${baseURL}${ApiUrl.pressPleadings}?lang=${locale.value}`)
-// const { data: judgments } = useLazyFetch<LegalCase[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`)
-
+// Making Parallel Requests
 const { data, error, status, refresh } = useAsyncData<[Pleading[], Judgment[]]>(() => {
   return Promise.all([
-    $fetch(`${baseURL}${ApiUrl.pressPleadings}?lang=${locale.value}`),
-    $fetch(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`),
+    $fetch<Pleading[]>(`${baseURL}${ApiUrl.pressPleadings}?lang=${locale.value}`),
+    $fetch<Judgment[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`),
   ])
 })
 
-const pleadings = computed(() => data.value[0])
-const judgments = computed(() => data.value[1])
+const judgments = computed<Judgment[]>(() => {
+  if (data.value && Array.isArray(data.value) && data.value.length > 1) {
+    return data.value[1]
+  }
+  return []
+})
+const pleadings = computed<Pleading[]>(() => {
+  if (data.value && Array.isArray(data.value) && data.value.length > 0) {
+    return data.value[0]
+  }
+  return []
+})
 </script>
 
 <template>
