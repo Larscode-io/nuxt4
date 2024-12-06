@@ -1,20 +1,20 @@
 <template>
-  <p>
+  <p :style="{ textDecoration: !betweenDates ? 'line-through' : 'none' }">
     {{ description }}<br>
     <a
       :href="vacLink"
       target="_blank"
-    >Vacature</a>
+    >
+      <v-icon color="rgb(var(--v-theme-pdfRed))"> mdi-file-pdf-box </v-icon>
+      Vacature
+    </a>
   </p><br>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
-// pdf: 20240612 - selectieprocedure - administratief - beheerder_NL.pdf
-// description: Organisatie van een selectieprocedure voor de aanwerving op contractuele basis voor onbepaalde duur of de detachering van een Nederlandstalig administratief beheerder Personeelsbeleid(niveau B)(m / v / x)
-// lang: nl
-// d1z: 15-07-2024
-// d2z: 16-09-2025
+import { parse, isValid, isAfter } from 'date-fns'
+
 const vacLink = computed(() => {
   return `https://www.const-court.be/public/common/${props.lang}/${props.pdf}`
 })
@@ -25,4 +25,27 @@ const props = defineProps({
   d2z: { type: String, required: false },
   lang: { type: String, required: true },
 })
+
+const parsedDate = (stringDate: string) => {
+  const dateFormats = ['MM-dd-yyyy', 'dd-MM-yyyy']
+  let parsedDate
+
+  for (const format of dateFormats) {
+    parsedDate = parse(stringDate, format, new Date())
+    if (isValid(parsedDate)) {
+      break
+    }
+  }
+
+  if (!isValid(parsedDate)) {
+    throw new Error('Invalid date format')
+  }
+
+  return parsedDate
+}
+const showDate = parsedDate(props.d1z || '01-01-1999')
+const hideDate = parsedDate(props.d2z || '01-01-2999')
+const isAfterShowDate = showDate && showDate instanceof Date && isAfter(new Date(), showDate)
+const isAfterHideDate = hideDate && hideDate instanceof Date && isAfter(new Date(), hideDate)
+const betweenDates = (isAfterShowDate || isAfterHideDate) && !(isAfterShowDate && isAfterHideDate)
 </script>
