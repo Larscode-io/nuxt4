@@ -130,7 +130,7 @@ export default defineEventHandler(async () => {
       title: 'menu.agenda.title',
       subMenu: [
         {
-          to: `${RoutePathKeys.agenda}#menu.decisions.title`,
+          to: `${RoutePathKeys.agenda}`,
           title: 'menu.agenda.upcoming-decisions',
         },
         {
