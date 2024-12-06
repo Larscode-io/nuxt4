@@ -16,6 +16,8 @@
             src="~/assets/icons/fed.svg"
             :style="{ width: '64px', height: '64px' }"
             alt="Logo"
+            @click="hoverMenu(null)"
+            @mouseenter="hoverMenu(null)"
           >
         </button>
       </nuxt-link>
@@ -132,6 +134,7 @@
           <v-btn
             :style="{ textTransform: 'none' }"
             :aria-label="t('aria.label.menu.informed')"
+            @mouseenter="hoverMenu(null)"
           >
             {{ t('menu.informed') }}
             <v-icon style="margin-left: 8px;">
@@ -154,6 +157,7 @@
             icon="mdi-translate"
             variant="text"
             :aria-label="t('aria.label.menu.language')"
+            @mouseenter="hoverMenu(null)"
           >
             {{ locale }}
           </v-btn>
