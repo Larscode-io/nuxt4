@@ -1,12 +1,20 @@
 <template>
-  <p :style="{ textDecoration: !betweenDates ? 'line-through' : 'none' }">
-    {{ description }}<br>
+  <p>
     <a
-      :href="vacLink"
+      :href=" vacLink"
       target="_blank"
     >
-      <v-icon color="rgb(var(--v-theme-pdfRed))"> mdi-file-pdf-box </v-icon>
-      Vacature
+      <span
+        class="d-inline-flex"
+        :style="{ opacity: !betweenDates ? 0.3 : 1 }"
+      >
+        <v-icon
+          class="mr-2"
+          color="rgb(var(--v-theme-pdfRed))"
+        > mdi-file-pdf-box
+        </v-icon>
+        <slot name="description" />
+      </span>
     </a>
   </p><br>
 </template>
@@ -36,9 +44,8 @@ const parsedDate = (stringDate: string) => {
       break
     }
   }
-
   if (!isValid(parsedDate)) {
-    throw new Error('Invalid date format')
+    throw new Error(`Invalid date: ${stringDate}`)
   }
 
   return parsedDate
