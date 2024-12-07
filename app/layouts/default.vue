@@ -217,7 +217,7 @@
             </nuxt-link>
             <nuxt-link
               class="pa-2"
-              :to="localePath('legalDisclaimer')"
+              :to="localePath(RoutePathKeys.legalDisclaimer)"
               aria-label="Legal Disclaimer"
             >
               {{ t('menu.footer.disclaimer') }}
@@ -235,7 +235,7 @@
 
             <nuxt-link
               class="pa-2"
-              :to="localePath('privacyPolicy')"
+              :to="localePath(RoutePathKeys.privacyPolicy)"
               aria-label="Privacy Policy"
             >
               {{ t('menu.footer.term-of-use-privacy-policy2') }}

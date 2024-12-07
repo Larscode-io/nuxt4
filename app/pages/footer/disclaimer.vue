@@ -33,9 +33,7 @@ const { locale } = useLanguage()
 
 const { data: page } = await useAsyncData('content', async () => {
   try {
-    const doc = await queryContent(`${locale.value}/${ContentKeys.disclaimer}`)
-      .findOne()
-    return doc
+    return await queryContent(`${locale.value}/${ContentKeys.legalDisclaimer}`).findOne()
   }
   catch (error) {
     console.error('Error fetching content:', error)

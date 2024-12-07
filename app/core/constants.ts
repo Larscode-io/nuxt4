@@ -111,7 +111,7 @@ export enum ContentKeys {
   informed = 'stay-informed',
   prize = 'prize',
   privacyPolicy = 'privacy-policy',
-  disclaimer = 'disclaimer',
+  legalDisclaimer = 'disclaimer',
 }
 
 export enum RoutePathKeys {
@@ -135,8 +135,8 @@ export enum RoutePathKeys {
   publicationSpeeches = 'court-publications-speeches',
   contact = 'contacts',
   agenda = 'agenda',
-  legalDisclaimer = 'disclaimer',
-  privacyPolicy = 'privacy-policy',
+  legalDisclaimer = 'footer-disclaimer',
+  privacyPolicy = 'footer-privacy-policy',
   judgmentsHome = 'judgments',
   judgmentsPendingCases = 'judgments-pending-cases',
   judgmentsPreliminaryRulingsFromCourtJusticeEU = 'judgments-preliminary-rulings-from-the-court-of-justice-of-the-european-union',
