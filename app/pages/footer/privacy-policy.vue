@@ -2,12 +2,13 @@
 <template>
   <div>
     <BannerImage
-      :title="t('menu.rule.pleadings-procedure')"
-      :description="t('menu.rule.pleadings-procedure-title-description')"
+      v-if="page"
+      :title="page?.title || ''"
+      :description="page?.description"
       :image="img"
-      :alt="t('alt.banner.judge')"
+      alt=""
     />
-    <v-container class="flex-column align-start flex-nowrap">
+    <v-container>
       <v-row>
         <v-col>
           <article v-if="page">
@@ -23,15 +24,16 @@
 </template>
 
 <script setup lang="ts">
-import img from '~/assets/img/newsletter-background-opt.png'
+import img from '~/assets/img/banner-media.png'
+
 import { useLanguage } from '@/composables/useLanguage'
 import { ContentKeys } from '~/core/constants'
 
-const { t, locale } = useLanguage()
+const { locale } = useLanguage()
 
 const { data: page } = await useAsyncData('content', async () => {
   try {
-    const doc = await queryContent(`${locale.value}/${ContentKeys.rulePleadingsProcedure}`)
+    const doc = await queryContent(`${locale.value}/${ContentKeys.privacyPolicy}`)
       .findOne()
     return doc
   }
