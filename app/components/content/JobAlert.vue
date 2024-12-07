@@ -1,9 +1,10 @@
 <template>
-  <p>
+  <p
+    v-show="betweenDates"
+  >
     <a
       :href=" vacLink"
       target="_blank"
-      :style="{ opacity: !betweenDates ? 0.3 : 1 }"
     >
       <span
         class="d-inline-flex"
@@ -34,8 +35,8 @@ const vacLink = computed(() => {
 const props = defineProps({
   pdf: { type: String, required: true },
   description: { type: String, required: true },
-  d1z: { type: String, required: false },
-  d2z: { type: String, required: false },
+  startDate: { type: String, required: false },
+  endData: { type: String, required: false },
   lang: { type: String, required: true },
 })
 
@@ -55,9 +56,9 @@ const parsedDate = (stringDate: string) => {
 
   return parsedDate
 }
-const showDate = parsedDate(props.d1z || '01-01-1999')
-const hideDate = parsedDate(props.d2z || '01-01-2999')
-const isAfterShowDate = showDate && showDate instanceof Date && isAfter(new Date(), showDate)
-const isAfterHideDate = hideDate && hideDate instanceof Date && isAfter(new Date(), hideDate)
-const betweenDates = (isAfterShowDate || isAfterHideDate) && !(isAfterShowDate && isAfterHideDate)
+const showDate = parsedDate(props.startDate || '01-01-1999')
+const hideDate = parsedDate(props.endData || '01-01-2999')
+const isAfterShowDate = computed(() => showDate && showDate instanceof Date && isAfter(new Date(), showDate))
+const isAfterHideDate = computed(() => hideDate && hideDate instanceof Date && isAfter(new Date(), hideDate))
+const betweenDates = computed(() => (isAfterShowDate.value || isAfterHideDate.value) && !(isAfterShowDate.value && isAfterHideDate.value))
 </script>

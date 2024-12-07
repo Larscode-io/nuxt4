@@ -12,8 +12,8 @@ locale: nl
 ::job-alert
 ---
 lang: nl
-d1z: 15-07-2024
-d2z: 09-30-2025
+startDate: 15-07-2024
+endData: 09-30-2024
 pdf: 20240612-selectieprocedure-administratief-beheerder_NL.pdf
 ---
 #description
@@ -23,8 +23,8 @@ Organisatie van een selectieprocedure voor de aanwerving op contractuele basis v
 ::job-alert
 ---
 lang: nl
-d1z: 31-01-2024
-d2z: 26-02-2024
+startDate: 31-01-2024
+endData: 26-02-2024
 pdf: 20240131-selectieproef_adjunct-secretarissen_N__NL.pdf
 ---
 #description
@@ -34,8 +34,8 @@ Organisatie van een selectieproef met het oog op de samenstelling van een wervin
 ::job-alert
 ---
 lang: nl
-d1z: 29-06-2023
-d2z: 20-09-2023
+startDate: 29-06-2023
+endData: 20-09-2023
 pdf: 20230630-vergelijkend_examen_2023_referendarissen_FR.pdf
 ---
 #description
@@ -45,8 +45,8 @@ Organisatie van een vergelijkend examen met het oog op de samenstelling van een 
 ::job-alert
 ---
 lang: nl
-d1z: 29-06-2023
-d2z: 16-09-2023
+startDate: 29-06-2023
+endData: 16-09-2023
 pdf: 20230717-selectieprocedure_jurist_bibliotheek-NL.pdf
 ---
 #description
@@ -56,8 +56,8 @@ Organisatie van een selectieprocedure voor de aanwerving op contractuele basis v
 ::job-alert
 ---
 lang: nl
-d1z: 29-06-2023
-d2z: 16-09-2023
+startDate: 29-06-2023
+endData: 16-09-2023
 pdf: 20230717-selectieprocedure_jurist_bibliotheek-NL.pdf
 ---
 #description

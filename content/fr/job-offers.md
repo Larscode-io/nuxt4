@@ -12,8 +12,8 @@ locale: fr
 ::job-alert
 ---
 lang: fr
-d1z: 10-10-2024
-d2z: 11-15-2024
+startDate: 10-10-2024
+endData: 11-15-2024
 pdf: 20241010-procedure_de_selection_expert_ict_FR.pdf
 ---
 #description
@@ -23,8 +23,8 @@ Organisation d’une procédure de sélection en vue de l’engagement sur base 
 ::job-alert
 ---
 lang: fr
-d1z: 31-01-2024
-d2z: 26-02-2024
+startDate: 31-01-2024
+endData: 26-02-2024
 pdf: 20240131-selectieproef_adjunct-secretarissen_N__FR.pdf
 ---
 #description
@@ -34,8 +34,8 @@ Organisation d’une épreuve de sélection en vue de la constitution d’une r�
 ::job-alert
 ---
 lang: fr
-d1z: 29-06-2023
-d2z: 20-09-2023
+startDate: 29-06-2023
+endData: 20-09-2023
 pdf: 20230629-concours_2023_referendaires_FR.pdf
 ---
 #description
@@ -45,8 +45,8 @@ Organisation d’un concours en vue de la constitution d’une réserve de recru
 ::job-alert
 ---
 lang: fr
-d1z: 17-07-2023
-d2z: 16-09-2023
+startDate: 17-07-2023
+endData: 16-09-2023
 pdf: 20230717-procedure_de_selection_juriste_bibliotheque-FR.pdf
 ---
 #description
@@ -56,8 +56,8 @@ Organisation d’une procédure de sélection en vue de l’engagement sur base 
 ::job-alert
 ---
 lang: fr
-d1z: 17-07-2023
-d2z: 16-09-2023
+startDate: 17-07-2023
+endData: 16-09-2023
 pdf: 20230717-procedure_de_selection_juriste_bibliotheque-FR.pdf
 ---
 #description
