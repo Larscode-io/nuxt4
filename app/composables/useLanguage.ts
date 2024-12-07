@@ -1,4 +1,6 @@
 import { useRouter } from 'vue-router'
+import { nlBE, fr, de, enGB } from 'date-fns/locale'
+import { computed } from 'vue'
 import { useI18n, useSwitchLocalePath } from '#imports'
 import type { MessageSchema } from '~~/types/i18n' // ~~ is an alias for the src directory
 
@@ -24,14 +26,12 @@ export const defaultListLang: Record<string, string> = {
 
 export function useLanguage() {
   const router = useRouter()
-
-  const { t, locales, locale, setLocale } = useI18n<
+  const { t, locales, locale, setLocale, defaultLocale } = useI18n<
     [MessageSchema],
     Languages.DUTCH | Languages.FRENCH | Languages.ENGLISH | Languages.GERMAN
   >()
   const switchLocalePath = useSwitchLocalePath()
   const localePath = useLocalePath()
-
   const availableLocales = computed(() => {
     return locales.value.filter(i => i.code !== locale.value)
   })
@@ -44,6 +44,19 @@ export function useLanguage() {
   const switchLanguage = (lang: any) => {
     router.push({ path: `${switchLocalePath(lang)}` })
   }
+
+  const activeLocale = (locale: any) => {
+    switch (locale) {
+      case 'nl':
+        return nlBE
+      case 'fr':
+        return fr
+      case 'de':
+        return de
+      default:
+        return enGB
+    }
+  }
   return {
     t,
     locale,
@@ -54,5 +67,7 @@ export function useLanguage() {
     ogLocale,
     ogLocaleAlternate,
     switchLanguage,
+    defaultLocale,
+    activeLocale,
   }
 }

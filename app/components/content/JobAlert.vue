@@ -3,10 +3,10 @@
     <a
       :href=" vacLink"
       target="_blank"
+      :style="{ opacity: !betweenDates ? 0.3 : 1 }"
     >
       <span
         class="d-inline-flex"
-        :style="{ opacity: !betweenDates ? 0.3 : 1 }"
       >
         <v-icon
           class="mr-2"
@@ -15,13 +15,18 @@
         </v-icon>
         <slot name="description" />
       </span>
+      ({{ formatDistanceToNow(showDate || new Date(), { addSuffix: true, locale: activeLocale(locale) }) }})
     </a>
   </p><br>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { parse, isValid, isAfter } from 'date-fns'
+import { parse, isValid, isAfter, formatDistanceToNow } from 'date-fns'
+import { nlBE } from 'date-fns/locale'
+import { useLanguage } from '@/composables/useLanguage'
+
+const { locale, activeLocale } = useLanguage()
 
 const vacLink = computed(() => {
   return `https://www.const-court.be/public/common/${props.lang}/${props.pdf}`
