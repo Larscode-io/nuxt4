@@ -36,6 +36,7 @@ export enum CSAMLocalStorageKeys {
 export enum ApiUrl {
 
   publicationsAnnualReports = '/api/v1/publications/annual-reports',
+  publicationsAnnualReports2 = '/api/v1/publications/persberichten',
   publicationsBrochures = '/api/v1/publications/brochures',
   publicationsStudies = '/api/v1/publications/studies',
 
@@ -109,6 +110,8 @@ export enum ContentKeys {
   fullTextSearchExplanation = 'full-text-search-explanation',
   informed = 'stay-informed',
   prize = 'prize',
+  privacyPolicy = 'privacy-policy',
+  disclaimer = 'disclaimer',
 }
 
 export enum RoutePathKeys {
@@ -314,4 +317,98 @@ export interface QuestionPreliminaryRuling {
   formatedjudgmentDateOfTheConstitutionalCourt: string
   judgmentOfTheConstitutionalCourtPath: string
   judgmentOfTheConstitutionalCourtSummaryEnglish: string
+}
+
+export interface PubAnnualReport {
+  expires: string
+  database: string
+  layout: string
+  table: string
+  totalRecordCount: number
+  foundCount: number
+  returnedCount: number
+  fmdata: PubAnnualReportData[]
+}
+
+export interface PubAnnualReportData {
+  filename: string
+  new_filename_cu: string
+  _k1_Jaarverslag_id: number
+  title_n: string
+  title_f: string
+  title_d?: string
+  title_e?: string
+  offline?: string
+}
+
+export interface PubSpeeches {
+  expires: string
+  database: string
+  layout: string
+  table: string
+  totalRecordCount: number
+  foundCount: number
+  returnedCount: number
+  fmdata: PubSpeechesData[]
+}
+
+export interface PubSpeechesData {
+  archive: string
+  filename: string
+  intro_d?: string
+  intro_e?: string
+  intro_f?: string
+  intro_n?: string
+  offline?: string
+  title_d?: string
+  title_e?: string
+  title_f?: string
+  title_n?: string
+  type: string
+  _k1_pbcp_id: number
+  [key: string]: any
+}
+
+export interface PubBrochures {
+  expires: string
+  database: string
+  layout: string
+  table: string
+  totalRecordCount: number
+  foundCount: number
+  returnedCount: number
+  fmdata: PubBrochuresData[]
+}
+
+export interface PubBrochuresData {
+  filename: string
+  new_filename_cu: string
+  _k1_Brochure_id: number
+  title_n: string
+  title_f: string
+  title_d?: string
+  title_e?: string
+  offline?: string
+}
+
+export interface PubStudies {
+  expires: string
+  database: string
+  layout: string
+  table: string
+  totalRecordCount: number
+  foundCount: number
+  returnedCount: number
+  fmdata: PubStudiesData[]
+}
+
+export interface PubStudiesData {
+  filename: string
+  new_filename_cu: string
+  _k1_Studie_id: number
+  title_n: string
+  title_f: string
+  title_d?: string
+  title_e?: string
+  offline?: string
 }
