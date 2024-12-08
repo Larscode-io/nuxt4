@@ -24,7 +24,7 @@ La Cour constitutionnelle traite vos données personnelles pour remplir ses miss
 Les données à caractère personnel peuvent également être traitées lorsque vous avez donné votre consentement, par exemple en acceptant les cookies lorsque vous naviguez sur le site web ou en remplissant un formulaire en ligne pour être informé d'un arrêt ou pour recevoir la newsletter de la Cour.
 Le règlement général sur la protection des données 2016/679 (« RGPD ») du 27 avril 2016, la directive 2016/680 du Parlement européen et du Conseil du 27 avril 2016 et la loi relative à la protection des personnes physiques à l’égard des traitements de données à caractère personnel du 30 juillet 2018 peuvent, en fonction des circonstances, s’appliquer au traitement de vos données par la Cour constitutionnelle.  
 
-Le [site internet](/fr/privacy-policy) de la Cour constitutionnelle comporte toujours la version la plus récente de la présente déclaration. La Cour peut modifier cette déclaration en raison de la mise à jour des mesures de sécurité. La présente déclaration a été adoptée le 18 août 2021.  
+Le [site internet](/fr/footer/privacy-policy) de la Cour constitutionnelle comporte toujours la version la plus récente de la présente déclaration. La Cour peut modifier cette déclaration en raison de la mise à jour des mesures de sécurité. La présente déclaration a été adoptée le 18 août 2021.  
 <br><br>
 
 ### **I. Principes généraux**  

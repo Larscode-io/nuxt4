@@ -24,7 +24,7 @@ Het Grondwettelijk Hof verwerkt uw persoonsgegevens om zijn opdrachten van algem
 Persoonsgegevens kunnen eveneens worden verwerkt wanneer u daarvoor de toestemming heeft gegeven, bijvoorbeeld door het aanvaarden van cookies bij het surfen op de website of het invullen van een onlineformulier om te worden geïnformeerd over de uitspraak van een arrest of de nieuwsbrief van het Hof te ontvangen. 
 De algemene verordening gegevensbescherming 2016/679 (« AVG ») van 27 april 2016, de richtlijn 2016/680 van het Europees Parlement en de Raad van 27 april 2016 en de wet van 30 juli 2018 betreffende de bescherming van natuurlijke personen met betrekking tot de verwerking van persoonsgegevens kunnen, naar gelang van de omstandigheden, van toepassing zijn op de verwerking van uw gegevens door het Grondwettelijk Hof.
 
-De [website](/nl/privacy-policy) van het Grondwettelijk Hof bevat steeds de meest recente versie van deze verklaring. Het Hof kan deze verklaring wijzigen wanneer de veiligheidsmaatregelen worden bijgewerkt. Deze verklaring is aangenomen op 18 augustus 2021.
+De [website](/nl/footer/privacy-policy) van het Grondwettelijk Hof bevat steeds de meest recente versie van deze verklaring. Het Hof kan deze verklaring wijzigen wanneer de veiligheidsmaatregelen worden bijgewerkt. Deze verklaring is aangenomen op 18 augustus 2021.
 <br><br>
 
 ### **I. Algemene beginselen**

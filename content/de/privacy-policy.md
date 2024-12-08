@@ -23,7 +23,7 @@ Der Verfassungsgerichtshof verarbeitet Ihre personenbezogenen Daten zum Zwecke d
 
 Personenbezogene Daten können auch dann verarbeitet werden, wenn Sie Ihre Zustimmung dazu erteilt haben, z.B. beim Akzeptieren von Cookies beim Surfen auf der Website oder beim Ausfüllen eines Onlineformulars, um über die Verkündung eines Entscheids informiert zu werden oder den Newsletter des Gerichtshofes zu erhalten. Die Datenschutz-Grundverordnung 2016/679 („DSGVO“) vom 27. April 2016, die Richtlinie (EU) 2016/680 des Europäischen Parlaments und des Rates vom 27. April 2016 und das Gesetz vom 30. Juli 2018 über den Schutz natürlicher Personen hinsichtlich der Verarbeitung personenbezogener Daten können je nach den Umständen auf die Verarbeitung Ihrer Daten durch den Verfassungsgerichtshof Anwendung finden.  
 
-Die [Website](/de/privacy-policy) des Verfassungsgerichtshofes enthält die jeweils neueste Fassung dieser Erklärung. Der Gerichtshof kann diese Erklärung ändern, wenn die Sicherheitsmaßnahmen auf den neuesten Stand gebracht werden. Diese Erklärung wurde am 18. August 2021 angenommen.  
+Die [Website](/de/footer/privacy-policy) des Verfassungsgerichtshofes enthält die jeweils neueste Fassung dieser Erklärung. Der Gerichtshof kann diese Erklärung ändern, wenn die Sicherheitsmaßnahmen auf den neuesten Stand gebracht werden. Diese Erklärung wurde am 18. August 2021 angenommen.  
 <br><br>
 
 ### **I. Allgemeine Grundsätze**  

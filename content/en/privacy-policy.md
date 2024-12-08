@@ -24,7 +24,7 @@ The Constitutional Court (the “Court”) processes your Personal Data in order
 Personal Data may also be processed after you have given your consent, for example by accepting cookies when you browse the Court’s Website (the “Website”) or by completing an online form in order to be notified of a judgment or to receive the Court's newsletter. 
 The General Data Protection Regulation 2016/679 (the “GDPR”) of 27 April 2016, Directive 2016/680 of the European Parliament and of the Council of 27 April 2016 and the Data Protection Act of 30 July 2018 on the protection of natural persons with regard to the processing of Personal Data may, depending on the circumstances, apply to the processing of your data by the Court.
 
-The [website](/en/privacy-policy) always includes the most recent version of this Privacy Statement. The Court may amend this Privacy Statement due to updated security measures. This Privacy Statement was adopted on 18 August 2021.
+The [website](/en/footer/privacy-policy) always includes the most recent version of this Privacy Statement. The Court may amend this Privacy Statement due to updated security measures. This Privacy Statement was adopted on 18 August 2021.
 <br><br>
 
 ### **I. General Principles**
