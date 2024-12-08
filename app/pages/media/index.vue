@@ -95,7 +95,6 @@ import { useLanguage } from '@/composables/useLanguage'
 
 // import ContactCard from '~/components/ContactCard.vue'
 import contactImgMartin from '~/assets/img/members/martin-vranken.jpg'
-import contactImgSarah from '~/assets/img/members/sarah-lambrecht.jpg'
 import contactImgThomas from '~/assets/img/members/thomas-leys.jpg'
 import contactImgFrank from '~/assets/img/members/frank-meersschaut.jpg'
 import contactImgTim from '~/assets/img/members/tim-souverijns.jpg'

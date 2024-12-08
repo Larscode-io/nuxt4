@@ -116,7 +116,7 @@
         :alt="t('alt.contact.library', 2)"
       >
         <p class="info-title">
-          {{ t('general.phoneNumber') }}
+          {{ t('general.phone-number') }}
         </p>
         <p class="info-details">
           +32(0)2/500.13.49
@@ -218,7 +218,7 @@
           :headline-level="3"
           name="Ann-Sophie VANDAELE"
           :jobtitle="`
-            ${t('contact.lawClerk')}, (NL)
+            ${t('contact.law-clerk')}, (NL)
               `"
           phone="+32(0)2/500.13.01"
           :image="contactImgAnnSophie"
@@ -259,22 +259,8 @@ import contactSeat from '~/assets/img/contact/seat.jpg'
 
 const imgRef = ref(img)
 const currentActiveContentInToc = ref('')
-const contactImages = {
-  contactImgSarah,
-  contactImgThomas,
-  contactImgMartin,
-  contactSeat,
-  contactGreffe,
-  contactPresidentOffice,
-  contactLibrary,
-  contactIct,
-  contactImgFrank,
-  contactImgTim,
-  contactImgRom,
-  contactImgAnnSophie,
-}
 
-const { t, locale } = useI18n()
+const { t, locale } = useLanguage()
 const route = useRoute()
 
 const sideBarLinks = computed(() => [

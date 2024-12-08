@@ -156,7 +156,7 @@
             v-bind="props"
             icon="mdi-translate"
             variant="text"
-            :aria-label="t('aria.label.menu.language')"
+            :aria-label="t('aria.label.language')"
             @mouseenter="hoverMenu(null)"
           >
             {{ locale }}
