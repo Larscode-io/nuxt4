@@ -137,6 +137,7 @@ export enum RoutePathKeys {
   agenda = 'agenda',
   legalDisclaimer = 'footer-disclaimer',
   privacyPolicy = 'footer-privacy-policy',
+  courtContacts = 'footer-contacts',
   judgmentsHome = 'judgments',
   judgmentsPendingCases = 'judgments-pending-cases',
   judgmentsPreliminaryRulingsFromCourtJusticeEU = 'judgments-preliminary-rulings-from-the-court-of-justice-of-the-european-union',
