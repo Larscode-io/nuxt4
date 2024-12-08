@@ -222,8 +222,8 @@
             >
               {{ t('menu.footer.disclaimer') }}
             </nuxt-link>
-            <nuxt-link
-              :to="{ path: 'https://www.const-court.be/public/' }"
+            <a
+              href="https://www.const-court.be/public/"
               target="_blank"
               rel="noopener noreferrer"
               :aria-label="t('aria.label.menu.footer.documentenserver')"
@@ -231,7 +231,7 @@
               class="pa-2"
             >
               {{ t('menu.footer.documents-download') }}
-            </nuxt-link>
+            </a>
 
             <nuxt-link
               class="pa-2"

@@ -52,7 +52,8 @@ const props = defineProps({
   },
   ariaLabel: {
     type: String,
-    required: true,
+    // toto: set to true
+    required: false,
   },
   width: {
     type: String,

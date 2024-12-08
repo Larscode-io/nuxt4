@@ -3,8 +3,8 @@
     <div
       v-if="withImage"
       class="contact-img"
-      :style="style"
-      :alt="alt"
+      :style
+      :alt
     />
     <section class="contact-infos">
       <slot />
@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, watchEffect } from 'vue'
 
 const props = defineProps({
   withImage: {
@@ -30,7 +30,13 @@ const props = defineProps({
   },
 })
 
-const style = computed(() => `background-image: url(${props.image})`)
+const style = ref({})
+
+watchEffect(() => {
+  style.value = {
+    backgroundImage: `url(${props.image})`,
+  }
+})
 </script>
 
 <style scoped>
@@ -46,6 +52,7 @@ const style = computed(() => `background-image: url(${props.image})`)
   position: absolute;
   width: 100%;
   height: 20px;
+  /* todo: $rajahYellow; */
   background: #F4A261; /* Replace $rajahYellow with the actual color */
   display: block;
   bottom: -20px;
@@ -56,6 +63,7 @@ const style = computed(() => `background-image: url(${props.image})`)
   position: absolute;
   width: 20px;
   height: 100%;
+  /* todo: $rajahYellow; */
   background: #F4A261; /* Replace $rajahYellow with the actual color */
   display: block;
   right: -20px;
