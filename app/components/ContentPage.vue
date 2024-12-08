@@ -45,7 +45,6 @@ const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
 
 const updateCurrentActiveContentInToc = (section: string) => {
-  // router.push({ hash: `#${section}` })
   currentActiveContentInToc.value = section
 }
 
