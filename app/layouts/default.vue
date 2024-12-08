@@ -210,7 +210,7 @@
           <v-col cols="auto">
             <nuxt-link
               class="pa-2"
-              :to="localePath('contact')"
+              :to="localePath(RoutePathKeys.courtContacts)"
               aria-label="Contact"
             >
               {{ t('menu.footer.contact') }}

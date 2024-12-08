@@ -154,7 +154,7 @@
           :headline-level="3"
           name="Tim SOUVERIJNS"
           :jobtitle="`
-            ${t('contact.lawClerk')}, (NL)
+            ${t('contact.law-clerk')}, (NL)
               `"
           :image="contactImgTim"
           phone="+32(0)2/500.12.21"
@@ -164,7 +164,7 @@
           :headline-level="3"
           name="Martin VRANCKEN"
           :jobtitle="`
-            ${t('contact.lawClerk')}, (FR)
+            ${t('contact.law-clerk')}, (FR)
               `"
           phone="+32(0)2/500.12.87"
           :image="contactImgMartin"
@@ -174,7 +174,7 @@
           :headline-level="3"
           name="Frank MEERSSCHAUT"
           :jobtitle="`${t('general.message.registrars', 2)},
-              ${t('contact.generalMediaCoordination')},
+              ${t('contact.general-media-coordination')},
               (NL)
             `"
           :image="contactImgFrank"
@@ -185,7 +185,7 @@
           :headline-level="3"
           name="Thomas LEYS"
           :jobtitle="`
-            ${t('contact.lawClerk')}, (NL , EN)
+            ${t('contact.law-clerk')}, (NL , EN)
               `"
           phone="+32(0)2/500.12.60"
           :image="contactImgThomas"
@@ -195,7 +195,7 @@
           :headline-level="3"
           name="Romain VANDERBECK"
           :jobtitle="`
-            ${t('contact.lawClerk')}, (FR)
+            ${t('contact.law-clerk')}, (FR)
               `"
           :image="contactImgRom"
           phone="+32(0)2/500.13.28"
