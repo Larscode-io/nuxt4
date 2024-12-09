@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { ref, watchEffect } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const props = defineProps({
   withImage: {
@@ -32,7 +32,7 @@ const props = defineProps({
 
 const style = ref({})
 
-watchEffect(() => {
+onMounted(() => {
   style.value = {
     backgroundImage: `url(${props.image})`,
   }
