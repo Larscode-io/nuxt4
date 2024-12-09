@@ -39,7 +39,7 @@
             >
               <div
                 v-if="item.subMenu"
-                :id="`menu-${t(item.title)}`"
+                :id="`menu-${item.title}`"
                 class="cursor-pointer position-relative text-center"
                 :aria-label="`level 1 menu title ${item.title}`"
                 role="link"
@@ -59,7 +59,7 @@
                 >
                   <v-container fluid>
                     <v-row
-                      :aria-labelledby="`menu-${t(item.title)}`"
+                      :aria-labelledby="`menu-${item.title}`"
                       class="d-flex flex-row justify-space-evenly"
                     >
                       <v-col
@@ -133,7 +133,7 @@
         <nuxt-link :to="localePath(RoutePathKeys.informed)">
           <v-btn
             :style="{ textTransform: 'none' }"
-            :aria-label="t('aria.label.menu.informed')"
+            :aria-label="t('aria.label.landing.informed')"
             @mouseenter="hoverMenu(null)"
           >
             {{ t('menu.informed') }}

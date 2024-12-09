@@ -177,39 +177,39 @@ export default defineEventHandler(async () => {
       to: RoutePathKeys.prize,
       title: 'menu.prize.title',
     },
-    {
-      title: 'DEV',
-      subMenu: [
-        {
-          to: RoutePathKeys.demoMailman,
-          title: 'Mailman subscription demo',
-        },
-        {
-          to: RoutePathKeys.demoLanguages,
-          title: 'i18n and languages demo',
-        },
-        {
-          to: RoutePathKeys.authLogin,
-          title: 'EID authentication demo',
-        },
-        {
-          to: RoutePathKeys.legacyContent,
-          title: 'LegacyContent demo',
-        },
-        {
-          to: '/demo/sql',
-          title: 'SQL demo',
-        },
-        {
-          to: '/demo/fm',
-          title: 'FileMaker demo',
-        },
-        {
-          to: '/demo/Juportal',
-          title: 'Juportal demo',
-        },
-      ],
-    },
+    // {
+    //   title: 'DEV',
+    //   subMenu: [
+    //     {
+    //       to: RoutePathKeys.demoMailman,
+    //       title: 'Mailman subscription demo',
+    //     },
+    //     {
+    //       to: RoutePathKeys.demoLanguages,
+    //       title: 'i18n and languages demo',
+    //     },
+    //     {
+    //       to: RoutePathKeys.authLogin,
+    //       title: 'EID authentication demo',
+    //     },
+    //     {
+    //       to: RoutePathKeys.legacyContent,
+    //       title: 'LegacyContent demo',
+    //     },
+    //     {
+    //       to: '/demo/sql',
+    //       title: 'SQL demo',
+    //     },
+    //     {
+    //       to: '/demo/fm',
+    //       title: 'FileMaker demo',
+    //     },
+    //     {
+    //       to: '/demo/Juportal',
+    //       title: 'Juportal demo',
+    //     },
+    //   ],
+    // },
 
   ]
 })
