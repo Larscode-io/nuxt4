@@ -104,24 +104,28 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
                   class="pa-4 ma-4 elevation-2 hover-effect"
                   max-width="388"
                   :aria-labelledby="`artDate${item.id} arrestNr${item.id} publicationTitle${item.id}`"
-                  @click="goToMediaPage(item.id, item.type)"
+                  :style="{ position: 'relative', overflow: 'visible' }"
+                  @click="gotoMediaPage(item.id, item.type)"
                 >
-                  <img
+                  <v-img
                     :src="getImage(`media-${index}`)"
                     :alt="`Dynamic Image media-${index}`"
                     height="320px"
-                    class="mb-4"
-                  >
+                    class="mb-4 mx-auto"
+                    max-width="100%"
+                    cover
+                    style="transform: translateY(-40px);"
+                  />
                   <div class="d-flex justify-space-between mb-4">
                     <p :id="`artDate${item.id}`">
-                      {{ item.date }}
+                      {{ item.formatedJudmentDate }}
                     </p>
                     <p
                       :id="`arrestNr${item.id}`"
                       :aria-label="item.ariaLabelReference"
                     >
                       {{ t('general.message.add-judgment-number-label') }}
-                      {{ item.reference }}
+                      {{ item.nr }}
                     </p>
                   </div>
                   <h3
