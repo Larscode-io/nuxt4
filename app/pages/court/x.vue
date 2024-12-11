@@ -45,7 +45,7 @@ const goToMediaPage = (id, type) => {
               md="4"
             >
               <v-card
-                class="media-card"
+                class="pa-4 ma-4 elevation-2 hover-effect"
                 max-width="388"
                 :aria-labelledby="`artDate${item.id} arrestNr${item.id} publicationTitle${item.id}`"
                 @click="goToMediaPage(item.id, item.type)"
@@ -54,8 +54,9 @@ const goToMediaPage = (id, type) => {
                   :src="getImage(`media-${index}`)"
                   :alt="`Dynamic Image media-${index}`"
                   height="320px"
+                  class="mb-4"
                 >
-                <div class="top-infos">
+                <div class="d-flex justify-space-between mb-4">
                   <p :id="`artDate${item.id}`">
                     {{ item.date }}
                   </p>
@@ -70,16 +71,21 @@ const goToMediaPage = (id, type) => {
                 <h3
                   :id="`publicationTitle${item.id}`"
                   :aria-label="item.title + ' ' + t('aria.label.description.continueReading')"
+                  class="text-h6 mb-4"
                 >
                   {{ item.title }}
                 </h3>
-                <v-list-item-subtitle>{{ item.description }}</v-list-item-subtitle>
+                <v-list-item-subtitle class="text-truncate-4 mb-4">
+                  {{ item.description }}
+                </v-list-item-subtitle>
                 <div
-                  class="arrow-hover"
-                  @click="navigate(item.id, item.type)"
+                  class="d-flex align-center"
+                  @click="goToMediaPage(item.id, item.type)"
                 >
                   {{ t('general.message.read-more') }}
-                  <v-icon>mdi-arrow-right</v-icon>
+                  <v-icon class="ml-2">
+                    mdi-arrow-right
+                  </v-icon>
                 </div>
               </v-card>
             </v-col>
@@ -90,109 +96,15 @@ const goToMediaPage = (id, type) => {
   </div>
 </template>
 
-<style lang="scss" scoped>
-.media-card {
-  color: $indigo !important;
-  padding: 20px;
-  position: relative;
+<style scoped>
+.hover-effect {
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.08) !important;
-  border-radius: 0 !important;
-  margin: 80px 16px 20px 16px;
+  cursor: pointer;
+}
 
-  @include mobile {
-    width: calc(100% - 32px);
-    margin: 80px auto;
-    margin-bottom: 20px;
-  }
-
-  .v-img {
-    transform: translateY(-80px);
-  }
-
-  .top-infos {
-    display: flex;
-    justify-content: space-between;
-    margin-top: -62px;
-
-    p {
-      font-size: 1rem;
-      line-height: 24px;
-    }
-
-    p:first-of-type {
-      position: relative;
-
-      &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 2px;
-        background-color: $indigo;
-      }
-    }
-  }
-
-  h3 {
-    font-size: 1.125rem;
-    line-height: 20px;
-    text-align: left;
-    margin-bottom: 20px;
-  }
-
-  .v-list-item__subtitle {
-    display: -webkit-box;
-    text-align: left;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: pre-wrap;
-    -webkit-line-clamp: 4;
-    margin-bottom: 16px;
-    font-size: 0.875rem;
-    line-height: 20px;
-    font-weight: 400;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: $indigo !important;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 8px 8px 24px -5px rgba(0, 101, 202, 0.2);
-    cursor: pointer;
-    color: white !important;
-
-    .top-infos {
-      p:first-of-type {
-        &:before {
-          background-color: white;
-        }
-      }
-    }
-
-    .arrow-hover {
-      &:before {
-        margin-right: 8px;
-      }
-
-      .v-icon {
-        color: white;
-      }
-    }
-  }
-
-  .arrow-hover {
-    display: flex;
-
-    .v-icon {
-      margin-left: 8px;
-      color: $indigo;
-      display: flex;
-      justify-content: flex-start;
-      width: fit-content;
-    }
-  }
+.hover-effect:hover,
+.hover-effect:focus {
+  background-color: #3f51b5 !important;
+  color: white !important;
 }
 </style>

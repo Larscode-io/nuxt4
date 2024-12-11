@@ -14,11 +14,11 @@ const props = defineProps({
   maxItems: {
     type: Number,
     required: false,
+    default: 3,
   },
 })
 
 const addMediaTypeToItem = (item, mediaType) => {
-  // add delay to simulate async fetch 3 sec
   return {
     ...item,
     type: mediaType,
@@ -27,29 +27,43 @@ const addMediaTypeToItem = (item, mediaType) => {
 const addJudgmentType = item => addMediaTypeToItem(item, MediaType.pressReleaseForJudgments)
 const addPressReleaseType = item => addMediaTypeToItem(item, MediaType.generalPressRelease)
 
-const { data: dataJudge, status: statusJudge } = await useFetch(props.apiUrlJudgments, { transform: items => items.map(addJudgmentType) })
-const { data: dataPress, status: satatusPress } = await useFetch(props.apiUrlPress, { transform: items => items.map(addPressReleaseType) })
+const { data: dataJudge, status: statusJudge } = await useFetch(props.apiUrlJudgments, {
+  transform: items => items.map(addJudgmentType),
+}, {
+  pick: ['description', 'id', 'title', 'nr', 'formatedJudgmentDate'],
+})
+
+// only needed to fetch press releases if the judgments fetch did not return enough items
+// todo: refactor to useFetch with conditional fetch if needed
+const { data: dataPress } = await useFetch(
+  props.apiUrlPress,
+  { transform: items => items.map(addPressReleaseType) },
+  {
+    pick: ['description', 'id', 'title', 'nr', 'formatedJudgmentDate'],
+  },
+)
+
+const combinedData = computed(() => {
+  return [
+    ...dataJudge.value,
+    ...(dataJudge.value.length < props.maxItems ? dataPress.value : []),
+  ]
+})
 
 const items = computed(() => {
-  const combinedData = dataJudge.value.length < 3
-    ? [...dataJudge.value, ...dataPress.value]
-    : dataJudge.value
-  return combinedData.map((item) => {
+  return combinedData.value.map((item) => {
+    const { description, ...rest } = item
     return {
-      shortDescription: item.description?.substring(0, 90).concat('...'),
-      id: item.id,
-      title: item.title,
-      type: item.type,
-      reference: item.nr,
-      date: item.formatedJudmentDate,
+      shortDescription: description?.substring(0, 180).concat('...'),
+      ...rest,
     }
-  })
+  }).slice(0, props.maxItems)
 })
 </script>
 
 <template>
   <div>
-    <div v-if="statusJudge === 'pending' || satatusPress === 'pending'">
+    <div v-if="statusJudge === 'pending' ">
       Loading...
     </div>
     <slot
