@@ -22,11 +22,11 @@ const gotoMediaPage = (id: number) => {
   // Add your navigation logic here
 }
 
-const handleMediaCardClick = (id: number, description: string) => {
-  if (!description) {
-    gotoMediaPage(id)
-  }
-}
+// const handleMediaCardClick = (id: number, description: string) => {
+//   if (!description) {
+//     gotoMediaPage(id)
+//   }
+// }
 
 const mediaDisplayMode = ref<('full' | 'short')[]>(Array(20).fill('short'))
 const toggleDisplayMediaDisplayMode = (index: number) => {
@@ -79,7 +79,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </template>
       </DecisionBox>
 
-      <div class="mt-2 title-container">
+      <div class="mt-4 title-container ">
         <h2 class="title-h2">
           {{ t('general.message.latest-press-release') }}
         </h2>
