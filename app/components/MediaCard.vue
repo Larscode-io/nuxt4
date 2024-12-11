@@ -51,15 +51,13 @@ const combinedData = computed(() => {
 })
 
 const items = computed(() => {
-  const x = combinedData.value.map((item) => {
+  return combinedData.value.map((item) => {
     const { description, ...rest } = item
     return {
       shortDescription: description?.substring(0, 180).concat('...'),
       ...rest,
     }
   }).slice(0, props.maxItems)
-  console.log('items', x)
-  return x
 })
 </script>
 
