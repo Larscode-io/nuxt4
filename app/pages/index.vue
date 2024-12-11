@@ -85,7 +85,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </h2>
       </div>
       <!-- during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts). -->
-      <MyCard
+      <MediaCard
         :api-url-press="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
         :max-items="3"
@@ -148,7 +148,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
             </v-row>
           </v-container>
         </template>
-      </MyCard>
+      </MediaCard>
 
       <div class="mt-2 title-container">
         <h2 class="title-h2">

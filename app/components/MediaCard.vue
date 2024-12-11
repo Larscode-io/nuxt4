@@ -1,11 +1,9 @@
-<script setup lang="ts">
+<script setup lang="js">
+import { computed } from 'vue'
 import { MediaType } from '@/core/constants'
-import type { GeneralPressJudgment, GeneralPressRelease } from '@/core/constants'
-
-const { t } = useLanguage()
 
 const props = defineProps({
-  apiUrlRelease: {
+  apiUrlPress: {
     type: String,
     required: true,
   },
@@ -16,103 +14,61 @@ const props = defineProps({
   maxItems: {
     type: Number,
     required: false,
-  },
-  displayModes: {
-    type: Array,
-    required: true,
+    default: 3,
   },
 })
 
-interface ExtendedGeneralPressRelease extends GeneralPressRelease {
-  shortDescription: string
-  type: MediaType
+const addMediaTypeToItem = (item, mediaType) => {
+  return {
+    ...item,
+    type: mediaType,
+  }
 }
-interface ExtendedGeneralPressJudgment extends GeneralPressJudgment {
-  shortDescription: string
-  type: MediaType
-}
+const addJudgmentType = item => addMediaTypeToItem(item, MediaType.pressReleaseForJudgments)
+const addPressReleaseType = item => addMediaTypeToItem(item, MediaType.generalPressRelease)
 
-const transform_GeneralPressJudgment = (items: GeneralPressJudgment[]): GeneralPressJudgment[] => {
-  return props.maxItems ? items.slice(0, props.maxItems) : items
-}
-const transform_GeneralPressRelease = (items: GeneralPressRelease[]): GeneralPressRelease[] => {
-  return props.maxItems ? items.slice(0, props.maxItems) : items
-}
+const { data: dataJudge, status: statusJudge } = await useFetch(props.apiUrlJudgments, {
+  transform: items => items.map(addJudgmentType),
+}, {
+  pick: ['description', 'id', 'title', 'nr', 'formatedJudgmentDate'],
+})
 
-const { data: generalPressRelease, error: generalPressReleaseError, execute: fetchPressReleases }
-  = useFetch<GeneralPressRelease[]>(props.apiUrlRelease,
-    { transform: transform_GeneralPressRelease, immediate: false, watch: false }) as { data: Ref<GeneralPressRelease[]>, error: Ref<Error>, execute: () => Promise<void> }
-const { data: generalPressJudgments, error: generalPressJudgmentsError, execute: fetchJudgments }
-  = useFetch<GeneralPressJudgment[]>(props.apiUrlJudgments,
-    { transform: transform_GeneralPressJudgment, immediate: false, watch: false }) as { data: Ref<GeneralPressJudgment[]>, error: Ref<Error>, execute: () => Promise<void> }
+// only needed to fetch press releases if the judgments fetch did not return enough items
+// todo: refactor to useFetch with conditional fetch if needed
+const { data: dataPress } = await useFetch(
+  props.apiUrlPress,
+  { transform: items => items.map(addPressReleaseType) },
+  {
+    pick: ['description', 'id', 'title', 'nr', 'formatedJudgmentDate'],
+  },
+)
 
-const medias = ref<(ExtendedGeneralPressRelease | ExtendedGeneralPressJudgment)[]>([])
-const isLoading = ref(true)
-const hasError = ref(false)
+const combinedData = computed(() => {
+  return [
+    ...dataJudge.value,
+    ...(dataJudge.value.length < props.maxItems ? dataPress.value : []),
+  ]
+})
 
-async function fetchData() {
-  try {
-    isLoading.value = true
-    await Promise.all([fetchPressReleases(), fetchJudgments()])
-    if (generalPressReleaseError.value || generalPressJudgmentsError.value) {
-      hasError.value = true
+const items = computed(() => {
+  return combinedData.value.map((item) => {
+    const { description, ...rest } = item
+    return {
+      shortDescription: description?.substring(0, 180).concat('...'),
+      ...rest,
     }
-    else {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      medias.value = [
-        ...generalPressJudgments.value?.map(({ title, id, description, ..._removeRest }) => ({
-          title,
-          id,
-          description,
-          shortDescription: description?.substring(0, 90).concat('...'),
-          type: MediaType.pressReleaseForJudgments,
-        })) || [],
-        ...generalPressRelease.value?.map(({ title, id, description, ..._removeRest }) => ({
-          title,
-          id,
-          description,
-          shortDescription: description?.substring(0, 90).concat('...'),
-          type: MediaType.generalPressRelease,
-        })) || [],
-      ].slice(0, props.maxItems ?? medias.value.length)
-    }
-  }
-  catch (error) {
-    hasError.value = true
-    console.error(error)
-  }
-  finally {
-    isLoading.value = false
-  }
-}
-fetchData()
+  }).slice(0, props.maxItems)
+})
 </script>
 
 <template>
-  <v-row>
-    <v-col v-if="isLoading">
-      {{
-        t('general.loading')
-      }}
-    </v-col>
-    <v-col v-else-if="hasError">
-      {{
-        t('error.fetching-data')
-      }}
-    </v-col>
-    <v-col
-      v-for="(item, index) in medias ?? []"
-      :key="index"
-      cols="12"
-      sm="12"
-      md="4"
-      xl="2"
-    >
-      <slot
-        v-bind="{ ...item, displayMode: props.displayModes[index], index }"
-        name="item"
-      />
-    </v-col>
-  </v-row>
+  <div>
+    <div v-if="statusJudge === 'pending' ">
+      Loading...
+    </div>
+    <slot
+      name="default"
+      :items
+    />
+  </div>
 </template>
