@@ -29,36 +29,46 @@ const addPressReleaseType = item => addMediaTypeToItem(item, MediaType.generalPr
 
 const { data: dataJudge, status: statusJudge } = await useFetch(props.apiUrlJudgments, {
   transform: items => items.map(addJudgmentType),
-}, {
-  pick: ['description', 'id', 'title', 'nr', 'formatedJudgmentDate'],
 })
 
-// only needed to fetch press releases if the judgments fetch did not return enough items
-// todo: refactor to useFetch with conditional fetch if needed
-const { data: dataPress } = await useFetch(
+const { data: dataPress, execute: fetchDataPress } = await useFetch(
   props.apiUrlPress,
-  { transform: items => items.map(addPressReleaseType) },
   {
-    pick: ['description', 'id', 'title', 'nr', 'formatedJudgmentDate'],
+    immediate: false,
+    transform: items => items.map(addPressReleaseType),
   },
 )
 
-const combinedData = computed(() => {
-  return [
-    ...dataJudge.value,
-    ...(dataJudge.value.length < props.maxItems ? dataPress.value : []),
-  ]
+watchEffect(() => {
+  if (statusJudge.value === 'success' && dataJudge.value.length < props.maxItems) {
+    fetchDataPress()
+  }
 })
 
-const items = computed(() => {
-  return combinedData.value.map((item) => {
-    const { description, ...rest } = item
-    return {
-      shortDescription: description?.substring(0, 180).concat('...'),
-      ...rest,
-    }
-  }).slice(0, props.maxItems)
+// here we are combining the data from the two sources if the number of items from the first source is less than the maxItems
+const combinedData = computed(() => {
+  if (dataJudge.value.length < props.maxItems && dataPress.value) {
+    const numberOfMissingItems = props.maxItems - dataJudge.value.length
+    const itemsToAdd = dataPress.value.slice(0, numberOfMissingItems)
+    return [
+      ...dataJudge.value,
+      ...itemsToAdd,
+    ]
+  }
+  else {
+    return [
+      ...dataJudge.value.slice(0, props.maxItems),
+    ]
+  }
 })
+
+// here we are adding a short description to the items
+const items = computed(() =>
+  combinedData.value.map(({ description, ...rest }) => ({
+    shortDescription: description?.substring(0, 180).concat('...'),
+    ...rest,
+  })),
+)
 </script>
 
 <template>
