@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useLanguage } from '@/composables/useLanguage'
-import { ApiUrl } from '@/core/constants'
+import { ApiUrl, MediaType } from '@/core/constants'
 import type { GeneralPressJudgment, GeneralPressRelease, Judgment, Pleading, Decision } from '@/core/constants'
 
 const { getImage } = useImageLoader()
@@ -79,7 +79,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </template>
       </DecisionBox>
 
-      <div class="mt-4 title-container ">
+      <div class="mt-9 title-container ">
         <h2 class="title-h2">
           {{ t('general.message.latest-press-release') }}
         </h2>
@@ -88,7 +88,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
       <MediaCard
         :api-url-press="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
-        :max-items="3"
+        :max-items="6"
         class="mediaCard"
       >
         <template #default="{ items }">
@@ -121,11 +121,15 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
                       {{ item.formatedJudmentDate }}
                     </p>
                     <p
+                      v-if="item.type === MediaType.pressReleaseForJudgments"
                       :id="`arrestNr${item.id}`"
                       :aria-label="item.ariaLabelReference"
                     >
                       {{ t('general.message.add-judgment-number-label') }}
                       {{ item.nr }}
+                    </p>
+                    <p v-else>
+                      {{ t('general.message.general-press-releases') }}
                     </p>
                   </div>
                   <h3
