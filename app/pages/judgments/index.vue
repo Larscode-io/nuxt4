@@ -13,14 +13,16 @@ const { t, locale } = useLanguage()
 const baseURL = useRuntimeConfig().public.apiBaseUrl
 
 const route = useRoute()
-console.log(route.query.year)
-const currentYear = new Date().getFullYear()
-const year = ref(Number(route.query.year) || currentYear)
 const OLDEST_YEAR = 1985
+const currentYear = new Date().getFullYear()
+const year = ref<number | null>(null)
+
 if (!year.value || year.value < OLDEST_YEAR || year.value > currentYear || isNaN(year.value)) {
-  console.log('redirecting')
+  year.value = currentYear
 }
-await navigateTo({ path: RoutePathKeys.judgmentsHome, query: { year: currentYear } })
+else {
+  year.value = Number(route.query.year)
+}
 
 const years = ref(range(OLDEST_YEAR, new Date().getFullYear()).reverse())
 
@@ -42,9 +44,8 @@ interface LegalCase {
 const selected = ref(year)
 
 // during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
-const { data: judgments, error, status, refresh } = useFetch<LegalCase[]>(() => `${baseURL}${ApiUrl.judgments}?lang=${locale.value}&year=${year.value}`, {
-  watch: [selected],
-})
+const { data: judgments, error, status, refresh }
+  = useLazyFetch<LegalCase[]>(() => `${baseURL}${ApiUrl.judgments}?lang=${locale.value}&year=${year.value}`)
 if (error.value) {
   console.error(error.value)
 }
