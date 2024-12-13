@@ -90,29 +90,27 @@ if (error.value) {
               outlined
             >
               <v-list-item>
-                <v-list-item-content>
-                  <div class=" mb-3">
-                    <v-icon color="rgb(var(--v-theme-pdfRed))">
-                      mdi-file-pdf-box
-                    </v-icon>
+                <div class=" mb-3">
+                  <v-icon color="rgb(var(--v-theme-pdfRed))">
+                    mdi-file-pdf-box
+                  </v-icon>
 
-                    <h3>
-                      {{ t('general.message.roll-number') }}: {{ id }} ({{
-                        processingLanguage
-                      }})
-                    </h3>
-                  </div>
-                  <v-list-item-title class="headline mb-1">
-                    {{
-                      description
-                    }}
-                  </v-list-item-title>
-                  <v-list-item-subtitle>
-                    {{
-                      description
-                    }}
-                  </v-list-item-subtitle>
-                </v-list-item-content>
+                  <h3>
+                    {{ t('general.message.roll-number') }}: {{ id }} ({{
+                      processingLanguage
+                    }})
+                  </h3>
+                </div>
+                <v-list-item-title class="headline mb-1">
+                  {{
+                    description
+                  }}
+                </v-list-item-title>
+                <v-list-item-subtitle>
+                  {{
+                    description
+                  }}
+                </v-list-item-subtitle>
               </v-list-item>
             </v-card>
           </v-col>
