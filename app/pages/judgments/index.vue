@@ -6,10 +6,6 @@ import { useLanguage } from '@/composables/useLanguage'
 
 import { range } from '~/core/utilities'
 
-definePageMeta({
-  middleware: ['mid'],
-})
-
 const withArchive = ref(true)
 
 const { t, locale } = useLanguage()
