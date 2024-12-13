@@ -7,24 +7,17 @@ import { useLanguage } from '@/composables/useLanguage'
 import { range } from '~/core/utilities'
 
 const withArchive = ref(true)
-
 const { t, locale } = useLanguage()
-
 const baseURL = useRuntimeConfig().public.apiBaseUrl
-
 const route = useRoute()
+
 const OLDEST_YEAR = 1985
 const currentYear = new Date().getFullYear()
-const year = ref<number | null>(null)
-
-if (!year.value || year.value < OLDEST_YEAR || year.value > currentYear || isNaN(year.value)) {
+const year = ref<number | null>(Number(route.query.year) || currentYear)
+const years = ref(range(OLDEST_YEAR, new Date().getFullYear()).reverse())
+if (year.value === null || year.value < OLDEST_YEAR || year.value > currentYear || isNaN(year.value)) {
   year.value = currentYear
 }
-else {
-  year.value = Number(route.query.year)
-}
-
-const years = ref(range(OLDEST_YEAR, new Date().getFullYear()).reverse())
 
 interface LegalCase {
   id: number
@@ -53,6 +46,8 @@ if (error.value) {
 watch(() => year.value, () => {
   navigateTo({ path: RoutePathKeys.judgmentsHome, query: { year: year.value } })
   // refresh()
+}, {
+  immediate: true,
 })
 </script>
 
