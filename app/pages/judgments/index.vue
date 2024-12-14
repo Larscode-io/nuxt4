@@ -5,8 +5,9 @@ import { ApiUrl, RoutePathKeys } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 import { range } from '~/core/utilities'
+import type { GeneralPressJudgment } from '@/core/constants'
+import type { Judgment } from '~/core/constants'
 
-const withArchive = ref(true)
 const { t, locale } = useLanguage()
 const baseURL = useRuntimeConfig().public.apiBaseUrl
 const route = useRoute()
@@ -19,36 +20,43 @@ if (year.value === null || year.value < OLDEST_YEAR || year.value > currentYear 
   year.value = currentYear
 }
 
-interface LegalCase {
-  id: number
-  description: string
-  availablePart: string
-  courtVerdict: string
-  fileName: string
-  filePath: string
-  formatedJudmentDate: string
-  idsRole: number[]
-  judmentDate: string
-  keywords: string
-  nr: string
-  path: string
-  summary: string | null
-}
 const selected = ref(year)
 
-// during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
-const { data: judgments, error, status, refresh }
-  = useLazyFetch<LegalCase[]>(() => `${baseURL}${ApiUrl.judgments}?lang=${locale.value}&year=${year.value}`)
+const { data: judgments, error, status }
+  = useFetch<Judgment[]>(() => `${baseURL}${ApiUrl.judgments}`,
+    {
+      query: {
+        lang: locale.value,
+        year,
+      },
+    })
 if (error.value) {
   console.error(error.value)
 }
 
 watch(() => year.value, () => {
   navigateTo({ path: RoutePathKeys.judgmentsHome, query: { year: year.value } })
-  // refresh()
 }, {
   immediate: true,
 })
+
+const { data }
+  = useFetch<GeneralPressJudgment[]>(() => `${baseURL}${ApiUrl.pressReleasesConcerningJudgments}`,
+    {
+      query: {
+        lang: locale.value,
+        withArchive: true,
+      },
+      transform: (data: GeneralPressJudgment[]) => data.filter((release: { nr: string }) => release.nr.split('/')[1] === String(year.value)),
+    })
+const findRelease = (rid: number) => data.value?.find((release: GeneralPressJudgment) => Number(release.id) === rid) || ''
+
+const download = (filePath: string) => {
+  const url = `https://www.const-court.be${filePath}`
+  window.open(url, '_blank')
+}
+
+console.log(findRelease(5893)?.filePath)
 </script>
 
 <template>
@@ -67,9 +75,7 @@ watch(() => year.value, () => {
           v-model="selected"
           :items="years"
           item-value="value"
-          item-text="text"
           label="Select Year"
-          outlined
         />
       </v-col>
       <v-col cols="10">
@@ -139,6 +145,15 @@ watch(() => year.value, () => {
                         description
                       }}
                     </v-list-item-subtitle>
+                  </v-list-item>
+                  <v-list-item v-if="findRelease(id)">
+                    <v-list-item-action>
+                      <v-btn
+                        @click="findRelease(id) ? download((findRelease(id) as GeneralPressJudgment).filePath) : null"
+                      >
+                        {{ t('general.message.press-releases') }}
+                      </v-btn>
+                    </v-list-item-action>
                   </v-list-item>
                 </v-card>
               </v-col>
