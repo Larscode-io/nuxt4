@@ -4,7 +4,6 @@ import img from '~/assets/img/banner-media.png'
 import { ApiUrl, RoutePathKeys } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
-import { range } from '~/core/utilities'
 import type { GeneralPressJudgment } from '@/core/constants'
 import type { Judgment } from '~/core/constants'
 
@@ -40,23 +39,22 @@ watch(() => year.value, () => {
   immediate: true,
 })
 
+const transform = (data: GeneralPressJudgment[]) => {
+  return data.filter((release: { nr: string }) => release.nr.split('/')[1] === String(year.value))
+}
+
 const { data }
-  = useFetch<GeneralPressJudgment[]>(() => `${baseURL}${ApiUrl.pressReleasesConcerningJudgments}`,
+  = useLazyFetch<GeneralPressJudgment[]>(() => `${baseURL}${ApiUrl.pressReleasesConcerningJudgments}`,
     {
       query: {
         lang: locale.value,
         withArchive: true,
       },
-      transform: (data: GeneralPressJudgment[]) => data.filter((release: { nr: string }) => release.nr.split('/')[1] === String(year.value)),
+      transform,
     })
+
 const findRelease = (rid: number) => data.value?.find((release: GeneralPressJudgment) => Number(release.id) === rid) || ''
-
-const download = (filePath: string) => {
-  const url = `https://www.const-court.be${filePath}`
-  window.open(url, '_blank')
-}
-
-console.log(findRelease(5893)?.filePath)
+// console.log(findRelease(5893)?.filePath)
 </script>
 
 <template>
@@ -149,7 +147,7 @@ console.log(findRelease(5893)?.filePath)
                   <v-list-item v-if="findRelease(id)">
                     <v-list-item-action>
                       <v-btn
-                        @click="findRelease(id) ? download((findRelease(id) as GeneralPressJudgment).filePath) : null"
+                        @click="findRelease(id) ? downloadPublicFile ((findRelease(id) as GeneralPressJudgment).filePath) : null"
                       >
                         {{ t('general.message.press-releases') }}
                       </v-btn>
