@@ -65,99 +65,93 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
       :image="img"
       :alt="t('alt.banner.courtroom')"
     />
-    <v-row>
-      <v-col
-        cols="12"
-        md="2"
-        xl="3"
-      >
-        <div class="pa-4">
-          <v-select
-            v-model="selected"
-            :items="years"
-            item-value="value"
-            :label="`${t('general.message.year-selection')}${t('general.message.colon')}`"
-          />
-        </div>
-      </v-col>
-      <v-col
-        cols="12"
-        md="10"
-        xl="9"
-      >
-        <v-container fluid>
-          <v-row v-if="status === 'pending'">
-            <v-col>
-              <v-skeleton-loader
-                v-for="n in 5"
-                :key="n"
-                type="list-item-two-line"
-              />
-            </v-col>
-          </v-row>
-
-          <v-alert
-            v-else-if="error"
-            type="error"
-            dismissible
-          >
-            <v-row>
-              <v-col>
-                <p>Error: {{ error.message }}</p>
-              </v-col>
-              <v-col class="d-flex justify-end">
-                <v-btn
-                  color="primary"
-                  @click="refresh"
-                >
-                  Retry
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-alert>
-
-          <v-row v-else>
-            <v-col
-              v-for="{ id, availablePart, nr, description } in judgments"
-              :key="id"
-              cols="12"
-              md="9"
-              class="mx-auto mb-3"
-            >
-              <v-card
-                :id="id"
-                outlined
-              >
-                <v-list-item>
-                  <div class="mb-3">
-                    <v-icon color="rgb(var(--v-theme-pdfRed))">
-                      mdi-file-pdf-box
-                    </v-icon>
-                    <h3>{{ nr }}</h3>
-                    <h3>{{ availablePart }}</h3>
-                  </div>
-                  <v-list-item-title class="headline mb-1">
-                    {{ description }}
-                  </v-list-item-title>
-                  <v-list-item-subtitle>
-                    {{ description }}
-                  </v-list-item-subtitle>
-                </v-list-item>
-                <v-list-item v-if="findRelease(id)">
-                  <v-list-item-action>
-                    <v-btn
-                      v-if="findRelease(id)"
-                      @click="downloadPublicFile(findRelease(id)!.filePath)"
-                    >
-                      {{ t('general.message.press-releases') }}
-                    </v-btn>
-                  </v-list-item-action>
-                </v-list-item>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
+    <v-row v-if="status === 'pending'">
+      <v-col>
+        <v-skeleton-loader
+          v-for="n in 5"
+          :key="n"
+          type="list-item-two-line"
+        />
       </v-col>
     </v-row>
+
+    <v-alert
+      v-else-if="error"
+      type="error"
+      dismissible
+    >
+      <v-row>
+        <v-col>
+          <p>Error: {{ error.message }}</p>
+        </v-col>
+        <v-col class="d-flex justify-end">
+          <v-btn
+            color="primary"
+            @click="refresh"
+          >
+            Retry
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-alert>
+    <v-container
+      v-else
+      fluid
+    >
+      <v-row>
+        <v-col
+          cols="12"
+          md="2"
+          xl="3"
+        >
+          <div class="pa-4">
+            <v-select
+              v-model="selected"
+              :items="years"
+              item-value="value"
+              :label="`${t('general.message.year-selection')}${t('general.message.colon')}`"
+            />
+          </div>
+        </v-col>
+        <v-col
+          cols="12"
+          md="9"
+          class="mx-auto mb-3"
+        >
+          <v-card
+            v-for="{ id, availablePart, nr, description } in judgments"
+            :id="id"
+            :key="id"
+            outlined
+          >
+            <v-list-item>
+              <div class="mb-3">
+                <v-icon color="rgb(var(--v-theme-pdfRed))">
+                  mdi-file-pdf-box
+                </v-icon>
+                <h3>{{ nr }}</h3>
+                <h3>{{ availablePart }}</h3>
+              </div>
+              <v-list-item-title class="headline mb-1">
+                {{ description }}
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                {{ description }}
+              </v-list-item-subtitle>
+            </v-list-item>
+            <v-list-item v-if="findRelease(id)">
+              <v-list-item-action>
+                <v-btn
+                  v-if="findRelease(id)"
+                  @click="downloadPublicFile(findRelease(id)!.filePath)"
+                >
+                  {{ t('general.message.press-releases') }}
+                </v-btn>
+              </v-list-item-action>
+            </v-list-item>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
