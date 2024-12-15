@@ -12,11 +12,13 @@ const baseURL = config.public.apiBaseUrl
 const withArchive = ref(true)
 
 const allPendingCase = 'all'
+console.log('sxxxxx')
 const caseType = [
   { text: t('general.message.all-pending-cases'), value: allPendingCase },
   { text: t('general.message.questions-referred'), value: PendingCaseType.questionsReferred },
   { text: t('general.message.action-for-cancellation'), value: PendingCaseType.actionForCancellation },
 ]
+console.log('zzzzzz')
 const selectedType = ref(caseType[0]?.value)
 
 interface LegalCase {
