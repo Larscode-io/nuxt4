@@ -12,13 +12,11 @@ const baseURL = config.public.apiBaseUrl
 const withArchive = ref(true)
 
 const allPendingCase = 'all'
-console.log('sxxxxx')
 const caseType = [
   { text: t('general.message.all-pending-cases'), value: allPendingCase },
   { text: t('general.message.questions-referred'), value: PendingCaseType.questionsReferred },
   { text: t('general.message.action-for-cancellation'), value: PendingCaseType.actionForCancellation },
 ]
-console.log('zzzzzz')
 const selectedType = ref(caseType[0]?.value)
 
 interface LegalCase {
@@ -93,15 +91,18 @@ const hasPendingCases = computed(() => (pendingCasesFilteredByType.value?.length
         </v-alert>
       </div>
       <div v-else-if="hasPendingCases">
-        <v-row />
         <v-row>
-          <v-col>
+          <v-col
+            cols="12"
+            md="2"
+            xl="3"
+          >
             <v-select
               v-model="selectedType"
               :items="caseType"
               item-title="text"
               item-value="value"
-              label="Select Type"
+              :label="`${t('general.message.type')}${t('general.message.colon')}`"
             />
           </v-col>
         </v-row>

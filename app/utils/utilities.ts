@@ -16,3 +16,8 @@ export const chunk = (arr = [], size = 1) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_v, i) =>
     arr.slice(i * size, i * size + size),
   )
+
+export const downloadPublicFile = (filePath: string) => {
+  const url = `https://www.const-court.be${filePath}`
+  window.open(url, '_blank')
+}

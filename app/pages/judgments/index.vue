@@ -21,7 +21,7 @@ if (year.value === null || year.value < OLDEST_YEAR || year.value > currentYear 
 
 const selected = ref(year)
 
-const { data: judgments, error, status }
+const { data: judgments, error, status, refresh }
   = useFetch<Judgment[]>(() => `${baseURL}${ApiUrl.judgments}`,
     {
       query: {
@@ -53,7 +53,7 @@ const { data }
       transform,
     })
 
-const findRelease = (rid: number) => data.value?.find((release: GeneralPressJudgment) => Number(release.id) === rid) || ''
+const findRelease = (rid: number): GeneralPressJudgment | undefined => data.value?.find((release: GeneralPressJudgment) => Number(release.id) === rid)
 // console.log(findRelease(5893)?.filePath)
 </script>
 
@@ -67,96 +67,95 @@ const findRelease = (rid: number) => data.value?.find((release: GeneralPressJudg
     />
     <v-row>
       <v-col
-        cols="2"
+        cols="12"
+        md="2"
+        xl="3"
       >
-        <v-select
-          v-model="selected"
-          :items="years"
-          item-value="value"
-          label="Select Year"
-        />
+        <div class="pa-4">
+          <v-select
+            v-model="selected"
+            :items="years"
+            item-value="value"
+            :label="`${t('general.message.year-selection')}${t('general.message.colon')}`"
+          />
+        </div>
       </v-col>
-      <v-col cols="10">
+      <v-col
+        cols="12"
+        md="10"
+        xl="9"
+      >
         <v-container fluid>
-          <div v-if="status === 'pending'">
+          <v-row v-if="status === 'pending'">
+            <v-col>
+              <v-skeleton-loader
+                v-for="n in 5"
+                :key="n"
+                type="list-item-two-line"
+              />
+            </v-col>
+          </v-row>
+
+          <v-alert
+            v-else-if="error"
+            type="error"
+            dismissible
+          >
             <v-row>
               <v-col>
-                <v-skeleton-loader
-                  v-for="n in 5"
-                  :key="n"
-                  type="list-item-two-line"
-                />
+                <p>Error: {{ error.message }}</p>
+              </v-col>
+              <v-col class="d-flex justify-end">
+                <v-btn
+                  color="primary"
+                  @click="refresh"
+                >
+                  Retry
+                </v-btn>
               </v-col>
             </v-row>
-          </div>
-          <div v-else-if="error">
-            <v-alert
-              type="error"
-              dismissible
-            >
-              <v-row>
-                <v-col>
-                  <p>Error: {{ error.message }}</p>
-                </v-col>
-                <v-col class="d-flex justify-end">
-                  <v-btn
-                    color="primary"
-                    @click="refresh"
-                  >
-                    Retry
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-alert>
-          </div>
-          <div v-else>
-            <v-row
+          </v-alert>
+
+          <v-row v-else>
+            <v-col
               v-for="{ id, availablePart, nr, description } in judgments"
               :key="id"
-              class="justify-center"
+              cols="12"
+              md="9"
+              class="mx-auto mb-3"
             >
-              <v-col
-                cols="12"
-                md="6"
+              <v-card
+                :id="id"
+                outlined
               >
-                <v-card
-                  :id="id"
-                  class="mx-auto mb-3"
-                  outlined
-                >
-                  <v-list-item>
-                    <div class=" mb-3">
-                      <v-icon color="rgb(var(--v-theme-pdfRed))">
-                        mdi-file-pdf-box
-                      </v-icon>
-
-                      <h3> {{ nr }} </h3>
-                      <h3> {{ availablePart }} </h3>
-                    </div>
-                    <v-list-item-title class="headline mb-1">
-                      {{
-                        description
-                      }}
-                    </v-list-item-title>
-                    <v-list-item-subtitle>
-                      {{
-                        description
-                      }}
-                    </v-list-item-subtitle>
-                  </v-list-item>
-                  <v-list-item v-if="findRelease(id)">
-                    <v-list-item-action>
-                      <v-btn
-                        @click="findRelease(id) ? downloadPublicFile ((findRelease(id) as GeneralPressJudgment).filePath) : null"
-                      >
-                        {{ t('general.message.press-releases') }}
-                      </v-btn>
-                    </v-list-item-action>
-                  </v-list-item>
-                </v-card>
-              </v-col>
-            </v-row>
-          </div>
+                <v-list-item>
+                  <div class="mb-3">
+                    <v-icon color="rgb(var(--v-theme-pdfRed))">
+                      mdi-file-pdf-box
+                    </v-icon>
+                    <h3>{{ nr }}</h3>
+                    <h3>{{ availablePart }}</h3>
+                  </div>
+                  <v-list-item-title class="headline mb-1">
+                    {{ description }}
+                  </v-list-item-title>
+                  <v-list-item-subtitle>
+                    {{ description }}
+                  </v-list-item-subtitle>
+                </v-list-item>
+                <v-list-item v-if="findRelease(id)">
+                  <v-list-item-action>
+                    <v-btn
+                      v-if="findRelease(id)"
+                      @click="downloadPublicFile(findRelease(id)!.filePath)"
+                    >
+                      {{ t('general.message.press-releases') }}
+                    </v-btn>
+                  </v-list-item-action>
+                </v-list-item>
+              </v-card>
+            </v-col>
+          </v-row>
         </v-container>
       </v-col>
     </v-row>
