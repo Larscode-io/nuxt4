@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import img from '~/assets/img/banner-media.png'
-import { ApiUrl } from '~/core/constants'
+import { ApiUrl, PendingCaseType } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useLanguage()
@@ -10,6 +10,14 @@ const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
 const withArchive = ref(true)
+
+const allPendingCase = 'all'
+const caseType = [
+  { text: t('general.message.all-pending-cases'), value: allPendingCase },
+  { text: t('general.message.questions-referred'), value: PendingCaseType.questionsReferred },
+  { text: t('general.message.action-for-cancellation'), value: PendingCaseType.actionForCancellation },
+]
+const selectedType = ref(caseType[0]?.value)
 
 interface LegalCase {
   id: number
@@ -32,6 +40,14 @@ const { data: cases, error, status, refresh } = useLazyFetch<LegalCase[]>(`${bas
 if (error.value) {
   console.error(error.value)
 }
+
+const pendingCasesFilteredByType = computed(() => {
+  if (selectedType.value === allPendingCase) {
+    return cases.value
+  }
+  return cases.value?.filter(c => c.type === selectedType.value)
+})
+const hasPendingCases = computed(() => (pendingCasesFilteredByType.value?.length ?? 0) > 0)
 </script>
 
 <template>
@@ -74,9 +90,21 @@ if (error.value) {
           </v-row>
         </v-alert>
       </div>
-      <div v-else>
+      <div v-else-if="hasPendingCases">
+        <v-row />
+        <v-row>
+          <v-col>
+            <v-select
+              v-model="selectedType"
+              :items="caseType"
+              item-title="text"
+              item-value="value"
+              label="Select Type"
+            />
+          </v-col>
+        </v-row>
         <v-row
-          v-for="{ id, description, processingLanguage } in cases"
+          v-for="{ id, description, processingLanguage } in pendingCasesFilteredByType"
           :key="id"
           class="justify-center"
         >
@@ -115,6 +143,14 @@ if (error.value) {
             </v-card>
           </v-col>
         </v-row>
+      </div>
+      <div v-else>
+        <v-alert
+          type="info"
+          dismissible
+        >
+          <p>{{ t('general.message.no-pending-cases') }}</p>
+        </v-alert>
       </div>
     </v-container>
   </div>
