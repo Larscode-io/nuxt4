@@ -58,95 +58,90 @@ const hasPendingCases = computed(() => (pendingCasesFilteredByType.value?.length
       :image="img"
       :alt="t('alt.banner.courtroom')"
     />
-    <v-container fluid>
-      <div v-if="status === 'pending'">
+    <div v-if="status === 'pending'">
+      <v-row>
+        <v-col>
+          <v-skeleton-loader
+            v-for="n in 10"
+            :key="n"
+            type="list-item-two-line"
+          />
+        </v-col>
+      </v-row>
+    </div>
+    <div v-else-if="error">
+      <v-alert
+        type="error"
+        dismissible
+      >
         <v-row>
           <v-col>
-            <v-skeleton-loader
-              v-for="n in 10"
-              :key="n"
-              type="list-item-two-line"
-            />
+            <p>Error: {{ error.message }}</p>
           </v-col>
-        </v-row>
-      </div>
-      <div v-else-if="error">
-        <v-alert
-          type="error"
-          dismissible
-        >
-          <v-row>
-            <v-col>
-              <p>Error: {{ error.message }}</p>
-            </v-col>
-            <v-col class="d-flex justify-end">
-              <v-btn
-                color="primary"
-                @click="refresh"
-              >
-                Retry
-              </v-btn>
-            </v-col>
-          </v-row>
-        </v-alert>
-      </div>
-      <div v-else-if="hasPendingCases">
-        <v-row>
-          <v-col
-            cols="12"
-            md="2"
-            xl="3"
-          >
-            <v-select
-              v-model="selectedType"
-              :items="caseType"
-              item-title="text"
-              item-value="value"
-              :label="`${t('general.message.type')}${t('general.message.colon')}`"
-            />
-          </v-col>
-        </v-row>
-        <v-row
-          v-for="{ id, description, processingLanguage } in pendingCasesFilteredByType"
-          :key="id"
-          class="justify-center"
-        >
-          <v-col
-            cols="12"
-            md="6"
-          >
-            <v-card
-              :id="id"
-              class="mx-auto mb-3"
-              outlined
+          <v-col class="d-flex justify-end">
+            <v-btn
+              color="primary"
+              @click="refresh"
             >
-              <v-list-item>
-                <div class=" mb-3">
-                  <v-icon color="rgb(var(--v-theme-pdfRed))">
-                    mdi-file-pdf-box
-                  </v-icon>
-
-                  <h3>
-                    {{ t('general.message.roll-number') }}: {{ id }} ({{
-                      processingLanguage
-                    }})
-                  </h3>
-                </div>
-                <v-list-item-title class="headline mb-1">
-                  {{
-                    description
-                  }}
-                </v-list-item-title>
-                <v-list-item-subtitle>
-                  {{
-                    description
-                  }}
-                </v-list-item-subtitle>
-              </v-list-item>
-            </v-card>
+              Retry
+            </v-btn>
           </v-col>
         </v-row>
-      </div>
+      </v-alert>
+    </div>
+    <v-container
+      v-else
+      fluid
+    >
+      <v-row v-if="hasPendingCases">
+        <v-col
+          cols="12"
+          md="3"
+        >
+          <v-select
+            v-model="selectedType"
+            :items="caseType"
+            item-title="text"
+            item-value="value"
+            :label="`${t('general.message.type')}${t('general.message.colon')}`"
+          />
+        </v-col>
+        <v-col
+          cols="12"
+          md="9"
+        >
+          <v-card
+            v-for="{ id, description, processingLanguage } in pendingCasesFilteredByType"
+            :key="id"
+            class="mx-auto mb-3"
+            outlined
+          >
+            <v-list-item>
+              <div class=" mb-3">
+                <v-icon color="rgb(var(--v-theme-pdfRed))">
+                  mdi-file-pdf-box
+                </v-icon>
+
+                <h3>
+                  {{ t('general.message.roll-number') }}: {{ id }} ({{
+                    processingLanguage
+                  }})
+                </h3>
+              </div>
+              <v-list-item-title class="headline mb-1">
+                {{
+                  description
+                }}
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                {{
+                  description
+                }}
+              </v-list-item-subtitle>
+            </v-list-item>
+          </v-card>
+        </v-col>
+      </v-row>
       <div v-else>
         <v-alert
           type="info"
