@@ -153,6 +153,10 @@ export default defineEventHandler(async () => {
           to: RoutePathKeys.media,
           title: 'menu.press-and-media.media-unit',
         },
+        {
+          to: RoutePathKeys.informed,
+          title: 'menu.informed',
+        },
 
       ],
     },
