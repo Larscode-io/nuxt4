@@ -26,7 +26,7 @@ useHead({
     lang: locale.value,
   },
 })
-const drawer = ref(false)
+const mobileDrawer = ref(false)
 
 const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu', {
 })
@@ -56,8 +56,12 @@ provide('menuHeight', menuHeight)
 
 const hoveredMenu = ref<number | null>(null)
 
-function hoverMenu(index: number | null): void {
+function hoverMainMenu(index: number | null): void {
   hoveredMenu.value = index
+  // mobileDrawer needs to be closed when a menu item is clicked
+  if (mobileDrawer.value) {
+    mobileDrawer.value = false
+  }
 }
 function closeMenu() {
   hoveredMenu.value = null
@@ -67,11 +71,18 @@ function handleMenuClick() {
   closeMenu()
   toggleMenu()
 }
+
 function toggleMenu() {
   hoveredMenu.value = hoveredMenu.value === null ? 0 : null
 }
 
 const { mdAndUp, mobile, smAndDown } = useDisplay()
+
+watch(smAndDown, (value) => {
+  if (!value) {
+    mobileDrawer.value = false
+  }
+})
 
 const handleNavigation = (link) => {
   // todo: implement  navigation logic here, e.g., using Vue Router
@@ -97,8 +108,8 @@ const handleNavigation = (link) => {
             src="~/assets/icons/fed.svg"
             :style="{ width: '64px', height: '64px' }"
             alt="Logo"
-            @click="hoverMenu(null)"
-            @mouseenter="hoverMenu(null)"
+            @click="hoverMainMenu(null)"
+            @mouseenter="hoverMainMenu(null)"
           >
         </button>
       </nuxt-link>
@@ -127,7 +138,7 @@ const handleNavigation = (link) => {
                 tabindex="0"
                 :aria-expanded="hoveredMenu === index"
                 :aria-controls="`submenu-${index}`"
-                @mouseenter="hoverMenu(index)"
+                @mouseenter="hoverMainMenu(index)"
                 @click="toggleMenu"
               >
                 {{ item.title }}
@@ -136,7 +147,7 @@ const handleNavigation = (link) => {
                   :id="`submenu-${index}`"
                   class="position-fixed left-0 right-0 bg-white elevation-2 pa-2"
                   :style="{ top: `${menuHeight}px` }"
-                  @mouseleave="hoverMenu(null)"
+                  @mouseleave="hoverMainMenu(null)"
                 >
                   <v-container fluid>
                     <v-row
@@ -201,7 +212,7 @@ const handleNavigation = (link) => {
                 :aria-label="`top menu item ${item.title}`"
                 role="link"
                 tabindex="0"
-                @mouseenter="hoverMenu(index)"
+                @mouseenter="hoverMainMenu(index)"
               >
                 {{ item.title || 'Untitled' }}
               </nuxt-link>
@@ -215,7 +226,7 @@ const handleNavigation = (link) => {
           <v-btn
             :style="{ textTransform: 'none' }"
             :aria-label="t('aria.label.landing.informed')"
-            @mouseenter="hoverMenu(null)"
+            @mouseenter="hoverMainMenu(null)"
           >
             {{ t('menu.informed') }}
             <v-icon style="margin-left: 8px;">
@@ -228,7 +239,7 @@ const handleNavigation = (link) => {
       <v-app-bar-nav-icon
         v-if="mobile"
         aria-label="Toggle Navigation Drawer"
-        @click.stop="drawer = !drawer"
+        @click.stop="mobileDrawer = !mobileDrawer"
       />
 
       <v-menu>
@@ -238,7 +249,7 @@ const handleNavigation = (link) => {
             icon="mdi-translate"
             variant="text"
             :aria-label="t('aria.label.language')"
-            @mouseenter="hoverMenu(null)"
+            @mouseenter="hoverMainMenu(null)"
           >
             {{ locale }}
           </v-btn>
@@ -260,13 +271,14 @@ const handleNavigation = (link) => {
     </v-app-bar>
 
     <v-navigation-drawer
-      v-model="drawer"
+      v-model="mobileDrawer"
       aria-label="Mobile Navigation Drawer"
       role="navigation"
       :location="smAndDown ? 'left' : undefined"
       mini-variant
       fixed
       app
+      color="scienceBlue"
     >
       <v-list
         nav
