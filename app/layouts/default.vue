@@ -87,11 +87,6 @@ watch(smAndDown, (value) => {
     mobileDrawer.value = false
   }
 })
-
-const handleNavigation = (link) => {
-  // todo: implement  navigation logic here, e.g., using Vue Router
-  // router.push(link);
-}
 </script>
 
 <template>
@@ -226,7 +221,7 @@ const handleNavigation = (link) => {
 
         <v-spacer />
 
-        <nuxt-link :to="localePath(RoutePathKeys.informed)">
+        <nuxt-link :to="localePath(RoutePathKeys.informed) || '#'">
           <v-btn
             :style="{ textTransform: 'none' }"
             :aria-label="t('aria.label.landing.informed')"
@@ -297,9 +292,7 @@ const handleNavigation = (link) => {
           v-for="(item, index) in translatedItems"
           :key="`item-${index}`"
         >
-          <v-list-group
-            v-if="item.subMenu && item.subMenu.length"
-          >
+          <v-list-group v-if="item.subMenu && item.subMenu.length">
             <template #activator="{ props }">
               <v-list-item v-bind="props">
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
@@ -310,9 +303,7 @@ const handleNavigation = (link) => {
               v-for="(subItem, subIndex) in item.subMenu"
               :key="`subItem-${index}-${subIndex}`"
             >
-              <v-list-group
-                v-if="subItem.subMenu && subItem.subMenu.length"
-              >
+              <v-list-group v-if="subItem.subMenu && subItem.subMenu.length">
                 <template #activator="{ props }">
                   <v-list-item v-bind="props">
                     <v-list-item-title>{{ subItem.title }}</v-list-item-title>
@@ -322,27 +313,37 @@ const handleNavigation = (link) => {
                 <v-list-item
                   v-for="(subSubItem, subSubIndex) in subItem.subMenu"
                   :key="`subSubItem-${index}-${subIndex}-${subSubIndex}`"
-                  @click="handleNavigation(subSubItem.to)"
                 >
-                  <v-list-item-title>{{ subSubItem.title }}</v-list-item-title>
+                  <nuxt-link
+                    :to="subSubItem.to ? localePath(subSubItem.to) : '#'"
+                    aria-label="subSubItem.title"
+                  >
+                    <v-list-item-title>{{ subSubItem.title }}</v-list-item-title>
+                  </nuxt-link>
                 </v-list-item>
               </v-list-group>
 
-              <v-list-item
+              <nuxt-link
                 v-else
-                @click="handleNavigation(subItem.to)"
+                :to="subItem.to ? localePath(subItem.to) : '#'"
+                aria-label="subItem.title"
               >
-                <v-list-item-title>{{ subItem.title }}</v-list-item-title>
-              </v-list-item>
+                <v-list-item>
+                  <v-list-item-title>{{ subItem.title }}</v-list-item-title>
+                </v-list-item>
+              </nuxt-link>
             </template>
           </v-list-group>
 
-          <v-list-item
+          <nuxt-link
             v-else
-            @click="handleNavigation(item.to)"
+            :to="item.to ? localePath(item.to) : '#'"
+            aria-label="item.title"
           >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
+            <v-list-item>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
+          </nuxt-link>
         </template>
       </v-list>
     </v-navigation-drawer>
@@ -356,14 +357,14 @@ const handleNavigation = (link) => {
           <v-col cols="auto">
             <nuxt-link
               class="pa-2"
-              :to="localePath(RoutePathKeys.courtContacts)"
+              :to="localePath(RoutePathKeys.courtContacts) || '#'"
               aria-label="Contact"
             >
               {{ t('menu.footer.contact') }}
             </nuxt-link>
             <nuxt-link
               class="pa-2"
-              :to="localePath(RoutePathKeys.legalDisclaimer)"
+              :to="localePath(RoutePathKeys.legalDisclaimer) || '#'"
               aria-label="Legal Disclaimer"
             >
               {{ t('menu.footer.disclaimer') }}
@@ -381,7 +382,7 @@ const handleNavigation = (link) => {
 
             <nuxt-link
               class="pa-2"
-              :to="localePath(RoutePathKeys.privacyPolicy)"
+              :to="localePath(RoutePathKeys.privacyPolicy) || '#'"
               aria-label="Privacy Policy"
             >
               {{ t('menu.footer.term-of-use-privacy-policy2') }}
