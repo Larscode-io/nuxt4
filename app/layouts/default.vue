@@ -323,7 +323,6 @@ watch(smAndDown, (value) => {
                   <nuxt-link
                     :to="subSubItem.to ? localePath(subSubItem.to) : '#'"
                     aria-label="subSubItem.title"
-                    class="text-decoration-none text-decoration-underline-on-hover"
                   >
                     <v-list-item-title color="white">
                       {{ subSubItem.title }}
@@ -343,16 +342,15 @@ watch(smAndDown, (value) => {
               </nuxt-link>
             </template>
           </v-list-group>
+
           <nuxt-link
             v-else
             :to="item.to ? localePath(item.to) : '#'"
             aria-label="item.title"
-            class="text-decoration-none text-decoration-underline-on-hover"
           >
             <v-list-item>
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item>
-          </nuxt-link>
           </nuxt-link>
         </template>
       </v-list>
@@ -441,5 +439,15 @@ h1 {
   font-size: 1rem;
   font-family: 'Tiempos Headline';
   margin-left: 16px;
+}
+
+// make mobile drawer text white
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 </style>
