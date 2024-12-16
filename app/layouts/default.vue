@@ -73,15 +73,8 @@ function toggleMenu() {
 
 const { mdAndUp, mobile, smAndDown } = useDisplay()
 
-const expandedItems = ref<Record<string, boolean>>({})
-const expandedSubItems = ref<Record<string, boolean>>({})
-
-const toggleExpand = (title) => {
-  expandedItems.value[title] = !expandedItems.value[title]
-}
-
 const handleNavigation = (link) => {
-  // Implement your navigation logic here, e.g., using Vue Router
+  // todo: implement  navigation logic here, e.g., using Vue Router
   // router.push(link);
 }
 </script>
@@ -290,8 +283,6 @@ const handleNavigation = (link) => {
         >
           <v-list-group
             v-if="item.subMenu && item.subMenu.length"
-            :value="expandedItems[item.title]"
-            @click="() => { expandedItems.value[item.title] = !expandedItems.value[item.title] }"
           >
             <template #activator="{ props }">
               <v-list-item v-bind="props">
@@ -305,8 +296,6 @@ const handleNavigation = (link) => {
             >
               <v-list-group
                 v-if="subItem.subMenu && subItem.subMenu.length"
-                :value="expandedItems[subItem.title]"
-                @click="() => { expandedSubItems.value[item.title] = !expandedSubItems.value[item.title] }"
               >
                 <template #activator="{ props }">
                   <v-list-item v-bind="props">
