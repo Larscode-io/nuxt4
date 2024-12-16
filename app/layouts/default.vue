@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useTemplateRef, onMounted, computed } from 'vue'
+import { ref, useTemplateRef, onMounted, computed, watch } from 'vue'
 import { useDisplay } from 'vuetify'
 import { useLanguage } from '@/composables/useLanguage'
 import type { CourtItem } from '@/core/constants'
@@ -58,7 +58,7 @@ const hoveredMenu = ref<number | null>(null)
 
 function hoverMainMenu(index: number | null): void {
   hoveredMenu.value = index
-  // mobileDrawer needs to be closed when a menu item is clicked
+  // Close the mobile drawer if it is open
   if (mobileDrawer.value) {
     mobileDrawer.value = false
   }
@@ -70,6 +70,10 @@ function closeMenu() {
 function handleMenuClick() {
   closeMenu()
   toggleMenu()
+  // Close the mobile drawer if it is open
+  if (mobileDrawer.value) {
+    mobileDrawer.value = false
+  }
 }
 
 function toggleMenu() {

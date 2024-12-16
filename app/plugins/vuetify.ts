@@ -22,6 +22,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         light: {
           colors: {
             pdfRed: '#c90304',
+            scienceBlue: '#0065ca',
           },
         },
       },
@@ -31,6 +32,12 @@ export default defineNuxtPlugin((nuxtApp) => {
 })
 
 // use colors like this:
+
 // .custom-redtext {color: rgb(var(--v-theme-pdfRed)); }
 // :style="{ color: 'rgb(var(--v-theme-pdfRed))' }"
 // in vuetify elements: color="rgb(var(--v-theme-pdfRed))"
+
+// with Vuetify's color prop:
+// color="pdfRed"
+// color="scienceBlue"
+// color="rgb(var(--v-theme-scienceBlue))"
