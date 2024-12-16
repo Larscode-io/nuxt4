@@ -292,7 +292,10 @@ watch(smAndDown, (value) => {
           v-for="(item, index) in translatedItems"
           :key="`item-${index}`"
         >
-          <v-list-group v-if="item.subMenu && item.subMenu.length">
+          <v-list-group
+            v-if="item.subMenu && item.subMenu.length"
+            ripple
+          >
             <template #activator="{ props }">
               <v-list-item v-bind="props">
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
@@ -303,7 +306,10 @@ watch(smAndDown, (value) => {
               v-for="(subItem, subIndex) in item.subMenu"
               :key="`subItem-${index}-${subIndex}`"
             >
-              <v-list-group v-if="subItem.subMenu && subItem.subMenu.length">
+              <v-list-group
+                v-if="subItem.subMenu && subItem.subMenu.length"
+                ripple
+              >
                 <template #activator="{ props }">
                   <v-list-item v-bind="props">
                     <v-list-item-title>{{ subItem.title }}</v-list-item-title>
@@ -317,8 +323,11 @@ watch(smAndDown, (value) => {
                   <nuxt-link
                     :to="subSubItem.to ? localePath(subSubItem.to) : '#'"
                     aria-label="subSubItem.title"
+                    class="text-decoration-none text-decoration-underline-on-hover"
                   >
-                    <v-list-item-title>{{ subSubItem.title }}</v-list-item-title>
+                    <v-list-item-title color="white">
+                      {{ subSubItem.title }}
+                    </v-list-item-title>
                   </nuxt-link>
                 </v-list-item>
               </v-list-group>
@@ -334,15 +343,16 @@ watch(smAndDown, (value) => {
               </nuxt-link>
             </template>
           </v-list-group>
-
           <nuxt-link
             v-else
             :to="item.to ? localePath(item.to) : '#'"
             aria-label="item.title"
+            class="text-decoration-none text-decoration-underline-on-hover"
           >
             <v-list-item>
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item>
+          </nuxt-link>
           </nuxt-link>
         </template>
       </v-list>
@@ -427,9 +437,9 @@ watch(smAndDown, (value) => {
 <style lang="scss">
 h1 {
   color: $logoColor;
-      font-weight: 600;
-      font-size: 1rem;
-      font-family: 'Tiempos Headline';
-      margin-left: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Tiempos Headline';
+  margin-left: 16px;
 }
 </style>
