@@ -284,26 +284,61 @@ const handleNavigation = (link) => {
           <v-list-item-title>Home</v-list-item-title>
         </v-list-item>
 
-        <v-list-group
+        <template
           v-for="(item, index) in translatedItems"
           :key="`item-${index}`"
-          :value="expandedItems[item.title]"
-          @click="toggleExpand(item.title)"
         >
-          <template #activator="{ props }">
-            <v-list-item v-bind="props">
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </template>
+          <v-list-group
+            v-if="item.subMenu && item.subMenu.length"
+            :value="expandedItems[item.title]"
+            @click="() => { expandedItems.value[item.title] = !expandedItems.value[item.title] }"
+          >
+            <template #activator="{ props }">
+              <v-list-item v-bind="props">
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+              </v-list-item>
+            </template>
+
+            <template
+              v-for="(subItem, subIndex) in item.subMenu"
+              :key="`subItem-${index}-${subIndex}`"
+            >
+              <v-list-group
+                v-if="subItem.subMenu && subItem.subMenu.length"
+                :value="expandedItems[subItem.title]"
+                @click="() => { expandedSubItems.value[item.title] = !expandedSubItems.value[item.title] }"
+              >
+                <template #activator="{ props }">
+                  <v-list-item v-bind="props">
+                    <v-list-item-title>{{ subItem.title }}</v-list-item-title>
+                  </v-list-item>
+                </template>
+
+                <v-list-item
+                  v-for="(subSubItem, subSubIndex) in subItem.subMenu"
+                  :key="`subSubItem-${index}-${subIndex}-${subSubIndex}`"
+                  @click="handleNavigation(subSubItem.to)"
+                >
+                  <v-list-item-title>{{ subSubItem.title }}</v-list-item-title>
+                </v-list-item>
+              </v-list-group>
+
+              <v-list-item
+                v-else
+                @click="handleNavigation(subItem.to)"
+              >
+                <v-list-item-title>{{ subItem.title }}</v-list-item-title>
+              </v-list-item>
+            </template>
+          </v-list-group>
 
           <v-list-item
-            v-for="(subItem, subIndex) in item.subMenu"
-            :key="`subItem-${index}-${subIndex}`"
-            @click="handleNavigation(subItem.link)"
+            v-else
+            @click="handleNavigation(item.to)"
           >
-            <v-list-item-title>{{ subItem.title }}</v-list-item-title>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
-        </v-list-group>
+        </template>
       </v-list>
     </v-navigation-drawer>
 
