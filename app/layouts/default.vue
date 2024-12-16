@@ -73,13 +73,17 @@ function toggleMenu() {
 
 const { mdAndUp, mobile, smAndDown } = useDisplay()
 
-const users = ref([
-  { id: 1, name: 'User 1', icon: 'mdi-account' },
-  { id: 2, name: 'User 2', icon: 'mdi-account' },
-  // Add more users as needed
-])
-const expandedItems = ref({})
-const expandedSubItems = ref({})
+const expandedItems = ref<Record<string, boolean>>({})
+const expandedSubItems = ref<Record<string, boolean>>({})
+
+const toggleExpand = (title) => {
+  expandedItems.value[title] = !expandedItems.value[title]
+}
+
+const handleNavigation = (link) => {
+  // Implement your navigation logic here, e.g., using Vue Router
+  // router.push(link);
+}
 </script>
 
 <template>
@@ -276,32 +280,29 @@ const expandedSubItems = ref({})
         dense
       >
         <v-list-item to="/">
-          <v-icon>mdi-home</v-icon> <v-list-item-title>Home</v-list-item-title>
-        </v-list-item> <v-list-group
-          v-for="item in translatedItems"
-          :key="item.title"
+          <v-icon>mdi-home</v-icon>
+          <v-list-item-title>Home</v-list-item-title>
+        </v-list-item>
+
+        <v-list-group
+          v-for="(item, index) in translatedItems"
+          :key="`item-${index}`"
+          :value="expandedItems[item.title]"
+          @click="toggleExpand(item.title)"
         >
-          <template #activator>
-            <!-- begin 2nd level -->
-            <v-list-group
-              :value="expandedItems[item.title]"
-              @click="expandedItems[item.title] = !expandedItems[item.title]"
-            >
-              <template
-                #activator="{ props }"
-              >
-                <v-list-item
-                  v-bind="props"
-                  :title="item.title"
-                />
-              </template> <v-list-item
-                v-for="user in item.subMenu"
-                :key="user.title"
-                :title="user.title"
-              />
-            </v-list-group>
-            <!-- end 2nd level -->
+          <template #activator="{ props }">
+            <v-list-item v-bind="props">
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
           </template>
+
+          <v-list-item
+            v-for="(subItem, subIndex) in item.subMenu"
+            :key="`subItem-${index}-${subIndex}`"
+            @click="handleNavigation(subItem.link)"
+          >
+            <v-list-item-title>{{ subItem.title }}</v-list-item-title>
+          </v-list-item>
         </v-list-group>
       </v-list>
     </v-navigation-drawer>
