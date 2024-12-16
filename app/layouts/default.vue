@@ -1,3 +1,87 @@
+<script setup lang="ts">
+import { ref, useTemplateRef, onMounted, computed } from 'vue'
+import { useDisplay } from 'vuetify'
+import { useLanguage } from '@/composables/useLanguage'
+import type { CourtItem } from '@/core/constants'
+import ogImageUrl from '~/assets/img/ogImage.jpg'
+import { RoutePathKeys } from '~/core/constants'
+
+const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage, localePath } = useLanguage()
+const description = computed(() => t('general.banner'))
+const ogTitle = computed(() => t('general.message.consts-court'))
+
+useSeoMeta({
+  ogTitle,
+  ogLocale,
+  description,
+  ogType: 'website',
+  ogLocaleAlternate,
+  ogImage: ogImageUrl,
+  ogDescription: description,
+  ogUrl: 'https://www.const-court.be/',
+  title: t('general.message.consts-court'),
+})
+useHead({
+  htmlAttrs: {
+    lang: locale.value,
+  },
+})
+const drawer = ref(false)
+
+const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu', {
+})
+
+function applyTranslationToTitles(menu: CourtItem[]) {
+  return menu.map((item: CourtItem) => {
+    const translatedTitle = item.count !== undefined ? t(item.title, item.count) : t(item.title)
+    const translatedItem = { ...item, title: translatedTitle }
+    if (item.subMenu) {
+      translatedItem.subMenu = applyTranslationToTitles(item.subMenu)
+    }
+    return translatedItem
+  })
+}
+const translatedItems = computed(() => {
+  return applyTranslationToTitles(courtItems.value || [])
+})
+
+onMounted(() => {
+  if (h.value) {
+    menuHeight.value = Number(h.value.height) || 40
+  }
+})
+const menuHeight = ref(0)
+const h = useTemplateRef('appBarRef')
+provide('menuHeight', menuHeight)
+
+const hoveredMenu = ref<number | null>(null)
+
+function hoverMenu(index: number | null): void {
+  hoveredMenu.value = index
+}
+function closeMenu() {
+  hoveredMenu.value = null
+}
+
+function handleMenuClick() {
+  closeMenu()
+  toggleMenu()
+}
+function toggleMenu() {
+  hoveredMenu.value = hoveredMenu.value === null ? 0 : null
+}
+
+const { mdAndUp, mobile, smAndDown } = useDisplay()
+
+const users = ref([
+  { id: 1, name: 'User 1', icon: 'mdi-account' },
+  { id: 2, name: 'User 2', icon: 'mdi-account' },
+  // Add more users as needed
+])
+const expandedItems = ref({})
+const expandedSubItems = ref({})
+</script>
+
 <template>
   <v-app app>
     <v-app-bar
@@ -192,15 +276,31 @@
         dense
       >
         <v-list-item to="/">
-          <v-icon>mdi-home</v-icon>
-          <v-list-item-title>Home</v-list-item-title>
-        </v-list-item>
-        <v-list-group
+          <v-icon>mdi-home</v-icon> <v-list-item-title>Home</v-list-item-title>
+        </v-list-item> <v-list-group
           v-for="item in translatedItems"
           :key="item.title"
         >
           <template #activator>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <!-- begin 2nd level -->
+            <v-list-group
+              :value="expandedItems[item.title]"
+              @click="expandedItems[item.title] = !expandedItems[item.title]"
+            >
+              <template
+                #activator="{ props }"
+              >
+                <v-list-item
+                  v-bind="props"
+                  :title="item.title"
+                />
+              </template> <v-list-item
+                v-for="user in item.subMenu"
+                :key="user.title"
+                :title="user.title"
+              />
+            </v-list-group>
+            <!-- end 2nd level -->
           </template>
         </v-list-group>
       </v-list>
@@ -281,82 +381,6 @@
     </footer>
   </v-app>
 </template>
-
-<script setup lang="ts">
-import { ref, useTemplateRef, onMounted, computed } from 'vue'
-import { useDisplay } from 'vuetify'
-import { useLanguage } from '@/composables/useLanguage'
-import type { CourtItem } from '@/core/constants'
-import ogImageUrl from '~/assets/img/ogImage.jpg'
-import { RoutePathKeys } from '~/core/constants'
-
-const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage, localePath } = useLanguage()
-const description = computed(() => t('general.banner'))
-const ogTitle = computed(() => t('general.message.consts-court'))
-
-useSeoMeta({
-  ogTitle,
-  ogLocale,
-  description,
-  ogType: 'website',
-  ogLocaleAlternate,
-  ogImage: ogImageUrl,
-  ogDescription: description,
-  ogUrl: 'https://www.const-court.be/',
-  title: t('general.message.consts-court'),
-})
-useHead({
-  htmlAttrs: {
-    lang: locale.value,
-  },
-})
-const drawer = ref(false)
-
-const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu', {
-})
-
-function applyTranslationToTitles(menu: CourtItem[]) {
-  return menu.map((item: CourtItem) => {
-    const translatedTitle = item.count !== undefined ? t(item.title, item.count) : t(item.title)
-    const translatedItem = { ...item, title: translatedTitle }
-    if (item.subMenu) {
-      translatedItem.subMenu = applyTranslationToTitles(item.subMenu)
-    }
-    return translatedItem
-  })
-}
-const translatedItems = computed(() => {
-  return applyTranslationToTitles(courtItems.value || [])
-})
-
-onMounted(() => {
-  if (h.value) {
-    menuHeight.value = Number(h.value.height) || 40
-  }
-})
-const menuHeight = ref(0)
-const h = useTemplateRef('appBarRef')
-provide('menuHeight', menuHeight)
-
-const hoveredMenu = ref<number | null>(null)
-
-function hoverMenu(index: number | null): void {
-  hoveredMenu.value = index
-}
-function closeMenu() {
-  hoveredMenu.value = null
-}
-
-function handleMenuClick() {
-  closeMenu()
-  toggleMenu()
-}
-function toggleMenu() {
-  hoveredMenu.value = hoveredMenu.value === null ? 0 : null
-}
-
-const { mdAndUp, mobile, smAndDown } = useDisplay()
-</script>
 
 <style lang="scss">
 h1 {
