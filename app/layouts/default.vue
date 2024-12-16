@@ -179,25 +179,30 @@
     </v-app-bar>
 
     <v-navigation-drawer
-      v-if="drawer"
       v-model="drawer"
-      :location="$vuetify.display.mobile ? 'bottom' : undefined"
-      temporary
-      role="navigation"
       aria-label="Mobile Navigation Drawer"
+      role="navigation"
+      :location="smAndDown ? 'left' : undefined"
+      mini-variant
+      fixed
+      app
     >
       <v-list
-        :items="drawerItems"
-        role="menu"
+        nav
+        dense
       >
-        <v-list-item
-          v-for="item in drawerItems"
-          :key="item.value"
-          role="menuitem"
-          :aria-label="item.title"
-        >
-          {{ item.title }}
+        <v-list-item to="/">
+          <v-icon>mdi-home</v-icon>
+          <v-list-item-title>Home</v-list-item-title>
         </v-list-item>
+        <v-list-group
+          v-for="item in translatedItems"
+          :key="item.title"
+        >
+          <template #activator>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </template>
+        </v-list-group>
       </v-list>
     </v-navigation-drawer>
 
@@ -321,28 +326,8 @@ function applyTranslationToTitles(menu: CourtItem[]) {
   })
 }
 const translatedItems = computed(() => {
-  const x = applyTranslationToTitles(courtItems.value || [])
-  return x
+  return applyTranslationToTitles(courtItems.value || [])
 })
-
-const drawerItems = ref([
-  {
-    title: 'Home',
-    value: 'home',
-  },
-  {
-    title: 'Profile',
-    value: 'profile',
-  },
-  {
-    title: 'Settings',
-    value: 'settings',
-  },
-  {
-    title: 'Logout',
-    value: 'logout',
-  },
-])
 
 onMounted(() => {
   if (h.value) {
@@ -370,7 +355,7 @@ function toggleMenu() {
   hoveredMenu.value = hoveredMenu.value === null ? 0 : null
 }
 
-const { mdAndUp, mobile } = useDisplay()
+const { mdAndUp, mobile, smAndDown } = useDisplay()
 </script>
 
 <style lang="scss">
