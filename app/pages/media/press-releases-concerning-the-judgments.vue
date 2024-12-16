@@ -1,3 +1,4 @@
+<!-- API based page -->
 <template>
   <div>
     <BannerImage
@@ -20,29 +21,27 @@
           >
             {{ id }}
             <v-card
-              :id="id"
+              :id="getId(id)"
               class="mx-auto mb-3"
               outlined
             >
               <v-list-item>
-                <v-list-item-content>
-                  <div class=" mb-3">
-                    <v-icon
-                      color="rgb(var(--v-theme-pdfRed))"
-                    >mdi-file-pdf-box</v-icon>
+                <div class=" mb-3">
+                  <v-icon
+                    color="rgb(var(--v-theme-pdfRed))"
+                  >mdi-file-pdf-box</v-icon>
 
-                    <h3>
-                      {{ t('general.message.add-judgment-number-label') }}
-                      {{ nr }}
-                    </h3>
-                  </div>
-                  <v-list-item-title class="headline mb-1">{{
-                    title
-                  }}</v-list-item-title>
-                  <v-list-item-subtitle>{{
-                    description
-                  }}</v-list-item-subtitle>
-                </v-list-item-content>
+                  <h3>
+                    {{ t('general.message.add-judgment-number-label') }}
+                    {{ nr }}
+                  </h3>
+                </div>
+                <v-list-item-title class="headline mb-1">{{
+                  title
+                }}</v-list-item-title>
+                <v-list-item-subtitle>{{
+                  description
+                }}</v-list-item-subtitle>
               </v-list-item>
             </v-card>
           </a>
@@ -69,6 +68,10 @@ const withArchive = ref(true)
 const { data: releases, error } = useLazyFetch(`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale.value}&withArchive=${withArchive.value}`)
 if (error.value) {
   console.error(error.value)
+}
+
+const getId = (id: string) => {
+  return `release-card-${id}`
 }
 </script>
 
