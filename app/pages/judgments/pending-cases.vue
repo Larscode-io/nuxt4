@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import img from '~/assets/img/banner-media.png'
-import { ApiUrl, PendingCaseType } from '~/core/constants'
+import { ApiUrl, PendingCaseType, EMPTY_VALUE } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useLanguage()
@@ -48,6 +48,7 @@ const pendingCasesFilteredByType = computed(() => {
   return cases.value?.filter(c => c.type === selectedType.value)
 })
 const hasPendingCases = computed(() => (pendingCasesFilteredByType.value?.length ?? 0) > 0)
+const emptyValue = EMPTY_VALUE
 </script>
 
 <template>
@@ -111,33 +112,104 @@ const hasPendingCases = computed(() => (pendingCasesFilteredByType.value?.length
           md="9"
         >
           <v-card
-            v-for="{ id, description, processingLanguage } in pendingCasesFilteredByType"
+            v-for="{ id, processingLanguage, dateReceived, dateOfHearing, dateDelivered, linkedCaseNumber, joinedCases, keywords, description, art74Link, dateArt74 } in pendingCasesFilteredByType"
             :key="id"
-            class="mx-auto mb-3"
             outlined
+            class="mx-auto mb-3 blue-text"
           >
             <v-list-item>
-              <div class=" mb-3">
-                <v-icon color="rgb(var(--v-theme-pdfRed))">
-                  mdi-file-pdf-box
-                </v-icon>
-
+              <div>
                 <h3>
                   {{ t('general.message.roll-number') }}: {{ id }} ({{
                     processingLanguage
                   }})
                 </h3>
               </div>
-              <v-list-item-title class="headline mb-1">
-                {{
-                  description
-                }}
-              </v-list-item-title>
-              <v-list-item-subtitle>
-                {{
-                  description
-                }}
-              </v-list-item-subtitle>
+              <v-row>
+                <v-col cols="4">
+                  {{ t('general.message.receipt-date') }}
+                </v-col>
+                <v-col cols="8">
+                  {{ dateReceived || emptyValue }}
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="4">
+                  {{ t('general.message.date-of-hearing', 2) }}
+                </v-col>
+                <v-col cols="8">
+                  {{ dateOfHearing || emptyValue }}
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="4">
+                  {{ t('general.message.date-of-judgment') }}
+                </v-col>
+                <v-col cols="8">
+                  {{ dateDelivered || emptyValue }}
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="4">
+                  {{ t('general.message.concerning') }}
+                </v-col>
+                <v-col cols="8">
+                  <p>{{ description || emptyValue }}</p>
+                </v-col>
+              </v-row>
+              <v-row v-if="linkedCaseNumber">
+                <v-col cols="12">
+                  <span>{{ t('general.message.case-joined-with-case-numbers') }}
+
+                    <a :href="`#pending-cases-card-${linkedCaseNumber}`">
+                      {{ linkedCaseNumber }}
+                    </a>
+                  </span>
+                </v-col>
+              </v-row>
+              <v-row v-if="art74Link && dateArt74">
+                <v-col cols="12">
+                  <span
+                    v-html="t('general.message.notification-art74-be-official-journal')
+                      .replace('Moniteur belge', '<i>Moniteur belge</i>')
+                      .replace('Belgisch Staatsblad', '<i>Belgisch Staatsblad</i>') + ': '"
+                  />
+                  <a :href="art74Link"> {{ dateArt74 || emptyValue }} </a>
+                </v-col>
+              </v-row>
+              <v-row v-if="joinedCases && joinedCases.length > 0">
+                <v-col cols="12">
+                  <span>
+                    {{ t('general.message.joined-case', joinedCases.length) + ': ' }}
+                    <a
+                      v-for="caseNumber of joinedCases"
+                      :key="caseNumber"
+                      :href="`#pending-cases-card-${caseNumber}`"
+                      class="mr-3"
+                    >
+                      {{ caseNumber }}</a>
+                  </span>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col
+                  cols="12"
+                  md="2"
+                >
+                  {{ t('general.message.keywords', 2) }}
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="10"
+                >
+                  <v-banner
+                    elevation="3"
+                    class="my-2 subtitle"
+                  >
+                    {{ keywords || t('error.no-data-available') }}
+                  </v-banner>
+                </v-col>
+              </v-row>
             </v-list-item>
           </v-card>
         </v-col>
@@ -153,3 +225,9 @@ const hasPendingCases = computed(() => (pendingCasesFilteredByType.value?.length
     </v-container>
   </div>
 </template>
+
+<style scoped lang="scss">
+.blue-text {
+  color: primary
+}
+</style>

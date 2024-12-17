@@ -1,3 +1,5 @@
+export const EMPTY_VALUE = '----'
+
 export enum Languages {
   ENGLISH = 'en',
   FRENCH = 'fr',
