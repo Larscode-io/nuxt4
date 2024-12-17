@@ -112,7 +112,7 @@ const emptyValue = EMPTY_VALUE
           md="9"
         >
           <v-card
-            v-for="{ id, processingLanguage, dateReceived, dateOfHearing, dateDelivered, linkedCaseNumber, joinedCases, keywords, description, art74Link, dateArt74 } in pendingCasesFilteredByType"
+            v-for="{ id, processingLanguage, dateReceived, dateOfHearing, dateDelivered, linkedCaseNumber, joinedCases, keywords, description, dateArt74 } in pendingCasesFilteredByType"
             :key="id"
             outlined
             class="mx-auto mb-3 blue-text"
@@ -161,20 +161,23 @@ const emptyValue = EMPTY_VALUE
                 <v-col cols="12">
                   <span>{{ t('general.message.case-joined-with-case-numbers') }}
 
-                    <a :href="`#pending-cases-card-${linkedCaseNumber}`">
-                      {{ linkedCaseNumber }}
+                    <a
+                      :href="`#pending-cases-card-${linkedCaseNumber}`"
+                      :aria-label="`Link to pending case card ${linkedCaseNumber}`"
+                    >
+                      <span class="link">{{ linkedCaseNumber }}</span>
                     </a>
                   </span>
                 </v-col>
               </v-row>
-              <v-row v-if="art74Link && dateArt74">
+              <v-row v-if="dateArt74">
                 <v-col cols="12">
                   <span
                     v-html="t('general.message.notification-art74-be-official-journal')
                       .replace('Moniteur belge', '<i>Moniteur belge</i>')
                       .replace('Belgisch Staatsblad', '<i>Belgisch Staatsblad</i>') + ': '"
                   />
-                  <a :href="art74Link"> {{ dateArt74 || emptyValue }} </a>
+                  {{ dateArt74 || emptyValue }}
                 </v-col>
               </v-row>
               <v-row v-if="joinedCases && joinedCases.length > 0">
