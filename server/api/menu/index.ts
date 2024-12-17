@@ -1,7 +1,5 @@
 import { RoutePathKeys } from '~/core/constants'
 
-// server/api/menu/index.ts
-// use this api as folows: const { data: courtItems } = await useFetch('/api/menu')
 export default defineEventHandler(async () => {
   return [
     {

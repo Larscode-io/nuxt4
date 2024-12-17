@@ -1,3 +1,9 @@
+<!-- -------------------------------------------------------------------------------- -->
+<!-- Don't add menu items in this file. -->
+<!-- Instead add the title and to properties in the server/api/menu/index.ts file.  -->
+<!-- The menu items will be automatically generated from that file. -->
+<!-- -------------------------------------------------------------------------------- -->
+
 <script setup lang="ts">
 import { ref, useTemplateRef, onMounted, computed, watch } from 'vue'
 import { useDisplay } from 'vuetify'
@@ -268,6 +274,11 @@ watch(smAndDown, (value) => {
       </v-menu>
     </v-app-bar>
 
+    <!-- -------------------------------------------------------------------------------- -->
+    <!-- Don't add menu items in this file. -->
+    <!-- Instead add the title and to properties in the server/api/menu/index.ts file.  -->
+    <!-- The menu items will be automatically generated from that file. -->
+    <!-- -------------------------------------------------------------------------------- -->
     <v-navigation-drawer
       v-model="mobileDrawer"
       aria-label="Mobile Navigation Drawer"
