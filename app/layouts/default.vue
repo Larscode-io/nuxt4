@@ -234,11 +234,10 @@ watch(smAndDown, (value) => {
           </v-btn>
         </nuxt-link>
       </template>
-
       <v-app-bar-nav-icon
         v-if="mobile"
         aria-label="Toggle Navigation Drawer"
-        @click.stop="mobileDrawer = !mobileDrawer"
+        @click.stop="mobileDrawer= !mobileDrawer"
       />
 
       <v-menu>
@@ -274,10 +273,10 @@ watch(smAndDown, (value) => {
       aria-label="Mobile Navigation Drawer"
       role="navigation"
       :location="smAndDown ? 'left' : undefined"
-      mini-variant
       fixed
       app
       color="scienceBlue"
+      mobile
     >
       <v-list
         nav
