@@ -119,35 +119,63 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
           class="mx-auto mb-3"
         >
           <v-card
-            v-for="{ id, availablePart, nr, description } in judgments"
+            v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id } in judgments"
             :id="id"
             :key="id"
             outlined
           >
             <v-list-item>
-              <div class="mb-3">
-                <v-icon color="rgb(var(--v-theme-pdfRed))">
-                  mdi-file-pdf-box
-                </v-icon>
-                <h3>{{ nr }}</h3>
-                <h3>{{ availablePart }}</h3>
+              <div class="top-infos">
+                <div class="d-flex justify-space-between">
+                  <p>{{ formatedJudmentDate }}</p>
+                  <p>{{ courtVerdict }}</p>
+                </div>
               </div>
-              <v-list-item-title class="headline mb-1">
-                {{ description }}
-              </v-list-item-title>
-              <v-list-item-subtitle>
-                {{ description }}
-              </v-list-item-subtitle>
-            </v-list-item>
-            <v-list-item v-if="findRelease(id)">
-              <v-list-item-action>
-                <v-btn
-                  v-if="findRelease(id)"
-                  @click="downloadPublicFile(findRelease(id)!.filePath)"
+              <h3
+                class="py-4"
+              >
+                <a
+                  :href="findRelease(id)?.filePath"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  :aria-label="t('aria.label.downloadPdf')"
                 >
-                  {{ t('general.message.press-releases') }}
-                </v-btn>
-              </v-list-item-action>
+                  <v-icon
+                    color="rgb(var(--v-theme-pdfRed))"
+                    large
+                  >
+                    mdi-file-pdf-box
+                  </v-icon>
+                </a>
+                {{ nr }}
+              </h3>
+              <span
+                class="subtitle my-2"
+                v-html="description || t('error.no-data-available')"
+              />
+              <span
+                class="subtitle my-2"
+                style="display: block;
+                color: rgb(var(--v-theme-pdfRed));"
+                v-html="availablePart || t('error.no-data-available')"
+              />
+              <span
+                v-if="idsRole"
+                class="py-4"
+              >
+                <h4> {{
+                  `${t('general.message.roll-number')}${t('general.message.colon')} ${idsRole.join(' - ')} `
+                }}</h4>
+              </span>
+              <p class="subtitle my-2">
+                {{ `${t('general.message.keywords', 2)}${t('general.message.colon')}` }}
+              </p>
+              <v-banner
+                elevation="3"
+                class="subtitle my-2"
+              >
+                <span v-html="keywords || t('error.noDataAvailable')" />
+              </v-banner>
             </v-list-item>
           </v-card>
         </v-col>
