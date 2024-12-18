@@ -138,7 +138,7 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
                   :href="findRelease(id)?.filePath"
                   rel="noopener noreferrer"
                   target="_blank"
-                  :aria-label="t('aria.label.downloadPdf')"
+                  :aria-label="t('aria.label.download-pdf')"
                 >
                   <v-icon
                     color="pdfRed"
