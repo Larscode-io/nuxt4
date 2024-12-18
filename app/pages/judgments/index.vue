@@ -141,7 +141,7 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
                   :aria-label="t('aria.label.downloadPdf')"
                 >
                   <v-icon
-                    color="rgb(var(--v-theme-pdfRed))"
+                    color="pdfRed"
                     large
                   >
                     mdi-file-pdf-box

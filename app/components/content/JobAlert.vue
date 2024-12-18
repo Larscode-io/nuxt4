@@ -1,7 +1,5 @@
 <template>
-  <p
-    v-show="betweenDates"
-  >
+  <p v-show="betweenDates">
     <a
       :href=" vacLink"
       target="_blank"
@@ -11,7 +9,7 @@
       >
         <v-icon
           class="mr-2"
-          color="rgb(var(--v-theme-pdfRed))"
+          color="pdfRed"
         > mdi-file-pdf-box
         </v-icon>
         <slot name="description" />
@@ -24,7 +22,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { parse, isValid, isAfter, formatDistanceToNow } from 'date-fns'
-import { nlBE } from 'date-fns/locale'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { locale, activeLocale } = useLanguage()
