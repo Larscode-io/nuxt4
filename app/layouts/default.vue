@@ -1,5 +1,5 @@
 <!-- -------------------------------------------------------------------------------- -->
-<!-- Don't add menu items in this file. -->
+    <!-- DON'T ADD MENU ITEMS IN THIS FILE. -->
 <!-- Instead add the title and to properties in the server/api/menu/index.ts file.  -->
 <!-- The menu items will be automatically generated from that file. -->
 <!-- -------------------------------------------------------------------------------- -->
@@ -86,7 +86,7 @@ function toggleMenu() {
   hoveredMenu.value = hoveredMenu.value === null ? 0 : null
 }
 
-const { mdAndUp, mobile, smAndDown } = useDisplay()
+const { lgAndUp, mdAndUp, smAndDown } = useDisplay()
 
 watch(smAndDown, (value) => {
   if (!value) {
@@ -118,20 +118,24 @@ watch(smAndDown, (value) => {
           >
         </button>
       </nuxt-link>
-      <v-toolbar-title>
-        <h1 :aria-label="t('aria.label.menu.homelink')">
-          {{ t('general.message.consts-court') }}
-        </h1>
-      </v-toolbar-title>
+      <h1 :aria-label="t('aria.label.menu.homelink')">
+        {{ t('general.message.consts-court') }}
+      </h1>
 
-      <v-spacer />
       <template v-if="mdAndUp">
-        <v-container>
-          <v-row role="menu">
+        <v-container
+          style="width: auto; max-width: 100%;"
+          class="auto-width"
+        >
+          <v-row
+            class="justify-center align-center"
+            role="menu"
+          >
             <v-col
               v-for="(item, index) in translatedItems"
               :key="item.title"
               class="position-relative"
+              cols="auto"
               role="menuitem"
             >
               <div
@@ -224,10 +228,14 @@ watch(smAndDown, (value) => {
             </v-col>
           </v-row>
         </v-container>
-
-        <v-spacer />
-
-        <nuxt-link :to="localePath(RoutePathKeys.informed) || '#'">
+      </template>
+      <div
+        style="margin-left: auto"
+      >
+        <nuxt-link
+          v-if="lgAndUp"
+          :to="localePath(RoutePathKeys.informed) || '#'"
+        >
           <v-btn
             :style="{ textTransform: 'none' }"
             :aria-label="t('aria.label.landing.informed')"
@@ -239,43 +247,43 @@ watch(smAndDown, (value) => {
             </v-icon>
           </v-btn>
         </nuxt-link>
-      </template>
-      <v-app-bar-nav-icon
-        v-if="mobile"
-        aria-label="Toggle Navigation Drawer"
-        @click.stop="mobileDrawer= !mobileDrawer"
-      />
+        <v-app-bar-nav-icon
+          v-if="!mdAndUp"
+          aria-label="Toggle Navigation Drawer"
+          @click.stop="mobileDrawer= !mobileDrawer"
+        />
 
-      <v-menu>
-        <template #activator="{ props }">
-          <v-btn
-            v-bind="props"
-            icon="mdi-translate"
-            variant="text"
-            :aria-label="t('aria.label.language')"
-            @mouseenter="hoverMainMenu(null)"
-          >
-            {{ locale }}
-          </v-btn>
-        </template>
-        <v-list role="menu">
-          <v-list-item
-            v-for="(lang) in availableLocales"
-            :key="lang.code"
-            role="menuitem"
-            :aria-label="lang.name"
-            @click="switchLanguage(lang.code)"
-          >
-            <v-list-item-title>
-              {{ lang.name }}
-            </v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+        <v-menu>
+          <template #activator="{ props }">
+            <v-btn
+              v-bind="props"
+              icon="mdi-translate"
+              variant="text"
+              :aria-label="t('aria.label.language')"
+              @mouseenter="hoverMainMenu(null)"
+            >
+              {{ locale }}
+            </v-btn>
+          </template>
+          <v-list role="menu">
+            <v-list-item
+              v-for="(lang) in availableLocales"
+              :key="lang.code"
+              role="menuitem"
+              :aria-label="lang.name"
+              @click="switchLanguage(lang.code)"
+            >
+              <v-list-item-title>
+                {{ lang.name }}
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
     </v-app-bar>
 
     <!-- -------------------------------------------------------------------------------- -->
-    <!-- Don't add menu items in this file. -->
+    <!-- DON'T ADD MENU ITEMS IN THIS FILE. -->
     <!-- Instead add the title and to properties in the server/api/menu/index.ts file.  -->
     <!-- The menu items will be automatically generated from that file. -->
     <!-- -------------------------------------------------------------------------------- -->
