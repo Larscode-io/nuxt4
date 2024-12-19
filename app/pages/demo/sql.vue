@@ -20,7 +20,7 @@
 <script setup lang="ts">
 // http://localhost:3000/nuxt/api/sqltest/affzak
 definePageMeta({
-  layout: 'default1',
+  layout: 'alternative',
 })
 const url = '/api/sqltest/affzak'
 const { data } = await useFetch(url, {
