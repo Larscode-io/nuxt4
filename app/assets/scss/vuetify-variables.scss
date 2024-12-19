@@ -5,16 +5,21 @@
 $body-font-family: 'Proxima Nova', sans-serif;
 $heading-font-family: 'Tiempos Headline', serif;
 
-// Define custom colors
-$primary: #1976D2;
-$secondary: #424242;
-$accent: #82B1FF;
-$error: #FF5252;
-$info: #2196F3;
-$success: #4CAF50;
-$warning: #FFC107;
+@use 'vuetify' with (
+    $body-font-family: $body-font-family,
+    $heading-font-family: $heading-font-family
+);
 
-// Override Vuetify variables
-$font-family: $body-font-family;
-$heading-font-family: $heading-font-family;
-$btn-font-family: $body-font-family;
+// // Define custom colors
+// $primary: #1976D2;
+// $secondary: #424242;
+// $accent: #82B1FF;
+// $error: #FF5252;
+// $info: #2196F3;
+// $success: #4CAF50;
+// $warning: #FFC107;
+
+// // Override Vuetify variables
+// $font-family: $body-font-family;
+// $heading-font-family: $heading-font-family;
+// $btn-font-family: $body-font-family;
