@@ -2,7 +2,7 @@
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import '@mdi/font/css/materialdesignicons.css'
+// import '@mdi/font/css/materialdesignicons.css' is done in nuxt.config.ts
 import 'vuetify/styles'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
@@ -35,9 +35,16 @@ export default defineNuxtPlugin((nuxtApp) => {
 
 // .custom-redtext {color: rgb(var(--v-theme-pdfRed)); }
 // :style="{ color: 'rgb(var(--v-theme-pdfRed))' }"
-// in vuetify elements: color="rgb(var(--v-theme-pdfRed))"
 
 // with Vuetify's color prop:
 // color="pdfRed"
-// color="scienceBlue"
+// <v-icon color="pdfRed">mdi-file-pdf-box</v-icon>
+
+// for non-vuetify elements:
 // color="rgb(var(--v-theme-scienceBlue))"
+
+// however if we define $indigo in an scss file, we can use it like this:
+// color="$indigo" inside a style attribute inside script setup but not in a style tag in a vue file
+// because the style tag is not processed by the scss preprocessor
+// therefore if we define $indigo in vuetify theme, we can use it in a style tag in a vue file
+// inside the template section because the template section is processed by the scss preprocessor
