@@ -109,13 +109,16 @@ watch(smAndDown, (value) => {
           class="mx-2 p-0 border-0 bg-transparent"
           aria-label="Home"
         >
-          <img
+          <v-img
             src="~/assets/icons/fed.svg"
-            :style="{ width: '64px', height: '64px' }"
+            aspect-ratio="1"
+            class="ml-2"
+            width="64"
+            height="64"
             alt="Logo"
             @click="hoverMainMenu(null)"
             @mouseenter="hoverMainMenu(null)"
-          >
+          />
         </button>
       </nuxt-link>
       <h1 :aria-label="t('aria.label.menu.homelink')">
@@ -229,9 +232,7 @@ watch(smAndDown, (value) => {
           </v-row>
         </v-container>
       </template>
-      <div
-        style="margin-left: auto"
-      >
+      <div style="margin-left: auto">
         <nuxt-link
           v-if="lgAndUp"
           :to="localePath(RoutePathKeys.informed) || '#'"
