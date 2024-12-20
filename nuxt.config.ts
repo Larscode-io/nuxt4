@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     // 'vuetify/lib/styles/main.sass',
     'vuetify/styles',
     '~/assets/css/fonts.css',
-    '~/assets/scss/vuetify-variables.scss',
+    '~/assets/scss/main.scss',
     '@mdi/font/css/materialdesignicons.css',
 
   ],
