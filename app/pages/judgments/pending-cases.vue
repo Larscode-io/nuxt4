@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import img from '~/assets/img/banner-media.png'
 import { ApiUrl, PendingCaseType, EMPTY_VALUE } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
@@ -20,7 +20,14 @@ const caseType = [
 const selectedType = ref(caseType[0]?.value)
 // we start with no year selected so we can show all pending cases
 const selectedYear = ref(null)
-
+watch(selectedYear, () => {
+  if (selectedYear.value === null) {
+    console.log('selectedYear.value is null')
+  }
+  else {
+    console.log(`selectedYear.value is ${selectedYear.value}`)
+  }
+})
 interface LegalCase {
   id: number
   processingLanguage: string
@@ -66,13 +73,18 @@ const yearsInPendingCases = computed(() => {
     const dateReceived = c.dateReceived
     if (dateReceived) {
       const year = dateReceived.split('-')[2]
-      if (selectedType.value === allPendingCase) {
-        casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
+      if (year) {
+        if (selectedType.value === allPendingCase) {
+          casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
+        }
+        else if (c.type === selectedType.value) {
+          casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
+        }
+        years.add(year)
       }
-      else if (c.type === selectedType.value) {
-        casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
+      else {
+        casesPerYear.set('', (casesPerYear.get('') ?? 0) + 1)
       }
-      years.add(year)
     }
   })
   console.log(casesPerYear)
@@ -80,7 +92,7 @@ const yearsInPendingCases = computed(() => {
 })
 
 const yearsInPendingCasesArray = computed(() => {
-  return Array.from(yearsInPendingCases.value.entries()).map(([year, count]) => ({ year: year, count: count })).sort((a, b) => Number(b.year) - Number(a.year))
+  return Array.from(yearsInPendingCases.value.entries()).map(([year, count]) => ({ year, count })).sort((a, b) => Number(b.year) - Number(a.year))
 })
 </script>
 
@@ -141,6 +153,7 @@ const yearsInPendingCasesArray = computed(() => {
                 item-value="value"
                 variant="outlined"
                 :label="`${t('general.message.type')}${t('general.message.colon')}`"
+                @update:model-value="selectedYear = null"
               />
             </v-col>
             <v-col cols="12">
