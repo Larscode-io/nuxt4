@@ -104,7 +104,6 @@ const emptyValue = EMPTY_VALUE
             :items="caseType"
             item-title="text"
             item-value="value"
-            density="compact"
             variant="outlined"
             :label="`${t('general.message.type')}${t('general.message.colon')}`"
           />

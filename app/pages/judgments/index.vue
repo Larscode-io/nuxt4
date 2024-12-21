@@ -65,18 +65,9 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
       :image="img"
       :alt="t('alt.banner.courtroom')"
     />
-    <v-row v-if="status === 'pending'">
-      <v-col>
-        <v-skeleton-loader
-          v-for="n in 5"
-          :key="n"
-          type="list-item-two-line"
-        />
-      </v-col>
-    </v-row>
 
     <v-alert
-      v-else-if="error"
+      v-if="error"
       type="error"
       dismissible
     >
@@ -109,13 +100,22 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
               v-model="selected"
               :items="years"
               item-value="value"
-              density="compact"
               variant="outlined"
               :label="`${t('general.message.year-selection')}${t('general.message.colon')}`"
             />
           </div>
         </v-col>
+
+        <v-col v-if="status === 'pending'">
+          <v-skeleton-loader
+            v-for="n in 5"
+            :key="n"
+            type="list-item-two-line"
+          />
+        </v-col>
+
         <v-col
+          v-else-if="status === 'success'"
           cols="12"
           md="9"
           class="mx-auto mb-3"
