@@ -109,6 +109,8 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
               v-model="selected"
               :items="years"
               item-value="value"
+              density="compact"
+              variant="outlined"
               :label="`${t('general.message.year-selection')}${t('general.message.colon')}`"
             />
           </div>
@@ -131,9 +133,7 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
                   <p>{{ courtVerdict }}</p>
                 </div>
               </div>
-              <h3
-                class="py-4"
-              >
+              <h3 class="py-4">
                 <a
                   :href="findRelease(id)?.filePath"
                   rel="noopener noreferrer"
