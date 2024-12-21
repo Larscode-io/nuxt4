@@ -66,13 +66,19 @@ const yearsInPendingCases = computed(() => {
     const dateReceived = c.dateReceived
     if (dateReceived) {
       const year = dateReceived.split('-')[2]
-      casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
+      if (selectedType.value === allPendingCase) {
+        casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
+      }
+      else if (c.type === selectedType.value) {
+        casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
+      }
       years.add(year)
     }
   })
   console.log(casesPerYear)
   return casesPerYear
 })
+
 const yearsInPendingCasesArray = computed(() => {
   return Array.from(yearsInPendingCases.value.entries()).map(([year, count]) => ({ year: year, count: count })).sort((a, b) => Number(b.year) - Number(a.year))
 })
@@ -141,14 +147,11 @@ const yearsInPendingCasesArray = computed(() => {
               <v-select
                 v-model="selectedYear"
                 :items="yearsInPendingCasesArray"
-                :item-title="item => item.year ? `${item.year} (${item.count})` : t('general.message.unknown-year')"
+                :item-title="item => item.year ? `${item.year} (${item.count})` : `${t('general.message.unknown-year')} (${item.count})`"
                 item-value="year"
                 variant="outlined"
-                label="Year"
+                :label="t('general.message.year-selection')"
               />
-            </v-col>
-            <v-col>
-              {{ selectedYear }}
             </v-col>
           </v-row>
         </v-col>
