@@ -18,6 +18,8 @@ const caseType = [
   { text: t('general.message.action-for-cancellation'), value: PendingCaseType.actionForCancellation },
 ]
 const selectedType = ref(caseType[0]?.value)
+// we start with no year selected so we can show all pending cases
+const selectedYear = ref(null)
 
 interface LegalCase {
   id: number
@@ -47,8 +49,33 @@ const pendingCasesFilteredByType = computed(() => {
   }
   return cases.value?.filter(c => c.type === selectedType.value)
 })
+const pendingCasesFilteredByTypeAndYear = computed(() => {
+  if (selectedYear.value === null) {
+    return pendingCasesFilteredByType.value
+  }
+  return pendingCasesFilteredByType.value?.filter(c => c.dateReceived?.split('-')[2] === selectedYear.value)
+})
+
 const hasPendingCases = computed(() => (pendingCasesFilteredByType.value?.length ?? 0) > 0)
 const emptyValue = EMPTY_VALUE
+
+const yearsInPendingCases = computed(() => {
+  const years = new Set<string>()
+  const casesPerYear = new Map<string, number>()
+  cases.value?.forEach((c) => {
+    const dateReceived = c.dateReceived
+    if (dateReceived) {
+      const year = dateReceived.split('-')[2]
+      casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
+      years.add(year)
+    }
+  })
+  console.log(casesPerYear)
+  return casesPerYear
+})
+const yearsInPendingCasesArray = computed(() => {
+  return Array.from(yearsInPendingCases.value.entries()).map(([year, count]) => ({ year: year, count: count })).sort((a, b) => Number(b.year) - Number(a.year))
+})
 </script>
 
 <template>
@@ -99,21 +126,38 @@ const emptyValue = EMPTY_VALUE
           cols="12"
           md="3"
         >
-          <v-select
-            v-model="selectedType"
-            :items="caseType"
-            item-title="text"
-            item-value="value"
-            variant="outlined"
-            :label="`${t('general.message.type')}${t('general.message.colon')}`"
-          />
+          <v-row>
+            <v-col cols="12">
+              <v-select
+                v-model="selectedType"
+                :items="caseType"
+                item-title="text"
+                item-value="value"
+                variant="outlined"
+                :label="`${t('general.message.type')}${t('general.message.colon')}`"
+              />
+            </v-col>
+            <v-col cols="12">
+              <v-select
+                v-model="selectedYear"
+                :items="yearsInPendingCasesArray"
+                :item-title="item => item.year ? `${item.year} (${item.count})` : t('general.message.unknown-year')"
+                item-value="year"
+                variant="outlined"
+                label="Year"
+              />
+            </v-col>
+            <v-col>
+              {{ selectedYear }}
+            </v-col>
+          </v-row>
         </v-col>
         <v-col
           cols="12"
           md="9"
         >
           <v-card
-            v-for="{ id, processingLanguage, dateReceived, dateOfHearing, dateDelivered, linkedCaseNumber, joinedCases, keywords, description, dateArt74 } in pendingCasesFilteredByType"
+            v-for="{ id, processingLanguage, dateReceived, dateOfHearing, dateDelivered, linkedCaseNumber, joinedCases, keywords, description, dateArt74 } in pendingCasesFilteredByTypeAndYear"
             :key="id"
             outlined
             class="mx-auto mb-3 blue-text"
