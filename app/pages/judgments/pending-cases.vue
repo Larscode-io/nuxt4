@@ -83,7 +83,12 @@ const yearsInPendingCases = computed(() => {
         years.add(year)
       }
       else {
-        casesPerYear.set('', (casesPerYear.get('') ?? 0) + 1)
+        if (selectedType.value === allPendingCase) {
+          casesPerYear.set('', (casesPerYear.get('') ?? 0) + 1)
+        }
+        else if (c.type === selectedType.value) {
+          casesPerYear.set('', (casesPerYear.get('') ?? 0) + 1)
+        }
       }
     }
   })
