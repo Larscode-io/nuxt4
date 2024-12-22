@@ -92,7 +92,6 @@ const yearsInPendingCases = computed(() => {
       }
     }
   })
-  console.log(casesPerYear)
   return casesPerYear
 })
 
@@ -179,6 +178,7 @@ const yearsInPendingCasesArray = computed(() => {
         >
           <v-card
             v-for="{ id, processingLanguage, dateReceived, dateOfHearing, dateDelivered, linkedCaseNumber, joinedCases, keywords, description, dateArt74 } in pendingCasesFilteredByTypeAndYear"
+            :id="`pending-cases-card-${id}`"
             :key="id"
             outlined
             class="mx-auto mb-3 blue-text"

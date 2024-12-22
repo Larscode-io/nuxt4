@@ -65,7 +65,6 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
       :image="img"
       :alt="t('alt.banner.courtroom')"
     />
-
     <v-alert
       v-if="error"
       type="error"
@@ -122,14 +121,16 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
         >
           <v-card
             v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id } in judgments"
-            :id="id"
+            :id="`judgment-card-${id}`"
             :key="id"
             outlined
           >
             <v-list-item>
               <div class="top-infos">
                 <div class="d-flex justify-space-between">
-                  <p>{{ formatedJudmentDate }}</p>
+                  <p>
+                    {{ formatedJudmentDate }}
+                  </p>
                   <p>{{ courtVerdict }}</p>
                 </div>
               </div>
@@ -150,7 +151,9 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
                 {{ nr }}
               </h3>
               <span
-                class="subtitle my-2"
+                class="
+                    subtitle
+                    my-2"
                 v-html="description || t('error.no-data-available')"
               />
               <span
