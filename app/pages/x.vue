@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 .example {
-  color: blue;
+  color: red;
 }
 .custom-redtext {
   color: rgb(var(--v-theme-rajahLight));
