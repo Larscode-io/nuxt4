@@ -108,42 +108,9 @@ const yearsInPendingCasesArray = computed(() => {
       :image="img"
       :alt="t('alt.banner.courtroom')"
     />
-    <div v-if="status === 'pending'">
+
+    <v-container fluid>
       <v-row>
-        <v-col>
-          <v-skeleton-loader
-            v-for="n in 10"
-            :key="n"
-            type="list-item-two-line"
-          />
-        </v-col>
-      </v-row>
-    </div>
-    <div v-else-if="error">
-      <v-alert
-        type="error"
-        dismissible
-      >
-        <v-row>
-          <v-col>
-            <p>Error: {{ error.message }}</p>
-          </v-col>
-          <v-col class="d-flex justify-end">
-            <v-btn
-              color="primary"
-              @click="refresh"
-            >
-              Retry
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-alert>
-    </div>
-    <v-container
-      v-else
-      fluid
-    >
-      <v-row v-if="hasPendingCases">
         <v-col
           cols="12"
           md="3"
@@ -173,6 +140,37 @@ const yearsInPendingCasesArray = computed(() => {
           </v-row>
         </v-col>
         <v-col
+          v-if="status === 'pending'"
+          cols="12"
+          md="9"
+        >
+          <v-skeleton-loader
+            :key="n"
+            type="list-item-two-line"
+          />
+        </v-col>
+        <div v-else-if="error">
+          <v-alert
+            type="error"
+            dismissible
+          >
+            <v-row>
+              <v-col>
+                <p>Error: {{ error.message }}</p>
+              </v-col>
+              <v-col class="d-flex justify-end">
+                <v-btn
+                  color="primary"
+                  @click="refresh"
+                >
+                  Retry
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-alert>
+        </div>
+        <v-col
+          v-else-if="hasPendingCases"
           cols="12"
           md="9"
         >
@@ -282,15 +280,15 @@ const yearsInPendingCasesArray = computed(() => {
             </v-list-item>
           </v-card>
         </v-col>
+        <v-col v-else>
+          <v-alert
+            type="info"
+            dismissible
+          >
+            <p>{{ t('general.message.no-pending-cases') }}</p>
+          </v-alert>
+        </v-col>
       </v-row>
-      <div v-else>
-        <v-alert
-          type="info"
-          dismissible
-        >
-          <p>{{ t('general.message.no-pending-cases') }}</p>
-        </v-alert>
-      </div>
     </v-container>
   </div>
 </template>
