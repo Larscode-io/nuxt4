@@ -210,6 +210,10 @@ export default defineEventHandler(async () => {
     //       to: '/demo/Juportal',
     //       title: 'Juportal demo',
     //     },
+    //     {
+    //       to: '/colorDemo',
+    //       title: 'setting Colors',
+    //     },
     //   ],
     // },
 

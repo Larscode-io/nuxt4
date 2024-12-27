@@ -39,12 +39,11 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    // 'vuetify/lib/styles/main.sass',
-    'vuetify/styles',
-    '~/assets/css/fonts.css',
-    '~/assets/scss/main.scss',
+    // Global stylesheets to be included in every page of our application
+    'vuetify/lib/styles/main.sass',
+    '@/assets/scss/main.scss',
+    '@/assets/scss/fonts.scss',
     '@mdi/font/css/materialdesignicons.css',
-
   ],
   content: {
     markdown: {
@@ -102,14 +101,20 @@ export default defineNuxtConfig({
       hmr: {
         overlay: false,
       },
+      define: {
+        'process.env.DEBUG': false,
+      },
     },
     css: {
+      // inject shared variables and mixins into all style files
+      // only variables, mixins, and functions, and not for CSS rules
+      // this is to avoid the need to import them in every style file
+      // and only used at build time
       preprocessorOptions: {
         scss: {
           api: 'modern',
           additionalData: `
             @use "@/assets/scss/colors.scss" as *;
-            @use "@/assets/scss/fonts.scss" as *;
             @use "@/assets/scss/media.scss" as *;
           `,
         },
@@ -117,7 +122,21 @@ export default defineNuxtConfig({
     },
     vue: {
       template: {
+        // To resolve relative asset URLs that are passed to Vuetify components
         transformAssetUrls,
+      },
+    },
+    hooks: { // needed to extend the Vite config with Vuetify, needs to come after vue:
+      'vite:extendConfig': (config: any) => {
+        config.plugins.push(
+          vuetify({
+            autoImport: true,
+            styles: {
+              // override Vuetify's default SASS variables, enabling customization of Vuetify's component styles:
+              configFile: 'assets/styles/vuetify.scss',
+            },
+          }),
+        )
       },
     },
     ssr: {

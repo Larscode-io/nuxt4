@@ -2,9 +2,12 @@
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-// import '@mdi/font/css/materialdesignicons.css' is done in nuxt.config.ts
-// import 'vuetify/styles'
+// import 'vuetify/styles' // import default styles (light and dark themes) if we don't use custom styles
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
+
+function getCssVariableValue(variableName: string): string {
+  return getComputedStyle(document.documentElement).getPropertyValue(variableName).trim()
+}
 
 export default defineNuxtPlugin((nuxtApp) => {
   const vuetify = createVuetify({
@@ -22,7 +25,26 @@ export default defineNuxtPlugin((nuxtApp) => {
         light: {
           colors: {
             pdfRed: '#c90304',
-            scienceBlue: '#0065ca',
+            lars: getCssVariableValue('--pdf-red'),
+            primary: getCssVariableValue('--success-green'),
+            scienceBlue: getCssVariableValue('--science-blue'),
+            logoColor: getCssVariableValue('--logo-color'),
+            indigo: getCssVariableValue('--indigo'),
+            indigoExtraLight: getCssVariableValue('--indigo-extra-light'),
+            indigoLight: getCssVariableValue('--indigo-light'),
+            indigoMediumLight: getCssVariableValue('--indigo-medium-light'),
+            skyBlue: getCssVariableValue('--sky-blue'),
+            skyBlueExtraLight: getCssVariableValue('--sky-blue-extra-light'),
+            rajahYellow: getCssVariableValue('--rajah-yellow'),
+            ivoryGrey: getCssVariableValue('--ivory-grey'),
+            darkGrey: getCssVariableValue('--dark-grey'),
+            linkBlue: getCssVariableValue('--link-blue'),
+            errorRed: getCssVariableValue('--error-red'),
+            warningOrange: getCssVariableValue('--warning-orange'),
+            successGreen: getCssVariableValue('--success-green'),
+            rajahLight: getCssVariableValue('--rajah-light'),
+            rajahExtraLight: getCssVariableValue('--rajah-extra-light'),
+            textOnRajah: getCssVariableValue('--text-on-rajah'),
           },
         },
       },
@@ -33,18 +55,9 @@ export default defineNuxtPlugin((nuxtApp) => {
 
 // use colors like this:
 
-// .custom-redtext {color: rgb(var(--v-theme-pdfRed)); }
-// :style="{ color: 'rgb(var(--v-theme-pdfRed))' }"
-
 // with Vuetify's color prop:
 // color="pdfRed"
 // <v-icon color="pdfRed">mdi-file-pdf-box</v-icon>
 
-// for non-vuetify elements:
+// for non-vuetify elements in style attributes or style sections to define classes
 // color="rgb(var(--v-theme-scienceBlue))"
-
-// however if we define $indigo in an scss file, we can use it like this:
-// color="$indigo" inside a style attribute inside script setup but not in a style tag in a vue file
-// because the style tag is not processed by the scss preprocessor
-// therefore if we define $indigo in vuetify theme, we can use it in a style tag in a vue file
-// inside the template section because the template section is processed by the scss preprocessor
