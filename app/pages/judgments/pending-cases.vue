@@ -209,6 +209,7 @@ const yearsInPendingCasesArray = computed(() => {
           md="9"
         >
           <transition-group
+            name="fade-scale"
             tag="div"
           >
             <v-card
@@ -360,16 +361,14 @@ const yearsInPendingCasesArray = computed(() => {
 .blue-text {
   color: primary
 }
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition: all 0.5s ease;
 }
 
-.fade-enter,
-.fade-leave-to
-
-/* .fade-leave-active in <2.1.8 */
-  {
+.fade-scale-enter,
+.fade-scale-leave-to {
   opacity: 0;
+  transform: scale(0.95);
 }
 </style>
