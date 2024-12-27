@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import img from '~/assets/img/banner-media.png'
-import { ApiUrl, PendingCaseType, EMPTY_VALUE } from '~/core/constants'
+import { ApiUrl, RoutePathKeys, PendingCaseType, EMPTY_VALUE } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
-const { t, locale } = useLanguage()
+const { t, locale, localePath } = useLanguage()
 
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
@@ -20,14 +20,7 @@ const caseType = [
 const selectedType = ref(caseType[0]?.value)
 // we start with no year selected so we can show all pending cases
 const selectedYear = ref(null)
-watch(selectedYear, () => {
-  if (selectedYear.value === null) {
-    console.log('selectedYear.value is null')
-  }
-  else {
-    console.log(`selectedYear.value is ${selectedYear.value}`)
-  }
-})
+
 interface LegalCase {
   id: number
   processingLanguage: string
@@ -48,6 +41,47 @@ interface LegalCase {
 const { data: cases, error, status, refresh } = useLazyFetch<LegalCase[]>(`${baseURL}${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`)
 if (error.value) {
   console.error(error.value)
+}
+
+// const isSubscribable = distance === null || distance === undefined || distance > 30
+
+const transform = (items: []) => {
+  return items.map(({ id, distance }) => {
+    return {
+      id,
+      distance,
+    }
+  })
+}
+
+const { data: pressJudgments, error: pressJudgmentsError, status: pressJudgmentsStatus }
+  = useFetch<LegalCase[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`, {
+    transform,
+  })
+
+if (pressJudgmentsError.value) {
+  console.error(pressJudgmentsError.value)
+}
+const isSubscribable = (id: number) => {
+  // check if id exists in pressJudgments
+  const found = pressJudgments.value?.find(j => j.id === id)
+  // found will be undefined or an object
+  // if found undefine return true
+  if (found === undefined) {
+    return true
+  }
+  if (found !== undefined) {
+    return found.distance > 30
+  }
+}
+const findDateLongInPressJudgments = (id: number) => {
+  const found = pressJudgments.value?.find(j => j.id === id)
+  console.log('found', found)
+  return found?.dateLong
+}
+
+const hasUpcomingJudgment = (id: number) => {
+  return Array.isArray(pressJudgments.value) ? pressJudgments.value.find(j => j.id === id)?.distance !== undefined : false
 }
 
 const pendingCasesFilteredByType = computed(() => {
@@ -182,13 +216,37 @@ const yearsInPendingCasesArray = computed(() => {
             class="mx-auto mb-3 blue-text"
           >
             <v-list-item>
-              <div>
-                <h3>
-                  {{ t('general.message.roll-number') }}: {{ id }} ({{
-                    processingLanguage
-                  }})
-                </h3>
-              </div>
+              <v-row>
+                <v-col cols="9">
+                  <h3>
+                    {{ t('general.message.roll-number') }}: {{ id }} ({{
+                      processingLanguage
+                    }})
+                  </h3>
+                </v-col>
+                <v-col
+                  cols="3"
+                  class="d-flex justify-end"
+                >
+                  <v-tooltip :text="t('general.message.case.soon')">
+                    <template #activator="{ props }">
+                      <nuxt-link :to="localePath(RoutePathKeys.agenda)">
+                        <v-icon
+                          v-if="hasUpcomingJudgment(id)"
+                          v-bind="props"
+                          class="mt-1"
+                          color="logoColor"
+                        >
+                          mdi-calendar
+                        </v-icon>
+                      </nuxt-link>
+                    </template>
+                  </v-tooltip>
+                  <v-btn :disabled="!isSubscribable(id)">
+                    {{ t('newsletter.rol.subscribe') }}
+                  </v-btn>
+                </v-col>
+              </v-row>
               <v-row>
                 <v-col cols="4">
                   {{ t('general.message.receipt-date') }}
@@ -262,6 +320,7 @@ const yearsInPendingCasesArray = computed(() => {
                 <v-col
                   cols="12"
                   md="2"
+                  class="mt-2"
                 >
                   {{ t('general.message.keywords', 2) }}
                 </v-col>

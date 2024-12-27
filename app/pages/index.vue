@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { useLanguage } from '@/composables/useLanguage'
-import { ApiUrl, MediaType } from '@/core/constants'
+import { RoutePathKeys, ApiUrl, MediaType,
+} from '@/core/constants'
 import type { GeneralPressJudgment, GeneralPressRelease, Judgment, Pleading, Decision } from '@/core/constants'
+
+const { localePath } = useLanguage()
+const router = useRouter()
 
 const { getImage } = useImageLoader()
 
@@ -15,11 +19,10 @@ const { t, locale } = useLanguage()
 
 const goToAgendaPageJudgments = (id: number) => {
   console.log(`Navigating to agenda page for judgment with id: ${id}`)
-  // Add your navigation logic here
 }
-const gotoMediaPage = (id: number) => {
-  console.log(`Navigating to media page for media with id: ${id}`)
-  // Add your navigation logic here
+const goToMediaPage = (id: number, type: MediaType) => {
+  const dest = `${localePath(RoutePathKeys.mediaPressReleasesConcerningTheJudgments)}?with-archive=true#release-card-${id}`
+  router.push(dest)
 }
 
 // const handleMediaCardClick = (id: number, description: string) => {
@@ -27,11 +30,6 @@ const gotoMediaPage = (id: number) => {
 //     gotoMediaPage(id)
 //   }
 // }
-
-const mediaDisplayMode = ref<('full' | 'short')[]>(Array(20).fill('short'))
-const toggleDisplayMediaDisplayMode = (index: number) => {
-  mediaDisplayMode.value[index] = mediaDisplayMode.value[index] === 'short' ? 'full' : 'short'
-}
 </script>
 
 <template>
@@ -88,17 +86,18 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
       <MediaCard
         :api-url-press="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
-        :max-items="6"
+        :max-items="3"
         class="mediaCard"
       >
         <template #default="{ items }">
-          <v-container>
+          <v-container class="pa-0 ma-0">
             <v-row>
               <v-col
                 v-for="(item, index) in items"
                 :key="item.id"
                 cols="12"
                 md="4"
+                class="pa-0 ma-0"
               >
                 <v-card
                   class="pa-4 ma-4 elevation-2 hover-effect"
