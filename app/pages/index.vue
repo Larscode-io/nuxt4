@@ -18,9 +18,7 @@ const baseURL = config.public.apiBaseUrl
 const { t, locale } = useLanguage()
 
 const goToJudgmentPage = async (id: number) => {
-  // const destination = localePath(RoutePathKeys.judgmentsHome) + `?year=${new Date().getFullYear()}` + `#judgment-card-${id}`
   const destination = localePath(RoutePathKeys.judgmentsHome) + `?year=${new Date().getFullYear()}` + `&judgmentCardId=${id}`
-  console.log(`Navigating to: ${destination}`)
   await navigateTo(destination)
 }
 const goToMediaPage = (id: number, type: MediaType) => {
