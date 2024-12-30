@@ -119,10 +119,8 @@ useHead({
             >
               <v-card class="d-flex flex-column justify-center">
                 <v-card-title>
-                  <v-icon color="pdfRed">mdi-file-pdf-box</v-icon>
-                  {{ description }}
-                </v-card-title>
-              </v-card>
+                  <v-icon color="var(--pdf-red)">mdi-file-pdf-box</v-icon>
+                </v-card-title></v-card>
             </a>
           </v-col>
         </v-row>

@@ -14,3 +14,5 @@ A reasoned request for anonymization may be addressed to the Court at any time, 
 The parties or interested third parties must specify the impact that the publication of the judgment may have on them and must explain how such publicity could affect their privacy.
 
 When taking his decision, the President must take account of the explanations provided by the party or third party concerned. If the President grants the request, he will also decide on the measures to be taken which are most appropriate to protect the party or third party concerned from identification.
+
+<v-icon color="var(--pdf-red)">mdi-file-pdf-box</v-icon>  [Text available in French for download](https://www.const-court.be/public/common/fr/anonymisation.pdf)

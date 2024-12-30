@@ -7,7 +7,7 @@ locale: nl
 
 ### Richtlijn van 3 juni 2020 betreffende de bijzondere maatregelen van het Grondwettelijk Hof in het kader van de coronaviruscrisis voor de organisatie en het verloop van de terechtzittingen
 
-<v-icon color="pdfRed">>mdi-file-pdf-box</v-icon>
+<v-icon color="var(--pdf-red)">>mdi-file-pdf-box</v-icon>
  [Richtlijn coronavirusmaatregelen terechtzittingen](https://www.const-court.be/public/base/nl/Richtlijn-coronavirus-terechtzittingen.pdf)
 <br/><br/>
 

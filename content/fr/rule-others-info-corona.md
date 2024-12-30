@@ -7,7 +7,7 @@ locale: fr
 
 ### Directive du 3 juin 2020 concernant les mesures particulières prises par la Cour constitutionnelle dans le cadre de la crise du coronavirus pour l’organisation et le déroulement des audiences
 
-<v-icon color="pdfRed">mdi-file-pdf-box</v-icon>
+<v-icon color="var(--pdf-red)">mdi-file-pdf-box</v-icon>
  [Directive mesures audiences coronavirus](https://www.const-court.be/public/base/fr/Directive-coronavirus-audiences.pdf) <br/>
 
 <ins>**Section 1re. Définitions**</ins>
