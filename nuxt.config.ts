@@ -30,7 +30,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  ssr: false,
+  ssr: true,
   devtools: { enabled: true },
   app: {
     baseURL: '/nuxt/',

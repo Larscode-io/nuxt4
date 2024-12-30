@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
+import type { ComponentPublicInstance } from 'vue'
 import img from '~/assets/img/banner-media.png'
-import { ApiUrl, RoutePathKeys } from '~/core/constants'
+import { ApiUrl } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 import type { GeneralPressJudgment } from '@/core/constants'
@@ -13,31 +14,25 @@ const route = useRoute()
 
 const OLDEST_YEAR = 1985
 const currentYear = new Date().getFullYear()
-const year = ref<number | null>(Number(route.query.year) || currentYear)
-const years = ref(range(OLDEST_YEAR, new Date().getFullYear()).reverse())
-if (year.value === null || year.value < OLDEST_YEAR || year.value > currentYear || isNaN(year.value)) {
-  year.value = currentYear
-}
+const year = computed(() => Number(route.query.year) || new Date().getFullYear())
+const years = ref(range(OLDEST_YEAR, currentYear).reverse())
 
-const selected = ref(year)
+const selected = ref(year.value)
+
+const { query } = useRoute()
 
 const { data: judgments, error, status, refresh }
   = useFetch<Judgment[]>(() => `${baseURL}${ApiUrl.judgments}`,
     {
       query: {
         lang: locale.value,
-        year,
+        year: selected,
       },
+      watch: [selected],
     })
 if (error.value) {
   console.error(error.value)
 }
-
-watch(() => year.value, () => {
-  navigateTo({ path: RoutePathKeys.judgmentsHome, query: { year: year.value } })
-}, {
-  immediate: true,
-})
 
 const transform = (data: GeneralPressJudgment[]) => {
   return data.filter((release: { nr: string }) => release.nr.split('/')[1] === String(year.value))
@@ -54,7 +49,28 @@ const { data }
     })
 
 const findRelease = (rid: number): GeneralPressJudgment | undefined => data.value?.find((release: GeneralPressJudgment) => Number(release.id) === rid)
-// console.log(findRelease(5893)?.filePath)
+
+const judgementItemsRef = ref(new Map<number, GeneralPressJudgment>())
+const setJudgementItemsRef = (id: number, el: ComponentPublicInstance) => {
+  judgementItemsRef.value.set(id, el)
+}
+
+const menuHeight = inject('menuHeight', ref(70))
+const scrollToJudgment = (id: number) => {
+  const instance = judgementItemsRef.value.get(id) as ComponentPublicInstance | undefined
+  const el = instance?.$el
+  if (el) {
+    window.scrollTo({
+      top: el.getBoundingClientRect().top + window.scrollY - menuHeight.value,
+      behavior: 'smooth',
+    })
+  }
+}
+
+watchEffect(async () => {
+  const { judgmentCardId } = query
+  scrollToJudgment(Number(judgmentCardId))
+})
 </script>
 
 <template>
@@ -65,6 +81,7 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
       :image="img"
       :alt="t('alt.banner.courtroom')"
     />
+
     <v-alert
       v-if="error"
       type="error"
@@ -75,10 +92,7 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
           <p>Error: {{ error.message }}</p>
         </v-col>
         <v-col class="d-flex justify-end">
-          <v-btn
-            color="primary"
-            @click="refresh"
-          >
+          <v-btn @click="refresh">
             Retry
           </v-btn>
         </v-col>
@@ -117,13 +131,12 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
           v-else-if="status === 'success'"
           cols="12"
           md="9"
-          class="mx-auto mb-3"
         >
           <v-card
-            v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id } in judgments"
-            :id="`judgment-card-${id}`"
-            :key="id"
-            outlined
+            v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id: idx } in judgments"
+            :id="`judgment-card-${idx}`"
+            :key="idx"
+            :ref="(el) => setJudgementItemsRef(idx, el)"
           >
             <v-list-item>
               <div class="top-infos">
@@ -136,13 +149,13 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
               </div>
               <h3 class="py-4">
                 <a
-                  :href="findRelease(id)?.filePath"
+                  :href="findRelease(idx)?.filePath"
                   rel="noopener noreferrer"
                   target="_blank"
                   :aria-label="t('aria.label.download-pdf')"
                 >
                   <v-icon
-                    color="pdfRed"
+                    color="var(--pdf-red)"
                     large
                   >
                     mdi-file-pdf-box
@@ -158,8 +171,7 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
               />
               <span
                 class="subtitle my-2"
-                style="display: block;
-                color: rgb(var(--v-theme-pdfRed));"
+                style="display: block; color: var(--pdf-red);"
                 v-html="availablePart || t('error.no-data-available')"
               />
               <span
@@ -173,12 +185,10 @@ const findRelease = (rid: number): GeneralPressJudgment | undefined => data.valu
               <p class="subtitle my-2">
                 {{ `${t('general.message.keywords', 2)}${t('general.message.colon')}` }}
               </p>
-              <v-banner
-                elevation="3"
-                class="subtitle my-2"
-              >
-                <span v-html="keywords || t('error.noDataAvailable')" />
-              </v-banner>
+
+              <div class="elevation-2 my-2 subtitle border pa-2">
+                {{ keywords || t('error.no-data-available') }}
+              </div>
             </v-list-item>
           </v-card>
         </v-col>

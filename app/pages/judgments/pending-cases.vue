@@ -179,7 +179,7 @@ const yearsInPendingCasesArray = computed(() => {
           md="9"
         >
           <v-skeleton-loader
-            :key="n"
+            :key="2"
             type="list-item-two-line"
           />
         </v-col>
@@ -208,141 +208,131 @@ const yearsInPendingCasesArray = computed(() => {
           cols="12"
           md="9"
         >
-          <transition-group
-            name="fade-scale"
-            tag="div"
+          <v-card
+            v-for="{ id, processingLanguage, dateReceived, dateOfHearing, dateDelivered, linkedCaseNumber, joinedCases, keywords, description, dateArt74 } in pendingCasesFilteredByTypeAndYear"
+            :id="`pending-cases-card-${id}`"
+            :key="id"
+            outlined
+            class="mx-auto mb-3"
           >
-            <v-card
-              v-for="{ id, processingLanguage, dateReceived, dateOfHearing, dateDelivered, linkedCaseNumber, joinedCases, keywords, description, dateArt74 } in pendingCasesFilteredByTypeAndYear"
-              :id="`pending-cases-card-${id}`"
-              :key="id"
-              outlined
-              class="mx-auto mb-3 blue-text"
-            >
-              <v-list-item>
-                <v-row>
-                  <v-col cols="9">
-                    <h3>
-                      {{ t('general.message.roll-number') }}: {{ id }} ({{
-                        processingLanguage
-                      }})
-                    </h3>
-                  </v-col>
-                  <v-col
-                    cols="3"
-                    class="d-flex justify-end"
-                  >
-                    <v-tooltip :text="t('general.message.case.soon')">
-                      <template #activator="{ props }">
-                        <nuxt-link :to="localePath(RoutePathKeys.agenda)">
-                          <v-icon
-                            v-if="hasUpcomingJudgment(id)"
-                            v-bind="props"
-                            class="mt-1"
-                            color="logoColor"
-                          >
-                            mdi-calendar
-                          </v-icon>
-                        </nuxt-link>
-                      </template>
-                    </v-tooltip>
-                    <v-btn :disabled="!isSubscribable(id)">
-                      {{ t('newsletter.rol.subscribe') }}
-                    </v-btn>
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="4">
-                    {{ t('general.message.receipt-date') }}
-                  </v-col>
-                  <v-col cols="8">
-                    {{ dateReceived || emptyValue }}
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="4">
-                    {{ t('general.message.date-of-hearing', 2) }}
-                  </v-col>
-                  <v-col cols="8">
-                    {{ dateOfHearing || emptyValue }}
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="4">
-                    {{ t('general.message.date-of-judgment') }}
-                  </v-col>
-                  <v-col cols="8">
-                    {{ dateDelivered || emptyValue }}
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="4">
-                    {{ t('general.message.concerning') }}
-                  </v-col>
-                  <v-col cols="8">
-                    <p>{{ description || emptyValue }}</p>
-                  </v-col>
-                </v-row>
-                <v-row v-if="linkedCaseNumber">
-                  <v-col cols="12">
-                    <span>{{ t('general.message.case-joined-with-case-numbers') }}
+            <v-list-item>
+              <v-row>
+                <v-col cols="9">
+                  <h3>
+                    {{ t('general.message.roll-number') }}: {{ id }} ({{
+                      processingLanguage
+                    }})
+                  </h3>
+                </v-col>
+                <v-col
+                  cols="3"
+                  class="d-flex justify-end"
+                >
+                  <template #activator="{ props }">
+                    <nuxt-link :to="localePath(RoutePathKeys.agenda)">
+                      <v-icon
+                        v-if="hasUpcomingJudgment(id)"
+                        v-bind="props"
+                        class="mt-1"
+                        color="logoColor"
+                      >
+                        mdi-calendar
+                      </v-icon>
+                    </nuxt-link>
+                  </template>
+                  <v-btn :disabled="!isSubscribable(id)">
+                    {{ t('newsletter.rol.subscribe') }}
+                  </v-btn>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="4">
+                  {{ t('general.message.receipt-date') }}
+                </v-col>
+                <v-col cols="8">
+                  {{ dateReceived || emptyValue }}
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="4">
+                  {{ t('general.message.date-of-hearing', 2) }}
+                </v-col>
+                <v-col cols="8">
+                  {{ dateOfHearing || emptyValue }}
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="4">
+                  {{ t('general.message.date-of-judgment') }}
+                </v-col>
+                <v-col cols="8">
+                  {{ dateDelivered || emptyValue }}
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="4">
+                  {{ t('general.message.concerning') }}
+                </v-col>
+                <v-col cols="8">
+                  <p>{{ description || emptyValue }}</p>
+                </v-col>
+              </v-row>
+              <v-row v-if="linkedCaseNumber">
+                <v-col cols="12">
+                  <span>{{ t('general.message.case-joined-with-case-numbers') }}
 
-                      <a
-                        :href="`#pending-cases-card-${linkedCaseNumber}`"
-                        :aria-label="`Link to pending case card ${linkedCaseNumber}`"
-                      >
-                        <span class="link">{{ linkedCaseNumber }}</span>
-                      </a>
-                    </span>
-                  </v-col>
-                </v-row>
-                <v-row v-if="dateArt74">
-                  <v-col cols="12">
-                    <span
-                      v-html="t('general.message.notification-art74-be-official-journal')
-                        .replace('Moniteur belge', '<i>Moniteur belge</i>')
-                        .replace('Belgisch Staatsblad', '<i>Belgisch Staatsblad</i>') + ': '"
-                    />
-                    {{ dateArt74 || emptyValue }}
-                  </v-col>
-                </v-row>
-                <v-row v-if="joinedCases && joinedCases.length > 0">
-                  <v-col cols="12">
-                    <span>
-                      {{ t('general.message.joined-case', joinedCases.length) + ': ' }}
-                      <a
-                        v-for="caseNumber of joinedCases"
-                        :key="caseNumber"
-                        :href="`#pending-cases-card-${caseNumber}`"
-                        class="mr-3"
-                      >
-                        {{ caseNumber }}</a>
-                    </span>
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col
-                    cols="12"
-                    md="2"
-                    class="mt-2"
-                  >
-                    {{ t('general.message.keywords', 2) }}
-                  </v-col>
-                  <v-col
-                    cols="12"
-                    md="10"
-                  >
-                    <v-banner
-                      elevation="3"
-                      class="my-2 subtitle"
+                    <a
+                      :href="`#pending-cases-card-${linkedCaseNumber}`"
+                      :aria-label="`Link to pending case card ${linkedCaseNumber}`"
                     >
-                      {{ keywords || t('error.no-data-available') }}
-                    </v-banner>
-                  </v-col>
-                </v-row>
-              </v-list-item>
-            </v-card>
-          </transition-group>
+                      <span class="link">{{ linkedCaseNumber }}</span>
+                    </a>
+                  </span>
+                </v-col>
+              </v-row>
+              <v-row v-if="dateArt74">
+                <v-col cols="12">
+                  <span
+                    v-html="t('general.message.notification-art74-be-official-journal')
+                      .replace('Moniteur belge', '<i>Moniteur belge</i>')
+                      .replace('Belgisch Staatsblad', '<i>Belgisch Staatsblad</i>') + ': '"
+                  />
+                  {{ dateArt74 || emptyValue }}
+                </v-col>
+              </v-row>
+              <v-row v-if="joinedCases && joinedCases.length > 0">
+                <v-col cols="12">
+                  <span>
+                    {{ t('general.message.joined-case', joinedCases.length) + ': ' }}
+                    <a
+                      v-for="caseNumber of joinedCases"
+                      :key="caseNumber"
+                      :href="`#pending-cases-card-${caseNumber}`"
+                      class="mr-3"
+                    >
+                      {{ caseNumber }}</a>
+                  </span>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col
+                  cols="12"
+                  md="2"
+                  class="mt-2"
+                >
+                  {{ t('general.message.keywords', 2) }}
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="10"
+                >
+                  <div class="elevation-2 my-2 subtitle border pa-2">
+                    {{ keywords || t('error.no-data-available') }}
+                  </div>
+                </v-col>
+              </v-row>
+            </v-list-item>
+          </v-card>
         </v-col>
         <v-col v-else>
           <v-alert
@@ -358,17 +348,4 @@ const yearsInPendingCasesArray = computed(() => {
 </template>
 
 <style scoped lang="scss">
-.blue-text {
-  color: primary
-}
-.fade-scale-enter-active,
-.fade-scale-leave-active {
-  transition: all 0.5s ease;
-}
-
-.fade-scale-enter,
-.fade-scale-leave-to {
-  opacity: 0;
-  transform: scale(0.95);
-}
 </style>
