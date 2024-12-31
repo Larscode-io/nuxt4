@@ -6,14 +6,16 @@ import { ApiUrl } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { query } = useRoute()
-
 const { t, locale } = useLanguage()
 
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 const withArchive = ref(true)
 
-const { data: releases, error } = useFetch(`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale.value}&withArchive=${withArchive.value}`)
+const { data: releases, error }
+  = useFetch(`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale.value}&withArchive=${withArchive.value}`,
+  )
+
 if (error.value) {
   console.error(error.value)
 }
@@ -33,18 +35,15 @@ const menuHeight = inject('menuHeight', ref(70))
 const scrollToJudgment = (id: number) => {
   const el = mediaItemsRef.value.get(id) as ComponentPublicInstance | undefined
   if (el) {
-    const x = el.getBoundingClientRect().top + window.scrollY - menuHeight.value
     window.scrollTo({
-      top: x,
+      top: el.getBoundingClientRect().top + window.scrollY - menuHeight.value - 10,
       behavior: 'smooth',
     })
   }
 }
 
-watchEffect(async () => {
-  const { id } = query
-  console.log('watchEffect sees a change in query parameter', id)
-  scrollToJudgment(Number(id))
+watchEffect(() => {
+  scrollToJudgment(Number(query.id))
 })
 </script>
 
@@ -77,14 +76,16 @@ watchEffect(async () => {
             >
               <v-list-item>
                 <div class=" mb-3">
-                  <v-icon
-                    :color="'var(--pdf-red)'"
-                  >mdi-file-pdf-box</v-icon>
+                  <div class="d-flex justify-space-between">
+                    <v-icon
+                      :color="'var(--pdf-red)'"
+                    >mdi-file-pdf-box</v-icon>
 
-                  <h3>
-                    {{ t('general.message.add-judgment-number-label') }}
-                    {{ nr }}
-                  </h3>
+                    <h3>
+                      {{ t('general.message.add-judgment-number-label') }}
+                      {{ nr }}
+                    </h3>
+                  </div>
                 </div>
                 <v-list-item-title class="headline mb-1">{{
                   title
@@ -100,47 +101,3 @@ watchEffect(async () => {
     </v-container>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.container {
-  padding: 0 !important;
-  @include mobile {
-    padding: 32px;
-  }
-}
-.no-decoration {
-  text-decoration: none;
-}
-.d-flex {
-  max-width: 1260px !important;
-  margin: auto;
-  margin-bottom: 80px;
-  @include mobile {
-    margin-bottom: 40px;
-    width: 100%;
-  }
-}
-.v-list-item__title {
-  overflow: visible;
-  white-space: inherit;
-  font-size: 1.125rem !important;
-  line-height: 20px;
-  margin-bottom: 20px !important;
-}
-.v-list-item__subtitle {
-  overflow: visible;
-  white-space: inherit;
-  margin-bottom: 16px;
-  font-size: 0.875rem;
-  line-height: 20px;
-  font-weight: 400;
-}
-h3 {
-  display: inline;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: inherit;
-  line-height: inherit;
-  font-family: inherit;
-}
-</style>

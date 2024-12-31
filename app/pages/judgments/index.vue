@@ -10,16 +10,15 @@ import type { Judgment } from '~/core/constants'
 
 const { t, locale } = useLanguage()
 const baseURL = useRuntimeConfig().public.apiBaseUrl
-const route = useRoute()
+
+const { query } = useRoute()
 
 const OLDEST_YEAR = 1985
 const currentYear = new Date().getFullYear()
-const year = computed(() => Number(route.query.year) || new Date().getFullYear())
+const year = computed(() => Number(query.year) || new Date().getFullYear())
 const years = ref(range(OLDEST_YEAR, currentYear).reverse())
 
 const selected = ref(year.value)
-
-const { query } = useRoute()
 
 const { data: judgments, error, status, refresh }
   = useFetch<Judgment[]>(() => `${baseURL}${ApiUrl.judgments}`,
@@ -56,20 +55,20 @@ const setJudgementItemsRef = (id: number, el: ComponentPublicInstance) => {
 }
 
 const menuHeight = inject('menuHeight', ref(70))
+
 const scrollToJudgment = (id: number) => {
   const instance = judgementItemsRef.value.get(id) as ComponentPublicInstance | undefined
   const el = instance?.$el
   if (el) {
     window.scrollTo({
-      top: el.getBoundingClientRect().top + window.scrollY - menuHeight.value,
+      top: el.getBoundingClientRect().top + window.scrollY - menuHeight.value - 10,
       behavior: 'smooth',
     })
   }
 }
 
-watchEffect(async () => {
-  const { judgmentCardId } = query
-  scrollToJudgment(Number(judgmentCardId))
+watchEffect(() => {
+  scrollToJudgment(Number(query.id))
 })
 </script>
 

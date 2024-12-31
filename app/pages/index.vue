@@ -17,20 +17,14 @@ const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 const { t, locale } = useLanguage()
 
-const goToJudgmentPage = async (id: number) => {
-  const destination = localePath(RoutePathKeys.judgmentsHome) + `?year=${new Date().getFullYear()}` + `&judgmentCardId=${id}`
-  await navigateTo(destination)
+const goToJudgmentPage = (id: number) => {
+  const destination = localePath(RoutePathKeys.judgmentsHome) + `?year=${new Date().getFullYear()}` + `&id=${id}`
+  navigateTo(destination)
 }
 const goToMediaPage = (id: number, type: MediaType) => {
-  const dest = `${localePath(RoutePathKeys.mediaPressReleasesConcerningTheJudgments)}?with-archive=true#release-card-${id}`
-  router.push(dest)
+  const dest = localePath(RoutePathKeys.mediaPressReleasesConcerningTheJudgments) + '?with-archive=true' + `&id=${id}`
+  navigateTo(dest)
 }
-
-// const handleMediaCardClick = (id: number, description: string) => {
-//   if (!description) {
-//     gotoMediaPage(id)
-//   }
-// }
 </script>
 
 <template>
@@ -42,7 +36,6 @@ const goToMediaPage = (id: number, type: MediaType) => {
           {{ t('menu.decisions.title') }}
         </h2>
       </div>
-      <!-- during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts). -->
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
@@ -83,7 +76,6 @@ const goToMediaPage = (id: number, type: MediaType) => {
           {{ t('general.message.latest-press-release') }}
         </h2>
       </div>
-      <!-- during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts). -->
       <MediaCard
         :api-url-press="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
@@ -105,7 +97,6 @@ const goToMediaPage = (id: number, type: MediaType) => {
                   max-width="388"
                   :aria-labelledby="`artDate${item.id} arrestNr${item.id} publicationTitle${item.id}`"
                   :style="{ position: 'relative', overflow: 'visible' }"
-                  @click="gotoMediaPage(item.id, item.type)"
                 >
                   <v-img
                     :src="getImage(`media-${index}`)"
@@ -164,7 +155,6 @@ const goToMediaPage = (id: number, type: MediaType) => {
         </h2>
       </div>
 
-      <!-- during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts). -->
       <AgendaCard
         :api-url="`${baseURL}${ApiUrl.pressJudgment}?lang=${locale}`"
         :max-items="0"
@@ -219,7 +209,6 @@ const goToMediaPage = (id: number, type: MediaType) => {
         </template>
       </AgendaCard>
 
-      <!-- during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts). -->
       <PleadingCard
         :api-url="`${baseURL}${ApiUrl.pressPleadings}?lang=${locale}`"
         :max-items="0"
