@@ -1,6 +1,5 @@
-<!-- API based page -->
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
+import { ref, watchEffect, nextTick } from 'vue'
 import img from '~/assets/img/banner-media.png'
 import { ApiUrl } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
@@ -43,7 +42,9 @@ const scrollToJudgment = (id: number) => {
 }
 
 watchEffect(() => {
-  scrollToJudgment(Number(query.id))
+  if (releases.value) {
+    scrollToJudgment(Number(query.id))
+  }
 })
 </script>
 

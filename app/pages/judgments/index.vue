@@ -68,7 +68,10 @@ const scrollToJudgment = (id: number) => {
 }
 
 watchEffect(() => {
-  scrollToJudgment(Number(query.id))
+  if (judgments.value) {
+    console.log(`okay`)
+    scrollToJudgment(Number(query.id))
+  }
 })
 </script>
 
