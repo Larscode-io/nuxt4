@@ -37,7 +37,6 @@ interface LegalCase {
   type: string
 }
 
-// during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
 const { data: cases, error, status, refresh } = useLazyFetch<LegalCase[]>(`${baseURL}${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`)
 if (error.value) {
   console.error(error.value)

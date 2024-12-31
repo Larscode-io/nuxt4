@@ -26,7 +26,7 @@
               <v-card-title class="d-flex align-center">
                 <v-icon
                   class="me-2"
-                  color="pdfRed"
+                  :color="'var(--pdf-red)'"
                 >mdi-file-pdf-box</v-icon>
                 <span class="description-text">{{ title }}</span>
               </v-card-title>
@@ -49,9 +49,6 @@ const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
-// const i18nKeysRef = ref(i18nKeys)
-
-// during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
 const { data, error } = useLazyFetch(`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale.value}`)
 if (error.value) {
   console.error(error.value)

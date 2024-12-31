@@ -1,4 +1,53 @@
 <!-- API based page -->
+<script setup lang="ts">
+import { ref, watchEffect } from 'vue'
+import img from '~/assets/img/banner-media.png'
+import { ApiUrl } from '~/core/constants'
+import { useLanguage } from '@/composables/useLanguage'
+
+const { query } = useRoute()
+
+const { t, locale } = useLanguage()
+
+const config = useRuntimeConfig()
+const baseURL = config.public.apiBaseUrl
+const withArchive = ref(true)
+
+const { data: releases, error } = useFetch(`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale.value}&withArchive=${withArchive.value}`)
+if (error.value) {
+  console.error(error.value)
+}
+
+const getId = (id: string) => {
+  return `release-card-${id}`
+}
+
+const mediaItemsRef = ref(new Map())
+
+const setMediaItemsRef = (id: number, el: ComponentPublicInstance) => {
+  mediaItemsRef.value.set(id, el)
+}
+
+const menuHeight = inject('menuHeight', ref(70))
+
+const scrollToJudgment = (id: number) => {
+  const el = mediaItemsRef.value.get(id) as ComponentPublicInstance | undefined
+  if (el) {
+    const x = el.getBoundingClientRect().top + window.scrollY - menuHeight.value
+    window.scrollTo({
+      top: x,
+      behavior: 'smooth',
+    })
+  }
+}
+
+watchEffect(async () => {
+  const { id } = query
+  console.log('watchEffect sees a change in query parameter', id)
+  scrollToJudgment(Number(id))
+})
+</script>
+
 <template>
   <div>
     <BannerImage
@@ -13,6 +62,7 @@
           <a
             v-for="{ id, nr, title, description, filePath } in releases"
             :key="id"
+            :ref="el => setMediaItemsRef(Number(id), el)"
             class="no-decoration mr-3"
             :aria-label="t('aria.label.landing.media.card')"
             :href="filePath"
@@ -28,7 +78,7 @@
               <v-list-item>
                 <div class=" mb-3">
                   <v-icon
-                    color="pdfRed"
+                    :color="'var(--pdf-red)'"
                   >mdi-file-pdf-box</v-icon>
 
                   <h3>
@@ -50,30 +100,6 @@
     </v-container>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-import img from '~/assets/img/banner-media.png'
-import { ApiUrl } from '~/core/constants'
-import { useLanguage } from '@/composables/useLanguage'
-
-const { t, locale } = useLanguage()
-
-const config = useRuntimeConfig()
-const baseURL = config.public.apiBaseUrl
-
-const withArchive = ref(true)
-
-// during development, if the apiBaseUrl is not set in .env, the legacy server URL node04 will be used (nuxt.config.ts).
-const { data: releases, error } = useLazyFetch(`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale.value}&withArchive=${withArchive.value}`)
-if (error.value) {
-  console.error(error.value)
-}
-
-const getId = (id: string) => {
-  return `release-card-${id}`
-}
-</script>
 
 <style lang="scss" scoped>
 .container {
