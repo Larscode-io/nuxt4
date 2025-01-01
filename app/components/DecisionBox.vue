@@ -18,7 +18,19 @@ const transform = (items: Judgment[]): Judgment[] => {
   })).slice(0, props.maxItems ?? items.length)
 }
 
-const { data: items, error } = await useFetch<Judgment[]>(props.apiUrl, { transform })
+let apiUrl = props.apiUrl
+const currentYear = new Date().getFullYear()
+if (!apiUrl.includes('year=')) {
+  apiUrl += `&year=${currentYear}`
+}
+
+let { data: items, error } = await useFetch<Judgment[]>(apiUrl, { transform })
+if (error.value || (items.value?.length ?? 0) === 0) {
+  // If there is no data for the current year, we fetch the data for the previous year
+  apiUrl = apiUrl.replace(`year=${currentYear}`, `year=${currentYear - 1}`);
+  ({ data: items, error } = await useFetch<Judgment[]>(apiUrl, { transform }))
+}
+
 if (error.value) {
   throw createError({ statusCode: 404, statusMessage: 'We have a issue with fetching data in DecisionBox' })
 }
