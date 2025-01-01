@@ -419,19 +419,6 @@ watch(smAndDown, (value) => {
             <div class="d-flex align-center">
               <span class="mr-2">{{ t('menu.footer.twitter') }}</span>
               <nuxt-link
-                to="https://x.com/ConstCourtBE"
-                target="_blank"
-                rel="noopener noreferrer"
-                :aria-label="t('aria.label.landing.twitter')"
-                class="mr-2"
-              >
-                <img
-                  src="~/assets/img/twitter.svg"
-                  :style="{ width: '32px', height: '32px' }"
-                  alt="Twitter"
-                >
-              </nuxt-link>
-              <nuxt-link
                 to="https://www.linkedin.com/company/const-court-be"
                 target="_blank"
                 rel="noopener noreferrer"
