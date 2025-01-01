@@ -72,7 +72,9 @@ const scrollToJudgment = (id: number) => {
 }
 
 watchEffect(() => {
-  scrollToJudgment(Number(query.id))
+  if (query.id) {
+    scrollToJudgment(Number(query.id))
+  }
 })
 </script>
 
@@ -143,6 +145,7 @@ watchEffect(() => {
           </v-card>
           <v-card
             v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id: idx } in judgments"
+            v-else
             :id="`judgment-card-${idx}`"
             :key="idx"
             :ref="(el) => setJudgementItemsRef(idx, el)"
