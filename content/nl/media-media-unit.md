@@ -11,7 +11,7 @@ De cel « media » stelt persberichten op over de arresten die het Hof bijzonder
 
 De cel « media » heeft niet als taak om de arresten van het Hof te becommentariëren, noch om juridisch advies te verstrekken.
 
-Het Hof communiceert ook via X (<a href="https://x.com/ConstCourtBE" aria-label="Klik om naar de X-pagina van het Grondwettelijk Hof te gaan" target="blank">@ConstCourtBE</a>) en <a href="https://be.linkedin.com/company/constitutional-court-of-belgium" aria-label="Klik om naar de LinkedIn-pagina van het Grondwettelijk Hof te gaan" target="blank">LinkedIn</a>. De accounts van het Hof, beheerd door de cel « media », dienen hoofdzakelijk om bijdragen over bepaalde arresten en persberichten te verspreiden. De accounts dienen ook om nuttige informatie over de werking van het Hof te verspreiden.
+Het Hof communiceert ook via <a href="https://be.linkedin.com/company/constitutional-court-of-belgium" aria-label="Klik om naar de LinkedIn-pagina van het Grondwettelijk Hof te gaan" target="blank">LinkedIn</a>. De accounts van het Hof, beheerd door de cel « media », dienen hoofdzakelijk om bijdragen over bepaalde arresten en persberichten te verspreiden. De accounts dienen ook om nuttige informatie over de werking van het Hof te verspreiden.
 
 Meer informatie vindt u <a href="https://www.const-court.be/public/pbcp/n/pbcp-2019-001n.pdf" aria-label="Klik op de link om de pdf te downloaden" target="blank"> hier</a>.
 

@@ -11,7 +11,7 @@ The media unit drafts press releases on judgments that the Court considers parti
 
 It is not the role of the media unit to comment on the Court's judgments or to provide legal advice.
 
-The Court also communicates via X (<a href="https://x.com/ConstCourtBE" aria-label="Click to go to the Constitutional Court's X page" target="blank">@ConstCourtBE</a>) and  <a href="https://be.linkedin.com/company/constitutional-court-of-belgium" aria-label="Click to go to the Constitutional Court's LinkedIn page" target="blank">LinkedIn</a>. The Court's accounts, managed by the media unit, are mainly used for posting about certain judgments and for publishing press releases. They are also used to give useful information about the Court's functioning.
+The Court also communicates via <a href="https://be.linkedin.com/company/constitutional-court-of-belgium" aria-label="Click to go to the Constitutional Court's LinkedIn page" target="blank">LinkedIn</a>. The Court's accounts, managed by the media unit, are mainly used for posting about certain judgments and for publishing press releases. They are also used to give useful information about the Court's functioning.
 
 For more information, click <a href="https://www.const-court.be/public/pbcp/f/pbcp-2019-001f.pdf" aria-label="Click on the link to download the pdf" target="blank"> here</a>.
 

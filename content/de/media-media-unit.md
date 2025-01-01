@@ -11,7 +11,7 @@ Die Medienstelle verfasst Pressemitteilungen über jene Entscheide, die der Geri
 
 Es ist nicht Aufgabe der Medienstelle, zu den Entscheiden des Gerichtshofes Kommentar oder juristische Stellungnahmen abzugeben.
 
-Der Gerichtshof kommuniziert auch über X (<a href="https://x.com/ConstCourtBE" aria-label="Klicken Sie hier, um zur X-Seite des Verfassungsgerichts zu gelangen" target="blank">@ConstCourtBE</a>) und <a href="https://be.linkedin.com/company/constitutional-court-of-belgium" aria-label="Klicken Sie hier, um zur LinkedIn-Seite des Verfassungsgerichts zu gelangen" target="blank">LinkedIn</a>. Die von der Medienstelle verwalteten Accounts des Gerichtshofes dienen hauptsächlich dazu, Beiträge über bestimmte Entscheide und Pressemitteilungen zu verbreiten. Die Accounts dienen ebenfalls zur Verbreitung nützlicher Informationen über die Arbeitsweise des Gerichtshofes.
+Der Gerichtshof kommuniziert auch über <a href="https://be.linkedin.com/company/constitutional-court-of-belgium" aria-label="Klicken Sie hier, um zur LinkedIn-Seite des Verfassungsgerichts zu gelangen" target="blank">LinkedIn</a>. Die von der Medienstelle verwalteten Accounts des Gerichtshofes dienen hauptsächlich dazu, Beiträge über bestimmte Entscheide und Pressemitteilungen zu verbreiten. Die Accounts dienen ebenfalls zur Verbreitung nützlicher Informationen über die Arbeitsweise des Gerichtshofes.
 
 Näheres erfahren Sie <a href="https://www.const-court.be/public/pbcp/n/pbcp-2019-001n.pdf" aria-label="Klicken Sie auf den Link, um das PDF herunterzuladen" target="blank"> hier</a>.
 

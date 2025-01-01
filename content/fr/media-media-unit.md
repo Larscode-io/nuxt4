@@ -11,7 +11,7 @@ La cellule « médias » rédige des communiqués de presse à propos des arrêt
 
 La cellule « médias » n’a pas vocation à commenter les arrêts de la Cour ni à dispenser des avis juridiques.
 
-La Cour communique aussi via X (<a href="https://x.com/ConstCourtBE" aria-label="Cliquez pour aller à la page X de la Cour Constitutionnelle" target="blank">@ConstCourtBE</a>) et <a href="https://be.linkedin.com/company/constitutional-court-of-belgium" aria-label="Cliquez pour aller à la page LinkedIn de la Cour Constitutionnelle" target="blank">LinkedIn</a>. Les comptes de la Cour, gérés par la cellule « médias », servent principalement à diffuser des posts à propos de certains arrêts et à diffuser les communiqués de presse. Ils servent également à diffuser les informations utiles à propos du fonctionnement de la Cour.
+La Cour communique aussi via <a href="https://be.linkedin.com/company/constitutional-court-of-belgium" aria-label="Cliquez pour aller à la page LinkedIn de la Cour Constitutionnelle" target="blank">LinkedIn</a>. Les comptes de la Cour, gérés par la cellule « médias », servent principalement à diffuser des posts à propos de certains arrêts et à diffuser les communiqués de presse. Ils servent également à diffuser les informations utiles à propos du fonctionnement de la Cour.
 
 Pour plus d’informations, cliquez <a href="https://www.const-court.be/public/pbcp/f/pbcp-2019-001f.pdf" aria-label="Cliquez sur le lien pour télécharger le pdf" target="blank"> ici</a>.
 
