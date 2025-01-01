@@ -211,6 +211,7 @@ export interface Judgment {
   idsRole: number[]
   availablePart: string
   keywords: string
+  year?: string
 }
 
 export interface GeneralPressJudgment {

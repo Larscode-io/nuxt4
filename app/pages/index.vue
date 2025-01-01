@@ -17,8 +17,8 @@ const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 const { t, locale } = useLanguage()
 
-const goToJudgmentPage = (id: number) => {
-  const destination = localePath(RoutePathKeys.judgmentsHome) + `?year=${new Date().getFullYear()}` + `&id=${id}`
+const goToJudgmentPage = (id: number, year) => {
+  const destination = localePath(RoutePathKeys.judgmentsHome) + `?year=${year}` + `&id=${id}`
   navigateTo(destination)
 }
 const goToMediaPage = (id: number, type: MediaType) => {
@@ -41,7 +41,7 @@ const goToMediaPage = (id: number, type: MediaType) => {
         :max-items="6"
       >
         <template
-          #item="{ item: { id, formatedJudmentDate, nr, courtVerdict, description, availablePart } }: { item: Judgment }"
+          #item="{ year: thisYearOrPreviousYear, item: { id, formatedJudmentDate, nr, courtVerdict, description, availablePart } }: { item: Judgment }"
         >
           <v-card class="equal-height-card highlighted-card libra-image d-flex flex-column">
             <div class="flex-grow-1">
@@ -63,7 +63,7 @@ const goToMediaPage = (id: number, type: MediaType) => {
             </div>
             <v-card-title>{{ availablePart }}</v-card-title>
             <v-card-actions>
-              <v-btn @click="goToJudgmentPage(id)">
+              <v-btn @click="goToJudgmentPage(id, thisYearOrPreviousYear)">
                 {{ t('general.message.read-more') }}
               </v-btn>
             </v-card-actions>

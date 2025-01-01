@@ -23,11 +23,14 @@ const currentYear = new Date().getFullYear()
 if (!apiUrl.includes('year=')) {
   apiUrl += `&year=${currentYear}`
 }
+const fallbackYear = currentYear - 1
+let theYearWeUse = currentYear
 
 let { data: items, error } = await useFetch<Judgment[]>(apiUrl, { transform })
 if (error.value || (items.value?.length ?? 0) === 0) {
   // If there is no data for the current year, we fetch the data for the previous year
-  apiUrl = apiUrl.replace(`year=${currentYear}`, `year=${currentYear - 1}`);
+  theYearWeUse = fallbackYear
+  apiUrl = apiUrl.replace(`year=${currentYear}`, `year=${fallbackYear}`);
   ({ data: items, error } = await useFetch<Judgment[]>(apiUrl, { transform }))
 }
 
@@ -49,6 +52,7 @@ if (error.value) {
       <slot
         name="item"
         :item="item"
+        :year="theYearWeUse"
       />
     </v-col>
   </v-row>

@@ -60,18 +60,19 @@ const scrollToJudgment = (id: number) => {
   const instance = judgementItemsRef.value.get(id) as ComponentPublicInstance | undefined
   const el = instance?.$el
   if (el) {
+    console.log(`scrollToJudgment found the element`)
     window.scrollTo({
       top: el.getBoundingClientRect().top + window.scrollY - menuHeight.value - 10,
       behavior: 'smooth',
     })
   }
+  else {
+    console.error(`Element with id ${id} not found`)
+  }
 }
 
 watchEffect(() => {
-  if (judgments.value) {
-    console.log(`okay`)
-    scrollToJudgment(Number(query.id))
-  }
+  scrollToJudgment(Number(query.id))
 })
 </script>
 
