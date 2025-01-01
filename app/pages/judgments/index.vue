@@ -123,11 +123,9 @@ watchEffect(() => {
         </v-col>
 
         <v-col v-if="status === 'pending'">
-          <v-skeleton-loader
-            v-for="n in 5"
-            :key="n"
-            type="list-item-two-line"
-          />
+          <v-skeleton-loader type="list-item-two-line" />
+          <v-skeleton-loader type="list-item-two-line" />
+          <v-skeleton-loader type="list-item-two-line" />
         </v-col>
 
         <v-col
@@ -135,6 +133,14 @@ watchEffect(() => {
           cols="12"
           md="9"
         >
+          <v-card
+            v-if="judgments?.length === 0"
+            class="pa-4"
+          >
+            <v-card-text>
+              {{ t('error.no-judgment') }}
+            </v-card-text>
+          </v-card>
           <v-card
             v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id: idx } in judgments"
             :id="`judgment-card-${idx}`"
