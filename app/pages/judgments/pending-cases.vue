@@ -42,13 +42,12 @@ if (error.value) {
   console.error(error.value)
 }
 
-// const isSubscribable = distance === null || distance === undefined || distance > 30
-
 const transform = (items: []) => {
-  return items.map(({ id, distance }) => {
+  return items.map(({ id, distance, dateLong }) => {
     return {
       id,
       distance,
+      dateLong,
     }
   })
 }
@@ -62,10 +61,7 @@ if (pressJudgmentsError.value) {
   console.error(pressJudgmentsError.value)
 }
 const isSubscribable = (id: number) => {
-  // check if id exists in pressJudgments
   const found = pressJudgments.value?.find(j => j.id === id)
-  // found will be undefined or an object
-  // if found undefine return true
   if (found === undefined) {
     return true
   }
@@ -76,11 +72,12 @@ const isSubscribable = (id: number) => {
 const findDateLongInPressJudgments = (id: number) => {
   const found = pressJudgments.value?.find(j => j.id === id)
   console.log('found', found)
+  console.log('found?.dateLong', found?.dateLong)
   return found?.dateLong
 }
 
 const hasUpcomingJudgment = (id: number) => {
-  return Array.isArray(pressJudgments.value) ? pressJudgments.value.find(j => j.id === id)?.distance !== undefined : false
+  return Array.isArray(pressJudgments.value) && pressJudgments.value.find(j => j.id === id) !== undefined
 }
 
 const pendingCasesFilteredByType = computed(() => {
@@ -177,10 +174,9 @@ const yearsInPendingCasesArray = computed(() => {
           cols="12"
           md="9"
         >
-          <v-skeleton-loader
-            :key="2"
-            type="list-item-two-line"
-          />
+          <v-skeleton-loader type="list-item-two-line" />
+          <v-skeleton-loader type="list-item-two-line" />
+          <v-skeleton-loader type="list-item-two-line" />
         </v-col>
         <div v-else-if="error">
           <v-alert
@@ -227,19 +223,15 @@ const yearsInPendingCasesArray = computed(() => {
                   cols="3"
                   class="d-flex justify-end"
                 >
-                  <template #activator="{ props }">
-                    <nuxt-link :to="localePath(RoutePathKeys.agenda)">
-                      <v-icon
-                        v-if="hasUpcomingJudgment(id)"
-                        v-bind="props"
-                        class="mt-1"
-                        color="logoColor"
-                      >
-                        mdi-calendar
-                      </v-icon>
-                    </nuxt-link>
-                  </template>
-                  <v-btn :disabled="!isSubscribable(id)">
+                  <div v-if="!isSubscribable(id)">
+                    <v-chip
+                      color="var(--logo-color)"
+                      class="mr-2"
+                    >
+                      {{ t('general.message.judgment-deliveries') }}
+                    </v-chip>
+                  </div>
+                  <v-btn v-else>
                     {{ t('newsletter.rol.subscribe') }}
                   </v-btn>
                 </v-col>
