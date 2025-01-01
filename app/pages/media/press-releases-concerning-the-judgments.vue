@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { ref, watchEffect, nextTick } from 'vue'
+import { ref, watch, nextTick } from 'vue'
 import img from '~/assets/img/banner-media.png'
 import { ApiUrl } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { query } = useRoute()
+const { id: queryid } = query
+
 const { t, locale } = useLanguage()
 
 const config = useRuntimeConfig()
@@ -23,27 +25,40 @@ const getId = (id: string) => {
   return `release-card-${id}`
 }
 
-const mediaItemsRef = ref(new Map())
-
-const setMediaItemsRef = (id: number, el: ComponentPublicInstance) => {
-  mediaItemsRef.value.set(id, el)
-}
-
 const menuHeight = inject('menuHeight', ref(70))
 
-const scrollToJudgment = (id: number) => {
-  const el = mediaItemsRef.value.get(id) as ComponentPublicInstance | undefined
-  if (el) {
-    window.scrollTo({
-      top: el.getBoundingClientRect().top + window.scrollY - menuHeight.value - 10,
-      behavior: 'smooth',
-    })
+const scrollToJudgment = (id: string) => {
+  const releaseCardIdlabel = getId(id)
+  const element = getElement(releaseCardIdlabel)
+  if (element) {
+    const top = element.getBoundingClientRect().top + window.scrollY - menuHeight.value - 10
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
+  else {
+    console.error('Element not found for id:', releaseCardIdlabel)
   }
 }
 
-watchEffect(() => {
-  if (releases.value) {
-    scrollToJudgment(Number(query.id))
+const getElement = (idLabel: string) => {
+  const element = document.getElementById(idLabel)
+  if (element) {
+    return element
+  }
+  else {
+    console.error('Element not found')
+    return null
+  }
+}
+watch(() => releases.value, (newReleases) => {
+  if (newReleases) {
+    nextTick(() => {
+      if (queryid) {
+        scrollToJudgment(queryid)
+      }
+      else {
+        console.error('queryid is not defined so we cannot scroll to the judgment')
+      }
+    })
   }
 })
 </script>
@@ -61,8 +76,8 @@ watchEffect(() => {
         <v-col>
           <a
             v-for="{ id, nr, title, description, filePath } in releases"
+            :id="getId(id)"
             :key="id"
-            :ref="el => setMediaItemsRef(Number(id), el)"
             class="no-decoration mr-3"
             :aria-label="t('aria.label.landing.media.card')"
             :href="filePath"
@@ -71,7 +86,6 @@ watchEffect(() => {
           >
             {{ id }}
             <v-card
-              :id="getId(id)"
               class="mx-auto mb-3"
               outlined
             >
