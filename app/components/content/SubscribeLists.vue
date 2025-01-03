@@ -232,19 +232,25 @@ watch(() => form.userFeedbackMessage, () => {
         >
           Een geldig email adres is nodig.
         </p>
-        <select
-          v-model="form.selected"
-          class="form-input"
-          @change="formDirty.mailinglist = true"
-        >
-          <option
-            v-for="(value, lang) in defaultListLang"
-            :key="lang"
-            :value="defaultListLang[lang]"
+        <div class="position-relative">
+          <select
+            v-model="form.selected"
+            class="form-input"
+            @change="formDirty.mailinglist = true"
           >
-            {{ t(`general.message.mailman.letter.${lang}`) }}
-          </option>
-        </select>
+            <option
+              v-for="(value, lang) in defaultListLang"
+              :key="lang"
+              :value="defaultListLang[lang]"
+            >
+              {{ t(`general.message.mailman.letter.${lang}`) }}
+            </option>
+          </select>
+          <i
+            class="mdi mdi-chevron-down position-absolute"
+            style="right: 10px; top: 50%; transform: translateY(-50%); "
+          />
+        </div>
       </div>
     </form>
 
