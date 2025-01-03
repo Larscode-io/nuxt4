@@ -14,6 +14,9 @@ const props = defineProps({
     required: false,
   },
 })
+console.log('props.email:', props.email)
+console.log('props.email:', props.email)
+console.log('props.email:', props.email)
 
 const form = reactive({
   usermail: props.email || '',
@@ -198,13 +201,14 @@ watch(() => form.userFeedbackMessage, () => {
 
 <template>
   <slot
-    v-if="!props.email"
-    name="default"
+    v-if="props.email"
+    name="email"
+    :email="props.email"
   />
   <slot
     v-else
-    name="email"
-    :email="props.email"
+    name="default"
+    email=""
   />
   <div class="container">
     <form>
