@@ -14,9 +14,6 @@ const props = defineProps({
     required: false,
   },
 })
-console.log('props.email:', props.email)
-console.log('props.email:', props.email)
-console.log('props.email:', props.email)
 
 const form = reactive({
   usermail: props.email || '',

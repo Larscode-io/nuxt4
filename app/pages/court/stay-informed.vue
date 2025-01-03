@@ -12,7 +12,6 @@ const { locale } = useLanguage()
 const route = useRoute()
 const { query } = route
 const mdcVars = ref({ mailinfo: query.mailinfo || '' })
-console.log('mdcVars', mdcVars.value)
 
 const currentActiveContentInToc = ref<string>('')
 const contentPath = ref(`${ContentKeys.informed}`)
