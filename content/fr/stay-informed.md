@@ -9,8 +9,12 @@ locale: fr
 Un [moteur de recherche](/fr/search/judgment) disponible sur le site Web de la Cour vous permet d’effectuer une recherche dans toute sa jurisprudence. Vous pouvez lancer des recherches sur la base de différents paramètres, comme le numéro d’arrêt, le numéro de rôle, la date de l’arrêt, des fragments de texte et des mots-clés. Un [recueil complet](/fr/judgments) des arrêts de la Cour par année est également disponible. 
 
 ### 2\. Lettre d’information
+::SubscribeLists{:email="mailinfo"}
+#default
 Vous pouvez vous abonner à la lettre d’information de la Cour en introduisant votre adresse mail dans la case ci-dessous.
-<SubscribeLists />
+#email
+Confirmez votre adresse e-mail
+::
 
 Vous recevrez ensuite un mail de la Cour provenant de l’adresse mail [info_fr-request@mailman.const-court.be], vous demandant de confirmer votre inscription en cliquant sur un lien. Vous recevrez tout de suite après une confirmation provenant de la même adresse mail. Attention, ces mails (aussi bien celui qui vous demande de confirmer votre inscription que celui qui vous la confirme et ceux qui vous transmettent les lettres d’information) pourraient se retrouver dans votre dossier de spams ou de courriers indésirables. Vous pouvez l’éviter en ajoutant l’adresse mail à vos expéditeurs de confiance.
 

@@ -1,62 +1,64 @@
-<template>
-  <section
-    class="newsletter-container"
-    :alt="t('alt.newsletter', 2)"
-  >
-    <div class="newsletter-text">
-      <h2>{{ t('newsletter.title') }}</h2>
-      <p />
-    </div>
-    <div class="subscribe-container">
-      <form
-        class="review-form"
-        @submit.prevent="onSubmit"
-      >
-        <label
-          class="upperLabel"
-          for="mailInput"
-          :aria-label="t('aria.label.landing.newsletter', 2)"
-        >
-          {{ t('general.subscribe') }}
-        </label>
-        <div class="input-container pt-2">
-          <div class="inputField">
-            <label
-              class="innerLabel"
-              for="mailInput"
-            >
-              {{ t('general.email-placeholder') }}:
-            </label>
-            <input
-              id="mailInput"
-              v-model="mymail"
-              type="text"
-            >
-          </div>
-          <button
-            type="submit"
-            @click="onSubmit"
-          >
-            {{ t('general.send') }}
-          </button>
-        </div>
-      </form>
-    </div>
-  </section>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 import { useLanguage } from '@/composables/useLanguage'
+
+const emit = defineEmits(['mail-submitted'])
 
 const { t } = useLanguage()
 
 const mymail = ref('')
 
 function onSubmit() {
+  if (!mymail.value) return
   emit('mail-submitted', { mailinfo: mymail.value })
 }
 </script>
+
+<template>
+  <v-container class="flex-column align-start flex-nowrap">
+    <section
+      class="newsletter-container"
+      :alt="t('alt.newsletter', 2)"
+    >
+      <div class="newsletter-text">
+        <h2>{{ t('newsletter.title') }}</h2>
+        <p />
+      </div>
+      <div class="subscribe-container">
+        <form
+          class="review-form"
+          @submit.prevent="onSubmit"
+        >
+          <label
+            class="upperLabel"
+            for="mailInput"
+            :aria-label="t('aria.label.landing.newsletter', 2)"
+          >
+            {{ t('general.subscribe') }}
+          </label>
+          <div class="input-container pt-2">
+            <div class="inputField">
+              <label
+                class="innerLabel"
+                for="mailInput"
+              >
+                {{ t('general.email-placeholder') }}:
+              </label>
+              <input
+                id="mailInput"
+                v-model="mymail"
+                type="text"
+              >
+            </div>
+            <button type="submit">
+              {{ t('general.send') }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </v-container>
+</template>
 
 <style lang="scss">
 .newsletter-container {

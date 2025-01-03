@@ -8,10 +8,15 @@ import { useFaker } from '@/composables/useFaker'
 const { t, locale } = useLanguage()
 const faker = await useFaker(locale.value)
 
-const randomEmail = ref('')
+const props = defineProps({
+  email: {
+    type: String,
+    required: false,
+  },
+})
 
 const form = reactive({
-  usermail: '',
+  usermail: props.email || '',
   selected: '', // has value like 'info_nl', 'info_fr', 'pdf_de'
   isSubmitting: false,
   userFeedbackMessage: '',
@@ -185,15 +190,22 @@ const mailmanSubmitIsValid = computed(() => {
 })
 
 watch(() => form.userFeedbackMessage, () => {
-  setTimeout(() => { form.userFeedbackMessage = '' }, 8000)
+  setTimeout(() => {
+    form.userFeedbackMessage = ''
+  }, 8000)
 })
-
-watch(() => form.selected, () => {
-  randomEmail.value = faker.internet.email()
-}, { immediate: true })
 </script>
 
 <template>
+  <slot
+    v-if="!props.email"
+    name="default"
+  />
+  <slot
+    v-else
+    name="email"
+    :email="props.email"
+  />
   <div class="container">
     <form>
       <div class="form-group">
@@ -209,7 +221,7 @@ watch(() => form.selected, () => {
           type="email"
           class="form-input"
           :class="{ error: formFieldsErrorIndicator?.email }"
-          :placeholder="randomEmail || 'John'"
+          :placeholder="faker.internet.email() || 'John'"
           required
           @blur="formDirty.email = true"
         >

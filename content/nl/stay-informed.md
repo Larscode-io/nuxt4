@@ -9,8 +9,12 @@ locale: 'nl'
 Om te zoeken in de bestaande rechtspraak van het Hof is er een [zoekmotor beschikbaar](/nl/search/judgment). U kan zoekopdrachten uitvoeren aan de hand van verschillende parameters, waaronder het arrestnummer, het rolnummer, de datum van het arrest, tekstfragmenten en trefwoorden. Een [volledig overzicht](/nl/judgments) van arresten is ook beschikbaar.
 
 ### 2. Nieuwsbrief
+::SubscribeLists{:email="mailinfo"}
+#default
 U kan zich abonneren op de nieuwsbrief van het Hof door uw e-mailadres hieronder in te voeren.
-:SubscribeLists
+#email
+Bevestig uw e-mailadres
+::
 
 U ontvangt vervolgens een e-mail van het e-mailadres [info_nl-request@mailman.const-court.be], waarin u wordt gevraagd om uw inschrijving te bevestigen door op een link te klikken. Onmiddellijk daarna ontvangt u van hetzelfde e-mailadres een bevestiging. Opgelet, deze e-mails (zowel de e-mail waarin u wordt gevraagd om uw inschrijving te bevestigen als de e-mail ter bevestiging en de e-mails met de nieuwsbrieven) komen mogelijk in de map “ongewenste e-mail” terecht. U kan dit verhelpen door het e-mailadres toe te voegen aan uw vertrouwde afzenders.
 

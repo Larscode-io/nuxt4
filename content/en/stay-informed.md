@@ -9,8 +9,12 @@ locale: en
  To search in the existing case law of the Court, a [search engine](/en/search/judgment) is available. You can perform searches using various parameters, including the judgment number, the cause list number, the date of the judgment, text fragments and keywords. A [complete overview](/en/judgments) of the Court’s judgments per year is also available.
 
 ### 2\. Newsletter
+::SubscribeLists{:email="mailinfo"}
+#default
 You can subscribe to the Court’s newsletter by entering your email address below.
-:SubscribeLists
+#email
+Confirm your email address
+::
 
 You will then receive an email from the email address [info_nl-request@mailman.const-court.be], asking you to confirm your subscription by clicking on a link. You will then immediately receive a confirmation email from the same address. Please note that these emails (the one asking you to confirm your subscription, the confirmation email and the emails with the newsletters) may end up in your spam folder.  You can prevent this by adding the email address to your trusted senders.
 

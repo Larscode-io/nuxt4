@@ -5,7 +5,6 @@ import { RoutePathKeys, ApiUrl, MediaType,
 import type { GeneralPressJudgment, GeneralPressRelease, Judgment, Pleading, Decision } from '@/core/constants'
 
 const { localePath } = useLanguage()
-const router = useRouter()
 
 const { getImage } = useImageLoader()
 
@@ -17,13 +16,16 @@ const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 const { t, locale } = useLanguage()
 
-const goToJudgmentPage = (id: number, year) => {
-  const destination = localePath(RoutePathKeys.judgmentsHome) + `?year=${year}` + `&id=${id}`
-  navigateTo(destination)
+const goToJudgmentPage = (id: number, year: string) => {
+  navigateTo(localePath(RoutePathKeys.judgmentsHome) + `?year=${year}` + `&id=${id}`)
 }
 const goToMediaPage = (id: number, type: MediaType) => {
-  const dest = localePath(RoutePathKeys.mediaPressReleasesConcerningTheJudgments) + '?with-archive=true' + `&id=${id}`
-  navigateTo(dest)
+  navigateTo(localePath(RoutePathKeys.mediaPressReleasesConcerningTheJudgments) + '?with-archive=true' + `&id=${id}`)
+}
+// const goToMailings = ({ mailinfo }) => {
+const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
+  const dest = localePath(RoutePathKeys.informed)
+  navigateTo({ path: dest, query: { mailinfo: mailinfo } })
 }
 </script>
 
@@ -270,16 +272,14 @@ const goToMediaPage = (id: number, type: MediaType) => {
         </template>
       </PleadingCard>
     </v-container>
-    <NewsletterSection fluid />
+    <NewsletterSection
+      fluid
+      @mail-submitted="goToMailings"
+    />
   </div>
 </template>
 
 <style scoped lang="scss">
-.full-width-image {
-  width: 100%;
-  height: auto;
-}
-
 .index-banner {
   display: block;
   height: 60vh;
