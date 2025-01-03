@@ -1,49 +1,3 @@
-<template>
-  <div>
-    <BannerImage
-      v-if="page"
-      :title="page?.title || ''"
-      :description="page?.description"
-      :image="img"
-      alt=""
-    />
-    <v-container class="flex-column align-start flex-nowrap">
-      <v-row>
-        <v-col
-          v-if="hasSidebarLinks"
-          cols="12"
-          md="4"
-        >
-          <Sidebar
-            :active="currentActiveContentInToc"
-            :toc="sideBarLinks || []"
-            @click="updateCurrentActiveContentInToc"
-          />
-        </v-col>
-        <v-col
-          v-else
-          cols="12"
-          md="4"
-        >
-          Geen sidebar ?
-          {{ sideBarLinks }}
-        </v-col>
-        <v-col
-          cols="12"
-          md="8"
-        >
-          <article v-if="page">
-            <ContentRendererMarkdown
-              :value="page.body || {}"
-              class="nuxt-content content-renderer"
-            />
-          </article>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
@@ -56,9 +10,12 @@ import { useLanguage } from '@/composables/useLanguage'
 
 const { locale } = useLanguage()
 const route = useRoute()
+const { query } = route
+const mdcVars = ref({ mailinfo: query.mailinfo || '' })
+console.log('mdcVars', mdcVars.value)
+
 const currentActiveContentInToc = ref<string>('')
 const contentPath = ref(`${ContentKeys.informed}`)
-
 const { data: page } = await useAsyncData('content', async () => {
   try {
     const doc = await queryContent(`${locale.value}/${contentPath.value}`)
@@ -129,6 +86,53 @@ onUpdated(() => {
   startIntersectionObserver()
 })
 </script>
+
+<template>
+  <div>
+    <BannerImage
+      v-if="page"
+      :title="page?.title || ''"
+      :description="page?.description"
+      :image="img"
+      alt=""
+    />
+    <v-container class="flex-column align-start flex-nowrap">
+      <v-row>
+        <v-col
+          v-if="hasSidebarLinks"
+          cols="12"
+          md="4"
+        >
+          <Sidebar
+            :active="currentActiveContentInToc"
+            :toc="sideBarLinks || []"
+            @click="updateCurrentActiveContentInToc"
+          />
+        </v-col>
+        <v-col
+          v-else
+          cols="12"
+          md="4"
+        >
+          Geen sidebar ?
+          {{ sideBarLinks }}
+        </v-col>
+        <v-col
+          cols="12"
+          md="8"
+        >
+          <article v-if="page">
+            <ContentRendererMarkdown
+              :value="page.body || {}"
+              :data="mdcVars"
+              class="nuxt-content content-renderer"
+            />
+          </article>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .container {
