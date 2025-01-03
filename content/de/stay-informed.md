@@ -13,7 +13,7 @@ Es gibt mehrere Möglichkeiten, sich über die Entscheide und Tätigkeiten des G
 #default
 Sie können sich auf den Newsletter des Gerichtshofes abonnieren, indem Sie unten Ihre E-Mail-Adresse eintragen:
 #email
-Bestätigen Sie Ihre E-Mail-Adresse:
+**Bestätigen Sie Ihre E-Mail-Adresse:**
 ::
 
 Sie erhalten anschließend eine E-Mail von der E-Mail-Adresse [pdf_de-request@mailman.const-court.be], in der Sie gebeten werden, Ihre Anmeldung zu bestätigen, indem Sie einen Link anklicken. Sofort danach erhalten Sie von derselben E-Mail-Adresse eine Bestätigung. Bitte beachten Sie, dass diese E-Mails (sowohl die E-Mail, in der Sie gebeten werden, Ihre Anmeldung zu bestätigen, als auch die E-Mail zur Bestätigung und die E-Mails mit den Newsletters) möglicherweise im Spam-Ordner landen. Dem können Sie abhelfen, indem Sie die E-Mail-Adresse der Liste Ihrer vertrauten Absender hinzufügen.
