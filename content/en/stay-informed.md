@@ -11,9 +11,9 @@ locale: en
 ### 2\. Newsletter
 ::SubscribeLists{:email="mailinfo"}
 #default
-You can subscribe to the Court’s newsletter by entering your email address below.
+You can subscribe to the Court’s newsletter by entering your email address below:
 #email
-Confirm your email address
+Confirm your email address:
 ::
 
 You will then receive an email from the email address [info_nl-request@mailman.const-court.be], asking you to confirm your subscription by clicking on a link. You will then immediately receive a confirmation email from the same address. Please note that these emails (the one asking you to confirm your subscription, the confirmation email and the emails with the newsletters) may end up in your spam folder.  You can prevent this by adding the email address to your trusted senders.
