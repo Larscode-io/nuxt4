@@ -49,7 +49,7 @@ const { data }
 
 const findRelease = (rid: number): GeneralPressJudgment | undefined => data.value?.find((release: GeneralPressJudgment) => Number(release.id) === rid)
 
-const judgementItemsRef = ref(new Map<number, GeneralPressJudgment>())
+const judgementItemsRef = ref(new Map<number, ComponentPublicInstance | undefined>())
 const setJudgementItemsRef = (id: number, el: ComponentPublicInstance) => {
   judgementItemsRef.value.set(id, el)
 }
@@ -60,14 +60,10 @@ const scrollToJudgment = (id: number) => {
   const instance = judgementItemsRef.value.get(id) as ComponentPublicInstance | undefined
   const el = instance?.$el
   if (el) {
-    console.log(`scrollToJudgment found the element`)
     window.scrollTo({
       top: el.getBoundingClientRect().top + window.scrollY - menuHeight.value - 10,
       behavior: 'smooth',
     })
-  }
-  else {
-    console.error(`Element with id ${id} not found`)
   }
 }
 
@@ -148,7 +144,7 @@ watchEffect(() => {
             v-else
             :id="`judgment-card-${idx}`"
             :key="idx"
-            :ref="(el) => setJudgementItemsRef(idx, el)"
+            :ref="(el) => el && setJudgementItemsRef(idx, el as ComponentPublicInstance)"
           >
             <v-list-item>
               <div class="top-infos">
