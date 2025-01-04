@@ -274,6 +274,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
     </v-container>
     <NewsletterSection
       fluid
+      class="ma-0 pa-0"
       @mail-submitted="goToMailings"
     />
   </div>
