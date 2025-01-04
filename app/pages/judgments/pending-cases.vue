@@ -136,12 +136,14 @@ const yearsInPendingCasesArray = computed(() => {
                 item-value="year"
                 variant="outlined"
                 :label="t('general.message.year-selection')"
+                @click="selectedByDistance = false"
               />
             </v-col>
             <v-col cols="12">
               <v-checkbox
                 v-model="selectedByDistance"
                 label="Show only cases with upcoming judgment"
+                @click="selectedYear = null"
               />
             </v-col>
           </v-row>
