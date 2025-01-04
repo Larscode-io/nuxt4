@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import img from '~/assets/img/banner-judgment.png'
-import { ApiUrl, RoutePathKeys, PendingCaseType, EMPTY_VALUE } from '~/core/constants'
+import { ApiUrl, PendingCaseType, EMPTY_VALUE } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
+import type { Decision } from '~/core/constants'
 
-const { t, locale, localePath } = useLanguage()
+const { t, locale } = useLanguage()
 
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
@@ -20,42 +21,26 @@ const caseType = [
 const selectedType = ref(caseType[0]?.value)
 // we start with no year selected so we can show all pending cases
 const selectedYear = ref(null)
+const selectedByDistance = ref(false)
 
-interface LegalCase {
-  id: number
-  processingLanguage: string
-  dateReceived: string
-  dateOfHearing: string | null
-  dateDelivered: string | null
-  description: string
-  dateArt74: string | null
-  art74Link: string | null
-  linkedCaseNumber: number | null
-  joinedCases: any[] | null
-  keywords: string
-  requestForSuspensionOrInterlocutoryJudgment: string | null
-  type: string
-}
-
-const { data: cases, error, status, refresh } = useLazyFetch<LegalCase[]>(`${baseURL}${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`)
+const { data: cases, error, status, refresh }
+  = useLazyFetch<Decision[]>(`${baseURL}${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`)
 if (error.value) {
   console.error(error.value)
 }
 
-const transform = (items: []) => {
-  return items.map(({ id, distance, dateLong }) => {
+const { data: pressJudgmentsRaw, error: pressJudgmentsError, status: _pressJudgmentsStatus }
+  = useFetch<Decision[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`)
+
+const pressJudgments = computed(() => {
+  return pressJudgmentsRaw.value?.map(({ id, distance, dateLong }) => {
     return {
       id,
       distance,
       dateLong,
     }
-  })
-}
-
-const { data: pressJudgments, error: pressJudgmentsError, status: pressJudgmentsStatus }
-  = useFetch<LegalCase[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`, {
-    transform,
-  })
+  }) || []
+})
 
 if (pressJudgmentsError.value) {
   console.error(pressJudgmentsError.value)
@@ -71,8 +56,6 @@ const isSubscribable = (id: number) => {
 }
 const findDateLongInPressJudgments = (id: number) => {
   const found = pressJudgments.value?.find(j => j.id === id)
-  console.log('found', found)
-  console.log('found?.dateLong', found?.dateLong)
   return found?.dateLong
 }
 
@@ -87,38 +70,26 @@ const pendingCasesFilteredByType = computed(() => {
   return cases.value?.filter(c => c.type === selectedType.value)
 })
 const pendingCasesFilteredByTypeAndYear = computed(() => {
-  if (selectedYear.value === null) {
-    return pendingCasesFilteredByType.value
+  if (selectedYear.value !== null) {
+    return pendingCasesFilteredByType.value?.filter(c => c.dateReceived?.split('-')[2] === selectedYear.value)
   }
-  return pendingCasesFilteredByType.value?.filter(c => c.dateReceived?.split('-')[2] === selectedYear.value)
+  if (selectedByDistance.value) {
+    return pendingCasesFilteredByType.value?.filter(c => hasUpcomingJudgment(c.id))
+  }
+  return pendingCasesFilteredByType.value
 })
 
 const hasPendingCases = computed(() => (pendingCasesFilteredByType.value?.length ?? 0) > 0)
 const emptyValue = EMPTY_VALUE
 
 const yearsInPendingCases = computed(() => {
-  const years = new Set<string>()
   const casesPerYear = new Map<string, number>()
   cases.value?.forEach((c) => {
     const dateReceived = c.dateReceived
     if (dateReceived) {
-      const year = dateReceived.split('-')[2]
-      if (year) {
-        if (selectedType.value === allPendingCase) {
-          casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
-        }
-        else if (c.type === selectedType.value) {
-          casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
-        }
-        years.add(year)
-      }
-      else {
-        if (selectedType.value === allPendingCase) {
-          casesPerYear.set('', (casesPerYear.get('') ?? 0) + 1)
-        }
-        else if (c.type === selectedType.value) {
-          casesPerYear.set('', (casesPerYear.get('') ?? 0) + 1)
-        }
+      const year = dateReceived.split('-')[2] || ''
+      if (selectedType.value === allPendingCase || c.type === selectedType.value) {
+        casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
       }
     }
   })
@@ -165,6 +136,12 @@ const yearsInPendingCasesArray = computed(() => {
                 item-value="year"
                 variant="outlined"
                 :label="t('general.message.year-selection')"
+              />
+            </v-col>
+            <v-col cols="12">
+              <v-checkbox
+                v-model="selectedByDistance"
+                label="Show only cases with upcoming judgment"
               />
             </v-col>
           </v-row>

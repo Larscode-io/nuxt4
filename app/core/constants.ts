@@ -263,6 +263,7 @@ export interface Decision {
   formatedJudmentDate: string
   dateLong: string
   shortDescription: string
+  dateReceived: string
 }
 
 export interface GeneralPressRelease {
