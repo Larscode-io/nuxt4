@@ -31,7 +31,7 @@ const transform = (items: Decision[]): Decision[] => {
 
   return itemsWithShortDescription
 }
-
+console.log('ERROR: ', props.apiUrl)
 const { data: items, error } = await useFetch<Decision[]>(props.apiUrl, { transform: transform })
 
 if (error.value) {

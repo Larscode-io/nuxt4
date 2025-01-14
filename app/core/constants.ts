@@ -86,6 +86,7 @@ export enum MailmanUrl {
 export enum ContentKeys {
   presentationSituation = 'presentation-situation',
   presentationJurisdiction = 'presentation-jurisdiction',
+  presentationOrganization = 'presentation-organization',
   presentationOrganizationJudge = 'presentation-organization-judge',
   presentationOrganizationOfficeStaff = 'presentation-organization-office-staff',
   presentationOrganizationReferendar = 'presentation-organization-referendar',

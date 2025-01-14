@@ -1,6 +1,5 @@
 ---
-title: Organisation de la Cour constitutionnelle
-description: Organisation de la Cour constitutionnelle
+title: Organisation
 posterUrl: ~/assets/img/newsletter-background.png
 locale: fr
 ---

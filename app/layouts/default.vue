@@ -36,7 +36,7 @@ const mobileDrawer = ref(false)
 
 const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu', {
 })
-
+console.log('???????')
 function applyTranslationToTitles(menu: CourtItem[]) {
   return menu.map((item: CourtItem) => {
     const translatedTitle = item.count !== undefined ? t(item.title, item.count) : t(item.title)
