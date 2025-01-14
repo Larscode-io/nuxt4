@@ -3,14 +3,14 @@
     <BannerImage v-if="pageJudge" :title="pageJudge.title" :description="pageJudge.description" :image="img"
       :alt="t('alt.banner.flag')" />
     <v-container>
-      <v-row class="d-flex" align="flex-start" justify="center">
+      <v-row class="d-flex" justify="center">
         <v-col v-if="hasSidebarLinks" cols="12" md="4">
           <Sidebar :active="currentActiveContentInToc" :toc="sideBarLinks" @click="updateCurrentActiveContentInToc" />
         </v-col>
         <v-col cols="12" md="8">
           <v-row>
             <article v-if="pageJudge">
-              <ContentRendererMarkdown :value="pageJudge.body" class="nuxt-content" />
+              <ContentRendererMarkdow :value="pageJudge.body" class="nuxt-content" />
             </article>
             <article v-if="pageReferendar">
               <ContentRendererMarkdown :value="pageReferendar.body" class="nuxt-content" />
@@ -64,7 +64,34 @@ const updateCurrentActiveContentInToc = (id: string) => {
   currentActiveContentInToc.value = id;
 };
 
+const startIntersectionObserver = () => {
+  const options = {
+    threshold: 0.9,
+    rootMargin: '0px 0px -50% 0px',
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const elem = entry.target as HTMLElement;
+
+        if (entry.intersectionRatio >= 0.75) {
+          updateCurrentActiveContentInToc(elem.id);
+        }
+      }
+    });
+  }, options);
+
+  document.querySelectorAll('h3').forEach((el) => {
+    // console.log('-----', pageJudge, pageJudge.value)
+    // if (pageJudge.toc?.map((toc) => toc.id).value.includes(el.id)) {
+    observer.observe(el);
+    // }
+  });
+};
+
 const updateSideBarLinks = () => {
+
   if (!pageJudge.value || !pageOfficeStaff.value || !pageReferendar.value || !pageClerk.value) {
     sideBarLinks.value = [];
     return;
@@ -75,9 +102,6 @@ const updateSideBarLinks = () => {
   const referendarLinks = extractSideBarLinks(pageReferendar);
   const clerkLinks = extractSideBarLinks(pageClerk);
   const officeStaffLinks = extractSideBarLinks(pageOfficeStaff);
-
-  console.log('judgeLinks: ', judgeLinks)
-  console.log('referendarLinks: ', referendarLinks)
 
   sideBarLinks.value = judgeLinks
     .concat(referendarLinks)
@@ -93,6 +117,10 @@ const updateSideBarLinks = () => {
         text: t('court.organization.previous-incumbents'),
       },
     ]);
+
+  setTimeout(() => {
+    startIntersectionObserver()
+  }, 200)
 };
 
 const fetchData = async () => {
@@ -116,13 +144,16 @@ const fetchData = async () => {
       membersHistoric.value
     ] = results;
 
-    console.log('results: ', results)
-
     updateSideBarLinks();
+
   } catch (error) {
     console.error('Error fetching content:', error);
   }
 };
 
-onMounted(fetchData);
+onMounted(() => {
+  fetchData();
+  // startIntersectionObserver()
+});
+
 </script>
