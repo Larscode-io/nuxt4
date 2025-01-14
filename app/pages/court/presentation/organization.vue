@@ -10,7 +10,7 @@
         <v-col cols="12" md="8">
           <v-row>
             <article v-if="pageJudge">
-              <ContentRendererMarkdow :value="pageJudge.body" class="nuxt-content" />
+              <ContentRendererMarkdown :value="pageJudge.body" class="nuxt-content" />
             </article>
             <article v-if="pageReferendar">
               <ContentRendererMarkdown :value="pageReferendar.body" class="nuxt-content" />
@@ -83,10 +83,9 @@ const startIntersectionObserver = () => {
   }, options);
 
   document.querySelectorAll('h3').forEach((el) => {
-    // console.log('-----', pageJudge, pageJudge.value)
-    // if (pageJudge.toc?.map((toc) => toc.id).value.includes(el.id)) {
-    observer.observe(el);
-    // }
+    if (sideBarLinks.value.map((toc: { id: string }) => toc.id).includes(el.id)) {
+      observer.observe(el);
+    }
   });
 };
 
@@ -143,7 +142,7 @@ const fetchData = async () => {
       membersEmeritus.value,
       membersHistoric.value
     ] = results;
-
+    console.log('results: ', results)
     updateSideBarLinks();
 
   } catch (error) {
