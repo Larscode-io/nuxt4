@@ -10,7 +10,7 @@ Het Hof is samengesteld uit twaalf rechters, die voor het leven worden benoemd d
 <br>
 <br>
 <div style="text-align: center;">
-    <img src="/images/y-0050.jpg" alt="Image of the Constitutional Court" style="width: 60%; height: auto;">
+    <img src="/img/y-0050.jpg" alt="Image of the Constitutional Court" style="width: 60%; height: auto;">
 </div>
 <!-- <foto-component
 src="/images/Y-0050.jpg"

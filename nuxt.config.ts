@@ -90,7 +90,7 @@ export default defineNuxtConfig({
   build: { transpile: ['vuetify'] },
   devServer: {
     host: 'localhost',
-    port: 3000,
+    port: 3001,
   },
   future: {
     compatibilityVersion: 4,
