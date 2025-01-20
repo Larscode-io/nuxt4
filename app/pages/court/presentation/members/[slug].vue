@@ -54,26 +54,9 @@ const fetchMemberData = async () => {
         const membersEmeritus = await queryContent(ContentKeys.presentationOrganizationCurrentMembershipEmeritus).findOne();
         const membersHistoric = await queryContent(ContentKeys.presentationOrganizationCurrentMembershipHistoric).findOne();
 
-        console.log('members', members.data)
-        console.log('membersEmeritus', membersEmeritus)
-        console.log('membersHistoric', membersHistoric)
-
-        console.log('slug', slug)
-
         let foundMember = members.data.find((m) => m.slug === slug) ||
             membersEmeritus.data.find((m) => m.slug === slug) ||
             membersHistoric.data.find((m) => m.slug === slug);
-
-            console.log('foundMember', foundMember)
-
-        // let member = members.find((member) => member.slug === slug);
-
-        // if (!member) {
-        //     member = membersEmeritus.find((member) => member.slug === slug);
-        // }
-        // if (!member) {
-        //     member = membersEmeritusHistoric.find((member) => member.slug === slug);
-        // }
 
         if (!foundMember) {
             error.value = true;
