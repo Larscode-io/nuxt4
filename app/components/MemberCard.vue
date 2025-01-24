@@ -76,7 +76,7 @@ const props = defineProps({
         default: null,
         required: false,
     },
-    jobtitle: {
+    jobTitle: {
         type: String,
         required: false,
         default: '',
@@ -92,7 +92,7 @@ const props = defineProps({
         default: '',
     },
     width: {
-        type: String,
+        type: Number,
         default: '240',
         required: false,
     },
@@ -113,24 +113,24 @@ const getImageUrl = () => {
     }
 };
 const getJobTitle = () => {
-    switch (props.jobtitle.toLowerCase()) {
+    switch (props.jobTitle.toLowerCase()) {
         case 'judge':
             return t('general.message.judges');
         case 'president':
             return t('general.message.presidents');
+        case 'legalsecretaries':
+            return t('general.message.legal-secretaries');
         default:
-            return props.jobtitle;
+            return props.jobTitle;
     }
 };
-
-
 
 onMounted(getImageUrl)
 
 const nameId = computed(() => {
     return (
         props.name.split(' ').join('') +
-        props.jobtitle.split(' ').join('') +
+        props.jobTitle.split(' ').join('') +
         (props.startDate ? props.startDate.split(' ').join('') : '')
     );
 });

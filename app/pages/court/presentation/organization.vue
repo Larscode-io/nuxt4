@@ -9,7 +9,6 @@
         </v-col>
         <v-col cols="12" md="8">
 
-
           <v-row>
             <article v-if="pageJudge">
               <ContentRendererMarkdown :value="pageJudge.body" class="nuxt-content" />
@@ -18,17 +17,35 @@
             <div v-for="(member, index) in judgeMembers" :key="index" class="gallery"
               :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }">
               <MemberCard :headlineLevel="2" :name="member.name" :slug="member.slug"
-                :image="member.picture || 'https://via.placeholder.com/150'" :withImage="true" :infos="getInfo(member.infos)"
-                :jobtitle="member.role" :width="300" :isAlive="member.isAlive"
+                :image="member.picture || 'https://via.placeholder.com/150'" :withImage="true"
+                :infos="getInfo(member.infos)" :jobTitle="member.role" :width="300" :isAlive="member.isAlive"
                 :lang="member.lang" />
             </div>
 
             <article v-if="pageReferendar">
               <ContentRendererMarkdown :value="pageReferendar.body" class="nuxt-content" />
             </article>
+
+            <div v-for="(member, index) in officeStaffMembers" :key="index" class="gallery"
+              :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }">
+              <MemberCard :headlineLevel="2" :name="member.name" :slug="member.slug"
+                :image="member.picture || 'https://via.placeholder.com/150'" :withImage="true"
+                :infos="getInfo(member.infos)" :jobTitle="member.role" :width="300" :isAlive="member.isAlive"
+                :lang="member.lang" />
+            </div>
+
             <article v-if="pageClerk">
               <ContentRendererMarkdown :value="pageClerk.body" class="nuxt-content" />
             </article>
+
+            <div v-for="(member, index) in officeStaffMembers" :key="index" class="gallery"
+              :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }">
+              <MemberCard :headlineLevel="2" :name="member.name" :slug="member.slug"
+                :image="member.picture || 'https://via.placeholder.com/150'" :withImage="true"
+                :infos="getInfo(member.infos)" :jobTitle="member.role" :width="300" :isAlive="member.isAlive"
+                :lang="member.lang" />
+            </div>
+
             <article v-if="pageOfficeStaff">
               <ContentRendererMarkdown :value="pageOfficeStaff.body" class="nuxt-content" />
             </article>
@@ -43,59 +60,31 @@
 
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue';
-import { useRoute } from 'vue-router';
-import { ContentKeys } from '~/core/constants';
+import { ContentKeys, type Locale } from '~/core/constants';
 import { useLanguage } from '@/composables/useLanguage';
 import img from '~/assets/img/organisation.png';
 import { extractSideBarLinks } from '~/utils/contentUtils';
 import { fetchMultipleByPaths } from '~/utils/requestUtils';
 import MemberCard from '../../../components/MemberCard.vue';
 import '~/assets/css/content.css';
-
-// TODO: move to separate file
-type Member = {
-  alt: {
-    de: string;
-    en: string;
-    fr: string;
-    nl: string;
-  };
-  endDate: string | null;
-  infos: {
-    de: string[];
-    en: string[];
-    fr: string[];
-    nl: string[];
-  };
-  lang: string;
-  name: string;
-  picture: string;
-  role: string;
-  slug: string;
-  startDate: string;
-};
+import { type Member, type Infos } from '@types/members';
+import { type PageContent } from '@types/content';
 
 const { t, locale } = useLanguage();
-
-interface PageContent {
-  body: {
-    toc: {
-      links: any;
-    };
-  };
-}
 
 const currentActiveContentInToc = ref('');
 const pageJudge: Ref<PageContent | null> = ref(null);
 const pageOfficeStaff: Ref<PageContent | null> = ref(null);
 const pageReferendar: Ref<PageContent | null> = ref(null);
 const pageClerk: Ref<PageContent | null> = ref(null);
-const members = ref<Member[]>([]);
+const membersResponse = ref<{ data: Member[] }>();
 const membersEmeritus = ref([]);
 const membersHistoric = ref([]);
 const sideBarLinks = ref([]);
 // These include all roles that should be displayed in the "judges" section
-const judgeMembers = ref([]);
+const judgeMembers = ref<Member[]>([]);
+const officeStaffMembers = ref<Member[]>([]);
+
 
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0);
 
@@ -129,18 +118,18 @@ const startIntersectionObserver = () => {
 };
 
 const updateMembersByGroup = () => {
-  if (!members.value || !membersEmeritus.value || !membersHistoric.value) {
-    return;
-  }
+  judgeMembers.value = membersResponse.value ? membersResponse.value.data.filter((member: any) => member.role === 'judge' || member.role === 'president') : [];
+  officeStaffMembers.value = membersResponse.value ? membersResponse.value.data.filter((member: any) => member.role === 'legalSecretaries') : [];
+  pageReferendar.value = membersResponse.value ? membersResponse.value.data.filter((member: any) => member.role === 'legalSecretaries') : [];
 
-  judgeMembers.value = members.value.data.filter((member: any) => member.role === 'judge' || member.role === 'president');
 };
 
-const getInfo = (infos) => {
+const getInfo = (infos: Infos) => {
   if (!infos) {
-    return {}
+    return [];
   }
-  return infos?.[locale.value]
+
+  return infos[locale.value as keyof Infos];
 }
 
 const updateSideBarLinks = () => {
@@ -158,8 +147,6 @@ const updateSideBarLinks = () => {
 
   // set the first sidebar link as active by default
   updateCurrentActiveContentInToc(judgeLinks[0].id);
-
-  console.log('judgeLinks: ', judgeLinks)
 
   sideBarLinks.value = judgeLinks
     .concat(referendarLinks)
@@ -197,13 +184,13 @@ const fetchData = async () => {
       pageOfficeStaff.value,
       pageReferendar.value,
       pageClerk.value,
-      members.value,
+      membersResponse.value,
       membersEmeritus.value,
       membersHistoric.value
     ] = results;
 
     updateMembersByGroup();
-    console.log('results: ', results)
+    console.log('membersResponse: ', membersResponse.value)
     updateSideBarLinks();
 
   } catch (error) {
