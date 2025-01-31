@@ -1,4 +1,8 @@
 {
+    "eslint.workingDirectories": [
+        "./app",
+        "./server"
+    ],
     "cSpell.words": [
         "jobtitle",
         "legalsecretaries",
