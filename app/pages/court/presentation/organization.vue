@@ -38,7 +38,7 @@
               <ContentRendererMarkdown :value="pageClerk.body" class="nuxt-content" />
             </article>
 
-            <div v-for="(member, index) in officeStaffMembers" :key="index" class="gallery"
+            <div v-for="(member, index) in registrarMembers" :key="index" class="gallery"
               :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }">
               <MemberCard :headlineLevel="2" :name="member.name" :slug="member.slug"
                 :image="member.picture || 'https://via.placeholder.com/150'" :withImage="true"
@@ -49,6 +49,80 @@
             <article v-if="pageOfficeStaff">
               <ContentRendererMarkdown :value="pageOfficeStaff.body" class="nuxt-content" />
             </article>
+
+            <div class="section-content nuxt-content">
+              <h3 :id="toSlug(t('court.organization.emeritus-and-honorary-members'))">
+                {{ t('court.organization.emeritus-and-honorary-members') }}
+              </h3>
+            </div>
+
+            <h4 class="heading-h3">
+              {{ t('general.message.presidents') }}
+            </h4>
+
+            <div class="d-flex justify-space-between flex-wrap">
+              <MemberCard v-for="member of membersEmeritusPresidents" :headline-level="5" :slug="member.slug"
+                :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
+                :jobtitle="member.role" />
+            </div>
+
+            <h4 class="heading-h3">
+              {{ t('general.message.judges') }}
+            </h4>
+
+            <div class="d-flex justify-space-between flex-wrap">
+              <MemberCard v-for="member of membersEmeritusJudges" :headline-level="5" :slug="member.slug"
+                :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
+                :jobtitle="member.role" />
+            </div>
+
+
+            <h4 class="heading-h3">
+              {{ t('general.message.legal-secretaries') }}
+            </h4>
+
+            <div class="d-flex justify-space-between flex-wrap">
+              <MemberCard v-for="member of membersEmeritusOfficeStaffMembers" :headline-level="5" :slug="member.slug"
+                :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
+                :jobtitle="member.role" />
+            </div>
+
+            <h4 class="heading-h3">
+              {{ t('general.message.registrars') }}
+            </h4>
+
+            <div class="lowImageGallery">
+              <MemberCard v-for="member of membersEmeritusRegistrars" :headline-level="5" :slug="member.slug"
+                :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
+                :jobtitle="member.role" />
+            </div>
+
+            <div class="section-content nuxt-content">
+              <h3 :id="toSlug(t('court.organization.previous-incumbents'))">
+                {{ t('court.organization.previous-incumbents') }}
+              </h3>
+            </div>
+
+            <h4 class="heading-h3">
+              {{ t('general.message.presidents') }}
+            </h4>
+
+            <div class="d-flex justify-space-between flex-wrap">
+              <MemberCard v-for="member of membersHistoricPresidents" :headline-level="5" :slug="member.slug"
+                :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
+                :jobtitle="member.role" />
+            </div>
+
+            <h4 class="heading-h3">
+              {{ t('general.message.judges') }}
+            </h4>
+
+            <div class="d-flex justify-space-between flex-wrap">
+              <MemberCard v-for="member of membersHistoricJudges" :headline-level="5" :slug="member.slug"
+                :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
+                :jobtitle="member.role" />
+            </div>
+
           </v-row>
         </v-col>
       </v-row>
@@ -78,13 +152,22 @@ const pageOfficeStaff: Ref<PageContent | null> = ref(null);
 const pageReferendar: Ref<PageContent | null> = ref(null);
 const pageClerk: Ref<PageContent | null> = ref(null);
 const membersResponse = ref<{ data: Member[] }>();
-const membersEmeritus = ref([]);
+const membersEmeritus = ref<Member[]>([]);
 const membersHistoric = ref([]);
 const sideBarLinks = ref([]);
 // These include all roles that should be displayed in the "judges" section
 const judgeMembers = ref<Member[]>([]);
 const officeStaffMembers = ref<Member[]>([]);
+const registrarMembers = ref<Member[]>([]);
+const membersEmeritusPresidents = ref<Member[]>([]);
+const membersEmeritusJudges = ref<Member[]>([]);
+const membersEmeritusOfficeStaffMembers = ref<Member[]>([]);
+const membersEmeritusRegistrars = ref<Member[]>([]);
 
+const membersHistoricPresidents = ref<Member[]>([]);
+const membersHistoricJudges = ref<Member[]>([]);
+const membersHistoricOfficeStaffMembers = ref<Member[]>([]);
+const membersHistoricRegistrars = ref<Member[]>([]);
 
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0);
 
@@ -117,11 +200,23 @@ const startIntersectionObserver = () => {
   });
 };
 
+const updateMembersHistoric = () => {
+  console.log('membersHistoric', membersHistoric.value);
+  membersHistoricPresidents.value = membersHistoric.value ? membersHistoric.value.data.filter((member: any) => member.role === 'president') : [];
+  membersHistoricJudges.value = membersHistoric.value ? membersHistoric.value.data.filter((member: any) => member.role === 'judge') : [];
+};
+
+const updateMembersEmeritus = () => {
+  membersEmeritusPresidents.value = membersEmeritus.value ? membersEmeritus.value.data.filter((member: any) => member.role === 'president') : [];
+  membersEmeritusJudges.value = membersEmeritus.value ? membersEmeritus.value.data.filter((member: any) => member.role === 'judge') : [];
+  membersEmeritusOfficeStaffMembers.value = membersEmeritus.value ? membersEmeritus.value.data.filter((member: any) => member.role === 'legalSecretaries') : [];
+  membersEmeritusRegistrars.value = membersEmeritus.value ? membersEmeritus.value.data.filter((member: any) => member.role === 'registrars') : [];
+};
+
 const updateMembersByGroup = () => {
   judgeMembers.value = membersResponse.value ? membersResponse.value.data.filter((member: any) => member.role === 'judge' || member.role === 'president') : [];
   officeStaffMembers.value = membersResponse.value ? membersResponse.value.data.filter((member: any) => member.role === 'legalSecretaries') : [];
-  pageReferendar.value = membersResponse.value ? membersResponse.value.data.filter((member: any) => member.role === 'legalSecretaries') : [];
-
+  registrarMembers.value = membersResponse.value ? membersResponse.value.data.filter((member: any) => member.role === 'registrars') : [];
 };
 
 const getInfo = (infos: Infos) => {
@@ -190,7 +285,8 @@ const fetchData = async () => {
     ] = results;
 
     updateMembersByGroup();
-    console.log('membersResponse: ', membersResponse.value)
+    updateMembersEmeritus()
+    updateMembersHistoric();
     updateSideBarLinks();
 
   } catch (error) {
@@ -209,6 +305,10 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.nuxt-content {
+  width: 100%;
+}
+
 .left-column {
   display: flex;
   justify-content: flex-start;
@@ -221,7 +321,17 @@ onMounted(() => {
   width: 50%;
 }
 
+.heading-h3 {
+  width: 100%;;
+}
+
 .gallery {
   padding: 0 16px;
+}
+
+.lowImageGallery {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
 }
 </style>

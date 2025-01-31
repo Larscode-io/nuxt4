@@ -1,5 +1,5 @@
 <template>
-    <v-card class="member-card" :class="{ 'member-card-hoover': showDetails }" :width="width"
+    <v-card class="member-card" :class="{ 'member-card-hoover': showDetails, 'small-card': isSmall }" :width="width"
         :aria-labelledby="`memberName${nameId} memberJob${nameId} memberPeriod${nameId} died${nameId} moreInfo${nameId}`"
         :role="showDetails ? 'button' : 'presentation'" @click="click">
         <v-img v-if="withImage && image" :src="iSrc" alt="Member Image" />
@@ -101,6 +101,11 @@ const props = defineProps({
         default: true,
         required: false,
     },
+    isSmall: {
+        type: Boolean,
+        default: false,
+        required: false,
+    },
 });
 
 const iSrc = ref('');
@@ -144,6 +149,8 @@ const headline = computed(() => {
 });
 
 const click = () => {
+    console.log('click', props.image);
+    if (!showDetails.value) return;
     const basePath = route.path.split('/').slice(0, -1).join('/');
     router.push(`${basePath}/members/${props.slug}`);
 };
@@ -155,6 +162,7 @@ onMounted(() => {
   
 <style lang="scss">
 .member-card {
+    
     margin: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0px;
@@ -209,5 +217,9 @@ onMounted(() => {
     background: $skyBlue;
     display: block;
     margin: 8px 0;
+}
+
+.small-card {
+    margin: 16px 0;
 }
 </style>
