@@ -60,8 +60,7 @@
             <div class="d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusPresidents" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
             <h4 class="heading-h3">
@@ -71,8 +70,7 @@
             <div class="d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusJudges" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
 
@@ -83,8 +81,7 @@
             <div class="d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusOfficeStaffMembers" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
             <h4 class="heading-h3">
@@ -94,8 +91,7 @@
             <div class="lowImageGallery">
               <MemberCard v-for="member of membersEmeritusRegistrars" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
             <div class="section-content nuxt-content">
@@ -111,8 +107,8 @@
             <div class="d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersHistoricPresidents" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :startDate="member.startDate" :endDate="member.endDate"
+                :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
             <h4 class="heading-h3">
@@ -122,8 +118,8 @@
             <div class="d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersHistoricJudges" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :startDate="member.startDate" :endDate="member.endDate"
+                :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
           </v-row>
@@ -236,10 +232,10 @@ const updateMembers = () => {
   registrarMembers.value = alternateLang(filterByRole(membersResponse.value, ['registrars']));
 };
 
-watch(locale, (newVal, oldVal) => {
-  console.log('locale changed', newVal, oldVal);
-  updateMembers()
-});
+// watch(locale, (newVal, oldVal) => {
+//   console.log('locale changed', newVal, oldVal);
+//   updateMembers()
+// });
 
 const getInfo = (infos: Infos) => {
   if (!infos) {
