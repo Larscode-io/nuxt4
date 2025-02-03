@@ -195,23 +195,25 @@ const startIntersectionObserver = () => {
   });
 };
 
-const alternateLang = (mems) => {
+const alternateLang = (mems: Member[]): Member[] => {
   let startLang: string;
   if (locale.value === Languages.FRENCH || locale.value === Languages.GERMAN) {
-    startLang = Languages.FRENCH
+    startLang = Languages.FRENCH;
   } else {
-    startLang = Languages.DUTCH
+    startLang = Languages.DUTCH;
   }
   const altLang = startLang === 'fr' ? 'nl' : 'fr',
     p = mems.filter(m => m.lang === startLang),
     s = mems.filter(m => m.lang === altLang),
-    r = [];
+    r: Member[] = [];
+
   for (let i = 0; i < Math.max(p.length, s.length); i++) {
-    p[i] && r.push(p[i]);
-    s[i] && r.push(s[i]);
+    p[i] && r.push(p[i]!);  // same check + non-null assertion
+    s[i] && r.push(s[i]!);  // same check + non-null assertion
   }
   return r;
-}
+};
+
 
 const updateMembers = () => {
   const filterByRole = (response: any, roles: string[]): Member[] => {
@@ -231,11 +233,6 @@ const updateMembers = () => {
   officeStaffMembers.value = alternateLang(filterByRole(membersResponse.value, ['legalSecretaries']));
   registrarMembers.value = alternateLang(filterByRole(membersResponse.value, ['registrars']));
 };
-
-// watch(locale, (newVal, oldVal) => {
-//   console.log('locale changed', newVal, oldVal);
-//   updateMembers()
-// });
 
 const getInfo = (infos: Infos) => {
   if (!infos) {
