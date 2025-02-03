@@ -14,7 +14,7 @@ export type Infos = {
   
   export type Member = {
     alt: Alt;
-    endDate: string | null;
+    endDate: string;
     infos: Infos;
     lang: string;
     name: string;
@@ -23,4 +23,5 @@ export type Infos = {
     slug: string;
     startDate: string;
     isAlive: boolean;
+    femaleTitle: boolean;
   };

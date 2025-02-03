@@ -81,6 +81,11 @@ const props = defineProps({
         required: false,
         default: '',
     },
+    femaleTitle: {
+        type: Boolean,
+        required: false,
+        default: false,
+    },
     startDate: {
         type: String,
         required: false,
@@ -93,7 +98,7 @@ const props = defineProps({
     },
     width: {
         type: Number,
-        default: '240',
+        default: 240,
         required: false,
     },
     isAlive: {
@@ -118,17 +123,21 @@ const getImageUrl = () => {
     }
 };
 const getJobTitle = () => {
-    switch (props.jobTitle.toLowerCase()) {
-        case 'judge':
-            return t('general.message.judges');
-        case 'president':
-            return t('general.message.presidents');
-        case 'legalsecretaries':
-            return t('general.message.legal-secretaries');
-        default:
-            return props.jobTitle;
-    }
-};
+    const getTranslation = () => {
+        switch (props.jobTitle.toLowerCase()) {
+            case 'judge':
+                return t('general.message.judges');
+            case 'president':
+                return t('general.message.presidents');
+            case 'legalsecretaries':
+                return t('general.message.legal-secretaries');
+            default:
+                return props.jobTitle;
+
+        }
+    };
+    return locale.value === Languages.GERMAN && props.femaleTitle ? getTranslation() + 'in' : getTranslation();
+}
 
 onMounted(getImageUrl)
 
@@ -149,7 +158,6 @@ const headline = computed(() => {
 });
 
 const click = () => {
-    console.log('click', props.image);
     if (!showDetails.value) return;
     const basePath = route.path.split('/').slice(0, -1).join('/');
     router.push(`${basePath}/members/${props.slug}`);
@@ -162,7 +170,7 @@ onMounted(() => {
   
 <style lang="scss">
 .member-card {
-    
+
     margin: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0px;

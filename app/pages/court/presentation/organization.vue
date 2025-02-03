@@ -16,10 +16,9 @@
 
             <div v-for="(member, index) in judgeMembers" :key="index" class="gallery"
               :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }">
-              <MemberCard :headlineLevel="2" :name="member.name" :slug="member.slug"
-                :image="member.picture || 'https://via.placeholder.com/150'" :withImage="true"
-                :infos="getInfo(member.infos)" :jobTitle="member.role" :width="300" :isAlive="member.isAlive"
-                :lang="member.lang" />
+              <MemberCard :headlineLevel="2" :name="member.name" :slug="member.slug" :image="member.picture"
+                :withImage="true" :infos="getInfo(member.infos)" :jobTitle="member.role" :width="300"
+                :isAlive="member.isAlive" :lang="member.lang" :femaleTitle="member.femaleTitle" />
             </div>
 
             <article v-if="pageReferendar">
@@ -28,10 +27,9 @@
 
             <div v-for="(member, index) in officeStaffMembers" :key="index" class="gallery"
               :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }">
-              <MemberCard :headlineLevel="2" :name="member.name" :slug="member.slug"
-                :image="member.picture || 'https://via.placeholder.com/150'" :withImage="true"
-                :infos="getInfo(member.infos)" :jobTitle="member.role" :width="300" :isAlive="member.isAlive"
-                :lang="member.lang" />
+              <MemberCard :headlineLevel="2" :name="member.name" :slug="member.slug" :image="member.picture"
+                :withImage="true" :infos="getInfo(member.infos)" :jobTitle="member.role" :width="300"
+                :isAlive="member.isAlive" :lang="member.lang" :femaleTitle="member.femaleTitle" />
             </div>
 
             <article v-if="pageClerk">
@@ -40,10 +38,9 @@
 
             <div v-for="(member, index) in registrarMembers" :key="index" class="gallery"
               :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }">
-              <MemberCard :headlineLevel="2" :name="member.name" :slug="member.slug"
-                :image="member.picture || 'https://via.placeholder.com/150'" :withImage="true"
-                :infos="getInfo(member.infos)" :jobTitle="member.role" :width="300" :isAlive="member.isAlive"
-                :lang="member.lang" />
+              <MemberCard :headlineLevel="2" :name="member.name" :slug="member.slug" :image="member.picture"
+                :withImage="true" :infos="getInfo(member.infos)" :jobTitle="member.role" :width="300"
+                :isAlive="member.isAlive" :lang="member.lang" :femaleTitle="member.femaleTitle" />
             </div>
 
             <article v-if="pageOfficeStaff">
@@ -63,7 +60,8 @@
             <div class="d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusPresidents" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobtitle="member.role" />
+                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
+                :femaleTitle="member.femaleTitle" />
             </div>
 
             <h4 class="heading-h3">
@@ -73,7 +71,8 @@
             <div class="d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusJudges" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobtitle="member.role" />
+                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
+                :femaleTitle="member.femaleTitle" />
             </div>
 
 
@@ -84,7 +83,8 @@
             <div class="d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusOfficeStaffMembers" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobtitle="member.role" />
+                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
+                :femaleTitle="member.femaleTitle" />
             </div>
 
             <h4 class="heading-h3">
@@ -94,7 +94,8 @@
             <div class="lowImageGallery">
               <MemberCard v-for="member of membersEmeritusRegistrars" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobtitle="member.role" />
+                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
+                :femaleTitle="member.femaleTitle" />
             </div>
 
             <div class="section-content nuxt-content">
@@ -110,7 +111,8 @@
             <div class="d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersHistoricPresidents" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobtitle="member.role" />
+                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
+                :femaleTitle="member.femaleTitle" />
             </div>
 
             <h4 class="heading-h3">
@@ -120,14 +122,13 @@
             <div class="d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersHistoricJudges" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobtitle="member.role" />
+                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
+                :femaleTitle="member.femaleTitle" />
             </div>
 
           </v-row>
         </v-col>
       </v-row>
-
-
     </v-container>
   </div>
 </template>
@@ -152,8 +153,8 @@ const pageOfficeStaff: Ref<PageContent | null> = ref(null);
 const pageReferendar: Ref<PageContent | null> = ref(null);
 const pageClerk: Ref<PageContent | null> = ref(null);
 const membersResponse = ref<{ data: Member[] }>();
-const membersEmeritus = ref<Member[]>([]);
-const membersHistoric = ref([]);
+const membersEmeritusResponse = ref<{ data: Member[] }>();
+const membersHistoricResponse = ref<{ data: Member[] }>();
 const sideBarLinks = ref([]);
 // These include all roles that should be displayed in the "judges" section
 const judgeMembers = ref<Member[]>([]);
@@ -166,8 +167,6 @@ const membersEmeritusRegistrars = ref<Member[]>([]);
 
 const membersHistoricPresidents = ref<Member[]>([]);
 const membersHistoricJudges = ref<Member[]>([]);
-const membersHistoricOfficeStaffMembers = ref<Member[]>([]);
-const membersHistoricRegistrars = ref<Member[]>([]);
 
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0);
 
@@ -200,24 +199,47 @@ const startIntersectionObserver = () => {
   });
 };
 
-const updateMembersHistoric = () => {
-  console.log('membersHistoric', membersHistoric.value);
-  membersHistoricPresidents.value = membersHistoric.value ? membersHistoric.value.data.filter((member: any) => member.role === 'president') : [];
-  membersHistoricJudges.value = membersHistoric.value ? membersHistoric.value.data.filter((member: any) => member.role === 'judge') : [];
+const alternateLang = (mems) => {
+  let startLang: string;
+  if (locale.value === Languages.FRENCH || locale.value === Languages.GERMAN) {
+    startLang = Languages.FRENCH
+  } else {
+    startLang = Languages.DUTCH
+  }
+  const altLang = startLang === 'fr' ? 'nl' : 'fr',
+    p = mems.filter(m => m.lang === startLang),
+    s = mems.filter(m => m.lang === altLang),
+    r = [];
+  for (let i = 0; i < Math.max(p.length, s.length); i++) {
+    p[i] && r.push(p[i]);
+    s[i] && r.push(s[i]);
+  }
+  return r;
+}
+
+const updateMembers = () => {
+  const filterByRole = (response: any, roles: string[]): Member[] => {
+    if (!response?.data) return [];
+    return response.data.filter((member: Member) => roles.includes(member.role));
+  };
+
+  membersHistoricPresidents.value = filterByRole(membersHistoricResponse.value, ['president']);
+  membersHistoricJudges.value = filterByRole(membersHistoricResponse.value, ['judge']);
+
+  membersEmeritusPresidents.value = filterByRole(membersEmeritusResponse.value, ['president']);
+  membersEmeritusJudges.value = filterByRole(membersEmeritusResponse.value, ['judge']);
+  membersEmeritusOfficeStaffMembers.value = filterByRole(membersEmeritusResponse.value, ['legalSecretaries']);
+  membersEmeritusRegistrars.value = filterByRole(membersEmeritusResponse.value, ['registrars']);
+
+  judgeMembers.value = alternateLang(filterByRole(membersResponse.value, ['judge', 'president']));
+  officeStaffMembers.value = alternateLang(filterByRole(membersResponse.value, ['legalSecretaries']));
+  registrarMembers.value = alternateLang(filterByRole(membersResponse.value, ['registrars']));
 };
 
-const updateMembersEmeritus = () => {
-  membersEmeritusPresidents.value = membersEmeritus.value ? membersEmeritus.value.data.filter((member: any) => member.role === 'president') : [];
-  membersEmeritusJudges.value = membersEmeritus.value ? membersEmeritus.value.data.filter((member: any) => member.role === 'judge') : [];
-  membersEmeritusOfficeStaffMembers.value = membersEmeritus.value ? membersEmeritus.value.data.filter((member: any) => member.role === 'legalSecretaries') : [];
-  membersEmeritusRegistrars.value = membersEmeritus.value ? membersEmeritus.value.data.filter((member: any) => member.role === 'registrars') : [];
-};
-
-const updateMembersByGroup = () => {
-  judgeMembers.value = membersResponse.value ? membersResponse.value.data.filter((member: any) => member.role === 'judge' || member.role === 'president') : [];
-  officeStaffMembers.value = membersResponse.value ? membersResponse.value.data.filter((member: any) => member.role === 'legalSecretaries') : [];
-  registrarMembers.value = membersResponse.value ? membersResponse.value.data.filter((member: any) => member.role === 'registrars') : [];
-};
+watch(locale, (newVal, oldVal) => {
+  console.log('locale changed', newVal, oldVal);
+  updateMembers()
+});
 
 const getInfo = (infos: Infos) => {
   if (!infos) {
@@ -280,13 +302,11 @@ const fetchData = async () => {
       pageReferendar.value,
       pageClerk.value,
       membersResponse.value,
-      membersEmeritus.value,
-      membersHistoric.value
+      membersEmeritusResponse.value,
+      membersHistoricResponse.value
     ] = results;
-
-    updateMembersByGroup();
-    updateMembersEmeritus()
-    updateMembersHistoric();
+    console.log('results', results);
+    updateMembers();
     updateSideBarLinks();
 
   } catch (error) {
@@ -294,12 +314,8 @@ const fetchData = async () => {
   }
 };
 
-
-
 onMounted(() => {
   fetchData();
-  // updateCurrentActiveContentInToc(elem.id);
-  // startIntersectionObserver()
 });
 
 </script>
@@ -322,7 +338,8 @@ onMounted(() => {
 }
 
 .heading-h3 {
-  width: 100%;;
+  width: 100%;
+  ;
 }
 
 .gallery {
@@ -333,5 +350,18 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   flex: 1;
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    width: 100%;
+    float: none;
+  }
+
+  .left-column,
+  .right-column {
+    clear: both;
+    justify-content: center;
+  }
 }
 </style>
