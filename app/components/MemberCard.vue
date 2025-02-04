@@ -228,6 +228,6 @@ onMounted(() => {
 }
 
 .small-card {
-    margin: 16px 0;
+    margin: 16px 9px;
 }
 </style>

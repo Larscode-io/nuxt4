@@ -57,7 +57,7 @@
               {{ t('general.message.presidents') }}
             </h4>
 
-            <div class="d-flex justify-space-between flex-wrap">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusPresidents" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
                 :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
@@ -67,7 +67,7 @@
               {{ t('general.message.judges') }}
             </h4>
 
-            <div class="d-flex justify-space-between flex-wrap">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusJudges" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
                 :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
@@ -78,7 +78,7 @@
               {{ t('general.message.legal-secretaries') }}
             </h4>
 
-            <div class="d-flex justify-space-between flex-wrap">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusOfficeStaffMembers" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
                 :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
@@ -88,7 +88,7 @@
               {{ t('general.message.registrars') }}
             </h4>
 
-            <div class="lowImageGallery">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusRegistrars" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
                 :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
@@ -104,7 +104,7 @@
               {{ t('general.message.presidents') }}
             </h4>
 
-            <div class="d-flex justify-space-between flex-wrap">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersHistoricPresidents" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
                 :jobTitle="member.role" :lang="member.lang" :startDate="member.startDate" :endDate="member.endDate"
@@ -115,7 +115,7 @@
               {{ t('general.message.judges') }}
             </h4>
 
-            <div class="d-flex justify-space-between flex-wrap">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersHistoricJudges" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
                 :jobTitle="member.role" :lang="member.lang" :startDate="member.startDate" :endDate="member.endDate"
@@ -332,23 +332,25 @@ onMounted(() => {
 
 .heading-h3 {
   width: 100%;
-  ;
 }
 
 .gallery {
   padding: 0 16px;
 }
 
-.lowImageGallery {
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
+@media (max-width: 579px) {
+  .gallery {
+    width: 100%;
+    float: none;
+    justify-content: center !important;
+  }
 }
 
 @media (max-width: 480px) {
   .gallery {
     width: 100%;
     float: none;
+    justify-content: center !important;
   }
 
   .left-column,
