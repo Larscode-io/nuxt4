@@ -11,30 +11,13 @@ locale: fr
     <p><a aria-label="Cliquez pour aller à la page répertoriant tous les communiqués de presse" target="blank" href="/fr/court/basic-text/table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court?page=1&per-page=50">Les articles de la Constitution auxquels la Cour constitutionnelle a renvoyé.</a></p>
 </div>
 
-<div class="accordionGroup">
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="grondwet"
-    id="basisTextsButton1"
-    @click="()=>{
-    document.querySelector('#basisTextsButton1').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton1').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-      aria-label="La Constitution belge - mars 2021, Cliquez pour ouvrir le texte intégral"
-    >
+::AccordionGroup
 
-#### La Constitution belge - mars 2021
+::AccordionItem{aria-label="La Constitution belge - Mai 2024, Cliquez pour ouvrir le texte intégral"}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="grondwet" class="accordion-content">
+<template v-slot:title>
+    <span class="titles">La Constitution belge - Mai 2024</span>
+</template>
 
 ##### <span class="titles"> TITRE Ier </span> <br/> DE LA BELGIQUE FÉDÉRALE, DE SES COMPOSANTES ET DE SON TERRITOIRE
 
@@ -1657,37 +1640,21 @@ VI. — § 1er. [abrogé]
 
 
 </div>
-</div>
-</div>
+
+::
+
+::
 
 
 ### 2\. Législation organique
 
-<div class="accordionGroup">
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgWet1"
-    id="basisTextsButton2"
-    @click="()=>{
-    document.querySelector('#basisTextsButton2').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton2').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-      aria-label="Loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"
-    >
+::AccordionGroup
 
-#### Loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle
+::AccordionItem{aria-label="Loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="orgWet1" class="accordion-content">
-
+<template v-slot:title>
+    <span class="titles">Loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle</span>
+</template>
 
 <div class="no-text-indent">
     <p style="font-weight: bold">Coordination officieuse propre.</p>
@@ -2964,33 +2931,17 @@ La présente coordination officieuse de la loi spéciale du 6 janvier 1989 sur l
     <p><sup>9</sup> Voir l‘art. 30 bis.</p>
 </div>
 
-</div>
-</div>
+::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgWet2"
-    id="basisTextsButton3"
-    @click="()=>{
-    document.querySelector('#basisTextsButton3').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton3').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-      aria-label="Loi du 6 janvier 1989 relative aux traitements et pensions des juges, des référendaires et des greffiers de la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"
-    >
+::
 
-#### Loi du 6 janvier 1989 relative aux traitements et pensions des juges, des référendaires et des greffiers de la Cour constitutionnelle
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="orgWet2" class="accordion-content">
+::AccordionItem{aria-label="Loi du 6 janvier 1989 relative aux traitements et pensions des juges, des référendaires et des greffiers de la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"}
 
+<template v-slot:title>
+    <span class="titles">Loi du 6 janvier 1989 relative aux traitements et pensions des juges, des référendaires et des greffiers de la Cour constitutionnelle</span>
+</template>
 
 ``` Article 1er ```   
 
@@ -3052,35 +3003,22 @@ Sont abrogés:
 <br/>
 
 </div>
-</div>
-</div>
+
+
+::
+
+::
+
 
 ### 3\. Arrêtés organiques
 
-<div class="accordionGroup">
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl1"
-    id="basisTextsButton4"
-    @click="()=>{
-    document.querySelector('#basisTextsButton4').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton4').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-      aria-label="Arrêté royal du 28 septembre 1983 réglant les heures d'ouverture du greffe de la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"
-    >
+::AccordionGroup
 
-#### Arrêté royal du 28 septembre 1983 réglant les heures d'ouverture du greffe de la Cour constitutionnelle
+::AccordionItem{aria-label="Arrêté royal du 28 septembre 1983 réglant les heures d'ouverture du greffe de la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="orgBesl1" class="accordion-content">
+<template v-slot:title>
+    <span class="titles">Arrêté royal du 28 septembre 1983 réglant les heures d'ouverture du greffe de la Cour constitutionnelle</span>
+</template>
 
 (Moniteur belge, 23 février 1984)
 
@@ -3094,32 +3032,17 @@ Le greffe de la Cour constitutionnelle est ouvert tous les jours, à l'exception
 
 \[...\].
 
-</div>
-</div>
+::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl2"
-    id="basisTextsButton5"
-    @click="()=>{
-    document.querySelector('#basisTextsButton5').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton5').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-      aria-label="Arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la langue allemande, à fournir par les juges de la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"
-    >
+::
 
-#### Arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la langue allemande, à fournir par les juges de la Cour constitutionnelle
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="orgBesl2" class="accordion-content">
+::AccordionItem{aria-label="Arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la langue allemande, à fournir par les juges de la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"}
+
+<template v-slot:title>
+    <span class="titles">Arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la langue allemande, à fournir par les juges de la Cour constitutionnelle</span>
+</template>
 
 (Moniteur belge, 23 février 1984)
 
@@ -3158,31 +3081,17 @@ Les membres du jury ont droit également à l'indemnité pour frais de séjour e
 
 ()
 
-</div>
-</div>
+::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    id="basisTextsButton6"
-    @click="()=>{
-    document.querySelector('#basisTextsButton6').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton6').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la seconde langue nationale et de l'allemand, à fournir par les candidats référendaires à la Cour constitutionnelle. Cliquez pour ouvrir le texte intégral"
-    >
+::
 
-#### Arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la seconde langue nationale et de l'allemand, à fournir par les candidats référendaires à la Cour constitutionnelle.
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="orgBesl3" class="accordion-content">
+::AccordionItem{aria-label="Arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la seconde langue nationale et de l'allemand, à fournir par les candidats référendaires à la Cour constitutionnelle. Cliquez pour ouvrir le texte intégral"}
+
+<template v-slot:title>
+    <span class="titles">Arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la seconde langue nationale et de l'allemand, à fournir par les candidats référendaires à la Cour constitutionnelle.</span>
+</template>
 
 (Moniteur belge, 23 février 1984)
 
@@ -3202,32 +3111,17 @@ Elle consiste en une conversation où les membres du jury font usage de la langu
 
 ()
 
-</div>
-</div>
+::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl4"
-    id="basisTextsButton7"
-    @click="()=>{
-    document.querySelector('#basisTextsButton7').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton7').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label=" Arrêté royal du 16 février 1984 prescrivant le costume des titulaires de fonctions à la Cour constitutionnelle. Cliquez pour ouvrir le texte intégral"
-    >
+::
 
-#### Arrêté royal du 16 février 1984 prescrivant le costume des titulaires de fonctions à la Cour constitutionnelle
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="orgBesl4" class="accordion-content">
+::AccordionItem{aria-label="Arrêté royal du 16 février 1984 prescrivant le costume des titulaires de fonctions à la Cour constitutionnelle. Cliquez pour ouvrir le texte intégral"}
+
+<template v-slot:title>
+    <span class="titles">Arrêté royal du 16 février 1984 prescrivant le costume des titulaires de fonctions à la Cour constitutionnelle</span>
+</template>
 
 (Moniteur belge, 23 février 1984)
 
@@ -3261,33 +3155,17 @@ Les greffiers, docteurs ou licenciés en droit, portent également l'épitoge.
 
 ()
 
-</div>
-</div>
+::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl5"
-    id="basisTextsButton8"
-    @click="()=>{
-    document.querySelector('#basisTextsButton8').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton8').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Arrêté royal du 14 avril 2009 portant exécution de l'article 75 de la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"
-    >
+::
 
-#### Arrêté royal du 14 avril 2009 portant exécution de l'article 75 de la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="orgBesl5" class="accordion-content">
+::AccordionItem{aria-label="Arrêté royal du 14 avril 2009 portant exécution de l'article 75 de la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"}
 
+<template v-slot:title>
+    <span class="titles">Arrêté royal du 14 avril 2009 portant exécution de l'article 75 de la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle</span>
+</template>
 
 (Moniteur belge, 8 juin 2009)
 
@@ -3309,32 +3187,17 @@ Lorsque la personne assistée est dans les conditions de ressources visées à l
 
 Le Premier Ministre et le Ministre de la Justice sont chargés, chacun en ce qui le concerne, de l'exécution du présent arrêté.
 
-</div>
-</div>
+::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl6"
-    id="basisTextsButton9"
-    @click="()=>{
-    document.querySelector('#basisTextsButton9').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton9').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-      aria-label="Arrêté royal du 10 novembre 2009 réglant la préséance de la Cour constitutionnelle et les honneurs que lui sont rendus, Cliquez pour ouvrir le texte intégral"
-    >
+::
 
-#### Arrêté royal du 10 novembre 2009 réglant la préséance de la Cour constitutionnelle et les honneurs que lui sont rendus
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="orgBesl6" class="accordion-content">
+::AccordionItem{aria-label="Arrêté royal du 10 novembre 2009 réglant la préséance de la Cour constitutionnelle et les honneurs que lui sont rendus, Cliquez pour ouvrir le texte intégral"}
+
+<template v-slot:title>
+    <span class="titles">Arrêté royal du 10 novembre 2009 réglant la préséance de la Cour constitutionnelle et les honneurs que lui sont rendus</span>
+</template>
 
 (Moniteur belge, 26 novembre 2009)
 
@@ -3360,9 +3223,9 @@ L’arrêté royal du 16 février 1984 réglant la préséance de la Cour d’ar
 
 ()
 
-</div>
-</div>
-</div>
+::
+
+::
 
 ### 4\. Règlements
 
@@ -3370,30 +3233,13 @@ L’arrêté royal du 16 février 1984 réglant la préséance de la Cour d’ar
     <p>Textes adoptés par la Cour constitutionnelle au titre de règlements d'ordre intérieur et de directives relatives au fonctionnement de la Cour et à la procédure devant elle</p>
 </div>
 
-<div class="accordionGroup">
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="reg1"
-    id="basisTextsButton10"
-    @click="()=>{
-    document.querySelector('#basisTextsButton10').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton10').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Règlement d'ordre intérieur du 15 décembre 1987, Cliquez pour ouvrir le texte intégral"
-    >
+::AccordionGroup
 
-#### Règlement d'ordre intérieur du 15 décembre 1987
+::AccordionItem{aria-label="Règlement d'ordre intérieur du 15 décembre 1987, Cliquez pour ouvrir le texte intégral"}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="reg1" class="accordion-content">
+<template v-slot:title>
+    <span class="titles">Règlement d'ordre intérieur du 15 décembre 1987</span>
+</template>
 
 (Moniteur belge, 29 décembre 1987)
 
@@ -3410,32 +3256,17 @@ Adopté par la Cour d'arbitrage sur la base de l'article 105 de la loi du 28 jui
     c) Personnel : La Cour engage les membres de son personnel selon les nécessités de son fonctionnement et en assurant la parité linguistique. Elle détermine leurs fonctions et responsabilités, ainsi que leurs horaires, congés et autres conditions de travail.
 4. Entrée en vigueur: Le présent règlement entre en vigueur le jour de sa publication au *Moniteur belge*.
 
-</div>
-</div>
+::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="reg2"
-    id="basisTextsButton11"
-    @click="()=>{
-    document.querySelector('#basisTextsButton11').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton11').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Décision de la Cour d'arbitrage du 14 février 1989, Cliquez pour ouvrir le texte intégral"
-    >
+::
 
-#### Décision de la Cour d'arbitrage du 14 février 1989
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="reg2" class="accordion-content">
+::AccordionItem{aria-label="Décision de la Cour d'arbitrage du 14 février 1989, Cliquez pour ouvrir le texte intégral"}
+
+<template v-slot:title>
+    <span class="titles">Décision de la Cour d'arbitrage du 14 février 1989</span>
+</template>
 
 (Moniteur belge, 23 février 1989)
 
@@ -3443,32 +3274,17 @@ Adopté par la Cour d'arbitrage sur la base de l'article 105 de la loi du 28 jui
 
 La Cour confirme, sur la base de [l'article 122](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.122) de la loi spéciale du 6 janvier 1989 sur la Cour d'arbitrage, [son réglement d'ordre intérieur adopté le 15 décembre 1987](#reglements-art-151287) sur la base de l'article 105 de la loi du 28 juin 1983 portant l'organisation, la compétence et le fonctionnement de la Cour d'arbitrage, et publié au *Moniteur belge* du 29 décembre 1987.
 
-</div>
-</div>
+::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="reg3"
-    id="basisTextsButton12"
-    @click="()=>{
-    document.querySelector('#basisTextsButton12').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton12').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Directive de la Cour d'arbitrage du 14 février 1989 concernant la procédure, Cliquez pour ouvrir le texte intégral"
-    >
+::
 
-#### Directive de la Cour d'arbitrage du 14 février 1989 concernant la procédure
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="reg3" class="accordion-content">
+::AccordionItem{aria-label="Directive de la Cour d'arbitrage du 14 février 1989 concernant la procédure, Cliquez pour ouvrir le texte intégral"}
+
+<template v-slot:title>
+    <span class="titles">Directive de la Cour d'arbitrage du 14 février 1989 concernant la procédure</span>
+</template>
 
 (Moniteur belge, 23 février 1989)
 
@@ -3482,32 +3298,17 @@ La directive du 15 décembre 1987, intitulée "Dépôt et communication des conc
 
 En ce qui concerne les affaires inscrites au rôle de la Cour à dater de l'entrée en vigueur de la loi spéciale du 6 janvier 1989, lorsqu'il s'agit d'une demande de suspension, et sans préjudice des [articles 70 à 73](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.70) de ladite loi spéciale, l'ordonnance de fixation est portée à la connaissance de la ou des parties requérantes et des autorités mentionnées à [l'article 76](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76) de la loi, et précise, s'il y a lieu, le délai dont chacune de ces autorités dispose pour faire parvenir des observations écrites au greffe. Passé ce délai, aucun autre écrit n'est admis aux débats sur la demande de suspension.
 
-</div>
-</div>
+::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="reg4"
-    id="basisTextsButton13"
-    @click="()=>{
-    document.querySelector('#basisTextsButton13').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton13').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Décision de la Cour d'arbitrage du 24 novembre 1994 concernant l'exercice de la fonction de greffier par un référendaire, Cliquez pour ouvrir le texte intégral"
-    >
+::
 
-#### Décision de la Cour d'arbitrage du 24 novembre 1994 concernant l'exercice de la fonction de greffier par un référendaire
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="reg4" class="accordion-content">
+::AccordionItem{aria-label="Décision de la Cour d'arbitrage du 24 novembre 1994 concernant l'exercice de la fonction de greffier par un référendaire, Cliquez pour ouvrir le texte intégral"}
+
+<template v-slot:title>
+    <span class="titles">Décision de la Cour d'arbitrage du 24 novembre 1994 concernant l'exercice de la fonction de greffier par un référendaire</span>
+</template>
 
 (Moniteur belge, 2 décembre 1994)
 
@@ -3517,31 +3318,17 @@ Le président en exercice peut désigner un référendaire pour exercer la fonct
 
 La présente décision est insérée au règlement d'ordre de la Cour.
 
-</div>
-</div>
+::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    id="basisTextsButton14"
-    @click="()=>{
-    document.querySelector('#basisTextsButton14').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton14').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Directive de la Cour d'arbitrage du 20 juin 1996 concernant les mémoires tardifs, Cliquez pour ouvrir le texte intégral"
-    >
+::
 
-#### Directive de la Cour d'arbitrage du 20 juin 1996 concernant les mémoires tardifs  
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
-<div role="region" id="reg5" class="accordion-content">
+::AccordionItem{aria-label="Directive de la Cour d'arbitrage du 20 juin 1996 concernant les mémoires tardifs, Cliquez pour ouvrir le texte intégral"}
+
+<template v-slot:title>
+    <span class="titles">Directive de la Cour d'arbitrage du 20 juin 1996 concernant les mémoires tardifs</span>
+</template>
 
 (Moniteur belge, 23 juillet 1996)
 
@@ -3557,5 +3344,6 @@ Ceux qui ont introduit tardivement un mémoire ne peuvent pas tirer argument du 
 
 La présente décision est insérée dans le règlement d'ordre intérieur de la Cour.
 
-</div></div>
-</div>
+::
+
+::
