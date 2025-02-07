@@ -16,19 +16,19 @@ locale: en
 
 ##### <span class="titles"> TITLE I  </span> <br/> ON FEDERAL BELGIUM, ITS COMPONENTS AND ITS TERRITORY
 
-``` Article 1 ```
+<span class="code">Article 1</span>
 
 Belgium is a federal State composed of Communities and Regions.
 
-```Art. 2```
+<span class="code">Art. 2</span>
 
 Belgium comprises three Communities: the Flemish Community, the French Community and the German-speaking Community.
 
-```Art. 3```
+<span class="code">Art. 3</span>
 
 Belgium comprises three Regions: the Flemish Region, the Walloon Region and the Brussels Region.
 
-```Art. 4```
+<span class="code">Art. 4</span>
 
 Belgium comprises four linguistic regions: the Dutch-speaking region, the
 French-speaking region, the bilingual region of Brussels-Capital and the German-speaking region.  <br />
@@ -38,7 +38,7 @@ in each House, on condition that a majority of the members of each group is
 present and provided that the total number of votes in favour that are cast in
 the two linguistic groups is equal to at least two thirds of the votes cast.
 
-```Art. 5```
+<span class="code">Art. 5</span>
 
 The Flemish Region comprises the following provinces: Antwerp, Flemish
 Brabant, West Flanders, East Flanders and Limburg. The Walloon Region
@@ -46,18 +46,18 @@ comprises the following provinces: Walloon Brabant, Hainaut, Liege, Luxembourg a
 &emsp; A law can exclude certain territories, of which it establishes the boundaries, from division into provinces, bring them directly under the federal executive power and subject them to a specific statute. This law must be passed
 by a majority as described in Article 4, last paragraph.
 
-```Art. 6```
+<span class="code">Art. 6</span>
 
 Provincial subdivisions can only be established by the law.
 
-``` Art. 7 ```
+<span class="code">Art. 7</span>
 
 The boundaries of the State, the provinces and the municipalities can
 only be changed or corrected by virtue of a law.
 
 ##### <span class="titles"> TITLE I BIS </span> <br /> ON GENERAL POLITICAL OBJECTIVES OF FEDERAL BELGIUM, THE COMMUNITIES AND THE REGIONS
 
-``` Art. 7 bis ```
+<span class="code">Art. 7 bis</span>
 
 In the exercise of their respective competences, the Federal State, the
 Communities and the Regions pursue the objectives of sustainable development in its social, economic and environmental aspects, taking into account
@@ -66,7 +66,7 @@ the solidarity between the generations. <br/>
 
 ##### <span class="titles"> TITLE II </span> <br /> ON BELGIANS AND THEIR RIGHTS
 
-``` Art. 8 ```
+<span class="code"> Art. 8 </span>
 
 The status as a Belgian citizen is acquired, kept and lost according to rules
 established by civil law. <br/>
@@ -81,28 +81,28 @@ by a law to Belgian residents who are not citizens of a Member State of the
 European Union, under the conditions and in accordance with the terms
 specified in such a law.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The law referred to in the fourth paragraph cannot be passed before 1
 January 2001.
 
-``` Art. 9 ```
+<span class="code"> Art. 9 </span>
 
 Naturalisation is granted by the federal legislative power
 
-``` Art. 10 ```
+<span class="code"> Art. 10 </span>
 
 No class distinctions exist in the State<br/>
 &emsp;Belgians are equal before the law; they alone are eligible for civil and military service, but for the exceptions that can be created by a law for particular
 cases. <br/>
 &emsp;Equality between women and men is guaranteed.
 
-``` Art. 11 ```
+<span class="code"> Art. 11 </span>
 
 Enjoyment of the rights and freedoms recognised for Belgians must be
 provided without discrimination. To this end, laws and federate laws guarantee among others the rights and freedoms of ideological and philosophical minorities.
 
-``` Art. 11 bis ```
+<span class="code"> Art. 11 bis </span>
 
 The law, federate law or rule referred to in Article 134 guarantees that
 women and men may equally exercise their rights and freedoms, and in particular promotes their equal access to elective and public mandates. <br/>
@@ -119,7 +119,7 @@ of the permanent deputations of the provincial councils, of aldermen, of the
 members of the councils and permanent committees of the social welfare
 centres or of the members of the executives of any other inter-provincial, supra-municipal, inter-municipal or intra-municipal territorial body.
 
-``` Art. 12 ```
+<span class="code"> Art. 12 </span>
 
 The freedom of the individual is guaranteed.<br/>
 &emsp;No one can be prosecuted except in the cases provided for by the law, and
@@ -129,51 +129,51 @@ the strength of a reasoned judge’s order, which must be served at the latest
 within forty-eight hours from the deprivation of liberty and which may only
 result in provisional detention.
 
-``` Art. 13 ```
+<span class="code"> Art. 13 </span>
 
 No one can be separated, against his will, from the judge that the law has
 assigned to him.
 
-``` Art. 14 ```
+<span class="code"> Art. 14 </span>
 
 No punishment can be introduced or administered except by virtue of the
 law.
 
-``` Art. 14 bis ```
+<span class="code"> Art. 14 bis </span>
 
 Capital punishment is abolished.
 
-``` Art. 15 ```
+<span class="code"> Art. 15 </span>
 
 One’s home is inviolable; no house search may take place except in the
 cases provided for by the law and in the form prescribed by the law.
 
-``` Art. 16 ```
+<span class="code"> Art. 16 </span>
 
 No one can be deprived of his property except in the case of expropriation
 for a public purpose, in the cases and manner established by the law and in
 return for fair compensation paid beforehand.
 
-``` Art. 17 ```
+<span class="code"> Art. 17 </span>
 
 Assets may not be confiscated as a means of punishment.
 
-``` Art. 18 ```
+<span class="code"> Art. 18 </span>
 
 Civil death is abolished; it cannot be re-introduced.
 
-``` Art. 19 ```
+<span class="code"> Art. 19 </span>
 
 Freedom of worship, its public practice and freedom to demonstrate
 one’s opinions on all matters are guaranteed, but offences committed when
 this freedom is used may be punished.
 
-``` Art. 20 ```
+<span class="code"> Art. 20 </span>
 
 No one can be obliged to contribute in any way whatsoever to the acts
 and ceremonies of a religion or to observe its days of rest.
 
-``` Art. 21 ```
+<span class="code"> Art. 21 </span>
 
 The State does not have the right to intervene either in the appointment
 or in the installation of ministers of any religion whatsoever or to forbid these
@@ -183,13 +183,13 @@ the press and publishing apply. <br/>
 &emsp;The laws, federate laws and rules referred to in Article 134 guarantee the
 protection of this right.
 
-``` Art. 22 ```
+<span class="code"> Art. 22 </span>
 
 Everyone has the right to the respect of his private and family life, except
 in the cases and conditions determined by the law. <br/>
 &emsp;De wet, het decreet of de in artikel 134 bedoelde regel waarborgen de bescherming van dat recht.
 
-``` Art. 22 bis ```
+<span class="code"> Art. 22 bis </span>
 
 Each child is entitled to have his or her moral, physical, mental and sexual
 integrity respected. <br/>
@@ -202,12 +202,12 @@ consideration. <br/>
 &emsp;The law, federate law or rule referred to in Article 134 ensures these rights
 of the child.
 
-``` Art. 22 ter ```
+<span class="code"> Art. 22 ter </span>
 
 Every person with a disability has the right to full inclusion in society, including the right to reasonable accommodation.<br/>
 &emsp;The law, federate law or rule referred to in Article 134 guarantees the protection of this right.
 
-``` Art. 23 ```
+<span class="code"> Art. 23 </span>
 
 <p class="no-bottom-margin">Everyone has the right to lead a life in keeping with human dignity. <br/>
 &emsp;To this end, the laws, federate laws and rules referred to in Article 134
@@ -218,15 +218,14 @@ guarantee economic, social and cultural rights, taking into account correspondin
 within the context of a general employment policy, aimed among others at ensuring a level of employment that is as stable and high as
 possible, the right to fair terms of employment and to fair remuneration, as well as the right to information, consultation and collective
 negotiation; <br/>
-2.  the right to social security, to health care and to social, medical and
+2. the right to social security, to health care and to social, medical and
 legal aid; <br/>
 3. the right to decent accommodation; <br/>
 4. the right to the protection of a healthy environment; <br/>
 5. the right to cultural and social fulfilment; <br/>
-6. the right to family allowances.
-<br/>
+6. the right to family allowances.<br/>
 
-``` Art. 24 ```
+<span class="code"> Art. 24 </span>
 
 § 1. Education is free; any preventive measure is forbidden; the punishment of offences is regulated only by the law or federate law. <br/>
 &emsp;The community offers free choice to parents. <br/>
@@ -243,7 +242,7 @@ federate law adopted by a two-thirds majority of the votes cast.
 § 3. Everyone has the right to education with the respect of fundamental
 rights and freedoms. Access to education is free until the end of compulsory
 education. <br/>
-&emsp; All pupils of school age have the right to moral or religious education at
+&emsp;All pupils of school age have the right to moral or religious education at
 the community’s expense.
 
 § 4. All pupils or students, parents, teaching staff or institutions are equal
@@ -253,63 +252,63 @@ objective differences, in particular the characteristics of each organising auth
 § 5. The organisation, the recognition and the subsidising of education by
 the community are regulated by the law or federate law.
 
-``` Art. 25 ```
+<span class="code"> Art. 25 </span>
 
 The press is free; censorship can never be introduced; no security can be
 demanded from authors, publishers or printers. <br/>
 &emsp;When the author is known and resident in Belgium, neither the publisher,
 the printer nor the distributor can be prosecuted.
 
-``` Art. 26 ```
+<span class="code"> Art. 26 </span>
 
 Belgians have the right to gather peaceably and without arms, in accordance with the laws that can regulate the exercise of this right, without submitting it to prior authorisation. <br/>
 &emsp;This provision does not apply to open air meetings, which are entirely
 subject to police regulations.
 
-``` Art. 27 ```
+<span class="code"> Art. 27 </span>
 
 Belgians have the right to enter into association or partnership; this right
 cannot be subject to any preventive measure.
 
-``` Art. 28 ```
+<span class="code"> Art. 28 </span>
 
 Everyone has the right to address petitions signed by one or more persons
 to the public authorities. <br/>
 &emsp;Constituted bodies are alone entitled to address petitions under a collective name.
 
-``` Art. 29 ```
+<span class="code"> Art. 29 </span>
 
-The confidentiality of letters is inviolable.  <br/>
+The confidentiality of letters is inviolable. <br/>
 &emsp;The law determines which officials may violate the confidentiality of letters entrusted to the postal service.
 
-``` Art. 30 ```
+<span class="code"> Art. 30 </span>
 
 The use of languages spoken in Belgium is optional; only the law can rule
 on this matter, and only for acts of the public authorities and for judicial affairs.
 
-``` Art. 31 ```
+<span class="code"> Art. 31 </span>
 
 No authorisation is necessary prior to taking legal action against civil
 servants for offences resulting from their administration, except with regard
 to what has been ruled on concerning ministers and members of the Community and Regional Governments.
 
-``` Art. 32 ```
+<span class="code"> Art. 32 </span>
 
 Everyone has the right to consult any administrative document and to obtain a copy, except in the cases and conditions stipulated by the laws, federate laws or rules referred to in Article 134.
 
 ##### <span class="titles"> TITLE III </span> <br/> ON POWERS
 
-``` Art. 33 ```
+<span class="code"> Art. 33 </span>
 
 All powers emanate from the Nation. <br/>
 &emsp;These powers are exercised in the manner laid down by the Constitution.
 
-``` Art. 34 ```
+<span class="code"> Art. 34 </span>
 
 The exercising of specific powers can be assigned by a treaty or by a law
 to institutions of public international law.
 
-``` Art. 35 ```
+<span class="code"> Art. 35 </span>
 
 The federal authority only has competences in the matters that are formally assigned to it by the Constitution and the laws passed by virtue of the
 Constitution itself. <br/>
@@ -318,58 +317,58 @@ competences for the other matters, under the conditions and in the terms
 stipulated by the law. This law must be adopted by a majority as described in
 Article 4, last paragraph.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The law referred to in the second paragraph determines the date on
 which this article comes into force. This date cannot precede the date of the
 entry into force of the new article to be inserted in Title III of the Constitution,
 which determines the competences exclusive to the federal authority.
 
-``` Art. 36 ```
+<span class="code"> Art. 36 </span>
 
 The federal legislative power is exercised jointly by the King, the House of
 Representatives and the Senate
 
-``` Art. 37 ```
+<span class="code"> Art. 37 </span>
 
 The federal executive power, as regulated by the Constitution, belongs to
 the King.
 
-``` Art. 38 ```
+<span class="code"> Art. 38 </span>
 
 Each Community has those powers which are recognised by the Constitution or by the laws passed by virtue of the Constitution.
 
-``` Art. 39 ```
+<span class="code"> Art. 39 </span>
 
 The law assigns to the regional bodies that it creates and that are composed of elected representatives the power to manage the matters that it determines, with the exception of those referred to in Articles 30 and 127 to 129,
 within the scope and according to the manner laid down by a law. This law
 must be passed by a majority as described in Article 4, last paragraph.
 
-``` Art. 39 bis ```
+<span class="code"> Art. 39 bis </span>
 
 Except for matters relating to finances or budget or matters that are regulated by a majority of two thirds of the votes cast, matters attributed exclusively to regional bodies can be the subject of a referendum in the Region
 concerned.<br/>
 &emsp;The rule referred to in Article 134 determines the procedures and arrangements for the referendum, and is adopted by a majority of two thirds of the
 votes cast, under the condition that the majority of the members of the Parliament concerned is present. A law passed by a majority as described in Article 4, last paragraph lays down additional majority requirements with respect to the Brussels-Capital Region.
 
-``` Art. 39 ter ```
+<span class="code"> Art. 39 ter </span>
 
 The law, federate law or rule referred to in Article 134 that regulates the
 elections for the House of Representatives or a Community or Regional Parliament, and that is promulgated less than one year before the date on which
 the legislative term is to come to an end, comes into force no sooner than
 one year after it has been promulgated.
 
-``` Transitional provision ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when the first elections for the
 European Parliament take place after it has been published in the *Belgian Official Gazette*.
 
-``` Art. 40 ```
+<span class="code"> Art. 40 </span>
 
 Judiciary power is exercised by the courts. <br/>
 &emsp;Court decisions are executed in the name of the King.
 
-``` Art. 41 ```
+<span class="code"> Art. 41 </span>
 
 Interests which are exclusively of a municipal or provincial nature are
 ruled on by municipal or provincial councils, according to the principles laid
@@ -396,12 +395,12 @@ province concerned. The rule referred to in Article 134 regulates the procedures
 
 ###### <span class="chapters">CHAPTER I <br/> ON THE FEDERAL HOUSES</span>
 
-``` Art. 42 ```
+<span class="code"> Art. 42 </span>
 
 The members of the two Houses represent the Nation, and not only those
 who elected them.
 
-``` Art. 43 ```
+<span class="code"> Art. 43 </span>
 
 § 1. For cases determined by the Constitution, the elected members of the
 House of Representatives are divided into a Dutch linguistic group and a
@@ -412,36 +411,35 @@ French linguistic group, in the manner determined by the law.
 linguistic group of the Senate. The senators referred to in Article 67, § 1, 2° to
 4° and 7° make up the French linguistic group of the Senate.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when elections take place with a
-view to the complete renewal of the Community and Regional Parliaments in 2014. <br/>
-&emsp;The following provisions apply until that day:
+view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provisions apply:
 
-“§ 1. For cases determined by the Constitution, the elected members of
+<p class="no-bottom-margin">“§ 1. For cases determined by the Constitution, the elected members of
 each House are divided into a Dutch linguistic group and a French linguistic
 group, in the manner determined by the law.
 
 § 2. The senators referred to in Article 67, § 1, 1°, 3° and 6° make up the
 Dutch linguistic group of the Senate. The senators referred to in Article 67, §
-1, 2°, 4° and 7° make up the French linguistic group of the Senate.”.
+1, 2°, 4° and 7° make up the French linguistic group of the Senate.”.</p>
 
-``` Art. 44 ```
+<span class="code"> Art. 44 </span>
 
 The Houses meet by right each year on the second Tuesday of October, unless they have been convened prior to this by the King. <br/>
 &emsp;The Houses must meet for at least forty days each year. The Senate is a non-permanent body.<br/>
 &emsp;The King pronounces the closing of the session. <br/>
 &emsp;The King has the right to convene the Houses to an extraordinary meeting.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The second sentence of the second paragraph comes into force on the day when elections take place with a view to the complete renewal of the Community and Re¬gional Parliaments in 2014.
 
-``` Art. 45 ```
+<span class="code"> Art. 45 </span>
 
 The King can adjourn the Houses. However, the adjournment cannot be for longer than one month, nor can it be repeated in the same session without the consent of the Houses.
 
-``` Art. 46 ```
+<span class="code"> Art. 46 </span>
 
 <p class="no-bottom-margin">The King has the right to dissolve the House of Representatives only if the latter, with the absolute majority of its members: </p>
 
@@ -453,7 +451,7 @@ The motions of confidence and no confidence can only be voted on forty-eight hou
 &emsp;In case both Houses are dissolved in accordance with Article 195, the Houses are convened within three months.<br/>
 &emsp;In case of early dissolution, the new federal parliamentary term may not extend beyond the day when the first election of the European Parliament following this dis¬solution is held.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 After the 2014 election of the European Parliament, a law, passed by a majority as described in Article 4, last paragraph, fixes the date when the sixth paragraph comes into force. This date is that on which Article 65, third paragraph and Article 118, § 2, fourth sub-paragraph come into force. <br/>
 &emsp;The fourth and fifth paragraphs come into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this date, the following provisions are applicable in lieu of the fourth and fifth paragraphs:
@@ -462,75 +460,75 @@ After the 2014 election of the European Parliament, a law, passed by a majority 
 &emsp;The act of dissolution convenes the electorate within forty days and the Houses within two months. <br/>
 &emsp;The dissolution of the House of Representatives leading to parliamentary elections at federal level that take place the same day as the 2014 election of the Community and Regional Parliaments entails the dissolution of the Senate. The electorate for the House of Representatives is convened within forty days. The Houses are convened within three months.”.
 
-``` Art. 47 ```
+<span class="code"> Art. 47 </span>
 
 The sittings of the Houses are public. <br/>
 &emsp;Nevertheless, each House can meet in camera at the request of its president or of ten members. <br/>
 &emsp;It decides afterwards, by absolute majority, whether the sitting must be continued in public on the same subject.
 
-``` Art. 48 ```
+<span class="code"> Art. 48 </span>
 
 Each House verifies the credentials of its members and judges any dispute that can be raised on this matter.
 
-``` Art. 49 ```
+<span class="code"> Art. 49 </span>
 
 One cannot be a member of both Houses at the same time.
 
-``` Art. 50 ```
+<span class="code"> Art. 50 </span>
 
 Any member of either House appointed by the King as minister and who accepts this appointment ceases to sit in Parliament and takes up his mandate again when the King has terminated his office as minister. The law determines the rules for his replacement in the House concerned.
 
-``` Art. 51 ```
+<span class="code"> Art. 51 </span>
 
 Any member of either House appointed by the Federal Government to any salaried position other than that of minister and who accepts the appointment immediately ceases to sit in Parliament and only takes his seat again after having been re-elected.
 
-``` Art. 52 ```
+<span class="code"> Art. 52 </span>
 
 Each session, each House appoints its president, its vice-presidents, and forms its bureau.
 
-``` Art. 53 ```
+<span class="code"> Art. 53 </span>
 
 All resolutions are passed by an absolute majority of the votes cast, except for what is established by the rules of procedure of the Houses with regard to elections and nominations. <br/>
 &emsp;If the vote is tied, the proposal submitted for discussion is rejected. <br/>
 &emsp;Neither of the two Houses can pass a resolution unless a majority of its members is present.
 
-``` Art. 54 ```
+<span class="code"> Art. 54 </span>
 
 Except for budgets and laws requiring a special majority, a reasoned motion signed by at least three-quarters of the members of one of the linguistic groups and tabled following the depositing of the report and prior to the final vote in a public sitting can declare that the provisions that it designates of a Government bill or private member’s bill can gravely damage relations between the Communities.<br/>
 &emsp;In this case, Parliamentary procedure is suspended and the motion is referred to the Council of Ministers, which within thirty days gives its reasoned opinion on the motion and invites the House involved to pronounce on this opinion or on the Government bill or private member’s bill that, if need be, has been amended. <br/>
 &emsp;This procedure can be applied only once by the members of a linguistic group with regard to the same Government bill or private member’s bill.
 
-``` Art. 55 ```
+<span class="code"> Art. 55 </span>
 
 Votes are cast by sitting and standing or by call-over; on the laws as a whole is always voted by call-over. The election and nomination of candidates are carried out by secret ballot.
 
-``` Art. 56 ```
+<span class="code"> Art. 56 </span>
 
 The House of Representatives has the right to hold an enquiry. <br/>
 &emsp;At the request of fifteen of its members, the House of Representatives, a Community or Regional Parliament or the King, the Senate can decide by absolute majority of the votes cast, with at least a third of the votes cast in each linguistic group, that an information report will be drafted concerning an issue that also has repercussions on the competences of the Communities or Regions. The report is approved by absolute majority of the votes cast, with at least a third of the votes cast in each linguistic group.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provision applies:
 
 “Each House has the right to hold an enquiry.”.
 
-``` Art. 57 ```
+<span class="code"> Art. 57 </span>
 
 It is forbidden to present petitions to the Houses in person. <br/>
 &emsp;The House of Representatives has the right to send to ministers petitions that are addressed to it. The ministers are obliged to give explanations on the content of these petitions whenever the House so requires.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The second paragraph comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provision applies in lieu of the second paragraph:
 
 “Each House has the right to send to ministers petitions that are addressed to it. The ministers are obliged to explain the content of these petitions whenever the House so requires.”.
 
-``` Art. 58 ```
+<span class="code"> Art. 58 </span>
 
 No member of either House can be prosecuted or be the subject of any investigation with regard to opinions expressed and votes cast by him in the exercise of his duties.
 
-``` Art. 59 ```
+<span class="code"> Art. 59 </span>
 
 Except in the case of a flagrant offence, no member of either House may, during a session and in criminal matters, be directly referred or summoned before a court or be arrested, except with the authorisation of the House of which he is a member. <br/>
 &emsp;Except in the case of a flagrant offence, coercive measures requiring the intervention of a judge cannot, during a session and in criminal matters, be instituted against a member of either House, except by the first President of the appeal court at the request of the competent judge. This decision is to be communicated to the President of the House concerned. <br/>
@@ -539,24 +537,24 @@ Except in the case of a flagrant offence, no member of either House may, during 
 &emsp;The member concerned of either House may at any stage of the judicial enquiry request during a session and in criminal matters that the House of which he is a member suspend proceedings. To grant this request, the House concerned must decide by a majority of two thirds of the votes cast. <br/>
 &emsp;Detention of a member of either House or his prosecution before a court is suspended during the session if the House of which he is a member so requests.
 
-``` Art. 60 ```
+<span class="code"> Art. 60 </span>
 
 Each House determines, in its rules of procedure, the way in which it exercises its duties.
 
 ###### <span class="sections"> SECTION I <br> ON THE HOUSE OF REPRESENTATIVES</span>
 
-``` Art. 61 ```
+<span class="code"> Art. 61 </span>
 
 The members of the House of Representatives are elected directly by citizens who are at least eighteen years of age and who do not fall within the categories of exclusion stipulated by the law. <br/>
 &emsp;Each elector has the right to only one vote.
 
-``` Art. 62 ```
+<span class="code"> Art. 62 </span>
 
 The composition of the electoral colleges is regulated by the law. <br/>
 &emsp;Elections take place in accordance with the system of proportional representation that the law determines. <br/>
 &emsp;Voting is obligatory and secret. It takes place in the municipality, except in the cases determined by the law.
 
-``` Art. 63 ```
+<span class="code"> Art. 63 </span>
 
 § 1. The House of Representatives is composed of one hundred and fifty members.
 
@@ -572,7 +570,7 @@ The composition of the electoral colleges is regulated by the law. <br/>
 &emsp;However, the law determines special rules with a view to protecting the legitimate interests of French and Dutch-speaking people in the former province of Brabant. <br/>
 &emsp;The provisions which establish these special rules may only be amended by a law passed by a majority as described in Article 4, last paragraph.
 
-``` Art. 64 ```
+<span class="code"> Art. 64 </span>
 
 <p class="no-bottom-margin"> To be eligible, one must:  </p>
 
@@ -583,22 +581,22 @@ The composition of the electoral colleges is regulated by the law. <br/>
 
 No other condition of eligibility can be required.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The first paragraph, 3° comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, and without prejudice to Article 64, 1°, 2° and 4°, one must have reached the age of twenty-one.
 
-``` Art. 65 ```
+<span class="code"> Art. 65 </span>
 
 The members of the House of Representatives are elected for five years. <br/>
 &emsp;The House is re-elected as a whole every five years. <br/>
 &emsp;Elections for the House take place on the same day as elections for the European Parliament.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 After elections for the European Parliament have been held in 2014, a law passed by a majority as described in Article 4, last paragraph sets the date on which the third paragraph comes into force. This date is that on which Article 46, sixth paragraph and Article 118, § 2, fourth sub-paragraph come into force. <br/>
 &emsp;Parliamentary elections at federal level will in any case take place on the same day as the first elections for the European Parliament following the publication of this revision in the *Belgian Official Gazette*.
 
-``` Art. 66 ```
+<span class="code"> Art. 66 </span>
 
 Each member of the House of Representatives has an annual indemnity of twelve thousand francs. <br/>
 &emsp;Within the national borders, the members of the House of Representatives have the right to free travel on all means of transport operated or conceded by the public authorities.<br/>
@@ -607,7 +605,7 @@ Each member of the House of Representatives has an annual indemnity of twelve th
 
 ###### <span class="sections"> SECTION II <br/> ON THE SENATE</span>
 
-``` Art. 67 ```
+<span class="code"> Art. 67 </span>
 
 <p class="no-bottom-margin">§ 1. The Senate is composed of sixty senators, of whom: </p>
 
@@ -627,7 +625,7 @@ Each member of the House of Representatives has an annual indemnity of twelve th
 
 § 4. When a list mentioned in Article 68, § 2 is not represented by senators respectively referred to in § 1, 1° or in § 1, 2°, 3° or 4°, the senators referred to in § 1, 6° or in § 1, 7° may be appointed by the Members of the House of Representatives who have been elected on the aforesaid list.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provisions apply:
 
@@ -645,7 +643,7 @@ When their Parliament is re-elected as a whole and this re-election does not coi
 § 2. § 2. At least one of the senators referred to in § 1,1°,3° and 6° is to be legally resident in the bilingual region of Brussels-Capital on the day of his election. <br/>
 &emsp;At least six of the senators referred to in § 1, 2°, 4° and 7° are to be legally resident in the bilingual region of Brussels-Capital on the day of their election. If at least four of the senators referred to in § 1, 2° are not legally resident in the bilingual region of Brussels-Capital on the day of their election, at least two of the senators referred to in § 1, 4° must be legally resident in the bilingual region of Brussels-Capital on the day of their election.”.
 
-``` Art. 68 ```
+<span class="code"> Art. 68 </span>
 
 § 1. The Senate seats referred to in Article 67, § 1, 1° are distributed among the lists according to the system of proportional representation determined by the law, in the way laid down by the law, on the basis of the addition of the vote counts of the lists obtained in the different electoral districts at the election for the Flemish Parliament. <br/>
 &emsp;The lists of which the vote counts are added up in pursuance of the first subparagraph only qualify for being allocated Senate seats referred to in Article 67, § 1, 1° provided that they have obtained at least one seat in the Flemish Parliament. <br/>
@@ -654,26 +652,25 @@ When their Parliament is re-elected as a whole and this re-election does not coi
 &emsp;The law determines the rules for the appointment of the senators referred to in Article 67, § 1, 1° to 4°, with the exception of the detailed rules which, in pursuance of a law passed by a majority as described in Article 4, last paragraph, are laid down by the Community Parliaments, each for itself, by federate law. This federate law must be passed by a two-thirds majority of the votes cast, on condition that the majority of the members of the Parliament concerned is present. <br/>
 &emsp;The senator referred to in Article 67, § 1, 5° is appointed by the Parliament of the German-speaking Community by absolute majority of the votes cast.
 
-§ 2. The Senate seats referred to in Article 67, § 1, 6° to 7° are distributed among the lists according to the system of proportional representation determined by the law, in the way laid down by the law, on the basis of the addition of the vote counts of the lists obtained at the election for the House of Representatives. The aforesaid system of proportional representation is the system which is described in Article 63, § 2 of the Constitution. A law passed by a majority as described in Article 4, last paragraph determines the electoral districts of which the votes are taken into consideration for distributing the seats of the senators referred to in Article 67, § 1, 6° and 7° who belong respectively to the Dutch and the French linguistic group. <br/>
-&emsp;A list may only be taken into consideration for distributing the seats of a single linguistic group. <br/>
-&emsp;The law determines the rules for the appointment of the senators referred to in Article 67, § 1, 6° to 7°.
-
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014, with the exception of § 2, first sub-paragraph, last sentence. Until this day, the following provisions apply:
 
-“§ 1. The total number of senators referred to in Article 67, § 1, 1°, 2°, 3°, 4°, 6° and 7° is divided, according to the system of proportional representation that the law determines, among each linguistic group on the basis of the vote count of the lists ob¬tained at the election of the senators referred to in Article 67, § 1, 1° and 2°. <br/>
-&emsp;For the appointment of the senators referred to in Article 67, § 1, 3° and 4°, only those lists are taken into consideration on which at least one senator referred to in Article 67, § 1, 1° and 2° is elected and provided that a sufficient number of members elected on this list sit, according to the case, in the Parliament of the Flemish Commu¬nity or the Parliament of the French Community.<br/>
-&emsp;For the appointment of the senators referred to in Article 67, § 1, 6° and 7°, only those lists are taken into consideration on which at least on senator referred to in Article 67, § 1, 1° and 2° is elected.
+<p class="no-bottom-margin">“§ 1. Without prejudice to Article 72, the Senate is composed of seventy-one senators, of whom: </p>
 
-§ 2. For the election of the senators referred to in Article 67, § 1, 1° and 2°, voting is obligatory and secret. Voting takes place in the municipality, except in the cases that the law determines.
+1. twenty-five senators elected in accordance with Article 61 by the Dutch electoral college;
+2. fifteen senators elected in accordance with Article 61 by the French electoral college;
+3. ten senators appointed from among its members by the Parliament of the Flemish Community, called the Flemish Parliament;
+4. ten senators appointed from among its members by the Parliament of the French Community;
+5. one senator appointed from among its members by the Parliament of the German-speaking Community;
+6. six senators appointed by the senators referred to in 1° and 3°;
+7. four senators appointed by the senators referred to in 2° and 4°.
+When their Parliament is re-elected as a whole and this re-election does not coincide with the renewal of the Senate, the senators referred to in the first paragraph, 3° to 5° who no longer have a seat in their Parliament retain the mandate of senator until the opening of the first session following the re-election of their Parliament.
 
-§ 3. For the election of senators referred to in Article 67, § 1, 1° and 2°, the law determines the electoral districts and the composition of the electoral colleges; it also determines the conditions which must be met in order to be an elector, as well as the way in which elections are conducted.  <br/>
-&emsp;The law determines the rules for the appointment of the senators referred to in Article 67, § 1, 3° to 5°, with the exception of the detailed rules which, in pursuance of a law passed by a majority as described in Article 4, last paragraph, are laid down by the Community Parliaments, each for itself, by federate law. This federate law must be adopted by a two-thirds majority of the votes cast, on condition that the majority of the members of the Parliament concerned is present. <br/>
-&emsp;The senator referred to in Article 67, § 1, 5° is appointed by the Parliament of the German-speaking Community by absolute majority of the votes cast. <br/>
-&emsp;The law determines the rules for the appointment of the senators referred to in Article 67, § 1, 6° and 7°.”.
+§ 2. § 2. At least one of the senators referred to in § 1,1°,3° and 6° is to be legally resident in the bilingual region of Brussels-Capital on the day of his election. <br/>
+&emsp;At least six of the senators referred to in § 1, 2°, 4° and 7° are to be legally resident in the bilingual region of Brussels-Capital on the day of their election. If at least four of the senators referred to in § 1, 2° are not legally resident in the bilingual region of Brussels-Capital on the day of their election, at least two of the senators referred to in § 1, 4° must be legally resident in the bilingual region of Brussels-Capital on the day of their election.”.
 
-``` Art. 69 ```
+<span class="code"> Art. 69 </span>
 
 <p class="no-bottom-margin">In order to be appointed as a senator, one must:</p>
 
@@ -683,7 +680,7 @@ This article comes into force on the day when elections take place with a view t
 4. be resident in Belgium.
 <br/>
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provisions apply:
 
@@ -695,19 +692,19 @@ This article comes into force on the day when elections take place with a view t
 4. be resident in Belgium.”.
 <br/>
 
-``` Art. 70 ```
+<span class="code"> Art. 70 </span>
 
 The mandate of the senators referred to in Article 67, § 1, 1° to 5° runs from the day when they take the oath in the Senate and ends, after the complete renewal of the Parliament that has appointed them, on the day when the first session of the latter is opened. <br/>
 &emsp;The mandate of the senators referred to in Article 67, § 1, 6° and 7° runs from the day when they take the oath in the Senate and ends on the day when the first session of the House of Representatives following its complete renewal is opened.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provisions apply:
 
 “The senators referred to in Article 67, § 1, 1° and 2° are elected for four years. The senators referred to in Article 67, § 1, 6° and 7° are appointed for four years. <br/>
 &emsp;The Senate is in any case renewed as a whole when the elections for the Community and Regional Parliaments are held in 2014.”.
 
-``` Art. 71 ```
+<span class="code"> Art. 71 </span>
 
 Senators do not receive a salary. <br/>
 &emsp;They do, however, have the right to be compensated for expenses. <br/>
@@ -716,28 +713,26 @@ Senators do not receive a salary. <br/>
 &emsp;The compensation granted to the senators referred to in Article 67, § 1, 6° and 7° is charged to the Senate’s allowance. <br/>
 &emsp;Within the national borders, the members of the Senate have the right to free travel on all means of transport operated or conceded by the public authorities.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The insertion of the third to fifth paragraphs of this article becomes effective on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. <br/>
 &emsp;Until this day, senators are entitled to a compensation of four thousand francs a year.
 
-``` Art. 72 ```
+<span class="code"> Art. 72 </span>
 
 [Repealed]
 
-``` Art. 73 ```
+<span class="code"> Art. 73 </span>
 
 Any assembly of the Senate that is held when the House of Representatives is not in session is null and void.
 
-
 ###### <span class="chapters"> CHAPTER II  <br/> ON FEDERAL LEGISLATIVE POWER </span>
 
-``` Art. 74 ```
+<span class="code"> Art. 74 </span>
 
 As a departure from Article 36, federal legislative power is jointly exercised by the King and the House of Representatives for other matters than those described in Articles 77 and 78.
 
-
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provisions apply:
 
@@ -749,30 +744,30 @@ This article comes into force on the day when elections take place with a view t
 4. the setting of army quotas.”.
 <br/>
 
-``` Art. 75 ```
+<span class="code"> Art. 75 </span>
 
 Each branch of the federal legislative power has the right to propose legislation. However, the Senate can only exercise this right with respect to the matters described in Article 77. <br/>
 &emsp;With respect to the matters described in Article 78, draft bills submitted to the Houses on the King’s initiative are tabled with the House of Representatives and then sent to the Senate.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
-This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments. Until this day, the following provisions apply:
+This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provisions apply:
 
 “Each branch of the federal legislative power has the right to propose legislation. <br/>
 &emsp;Except for those matters described in Article 77, draft bills submitted to the Houses following the King’s initiative are tabled with the House of Representatives and are then sent to the Senate. <br/>
 &emsp;Draft bills relating to the approval of treaties submitted to the Houses following the King’s initiative are tabled with the Senate and then sent to the House of Representatives.”.
 
-``` Art. 76 ```
+<span class="code"> Art. 76 </span>
 
 A draft bill may be adopted by a House only after having been voted on article by article. <br/>
 &emsp;The Houses have the right to amend and to split the articles and amendments proposed. <br/>
 &emsp;The Rules of Procedure of the House of Representatives provide for a second reading procedure.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The third paragraph comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014.
 
-``` Art. 77 ```
+<span class="code"> Art. 77 </span>
 
 <p class="no-bottom-margin">The House of Representatives and the Senate are equally competent with respect to:</p>
 
@@ -785,7 +780,7 @@ The third paragraph comes into force on the day when elections take place with a
 
 A law passed by a majority as described in Article 4, last paragraph may designate other matters for which the House of Representatives and the Senate are equally competent.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provisions apply:
 
@@ -804,7 +799,7 @@ This article comes into force on the day when elections take place with a view t
 
 A law adopted by a majority as described in Article 4, last paragraph may designate other laws for which the House of Representatives and the Senate are equally competent.”.
 
-``` Art. 78 ```
+<span class="code"> Art. 78 </span>
 
 <p class="no-bottom-margin">§ 1. With the reservation of what is provided for in Article 77, draft bills adopted by the House of Representatives with respect to the following matters are sent to the Senate:</p>
 
@@ -822,9 +817,9 @@ A law passed by a majority as described in Article 4, last paragraph may designa
 - adopt the bill after having amended it.
 
 If the Senate does not pronounce on the bill within the time allotted, or if it has informed the House of Representatives of its decision not to amend, the bill is sent by the House of Representatives to the King. <br/>
-&emsp;If the bill has been amended, the Senate sends it to the House of Representatives, which makes a final decision by either passing or amending it.
+&emsp;If the bill has been amended, the Senate sends it to the House of Representatives, which makes a final decision by either adopting or rejecting all or some of the amend¬ments adopted by the Senate.”.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provisions apply:
 
@@ -840,37 +835,37 @@ This article comes into force on the day when elections take place with a view t
 If the Senate does not pronounce on the bill within the time allotted, or if the Senate has informed the House of Representatives of its decision not to amend, the bill is sent by the House of Representatives to the King. <br/>
 &emsp;If the bill has been amended, the Senate sends it to the House of Representatives, which makes a final decision by either adopting or rejecting all or some of the amend¬ments adopted by the Senate.”.
 
-``` Art. 79 ```
+<span class="code"> Art. 79 </span>
 
 [Repealed]
 
-``` Art. 80 ```
+<span class="code"> Art. 80 </span>
 
 [Repealed]
 
-``` Art. 81 ```
+<span class="code"> Art. 81 </span>
 
 [Repealed]
 
-``` Art. 82 ```
+<span class="code"> Art. 82 </span>
 
 A Parliamentary consultation committee composed equally of members of the House of Representatives and of the Senate settles conflicts of competence that arise between the two Houses and may, by mutual agreement, extend the examination deadline set in Article 78 at any time. <br/>
 &emsp;If no majority exists in the two groups composing the committee, the latter makes its decision by a majority of two thirds of its members. <br/>
 &emsp;A law determines the composition and functioning of the committee, as well as the way of calculating the time limits set in Article 78.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
-This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments. Until this day, the following provisions apply:
+This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provisions apply:
 
 “A Parliamentary consultation committee composed equally of members of the House of Representatives and of the Senate settles conflicts of competence that arise between the two Houses and may, by mutual agreement, extend the examination deadlines set in Articles 78 to 81 at any time.<br/>
 &emsp;In no majority exists in the two groups composing the committee, the latter makes its decision by a majority of two thirds of its members.<br/>
 &emsp;A law determines the composition and functioning of the committee, as well as the way of calculating the time limits set in Articles 78 to 81.”.
 
-``` Art. 83 ```
+<span class="code"> Art. 83 </span>
 
 Each private member’s bill and each Government bill mentions whether it concerns a matter described in Article 74, Article 77 or Article 78.
 
-``` Art. 84 ```
+<span class="code"> Art. 84 </span>
 
 Only the law can give an authoritative interpretation of laws.
 
@@ -878,99 +873,99 @@ Only the law can give an authoritative interpretation of laws.
 
 ###### <span class="sections"> SECTION I <br/> ON THE KING</span>
 
-``` Art. 85 ```
+<span class="code"> Art. 85 </span>
 
 The constitutional powers of the King are hereditary through the direct, natural and legitimate descent from H.M. Leopold, George, Christian, Frederick of Saxe-Coburg, by order of primogeniture. <br/>
 &emsp;The descendant mentioned in the first paragraph who marries without the King’s consent or, in his absence, without the consent of those exercising the King’s powers in cases provided for by the Constitution shall be deprived of his right to the crown. <br/>
 &emsp;Nonetheless, this right may be restored by the King or, in his absence, by those exercising the powers of the King in cases provided for by the Constitution, but only with the assent of both Houses.
 
-``` Art. 86 ```
+<span class="code"> Art. 86 </span>
 
 For lack of a descendant of H.M. Leopold, George, Christian, Frederick of Saxe-Coburg, the King may appoint his successor, the assent of the Houses, in the manner described in Article 87. <br/>
 &emsp;In the absence of an appointment made in the manner described above, the throne is considered vacant.
 
-``` Art. 87 ```
+<span class="code"> Art. 87 </span>
 
 The King may not at the same time act as head of another State without the consent of both Houses. <br/>
 &emsp;Neither House may deliberate on this matter unless two thirds of its members are present, and the resolution is only adopted if it attracts at least two thirds of the votes.
 
-``` Art. 88 ```
+<span class="code"> Art. 88 </span>
 
 The King’s person is inviolable; his ministers are accountable.
 
-``` Art. 89 ```
+<span class="code"> Art. 89 </span>
 
 The law determines the civil list for the duration of each reign.
 
-``` Art. 90 ```
+<span class="code"> Art. 90 </span>
 
 Upon the death of the King, the Houses meet without being convened at the latest on the tenth day after his death. If the Houses have been dissolved previously, and if the act of dissolution convenes them to meet later than the tenth day following the King’s death, the members of the former Houses take up their seats again until the meeting of those who will replace them. <br/>
 &emsp;From the death of the King until the oath is sworn by his successor to the throne or by the Regent, the King’s constitutional powers are exercised, in the name of the Belgian people, by the ministers meeting in council, and under their responsibility.
 
-``` Art. 91 ```
+<span class="code"> Art. 91 </span>
 
 The King attains his majority upon his eighteenth birthday. <br/>
 &emsp;The King only accedes to the throne after having sworn the following oath before the united Houses: <br/>
 &emsp;“I swear to observe the Constitution and the laws of the Belgian people, to preserve the country’s national independence and its territorial integrity.”. <br/>
 
-``` Art. 92 ```
+<span class="code"> Art. 92 </span>
 
 If upon the death of the King, his successor is a minor, the two Houses meet as a single assembly to appoint a Regent and a Guardian.
 
-``` Art. 93 ```
+<span class="code"> Art. 93 </span>
 
 If the King finds himself unable to reign, the ministers, having had this inability stated, immediately convene the Houses. The Regent and Guardian are appointed by the joint Houses.
 
-``` Art. 94 ```
+<span class="code"> Art. 94 </span>
 
 Only one person may be Regent.<br/>
 &emsp;The Regent takes up office only after having sworn the oath as prescribed in Article 91.
 
-``` Art. 95 ```
+<span class="code"> Art. 95 </span>
 
 If the throne is vacant, the Houses, deliberating as one assembly, provisionally appoint a Regent, until the convening of the fully renewed Houses; this meeting must take place within two months. The new Houses, deliberating as one assembly, fill the vacancy.
 
-###### <span class="sections">  SECTION II <br/> ON THE FEDERAL GOVERNMENT</span>
+###### <span class="sections"> SECTION II <br/> ON THE FEDERAL GOVERNMENT</span>
 
-``` Art. 96 ```
+<span class="code"> Art. 96 </span>
 
 The King appoints and dismisses his ministers. <br/>
 &emsp;The Federal Government offers its resignation to the King if the House of Representatives, by an absolute majority of its members, adopts a motion of no-confidence proposing a successor to the prime minister for appointment by the King or proposes a successor to the prime minister for appointment by the King within three days of the rejection of a motion of confidence. The King appoints the proposed successor as prime minister, who takes office when the new Federal Government is sworn in.
 
-``` Art. 97 ```
+<span class="code"> Art. 97 </span>
 
 Only Belgians may be ministers.
 
-``` Art. 98 ```
+<span class="code"> Art. 98 </span>
 
 No member of the royal family may be a minister.
 
-``` Art. 99 ```
+<span class="code"> Art. 99 </span>
 
 The Council of Ministers is composed of no more than fifteen members. <br/>
 &emsp;With the possible exception of the prime minister, the Council of Ministers is composed of an equal number of Dutch-speaking members and French-speaking members.
 
-``` Art. 100 ```
+<span class="code"> Art. 100 </span>
 
 Ministers have access to both Houses and must be heard whenever they so request. <br/>
 &emsp;The House of Representatives may require the presence of ministers. The Senate may require their presence for the matters mentioned in Article 77 or 78. For other matters, it may request their presence.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The second sentence of the second paragraph comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provision applies, without prejudice to the first paragraph and the first and last sentences of the second paragraph:
 
 “The Senate may require their presence for discussion of a Government bill or private member’s bill as mentioned in Article 77 or a Government bill as mentioned in Article 78 or for the exercise of its right of inquiry as mentioned in Article 56.”.
 
-``` Art. 101 ```
+<span class="code"> Art. 101 </span>
 
 Ministers are accountable to the House of Representatives. <br/>
 &emsp;No minister can be prosecuted or be the subject of any investigation with regard to opinions expressed by him in the exercise of his duties.
 
-``` Art. 102 ```
+<span class="code"> Art. 102 </span>
 
 In no circumstances may a written or oral order of the King exempt a minister from his accountability.
 
-``` Art. 103 ```
+<span class="code"> Art. 103 </span>
 
 Ministers are tried exclusively by the appeal court for offences they have allegedly committed in the exercise of their duties. The same rule applies in the case of offences allegedly committed by ministers outside the exercise of their duties and for which they are tried during the exercise of their duties. As the case may be, Articles 59 and 120 are not applicable. <br/>
 &emsp;The law determines the manner of proceeding against them, both when they are prosecuted and when they are tried. <br/>
@@ -981,91 +976,87 @@ Ministers are tried exclusively by the appeal court for offences they have alleg
 &emsp;A pardon may be granted to a minister convicted in accordance with the first paragraph only upon request by the House of Representatives. <br/>
 &emsp;The law determines in which cases and in accordance with which rules injured parties may institute a civil action.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The present article is not applicable to acts which have been the subject of a preliminary judicial investigation or to proceedings instituted prior to the entry into force of the law implementing the article. <br/>
 &emsp;In such a case, the following rule applies: the House of Representatives has the right to indict ministers and to bring them before the Supreme Court. Only the united chambers of this court have jurisdiction to try ministers in cases covered by the criminal laws and by application of the penalties prescribed by such laws. The Law of 17 December 1996 concerning the temporary and partial implementation of Article 103 of the Constitution remains applicable in such cases.
 
-``` Art. 104 ```
+<span class="code"> Art. 104 </span>
 
 The King appoints and dismisses the federal secretaries of State. <br/>
 &emsp;These are members of the Federal Government. They do not form part of the Council of Ministers. They are deputies to a minister. <br/>
 &emsp;The King determines their duties and the limits within which they may receive the right to countersign. <br/>
 &emsp;Constitutional provisions that apply to ministers apply equally to federal secretaries of State, with the exception of Articles 90, second paragraph, 93 and 99.
 
+###### <span class="sections"> SECTION III <br/> ON RESPONSIBILITIES</span>
 
-###### <span class="sections"> SECTION III </br> ON RESPONSIBILITIES</span>
-
-``` Art. 105 ```
+<span class="code"> Art. 105 </span>
 
 The King has no powers other than those formally attributed to him by the Constitution and by specific laws passed by virtue of the Constitution itself.
 
-``` Art. 106 ```
+<span class="code"> Art. 106 </span>
 
 No act of the King can take effect without the countersignature of a minister, who, in doing so, assumes responsibility for it.
 
-``` Art. 107 ```
+<span class="code"> Art. 107 </span>
 
 The King bestows ranks within the army. <br/>
 &emsp;He appoints civil servants to positions in the general and foreign affairs administrations of the State, but for those exceptions created by the laws. <br/>
 &emsp;He makes appointments to other positions only by virtue of specific legal provisions.
 
-``` Art. 108 ```
+<span class="code"> Art. 108 </span>
 
 The King makes decrees and regulations required for the execution of laws, without ever having the power either to suspend the laws themselves or to grant dispensation from their execution.
 
-``` Art. 109 ```
+<span class="code"> Art. 109 </span>
 
 The King sanctions and promulgates laws.
 
-``` Art. 110 ```
+<span class="code"> Art. 110 </span>
 
 The King has the right to remit or to reduce sentences passed by judges, except with regard to what has been ruled on concerning ministers and members of the Community and Regional Governments.
 
-
-``` Art. 111 ```
+<span class="code"> Art. 111 </span>
 
 The King may not pardon a minister or a member of a Community or Regional Government convicted by the Supreme Court, except at the request of the House of Representatives or of the Parliament concerned.
 
-``` Art. 112 ```
+<span class="code"> Art. 112 </span>
 
 The King may mint money, in execution of the law.
 
-``` Art. 113 ```
+<span class="code"> Art. 113 </span>
 
 The King may confer titles of nobility, without ever having the power to attach privileges to them.
 
-``` Art. 114 ```
+<span class="code"> Art. 114 </span>
 
 The King grants military orders, with consideration of the rules laid down by the law.
 
-###### <span class="chapters"> CHAPTER IV </br> ON COMMUNITIES AND REGIONS</span>
+###### <span class="chapters"> CHAPTER IV <br/> ON COMMUNITIES AND REGIONS</span>
 
-###### <span class="sections"> SECTION I </br>ON BODIES</span>
+###### <span class="sections"> SECTION I <br/>ON BODIES</span>
 
-###### <span class="subsections"> SUB-SECTION I </br>ON COMMUNITY AND REGIONAL PARLIAMENTS</span>
+###### <span class="subsections"> SUB-SECTION I <br/>ON COMMUNITY AND REGIONAL PARLIAMENTS</span>
 
-``` Art. 115 ```
+<span class="code"> Art. 115 </span>
 
 § 1. There is a Parliament of the Flemish Community, called the Flemish Parliament, and a Parliament of the French Community, the composition and functioning of which are determined by a law adopted by a majority as described in Article 4, last paragraph. <br/>
 &emsp;There is a Parliament of the German-speaking Community, the composition and functioning of which are determined by the law.
 
-§ 2. Without prejudice to Article 137, the regional bodies referred to in Article 39 include a Parliament for each Region.
-
-``` Art. 116 ```
+<span class="code"> Art. 116 </span>
 
 § 1. The Community and Regional Parliaments are composed of elected representatives.
 
 § 2. Each Community Parliament is composed of members elected directly as members of the Community Parliament concerned or as members of a Regional Parliament.<br/>
 &emsp;Except when Article 137 is applied, each Regional Parliament is composed of members elected directly as members of the Regional Parliament concerned or as members of a Community Parliament.
 
-``` Art. 117 ```
+<span class="code"> Art. 117 </span>
 
 Members of the Community and Regional Parliaments are elected for a period of five years. The Community and Regional Parliaments are re-elected as a whole every five years. <br/>
 &emsp;Elections for the Community and Regional Parliaments take place on the same day and coincide with elections for the European Parliament. <br/>
 &emsp;In execution of a law as described in Article 118, § 2, fourth sub-paragraph, a federate law or a rule referred to in Article 134, passed in accordance with Article 118, § 2, fourth sub-paragraph, may derogate from the first and second paragraphs.
 
-``` Art. 118 ```
+<span class="code"> Art. 118 </span>
 
 § 1. Elections referred to in Article 116, § 2, as well as the composition and functioning of Community and Regional Parliaments are regulated by the law. Except for the Parliament of the German-speaking Community, such a law is adopted by a majority as described in Article 4, last paragraph.
 
@@ -1074,44 +1065,42 @@ Members of the Community and Regional Parliaments are elected for a period of fi
 &emsp;A law designates those matters relating to the election, composition and functioning of the Parliament of the German-speaking Community which this Parliament regulates by federate law. This federate law is adopted by a two-thirds majority of the votes cast, provided that a majority of the members of the Parliament is present. <br/>
 &emsp;The law as described in the first or third sub-paragraph, according to the case, may entitle the Community and Regional Parliaments to determine, each for itself, by federate law or rule referred to in Article 134, according to the case, the duration of the term for which they are elected and the date of their election. This federate law and rule referred to in Article 134 are adopted by majorities as described in the first to third sub-paragraphs.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 After elections for the European Parliament have been held in 2014, a law passed by a majority as described in Article 4, last paragraph sets the date on which § 2, fourth sub-paragraph, comes into force. This date is that on which Article 46, sixth paragraph and Article 65, third paragraph come into force.
 
-``` Art. 118 bis ```
+<span class="code"> Art. 118 bis </span>
 
 Within the national borders, the members of the Regional and Community Parliaments, referred to in Articles 2 and 3, have the right to free travel on all means of transport operated or conceded by the public authorities.
 
-
-``` Art. 119 ```
+<span class="code"> Art. 119 </span>
 
 A member of a Community or Regional Parliament cannot be at the same time a member of the House of Representatives. Moreover, neither can he be a senator as referred to in Article 67, § 1, 6° and 7°.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, the following provisions apply:
 
 “A member of a Community or Regional Parliament cannot be at the same time a member of the House of Representatives. Moreover, neither can he be a senator as referred to in Article 67, § 1, 1°, 2°, 6° and 7°.”.
 
-``` Art. 120 ```
+<span class="code"> Art. 120 </span>
 
 All members of Community and Regional Parliaments benefit from the immunities described in Articles 58 and 59.
 
-###### <span class="subsections"> SUB-SECTION II </br> ON COMMUNITY AND REGIONAL GOVERNMENTS</span>
+###### <span class="subsections"> SUB-SECTION II <br/> ON COMMUNITY AND REGIONAL GOVERNMENTS</span>
 
-``` Art. 121 ```
+<span class="code"> Art. 121 </span>
 
 § 1. There is a Government of the Flemish Community and a Government of the French Community, the composition and functioning of which are determined by a law adopted by a majority as described in Article 4, last paragraph. <br/>
 &emsp;There is a Government of the German-speaking Community, the composition and functioning of which are determined by the law.
 
 § 2. Without prejudice to Article 137, the regional bodies referred to in Article 39 include a Government for each Region.
 
-
-``` Art. 122 ```
+<span class="code"> Art. 122 </span>
 
 Members of each Community or Regional Government are elected by their Parliament.
 
-``` Art. 123 ```
+<span class="code"> Art. 123 </span>
 
 § 1. The law establishes the composition and functioning of the Community and Regional Governments. Except with regard to the Government of the German-speaking Community, this law is adopted by a majority as described in Article 4, last paragraph.
 
@@ -1119,12 +1108,11 @@ Members of each Community or Regional Government are elected by their Parliament
 &emsp;The law as described in the first sub-paragraph determines additional majority requirements with respect to the Parliament of the Brussels Capital Region. <br/>
 &emsp;A law designates those matters relating to the composition and functioning of the government of the German-speaking Community which the Parliament of this Community regulates by federate law. This federate law is adopted by a two-thirds majority of the votes cast, provided that a majority of the members of the Parliament is present.
 
-``` Art. 124 ```
+<span class="code"> Art. 124 </span>
 
 No member of a Community or Regional Government can be prosecuted or be the subject of any investigation with regard to opinions expressed and votes cast by him in the exercise of his duties.
 
-
-``` Art. 125 ```
+<span class="code"> Art. 125 </span>
 
 Members of a Community or Regional Government are tried exclusively by the appeal court for offences they have allegedly committed in the exercise of their duties. The same rule applies in the case of offences allegedly committed by members of a Community or Regional Government outside the exercise of their duties and for which they are tried during the exercise of their duties. As the case may be, Articles 120 and 59 are not applicable. <br/>
 &emsp;The law determines the manner of proceeding against them, both when they are prosecuted and when they are tried. <br/>
@@ -1136,20 +1124,21 @@ Members of a Community or Regional Government are tried exclusively by the appea
 &emsp;The law determines in which cases and in accordance with which rules injured parties may bring a civil action. <br/>
 &emsp;The laws referred to in the present article must be adopted by a majority as described in Article 4, last paragraph.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The present article is not applicable to acts which have been the subject of a preliminary judicial investigation or to proceedings instituted prior to the entry into force of the law implementing the article. <br/>
 &emsp;In such a case, the following rule applies: the Community or Regional Parliament concerned has the right to indict members of their Government and to bring them before the Supreme Court. Only the united chambers of this court have jurisdiction to try ministers in cases covered by the criminal laws and by application of the penalties prescribed by such laws. The special Law of 28 February 1997 concerning the temporary and partial implementation of Article 125 of the Constitution remains applicable in such cases.
 
-``` Art. 126 ```
+<span class="code"> Art. 126 </span>
 
 Constitutional provisions that apply to members of the Regional and Community Governments, as well as the implementing laws referred to in Article 125, last paragraph apply equally to Regional secretaries of State.
 
-###### <span class="sections"> SECTION II </br> ON RESPONSIBILITIES</span>
+###### <span class="sections"> SECTION II <br/> ON RESPONSIBILITIES</span>
 
-###### <span class="subsections"> SUB-SECTION I </br> ON THE RESPONSIBILITIES OF THE COMMUNITIES</span>
+###### <span class="subsections"> SUB-SECTION I <br/> ON THE RESPONSIBILITIES OF THE COMMUNITIES</span>
 
-``` Art. 127 ```
+<span class="code"> Art. 127 </span>
+
 
 <p class="no-bottom-margin">§ 1. The Parliaments of the Flemish and French Communities, each one in so far as it is concerned, regulate by federate law:</p>
 
@@ -1162,17 +1151,16 @@ Constitutional provisions that apply to members of the Regional and Community Go
 
 A law adopted by a majority as described in Article 4, last paragraph designates the cultural matters referred to in 1° and determines the forms of cooperation referred to in 3°, as well as the specific arrangements for the concluding of treaties referred to in 3°.
 
+<p class="no-bottom-margin">§ 2. These federate laws have the force of law in the Dutch-speaking and French-speaking regions respectively, as well as in those institutions established in the bilingual region of Brussels-Capital which, because of their activities, must be considered as belonging exclusively to one Community or the other.</p>
 
-§ 2. These federate laws have the force of law in the Dutch-speaking and French-speaking regions respectively, as well as in those institutions established in the bilingual region of Brussels-Capital which, because of their activities, must be considered as belonging exclusively to one Community or the other.
+`Art. 128`
 
-``` Art. 128 ```
+<p class="no-bottom-margin">§ 1. The Parliaments of the Flemish and French Communities regulate by federate law, each one in so far as it is concerned, person-related matters, as well as, in such matters, cooperation between the Communities and international cooperation, including the concluding of treaties. <br/>
+&emsp;A law adopted by a majority as described in Article 4, last paragraph designates such person-related matters and determines the forms of cooperation, as well as the specific arrangements for the concluding of treaties.</p>
 
-§ 1. The Parliaments of the Flemish and French Communities regulate by federate law, each one in so far as it is concerned, person-related matters, as well as, in such matters, cooperation between the Communities and international cooperation, including the concluding of treaties. <br/>
-&emsp;A law adopted by a majority as described in Article 4, last paragraph designates such person-related matters and determines the forms of cooperation, as well as the specific arrangements for the concluding of treaties.
+<p class="no-bottom-margin">§ 2. These federate laws have the force of law in the Dutch-speaking and French-speaking regions respectively, as well as – unless a law adopted by a majority as described in Article 4, last paragraph determines otherwise – with regard to those institutions established in the bilingual region of Brussels-Capital which, because of their organisation, must be considered as belonging exclusively to one Community or the other.</p>
 
-§ 2. These federate laws have the force of law in the Dutch-speaking and French-speaking regions respectively, as well as – unless a law adopted by a majority as described in Article 4, last paragraph determines otherwise – with regard to those institutions established in the bilingual region of Brussels-Capital which, because of their organisation, must be considered as belonging exclusively to one Community or the other.
-
-``` Art. 129 ```
+<span class="code"> Art. 129 </span>
 
 <p class="no-bottom-margin">§ 1. The Parliaments of the Flemish and French Communities, to the exclusion of the federal legislator, regulate by federate law, each one as far as it is concerned, the use of languages for:</p>
 
@@ -1186,9 +1174,9 @@ A law adopted by a majority as described in Article 4, last paragraph designates
 - the municipalities or groups of municipalities adjacent to another linguistic Region and in which the law prescribes or permits the use of another language than that of the Region in which they are located. For these municipalities, a change to the rules governing the use of languages in the matters as described in § 1 may be made only by a law adopted by a majority as described in Article 4, last paragraph;
 - services whose activities extend beyond the linguistic region within which they are located;
 - federal and international institutions designated by the law whose activities are common to more than one Community.
-<br/>
+<br/><br/>
 
-``` Art. 130 ```
+<span class="code"> Art. 130 </span>
 
 <p class="no-bottom-margin">§ 1. The Parliament of the German-speaking Community regulates by federate law:</p>
 
@@ -1200,75 +1188,73 @@ A law adopted by a majority as described in Article 4, last paragraph designates
 
 The law designates the cultural and person-related matters referred to in 1° and 2° and determines the forms of cooperation referred to in 4°, as well as the manner in which treaties are concluded.
 
-§ 2. These federate laws have the force of law in the German-speaking region.
+<p>§ 2. These federate laws have the force of law in the German-speaking region.</p>
 
-``` Art. 131 ```
+<span class="code"> Art. 131 </span>
 
 The law determines the measures designed to prevent all forms of discrimination for ideological or philosophical reasons.
 
-``` Art. 132 ```
+<span class="code"> Art. 132 </span>
 
 The right to propose legislation belongs to the Community Government and to the members of the Community Parliament.
 
-``` Art. 133 ```
+<span class="code"> Art. 133 </span>
 
 Only the federate law can give an authoritative interpretation of federate laws. .
 
+###### <span class="subsections"> SUB-SECTION II <br/> ON THE COMPETENCES OF THE REGIONS</span>
 
-###### <span class="subsections">  SUB-SECTION II </br> ON THE COMPETENCES OF THE REGIONS</span>
-
-``` Art. 134 ```
+<span class="code"> Art. 134 </span>
 
 Laws passed in order to execute Article 39 determine the judicial force of the rules which the bodies that they create enact in matters which they determine. <br/>
 &emsp;They can confer to these bodies the power to pass federate laws that have the force of law, within the jurisdiction and in the manner that they determine.
 
-###### <span class="subsections">  SUB-SECTION III </br> SPECIAL PROVISIONS</span>
+###### <span class="subsections"> SUB-SECTION III <br/> SPECIAL PROVISIONS</span>
 
-``` Art. 135 ```
+<span class="code"> Art. 135 </span>
 
 A law adopted by a majority as described in Article 4, last paragraph designates the authorities which exercise for the bilingual region of Brussels-Capital the competences not assigned to the Communities in the matters referred to in Article 128, § 1.
 
-``` Art. 135 bis ```
+<span class="code"> Art. 135 bis </span>
 
 A law passed by a majority as described in Article 4, last paragraph can attribute to the Region of Brussels-Capital, for the bilingual region of Brussels-Capital, powers that have not been assigned to the Communities in the matters referred to in Article 127, § 1, first sub-paragraph, 1° and in the same sub-paragraph, 3°, insofar as this 3° concerns matters referred to in the aforesaid 1°.
 
-``` Art. 136 ```
+<span class="code"> Art. 136 </span>
 
 There are linguistic groups within the Parliament of the Brussels-Capital Region, as well as executive colleges, responsible for Community matters; their composition, functioning and competences and, without prejudice to Article 175, their financing are regulated by a law adopted by a majority as described in Article 4, last paragraph. <br/>
 &emsp;The colleges together form the United College, which acts as a consultation and coordination body between the two Communities.
 
-``` Art. 137 ```
+<span class="code"> Art. 137 </span>
 
 With a view to the application of Article 39, the Parliaments of the Flemish and French Communities, as well as their respective Governments, may exercise the competences, respectively, of the Flemish Region and of the Walloon Region, under the conditions and according to the terms set by the law. This law must be adopted by a majority as described in Article 4, last paragraph.
 
-``` Art. 138 ```
+<span class="code"> Art. 138 </span>
 
 The Parliament of the French Community, on one hand, and the Parliament of the Walloon Region and the French linguistic group of the Parliament of the Brussels-Capital Region, on the other hand, may decide by common accord and each by federate law, that in the French-speaking region, the Parliament and the Government of the Walloon Region and, in the bilingual region of Brussels-Capital, the French linguistic group of the Parliament of the Brussels-Capital Region and its executive college exercise, in full or in part, competences of the French Community. <br/>
 &emsp;These federate laws are adopted by a two-thirds majority of the votes cast within the Parliament of the French Community and by absolute majority of the votes cast within the Parliament of the Walloon Region and within the French linguistic group in the Parliament of the Brussels-Capital Region, provided that a majority of the Parliament members or of the members of the linguistic group concerned is present. They can regulate the financing of the competences which they designate, as well as the transfer of personnel, assets, rights and obligations linked with these competences. <br/>
 &emsp;These competences are exercised, according to the case, by means of federate laws, decisions or regulations.
 
-``` Art. 139 ```
+<span class="code"> Art. 139 </span>
 
 Upon proposal by their respective Governments, the Parliament of the German-speaking Community and the Parliament of the Walloon Region can, each by federate law, decide by common accord that the Parliament and the Government of the German-speaking Community exercise, in whole or in part, competences of the Walloon Region. <br/>
 &emsp;These competences are exercised, according to the case, by means of federate laws, decisions or regulations.
 
-``` Art. 140 ```
+<span class="code"> Art. 140 </span>
 
 The Parliament and the Government of the German-speaking Community exercise by means of decisions and regulations all other competences attributed to them by the law. <br/>
 &emsp;Article 159 is applicable to these decisions and regulations.
 
-###### <span class="chapters"> CHAPTER V</br> ON THE CONSTITUTIONAL COURT, AND THE PREVENTION AND RESOLUTION OF CONFLICTS
-</span>
+###### <span class="chapters"> CHAPTER V</span> <br/> ON THE CONSTITUTIONAL COURT, AND THE PREVENTION AND RESOLUTION OF CONFLICTS
 
-###### <span class="sections"> SECTION I </br>ON THE PREVENTION OF CONFLICTS OF COMPETENCE </span>
+###### <span class="sections"> SECTION I <br/>ON THE PREVENTION OF CONFLICTS OF COMPETENCE </span>
 
-``` Art. 141 ```
+<span class="code"> Art. 141 </span>
 
 The law organises a procedure to prevent conflicts between laws, federate laws and rules referred to in Article 134, as well as between federate laws themselves and between the rules referred to in Article 134 themselves.
 
-###### <span class="sections"> SECTION II </br> ON THE CONSTITUTIONAL COURT</span>
+###### <span class="sections"> SECTION II <br/> ON THE CONSTITUTIONAL COURT</span>
 
-``` Art. 142 ```
+<span class="code"> Art. 142 </span>
 
 <p class="no-bottom-margin">There is for all Belgium a Constitutional Court, the composition, competences and functioning of which are established by the law. </p>
 <p class="no-bottom-margin"> This Court rules by means of judgments on: </p>
@@ -1282,11 +1268,12 @@ A matter may be referred to the Court by any authority designated by the law, by
 &emsp;In the cases, under the conditions and according to the terms that it specifies, the law can give the Court competence to pronounce by a judgment on appeals lodged against decisions made by legislative assemblies or bodies thereof regarding the control of electoral expenditure incurred in the elections for the House of Representatives. <br/>
 &emsp;The laws referred to in the first paragraph, in the second paragraph, 3° and in the third to fifth paragraphs are adopted by a majority as described in Article 4, last paragraph.
 
-###### <span class="sections"> SECTION III </br> ON THE PREVENTION AND THE SETTLEMENT OF CONFLICTS OF INTEREST</span>
+###### <span class="sections"> SECTION III <br/> ON THE PREVENTION AND THE SETTLEMENT OF CONFLICTS OF INTEREST</span>
 
-``` Art. 143 ```
+<span class="code"> Art. 143 </span>
 
-§ 1. In the exercise of their respective responsibilities, the federal State, the Communities, the Regions and the Joint Community Commission act with respect for federal loyalty, in order to prevent conflicts of interest.
+§ 1. In the exercise of their respective responsibilities, the federal State, the
+Communities, the Regions and the Joint Community Commission act with respect for federal loyalty, in order to prevent conflicts of interest.
 
 § 2. The Senate makes decisions, by means of reasoned opinions, on conflicts of interest which may arise between the assemblies which legislate through laws, federate laws or rules as referred to in Article 134, under the conditions and in the manner determined by a law adopted by a majority as referred to in Article 4, last paragraph.
 
@@ -1294,45 +1281,44 @@ A matter may be referred to the Court by any authority designated by the law, by
 
 § 4. The procedures described in §§ 2 and 3 do not apply to laws, decrees, regulations, acts and decisions of the Federal State relating to the basis of taxation, tax rates and exemptions, and any other element playing a role in the computation of the personal income tax.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 Concerning the prevention and the settlement of conflicts of interest, the ordinary law of 9 August 1980 on institutional reforms remains valid; however, it can only be repealed, completed, corrected or replaced by those laws mentioned in §§ 2 and 3.
 
-###### <span class="chapters"> CHAPTER VI</br>ON JUDICIAL POWER</span>
+###### <span class="chapters"> CHAPTER VI</span> <br/> ON JUDICIAL POWER
 
-``` Art. 144 ```
+<span class="code"> Art. 144 </span>
 
 Disputes about civil rights belong exclusively to the competence of the courts. <br/>
 &emsp;However, the law can empower the Council of State or federal administrative courts, in accordance with the terms it specifies, to rule on the effects that their decisions have with respect to civil law.
 
-``` Art. 145 ```
+<span class="code"> Art. 145 </span>
 
 Disputes about political rights belong to the competence of the courts, except for the exceptions established by the law.
 
-``` Art. 146 ```
+<span class="code"> Art. 146 </span>
 
 A court and a body capable of rendering judgment can only be established by virtue of a law. No extraordinary courts or commissions may be created, no matter under which designation.
 
-
-``` Art. 147 ```
+<span class="code"> Art. 147 </span>
 
 There is a Supreme Court for all Belgium. <br/>
 &emsp;This Court has no competence over the substance of the case.
 
-``` Art. 148 ```
+<span class="code"> Art. 148 </span>
 
-Court hearings are public, unless such public access endangers morals or the peace; if such is the case, the Court so declares in a judgment. <br/>
-&emsp;In cases of political or press offences, proceedings can only be conducted in camera on the basis of a unanimous vote.
+Court hearings are public, unless such public access endangers morals or the peace; if such is the case, the Court so declares in a judgment.
+In cases of political or press offences, proceedings can only be conducted in camera on the basis of a unanimous vote.
 
-``` Art. 149 ```
+<span class="code"> Art. 149 </span>
 
 Each judgment is supported by reasons. It is made public according to the terms specified by the law. In criminal matters, the operative part is pronounced publicly.
 
-``` Art. 150 ```
+<span class="code"> Art. 150 </span>
 
 A jury is sworn in for all criminal matters, as well as for political and press offences, with the exception of press offences motivated by racism or xenophobia.
 
-``` Art. 151 ```
+<span class="code"> Art. 151 </span>
 
 § 1. Judges are independent in the exercise of their jurisdictional competences. The public prosecutor is independent in conducting individual investigations and prosecutions, without prejudice to the right of the competent minister to order prosecutions and to prescribe binding directives on criminal policy, including policy on investigations and prosecutions. <br/>
 &emsp;Moreover, Community and Regional Governments have the right, each one insofar as it is concerned, to order prosecutions regarding matters falling under their responsibility through the Minister referred to in the first paragraph. A law passed by a majority as described in Article 4, last paragraph determines the manner in which they exercise this right. <br/>
@@ -1353,8 +1339,8 @@ A jury is sworn in for all criminal matters, as well as for political and press 
 6. voicing of advice and of proposals concerning the general operation and organisation of the judiciary;
 7. general surveillance on and the promoting of the use of means of internal control;
 8. to the exclusion of all disciplinary and criminal competences:<br/>
-    - the receiving and the following-up of complaints relating to the operation of the judiciary; <br/>
-    - the conducting of an enquiry on the operation of the judiciary.
+&emsp;- the receiving and the following-up of complaints relating to the operation of the judiciary; <br/>
+&emsp;- the conducting of an enquiry on the operation of the judiciary.
 
 Under the conditions and in the manner determined by the law, the competences referred to in 1° to 4° are assigned to the relevant nomination and appointment committee, and the competences referred to in 5° to 8° are assigned to the relevant advisory and investigatory committee. The law determines the cases in which and the manner in which the nomination and appointment committees and the advisory and investigatory committees exercise their competences jointly. <br/>
 &emsp;A law to be adopted by a majority as described in Article 4, last paragraph determines the other competences of this Council.
@@ -1371,7 +1357,7 @@ Under the conditions and in the manner determined by the law, the competences re
 
 § 6. In the manner specified by the law, the judges, the incumbents of the positions referred to in § 5, fourth sub-paragraph and the officers of the public prosecutor’s office are subject to an evaluation.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The provisions of §§ 3 to 6 enter into force after the setting up of the High Council of Justice, referred to in § 2. <br/>
 &emsp;On that date, it is assumed that the first president and the president of the Supreme Court, the presidents of the sections of this court, the first presidents of the appeal courts, the presidents of the divisions of these courts and the presidents and vice-presidents of the lower courts are appointed to these positions for the duration and under the conditions specified by the law and that they are appointed at the same time to the Supreme Court, to the appeal court or to the labour court and to the corresponding lower court, respectively. <br/>
@@ -1383,24 +1369,24 @@ The provisions of §§ 3 to 6 enter into force after the setting up of the High 
 &emsp;All the nominations are made public at least fifteen days before the appointment. <br/>
 &emsp;The courts choose from among themselves their presidents and vice-presidents.
 
-``` Art. 152 ```
+<span class="code"> Art. 152 </span>
 
 Judges are appointed for life. They retire at an age determined by the law and receive the pension provided for by the law. <br/>
 &emsp;No judge can be deprived of his post or suspended except by a court decision. <br/>
 &emsp;The transfer of a judge can only take place by his appointment to a new position and with his consent.
 
-``` Art. 153 ```
+<span class="code"> Art. 153 </span>
 
 The King appoints and dismisses officials of the public prosecutor’s offices attached to the courts.
 
-``` Art. 154 ```
+<span class="code"> Art. 154 </span>
 
 Salaries of members of the judicature are determined by the law.
 
-``` Art. 155 ```
+<span class="code"> Art. 155 </span>
 A judge cannot accept a salaried position from a Government, unless this position is exercised free of charge, and even then, such a position must not entail an incompatibility as determined by the law.
 
-``` Art. 156 ```
+<span class="code"> Art. 156 </span>
 
 <p class="no-bottom-margin">There are five appeal courts in Belgium: </p>
 
@@ -1411,56 +1397,54 @@ A judge cannot accept a salaried position from a Government, unless this positio
 5. that of Mons, with jurisdiction over the province of Hainaut.
 <br/>
 
-``` Art. 157 ```
+<span class="code"> Art. 157 </span>
 
 There are military courts when a state of war referred to in Article 167, § 1, second sub-paragraph has been stated to exist. The organisation of the military courts, their powers, their members’ rights and obligations as well as their members’ terms of office are determined by the law. <br/>
 &emsp;There are commercial courts in the places determined by the law. The law lays down rules for their organisation, their powers, the way their members are appointed as well as their members’ terms of office. <br/>
 &emsp;The law also lays down rules for the organisation of the labour courts, their powers, the way their members are appointed as well as their members’ terms of office. <br/>
 &emsp;There are courts for the enforcement of penalties in the places determined by the law. The law lays down rules for their organisation, their powers, the way their members are appointed as well as their members’ terms of office.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The first paragraph becomes effective on the date of repeal of the Law of 15 June 1899 containing Titles I and II of the Military Penal Procedure Code. <br/>
 &emsp;Until then, the following provision remains effective: <br/>
 &emsp;Specific laws regulate the organisation of the military courts, their powers, their members’ rights and obligations as well as their members’ terms of office.
 
-``` Art. 157 bis ```
+<span class="code"> Art. 157 bis </span>
 
 Any modification to essential features of the reform regarding the use of languages in judicial matters in the judicial district of Brussels, as well as any modification to features relating to this issue and concerning the public prosecutor’s office, the Bench and the extent of jurisdiction, may only be made by a law passed by a majority as described in Article 4, last paragraph.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The law determines the date on which this article comes into force. This date is that on which the law of 19 July 2012 reforming the judicial district of Brussels comes into force.
 
-
-``` Art. 158 ```
+<span class="code"> Art. 158 </span>
 
 The Supreme Court makes decisions in conflicts of powers in the manner provided for by the law.
 
-``` Art. 159 ```
+<span class="code"> Art. 159 </span>
 
 Courts only apply general, provincial or local decisions and regulations provided that they are in accordance with the law.
 
 ###### <span class="chapters"> CHAPTER VII <br/> ON THE COUNCIL OF STATE AND ADMINISTRATIVE COURTS</span>
 
-``` Art. 160 ```
+<span class="code"> Art. 160 </span>
 
 There is a Council of State for all Belgium, the composition, competences and functioning of which are determined by the law. However, the law can give the King the power to establish the procedure in accordance with the principles that it determines. <br/>
 &emsp;The Council of State makes decisions by means of judgments as an administrative court and provides an opinion in the cases determined by the law. <br/>
 &emsp;Any modification to the rules relating to the general assembly of the Council of State’s Administrative Litigation Section which come into force on the same day as this paragraph may only be made by a law passed by a majority as described in Article 4, last paragraph.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 This article comes into force on 14 October 2012.
 
-``` Art. 161 ```
+<span class="code"> Art. 161 </span>
 
 An administrative court can only be established by virtue of a law.
 
-
 ###### <span class="chapters"> CHAPTER VIII <br/> ON PROVINCIAL AND MUNICIPAL INSTITUTIONS</span>
 
-``` Art. 162 ```
+<span class="code"> Art. 162 </span>
 
 <p class="no-bottom-margin">Provincial and municipal institutions are regulated by the law. </p>
 
@@ -1476,16 +1460,16 @@ An administrative court can only be established by virtue of a law.
 Supra-municipal collectivities are governed by the rule referred to in Article 134. This rule enshrines the application of the principles mentioned in the second paragraph. Other principles considered essential can be set by the rule referred to in Article 134, whether or not adopted by a majority of two thirds of the votes cast, under the condition that the majority of the members of the Parliament concerned is present. Articles 159 and 190 are applicable to decisions and regulations of supra-municipal collectivities.” <br/>
 &emsp;In accordance with a law adopted by a majority as described in Article 4, last paragraph, the federate law or the rule referred to in Article 134 establishes the conditions and the manner in which several provinces, supra-municipal collectivities or municipalities can cooperate or form associations. However, provincial councils, councils of supra-municipal collectivities or municipal councils cannot be permitted to deliberate jointly.
 
-``` Art. 163 ```
+<span class="code"> Art. 163 </span>
 
 The competences exercised in the Flemish and Walloon Regions by elected provincial bodies are exercised, in the bilingual region of Brussels-Capital, by the Flemish and French Communities and by the Joint Community Commission, each with respect to matters falling under their responsibility in pursuance of Articles 127 and 128 and, with respect to other matters, by the Brussels-Capital Region. <br/>
 &emsp;However, a law adopted by a majority as described in Article 4, last paragraph establishes the detailed rules by which the Brussels-Capital Region or any institution whose members are designated by the latter exercise the competences described in the first paragraph which do not belong to those matters referred to in Article 39. A law adopted by the same majority lays down rules for the attribution to those institutions described in Article 136 of all or part of the competences referred to in the first paragraph that belong to those matters described in Articles 127 and 128.
 
-``` Art. 164 ```
+<span class="code"> Art. 164 </span>
 
 The drafting of registry office certificates relating to civil status and the maintenance of registers fall exclusively under the responsibility of the municipal authorities.
 
-``` Art. 165 ```
+<span class="code"> Art. 165 </span>
 
 § 1. The law creates metropolitan districts and federations of municipalities. It determines their organisation and their competences and, when doing so, guarantees the application of the principles described in Article 162. <br/>
 &emsp;Each metropolitan district has a council and an executive college. <br/>
@@ -1497,7 +1481,7 @@ The drafting of registry office certificates relating to civil status and the ma
 
 § 3. Several federations of municipalities may cooperate or form associations with each other or with one or more metropolitan districts in accordance with the conditions and in the manner prescribed by the law to jointly regulate and manage those issues that fall within their competence. Their councils are not permitted to deliberate jointly.
 
-``` Art. 166 ```
+<span class="code"> Art. 166 </span>
 
 § 1. Article 165 applies to the metropolitan district to which the capital of the Kingdom belongs, with the exception of what is provided for hereinafter.
 
@@ -1512,13 +1496,13 @@ The drafting of registry office certificates relating to civil status and the ma
 
 ##### <span class="titles"> TITLE IV </span> <br/> TITLE IV
 
-``` Art. 167 ```
+<span class="code"> Art. 167 </span>
 
 § 1. The King directs international relations, notwithstanding the competence of Communities and Regions to regulate international cooperation, including the concluding of treaties, for those matters that fall within their competences in pursuance of or by virtue of the Constitution. <br/>
 &emsp;The King commands the armed forces; he states that there exists a state of war or that hostilities have ceased. He notifies the Houses with additional appropriate messages as soon as interests and security of the State permit.<br/>
 &emsp;Cession, exchange or expansion of territory can only take place by virtue of a law.
 
-§ 2. The King concludes treaties, with the exception of those regarding matters described in § 3.These treaties take effect only after they have received the approval of the House of Representatives.
+§ 2. The King concludes treaties, with the exception of those regarding matters described in § 3. These treaties take effect only after they have received the approval of the House of Representatives.
 
 § 3. The Community and Regional Governments described in Article 121 conclude, each one in so far as it is concerned, treaties regarding matters that fall within the competence of their Parliament. These treaties take effect only after they have received the approval of the Parliament.
 
@@ -1527,32 +1511,31 @@ The drafting of registry office certificates relating to civil status and the ma
 § 5. The King, by common consent with the Community or Regional Governments concerned, can denounce treaties concluded before 18 May 1993 and covering matters described in § 3. <br/>
 &emsp;The King denounces these treaties if the Community or Regional Governments concerned invite him to do so. A law adopted by a majority as described in Article 4, last paragraph establishes the procedure in the event of disagreement between the Community and Regional Governments concerned.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 The second sentence of § 2 comes into force on the day when elections take place with a view to the complete renewal of the Community and Regional Parliaments in 2014. Until this day, treaties referred to in § 2 take effect only after they have received the approval of both Houses.
 
-``` Art. 168 ```
+<span class="code"> Art. 168 </span>
 
 From the beginning, the Houses are informed of negotiations concerning any revision of the treaties establishing the European Community and the treaties and acts which have modified or complemented them. They receive the draft treaty before its signature.
 
-``` Art. 168 bis ```
+<span class="code"> Art. 168 bis </span>
 
 With respect to the election of the European Parliament, the law determines special rules with a view to protecting the legitimate interests of French and Dutch-speaking people in the former province of Brabant. <br/>
 &emsp;The provisions which establish these special rules may only be amended by a law passed by a majority as described in Article 4, last paragraph.
 
-``` Art.169 ```
+<span class="code"> Art.169 </span>
 
 In order to ensure the observance of international or supranational obligations, the authorities mentioned in Articles 36 and 37 can, provided that the conditions stipulated by the law are met, temporarily replace the bodies mentioned in Articles 115 and 121. This law must be adopted by a majority as described in Article 4, last paragraph.
 
 ##### <span class="titles"> TITLE V </span> <br/> ON FINANCES
 
-``` Art. 170 ```
+<span class="code"> Art. 170 </span>
 
 § 1. Taxes to the benefit of the State can only be introduced by a law.
 
 § 2. Taxes to the benefit of a Community or Region can only be introduced by a federate law or a rule as described in Article 134. <br/>
 &emsp;The law determines, with respect to the taxes referred to in the first sub-paragraph, the exceptions that are proved to be necessary.
-
 
 § 3. A charge or tax can only be introduced by a province or a supra-municipal collectivity by the decision of its council. <br/>
 &emsp;The law determines, with respect to the taxes described in the first paragraph, the exceptions that are proved to be necessary. <br/>
@@ -1561,49 +1544,49 @@ In order to ensure the observance of international or supranational obligations,
 § 4. A charge or tax can only be introduced by the metropolitan districts, federations of municipalities or by the municipalities by a decision of their council. <br/>
 &emsp;The law determines, with respect to the taxes referred to in the first sub-paragraph, the exceptions that are proved to be necessary.
 
-``` Art. 171 ```
+<span class="code"> Art. 171 </span>
 
 Taxes to the benefit of the State, a Community or a Region are subject to an annual vote. <br/>
 &emsp;The rules which introduce them are valid only for one year if they are not renewed.
 
-``` Art. 172 ```
+<span class="code"> Art. 172 </span>
 
 No privileges with regard to taxes can be introduced. <br/>
 &emsp;No exemption or reduction of taxes can be introduced except by a law.
 
-``` Art. 173 ```
+<span class="code"> Art. 173 </span>
 
-Except to the benefit of the provinces, the bodies responsible for polders and for draining and flood protection, and except for the cases formally excepted by the laws, the federate laws and rules referred to in Article 134, charges can only be claimed from citizens in the form of taxes to the benefit of the State, the Community, the Region, the metropolitan district, the federation of municipalities or the municipality.
+Except to the benefit of the provinces, the bodies responsible for polders and for draining and flood protection, and except for the cases formally excepted by the laws, federate laws and rules referred to in Article 134, charges can only be claimed from citizens in the form of taxes to the benefit of the State, the Community, the Region, the metropolitan district, the federation of municipalities or the municipality.
 
-``` Art. 174 ```
+<span class="code"> Art. 174 </span>
 
 Each year, the House of Representatives passes the law that settles the final accounts and approves the budget. However, the House of Representatives and the Senate fix, each for itself, their operating allowances annually. <br/>
 &emsp;All State receipts and expenditure must be included in the budget and in the accounts.
 
-``` Art. 175 ```
+<span class="code"> Art. 175 </span>
 
 A law adopted by a majority as described in Article 4, last paragraph establishes the system for financing the Flemish Community and the French Community. <br/>
 &emsp;The Flemish and French Community Parliaments decide by federate law, each one in so far as it is concerned, upon the use of their revenues.
 
-``` Art. 176 ```
+<span class="code"> Art. 176 </span>
 
 A law establishes the system for financing the German-speaking Community. <br/>
 &emsp;The Parliament of the German-speaking Community decides by federate law upon the use of its revenues.
 
-``` Art. 177 ```
+<span class="code"> Art. 177 </span>
 
 A law adopted by a majority as described in Article 4, last paragraph establishes the system for financing the Regions. <br/>
 &emsp;Regional Parliaments determine, each one for matters of its concern, the use of their revenues, by means of the rules referred to in Article 134.  
 
-``` Art. 178 ```
+<span class="code"> Art. 178 </span>
 
 Under the conditions and in the manner stipulated by a law adopted by a majority as described in Article 4, last paragraph, the Parliament of the Brussels-Capital Region transfers, by the rule referred to in Article 134, financial means to the Joint Community Commission and to the Flemish and French Community Commissions.
 
-``` Art. 179 ```
+<span class="code"> Art. 179 </span>
 
 No pension or gratuity payable by the public treasury can be attributed other than by virtue of a law.
 
-``` Art. 180 ```
+<span class="code"> Art. 180 </span>
 
 Members of the Court of Audit are appointed by the House of Representatives for a term established by the law. <br/>
 &emsp;This Court is responsible for examining and validating the general administration accounts and the accounts of all accounting officers answerable to the public treasury. It must see that no budgetary item is surpassed and that no transfers take place. The Court also has general oversight of operations relating to the establishment and collection of entitlements owed to the State, including tax receipts. It clears the accounts of the various State administrations and is responsible for collecting all information and accounting documents needed for that purpose. General accounts of the State are submitted to the House of Representatives with the Court of Audit’s observations. <br/>
@@ -1611,77 +1594,75 @@ Members of the Court of Audit are appointed by the House of Representatives for 
 &emsp;The law can entrust the Court of Audit with the control of the budgets and accountancy of the Communities and Regions, as well as of the public interest bodies which depend on them. It can also permit their control to be regulated by the federate law or the rule referred to in Article 134. Except as far as the German-speaking Community is concerned, the said law is passed by the majority as described in Article 4, last paragraph. <br/>
 &emsp;The law, the federate law or the rule referred to in Article 134 can entrust additional tasks to the Court of Audit. After the Court has agreed to it, the federate law or the rule referred to in Article 134 fixes the fee that is paid to the Court for carrying out these tasks. No fee is due for carrying out a task that the Court is already performing for a Community or Region before this paragraph comes into force.
 
-``` Art. 181 ```
+<span class="code"> Art. 181 </span>
 
 § 1. The salaries and pensions of ministers of religion are paid for by the State; the amounts required are charged annually to the budget.
 
-§ 2. The salaries and pensions of representatives of organisations recognised by the law as providing moral assistance according to a non-denominational philosophical concept are paid for by the State; the amounts required are charged annually to the budget.
-
+§ 2. The salaries and pensions of representatives of organisations recognized by the law as providing moral assistance according to a non-denominational philosophical concept are paid for by the State; the amounts required are charged annually to the budget.
 
 ##### <span class="titles"> TITLE VI </span> <br/> ON THE ARMED FORCES AND THE POLICE SERVICE
 
-``` Art. 182 ```
+<span class="code"> Art. 182 </span>
 
 Army recruitment methods are determined by the law. The law also regulates the promotion, the rights and the duties of military personnel.
 
-``` Art. 183 ```
+<span class="code"> Art. 183 </span>
 
 Military quotas are subject to an annual vote. The law that determines them is valid only for one year if it is not renewed.
 
-``` Art. 184 ```
+<span class="code"> Art. 184 </span>
 
 The organisation and competence of the integrated police service, structured at two levels, are regulated by the law. The essential features of the status of the members of the personnel of the integrated police service, structured at two levels, are regulated by the law.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 However, the King can decide upon and implement the essential features of the status of the members of the personnel of the integrated police service, structured at two levels, provided that this decree, with regard to these features, is confirmed by the law before 30 April 2002.
 
-``` Art. 185 ```
+<span class="code"> Art. 185 </span>
 
 Foreign troops may only be admitted to the service of the State, or occupy or cross the territory by virtue of a law.
 
-``` Art. 186 ```
+<span class="code"> Art. 186 </span>
 
 Military personnel can only be deprived of rank, honours and pensions in the manner described by the law.
 
-
 ##### <span class="titles"> TITLE VII </span> <br/> GENERAL PROVISIONS
 
-``` Art. 187 ```
+<span class="code"> Art. 187 </span>
 
 The Constitution cannot be wholly or partially suspended.
 
-``` Art. 188 ```
+<span class="code"> Art. 188 </span>
 
 From the day on which the Constitution becomes enforceable, all laws, decrees, decisions, regulations and other acts that are contrary to it are abrogated.
 
-``` Art. 189 ```
+<span class="code"> Art. 189 </span>
 
 The text of the Constitution is drafted in Dutch, in French and in German.
 
-``` Art. 190 ```
+<span class="code"> Art. 190 </span>
 
 No law or decision, or regulation of general, provincial or municipal administration is binding until it has been published in the manner described by the law.
 
-``` Art. 191 ```
+<span class="code"> Art. 191 </span>
 
 All foreigners on Belgian soil benefit from the protection provided to persons and property, except for those exceptions provided for by the law.
 
-``` Art. 192 ```
+<span class="code"> Art. 192 </span>
 
 An oath can only be made obligatory by virtue of a law. The law determines the wording.
 
-``` Art. 193 ```
+<span class="code"> Art. 193 </span>
 
 The Belgian Nation adopts red, yellow and black colours, and as arms of the kingdom the Lion of Belgium with the motto: UNION IS STRENGTH.
 
-``` Art. 194 ```
+<span class="code"> Art. 194 </span>
 
 The city of Brussels is the capital of Belgium and the seat of the Federal Government.
 
 ##### <span class="titles"> TITLE VIII </span> <br/> ON THE REVISION OF THE CONSTITUTION
 
-``` Art. 195 ```
+<span class="code"> Art. 195 </span>
 
 The federal legislative power has the right to declare that there are reasons to revise such constitutional provision as it determines. <br/>
 &emsp;Following such a declaration, the two Houses are automatically dissolved. <br/>
@@ -1689,7 +1670,7 @@ The federal legislative power has the right to declare that there are reasons to
 &emsp;These Houses make decisions, in common accord with the King, on the points submitted for revision. <br/>
 &emsp;In this case, the Houses can only debate provided that at least two thirds of the members who make up each House are present; and no change is adopted unless it is supported by at least two thirds of the votes cast.
 
-``` Transitional provision  ```
+<span class="code"> Transitional provision </span>
 
 <p class="no-bottom-margin">The Houses, as they were constituted following their full renewal on 13 June 2010, may however, in common consent with the King, pronounce on the revision of the following provisions, articles and groups of articles, but only to the effect as indicated hereafter:</p>
 
@@ -1712,19 +1693,18 @@ The federal legislative power has the right to declare that there are reasons to
 The Houses can only debate on the items mentioned in the first paragraph provided that at least two thirds of the members who make up each House are present and no change is adopted unless it is supported by at least two thirds of the votes cast. <br/>
 &emsp;This transitional provision is not to be considered as a declaration in the sense of Article 195, second paragraph.
 
-``` Art. 196 ```
+<span class="code"> Art. 196 </span>
 
 No constitutional revision can be started or pursued during times of war or when the Houses are prevented from meeting freely on federal territory.
 
-``` Art. 197 ```
+<span class="code"> Art. 197 </span>
 
 During a regency, no changes can be made to the Constitution regarding the constitutional powers of the King and Articles 85 to 88, 91 to 95, 106 and 197 of the Constitution.
 
-``` Art. 198 ```
+<span class="code"> Art. 198 </span>
 
 In agreement with the King, the Constituent Houses can change the numbering of articles and of subdivisions of the articles of the Constitution, as well as the subdivisions of the latter into titles, chapters and sections, modify the terminology of provisions not submitted for revision in order to harmonise them with the terminology of new provisions and to ensure the concordance of the Dutch, French and German texts of the Constitution. <br/>
 &emsp;In this case, the Houses can debate only provided that at least two thirds of the members who make up each House are present; and no change will be adopted unless it is supported by at least two thirds of the votes cast.
-
 
 ##### <span class="titles"> TITLE IX </span> <br/> THE ENTRY INTO FORCE AND TRANSITIONAL PROVISIONS
 
@@ -1732,7 +1712,7 @@ I. – The provisions of Article 85 will for the first time be applicable to the
 &emsp;Until such time, the following provisions remain in effect. <br/>
 &emsp;The constitutional powers of the King are hereditary through the direct, natural and legitimate descent from H.M. Leopold, George, Christian, Frederick of Saxe-Coburg, from male to male, by order of primogeniture and with the permanent exclusion of women and of their descendants. <br/>
 &emsp;The prince who marries without the King’s consent or, in his absence, without the consent of those exercising the King’s powers in cases provided for by the Constitution shall be deprived of his right to the crown. <br/>
-&emsp;Nonetheless, this right may be restored by the King or, in his absence, by those exercising the powers of the King in cases provided for by the Constitution, but only with the assent of both Houses. .
+&emsp;Nonetheless, this right may be restored by the King or, in his absence, by those exercising the powers of the King in cases provided for by the Constitution, but only with the assent of both Houses.
 
 II.  [Repealed]
 
@@ -1755,7 +1735,6 @@ VI. — § 1.  [Repealed]
 
 
 </div>
-
 
 ::
 

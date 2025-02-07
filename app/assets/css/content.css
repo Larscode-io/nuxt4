@@ -36,25 +36,4 @@
   }
 }
 
-.content-wrapper .nuxt-content h3 a {
-  text-decoration: none;
-}
 
-code {
-  background-color: #f2f2f2;
-  padding: 2px;
-  font-size: 14px;
-}
-
-.basicTextWrapper .nuxt-content p {
-  text-indent: 1rem;
-  margin-bottom: 16px;
-}
-
-.basicTextWrapper p a {
-  color: #00709d;
-}
-
-h3 a:hover {
-  text-decoration: none;
-}
