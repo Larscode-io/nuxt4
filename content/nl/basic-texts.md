@@ -7,8 +7,10 @@ posterUrl: ~/assets/img/newsletter-background.png
 ### 1\. De Grondwet van het federale België
 
 <div class="no-text-indent">
-    <p><a href="/nl/court/basic-text/table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court?page=1&per-page=50">De grondwetsartikelen waarnaar het Grondwettelijk Hof heeft verwezen.</a></p>
+    <p><a className="link" href="/nl/court/basic-text/table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court?page=1&per-page=50">De grondwetsartikelen waarnaar het Grondwettelijk Hof heeft verwezen.</a></p>
 </div>
+
+::AccordionGroup
 
 ::AccordionItem{aria-label="De Belgische Grondwet - maart 2021, klik om de volledige tekst te openen."}
 <template v-slot:title>
@@ -1645,9 +1647,12 @@ VI. — § 1. [opgeheven]
 
 ::
 
+::
+
 
 ### 2\. Organieke wetten
 
+::AccordionGroup
 ::AccordionItem
 <template v-slot:title>
 <span class="titles">Bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof</span>
@@ -2948,27 +2953,12 @@ rekening met de opeenvolgende wijzigingen van:
 
 ::
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgWet2"
-    id="basisTextsButton3"
-    @click="()=>{
-    document.querySelector('#basisTextsButton3').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton3').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Wet van 6 januari 1989 betreffende de wedden en pensioenen van de rechters, de referendarissen en de griffiers van het Grondwettelijk Hof, klik om de volledige tekst te openen."
-    >
+::AccordionItem
+<template v-slot:title>
+<span class="titles">Wet van 6 januari 1989 betreffende de wedden en pensioenen van de rechters, de referendarissen en de griffiers van het Grondwettelijk Hof</span>
+</template>
 
-#### Wet van 6 januari 1989 betreffende de wedden en pensioenen van de rechters, de referendarissen en de griffiers van het Grondwettelijk Hof
-
-<v-icon>mdi-chevron-down</v-icon>
+<!-- <v-icon>mdi-chevron-down</v-icon> -->
 </button>
 <div role="region" id="orgWet2" class="accordion-content">
 
@@ -3034,31 +3024,18 @@ Worden opgeheven:
 </div>
 </div>
 
+::
+::
+
 ### 3\. Organieke besluiten
 
-<div class="accordionGroup">
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl1"
-    id="basisTextsButton4"
-    @click="()=>{
-    document.querySelector('#basisTextsButton4').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton4').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Koninklijk besluit van 28 september 1983 tot vaststelling van de openingsuren van de griffie van het Grondwettelijk Hof, klik om de volledige tekst te openen."
-    >
+::AccordionGroup
+::AccordionItem{aria-label="Koninklijk besluit van 28 september 1983 tot vaststelling van de openingsuren van de griffie van het Grondwettelijk Hof, klik om de volledige tekst te openen."}
 
-#### Koninklijk besluit van 28 september 1983 tot vaststelling van de openingsuren van de griffie van het Grondwettelijk Hof  
+<template v-slot:title>
+<span class="titles">Koninklijk besluit van 28 september 1983 tot vaststelling van de openingsuren van de griffie van het Grondwettelijk Hof</span>
+</template>
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
 <div role="region" id="orgBesl1" class="accordion-content">
 
 (Belgisch Staatsblad, 23 februari 1984)
@@ -3076,28 +3053,14 @@ De griffie van het Grondwettelijk Hof is open alle dagen, behalve op zaterdagen,
 </div>
 </div>
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl2"
-    id="basisTextsButton5"
-    @click="()=>{
-    document.querySelector('#basisTextsButton5').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton5').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-     aria-label="Koninklijk besluit van 28 september 1983 tot vaststelling van de regelen voor het leveren van het bewijs van een voldoende kennis van de Duitse taal door de rechters van het Grondwettelijk Hof, klik om de volledige tekst te openen."
-    >
+::
 
-#### Koninklijk besluit van 28 september 1983 tot vaststelling van de regelen voor het leveren van het bewijs van een voldoende kennis van de Duitse taal door de rechters van het Grondwettelijk Hof
+::AccordionItem{aria-label="Koninklijk besluit van 28 september 1983 tot vaststelling van de regelen voor het leveren van het bewijs van een voldoende kennis van de Duitse taal door de rechters van het Grondwettelijk Hof, klik om de volledige tekst te openen."}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
+<template v-slot:title>
+<span class="titles">Koninklijk besluit van 28 september 1983 tot vaststelling van de regelen voor het leveren van het bewijs van een voldoende kennis van de Duitse taal door de rechters van het Grondwettelijk Hof</span>
+</template>
+
 <div role="region" id="orgBesl2" class="accordion-content">
 
 (Belgisch Staatsblad, 23 februari 1984)
@@ -3140,28 +3103,14 @@ De leden van de examencommissie hebben eveneens recht op de vergoeding wegens ve
 </div>
 </div>
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl3"
-    id="basisTextsButton6"
-    @click="()=>{
-    document.querySelector('#basisTextsButton6').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton6').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Koninklijk besluit van 28 september 1983 tot vaststelling van de regelen voor het leveren van het bewijs van een voldoende kennis van de tweede landstaal en van het Duits door de kandidaat-referendarissen bij het Grondwettelijk Hof, klik om de volledige tekst te openen."
-    >
+::
 
-#### Koninklijk besluit van 28 september 1983 tot vaststelling van de regelen voor het leveren van het bewijs van een voldoende kennis van de tweede landstaal en van het Duits door de kandidaat-referendarissen bij het Grondwettelijk Hof
+::AccordionItem{aria-label="Koninklijk besluit van 28 september 1983 tot vaststelling van de regelen voor het leveren van het bewijs van een voldoende kennis van de tweede landstaal en van het Duits door de kandidaat-referendarissen bij het Grondwettelijk Hof, klik om de volledige tekst te openen."}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
+<template v-slot:title>
+<span class="titles">Koninklijk besluit van 28 september 1983 tot vaststelling van de regelen voor het leveren van het bewijs van een voldoende kennis van de tweede landstaal en van het Duits door de kandidaat-referendarissen bij het Grondwettelijk Hof</span>
+</template>
+
 <div role="region" id="orgBesl3" class="accordion-content">
 
 (Belgisch Staatsblad, 23 februari 1984)
@@ -3185,28 +3134,14 @@ Het Examen bestaat in een gesprek tijdens hetwelk de leden van de examencommissi
 </div>
 </div>
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl4"
-    id="basisTextsButton7"
-    @click="()=>{
-    document.querySelector('#basisTextsButton7').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton7').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Koninklijk besluit van 16 februari 1984 houdende voorschrift omtrent de ambtskledij der ambtsdragers van het Grondwettelijk Hof, klik om de volledige tekst te openen."
-    >
+::
 
-#### Koninklijk besluit van 16 februari 1984 houdende voorschrift omtrent de ambtskledij der ambtsdragers van het Grondwettelijk Hof
+::AccordionItem{aria-label="Koninklijk besluit van 16 februari 1984 houdende voorschrift omtrent de ambtskledij der ambtsdragers van het Grondwettelijk Hof, klik om de volledige tekst te openen."}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
+<template v-slot:title>
+<span class="titles">Koninklijk besluit van 16 februari 1984 houdende voorschrift omtrent de ambtskledij der ambtsdragers van het Grondwettelijk Hof</span>
+</template>
+
 <div role="region" id="orgBesl4" class="accordion-content">
 
 (Belgisch Staatsblad, 23 februari 1984)
@@ -3244,28 +3179,14 @@ Dit besluit treedt in werking op 4 maart 1984.
 </div>
 </div>
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl5"
-    id="basisTextsButton8"
-    @click="()=>{
-    document.querySelector('#basisTextsButton8').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton8').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Koninklijk besluit van 14 april 2009 houdende uitvoering van artikel 75 van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof , klik om de volledige tekst te openen."
-    >
+::
 
-#### Koninklijk besluit van 14 april 2009 houdende uitvoering van artikel 75 van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof  
+::AccordionItem{aria-label="Koninklijk besluit van 14 april 2009 houdende uitvoering van artikel 75 van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof , klik om de volledige tekst te openen."}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
+<template v-slot:title>
+<span class="titles">Koninklijk besluit van 14 april 2009 houdende uitvoering van artikel 75 van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof</span>
+</template>
+
 <div role="region" id="orgBesl5" class="accordion-content">
 
 (Belgisch Staatsblad, 8 juni 2009)
@@ -3291,28 +3212,14 @@ De Eerste Minister en de Minister van Justitie zijn, ieder wat hem betreft, bela
 </div>
 </div>
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgBesl6"
-    id="basisTextsButton9"
-    @click="()=>{
-    document.querySelector('#basisTextsButton9').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton9').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Koninklijk besluit van 10 november 2009 houdende regeling betreffende de eer- en voorrangsbewijzen ten aanzien van het Grondwettelijk Hof (geen wijzging), klik om de volledige tekst te openen."
-    >
+::
 
-#### Koninklijk besluit van 10 november 2009 houdende regeling betreffende de eer- en voorrangsbewijzen ten aanzien van het Grondwettelijk Hof (geen wijzging)
+::AccordionItem{aria-label="Koninklijk besluit van 10 november 2009 houdende regeling betreffende de eer- en voorrangsbewijzen ten aanzien van het Grondwettelijk Hof (geen wijzging), klik om de volledige tekst te openen."}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
+<template v-slot:title>
+<span class="titles">Koninklijk besluit van 10 november 2009 houdende regeling betreffende de eer- en voorrangsbewijzen ten aanzien van het Grondwettelijk Hof (geen wijzging)</span>
+</template>
+
 <div role="region" id="orgBesl6" class="accordion-content">
 
 (Belgisch Staatsblad, 26 november 2009)
@@ -3343,35 +3250,25 @@ Het koninklijk besluit van 16 februari 1984 houdende regeling betreffende de eer
 </div>
 </div>
 
+::
+::
+
 ### 4\. Reglementen
 
 <div class="no-text-indent">
     <p>Reglementen van orde en richtlijnen van het Grondwettelijk Hof</p>
 </div>
 
-<div class="accordionGroup">
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="reg1"
-    id="basisTextsButton10"
-    @click="()=>{
-    document.querySelector('#basisTextsButton10').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton10').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Reglement van orde van 15 december 1987 , klik om de volledige tekst te openen."
-    >
 
-#### Reglement van orde van 15 december 1987
+::AccordionGroup
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
+::AccordionItem{aria-label="Reglement van orde van 15 december 1987 , klik om de volledige tekst te openen."}
+
+<template v-slot:title>
+<span class="titles">Reglement van orde van 15 december 1987</span>
+</template>
+
+
 <div role="region" id="reg1" class="accordion-content">
 
 (Belgisch Staatsblad, 29 december 1987)
@@ -3391,28 +3288,15 @@ Goedgekeurd door het Arbitragehof conform artikel 105 van de wet van 28 juni 198
 </div>
 </div>
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="reg2"
-    id="basisTextsButton11"
-    @click="()=>{
-    document.querySelector('#basisTextsButton11').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton11').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Beslissing van het Arbitragehof van 14 februari 1989, klik om de volledige tekst te openen."
-    >
+::
 
-#### Beslissing van het Arbitragehof van 14 februari 1989   
+::AccordionItem{aria-label="Beslissing van het Arbitragehof van 14 februari 1989, klik om de volledige tekst te openen."}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
+<template v-slot:title>
+<span class="titles">Beslissing van het Arbitragehof van 14 februari 1989</span>
+</template>
+
+
 <div role="region" id="reg2" class="accordion-content">
 
 (Belgisch Staatsblad, 23 februari 1989)
@@ -3424,27 +3308,14 @@ Het Hof bevestigt, met toepassing van [artikel 122](/nl/court/basic-text/special
 </div>
 </div>
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="reg3"
-    id="basisTextsButton12"
-    @click="()=>{
-    document.querySelector('#basisTextsButton12').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton12').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Richtlijn van het Arbitragehof van 14 februari 1989 betreffende de rechtspleging, klik om de volledige tekst te openen."
-    >
+::
 
-#### Richtlijn van het Arbitragehof van 14 februari 1989 betreffende de rechtspleging  
+::AccordionItem{aria-label="Richtlijn van het Arbitragehof van 14 februari 1989 betreffende de rechtspleging, klik om de volledige tekst te openen."}
 
-<v-icon>mdi-chevron-down</v-icon>
+<template v-slot:title>
+<span class="titles">Richtlijn van het Arbitragehof van 14 februari 1989 betreffende de rechtspleging  </span>
+</template>
+
 </button>
 <div role="region" id="reg3" class="accordion-content">
 
@@ -3463,28 +3334,14 @@ Wat de zaken betreft die zijn ingeschreven op de rol van het Hof vanaf de inwerk
 </div>
 </div>
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="reg4"
-    id="basisTextsButton13"
-    @click="()=>{
-    document.querySelector('#basisTextsButton13').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton13').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Beslissing van het Arbitragehof van 24 november 1994 betreffende de uitvoering van het ambt van griffier door een referendaris, klik om de volledige tekst te openen."
-    >
+::
 
-#### Beslissing van het Arbitragehof van 24 november 1994 betreffende de uitvoering van het ambt van griffier door een referendaris  
+::AccordionItem{aria-label="Beslissing van het Arbitragehof van 24 november 1994 betreffende de uitvoering van het ambt van griffier door een referendaris, klik om de volledige tekst te openen."}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
+<template v-slot:title>
+<span class="titles">Beslissing van het Arbitragehof van 24 november 1994 betreffende de uitvoering van het ambt van griffier door een referendaris</span>
+</template>
+
 <div role="region" id="reg4" class="accordion-content">
 
 (Belgisch Staatsblad, 2 december 1994)
@@ -3498,28 +3355,14 @@ Onderhavige beslissing wordt ingevoegd in het reglement van orde van het Hof.
 </div>
 </div>
 
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="reg5"
-    id="basisTextsButton14"
-    @click="()=>{
-    document.querySelector('#basisTextsButton14').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton14').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Richtlijn van het Arbitragehof van 20 juni 1996 betreffende laattijdige memories, klik om de volledige tekst te openen."
-    >
+::
 
-#### Richtlijn van het Arbitragehof van 20 juni 1996 betreffende laattijdige memories
+::AccordionItem{aria-label="Richtlijn van het Arbitragehof van 20 juni 1996 betreffende laattijdige memories, klik om de volledige tekst te openen."}
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
+<template v-slot:title>
+<span class="titles">Richtlijn van het Arbitragehof van 20 juni 1996 betreffende laattijdige memories</span>
+</template>
+
 <div role="region" id="reg5" class="accordion-content">
 
 (Belgisch Staatsblad, 23 juli 1996)

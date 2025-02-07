@@ -6,29 +6,16 @@ locale: en
 ---
 ### 1\. The Constitution of Federal Belgium
 
-<div class="accordionGroup">
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="grondwet"
-    id="basisTextsButton1"
-    @click="()=>{
-    document.querySelector('#basisTextsButton1').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton1').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-      aria-label="The Belgian Constitution - March 2021, Click to open full text"
-    >
+::AccordionGroup
+
+::AccordionItem{aria-label="The Belgian Constitution - March 2021, Click to open full text"}
+
+<template v-slot:title>
+    <span class="titles">The Belgian Constitution - March 2021</span>
+</template>
 
 #### The Belgian Constitution - March 2021
 
-<v-icon>mdi-chevron-down</v-icon>
-</button>
 <div role="region" id="grondwet" class="accordion-content">
 
 ##### <span class="titles"> TITLE I  </span> <br/> ON FEDERAL BELGIUM, ITS COMPONENTS AND ITS TERRITORY
@@ -1775,10 +1762,25 @@ VI. — § 1.  [Repealed]
 </div>
 </div>
 
+::
+
+::
+
+
+
+#### The Belgian Constitution - March 2021
 
 ### 2\. Organic Law
 
-<div class="accordionGroup">
+::AccordionGroup
+
+::AccordionItem{aria-label="Special act of 6 january 1989 on the Constitutional court, Click to open full text"}
+
+<template v-slot:title>
+    <span class="titles">Special act of 6 january 1989 on the Constitutional court</span>
+</template>
+
+<!-- <div class="accordionGroup">
 <div
     class="accordion"
 >
@@ -1800,7 +1802,7 @@ VI. — § 1.  [Repealed]
 #### Special act of 6 january 1989 on the Constitutional court
 
 <v-icon>mdi-chevron-down</v-icon>
-</button>
+</button> -->
 <div role="region" id="orgWet1" class="accordion-content">
 
 <div class="no-text-indent">
