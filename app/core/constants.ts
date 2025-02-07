@@ -419,3 +419,34 @@ export interface PubStudiesData {
   title_e?: string
   offline?: string
 }
+
+export interface JudgmentType {
+  id: number
+  label: string
+}
+
+export interface ApplicantTable {
+  _k1_Verzoeker_ID: number
+  _k2_Verzoekerscategorie_ID: number
+  Verzoeker_NL_cu: string
+  Verzoeker_FR_cu: string
+}
+
+export interface ApplicantCategoryTable {
+  _k1_Verzoekerscategorie_ID: number
+  VerzoekersCategorie_NL_cu: string
+  VerzoekersCategorie_FR_cu: string
+}
+
+export interface Juridisction {
+  _k1_Rechtscollege_ID: number
+  Rechtscollege_NL_cu: string
+  Rechtscollege_FR_cu: string
+}
+
+export interface JuridisctionArea {
+  _k1_RechtsgebiedVolgnummer_ID: number
+  _k1_Rechtsgebied_ID: number
+  Plaats_NL_cu: string
+  Plaats_FR_cu: string
+}
