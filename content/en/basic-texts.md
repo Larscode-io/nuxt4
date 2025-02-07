@@ -8,17 +8,54 @@ locale: en
 
 ::AccordionGroup
 
-::AccordionItem{aria-label="The Belgian Constitution - March 2021, Click to open full text"}
+::AccordionItem{aria-label="The Belgian Constitution - May 2024, Click to open full text"}
 
 <template v-slot:title>
-    <span class="titles">The Belgian Constitution - March 2021</span>
+    <span class="titles">The Belgian Constitution - May 2024</span>
 </template>
 
-#### The Belgian Constitution - March 2021
+##### <span class="titles"> TITLE I  </span> <br/> ON FEDERAL BELGIUM, ITS COMPONENTS AND ITS TERRITORY
 
-<div role="region" id="grondwet" class="accordion-content">
+``` Article 1 ```
 
-###### <span class="titles"> TITLE I BIS </span> <br /> ON GENERAL POLITICAL OBJECTIVES OF FEDERAL BELGIUM, THE COMMUNITIES AND THE REGIONS
+Belgium is a federal State composed of Communities and Regions.
+
+```Art. 2```
+
+Belgium comprises three Communities: the Flemish Community, the French Community and the German-speaking Community.
+
+```Art. 3```
+
+Belgium comprises three Regions: the Flemish Region, the Walloon Region and the Brussels Region.
+
+```Art. 4```
+
+Belgium comprises four linguistic regions: the Dutch-speaking region, the
+French-speaking region, the bilingual region of Brussels-Capital and the German-speaking region.  <br />
+&emsp;Each municipality of the Kingdom forms part of one of these linguistic regions. <br/>
+&emsp;The boundaries of the four linguistic regions can only be changed or corrected by a law passed by a majority of the votes cast in each linguistic group
+in each House, on condition that a majority of the members of each group is
+present and provided that the total number of votes in favour that are cast in
+the two linguistic groups is equal to at least two thirds of the votes cast.
+
+```Art. 5```
+
+The Flemish Region comprises the following provinces: Antwerp, Flemish
+Brabant, West Flanders, East Flanders and Limburg. The Walloon Region
+comprises the following provinces: Walloon Brabant, Hainaut, Liege, Luxembourg and Namur. <br/>
+&emsp; A law can exclude certain territories, of which it establishes the boundaries, from division into provinces, bring them directly under the federal executive power and subject them to a specific statute. This law must be passed
+by a majority as described in Article 4, last paragraph.
+
+```Art. 6```
+
+Provincial subdivisions can only be established by the law.
+
+``` Art. 7 ```
+
+The boundaries of the State, the provinces and the municipalities can
+only be changed or corrected by virtue of a law.
+
+##### <span class="titles"> TITLE I BIS </span> <br /> ON GENERAL POLITICAL OBJECTIVES OF FEDERAL BELGIUM, THE COMMUNITIES AND THE REGIONS
 
 ``` Art. 7 bis ```
 
@@ -1733,31 +1770,6 @@ VI. — § 1.  [Repealed]
 <template v-slot:title>
     <span class="titles">Special act of 6 january 1989 on the Constitutional court</span>
 </template>
-
-<!-- <div class="accordionGroup">
-<div
-    class="accordion"
->
-<button
-    class="accordion-trigger"
-    aria-expanded="false"
-    aria-controls="orgWet1"
-    id="basisTextsButton2"
-    @click="()=>{
-    document.querySelector('#basisTextsButton2').setAttribute(
-      'aria-expanded',
-       document.querySelector('#basisTextsButton2').getAttribute('aria-expanded') === 'true'
-        ? 'false'
-        : 'true'
-    );}"
-    aria-label="Special act of 6 january 1989 on the Constitutional court, Click to open full text"
-    >
-
-#### Special act of 6 january 1989 on the Constitutional court
-
-<v-icon>mdi-chevron-down</v-icon>
-</button> -->
-<div role="region" id="orgWet1" class="accordion-content">
 
 <div class="no-text-indent">
     <p style="font-weight: bold">Translation</p>

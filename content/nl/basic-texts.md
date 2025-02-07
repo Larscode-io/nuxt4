@@ -12,7 +12,7 @@ posterUrl: ~/assets/img/newsletter-background.png
 
 ::AccordionGroup
 
-::AccordionItem{aria-label="De Belgische Grondwet - maart 2021, klik om de volledige tekst te openen."}
+::AccordionItem{aria-label="De Belgische Grondwet - mei 2024, klik om de volledige tekst te openen."}
 <template v-slot:title>
 <span class="titles">De Belgische Grondwet - Mei 2024</span>
 </template>
