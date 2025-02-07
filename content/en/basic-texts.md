@@ -18,48 +18,7 @@ locale: en
 
 <div role="region" id="grondwet" class="accordion-content">
 
-##### <span class="titles"> TITLE I  </span> <br/> ON FEDERAL BELGIUM, ITS COMPONENTS AND ITS TERRITORY
-
-``` Article 1 ```
-
-Belgium is a federal State composed of Communities and Regions.
-
-```Art. 2```
-
-Belgium comprises three Communities: the Flemish Community, the French Community and the German-speaking Community.
-
-```Art. 3```
-
-Belgium comprises three Regions: the Flemish Region, the Walloon Region and the Brussels Region.
-
-```Art. 4```
-
-Belgium comprises four linguistic regions: the Dutch-speaking region, the
-French-speaking region, the bilingual region of Brussels-Capital and the German-speaking region.  <br />
-&emsp;Each municipality of the Kingdom forms part of one of these linguistic regions. <br/>
-&emsp;The boundaries of the four linguistic regions can only be changed or corrected by a law passed by a majority of the votes cast in each linguistic group
-in each House, on condition that a majority of the members of each group is
-present and provided that the total number of votes in favour that are cast in
-the two linguistic groups is equal to at least two thirds of the votes cast.
-
-```Art. 5```
-
-The Flemish Region comprises the following provinces: Antwerp, Flemish
-Brabant, West Flanders, East Flanders and Limburg. The Walloon Region
-comprises the following provinces: Walloon Brabant, Hainaut, Liege, Luxembourg and Namur. <br/>
-&emsp; A law can exclude certain territories, of which it establishes the boundaries, from division into provinces, bring them directly under the federal executive power and subject them to a specific statute. This law must be passed
-by a majority as described in Article 4, last paragraph.
-
-```Art. 6```
-
-Provincial subdivisions can only be established by the law.
-
-``` Art. 7 ```
-
-The boundaries of the State, the provinces and the municipalities can
-only be changed or corrected by virtue of a law.
-
-##### <span class="titles"> TITLE I BIS </span> <br /> ON GENERAL POLITICAL OBJECTIVES OF FEDERAL BELGIUM, THE COMMUNITIES AND THE REGIONS
+###### <span class="titles"> TITLE I BIS </span> <br /> ON GENERAL POLITICAL OBJECTIVES OF FEDERAL BELGIUM, THE COMMUNITIES AND THE REGIONS
 
 ``` Art. 7 bis ```
 
@@ -1759,16 +1718,11 @@ VI. — § 1.  [Repealed]
 
 
 </div>
-</div>
-</div>
+
 
 ::
 
 ::
-
-
-
-#### The Belgian Constitution - March 2021
 
 ### 2\. Organic Law
 
