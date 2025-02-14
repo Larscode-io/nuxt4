@@ -2,18 +2,18 @@
 title: Basistexte
 description: Basistexte
 posterUrl: ~/assets/img/newsletter-background.png
+locale: de
 ---
 
 ## 1\. Die Verfassung des föderalen Belgien
 
-<v-expansion-panels>
-<v-expansion-panel>
-<v-expansion-panel-header>
+::AccordionGroup
 
-### Die Verfassung Belgiens - März 2021
+::AccordionItem{aria-label="Die Verfassung Belgiens - März 2021"}
 
-</v-expansion-panel-header>
-<v-expansion-panel-content>
+<template v-slot:title>
+    <span class="titles">Die Verfassung Belgiens - März 2021</span>
+</template>
 
 #### <span class="titles">TITEL I</span> <br/> DAS FÖDERALE BELGIEN, SEINE ZUSAMMENSETZUNG UND SEIN STAATSGEBIET
 
@@ -1623,16 +1623,19 @@ VI. - § 1 [Aufgehoben] <br/>
 
 § 5	[Aufgehoben]<br/>
 
-</v-expansion-panel-content></v-expansion-panel></v-expansion-panels>
+::
+
+::
 
 ## 2\. Grundlagengesetzgebung
 
-<v-expansion-panels> 
-<v-expansion-panel>
-<v-expansion-panel-header>
-Sondergesetz vom 6. Januar 1989 über den Verfassungsgerichtshof
-</v-expansion-panel-header>
-<v-expansion-panel-content>
+::AccordionGroup
+
+::AccordionItem{aria-label="Sondergesetz vom 6. Januar 1989 über den Verfassungsgerichtshof"}
+
+<template v-slot:title>
+    <span class="titles">Sondergesetz vom 6. Januar 1989 über den Verfassungsgerichtshof</span>
+</template>
 
 ## SONDERGESETZ VOM 6. JANUAR 1989 ÜBER DEN VERFASSUNGSGERICHTSHOF
 
@@ -2670,13 +2673,31 @@ Art. 128. Artikel 34 § 5 tritt spätestens ab der dritten Ernennung nach dem In
 
 <sup>8</sup> Hinzufügung des Wortes „78bis“ an dem vom König zu bestimmenden Datum.
 
-</v-expansion-panel-content></v-expansion-panel></v-expansion-panels>
+::
 
+::
 
 ## 3\. Grundlagenerlasse
 
-N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch
+::AccordionGroup
+
+::AccordionItem{aria-label="N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch"}
+
+<template v-slot:title>
+    <span class="titles">N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch</span>
+</template>
+
+::
+
+::
+
 
 ## 4\. Verordnungen
 
-N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch
+::AccordionGroup
+
+::AccordionItem{aria-label="N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch"}
+
+<template v-slot:title>
+    <span class="titles">N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch</span>
+</template>
