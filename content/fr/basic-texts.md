@@ -2933,10 +2933,6 @@ La présente coordination officieuse de la loi spéciale du 6 janvier 1989 sur l
 
 ::
 
-::
-
-::AccordionGroup
-
 ::AccordionItem{aria-label="Loi du 6 janvier 1989 relative aux traitements et pensions des juges, des référendaires et des greffiers de la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"}
 
 <template v-slot:title>
@@ -3034,10 +3030,6 @@ Le greffe de la Cour constitutionnelle est ouvert tous les jours, à l'exception
 
 ::
 
-::
-
-::AccordionGroup
-
 ::AccordionItem{aria-label="Arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la langue allemande, à fournir par les juges de la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"}
 
 <template v-slot:title>
@@ -3083,10 +3075,6 @@ Les membres du jury ont droit également à l'indemnité pour frais de séjour e
 
 ::
 
-::
-
-::AccordionGroup
-
 ::AccordionItem{aria-label="Arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la seconde langue nationale et de l'allemand, à fournir par les candidats référendaires à la Cour constitutionnelle. Cliquez pour ouvrir le texte intégral"}
 
 <template v-slot:title>
@@ -3112,10 +3100,6 @@ Elle consiste en une conversation où les membres du jury font usage de la langu
 ()
 
 ::
-
-::
-
-::AccordionGroup
 
 ::AccordionItem{aria-label="Arrêté royal du 16 février 1984 prescrivant le costume des titulaires de fonctions à la Cour constitutionnelle. Cliquez pour ouvrir le texte intégral"}
 
@@ -3157,10 +3141,6 @@ Les greffiers, docteurs ou licenciés en droit, portent également l'épitoge.
 
 ::
 
-::
-
-::AccordionGroup
-
 ::AccordionItem{aria-label="Arrêté royal du 14 avril 2009 portant exécution de l'article 75 de la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle, Cliquez pour ouvrir le texte intégral"}
 
 <template v-slot:title>
@@ -3188,10 +3168,6 @@ Lorsque la personne assistée est dans les conditions de ressources visées à l
 Le Premier Ministre et le Ministre de la Justice sont chargés, chacun en ce qui le concerne, de l'exécution du présent arrêté.
 
 ::
-
-::
-
-::AccordionGroup
 
 ::AccordionItem{aria-label="Arrêté royal du 10 novembre 2009 réglant la préséance de la Cour constitutionnelle et les honneurs que lui sont rendus, Cliquez pour ouvrir le texte intégral"}
 
@@ -3258,10 +3234,6 @@ Adopté par la Cour d'arbitrage sur la base de l'article 105 de la loi du 28 jui
 
 ::
 
-::
-
-::AccordionGroup
-
 ::AccordionItem{aria-label="Décision de la Cour d'arbitrage du 14 février 1989, Cliquez pour ouvrir le texte intégral"}
 
 <template v-slot:title>
@@ -3275,10 +3247,6 @@ Adopté par la Cour d'arbitrage sur la base de l'article 105 de la loi du 28 jui
 La Cour confirme, sur la base de [l'article 122](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.122) de la loi spéciale du 6 janvier 1989 sur la Cour d'arbitrage, [son réglement d'ordre intérieur adopté le 15 décembre 1987](#reglements-art-151287) sur la base de l'article 105 de la loi du 28 juin 1983 portant l'organisation, la compétence et le fonctionnement de la Cour d'arbitrage, et publié au *Moniteur belge* du 29 décembre 1987.
 
 ::
-
-::
-
-::AccordionGroup
 
 ::AccordionItem{aria-label="Directive de la Cour d'arbitrage du 14 février 1989 concernant la procédure, Cliquez pour ouvrir le texte intégral"}
 
@@ -3300,10 +3268,6 @@ En ce qui concerne les affaires inscrites au rôle de la Cour à dater de l'entr
 
 ::
 
-::
-
-::AccordionGroup
-
 ::AccordionItem{aria-label="Décision de la Cour d'arbitrage du 24 novembre 1994 concernant l'exercice de la fonction de greffier par un référendaire, Cliquez pour ouvrir le texte intégral"}
 
 <template v-slot:title>
@@ -3320,9 +3284,6 @@ La présente décision est insérée au règlement d'ordre de la Cour.
 
 ::
 
-::
-
-::AccordionGroup
 
 ::AccordionItem{aria-label="Directive de la Cour d'arbitrage du 20 juin 1996 concernant les mémoires tardifs, Cliquez pour ouvrir le texte intégral"}
 
