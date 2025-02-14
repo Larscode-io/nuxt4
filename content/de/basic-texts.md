@@ -18,41 +18,41 @@ posterUrl: ~/assets/img/newsletter-background.png
 #### <span class="titles">TITEL I</span> <br/> DAS FÖDERALE BELGIEN, SEINE ZUSAMMENSETZUNG UND SEIN STAATSGEBIET
 
 
-```Artikel 1```
+<span class="code"> Artikel 1 </span>
 
 &emsp;Belgien ist ein Föderalstaat, der sich aus den Gemeinschaften und den Regionen zusammensetzt.<br/>
 
-```Art. 2 ```
+<span class="code"> Art. 2  </span>
 
 Belgien umfasst drei Gemeinschaften: die Deutschsprachige Gemeinschaft, die Flämische Gemeinschaft und die Französische Gemeinschaft. <br/>
 
-```Art. 3 ```
+<span class="code"> Art. 3  </span>
 
 Belgien umfasst drei Regionen: die Wallonische Region, die Flämische Region und die Brüsseler Region. <br/>
 
-```Art. 4 ```
+<span class="code"> Art. 4  </span>
 
 Belgien umfasst vier Sprachgebiete: das deutsche Sprachgebiet, das französische Sprachgebiet, das niederländische Sprachgebiet und das zweisprachige Gebiet Brüssel-Hauptstadt.<br/>
 &emsp;Jede Gemeinde des Königreichs gehört einem dieser Sprachgebiete an.<br/>
 &emsp;Die Grenzen der vier Sprachgebiete können nur durch ein mit Stimmenmehrheit in jeder Sprachgruppe einer jeden Kammer angenommenes Gesetz abgeändert oder berichtigt werden, vorausgesetzt, dass die Mehrheit der Mitglieder jeder Gruppe versammelt ist, und insofern die Gesamtzahl der Jastimmen aus beiden Sprachgruppen zwei Drittel der abgegebenen Stimmen erreicht.<br/>
 
-```Art. 5```
+<span class="code"> Art. 5 </span>
 
 Die Wallonische Region umfasst die Provinzen Hennegau, Lüttich, Luxemburg, Namur und Wallonisch-Brabant. Die Flämische Region umfasst die Provinzen Antwerpen, Flämisch-Brabant, Limburg, Ostflandern und Westflandern.<br/>
 &emsp;Ein Gesetz kann bestimmte Gebiete, deren Grenzen es festlegt, der Einteilung in Provinzen entziehen, sie der föderalen ausführenden Gewalt unmittelbar unterstellen und ihnen einen eigenen Status zuerkennen. Dieses Gesetz muss mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen werden.<br/>
 
-```Art. 6```
+<span class="code"> Art. 6 </span>
 
 Die Unterteilungen der Provinzen können nur durch Gesetz festgelegt werden.<br/>
 
-```Art. 7```
+<span class="code"> Art. 7 </span>
 
 Die Grenzen des Staates, der Provinzen und der Gemeinden können nur aufgrund eines Gesetzes abgeändert oder berichtigt werden.<br/>
 
 
 ##### <span class="titles">TITEL Ibis</span> <br/> ALLGEMEINE POLITISCHE ZIELSETZUNGEN DES FÖDERALEN BELGIENS, DER GEMEINSCHAFTEN UND DER REGIONEN
 
-```Art. 7bis ```
+<span class="code"> Art. 7bis  </span>
 
 Der Föderalstaat, die Gemeinschaften und die Regionen verfolgen bei der Ausübung ihrer jeweiligen Befugnisse die Ziele einer nachhaltigen Entwicklung in deren sozialen, wirtschaftlichen und umweltbezogenen Aspekten unter Berücksichtigung der Solidarität zwischen den Generationen. <br/>
 &emsp; Der Föderalstaat, die Gemeinschaften und die Regionen streben bei der Ausübung ihrer jeweiligen Befugnisse den Schutz und das Wohlergehen der Tiere als fühlende Wesen an. <br/>
@@ -60,91 +60,91 @@ Der Föderalstaat, die Gemeinschaften und die Regionen verfolgen bei der Ausübu
 
 ###### <span class="titles">TITEL II</span> <br/> DIE BELGIER UND IHRE RECHTE
 
-```Art. 8 ```
+<span class="code"> Art. 8  </span>
 
 Erwerb, Fortbestand und Verlust der belgischen Staatsangehörigkeit werden durch das Zivilgesetz geregelt. <br/>
 &emsp;Die Verfassung und die sonstigen Gesetze über die politischen Rechte bestimmen, welche Voraussetzungen neben der belgischen Staatsangehörigkeit für die Ausübung dieser Rechte zu erfüllen sind. <br/>
 &emsp;In Abweichung von Absatz 2 kann das Gesetz das Stimmrecht der Bürger der Europäischen Union, die nicht die belgische Staatsangehörigkeit haben, gemäß den internationalen und überstaatlichen Verpflichtungen Belgiens regeln. <br/>
 &emsp;Das im vorangehenden Absatz erwähnte Stimmrecht kann durch das Gesetz unter den Bedingungen und gemäß den Modalitäten, die es festlegt, auf die in Belgien wohnhaften Personen ausgedehnt werden, die nicht Staatsangehörige eines Mitgliedstaates der Europäischen Union sind. <br/>
 
-```Übergangsbestimmung``` 
+<span class="code"> Übergangsbestimmung </span>
 
 Das in Absatz 4 erwähnte Gesetz kann nicht vor dem 1. Januar 2001 angenommen werden. <br/>
 
-```Art. 9```
+<span class="code"> Art. 9 </span>
 
 Die Einbürgerung wird von der föderalen gesetzgebenden Gewalt verliehen. <br/>
 
-```Art. 10 ```
+<span class="code"> Art. 10  </span>
 
 Es gibt im Staat keine Unterscheidung nach Ständen. <br/>
 &emsp;Die Belgier sind vor dem Gesetz gleich; nur sie können zur Bekleidung der zivilen und militärischen Ämter zugelassen werden, vorbehaltlich der Ausnahmen, die für Sonderfälle durch ein Gesetz festgelegt werden können. <br/>
 &emsp;Die Gleichheit von Frauen und Männern ist gewährleistet. <br/>
 
-```Art. 11```
+<span class="code"> Art. 11 </span>
 
 Der Genuss der den Belgiern zuerkannten Rechte und Freiheiten muß ohne Diskriminierung gesichert werden. Zu diesem Zweck gewährleisten das Gesetz und das Dekret insbesondere die Rechte und Freiheiten der ideologischen und philosophischen Minderheiten. <br/>
 
-```Art. 11bis ```
+<span class="code"> Art. 11bis  </span>
 
 Das Gesetz, das Dekret oder die in Artikel 134 erwähnte Regel gewährleistet Frauen und Männern die gleiche Ausübung ihrer Rechte und Freiheiten und fördert insbesondere ihren gleichen Zugang zu durch Wahl vergebenen Mandaten und öffentlichen Mandaten. <br/>
 &emsp;Dem Ministerrat und den Gemeinschafts- und Regionalregierungen gehören Personen verschiedenen Geschlechts an. <br/>
 &emsp;Das Gesetz, das Dekret oder die in Artikel 134 erwähnte Regel organisiert die Anwesenheit von Personen verschiedenen Geschlechts in den ständigen Ausschüssen der Provinzialräte, den Bürgermeister- und Schöffenkollegien, den Sozialhilferäten, den ständigen Präsidien der öffentlichen Sozialhilfezentren und in den ausführenden Organen jeglicher anderen interprovinzialen, suprakommunalen, interkommunalen oder intrakommunalen territorialen Organe. <br/>
 &emsp;Der vorhergehende Absatz ist nicht anwendbar, wenn das Gesetz, das Dekret oder die in Artikel 134 erwähnte Regel die Direktwahl der Mitglieder der ständigen Ausschüsse der Provinzialräte, der Schöffen, der Mitglieder der Sozialhilferäte, der Mitglieder der ständigen Präsidien der öffentlichen Sozialhilfezentren oder der Mitglieder der ausführenden Organe jeglicher anderen interprovinzialen, suprakommunalen, interkommunalen oder intrakommunalen territorialen Organe organisiert. <br/>
 
-```Art. 12 ```
+<span class="code"> Art. 12  </span>
 
 Die Freiheit der Person ist gewährleistet. <br/>
 &emsp;Niemand darf verfolgt werden, es sei denn in den durch Gesetz bestimmten Fällen und in der dort vorgeschriebenen Form. <br/>
 &emsp;Außer bei Entdeckung auf frischer Tat darf jemand nur festgenommen werden aufgrund einer mit Gründen versehenen richterlichen Anordnung, die spätestens binnen achtundvierzig Stunden ab der Freiheitsentziehung zugestellt werden muss und nur eine Untersuchungsinhaftierung zur Folge haben darf.<br/>
 
-```Art. 13```
+<span class="code"> Art. 13 </span>
 
 Niemand darf gegen seinen Willen seinem gesetzlichen Richter entzogen werden. <br/>
 
-```Art. 14 ```
+<span class="code"> Art. 14  </span>
 
 Eine Strafe darf nur aufgrund des Gesetzes eingeführt oder angewandt werden. <br/>
 
-```Art. 14bis```
+<span class="code"> Art. 14bis </span>
 
 Die Todesstrafe ist abgeschafft. <br/>
 
-```Art. 15 ```
+<span class="code"> Art. 15  </span>
 
 Die Wohnung ist unverletzlich; eine Haussuchung darf nur in den durch Gesetz bestimmten Fällen und in der dort vorgeschriebenen Form vorgenommen werden. <br/>
 
-```Art. 16 ```
+<span class="code"> Art. 16  </span>
 
 Niemandem darf sein Eigentum entzogen werden, es sei denn zum Nutzen der Allgemeinheit, in den Fällen und in der Weise, die das Gesetz bestimmt, und gegen gerechte und vorherige Entschädigung. <br/>
 
-```Art. 17```
+<span class="code"> Art. 17 </span>
 
 Die Strafe der Vermögenskonfiskation darf nicht eingeführt werden. <br/>
 
-```Art. 18```
+<span class="code"> Art. 18 </span>
 
 Der bürgerliche Tod ist abgeschafft; er darf nicht wieder eingeführt werden. <br/>
 
-```Art. 19```
+<span class="code"> Art. 19 </span>
 
 Die Freiheit der Kulte, diejenige ihrer öffentlichen Ausübung sowie die Freiheit, zu allem seine Ansichten kundzutun, werden gewährleistet, unbeschadet der Ahndung der bei der Ausübung dieser Freiheiten begangenen Delikte. <br/>
 
-```Art. 20 ```
+<span class="code"> Art. 20  </span>
 
 Niemand darf gezwungen werden, in irgendeiner Weise an Handlungen und Feierlichkeiten eines Kultes teilzunehmen oder dessen Ruhetage einzuhalten. <br/>
 
-```Art. 21 ```
+<span class="code"> Art. 21  </span>
 
 Der Staat hat nicht das Recht, in die Ernennung oder Einsetzung der Diener irgendeines Kultes einzugreifen oder ihnen zu verbieten, mit ihrer Obrigkeit zu korrespondieren und deren Akte zu veröffentlichen, unbeschadet, in letztgenanntem Fall, der gewöhnlichen Verantwortlichkeit im Bereich der Presse und der Veröffentlichungen. <br/>
 &emsp;Die zivile Eheschließung muss stets der Einsegnung der Ehe vorangehen, vorbehaltlich der erforderlichenfalls durch Gesetz festzulegenden Ausnahmen. <br/>
 
-```Art. 22 ```
+<span class="code"> Art. 22  </span>
 
 Jeder hat ein Recht auf Achtung vor seinem Privat- und Familienleben, außer in den Fällen und unter den Bedingungen, die durch Gesetz festgelegt sind. <br/>
 &emsp;Das Gesetz, das Dekret oder die in Artikel 134 erwähnte Regel gewährleistet den Schutz dieses Rechtes. <br/>
 
-```Art. 22bis ```
+<span class="code"> Art. 22bis  </span>
 
 Jedes Kind hat ein Recht auf Achtung vor seiner moralischen, körperlichen, geistigen und sexuellen Unversehrtheit.<br/>
 &emsp;Jedes Kind hat das Recht, sich in allen Angelegenheiten, die es betreffen, zu äußern; seiner Meinung wird unter Berücksichtigung seines Alters und seines Unterscheidungsvermögens Rechnung getragen.<br/>
@@ -152,12 +152,12 @@ Jedes Kind hat das Recht auf Maßnahmen und Dienste, die seine Entwicklung förd
 Das Wohl des Kindes ist in allen Entscheidungen, die es betreffen, vorrangig zu berücksichtigen.
 &emsp;Das Gesetz, das Dekret oder die in Artikel 134 erwähnte Regel gewährleistet diese Rechte des Kindes. <br/>
 
-```Art. 22ter ```
+<span class="code"> Art. 22ter  </span>
 
 Jeder Mensch mit einer Behinderung hat das Recht auf vollständige Inklusion in die Gesellschaft einschließlich des Rechts auf angemessene Vorkehrungen.<br/>
 &emsp;Das Gesetz, das Dekret oder die in Artikel 134 erwähnte Regel gewährleistet den Schutz dieses Rechts.<br/>
 
-```Art. 23 ```
+<span class="code"> Art. 23  </span>
 
 <p class="no-bottom-margin">Jeder hat das Recht, ein menschenwürdiges Leben zu führen. <br/>
 &emsp;Zu diesem Zweck gewährleistet das Gesetz, das Dekret oder die in Artikel 134 erwähnte Regel unter Berücksichtigung der entsprechenden Verpflichtungen die wirtschaftlichen, sozialen und kulturellen Rechte und bestimmt die Bedingungen für ihre Ausübung.<br/>
@@ -169,7 +169,7 @@ Jeder Mensch mit einer Behinderung hat das Recht auf vollständige Inklusion in 
 5.	das Recht auf kulturelle und soziale Entfaltung;<br/>
 6.	das Recht auf Familienleistungen. 
 
-```Art. 24 ```
+<span class="code"> Art. 24  </span>
 
 § 1 – Das Unterrichtswesen ist frei; jede präventive Maßnahme ist verboten; die Ahndung der Delikte wird nur durch Gesetz oder Dekret geregelt. <br/>
 &emsp;Die Gemeinschaft gewährleistet die Wahlfreiheit der Eltern. <br/>
@@ -185,97 +185,97 @@ Jeder Mensch mit einer Behinderung hat das Recht auf vollständige Inklusion in 
 
 § 5 – Die Organisation, die Anerkennung oder die Bezuschussung des Unterrichtswesens durch die Gemeinschaft wird durch Gesetz oder Dekret geregelt. <br/>
 
-```Art. 25 ```
+<span class="code"> Art. 25  </span>
 
 Die Presse ist frei; die Zensur darf nie eingeführt werden; von den Autoren, Verlegern oder Druckern darf keine Sicherheitsleistung verlangt werden. <br/>
 &emsp;Wenn der Autor bekannt ist und seinen Wohnsitz in Belgien hat, darf der Verleger, Drucker oder Verteiler nicht verfolgt werden. <br/>
 
-```Art. 26 ```
+<span class="code"> Art. 26  </span>
 
 Die Belgier haben das Recht, sich friedlich und ohne Waffen zu versammeln, unter Beachtung der Gesetze, die die Ausübung dieses Rechts regeln können, ohne diese indessen einer vorherigen Genehmigung zu unterwerfen. <br/>
 &emsp;Diese Bestimmung ist nicht auf Versammlungen unter freiem Himmel anwendbar, die gänzlich den Polizeigesetzen unterworfen bleiben. <br/>
 
-```Art. 27 ```
+<span class="code"> Art. 27  </span>
 
 Die Belgier haben das Recht, Vereinigungen zu bilden; dieses Recht darf keiner präventiven Maßnahme unterworfen werden. <br/>
 
-```Art. 28```
+<span class="code"> Art. 28 </span>
 
 Jeder hat das Recht, Petitionen, die von einer oder mehreren Personen unterzeichnet sind, an die öffentlichen Behörden zu richten. <br/>
 &emsp;Nur die konstituierten Behörden haben das Recht, Petitionen unter einem Gesamtnamen einzureichen. <br/>
 
-```Art. 29 ```
+<span class="code"> Art. 29  </span>
 
 Das Briefgeheimnis ist unverletzlich. <br/>
 &emsp;Das Gesetz bestimmt, welche Bediensteten für die Verletzung des Geheimnisses der der Post anvertrauten Briefe verantwortlich sind. <br/>
 
-```Art. 30 ```
+<span class="code"> Art. 30  </span>
 
 Der Gebrauch der in Belgien gesprochenen Sprachen ist frei; er darf nur durch Gesetz und allein für Handlungen der öffentlichen Gewalt und für Gerichtsangelegenheiten geregelt werden. <br/>
 
-```Art. 31 ```
+<span class="code"> Art. 31  </span>
 
 Es bedarf keiner vorherigen Genehmigung, um Beamte wegen ihrer Amtshandlungen zu verfolgen, vorbehaltlich der die Minister und die Mitglieder der Gemeinschafts- und Regionalregierungen betreffenden Bestimmungen. <br/>
 
-```Art. 32 ```
+<span class="code"> Art. 32  </span>
 
 Jeder hat das Recht, jegliches Verwaltungsdokument einzusehen und eine Abschrift davon zu bekommen, außer in den Fällen und unter den Bedingungen, die durch Gesetz, Dekret oder die in Artikel 134 erwähnte Regel festgelegt sind. <br/>
 
 ##### <span class="titles">TITEL III</span> <br/> DIE GEWALTEN
 
-```Art. 33```
+<span class="code"> Art. 33 </span>
 
 Alle Gewalten gehen von der Nation aus. <br/>
 &emsp;Sie werden in der durch die Verfassung bestimmten Weise ausgeübt. <br/>
 
-```Art. 34 ```
+<span class="code"> Art. 34  </span>
 
 Die Ausübung bestimmter Gewalten kann völkerrechtlichen Einrichtungen durch einen Vertrag oder ein Gesetz übertragen werden. <br/>
 
-```Art. 35 ```
+<span class="code"> Art. 35  </span>
 
 Die Föderalbehörde ist für nichts anderes zuständig als für die Angelegenheiten, die die Verfassung und die aufgrund der Verfassung selbst ergangenen Gesetze ihr ausdrücklich zuweisen. <br/>
 &emsp;Die Gemeinschaften oder die Regionen, jede für ihren Bereich, sind gemäß den durch Gesetz festgelegten Bedingungen und Modalitäten für die anderen Angelegenheiten zuständig. Dieses Gesetz muss mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen werden. <br/>
 
-```Übergangsbestimmung``` 
+<span class="code"> Übergangsbestimmung </span>
 
 Das in Absatz 2 erwähnte Gesetz legt das Datum fest, an dem dieser Artikel in Kraft tritt. Dieses Datum darf nicht vor dem Datum des Inkrafttretens des in Titel III der Verfassung einzufügenden neuen Artikels liegen, der die ausschließlichen Zuständigkeiten der Föderalbehörde festlegt. <br/>
 
-```Art. 36 ```
+<span class="code"> Art. 36  </span>
 
 Die föderale gesetzgebende Gewalt wird vom König, von der Abgeordnetenkammer und vom Senat gemeinsam ausgeübt. <br/>
 
-```Art. 37```
+<span class="code"> Art. 37 </span>
 
 Die föderale ausführende Gewalt, so wie sie durch die Verfassung geregelt wird, liegt beim König. <br/>
 
-```Art. 38 ```
+<span class="code"> Art. 38  </span>
 
 Jede Gemeinschaft hat die Befugnisse, die ihr die Verfassung oder die aufgrund der Verfassung ergangenen Gesetze zuerkennen. <br/>
 
-```Art. 39 ```
+<span class="code"> Art. 39  </span>
 
 Das Gesetz überträgt den regionalen Organen, die es schafft und die sich aus gewählten Vertretern zusammensetzen, die Zuständigkeit, innerhalb des von ihm bestimmten Bereichs und gemäß der von ihm bestimmten Weise die von ihm bezeichneten Angelegenheiten zu regeln unter Ausschluss derjenigen, die in den Artikeln 30 und 127 bis 129 erwähnt sind. Dieses Gesetz muss mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen werden. <br/>
 
-```Art. 39bis```
+<span class="code"> Art. 39bis </span>
 
 Mit Ausnahme der Angelegenheiten mit Bezug auf die Finanzen oder den Haushalt oder der Angelegenheiten, die mit Zweidrittelmehrheit der abgegebenen Stimmen geregelt werden, kann über die Angelegenheiten, die ausschließlich den regionalen Organen übertragen sind, in der betreffenden Region eine Volksbefragung abgehalten werden. <br/>
 &emsp;Die in Artikel 134 erwähnte Regel regelt die Modalitäten und die Organisation der Volksbefragung und wird mit Zweidrittelmehrheit der abgegebenen Stimmen angenommen, vorausgesetzt, die Mehrheit der Mitglieder des betreffenden Parlaments ist anwesend. Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, sieht zusätzliche Mehrheitsbedingungen für das Parlament der Region Brüssel-Hauptstadt vor. <br/>
 
-```Art. 39ter```
+<span class="code"> Art. 39ter </span>
 
 Das Gesetz, das Dekret oder die in Artikel 134 erwähnte Regel, das beziehungsweise die die Wahlen für die Abgeordnetenkammer oder ein Gemeinschafts- oder Regionalparlament regelt und weniger als ein Jahr vor dem vorgesehenen Datum des Endes der Legislaturperiode ausgefertigt wird, tritt frühestens ein Jahr nach Ausfertigung in Kraft. <br/>
 
-```Übergangsbestimmung``` 
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der ersten Wahlen für das Europäische Parlament, die der Veröffentlichung des vorliegenden Artikels im Belgischen Staatsblatt folgen, in Kraft. <br/>
 
-```Art. 40 ```
+<span class="code"> Art. 40  </span>
 
 Die rechtsprechende Gewalt wird von den Gerichtshöfen und Gerichten ausgeübt. <br/>
 Die Entscheide und Urteile werden im Namen des Königs vollstreckt. <br/>
 
-```Art. 41 ```
+<span class="code"> Art. 41  </span>
 
 Die ausschließlich kommunalen oder provinzialen Belange werden von den Gemeinde- oder Provinzialräten gemäß den durch die Verfassung festgelegten Grundsätzen geregelt. In Ausführung eines Gesetzes, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, kann die in Artikel 134 erwähnte Regel die provinzialen Einrichtungen jedoch abschaffen. In diesem Fall kann die in Artikel 134 erwähnte Regel sie durch suprakommunale Körperschaften ersetzen, deren Räte gemäß den durch die Verfassung festgelegten Grundsätzen ausschließlich suprakommunale Belange regeln. Die in Artikel 134 erwähnte Regel muss mit Zweidrittelmehrheit der abgegebenen Stimmen angenommen werden, vorausgesetzt, die Mehrheit der Mitglieder des betreffenden Parlaments ist anwesend. <br/>
 &emsp;Die in Artikel 134 erwähnte Regel bestimmt die Befugnisse, die Regeln für die Arbeitsweise und den Modus der Wahl intrakommunaler territorialer Organe, die Angelegenheiten kommunalen Interesses regeln können. <br/>
@@ -286,18 +286,18 @@ Die ausschließlich kommunalen oder provinzialen Belange werden von den Gemeinde
 
 ###### <span class="titles">KAPITEL I <br/> DIE FÖDERALEN KAMMERN</span>
 
-```Art. 42```
+<span class="code"> Art. 42 </span>
 
 Die Mitglieder der beiden Kammern vertreten die Nation und nicht allein diejenigen, von denen sie gewählt worden sind.<br/>
 
-```Art. 43```
+<span class="code"> Art. 43 </span>
 
 § 1 – Für die in der Verfassung bestimmten Fälle werden die gewählten Mitglieder der Abgeordnetenkammer in der durch Gesetz festgelegten Weise in eine französische und eine niederländische Sprachgruppe aufgeteilt.<br/>
 
 § 2 – Für die in der Verfassung bestimmten Fälle werden die Senatoren, mit Ausnahme des vom Parlament der Deutschsprachigen Gemeinschaft bestimmten Senators, in eine französische und eine niederländische Sprachgruppe aufgeteilt.<br/>
 &emsp;Die in Artikel 67 § 1 Nr. 2 bis 4 und 7 erwähnten Senatoren bilden die französische Sprachgruppe des Senats. Die in Artikel 67 § 1 Nr. 1 und 6 erwähnten Senatoren bilden die niederländische Sprachgruppe des Senats.<br/>
 
-```Übergangsbestimmung```
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft.<br/>
 &emsp;Bis zu diesem Tag sind folgende Bestimmungen anwendbar:<br/>
@@ -306,22 +306,22 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 
 § 2 – Die in Artikel 67 § 1 Nr. 1, 3 und 6 erwähnten Senatoren bilden die niederländische Sprachgruppe des Senats. Die in Artikel 67 § 1 Nr. 2, 4 und 7 erwähnten Senatoren bilden die französische Sprachgruppe des Senats.“ <br/>
 
-```Art. 44 ```
+<span class="code"> Art. 44  </span>
 
 Die Kammern treten von Rechts wegen jedes Jahr am zweiten Dienstag im Oktober zusammen, insofern sie nicht schon zu einem früheren Zeitpunkt vom König einberufen worden sind. <br/>
 &emsp;Die Sitzungsperiode der Kammern muss jedes Jahr mindestens vierzig Tage dauern. Der Senat ist ein nichtständiges Organ. <br/>
 &emsp;Die Sitzungsperiode wird vom König geschlossen. <br/>
 &emsp;Der König hat das Recht, die Kammern zu einer außerordentlichen Sitzungsperiode einzuberufen. <br/>
 
-```Übergangsbestimmung``` 
+<span class="code"> Übergangsbestimmung </span>
 
 Absatz 2 zweiter Satz tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. <br/>
 
-```Art. 45 ```
+<span class="code"> Art. 45  </span>
 
 Der König kann die Kammern vertagen. Die Vertagung darf jedoch ohne Zustimmung der Kammern weder die Frist von einem Monat übersteigen noch während derselben Sitzungsperiode erneut erfolgen. <br/>
 
-```Art. 46 ```
+<span class="code"> Art. 46  </span>
 
 Der König hat nur dann das Recht, die Abgeordnetenkammer aufzulösen, wenn sie mit absoluter Mehrheit ihrer Mitglieder: <br/>
 1.	entweder einen Vertrauensantrag der Föderalregierung ablehnt und dem König nicht binnen drei Tagen nach Ablehnung des Antrags einen Nachfolger für den Premierminister zur Ernennung vorschlägt <br/>
@@ -332,7 +332,7 @@ Der König hat nur dann das Recht, die Abgeordnetenkammer aufzulösen, wenn sie 
 &emsp;Im Falle einer Auflösung beider Kammern gemäß Artikel 195 werden die Kammern binnen drei Monaten einberufen. <br/>
 &emsp;Im Falle einer vorzeitigen Auflösung darf die Dauer der neuen föderalen Legislaturperiode nicht über den Tag der ersten Wahlen für das Europäische Parlament, die dieser Auflösung folgen, hinausgehen. <br/>
 
-```Übergangsbestimmung``` 
+<span class="code"> Übergangsbestimmung </span>
 
 Ein mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommenes Gesetz legt nach den Wahlen für das Europäische Parlament im Jahre 2014 das Datum des Inkrafttretens des neuen Absatzes 6 fest. Dieses Datum entspricht dem Datum des Inkrafttretens von Artikel 65 Absatz 3 und Artikel 118 § 2 Absatz 4. <br/>
 Die Absätze 4 und 5 treten am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Datum sind anstelle der Absätze 4 und 5 folgende Bestimmungen anwendbar: <br/>
@@ -341,75 +341,75 @@ Die Absätze 4 und 5 treten am Tag der Wahlen im Hinblick auf die vollständige 
 &emsp;Der Auflösungsbeschluss enthält die Einberufung der Wähler binnen vierzig Tagen und die der Kammern binnen zwei Monaten. <br/>
 &emsp;Die Auflösung der Abgeordnetenkammer, die zu föderalen Parlamentswahlen führen würde, die am selben Tag wie die Wahlen für die Gemeinschafts- und Regionalparlamente im Jahre 2014 stattfinden würden, bringt die Auflösung des Senats mit sich. Die Wähler für die Abgeordnetenkammer werden binnen vierzig Tagen einberufen. Die Kammern werden binnen drei Monaten einberufen.“ <br/>
 
-```Art. 47```
+<span class="code"> Art. 47 </span>
 
 Die Sitzungen der Kammern sind öffentlich. <br/>
 &emsp;Jede Kammer schließt jedoch auf Antrag ihres Präsidenten oder von zehn ihrer Mitglieder die Öffentlichkeit aus. <br/>
 &emsp;Anschließend entscheidet sie mit absoluter Mehrheit, ob die Sitzung zur Behandlung desselben Gegenstandes öffentlich fortgeführt werden soll. <br/>
 
-```Art. 48 ```
+<span class="code"> Art. 48  </span>
 
 Jede Kammer prüft die Mandate ihrer Mitglieder und entscheidet über die diesbezüglich auftretenden Streitigkeiten. <br/>
 
-```Art. 49```
+<span class="code"> Art. 49 </span>
 
 Niemand darf gleichzeitig Mitglied beider Kammern sein. <br/>
 
-```Art. 50 ```
+<span class="code"> Art. 50  </span>
 
 Ein Mitglied einer der beiden Kammern, das vom König zum Minister ernannt wird und diese Ernennung annimmt, hört auf zu tagen und nimmt sein Mandat wieder auf, wenn seinem Amt als Minister vom König ein Ende gesetzt worden ist. Das Gesetz sieht die Modalitäten seiner Ersetzung in der betreffenden Kammer vor. <br/>
 
-```Art. 51 ```
+<span class="code"> Art. 51  </span>
 
 Das Mitglied einer der beiden Kammern, das von der Föderalregierung in ein anderes besoldetes Amt als das eines Ministers ernannt wird und dieses annimmt, verliert unmittelbar seinen Sitz und kann diesen nur aufgrund einer Neuwahl wiedererlangen. <br/>
 
-```Art. 52 ```
+<span class="code"> Art. 52  </span>
 
 Für jede Sitzungsperiode ernennt jede Kammer ihren Präsidenten und ihre Vizepräsidenten und stellt ihr Präsidium zusammen. <br/>
 
-```Art. 53```
+<span class="code"> Art. 53 </span>
 
 Jeder Beschluss wird mit absoluter Stimmenmehrheit gefasst, vorbehaltlich dessen, was durch die Geschäftsordnung der Kammern in Bezug auf Wahlen und Wahlvorschläge bestimmt wird. <br/>
 &emsp;Bei Stimmengleichheit ist der behandelte Vorschlag abgelehnt. <br/>
 &emsp;Keine der beiden Kammern ist beschlussfähig, wenn nicht die Mehrheit ihrer Mitglieder anwesend ist. <br/>
 
-```Art. 54 ```
+<span class="code"> Art. 54  </span>
 
 Außer bei Haushaltsplänen sowie bei Gesetzen, die eine besondere Mehrheit erfordern, kann eine von mindestens drei Vierteln der Mitglieder einer der Sprachgruppen unterzeichnete sowie nach Hinterlegung des Berichts und vor der Schlussabstimmung in öffentlicher Sitzung eingereichte mit Gründen versehene Motion erklären, dass die von ihr bezeichneten Bestimmungen eines Gesetzentwurfes oder Gesetzesvorschlages die Beziehungen zwischen den Gemeinschaften ernstlich gefährden können. <br/>
 &emsp;In diesem Fall wird das parlamentarische Verfahren ausgesetzt und die Motion an den Ministerrat verwiesen, der binnen dreißig Tagen seine mit Gründen versehene Stellungnahme dazu abgibt und die betreffende Kammer auffordert, entweder über diese Stellungnahme oder über den gegebenenfalls mit einem Abänderungsantrag versehenen Entwurf oder Vorschlag zu befinden. <br/>
 &emsp;Dieses Verfahren darf von den Mitgliedern einer Sprachgruppe nur einmal in Bezug auf denselben Gesetzentwurf oder Gesetzesvorschlag angewandt werden. <br/>
 
-```Art. 55 ```
+<span class="code"> Art. 55  </span>
 
 Die Abstimmungen erfolgen durch Sitzenbleiben und Aufstehen oder namentlich; über die Gesetze als Ganzes wird immer namentlich abgestimmt. Wahlen und Wahlvorschläge erfolgen in geheimer Abstimmung. <br/>
 
-```Art. 56 ```
+<span class="code"> Art. 56  </span>
 
 Die Abgeordnetenkammer hat das Untersuchungsrecht. <br/>
 &emsp;Der Senat kann auf Antrag von fünfzehn seiner Mitglieder, der Abgeordnetenkammer, eines Gemeinschafts- oder Regionalparlaments oder des Königs mit absoluter Mehrheit der abgegebenen Stimmen - mit mindestens einem Drittel der abgegebenen Stimmen in jeder Sprachgruppe - beschließen, dass eine Frage, die ebenfalls Folgen für die Befugnisse der Gemeinschaften oder der Regionen hat, in einem Informationsbericht behandelt wird. Der Bericht wird mit absoluter Mehrheit der abgegebenen Stimmen - mit mindestens einem Drittel der abgegebenen Stimmen in jeder Sprachgruppe - gebilligt. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 &emsp;Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag ist folgende Bestimmung anwendbar: <br/>
 
 „Jede Kammer hat das Untersuchungsrecht.“ <br/>
 
-```Art. 57 ```
+<span class="code"> Art. 57  </span>
 
 Es ist verboten, den Kammern Petitionen persönlich zu unterbreiten. <br/>
 Die Abgeordnetenkammer hat das Recht, die an sie gerichteten Petitionen an die Minister zu verweisen. Die Minister sind verpflichtet, zu deren Inhalt Erläuterungen zu geben, sooft die Kammer dies verlangt. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Absatz 2 tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag ist anstelle des Absatzes 2 folgende Bestimmung anwendbar: <br/>
 
 „Jede Kammer hat das Recht, die an sie gerichteten Petitionen an die Minister zu verweisen. Die Minister sind verpflichtet, zu deren Inhalt Erläuterungen zu geben, sooft die Kammer dies verlangt.“ <br/>
 
-```Art. 58 ```
+<span class="code"> Art. 58  </span>
 
 Ein Mitglied einer der beiden Kammern darf nicht anläßlich einer in Ausübung seines Amtes erfolgten Meinungsäußerung oder Stimmabgabe verfolgt oder Gegenstand irgendeiner Ermittlung werden. <br/>
 
-```Art. 59```
+<span class="code"> Art. 59 </span>
 
 Außer bei Entdeckung auf frischer Tat darf ein Mitglied einer der beiden Kammern während der Sitzungsperiode in Strafsachen nur mit Genehmigung der Kammer, der es angehört, an einen Gerichtshof oder ein Gericht verwiesen, unmittelbar dorthin geladen oder festgenomen werden. <br/>
 &emsp;Außer bei Entdeckung auf frischer Tat dürfen Zwangsmaßnahmen gegen ein Mitglied einer der beiden Kammern, für die das Eingreifen eines Richters erforderlich ist, während der Sitzungsperiode in Strafsachen nur vom ersten Präsidenten des Appellationshofes auf Antrag des zuständigen Richters angeordnet werden. Dieser Beschluss wird dem Präsidenten der betreffenden Kammer mitgeteilt. <br/>
@@ -418,25 +418,25 @@ Außer bei Entdeckung auf frischer Tat darf ein Mitglied einer der beiden Kammer
 &emsp;In jedem Stadium der Untersuchung kann das betroffene Mitglied der einen oder anderen Kammer während der Sitzungsperiode in Strafsachen bei der Kammer, der es angehört, die Aussetzung der Verfolgung beantragen. Diese Kammer hat darüber mit Zweidrittelmehrheit der abgegebenen Stimmen zu entscheiden. <br/>
 &emsp;Die Haft eines Mitglieds einer der beiden Kammern oder seine Verfolgung vor einem Gerichtshof oder Gericht wird während der Sitzungsperiode ausgesetzt, wenn die Kammer, der das Mitglied angehört, dies verlangt. <br/>
 
-```Art. 60 ```
+<span class="code"> Art. 60  </span>
 
 Jede Kammer bestimmt in ihrer Geschäftsordnung die Weise, in der sie ihre Befugnisse ausübt. <br/>
 
 
 ###### <span class="titles">ABSCHNITT I <br/> DIE ABGEORDNETENKAMMER </span>
 
-```Art. 61 ```
+<span class="code"> Art. 61  </span>
 
 Die Mitglieder der Abgeordnetenkammer werden unmittelbar von den Bürgern gewählt, die das achtzehnte Lebensjahr vollendet haben und sich nicht in einem der durch Gesetz bestimmten Ausschließungsfälle befinden. <br/>
 &emsp;Jeder Wähler hat ein Recht auf nur eine Stimme. <br/>
 
-```Art. 62 ```
+<span class="code"> Art. 62  </span>
 
 Die Zusammenstellung der Wahlkollegien wird durch Gesetz geregelt. <br/>
 &emsp;Die Wahlen erfolgen nach dem durch Gesetz festgelegten System der verhältnismäßigen Vertretung. <br/>
 &emsp;Die Stimmabgabe ist obligatorisch und geheim. Sie findet in der Gemeinde statt, vorbehaltlich der durch Gesetz festzulegenden Ausnahmen. <br/>
 
-```Art. 63 ```
+<span class="code"> Art. 63  </span>
 
 § 1 – Die Abgeordnetenkammer zählt hundertfünfzig Mitglieder. <br/>
 
@@ -452,7 +452,7 @@ Die Zusammenstellung der Wahlkollegien wird durch Gesetz geregelt. <br/>
 &emsp;Um die rechtmäßigen Interessen der Niederländischsprachigen und der Französischsprachigen in der ehemaligen Provinz Brabant zu gewährleisten, sieht das Gesetz jedoch Sondermodalitäten vor. <br/>
 &emsp;Die Regeln, die diese Sondermodalitäten festlegen, können nur durch ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, abgeändert werden. <br/>
 
-```Art. 64 ```
+<span class="code"> Art. 64  </span>
 
 <p class="no-bottom-margin"> Wählbar ist, wer </p>
 
@@ -462,22 +462,22 @@ Die Zusammenstellung der Wahlkollegien wird durch Gesetz geregelt. <br/>
 4.	seinen Wohnsitz in Belgien hat. <br/>
 Es darf keine andere Wählbarkeitsbedingung auferlegt werden. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Absatz 1 Nr. 3 tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag muss man, unbeschadet des Artikels 64 Absatz 1 Nr. 1, 2 und 4, das einundzwanzigste Lebensjahr vollendet haben. <br/>
 
-```Art. 65 ```
+<span class="code"> Art. 65  </span>
 
 Die Mitglieder der Abgeordnetenkammer werden auf fünf Jahre gewählt. <br/>
 &emsp;Die Kammer wird alle fünf Jahre vollständig erneuert. <br/>
 &emsp;Die Wahlen für die Kammer finden am selben Tag wie die Wahlen für das Europäische Parlament statt. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Ein mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommenes Gesetz legt nach den Wahlen für das Europäische Parlament im Jahre 2014 das Datum des Inkrafttretens von Absatz 3 fest. Dieses Datum entspricht dem Datum des Inkrafttretens von Artikel 46 Absatz 6 und Artikel 118 § 2 Absatz 4. <br/>
 Auf jeden Fall werden am selben Tag wie die ersten Wahlen für das Europäische Parlament, die der Veröffentlichung der vorliegenden Revision im Belgischen Staatsblatt folgen, föderale Parlamentswahlen stattfinden. <br/>
 
-```Art. 66 ```
+<span class="code"> Art. 66  </span>
 
 Jedes Mitglied der Abgeordnetenkammer bezieht eine jährliche Entschädigung von zwölftausend Franken. <br/>
 Innerhalb der Staatsgrenzen haben die Mitglieder der Abgeordnetenkammer ein Recht auf freie Fahrt auf allen von den öffentlichen Behörden betriebenen oder konzessionierten Verkehrsverbindungen. <br/>
@@ -486,7 +486,7 @@ Innerhalb der Staatsgrenzen haben die Mitglieder der Abgeordnetenkammer ein Rech
 
 ###### <span class="titles">ABSCHNITT II  <br/> DER SENAT </span>
 
-```Art. 67```
+<span class="code"> Art. 67 </span>
 
 <p class="no-bottom-margin"> § 1 – Der Senat setzt sich aus sechzig Senatoren zusammen: </p>
 
@@ -505,7 +505,7 @@ Innerhalb der Staatsgrenzen haben die Mitglieder der Abgeordnetenkammer ein Rech
 
 § 4 – Wenn eine in Artikel 68 § 2 erwähnte Liste nicht durch Senatoren vertreten ist, die in § 1 Nr. 1 beziehungsweise § 1 Nr. 2, 3 oder 4 erwähnt sind, kann die Bestimmung der in § 1 Nr. 6 oder § 1 Nr. 7 erwähnten Senatoren durch die auf der vorerwähnten Liste gewählten Abgeordneten erfolgen. <br/>
 
-```Übergangsbestimmung```
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag bleiben folgende Bestimmungen anwendbar: <br/>
 
@@ -523,7 +523,7 @@ Wenn die vollständige Erneuerung ihres Parlaments nicht mit der Erneuerung des 
 § 2 – Mindestens einer der in § 1 Nr. 1, 3 und 6 erwähnten Senatoren hat am Tag seiner Wahl seinen Wohnsitz im zweisprachigen Gebiet Brüssel-Hauptstadt. <br/>
 &emsp;Mindestens sechs der in § 1 Nr. 2, 4 und 7 erwähnten Senatoren haben am Tag ihrer Wahl ihren Wohnsitz im zweisprachigen Gebiet Brüssel-Hauptstadt. Wenn nicht mindestens vier der in § 1 Nr. 2 erwähnten Senatoren am Tag ihrer Wahl ihren Wohnsitz im zweisprachigen Gebiet Brüssel-Hauptstadt haben, müssen mindestens zwei der in § 1 Nr. 4 erwähnten Senatoren am Tag ihrer Wahl ihren Wohnsitz im zweisprachigen Gebiet Brüssel-Hauptstadt haben.“<br/>
 
-```Art. 68 ```
+<span class="code"> Art. 68  </span>
 
 § 1 – Die in Artikel 67 § 1 Nr. 1 vorgesehenen Senatssitze werden nach dem durch Gesetz festgelegten System der verhältnismäßigen Vertretung auf der Grundlage der Addition - gemäß den durch Gesetz vorgesehenen Modalitäten - der Wahlziffern, die die Listen bei den Wahlen zum Flämischen Parlament in den verschiedenen Wahlkreisen erzielt haben, auf die Listen verteilt. <br/>
 &emsp;Die Listen, deren Wahlziffern aufgrund von Absatz 1 addiert werden, dürfen an der Verteilung der in Artikel 67 § 1 Nr. 1 vorgesehenen Senatssitze nur teilnehmen, wenn sie mindestens einen Sitz im Flämischen Parlament erhalten haben. <br/>
@@ -536,7 +536,7 @@ Wenn die vollständige Erneuerung ihres Parlaments nicht mit der Erneuerung des 
 &emsp;Eine Liste kann nur für die Sitzverteilung einer einzigen Sprachgruppe berücksichtigt werden. <br/>
 &emsp;Das Gesetz regelt die Bestimmung der in Artikel 67 § 1 Nr. 6 und 7 erwähnten Senatoren. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft, mit Ausnahme von Paragraph 2 Absatz 1 letzter Satz. Bis zu diesem Tag bleiben folgende Bestimmungen anwendbar: <br/>
 
@@ -551,7 +551,7 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 &emsp;Der in Artikel 67 § 1 Nr. 5 erwähnte Senator wird vom Parlament der Deutschsprachigen Gemeinschaft mit absoluter Mehrheit der abgegebenen Stimmen bestimmt. <br/>
 &emsp;Das Gesetz regelt die Bestimmung der in Artikel 67 § 1 Nr. 6 und 7 erwähnten Senatoren.“ <br/>
 
-```Art. 69```
+<span class="code"> Art. 69 </span>
 
 <p class="no-bottom-margin">Zum Senator kann bestimmt werden, wer </p>
 
@@ -560,7 +560,7 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 3. das achtzehnte Lebensjahr vollendet hat und <br/>
 4. seinen Wohnsitz in Belgien hat. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag sind folgende Bestimmungen anwendbar: <br/>
 
@@ -571,19 +571,19 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 3. das einundzwanzigste Lebensjahr vollendet hat und <br/>
 4. seinen Wohnsitz in Belgien hat.“ <br/>
 
-```Art. 70 ```
+<span class="code"> Art. 70  </span>
 
 Das Mandat der in Artikel 67 § 1 Nr. 1 bis 5 erwähnten Senatoren beginnt am Tag ihrer Eidesleistung im Senat und endet, nach der vollständigen Erneuerung des Parlaments, das sie bestimmt hat, am Tag der Eröffnung der ersten Sitzungsperiode dieses Parlaments. <br/>
 &emsp;Das Mandat der in Artikel 67 § 1 Nr. 6 und 7 erwähnten Senatoren beginnt am Tag ihrer Eidesleistung im Senat und endet am Tag der Eröffnung der ersten Sitzungsperiode der Abgeordnetenkammer nach ihrer vollständigen Erneuerung. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Datum sind folgende Bestimmungen anwendbar: <br/>
 
 „Die in Artikel 67 § 1 Nr. 1 und 2 erwähnten Senatoren werden auf vier Jahre gewählt. Die in Artikel 67 § 1 Nr. 6 und 7 erwähnten Senatoren werden auf vier Jahre bestimmt. <br/>
 &emsp;Auf jeden Fall wird der Senat bei den Wahlen für die Gemeinschafts- und Regionalparlamente im Jahre 2014 vollständig erneuert.“ <br/>
 
-```Art. 71 ```
+<span class="code"> Art. 71  </span>
 
 Die Senatoren beziehen kein Gehalt. <br/>
 &emsp;Sie haben jedoch das Recht, für ihre Unkosten entschädigt zu werden. <br/>
@@ -592,27 +592,27 @@ Die Senatoren beziehen kein Gehalt. <br/>
 &emsp;Die Entschädigung der in Artikel 67 § 1 Nr. 6 und 7 erwähnten Senatoren geht zu Lasten der Dotation des Senats. <br/>
 &emsp;Innerhalb der Staatsgrenzen haben die Senatoren ein Recht auf freie Fahrt auf allen von den öffentlichen Behörden betriebenen oder konzessionierten Verkehrsverbindungen. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Die Einfügung der Absätze 3 bis 5 des vorliegenden Artikels tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. <br/>
 &emsp;Bis zu diesem Tag haben die Senatoren ein Recht auf eine Entschädigung von viertausend Franken pro Jahr. <br/>
 
-```Art. 72 ```
+<span class="code"> Art. 72  </span>
 
 [aufgehoben]<br/>
 
-```Art. 73 ```
+<span class="code"> Art. 73  </span>
 
 Jede Versammlung des Senats, die außerhalb der Sitzungsperiode der Abgeordnetenkammer stattfände, ist von Rechts wegen ungültig. <br/>
 
 
 ###### <span class="titles">KAPITEL II <br/> DIE FÖDERALE GESETZGEBENDE GEWALT</span>
 
-```Art. 74 ```
+<span class="code"> Art. 74  </span>
 
 In Abweichung von Artikel 36 wird die föderale gesetzgebende Gewalt für Angelegenheiten, die nicht in den Artikeln 77 und 78 erwähnt sind, vom König und von der Abgeordnetenkammer gemeinsam ausgeübt. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag sind folgende Bestimmungen anwendbar: <br/>
 
@@ -623,12 +623,12 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 3.	Haushaltspläne und Rechnungen des Staates, unbeschadet des Artikels 174 Absatz 1 zweiter Satz, <br/>
 4.	die Festlegung des Armeekontingentes.“ <br/>
 
-```Art. 75 ```
+<span class="code"> Art. 75  </span>
 
 Jeder Zweig der föderalen gesetzgebenden Gewalt hat das Initiativrecht. Das Initiativrecht des Senats ist jedoch auf die in Artikel 77 erwähnten Angelegenheiten beschränkt. <br/>
 &emsp;Die den Kammern auf Initiative des Königs vorgelegten Gesetzentwürfe werden für die in Artikel 78 erwähnten Angelegenheiten in der Abgeordnetenkammer eingebracht und danach dem Senat übermittelt. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag sind folgende Bestimmungen anwendbar: <br/>
 
@@ -636,17 +636,17 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 &emsp;Die den Kammern auf Initiative des Königs vorgelegten Gesetzentwürfe werden außer für die in Artikel 77 erwähnten Angelegenheiten in der Abgeordnetenkammer eingebracht und danach dem Senat übermittelt. <br/>
 &emsp;Die den Kammern auf Initiative des Königs vorgelegten Gesetzentwürfe zur Zustimmung zu Verträgen werden im Senat eingebracht und danach der Abgeordnetenkammer übermittelt.“ <br/>
 
-```Art. 76 ```
+<span class="code"> Art. 76  </span>
 
 Ein Gesetzentwurf kann von einer Kammer erst angenommen werden, nachdem über jeden einzelnen Artikel abgestimmt worden ist. <br/>
 &emsp;Die Kammern haben das Recht, die Artikel und die eingebrachten Abänderungsanträge zu ändern und aufzuteilen. <br/>
 &emsp;Die Geschäftsordnung der Abgeordnetenkammer sieht ein Verfahren für eine zweite Lesung vor. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Absatz 3 tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. <br/>
 
-```Art. 77```
+<span class="code"> Art. 77 </span>
 
 <p class="no-bottom-margin">Die Abgeordnetenkammer und der Senat sind gleichermaßen zuständig für:</p>
 
@@ -660,7 +660,7 @@ Absatz 3 tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung de
 <li>Ein mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommenes Gesetz kann andere Angelegenheiten angeben, für die die Abgeordnetenkammer und der Senat gleichermaßen zuständig sind.</li>
 </ol>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag sind folgende Bestimmungen anwendbar: <br/>
 
@@ -681,7 +681,7 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 
 Ein mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommenes Gesetz kann andere Gesetze angeben, für die die Abgeordnetenkammer und der Senat gleichermaßen zuständig sind.“ <br/>
 
-```Art. 78```
+<span class="code"> Art. 78 </span>
 
 <p class="no-bottom-margin">§ 1 – Vorbehaltlich des Artikels 77 wird der von der Abgeordnetenkammer angenommene Gesetzentwurf in folgenden Angelegenheiten dem Senat übermittelt: </p>
 
@@ -705,7 +705,7 @@ Ein mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommenes Gesetz 
 Hat der Senat innerhalb der vorgeschriebenen Frist keinen Beschluss gefasst oder der Abgeordnetenkammer seinen Beschluss mitgeteilt, den Gesetzentwurf nicht abzuändern, übermittelt die Abgeordnetenkammer den Entwurf dem König. <br/>
 &emsp;Ist der Entwurf abgeändert worden, übermittelt der Senat ihn der Abgeordnetenkammer, die einen definitiven Beschluss fasst, indem sie den Gesetzentwurf entweder annimmt oder abändert. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag sind folgende Bestimmungen anwendbar:<br/>
 
@@ -719,25 +719,25 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 Hat der Senat innerhalb der vorgeschriebenen Frist keinen Beschluss gefasst oder der Abgeordnetenkammer seinen Beschluss mitgeteilt, den Gesetzentwurf nicht abzuändern, übermittelt die Abgeordnetenkammer ihn dem König. <br/>
 &emsp;Ist der Entwurf abgeändert worden, übermittelt der Senat ihn der Abgeordnetenkammer, die einen definitiven Beschluss fasst, indem sie alle oder einige der vom Senat angenommenen Abänderungsanträge entweder annimmt oder ablehnt.“ <br/>
 
-```Art. 79 ```
+<span class="code"> Art. 79  </span>
 
 [aufgehoben]<br/>
 
-```Art. 80 ```
+<span class="code"> Art. 80  </span>
 
 [aufgehoben]<br/>
 
-```Art. 81 ```
+<span class="code"> Art. 81  </span>
 
 [aufgehoben]<br/>
 
-```Art. 82 ```
+<span class="code"> Art. 82  </span>
 
 Ein paritätisch aus Mitgliedern der Abgeordnetenkammer und des Senats zusammengesetzter parlamentarischer Konzertierungsausschuss regelt die zwischen beiden Kammern auftretenden Zuständigkeitskonflikte und kann in gegenseitigem Einvernehmen jederzeit die in Artikel 78 vorgesehene Untersuchungsfrist verlängern. <br/>
 &emsp;Wird nicht innerhalb der zwei Bestandteile des Ausschusses eine Mehrheit erzielt, beschließt dieser mit Zweidrittelmehrheit seiner Mitglieder. <br/>
 &emsp;Ein Gesetz bestimmt die Zusammensetzung und die Arbeitsweise des Ausschusses sowie die Weise, wie die in Artikel 78 erwähnten Fristen zu berechnen sind. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag sind folgende Bestimmungen anwendbar: <br/>
 
@@ -745,11 +745,11 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 &emsp;Wird nicht innerhalb der zwei Bestandteile des Ausschusses eine Mehrheit erzielt, beschließt dieser mit Zweidrittelmehrheit seiner Mitglieder. <br/>
 &emsp;Ein Gesetz bestimmt die Zusammensetzung und die Arbeitsweise des Ausschusses sowie die Weise, wie die in den Artikeln 78 bis 81 erwähnten Fristen zu berechnen sind.“ <br/>
 
-```Art. 83 ```
+<span class="code"> Art. 83  </span>
 
 Jeder Gesetzesvorschlag und jeder Gesetzentwurf gibt an, ob es sich um eine in Artikel 74, in Artikel 77 oder in Artikel 78 erwähnte Angelegenheit handelt. <br/>
 
-```Art. 84```
+<span class="code"> Art. 84 </span>
 
 Die authentische Interpretation der Gesetze ist allein Sache des Gesetzes. <br/>
 
@@ -758,100 +758,100 @@ Die authentische Interpretation der Gesetze ist allein Sache des Gesetzes. <br/>
 
 ###### <span class="titles">ABSCHNITT I <br/> DER KÖNIG</span>
 
-```Art. 85```
+<span class="code"> Art. 85 </span>
 
 Die verfassungsmäßige Gewalt des Königs geht durch Erbfolge in gerader Linie über auf die leibliche und legitime Nachkommenschaft S.M. Leopold, Georg, Christian, Friedrich von Sachsen-Coburg, und zwar nach dem Recht der Erstgeburt. <br/>
 &emsp;Der in Absatz 1 erwähnte Nachkomme, der ohne Einverständnis des Königs oder derjenigen heiratet, die bei Fehlen des Königs dessen Gewalt in den von der Verfassung vorgesehenen Fällen ausüben, verwirkt seine Rechte auf die Krone. <br/>
 &emsp;Er kann jedoch vom König oder von denjenigen, die bei Fehlen des Königs dessen Gewalt in den von der Verfassung vorgesehenen Fällen ausüben, wieder in seine Rechte eingesetzt werden, doch nur mit der Zustimmung beider Kammern. <br/>
 
-```Art. 86 ```
+<span class="code"> Art. 86  </span>
 
 In Ermangelung einer Nachkommenschaft S.M. Leopold, Georg, Christian, Friedrich von Sachsen-Coburg kann der König seinen Nachfolger ernennen, insofern die Kammern ihre Zustimmung in der in Artikel 87 vorgeschriebenen Weise erteilen. <br/>
 &emsp;Wenn kein Nachfolger ernannt worden ist, wird der Thron vakant. <br/>
 
-```Art. 87 ```
+<span class="code"> Art. 87  </span>
 
 Der König darf nur mit der Zustimmung der beiden Kammern gleichzeitig Oberhaupt eines anderen Staates sein. <br/>
 &emsp;Keine der beiden Kammern kann hierüber beraten, wenn nicht mindestens zwei Drittel ihrer Mitglieder anwesend sind, und der Beschluss ist nur dann angenommen, wenn er mindestens zwei Drittel der abgegebenen Stimmen erhalten hat. <br/>
 
-```Art. 88```
+<span class="code"> Art. 88 </span>
 
 Die Person des Königs ist unverletzlich; seine Minister sind verantwortlich. <br/>
 
-```Art. 89```
+<span class="code"> Art. 89 </span>
 
 Das Gesetz legt die Zivilliste für die Dauer der Herrschaft jedes Königs fest. <br/>
 
-```Art. 90 ```
+<span class="code"> Art. 90  </span>
 
 Beim Tod des Königs treten die Kammern ohne Einberufung spätestens am zehnten Tag nach seinem Tod zusammen. Wenn die Kammern vorher aufgelöst worden sind und im Auflösungsbeschluss die Einberufung für einen späteren Zeitpunkt als diesen zehnten Tag erfolgt ist, nehmen die alten Kammern ihre Funktionen wieder auf bis zum Zusammentritt derer, die sie ersetzen sollen. <br/>
 &emsp;Ab dem Tod des Königs bis zur Eidesleistung des Thronfolgers oder des Regenten wird die verfassungsmäßige Gewalt des Königs im Namen des belgischen Volkes von den im Rat versammelten Ministern und unter ihrer Verantwortung ausgeübt. <br/>
 
-```Art. 91 ```
+<span class="code"> Art. 91  </span>
 
 Der König ist mit vollendetem achtzehnten Lebensjahr volljährig. <br/>
 &emsp;Der König besteigt erst den Thron, nachdem er vor den vereinigten Kammern feierlich folgenden Eid geleistet hat: <br/>
 &emsp;„Ich schwöre, die Verfassung und die Gesetze des belgischen Volkes zu beachten, die Unabhängigkeit des Landes zu erhalten und die Unversehrtheit des Staatsgebietes zu wahren.“<br/>
 
-```Art. 92 ```
+<span class="code"> Art. 92  </span>
 
 Wenn beim Tod des Königs sein Nachfolger minderjährig ist,vereinigen sich beide Kammern zu einer einzigen Versammlung, um für die Regentschaft und die Vormundschaft zu sorgen. <br/>
 
-```Art. 93```
+<span class="code"> Art. 93 </span>
 
 Befindet sich der König in der Unmöglichkeit zu herrschen, so berufen die Minister unverzüglich die Kammern ein, nachdem sie diese Unmöglichkeit haben feststellen lassen. Die vereinigten Kammern sorgen für die Vormundschaft und die Regentschaft. <br/>
 
-```Art. 94 ```
+<span class="code"> Art. 94  </span>
 
 Die Regentschaft darf nur einer einzelnen Person übertragen werden. <br/>
 &emsp;Der Regent nimmt seine Funktionen erst auf, nachdem er den in Artikel 91 vorgeschriebenen Eid geleistet hat. <br/>
 
-```Art. 95 ```
+<span class="code"> Art. 95  </span>
 
 Ist der Thron vakant, so sorgen die gemeinsam beratenden Kammern vorläufig für die Regentschaft bis zum Zusammentritt der gänzlich erneuerten Kammern; dieser Zusammentritt erfolgt spätestens binnen zwei Monaten. Die gemeinsam beratenden neuen Kammern sorgen endgültig für die Besetzung des Thrones. <br/>
 
 
 ###### <span class="titles">ABSCHNITT II  <br/> DIE FÖDERALREGIERUNG </span>
 
-```Art. 96 ```
+<span class="code"> Art. 96  </span>
 
 Der König ernennt und entläßt seine Minister. <br/>
 &emsp;Die Föderalregierung bietet dem König ihren Rücktritt an, wenn die Abgeordnetenkammer mit absoluter Mehrheit ihrer Mitglieder einen Misstrauensantrag annimmt, mit dem dem König ein Nachfolger für den Premierminister zur Ernennung vorgeschlagen wird, oder binnen drei Tagen nach Ablehnung eines Vertrauensantrags dem König einen Nachfolger für den Premierminister zur Ernennung vorschlägt. Der König ernennt den vorgeschlagenen Nachfolger zum Premierminister; dieser tritt sein Amt bei der Eidesleistung der neuen Föderalregierung an. <br/>
 
-```Art. 97```
+<span class="code"> Art. 97 </span>
 
 Nur Belgier dürfen Minister sein. <br/>
 
-```Art. 98```
+<span class="code"> Art. 98 </span>
 
 Kein Mitglied der königlichen Familie darf Minister sein. <br/>
 
-```Art. 99 ```
+<span class="code"> Art. 99  </span>
 
 Der Ministerrat zählt höchstens fünfzehn Mitglieder. <br/>
 &emsp;Den Premierminister eventuell ausgenommen, zählt der Ministerrat ebenso viele niederländischsprachige wie französischsprachige Minister. <br/>
 
-```Art. 100 ```
+<span class="code"> Art. 100  </span>
 
 Die Minister haben Zutritt zu jeder Kammer, und auf ihren Antrag hin muss ihnen das Wort erteilt werden. <br/>
 &emsp;Die Abgeordnetenkammer kann die Anwesenheit der Minister verlangen. Der Senat kann ihre Anwesenheit im Rahmen der in den Artikeln 77 oder 78 erwähnten Angelegenheiten verlangen. Für andere Angelegenheiten kann er um ihre Anwesenheit bitten. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 &emsp;Absatz 2 zweiter Satz tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag ist unbeschadet des Absatzes 1 und des Absatzes 2 erster und letzter Satz folgende Bestimmung anwendbar: <br/>
 
 &emsp;„Der Senat kann ihre Anwesenheit verlangen für die Besprechung eines in Artikel 77 erwähnten Gesetzentwurfs oder Gesetzesvorschlags oder eines in Artikel 78 erwähnten Gesetzentwurfs oder zwecks Ausübung seines in Artikel 56 erwähnten Untersuchungsrechts.“ <br/>
 
-```Art. 101```
+<span class="code"> Art. 101 </span>
 
 Die Minister sind der Abgeordnetenkammer gegenüber verantwortlich. <br/>
 &emsp;Ein Minister darf nicht anläßlich einer in der Ausübung seines Amtes erfolgten Meinungsäußerung verfolgt oder Gegenstand irgendeiner Ermittlung werden. <br/>
 
-```Art. 102 ```
+<span class="code"> Art. 102  </span>
 
 In keinem Fall kann ein mündlicher oder schriftlicher Befehl des Königs einen Minister von seiner Verantwortung befreien. <br/>
 
-```Art. 103 ```
+<span class="code"> Art. 103  </span>
 
 Über Minister wird für Straftaten, die sie in der Ausübung ihres Amtes begangen haben sollten, ausschließlich durch den Appellationshof gerichtet. Dies gillt auch für Straftaten, die Minister außerhalb der Ausübung ihres Amtes begangen haben sollten und für die während der Zeit der Ausübung ihres Amtes über sie gerichtet wird. Gegebenenfalls kommen die Artikel 59 und 120 nicht zur Anwendung. <br/>
 &emsp;Das Gesetz bestimmt, auf welche Weise gegen sie vorgegangen wird, sowohl bei der Verfolgung als auch, wenn über sie gerichtet wird. <br/>
@@ -862,12 +862,12 @@ In keinem Fall kann ein mündlicher oder schriftlicher Befehl des Königs einen 
 &emsp;Ein gemäß Absatz 1 verurteilter Minister kann nur auf Ersuchen der Abgeordnetenkammer begnadigt werden. <br/>
 &emsp;Das Gesetz bestimmt, in welchen Fällen und nach welchen Regeln die geschädigten Parteien eine Zivilklage erheben können. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel ist weder anwendbar auf Taten, die Gegenstand von Voruntersuchungen gewesen sind, noch auf Verfolgungen, die vor Inkrafttreten des Gesetzes zu seiner Ausführung eingeleitet worden sind. <br/>
 &emsp;In diesem Fall gilt folgende Regel: Die Abgeordnetenkammer hat das Recht, gegen die Minister Anklage zu erheben und die vor den Kassationshof zu stellen. Dieser allein ist zuständig, um in vereinigten Kammern über sie zu richten in den Fällen und unter Anwendung der Strafen, die in den Strafgesetzen bestimmt sind. Das Gesetz vom 17. Dezember 1996 zur zeitweiligen und teilweisen Ausführung von Artikel 103 der Verfassung bleibt diesbezüglich anwendbar. <br/>
 
-```Art. 104 ```
+<span class="code"> Art. 104  </span>
 
 Der König ernennt und entlässt die föderalen Staatssekretäre. <br/>
 &emsp;Sie sind Mitglieder der Föderalregierung. Sie gehören dem Ministerrat nicht an. Sie sind einem Minister beigeordnet. <br/>
@@ -877,45 +877,45 @@ Der König ernennt und entlässt die föderalen Staatssekretäre. <br/>
 
 ###### <span class="titles">ABSCHNITT III  <br/> DIE BEFUGNISSE </span>
 
-```Art. 105 ```
+<span class="code"> Art. 105  </span>
 
 Der König hat keine andere Gewalt als die, die ihm die Verfassung und die aufgrund der Verfassung selbst ergangenen besonderen Gesetze ausdrücklich übertragen. <br/>
 
-```Art. 106 ```
+<span class="code"> Art. 106  </span>
 
 Ein Akt des Königs kann nur wirksam werden, wenn er von einem Minister gegengezeichnet ist, der schon allein dadurch die Verantwortung dafür übernimmt. <br/>
 
-```Art. 107```
+<span class="code"> Art. 107 </span>
 
 Der König verleiht die Dienstgrade in der Armee. <br/>
 &emsp;Er ernennt die Beamten der allgemeinen Verwaltung und der auswärtigen Beziehungen, vorbehaltlich der durch die Gesetze festgelegten Ausnahmen. <br/>
 &emsp;Er ernennt andere Beamte nur aufgrund einer ausdrücklichen Gesetzesbestimmung. <br/>
 
-```Art. 108 ```
+<span class="code"> Art. 108  </span>
 
 Der König erlässt die zur Ausführung der Gesetze notwendigen Verordnungen und Erlasse, ohne jemals die Gesetze selbst aussetzen noch von ihrer Ausführung entbinden zu dürfen. <br/>
 
-```Art. 109```
+<span class="code"> Art. 109 </span>
 
 Der König sanktioniert die Gesetze und fertigt sie aus. <br/>
 
-```Art. 110 ```
+<span class="code"> Art. 110  </span>
 
 Der König hat das Recht, die von den Richtern verhängten Strafen zu erlassen oder zu ermäßigen, vorbehaltlich der die Minister und die Mitglieder der Gemeinschafts- und Regionalregierungen betreffenden Bestimmungen. <br/>
 
-```Art. 111 ```
+<span class="code"> Art. 111  </span>
 
 Der König kann einen vom Kassationshof verurteilten Minister oder ein vom Kassationshof verurteiltes Mitglied einer Gemeinschafts- oder Regionalregierung nur auf Ersuchen der Abgeordnetenkammer beziehungsweise des betroffenen Parlaments begnadigen. <br/>
 
-```Art. 112```
+<span class="code"> Art. 112 </span>
 
 Der König übt das Münzrecht aus nach Maßgabe des Gesetzes. <br/>
 
-```Art. 113 ```
+<span class="code"> Art. 113  </span>
 
 Der König hat das Recht, Adelstitel zu verleihen, ohne jemals irgendein Privileg daran binden zu dürfen. <br/>
 
-```Art. 114```
+<span class="code"> Art. 114 </span>
 
 Der König verleiht die militärischen Orden unter Beachtung der diesbezüglichen gesetzlichen Bestimmungen. <br/>
 
@@ -926,27 +926,27 @@ Der König verleiht die militärischen Orden unter Beachtung der diesbezügliche
 
 ###### <span class="titles">Unterabschnitt I <br/> DIE GEMEINSCHAFTS- UND REGIONALPARLAMENTE </span>
 
-```Art. 115 ```
+<span class="code"> Art. 115  </span>
 
 § 1 – Es gibt ein Parlament der Flämischen Gemeinschaft, Flämisches Parlament genannt, und ein Parlament der Französischen Gemeinschaft, deren Zusammensetzung und Arbeitsweise durch ein mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommenes Gesetz bestimmt werden. <br/>
 &emsp;Es gibt ein Parlament der Deutschsprachigen Gemeinschaft, dessen Zusammensetzung und Arbeitsweise durch Gesetz bestimmt werden. <br/>
 
 § 2 – Unbeschadet des Artikels 137 umfassen die in Artikel 39 erwähnten regionalen Organe für jede Region ein Parlament. <br/>
 
-```Art. 116 ```
+<span class="code"> Art. 116  </span>
 
 § 1 – Die Gemeinschafts- und Regionalparlamente setzen sich aus gewählten Vertretern zusammen. <br/>
 
 § 2 – Jedes Gemeinschaftsparlament setzt sich aus Mitgliedern zusammen, die direkt zu Mitgliedern des betreffenden Gemeinschaftsparlaments oder zu Mitgliedern eines Regionalparlaments gewählt werden. <br/>
 &emsp;Außer bei Anwendung von Artikel 137 setzt sich jedes Regionalparlament aus Mitgliedern zusammen, die direkt zu Mitgliedern des betreffenden Regionalparlaments oder zu Mitgliedern eines Gemeinschaftsparlaments gewählt werden. <br/>
 
-```Art. 117 ```
+<span class="code"> Art. 117  </span>
 
 Die Mitglieder der Gemeinschafts- und Regionalparlamente werden auf fünf Jahre gewählt. Die Gemeinschafts- und Regionalparlamente werden alle fünf Jahre vollständig erneuert. <br/>
 &emsp;Die Wahlen für die Gemeinschafts- und Regionalparlamente finden am selben Tag statt und fallen zusammen mit den Wahlen für das Europäische Parlament. <br/>
 &emsp;In Ausführung eines in Artikel 118 § 2 Absatz 4 erwähnten Gesetzes kann ein Dekret oder eine in Artikel 134 erwähnte Regel, das beziehungsweise die gemäß Artikel 118 § 2 Absatz 4 angenommen wird, von den Absätzen 1 und 2 abweichen. <br/>
 
-```Art. 118 ```
+<span class="code"> Art. 118  </span>
 
 § 1 – Das Gesetz regelt die in Artikel 116 § 2 erwähnten Wahlen sowie die Zusammensetzung und die Arbeitsweise der Gemeinschafts- und Regionalparlamente. Außer für das Parlament der Deutschsprachigen Gemeinschaft wird dieses Gesetz mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen. <br/>
 
@@ -955,43 +955,43 @@ Die Mitglieder der Gemeinschafts- und Regionalparlamente werden auf fünf Jahre 
 &emsp;Ein Gesetz bestimmt die Angelegenheiten in Bezug auf die Wahl, die Zusammensetzung und die Arbeitsweise des Parlaments der Deutschsprachigen Gemeinschaft, die von diesem Parlament durch Dekret geregelt werden. Dieses Dekret wird mit Zweidrittelmehrheit der abgegebenen Stimmen angenommen, vorausgesetzt, die Mehrheit der Mitglieder des Parlaments ist anwesend. <br/>
 &emsp;Das je nach Fall in Absatz 1 beziehungsweise Absatz 3 erwähnte Gesetz kann den Gemeinschafts- und Regionalparlamenten die Befugnis anvertrauen, jedes für seinen Bereich und je nach Fall durch Dekret oder durch eine in Artikel 134 erwähnte Regel, die Dauer ihrer Sitzungsperiode und das Datum der Wahl ihres Parlaments zu regeln. Dieses Dekret und diese in Artikel 134 erwähnte Regel werden mit den in den Absätzen 1 bis 3 vorgesehenen Mehrheiten angenommen. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Ein mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommenes Gesetz legt nach den Wahlen für das Europäische Parlament im Jahre 2014 das Datum des Inkrafttretens von Paragraph 2 Absatz 4 fest. Dieses Datum entspricht dem Datum des Inkrafttretens von Artikel 46 Absatz 6 und Artikel 65 Absatz 3. <br/>
 
-```Art. 118bis ```
+<span class="code"> Art. 118bis  </span>
 
 Innerhalb der Staatsgrenzen haben die Mitglieder der Parlamente der in den Artikeln 2 und 3 erwähnten Gemeinschaften und Regionen ein Recht auf freie Fahrt auf allen von den öffentlichen Behörden betriebenen oder konzessionierten Verkehrsverbindungen. <br/>
 
-```Art. 119 ```
+<span class="code"> Art. 119  </span>
 
 Das Mandat eines Mitglieds eines Gemeinschafts- oder Regionalparlaments ist unvereinbar mit dem Mandat eines Mitglieds der Abgeordnetenkammer. Außerdem ist es unvereinbar mit dem in Artikel 67 § 1 Nr. 6 und 7 erwähnten Mandat eines Senators. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag sind folgende Bestimmungen anwendbar: <br/>
 
 „Das Mandat eines Mitglieds eines Gemeinschafts- oder Regionalparlaments ist unvereinbar mit dem Mandat eines Mitglieds der Abgeordnetenkammer. Außerdem ist es unvereinbar mit dem in Artikel 67 § 1 Nr. 1, 2, 6 und 7 erwähnten Mandat eines Senators.“<br/>
 
-```Art. 120 ```
+<span class="code"> Art. 120  </span>
 
 Jedes Mitglied eines Gemeinschafts- oder Regionalparlaments kommt in den Genuß der in den Artikeln 58 und 59 vorgesehenen Immunitäten. <br/>
 
 
 ###### <span class="titles">Unterabschnitt II <br/> DIE GEMEINSCHAFTS- UND REGIONALREGIERUNGEN </span>
 
-```Art. 121 ```
+<span class="code"> Art. 121  </span>
 
 § 1 – Es gibt eine Regierung der Flämischen Gemeinschaft und eine Regierung der Französischen Gemeinschaft, deren Zusammensetzung und Arbeitsweise durch ein mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommenes Gesetz bestimmt werden. <br/>
 &emsp;Es gibt eine Regierung der Deutschsprachigen Gemeinschaft, deren Zusammensetzung und Arbeitsweise durch Gesetz bestimmt werden. <br/>
 
 § 2 – Unbeschadet des Artikels 137 umfassen die in Artikel 39 erwähnten regionalen Organe für jede Region eine Regierung. <br/>
 
-```Art. 122 ```
+<span class="code"> Art. 122  </span>
 
 Die Mitglieder jeder Gemeinschafts- oder Regionalregierung werden von ihrem Parlament gewählt. <br/>
 
-```Art. 123 ```
+<span class="code"> Art. 123  </span>
 
 § 1 – Das Gesetz regelt die Zusammensetzung und die Arbeitsweise der Gemeinschafts- und Regionalregierungen. Außer für die Regierung der Deutschsprachigen Gemeinschaft wird dieses Gesetz mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen. <br/>
 
@@ -999,11 +999,11 @@ Die Mitglieder jeder Gemeinschafts- oder Regionalregierung werden von ihrem Parl
 &emsp;Das in Absatz 1 erwähnte Gesetz sieht zusätzliche Mehrheitsbedingungen vor, was das Parlament der Region Brüssel-Hauptstadt betrifft. <br/>
 &emsp;Ein Gesetz bestimmt die Angelegenheiten in Bezug auf die Zusammensetzung und Arbeitsweise der Regierung der Deutschsprachigen Gemeinschaft, die von ihrem Parlament durch Dekret geregelt werden. Dieses Dekret wird mit Zweidrittelmehrheit der abgegebenen Stimmen angenommen, vorausgesetzt, die Mehrheit der Mitglieder des Parlaments ist anwesend. <br/>
 
-```Art. 124 ```
+<span class="code"> Art. 124  </span>
 
 Ein Mitglied einer Gemeinschafts- oder Regionalregierung darf nicht anlässlich einer in Ausübung seines Amtes erfolgten Meinungsäußerung oder Stimmabgabe verfolgt oder Gegenstand irgendeiner Ermittlung werden. <br/>
 
-```Art. 125 ```
+<span class="code"> Art. 125  </span>
 
 Über Mitglieder einer Gemeinschafts- oder Regionalregierung wird für Straftaten, die sie in der Ausübung ihres Amtes begangen haben sollten, ausschließlich durch den Appellationshof gerichtet. Dies gilt auch für Straftaten, die Mitglieder einer Gemeinschafts- oder Regionalregierung außerhalb der Ausübung ihres Amtes begangen haben sollten und für die während der Zeit der Ausübung ihres Amtes über sie gerichtet wird. Gegebenenfalls kommen die Artikel 120 und 59 nicht zur Anwendung. <br/>
 &emsp;Das Gesetz bestimmt, auf welche Weise gegen sie vorgegangen wird, sowohl bei der Verfolgung als auch, wenn über sie gerichtet wird. <br/>
@@ -1015,12 +1015,12 @@ Ein Mitglied einer Gemeinschafts- oder Regionalregierung darf nicht anlässlich 
 &emsp;Das Gesetz bestimmt, in welchen Fällen und nach welchen Regeln die geschädigten Parteien eine Zivilklage erheben können. <br/>
 &emsp;Die in vorliegendem Artikel erwähnten Gesetze müssen mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen werden. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Vorliegender Artikel ist weder anwendbar auf Taten, die Gegenstand von Voruntersuchungen gewesen sind, noch auf Verfolgungen, die vor Inkrafttreten des Gesetzes zu seiner Ausführung eingeleitet worden sind. <br/>
 &emsp;In diesem Fall gilt folgende Regel: Die Gemeinschafts- und Regionalparlamente haben das Recht, gegen die Mitglieder ihrer Regierung Anklage zu erheben und sie vor den Kassationshof zu stellen. Dieser allein ist zuständig, um in vereinigten Kammern über sie zu richten in den Fällen und unter Anwendung der Strafen, die in den Strafgesetzen bestimmt sind. Das Sondergesetz vom 28. Februar 1997 zur zeitweiligen und teilweisen Ausführung von Artikel 125 der Verfassung bleibt diesbezüglich anwendbar. <br/>
 
-```Art. 126 ```
+<span class="code"> Art. 126  </span>
 
 Die Verfassungsbestimmungen über die Mitglieder der Gemeinschafts- und Regionalregierungen sowie die in Artikel 125 letzter Absatz erwähnten Ausführungsgesetze finden Anwendung auf die regionalen Staatssekretäre. <br/>
 
@@ -1029,7 +1029,7 @@ Die Verfassungsbestimmungen über die Mitglieder der Gemeinschafts- und Regional
 
 ###### <span class="titles">Unterabschnitt I <br/> DIE GEMEINSCHAFTSBEFUGNISSE</span>
 
-```Art. 127```
+<span class="code"> Art. 127 </span>
 
 § 1 – Die Parlamente der Französischen und der Flämischen Gemeinschaft regeln durch Dekret, jedes für seinen Bereich: <br/>
 
@@ -1046,14 +1046,14 @@ Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenomm
 
 § 2 – Diese Dekrete haben jeweils Gesetzeskraft im französischen Sprachgebiet beziehungsweise im niederländischen Sprachgebiet sowie in Bezug auf die im zweisprachigen Gebiet Brüssel-Hauptstadt errichteten Einrichtungen, die aufgrund ihrer Tätigkeiten als ausschließlich zu der einen oder der anderen Gemeinschaft gehörend zu betrachten sind. <br/>
 
-```Art. 128```
+<span class="code"> Art. 128 </span>
 
 § 1 – Die Parlamente der Französischen und der Flämischen Gemeinschaft regeln durch Dekret, jedes für seinen Bereich, die personenbezogenen Angelegenheiten sowie in diesen Angelegenheiten die Zusammenarbeit zwischen den Gemeinschaften und die internationale Zusammenarbeit, einschließlich des Abschlusses von Verträgen. <br/>
 &emsp;Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, legt diese personenbezogenen Angelegenheiten sowie die Formen der Zusammenarbeit und die näheren Regeln für den Abschluss von Verträgen fest. <br/>
 
 § 2 – Diese Dekrete haben jeweils Gesetzeskraft im französischen Sprachgebiet beziehungsweise im niederländischen Sprachgebiet sowie, außer wenn ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, etwas anderes festlegt, in Bezug auf die im zweisprachigen Gebiet Brüssel-Hauptstadt errichteten Einrichtungen, die aufgrund ihrer Organisation als ausschließlich zu der einen oder der anderen Gemeinschaft gehörend zu betrachten sind. <br/>
 
-```Art. 129 ```
+<span class="code"> Art. 129  </span>
 
 <p class="no-bottom-margin"> § 1 – Die Parlamente der Französischen und der Flämischen Gemeinschaft regeln, jedes für seinen Bereich, durch Dekret und unter Ausschluss des föderalen Gesetzgebers den Gebrauch der Sprachen für: </p>
 1.	die Verwaltungsangelegenheiten; <br/>
@@ -1066,7 +1066,7 @@ Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenomm
 - die Dienststellen, deren Tätigkeit über das Sprachgebiet, in dem sie errichtet sind, hinausgeht; <br/>
 - die durch das Gesetz bezeichneten föderalen und internationalen Einrichtungen, deren Tätigkeit mehr als eine Gemeinschaft betrifft. <br/>
 
-```Art. 130```
+<span class="code"> Art. 130 </span>
 
 § 1 – Das Parlament der Deutschsprachigen Gemeinschaft regelt durch Dekret: <br/>
 1. die kulturellen Angelegenheiten; <br/>
@@ -1078,22 +1078,22 @@ Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenomm
 
 § 2 – Diese Dekrete haben Gesetzeskraft im deutschen Sprachgebiet. <br/>
 
-```Art. 131 ```
+<span class="code"> Art. 131  </span>
 
 Das Gesetz legt die Regeln fest, um jeglicher Diskriminierung aus ideologischen und philosophischen Gründen vorzubeugen. <br/>
 
-```Art. 132 ```
+<span class="code"> Art. 132  </span>
 
 Die Gemeinschaftsregierung und die Mitglieder des Gemeinschaftsparlaments haben das Initiativrecht. <br/>
 
-```Art. 133```
+<span class="code"> Art. 133 </span>
 
 Die authentische Interpretation der Dekrete ist allein Sache des Dekretes.<br/>
 
 
 ###### <span class="titles">Unterabschnitt II <br/> DIE REGIONALBEFUGNISSE</span>
 
-```Art. 134```
+<span class="code"> Art. 134 </span>
 
 Die in Ausführung von Artikel 39 ergangenen Gesetze bestimmen die Rechtskraft der Regeln, die die von ihnen geschaffenen Organe in den Angelegenheiten erlassen, die sie bezeichnen. <br/>
 &emsp;Sie können diesen Organen die Zuständigkeit zuerkennen, Dekrete mit Gesetzeskraft innerhalb des von ihnen bestimmten Bereichs und gemäß der von ihnen bestimmten Weise zu erlassen. <br/>
@@ -1101,35 +1101,35 @@ Die in Ausführung von Artikel 39 ergangenen Gesetze bestimmen die Rechtskraft d
 
 ###### <span class="titles">Unterabschnitt III <br/> SONDERBESTIMMUNGEN </span>
 
-```Art. 135 ```
+<span class="code"> Art. 135  </span>
 
 Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, bezeichnet die Behörden, die für das zweisprachige Gebiet Brüssel-Hauptstadt die Befugnisse ausüben, die in den in Artikel 128 § 1 erwähnten Angelegenheiten den Gemeinschaften nicht übertragen worden sind. <br/>
 
-```Art. 135bis ```
+<span class="code"> Art. 135bis  </span>
 
 Durch ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, können für das zweisprachige Gebiet Brüssel-Hauptstadt der Region Brüssel-Hauptstadt Befugnisse anvertraut werden, die in den in Artikel 127 § 1 Absatz 1 Nr. 1 und - was diese Angelegenheiten betrifft - Nr. 3 erwähnten Angelegenheiten den Gemeinschaften nicht übertragen worden sind. <br/>
 
-```Art. 136 ```
+<span class="code"> Art. 136  </span>
 
 Es gibt Sprachgruppen des Parlaments der Region Brüssel-Hauptstadt und Kollegien, die zuständig sind für die Gemeinschaftsangelegenheiten; ihre Zusammensetzung, ihre Arbeitsweise, ihre Befugnisse und, unbeschadet des Artikels 175, ihre Finanzierung werden durch ein Gesetz geregelt, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird. <br/>
 &emsp;Die Kollegien bilden zusammen das Vereinigte Kollegium, das zwischen den zwei Gemeinschaften als Konzertierungs- und Koordinierungsorgan fungiert.<br/>
 
-```Art. 137 ```
+<span class="code"> Art. 137  </span>
 
 Im Hinblick auf die Anwendung des Artikels 39 können das Parlament der Französischen Gemeinschaft und das Parlament der Flämischen Gemeinschaft sowie deren Regierungen die Befugnisse der Wallonischen Region beziehungsweise der Flämischen Region gemäß den durch Gesetz festgelegten Bedingungen und Modalitäten ausüben. Dieses Gesetz muss mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen werden. <br/>
 
-```Art. 138 ```
+<span class="code"> Art. 138  </span>
 
 Das Parlament der Französischen Gemeinschaft einerseits und das Parlament der Wallonischen Region und die französische Sprachgruppe des Parlaments der Region Brüssel-Hauptstadt andererseits können in gegenseitigem Einvernehmen und jeweils durch Dekret beschließen, dass das Parlament und die Regierung der Wallonischen Region im französischen Sprachgebiet und die französische Sprachgruppe des Parlaments der Region Brüssel-Hauptstadt und ihr Kollegium im zweisprachigen Gebiet Brüssel-Hauptstadt ganz oder teilweise Befugnisse der Französischen Gemeinschaft ausüben. <br/>
 &emsp;Diese Dekrete werden mit Zweidrittelmehrheit der im Parlament der Französischen Gemeinschaft abgegebenen Stimmen und mit absoluter Mehrheit der im Parlament der Wallonischen Region und in der französischen Sprachgruppe des Parlaments der Region Brüssel-Hauptstadt abgegebenen Stimmen angenommen, vorausgesetzt, die Mehrheit der Mitglieder des betreffenden Parlaments beziehungsweise der betreffenden Sprachgruppe ist anwesend. Sie können die Finanzierung der von ihnen angegebenen Befugnisse sowie die Übertragung des Personals, der Güter, Rechte und Pflichten, die damit verbunden sind, regeln. <br/>
 &emsp;Diese Befugnisse werden je nach Fall mittels Dekreten, Erlassen oder Verordnungen ausgeübt. <br/>
 
-```Art. 139```
+<span class="code"> Art. 139 </span>
 
 Auf Vorschlag ihrer jeweiligen Regierung können das Parlament der Deutschsprachigen Gemeinschaft und das Parlament der Wallonischen Region in gegenseitigem Einvernehmen und jedes durch Dekret beschließen, dass das Parlament und die Regierung der Deutschsprachigen Gemeinschaft im deutschen Sprachgebiet Befugnisse der Wallonischen Region ganz oder teilweise ausüben. <br/>
 &emsp;Diese Befugnisse werden je nach Fall im Wege von Dekreten, Erlassen oder Verordnungen ausgeübt. <br/>
 
-```Art. 140 ```
+<span class="code"> Art. 140  </span>
 
 Das Parlament und die Regierung der Deutschsprachigen Gemeinschaft üben im Wege von Erlassen und Verordnungen jegliche andere Befugnis aus, die ihnen das Gesetz überträgt. <br/>
 &emsp;Artikel 159 ist auf diese Erlasse und Verordnungen entsprechend anwendbar. <br/>
@@ -1139,13 +1139,13 @@ Das Parlament und die Regierung der Deutschsprachigen Gemeinschaft üben im Wege
 
 ###### <span class="titles">ABSCHNITT I  <br/> DIE VORBEUGUNG VON ZUSTÄNDIGKEITSKONFLIKTEN </span>
 
-```Art. 141 ```
+<span class="code"> Art. 141  </span>
 
 Das Gesetz gestaltet das Verfahren, um den Konflikten vorzubeugen zwischen dem Gesetz, dem Dekret und den in Artikel 134 erwähnten Regeln, zwischen den Dekreten sowie zwischen den in Artikel 134 erwähnten Regeln. <br/>
 
 ###### <span class="titles">ABSCHNITT II <br/> DER VERFASSUNGSGERICHTSHOF</span>
 
-```Art. 142 ```
+<span class="code"> Art. 142  </span>
 
 Es gibt für ganz Belgien einen Verfassungsgerichtshof, dessen Zusammensetzung, Zuständigkeit und Arbeitsweise durch Gesetz bestimmt werden. <br/>
 &emsp;Dieser Verfassungsgerichtshof befindet im Wege eines Entscheids über: <br/>
@@ -1160,7 +1160,7 @@ Die in Absatz 1, Absatz 2 unter Nr. 3 und in den Absätzen 3 bis 5 erwähnten Ge
 
 ###### <span class="titles">ABSCHNITT III <br/> DIE VORBEUGUNG UND BEILEGUNG VON INTERESSENKONFLIKTEN</span>
 
-```Art. 143```
+<span class="code"> Art. 143 </span>
 
 § 1 – Der Föderalstaat, die Gemeinschaften, die Regionen und die Gemeinsame Gemeinschaftskommission respektieren bei der Ausübung ihrer jeweiligen Befugnisse die föderale Loyalität, um Interessenkonflikte zu vermeiden. <br/>
 
@@ -1170,45 +1170,45 @@ Die in Absatz 1, Absatz 2 unter Nr. 3 und in den Absätzen 3 bis 5 erwähnten Ge
 
 § 4 – Die in den Paragraphen 2 und 3 vorgesehenen Verfahren sind nicht anwendbar auf die Gesetze, Erlasse, Regelungen, Akte und Beschlüsse des Föderalstaats über die Besteuerungsgrundlage, die Steuersätze, die Steuerbefreiungen oder jegliche anderen Bestandteile, die bei der Berechnung der Steuer der natürlichen Personen berücksichtigt werden. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Was die Vorbeugung und Beilegung von Interessenkonflikten betrifft, bleibt das Ordentliche Gesetz vom 9. August 1980 zur Reform der Institutionen anwendbar; es kann jedoch nur durch die in § 2 und 3 erwähnten Gesetze aufgehoben, ergänzt, abgeändert oder ersetzt werden. <br/>
 
 
 ###### <span class="titles">KAPITEL VI <br/> DIE RECHTSPRECHENDE GEWALT </span>
 
-```Art. 144 ```
+<span class="code"> Art. 144  </span>
 
 Streitfälle über bürgerliche Rechte gehören ausschließlich zum Zuständigkeitsbereich der Gerichte. <br/>
 &emsp;Das Gesetz kann jedoch gemäß den von ihm bestimmten Modalitäten den Staatsrat oder die föderalen Verwaltungsgerichtsbarkeiten ermächtigen, über die bürgerrechtlichen Auswirkungen ihrer Entscheidungen zu befinden. <br/>
 
-```Art. 145 ```
+<span class="code"> Art. 145  </span>
 
 Streitfälle über politische Rechte gehören zum Zuständigkeitsbereich der Gerichte, vorbehaltlich der durch Gesetz festgelegten Ausnahmen. <br/>
 
-```Art. 146 ```
+<span class="code"> Art. 146  </span>
 
 Ein Gericht und ein Organ der streitigen Gerichtsbarkeit dürfen nur aufgrund eines Gesetzes eingesetzt werden. Es dürfen keine außerordentlichen Kommissionen oder Gerichte geschaffen werden, unter welcher Bezeichnung es auch sei. <br/>
 
-```Art. 147 ```
+<span class="code"> Art. 147  </span>
 
 Es gibt für ganz Belgien einen Kassationshof. <br/>
 &emsp;Dieser Gerichtshof erkennt nicht über die Sache selbst. <br/>
 
-```Art. 148 ```
+<span class="code"> Art. 148  </span>
 
 Die Sitzungen der Gerichte sind öffentlich, es sei denn, dass diese Öffentlichkeit die Ordnung oder die Sittlichkeit gefährdet; dies wird vom Gericht durch ein Urteil festgestellt. <br/>
 &emsp;Bei politischen Delikten und Pressedelikten kann der Ausschluß der Öffentlichkeit nur bei Einstimmigkeit verkündet werden. <br/>
 
-```Art. 149```
+<span class="code"> Art. 149 </span>
 
 Jedes Urteil wird mit Gründen versehen. Es wird gemäß den durch Gesetz festgelegten Modalitäten bekannt gemacht. In Strafsachen wird sein Tenor in öffentlicher Sitzung verkündet.<br/>
 
-```Art. 150```
+<span class="code"> Art. 150 </span>
 
 Das Geschworenenkollegium wird für alle Kriminalsachen sowie für politische Delikte und Pressedelikte eingesetzt, außer für Pressedelikte, denen Rassismus oder Xenophobie zugrunde liegt. <br/>
 
-```Art. 151```
+<span class="code"> Art. 151 </span>
 
 § 1 – Die Richter sind unabhängig in der Ausübung ihrer Rechtsprechungsbefugnisse. Die Staatsanwaltschaft is unabhängig in der Durchführung individueller Ermittlungen und Verfolgungen, unbeschadet des Rechts des zuständigen Ministers, Verfolgungen anzuordnen und zwingende Richtlinien für die Kriminalpolitik, einschließlich im Bereich der Ermittlungs- und Verfolgungspolitik, festzulegen. <br/>
 &emsp;Über den in Absatz 1 erwähnten Minister verfügen die Regierungen der Gemeinschaften und Regionen, jede für ihren Bereich, darüber hinaus über das Recht, in Angelegenheiten, die in ihre Zuständigkeit fallen, Verfolgungen anzuordnen. Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, legt die Modalitäten für die Ausübung dieses Rechts fest. <br/>
@@ -1245,7 +1245,7 @@ Das Geschworenenkollegium wird für alle Kriminalsachen sowie für politische De
 
 § 6 – In der vom Gesetz festgelegten Weise werden die Richter, die Inhaber der in § 5 Absatz 4 erwähnten Ämter und die Mitglieder der Staatsanwaltschaft einer Bewertung unterworfen. <br/>
 
-```Übergangsbestimmung```<br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Die Bestimmungen der Paragraphen 3 bis 6 werden wirksam nach der Einsetzung des in § 2 erwähnten Hohen Justizrates. <br/>
 &emsp;Ab diesem Datum wird davon ausgegangen, dass der erste Präsident, der Präsident und die Abteilungspräsidenten des Kassationshofes, die ersten Präsidenten und die Kammerpräsidenten der Gerichtshöfe und die Präsidenten und Vizepräsidenten der Gerichte für die Dauer und unter den Bedingungen, die das Gesetz festlegt, für diese Ämter bestimmt sind und gleichzeitig beim Kassationshof, beim Appellationshof oder Arbeitsgerichtshof beziehungsweise beim betreffenden Gericht ernannt sind. <br/>
@@ -1257,25 +1257,25 @@ Die Bestimmungen der Paragraphen 3 bis 6 werden wirksam nach der Einsetzung des 
 &emsp;Alle Vorschläge werden mindestens fünfzehn Tage vor der Ernennung veröffentlicht. <br/>
 &emsp;Die Gerichtshöfe wählen aus ihrer Mitte ihre Präsidenten und Vizepräsidenten. <br/>
 
-```Art. 152```
+<span class="code"> Art. 152 </span>
 
 Die Richter werden auf Lebenszeit ernannt. Sie werden in dem durch Gesetz bestimmten Alter in den Ruhestand versetzt und beziehen die durch Gesetz vorgesehene Pension. <br/>
 &emsp;Ein Richter darf nur durch ein Urteil suspendiert oder seines Amtes enthoben werden. <br/>
 &emsp;Die Versetzung eines Richters darf nur durch eine neue Ernennung und mit seinem Einverständnis erfolgen. <br/>
 
-```Art. 153```
+<span class="code"> Art. 153 </span>
 
 Der König ernennt und entlässt die Mitglieder der Staatsanwaltschaft bei den Gerichtshöfen und Gerichten. <br/>
 
-```Art. 154```
+<span class="code"> Art. 154 </span>
 
 Die Gehälter der Mitglieder des gerichtlichen Standes werden durch Gesetz festgelegt. <br/>
 
-```Art. 155```
+<span class="code"> Art. 155 </span>
 
 Ein Richter darf keine besoldeten Ämter von einer Regierung annehmen, es sei denn, dass er diese unentgeltlich ausübt und vorbehaltlich der durch Gesetz bestimmten Unvereinbarkeitsfälle. <br/>
 
-```Art. 156```
+<span class="code"> Art. 156 </span>
 
 Es gibt in Belgien fünf Appellationshöfe: <br/>
 &emsp;1. den von Brüssel, dessen Bereich die Provinzen Flämisch-Brabant und Wallonisch-Brabant und das zweisprachige Gebiet Brüssel-Hauptstadt umfasst; <br/>
@@ -1284,20 +1284,20 @@ Es gibt in Belgien fünf Appellationshöfe: <br/>
 &emsp;4. den von Lüttich, dessen Bereich die Provinzen Lüttich, Namur und Luxemburg umfasst; <br/>
 &emsp;5. den von Mons, dessen Bereich die Provinz Hennegau umfasst. <br/>
 
-```Art. 157```
+<span class="code"> Art. 157 </span>
 
 Es gibt Militärgerichte, wenn der in Artikel 167 § 1 Absatz 2 erwähnte Kriegszustand festgestellt worden ist. Das Gesetz regelt die Organisation der Militärgerichte, ihre Zuständigkeit, die Rechte und Pflichten der Mitglieder dieser Gerichte und die Dauer ihres Amtes. <br/>
 &emsp;Es gibt Handelsgerichte an den durch Gesetz bezeichneten Orten. Das Gesetz regelt ihre Organisation, ihre Zuständigkeit, die Weise der Ernennung sowie die Dauer des Amtes ihrer Mitglieder. <br/>
 &emsp;Das Gesetz regelt auch die Organisation der Arbeitsgerichte, ihre Zuständigkeit, die Weise der Ernennung sowie die Dauer des Amtes ihrer Mitglieder. <br/>
 &emsp;Es gibt Strafvollstreckungsgerichte an den durch Gesetz bestimmten Orten. Das Gesetz regelt ihre Organisation, ihre Zuständigkeit, die Weise der Ernennung ihrer Mitglieder und die Dauer ihres Amtes. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Absatz 1 tritt am Datum der Aufhebung des Gesetzes vom 15. Juni 1899 zur Einführung der Titel I und II des Militärstrafprozessgesetzbuches in Kraft. <br/>
 &emsp;Bis zu diesem Datum bleibt folgende Bestimmung in Kraft: <br/>
 &emsp;Besondere Gesetze regeln die Organisation der Militärgerichte, ihre Zuständigkeit, die Rechte und Pflichten der Mitglieder dieser Gerichte sowie die Dauer ihres Amtes. <br/>
 
-```Artikel 157bis ```
+<span class="code"> Artikel 157bis  </span>
 
 Die wesentlichen Bestandteile der Reform in Bezug auf den Sprachengebrauch in Gerichtsangelegenheiten im Gerichtsbezirk Brüssel und die damit verbundenen Aspekte in Bezug auf Staatsanwaltschaft, Richterschaft und Bereich können nur durch ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, abgeändert werden. <br/>
 
@@ -1305,11 +1305,11 @@ Die wesentlichen Bestandteile der Reform in Bezug auf den Sprachengebrauch in Ge
 
 Das Gesetz legt das Datum des Inkrafttretens dieses Artikels fest. Dieses Datum stimmt mit dem Datum des Inkrafttretens des Gesetzes vom 19. Juli 2012 zur Reform des Gerichtsbezirks Brüssel überein. <br/>
 
-```Art. 158```
+<span class="code"> Art. 158 </span>
 
 Der Kassationshof befindet über Kompetenzkonflikte in der durch Gesetz geregelten Weise. <br/>
 
-```Art. 159```
+<span class="code"> Art. 159 </span>
 
 Die Gerichtshöfe und Gerichte wenden die allgemeinen, provinzialen und örtlichen Erlasse und Verordnungen nur an, insoweit sie mit den Gesetzen in Übereinstimmung stehen. <br/>
 
@@ -1317,24 +1317,24 @@ Die Gerichtshöfe und Gerichte wenden die allgemeinen, provinzialen und örtlich
 ###### <span class="titles">KAPITEL VII  <br/> DER STAATSRAT UND <br/>DIE VERWALTUNGSGERICHTSBARKEITEN</span>
 
 
-```Art. 160 ```
+<span class="code"> Art. 160  </span>
 
 Es gibt für ganz Belgien einen Staatsrat, dessen Zusammensetzung, Zuständigkeit und Arbeitsweise durch Gesetz bestimmt werden. Das Gesetz kann dem König jedoch die Macht übertragen, das Verfahren zu regeln gemäß den Grundsätzen, die es festlegt. <br/>
 &emsp;Der Staatsrat befindet als Verwaltungsgerichtsbarkeit im Wege eines Entscheids und gibt in den durch Gesetz bestimmten Fällen Gutachten ab. <br/>
 &emsp;Die am selben Tag wie dieser Absatz in Kraft tretenden Regeln über die Generalversammlung der Verwaltungsstreitachenabteilung des Staatsrates können nur durch ein Gesetz, dat mit der Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, abgeändert werden. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Dieser Artikel tritt am 14. Oktober 2012 in Kraft. <br/>
 
-```Art. 161```
+<span class="code"> Art. 161 </span>
 
 Eine Verwaltungsgerichtsbarkeit kann nur aufgrund eines Gesetzes eingesetzt werden. <br/>
 
 
 ###### <span class="titles">KAPITEL VIII <br/> DIE PROVINZIALEN UND KOMMUNALEN EINRICHTUNGEN </span>
 
-```Art. 162```
+<span class="code"> Art. 162 </span>
 
 Die provinzialen und kommunalen Einrichtungen werden durch Gesetz geregelt. <br/>
 &emsp;Das Gesetz gewährleistet die Anwendung der folgenden Grundsätze: <br/>
@@ -1347,16 +1347,16 @@ Die provinzialen und kommunalen Einrichtungen werden durch Gesetz geregelt. <br/
 &emsp;Die suprakommunalen Körperschaften werden durch die in Artikel 134 erwähnte Regel geregelt. Diese Regel gewährleistet die Anwendung der in Absatz 2 erwähnten Grundsätze. Die in Artikel 134 erwähnte Regel kann andere Grundsätze, die sie für wesentlich erachtet, festlegen, mit oder ohne Zweidrittelmehrheit der abgegebenen Stimmen, vorausgesetzt, die Mehrheit der Mitglieder des betreffenden Parlaments ist anwesend. Die Artikel 159 und 190 finden Anwendung auf Erlasse und Verordnungen der suprakommunalen Körperschaften. <br/>
 &emsp;In Ausführung eines Gesetzes, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, regelt das Dekret oder die in Artikel 134 erwähnte Regel, unter welchen Bedingungen und wie mehrere Provinzen, mehrere suprakommunale Körperschaften oder mehrere Gemeinden sich verständigen oder vereinigen dürfen. Jedoch darf es mehreren Provinzialräten, mehreren suprakommunalen Körperschaften oder mehreren Gemeinderäten nicht erlaubt werden, gemeinsam zu beraten. <br/>
 
-```Art. 163```
+<span class="code"> Art. 163 </span>
 
 Die Befugnisse, die in der Wallonischen und in der Flämischen Region von gewählten provinzialen Organen ausgeübt werden, werden im zweisprachigen Gebiet Brüssel-Hauptstadt ausgeübt von der Französischen und der Flämischen Gemeinschaft und von der Gemeinsamen Gemeinschaftskommission, jede für die Angelegenheiten, für die sie aufgrund der Artikel 127 und 128 zuständig ist, und von der Region Brüssel-Hauptstadt, was die anderen Angelegenheiten betrifft. <br/>
 &emsp;Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, regelt jedoch die Modalitäten, gemäß denen die Region Brüssel-Hauptstadt oder jede andere Einrichtung, deren Mitglieder von ihr bestimmt werden, die in Absatz 1 erwähnten Befugnisse ausübt, die nicht zu den in Artikel 39 erwähnten Angelegenheiten gehören. Ein mit derselben Mehrheit angenommenes Gesetz regelt die Übertragung aller oder eines Teils der in Absatz 1 erwähnten Befugnisse, die zu den in den Artikeln 127 und 128 erwähnten Angelegenheiten gehören, auf die in Artikel 136 vorgesehenen Einrichtungen. <br/>
 
-```Art. 164```
+<span class="code"> Art. 164 </span>
 
 Die Abfassung der Personenstandsurkunden und die Führung der Register fallen ausschließlich in die Zuständigkeit der Gemeindebehörden. <br/>
 
-```Art. 165```
+<span class="code"> Art. 165 </span>
 
 § 1 – Das Gesetz schafft Agglomerationen und Gemeindeföderationen. Es bestimmt ihre Organisation und Zuständigkeit und gewährleistet dabei die Anwendung der in Artikel 162 genannten Grundsätze. <br/>
 &emsp;Jede Agglomeration und jede Föderation hat einen Rat und ein Exekutivkollegium. <br/>
@@ -1368,7 +1368,7 @@ Die Abfassung der Personenstandsurkunden und die Führung der Register fallen au
 
 § 3 – Mehrere Gemeindeföderationen dürfen sich unter den Bedingungen und in der Weise, die durch Gesetz bestimmt werden, untereinander oder mit einer oder mehreren Agglomerationen verständigen oder zusammenschließen, um in ihre Zuständigkeit fallende Angelegenheiten gemeinsam zu regeln und zu verwalten. Ihren Räten ist es nicht erlaubt, gemeinsam zu beraten. <br/>
 
-```Art. 166```
+<span class="code"> Art. 166 </span>
 
 § 1 – Artikel 165 findet Anwendung auf die Agglomeration, der die Hauptstadt des Königreichs angehört, vorbehaltlich nachstehender Bestimmungen. <br/>
 
@@ -1382,7 +1382,7 @@ Die Abfassung der Personenstandsurkunden und die Führung der Register fallen au
 
 ###### <span class="titles">TITEL IV </span><br/> DIE INTERNATIONALEN BEZIEHUNGEN
 
-```Art. 167```
+<span class="code"> Art. 167 </span>
 
 § 1 – Der König leitet die internationalen Beziehungen, unbeschadet der Zuständigkeit der Gemeinschaften und Regionen, die internationale Zusammenarbeit einschließlich des Abschlusses von Verträgen in den Angelegenheiten zu regeln, für die sie durch die Verfassung oder aufgrund der Verfassung zuständig sind. <br/>
 &emsp;Der König befehligt die Streitkräfte, stellt den Kriegszustand sowie das Ende der Kampfhandlungen fest. Der König setzt die Kammern davon in Kenntnis, sobald das Interesse und die Sicherheit des Staates es erlauben, und fügt die angemessenen Mitteilungen hinzu. <br/>
@@ -1397,27 +1397,27 @@ Die Abfassung der Personenstandsurkunden und die Führung der Register fallen au
 § 5 – Der König kann die vor dem 18. Mai 1993 abgeschlossenen Verträge, die sich auf die in § 3 erwähnten Angelegenheiten beziehen, in gegenseitigem Einvernehmen mit den betroffenen Gemeinschafts- und Regionalregierungen aufkündigen. <br/>
 &emsp;Der König kündigt diese Verträge auf, wenn die betroffenen Gemeinschafts- und Regionalregierungen ihn darum ersuchen. Ein Gesetz, das mit der in Artikel 4 letzter Absatz vorgesehenen Mehrheit angenommen wird, regelt das Verfahren im Falle fehlenden Einvernehmens zwischen den betroffenen Gemeinschafts- und Regionalregierungen. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Paragraph 2 zweiter Satz tritt am Tag der Wahlen im Hinblick auf die vollständige Erneuerung der Gemeinschafts- und Regionalparlamente im Jahre 2014 in Kraft. Bis zu diesem Tag werden die in § 2 erwähnten Verträge erst wirksam, nachdem sie die Zustimmung beider Kammern erhalten haben. <br/>
 
-```Art. 168```
+<span class="code"> Art. 168 </span>
 
 Ab Eröffnung der Verhandlungen im Hinblick auf jede Abänderung der Verträge zur Gründung der Europäischen Gemeinschaften und der Verträge und Akte, durch die diese Verträge abgeändert oder ergänzt werden, werden die Kammern darüber informiert. Sie werden vom Vertragsentwurf in Kenntnis gesetzt, bevor er unterzeichnet wird. <br/>
 
-```Artikel 168bis```
+<span class="code"> Artikel 168bis </span>
 
 Für die Wahlen des Europäischen Parlaments seiht das Gesetz Sondermodalitäten vor, um die rechtmäßigen Interessen der Niederländischsprachigen und der Französischsprachigen in der ehemaligen Provinz Brabant zu gewährleisten. <br/>
 &emsp;Die Regeln, die diese Sondermodalitäten festlegen, können nur durch ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, abgeändert werden. <br/>
 
-```Art. 169```
+<span class="code"> Art. 169 </span>
 
 Um die Einhaltung der internationalen oder überstaatlichen Verpflichtungen zu gewährleisten, können die in den Artikeln 36 und 37 erwähnten Gewalten unter Einhaltung der durch Gesetz festgelegten Bedingungen zeitweilig an die Stelle der in den Artikeln 115 und 121 erwähnten Organe treten. Dieses Gesetz muss mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen werden. <br/>
 
 
 ###### <span class="titles">TITEL V </span><br/> DIE FINANZEN
 
-```Art. 170```
+<span class="code"> Art. 170 </span>
 
 § 1 – Eine Steuer zugunsten des Staates darf nur durch ein Gesetz eingeführt werden. <br/>
 
@@ -1431,49 +1431,49 @@ Um die Einhaltung der internationalen oder überstaatlichen Verpflichtungen zu g
 § 4 – Eine Last oder Besteuerung darf von der Agglomeration, der Gemeindeföderation und der Gemeinde nur durch einen Beschluss ihres Rates eingeführt werden. <br/>
 &emsp;Hinsichtlich der in Absatz 1 erwähnten Besteuerungen bestimmt das Gesetz die Ausnahmen, deren Notwendigkeit erwiesen ist. <br/>
 
-```Art. 171```
+<span class="code"> Art. 171 </span>
 
 Die Steuern zugunsten des Staates, der Gemeinschaft und der Region werden jährlich verabschiedet. <br/>
 &emsp;Die Regeln, die sie einführen, sind nur ein Jahr in Kraft, wenn sie nicht erneuert werden. <br/>
 
-```Art. 172```
+<span class="code"> Art. 172 </span>
 
 In Steuerangelegenheiten dürfen keine Privilegien eingeführt werden. <br/>
 &emsp;Eine Steuerbefreiung oder Steuerermäßigung darf nur durch ein Gesetz eingeführt werden. <br/>
 
-```Art. 173```
+<span class="code"> Art. 173 </span>
 
 Außer für die Provinzen, die Entwässerungsgenossenschaften und die Bewässerungsgenossenschaften und außer in den Fällen, die durch Gesetz, Dekret und die in Artikel 134 erwähnten Regeln ausdrücklich ausgenommen werden, darf den Bürgern eine Abgabe nur als Steuer zugunsten des Staates, der Gemeinschaft, der Region, der Agglomeration, der Gemeindeföderation oder der Gemeinde auferlegt werden. <br/>
 
-```Art. 174```
+<span class="code"> Art. 174 </span>
 
 Jedes Jahr erlässt die Abgeordnetenkammer das Rechnungsgesetz und verabschiedet den Haushaltsplan. Die Abgeordnetenkammer und der Senat legen jedoch jedes Jahr für ihren jeweiligen Bereich die Dotation für ihre Arbeit fest. <br/>
 &emsp;Alle Einnahmen und Ausgaben des Staates sind im Haushaltsplan und in den Rechnungen aufzuführen. <br/>
 
-```Art. 175```
+<span class="code"> Art. 175 </span>
 
 Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, legt das Finanzierungssystem für die Französische und die Flämische Gemeinschaft fest. <br/>
 &emsp;Die Parlamente der Französischen und der Flämischen Gemeinschaft regeln durch Dekret, jedes für seinen Bereich, den Verwendungszweck ihrer Einnahmen. <br/>
 
-```Art. 176```
+<span class="code"> Art. 176 </span>
 
 Ein Gesetz legt das Finanzierungssystem für die Deutschsprachige Gemeinschaft fest. <br/>
 &emsp;Das Parlament der Deutschsprachigen Gemeinschaft regelt den Verwendungszweck der Einnahmen durch Dekret.<br/>
 
-```Art. 177```
+<span class="code"> Art. 177 </span>
 
 Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, legt das Finanzierungssystem für die Regionen fest.<br/>
 &emsp;Die Regionalparlamente bestimmen, jedes für seinen Bereich, den Verwendungszweck ihrer Einnahmen durch die in Artikel 134 erwähnten Regeln.<br/>
 
-```Art. 178```
+<span class="code"> Art. 178 </span>
 
 Unter den Bedingungen und nach den Modalitäten, die das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommene Gesetz festlegt, überträgt das Parlament der Region Brüssel-Hauptstadt der Gemeinsamen Gemeinschaftskommission und der Französischen und der Flämischen Gemeinschaftskommission finanzielle Mittel durch die in Artikel 134 erwähnte Regel. <br/>
 
-```Art. 179```
+<span class="code"> Art. 179 </span>
 
 Eine Pension oder eine Zuwendung zu Lasten der Staatskasse darf nur aufgrund eines Gesetzes gewährt werden. <br/>
 
-```Art. 180```
+<span class="code"> Art. 180 </span>
 
 Die Mitglieder des Rechnungshofes werden von der Abgeordnetenkammer für die durch Gesetz bestimmte Dauer ernannt. <br/>
 &emsp;Der Rechnungshof ist beauftragt mit der Prüfung und dem Ausgleich der Rechnungen der allgemeinen Verwaltung und aller, die der Staatskasse gegenüber rechenschaftspflichtig sind. Er wacht darüber, dass kein Ausgabenposten des Haushaltsplans überschritten wird und dass keine Übertragung stattfindet. Der Rechnungshof übt auch eine allgemeine Kontrolle über die Verrichtungen bezüglich der Festlegung und Beitreibung der dem Staat zukommenden Forderungen aus, Steuereinnahmen einbegriffen. Er schließt die Rechnungen der verschiedenen Verwaltungen des Staates ab und ist damit beauftragt, zu diesem Zweck alle erforderlichen Auskünfte und Rechnungsbelege zu sammeln. Die Gesamtrechnung des Staates wird der Abgeordnetenkammer mit den Bemerkungen des Rechnungshofes vorgelegt. <br/>
@@ -1481,7 +1481,7 @@ Die Mitglieder des Rechnungshofes werden von der Abgeordnetenkammer für die dur
 &emsp;Das Gesetz kann dem Rechnungshof die Kontrolle der Haushaltspläne und der Buchführung der Gemeinschaften und Regionen sowie der von ihnen abhängenden Einrichtungen öffentlichen Interesses übertragen. Es kann ebenfalls gestatten, dass das Dekret oder die in Artikel 134 erwähnte Regel diese Kontrolle regeln. Außer für die Deutschsprachige Gemeinschaft wird dieses Gesetz mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen. <br/>
 &emsp;Dem Rechnungshof können durch Gesetz, Dekret oder die in Artikel 134 erwähnte Regel zusätzliche Aufgaben übertragen werden. Auf gleich lautende Stellungnahme des Rechnungshofes legt das Dekret oder die in Artikel 134 erwähnte Regel die Vergütung fest, die der Rechnungshof für die Ausführung dieser Aufgaben erhält. Für eine Aufgabe, die der Rechnungshof vor dem Datum des Inkrafttretens des vorliegenden Absatzes für eine Gemeinschaft oder Region ausübt, ist keine Vergütung zu entrichten. <br/>
 
-```Art. 181```
+<span class="code"> Art. 181 </span>
 
 § 1 – Die Gehälter und Pensionen der Diener der Kulte gehen zu Lasten des Staates; die dazu erforderlichen Beträge werden jährlich in den Haushaltsplan eingesetzt. <br/>
 
@@ -1490,69 +1490,69 @@ Die Mitglieder des Rechnungshofes werden von der Abgeordnetenkammer für die dur
 
 ###### <span class="titles">TITEL VI </span> <br/> DIE BEWAFFNETE MACHT 
 
-```Art. 182```
+<span class="code"> Art. 182 </span>
 
 Das Gesetz bestimmt, wie die Armee rekrutiert wird. Es regelt ebenfalls die Beförderung, die Rechte und die Pflichten der Militärpersonen. <br/>
 
-```Art. 183```
+<span class="code"> Art. 183 </span>
 
 Das Armeekontingent wird jährlich verabschiedet. Das Gesetz, das dieses Kontingent festlegt, ist nur ein Jahr in Kraft, wenn es nicht erneuert wird. <br/>
 
-```Art. 184```
+<span class="code"> Art. 184 </span>
 
 Die Organisation und die Zuständigkeit des auf zwei Ebenen strukturierten integrierten Polizeidienstes werden durch Gesetz geregelt. Die wesentlichen Elemente des Statuts der Mitglieder des Personals des auf zwei Ebenen strukturierten integrierten Polizeidienstes werden durch Gesetz geregelt. <br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Der König kann jedoch die wesentlichen Elemente des Statuts der Mitglieder des Personals des auf zwei Ebenen strukturierten integrierten Polizeidienstes festlegen und ausführen, insofern der Erlass in Bezug auf diese Elemente vor dem 30. April 2002 durch Gesetz bestätigt wird. <br/>
 
-```Art. 185 ```
+<span class="code"> Art. 185  </span>
 
 Eine ausländische Truppe darf nur aufgrund eines Gesetzes in den Dienst des Staates gestellt werden, sich auf dem Staatsgebiet aufhalten oder es durchqueren. <br/>
 
-```Art. 186```
+<span class="code"> Art. 186 </span>
 
 Den Militärpersonen dürfen ihre Dienstgrade, Auszeichnungen und Pensionen nur in der durch Gesetz bestimmten Weise entzogen werden. <br/>
 
 
 ###### <span class="titles">TITEL VII </span> <br/> ALLGEMEINE BESTIMMUNGEN 
 
-```Art. 187```
+<span class="code"> Art. 187 </span>
 
 Die Verfassung darf weder ganz noch teilweise ausgesetzt werden. <br/>
 
-```Art. 188```
+<span class="code"> Art. 188 </span>
 
 Ab dem Tag, an dem die Verfassung wirksam wird, sind alle zu ihr im Widerspruch stehenden Gesetze, Dekrete, Erlasse, Verordnungen und anderen Akte aufgehoben. <br/>
 
-```Art. 189```
+<span class="code"> Art. 189 </span>
 
 Der Text der Verfassung ist in Deutsch, in Französisch und in Niederländisch festgelegt. <br/>
 
-```Art. 190```
+<span class="code"> Art. 190 </span>
 
 Gesetze sowie Erlasse und Verordnungen im Bereich der allgemeinen, provinzialen oder kommunalen Verwaltung werden erst verbindlich, nachdem sie in der durch Gesetz bestimmten Form veröffentlicht worden sind. <br/>
 
-```Art. 191```
+<span class="code"> Art. 191 </span>
 
 Jeder Ausländer, der sich auf dem Staatsgebiet Belgiens befindet, genießt den Personen und Gütern gewährten Schutz, vorbehaltlich der durch Gesetz festgelegten Ausnahmen. <br/>
 
-```Art. 192```
+<span class="code"> Art. 192 </span>
 
 Ein Eid darf nur aufgrund des Gesetzes auferlegt werden. Das Gesetz legt die Eidesformel fest. <br/>
 
-```Art. 193```
+<span class="code"> Art. 193 </span>
 
 Die Belgische Nation wählt die Farben Rot, Gelb und Schwarz und als Wappen des Königreichs den Belgischen Löwen mit dem Spruch: EINIGKEIT MACHT STARK. <br/>
 
-```Art. 194```
+<span class="code"> Art. 194 </span>
 
 Die Stadt Brüssel ist die Hauptstadt Belgiens und Sitz der Föderalregierung. <br/>
 
 
 ###### <span class="titles">TITEL VIII </span><br/> DIE REVISION DER VERFASSUNG
 
-```Art. 195```
+<span class="code"> Art. 195 </span>
 
 Die föderale gesetzgebende Gewalt hat das Recht zu erklären, dass eine von ihr bezeichnete Verfassungsbestimmung einer Revision bedarf.<br/>
 &emsp;Nach dieser Erklärung sind beide Kammern von Rechts wegen aufgelöst.<br/>
@@ -1560,7 +1560,7 @@ Die föderale gesetzgebende Gewalt hat das Recht zu erklären, dass eine von ihr
 &emsp;Diese Kammern beschließen im Einvernehmen mit dem König über die zur Revision anstehenden Punkte. <br/>
 &emsp;In diesem Fall dürfen die Kammern nur beraten, wenn mindestens zwei Drittel der Mitglieder jeder Kammer anwesend sind; eine Änderung ist nur dann angenommen, wenn sie mindestens zwei Drittel der Stimmen erhalten hat.<br/>
 
-```Übergangsbestimmung``` <br/>
+<span class="code"> Übergangsbestimmung </span>
 
 Die infolge der Erneuerung der Kammern vom 13. Juni 2010 gebildeten Kammern können jedoch im Einvernehmen mit dem König ausschließlich im nachstehend beschriebenen Sinn über die Revision folgender Bestimmungen, Artikel und Gruppen von Artikeln beschließen:<br/>
 1. Die Artikel 5 Absatz 2, 11bis, 41 Absatz 5, 159 und 190, um die vollständige Ausübung der Autonomie der Regionen hinsichtlich der Provinzen zu gewährleisten, unbeschadet der heutigen spezifischen Bestimmungen des Gesetzes vom 9. August 1988 zur Abänderung des Gemeindegesetzes, des Gemeindewahlgesetzes, des Grundlagengesetzes über die öffentlichen Sozialhilfezentren, des Provinzialgesetzes, des Wahlgesetzbuches, des Grundlagengesetzes über die Provinzialwahlen und des Gesetzes zur Organisation von gleichzeitigen Wahlen für die gesetzgebenden Kammern und die Provinzialräte und der heutigen spezifischen Bestimmungen über das Amt der Gouverneure, und um die Bedeutung des in der Verfassung verwendeten Wortes „Provinz“ allein auf seine territoriale Bedeutung, losgelöst von jeglicher institutionellen Bedeutung, zu beschränken;<br/>
@@ -1582,15 +1582,15 @@ Die infolge der Erneuerung der Kammern vom 13. Juni 2010 gebildeten Kammern kön
 &emsp;Die Kammern dürfen über die in Absatz 1 erwähnten Punkte nur beraten, wenn mindestens zwei Drittel der Mitglieder jeder Kammer anwesend sind; eine Änderung ist nur dann angenommen, wenn sie mindestens zwei Drittel der Stimmen erhalten hat. <br/>
 &emsp;Vorliegende Übergangsbestimmung ist keine Erklärung im Sinne von Artikel 195 Absatz 2. <br/>
 
-```Art. 196```
+<span class="code"> Art. 196 </span>
 
 In Kriegszeiten oder wenn die Kammern daran gehindert sind, sich frei auf dem föderalen Staatsgebiet zu versammeln, darf keine Revision der Verfassung eingeleitet oder fortgeführt werden. <br/>
 
-```Art. 197```
+<span class="code"> Art. 197 </span>
 
 Während einer Regentschaft darf an der Verfassung in Bezug auf die verfassungsmäßige Gewalt des Königs und die Artikel 85 bis 88, 91 bis 95, 106 und 197 der Verfassung keine Abänderung vorgenommen werden. <br/>
 
-```Art. 198```
+<span class="code"> Art. 198 </span>
 
 Im Einvernehmen mit dem König können die verfassunggebenden Kammern die Numerierung der Artikel und der Unterteilungen der Artikel der Verfassung sowie die Unterteilungen der Verfassung in Titel, Kapitel und Abschnitte anpassen, die Terminologie der nicht zur Revision anstehenden Bestimmungen abändern, um sie mit der Terminologie der neuen Bestimmungen in Einklang zu bringen, und die Übereinstimmung des deutschen, des französischen und des niederländischen Textes der Verfassung gewährleisten. <br/>
 &emsp;In diesem Fall dürfen die Kammern nur beraten, wenn mindestens zwei Drittel der Mitglieder jeder Kammer anwesend sind; die Änderungen sind nur dann angenommen, wenn die Gesamtheit der Abänderungen mindestens zwei Drittel der abgegebenen Stimmen erhalten hat. <br/>
@@ -1640,7 +1640,7 @@ Inoffizielle koordinierte deutsche Übersetzung
 
 Letzte Bearbeitung: 26. Oktober 2020.<br/>
 
-```Bestimmungen, die erst nach diesem Datum in Kraft treten, sind in einem Kasten mit grauem Hintergrund wiedergegeben, ggf. mit dem vorangehenden Vermerk „Zukünftige Bestimmung[en]“. ```
+<span class="code"> Bestimmungen, die erst nach diesem Datum in Kraft treten, sind in einem Kasten mit grauem Hintergrund wiedergegeben, ggf. mit dem vorangehenden Vermerk „Zukünftige Bestimmung[en]“.  </span>
 
 ### TITEL I: ZUSTÄNDIGKEIT DES VERFASSUNGSGERICHTSHOFES
 
@@ -2650,7 +2650,7 @@ b) Buch III Titel VIII und Artikel 1147bis, eingefügt durch das Gesetz vom 10. 
 
 Art. 128. Artikel 34 § 5 tritt spätestens ab der dritten Ernennung nach dem Inkrafttreten des Sondergesetzes vom 9. März 2003 zur Abänderung des Sondergesetzes vom 6. Januar 1989 über den Schiedshof in Kraft.
 
-```Letzte Bearbeitung: 26. Oktober 2020. ```
+<span class="code"> Letzte Bearbeitung: 26. Oktober 2020.  </span>
 
 <br>
 
