@@ -22,7 +22,7 @@
 
     <!-- Main content -->
     <v-row v-else>
-      <!-- Left column: simulated vertical tabs using v-list -->
+      <!-- Left column: Vertical Tabs via a v-list -->
       <v-col cols="12" md="4">
         <v-list nav class="vertical-tabs">
           <v-list-item
@@ -38,7 +38,7 @@
         </v-list>
       </v-col>
 
-      <!-- Right column: Form -->
+      <!-- Right column: Form and Results -->
       <v-col cols="12" md="8">
         <client-only :placeholder="t('general.loading')">
           <form @submit.prevent="submit">
@@ -61,13 +61,163 @@
               </v-radio-group>
             </div>
 
-            <!-- Additional form fields can go here -->
+            <!-- Applicant fields (if search type is applicant) -->
+            <div v-if="isSearchJudgmentsTypeApplicant">
+              <v-select
+                v-model="payload.applicantTypes"
+                :items="applicantTypes"
+                multiple
+                :label="t('general.message.applicantType')"
+                item-value="id"
+                item-text="label"
+                :error-messages="errors.applicantTypes"
+                required
+              />
+              <v-select
+                v-model="payload.applicant"
+                :items="applicantList"
+                :label="t('general.message.applicant')"
+                item-value="id"
+                item-text="label"
+                :error-messages="errors.applicant"
+                required
+              />
+            </div>
 
+            <!-- Jurisdiction fields (if search type is jurisdiction) -->
+            <div v-if="isSearchJudgmentsTypeJurisdiction">
+              <v-select
+                v-model="payload.jurisdiction"
+                :items="jurisdictionList"
+                :label="t('general.message.jurisdisction')"
+                item-value="id"
+                item-text="label"
+                :error-messages="errors.jurisdiction"
+                required
+              />
+              <v-select
+                v-model="payload.jurisdictionArea"
+                :items="jurisdictionAreaList"
+                :label="t('general.message.jurisdisctionArea')"
+                item-value="id"
+                item-text="label"
+                :error-messages="errors.jurisdictionArea"
+                required
+              />
+              <div class="d-flex">
+                <v-text-field
+                  v-model.lazy="payload.referralDecisionDates[0]"
+                  v-cleave="{
+                    date: true,
+                    datePattern: ['d','m','Y']
+                  }"
+                  hint="DD/MM/YYYY"
+                  :label="t('general.message.referralDecisionStart')"
+                  persistent-hint
+                  :error-messages="[errors.referralDecisionDates[0]]"
+                />
+                <span class="px-2" />
+                <v-text-field
+                  v-model.lazy="payload.referralDecisionDates[1]"
+                  v-cleave="{
+                    date: true,
+                    datePattern: ['d','m','Y']
+                  }"
+                  hint="DD/MM/YYYY"
+                  :label="t('general.message.referralDecisionEnd')"
+                  persistent-hint
+                  :error-messages="[errors.referralDecisionDates[1]]"
+                />
+              </div>
+            </div>
+
+            <!-- Common fields -->
+            <v-text-field
+              v-model="payload.judgmentNumber"
+              :label="t('general.message.judgmentNumber')"
+              :error-messages="errors.judgmentNumber"
+              required
+              hint="XX/YYYY"
+              persistent-hint
+              :disabled="!isSearchJudgmentsTypeSelected"
+            />
+            <div v-if="isSearchJudgmentsTypeRollNumber">
+              <v-text-field
+                v-model="payload.rollNumber"
+                :label="t('general.message.rollNumber')"
+                :error-messages="errors.rollNumber"
+                required
+              />
+            </div>
+            <div class="d-flex">
+              <v-text-field
+                v-model.lazy="payload.judgmentDates[0]"
+                v-cleave="{
+                  date: true,
+                  datePattern: ['d','m','Y']
+                }"
+                hint="DD/MM/YYYY"
+                :label="t('general.message.dateOfJudgmentStart')"
+                persistent-hint
+                :error-messages="[errors.judgmentDates[0]]"
+              />
+              <span class="px-2" />
+              <v-text-field
+                v-model.lazy="payload.judgmentDates[1]"
+                v-cleave="{
+                  date: true,
+                  datePattern: ['d','m','Y']
+                }"
+                hint="DD/MM/YYYY"
+                :label="t('general.message.dateOfJudgmentEnd')"
+                persistent-hint
+                :error-messages="[errors.judgmentDates[1]]"
+              />
+            </div>
+            <v-select
+              v-model="payload.judgmentTypes"
+              :items="judgmentTypesFiltered"
+              multiple
+              :label="t('general.message.judgmentType')"
+              item-value="id"
+              item-text="label"
+              :error-messages="errors.judgmentTypes"
+              required
+              :disabled="!isSearchJudgmentsTypeSelected"
+            />
+            <div v-if="isSearchJudgmentsTypeRollNumber" class="d-flex">
+              <v-text-field
+                v-model.lazy="payload.beOfficialJournalDates[0]"
+                v-cleave="{
+                  date: true,
+                  datePattern: ['d','m','Y']
+                }"
+                hint="DD/MM/YYYY"
+                :label="t('general.message.dateOfBeOfficialJournalStart')"
+                persistent-hint
+                :error-messages="[errors.beOfficialJournalDates[0]]"
+              />
+              <span class="px-2" />
+              <v-text-field
+                v-model.lazy="payload.beOfficialJournalDates[1]"
+                v-cleave="{
+                  date: true,
+                  datePattern: ['d','m','Y']
+                }"
+                hint="DD/MM/YYYY"
+                :label="t('general.message.dateOfBeOfficialJournalEnd')"
+                persistent-hint
+                :error-messages="[errors.beOfficialJournalDates[1]]"
+              />
+            </div>
+
+            <!-- Submit & Print Buttons -->
             <v-btn
               type="submit"
               class="mr-4 submit-button"
               :loading="loading"
               :aria-label="t('aria.label.submit')"
+              @click.prevent="submit"
             >
               {{ t("general.submit") }}
             </v-btn>
@@ -82,6 +232,29 @@
             </v-btn>
           </form>
         </client-only>
+
+        <!-- Search Results -->
+        <div v-if="hasResults" ref="list">
+          <div v-for="result in formattedSearchResult" :key="result.title">
+            <h1 v-if="result.title">{{ result.title }}</h1>
+            <div v-for="data in result.data" :key="data.title">
+              <h2 v-if="data.title">{{ data.title }}</h2>
+              <search-result-judgment-card
+                v-for="judgment in data.judgments"
+                :id="judgment.id"
+                :key="judgment.id"
+                :judgment-number="judgment.nr"
+                :judgment-file-path="judgment.filePath"
+                :date-of-judgment="judgment.formatedJudmentDate"
+                :roll-numbers="judgment.idsRole"
+                :judgment-types="judgment.judgmentTypes"
+                :date-of-be-official-journal="judgment.formatedBelgianOfficialDate"
+                :belgian-official-page="judgment.belgianOfficialPage"
+              />
+            </div>
+          </div>
+        </div>
+
         <div class="mt-6">
           <EmptyComponent v-if="(loaded && !hasResults) || searchError" />
         </div>
@@ -91,7 +264,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, watch, onMounted, computed } from "vue";
+import { ref, watch, onMounted, computed } from "vue";
 import { ApiUrl, RoutePathKeys } from "../../core/constants";
 import { groupBy, to } from "../../core/utilities";
 import type {
@@ -101,7 +274,6 @@ import type {
   Juridisction,
   JuridisctionArea,
 } from "../../core/constants";
-import { useLanguage } from "../../composables/useLanguage";
 
 enum SearchJudgmentsType {
   rollNumber = "rollNumber",
@@ -110,6 +282,7 @@ enum SearchJudgmentsType {
 }
 
 const { t, locale } = useLanguage();
+const localePath = useLocalePath();
 
 // Default payload for each search type
 const defaultPayloadByJudgmentsType = {
@@ -119,11 +292,11 @@ const defaultPayloadByJudgmentsType = {
     applicant: "",
     jurisdiction: "",
     jurisdictionArea: "",
-    referralDecisionDates: [],
-    judgmentTypes: [],
-    judgmentDates: [],
-    applicantTypes: [],
-    beOfficialJournalDates: [],
+    referralDecisionDates: ["", ""],
+    judgmentTypes: [] as number[],
+    judgmentDates: ["", ""],
+    applicantTypes: [] as number[],
+    beOfficialJournalDates: ["", ""],
   },
   [SearchJudgmentsType.applicant]: {
     judgmentNumber: "",
@@ -131,11 +304,11 @@ const defaultPayloadByJudgmentsType = {
     applicant: "",
     jurisdiction: "",
     jurisdictionArea: "",
-    referralDecisionDates: [],
-    judgmentTypes: [],
-    judgmentDates: [],
-    applicantTypes: [],
-    beOfficialJournalDates: [],
+    referralDecisionDates: ["", ""],
+    judgmentTypes: [] as number[],
+    judgmentDates: ["", ""],
+    applicantTypes: [] as number[],
+    beOfficialJournalDates: ["", ""],
   },
   [SearchJudgmentsType.jurisdiction]: {
     judgmentNumber: "",
@@ -143,40 +316,75 @@ const defaultPayloadByJudgmentsType = {
     applicant: "",
     jurisdiction: "",
     jurisdictionArea: "",
-    referralDecisionDates: [],
-    judgmentTypes: [],
-    judgmentDates: [],
-    applicantTypes: [],
-    beOfficialJournalDates: [],
+    referralDecisionDates: ["", ""],
+    judgmentTypes: [] as number[],
+    judgmentDates: ["", ""],
+    applicantTypes: [] as number[],
+    beOfficialJournalDates: ["", ""],
   },
 };
 
-// Create a reactive payload to bind form values
+// Reactive payload and errors
 const payload = reactive({
   type: SearchJudgmentsType.rollNumber,
   ...defaultPayloadByJudgmentsType[SearchJudgmentsType.rollNumber],
 });
 
-// Define a reactive errors object (example only for type field)
 const errors = ref({
   type: [] as string[],
-  // Additional error fields can be added here
+  applicantTypes: [] as string[],
+  applicant: [] as string[],
+  jurisdiction: [] as string[],
+  jurisdictionArea: [] as string[],
+  referralDecisionDates: ["" as string, "" as string],
+  judgmentNumber: [] as string[],
+  rollNumber: [] as string[],
+  judgmentDates: ["" as string, "" as string],
+  judgmentTypes: [] as string[],
+  beOfficialJournalDates: ["" as string, "" as string],
 });
 
-// Simple custom validation function
+// Computed properties to conditionally show fields
+const isSearchJudgmentsTypeSelected = computed(() => !!payload.type);
+const isSearchJudgmentsTypeRollNumber = computed(
+  () => payload.type === SearchJudgmentsType.rollNumber
+);
+const isSearchJudgmentsTypeApplicant = computed(
+  () => payload.type === SearchJudgmentsType.applicant
+);
+const isSearchJudgmentsTypeJurisdiction = computed(
+  () => payload.type === SearchJudgmentsType.jurisdiction
+);
+
+// Minimal custom validation example (expand as needed)
 const validateForm = (): boolean => {
-  errors.value.type = [];
-  if (!payload.type) {
-    errors.value.type.push(t("validation.required") || "This field is required");
-  }
-  // Add additional validations here...
-  return Object.values(errors.value).every((fieldErrors) => fieldErrors.length === 0);
+  // Reset all errors
+  errors.value = {
+    type: [],
+    applicantTypes: [],
+    applicant: [],
+    jurisdiction: [],
+    jurisdictionArea: [],
+    referralDecisionDates: ["", ""],
+    judgmentNumber: [],
+    rollNumber: [],
+    judgmentDates: ["", ""],
+    judgmentTypes: [],
+    beOfficialJournalDates: ["", ""],
+  };
+
+  return Object.values(errors.value).every(err => {
+    if (Array.isArray(err)) {
+      return err.every(msg => !msg);
+    }
+    return !err;
+  });
 };
 
 const submit = async () => {
   if (!validateForm()) return;
   console.log("submit", JSON.stringify(payload));
-  // Add your form submission logic here.
+  // Add your submission logic here.
 };
 
 const print = (id: string) => {
@@ -187,8 +395,8 @@ const print = (id: string) => {
 const judgmentTypes = ref<JudgmentType[]>([]);
 const applicantList = ref<ApplicantTable>([]);
 const applicantTypes = ref<ApplicantCategoryTable>([]);
-const jurisdictionList = ref<Juridisction>([]);
-const jurisdictionAreaList = ref<JuridisctionArea>([]);
+const jurisdictionList = ref<Juridisction[]>([]);
+const jurisdictionAreaList = ref<JuridisctionArea[]>([]);
 
 onMounted(async () => {
   const [fetchError, response] = await to(
@@ -215,32 +423,46 @@ onMounted(async () => {
   jurisdictionAreaList.value = jurisdictionAreaListData;
 });
 
-// Computed properties for UI state
 const pending = computed(() => false);
 const loaded = computed(() => true);
 const loading = computed(() => false);
 const searchError = ref(null);
 
-const isSearchJudgmentsTypeRollNumber = computed(
-  () => payload.type === SearchJudgmentsType.rollNumber
-);
-const isSearchJudgmentsTypeJurisdiction = computed(
-  () => payload.type === SearchJudgmentsType.jurisdiction
-);
-const isSearchJudgmentsTypeApplicant = computed(
-  () => payload.type === SearchJudgmentsType.applicant
-);
-const isSearchJudgmentsTypeSelected = computed(() => !!payload.type);
+// For displaying search results (if any)
+let searchResponse: any = null;
+const formattedSearchResult = computed(() => {
+  if (!searchResponse) return [];
+  const grouped = groupBy(searchResponse, "firstLevelTitle");
+  const result: any[] = [];
+  for (const [key, value] of Object.entries(grouped)) {
+    result.push({
+      title: key,
+      data: Object.entries(groupBy(value, "secondLevelTitle")).map(
+        ([subKey, subValue]) => ({
+          title: subKey,
+          judgments: subValue,
+        })
+      ),
+    });
+  }
+  return result;
+});
+const hasResults = computed(() => formattedSearchResult.value.length > 0);
 
-// Example search types for the radio group
-const searchTypesForJudgment = [
-  { id: SearchJudgmentsType.rollNumber, label: t("general.message.rollNumber") },
-  { id: SearchJudgmentsType.applicant, label: t("general.message.applicant") },
-  { id: SearchJudgmentsType.jurisdiction, label: t("general.message.jurisdisction") },
-];
+// Computed filtering for judgmentTypes
+const judgmentTypesFiltered = computed(() => {
+  if (isSearchJudgmentsTypeRollNumber.value) {
+    return judgmentTypes.value.slice(0, 7);
+  }
+  if (isSearchJudgmentsTypeJurisdiction.value) {
+    return judgmentTypes.value.filter(
+      (type) => !(type.id === 1 || type.id === 2 || type.id === 4)
+    );
+  }
+  return judgmentTypes.value;
+});
 
-// Tabs for the left column; you can customize these as needed.
-const localePath = useLocalePath();
+// Tabs for the left column
 const searchTabs = [
   { id: "general.message.judgment", to: RoutePathKeys.searchJudgment },
   { id: "general.message.standard", to: RoutePathKeys.searchStandard },
@@ -255,7 +477,14 @@ const tabs = searchTabs.map((tab) => ({
   label: t(tab.id, 2),
 }));
 
-// Watch for type changes to reset payload accordingly
+// Also define search types for the radio group
+const searchTypesForJudgment = [
+  { id: SearchJudgmentsType.rollNumber, label: t("general.message.rollNumber") },
+  { id: SearchJudgmentsType.applicant, label: t("general.message.applicant") },
+  { id: SearchJudgmentsType.jurisdiction, label: t("general.message.jurisdisction") },
+];
+
+// Watch for changes to payload.type to reset the payload accordingly
 watch(
   () => payload.type,
   (val) => {
@@ -263,20 +492,18 @@ watch(
       type: val,
       ...defaultPayloadByJudgmentsType[val],
     });
-    // Reset search response & errors if needed
+    searchResponse = null;
+    searchError.value = null;
   }
 );
 
 const img = "banner-books.jpg";
-let searchResponse: any = null;
 </script>
 
 <style scoped lang="scss">
 .fill-height {
   min-height: 100vh;
 }
-
-/* Optional: style the vertical tabs (v-list) to mimic tab styling */
 .vertical-tabs {
   border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
@@ -289,5 +516,9 @@ let searchResponse: any = null;
 .submit-button {
   background: $indigo !important;
   color: white;
+}
+.v-input {
+  margin: 32px 0 !important;
+  box-shadow: none;
 }
 </style>
