@@ -1153,7 +1153,7 @@ A law adopted by a majority as described in Article 4, last paragraph designates
 
 <p class="no-bottom-margin">§ 2. These federate laws have the force of law in the Dutch-speaking and French-speaking regions respectively, as well as in those institutions established in the bilingual region of Brussels-Capital which, because of their activities, must be considered as belonging exclusively to one Community or the other.</p>
 
-`Art. 128`
+<span class="code"> Art. 128 </span>
 
 <p class="no-bottom-margin">§ 1. The Parliaments of the Flemish and French Communities regulate by federate law, each one in so far as it is concerned, person-related matters, as well as, in such matters, cooperation between the Communities and international cooperation, including the concluding of treaties. <br/>
 &emsp;A law adopted by a majority as described in Article 4, last paragraph designates such person-related matters and determines the forms of cooperation, as well as the specific arrangements for the concluding of treaties.</p>
@@ -1763,7 +1763,7 @@ VI. — § 1.  [Repealed]
 
 ###### <span class="sections"> SECTION I </br> ACTIONS FOR ANNULMENT</span>
 
-``` Article 1 ```
+<span class="code">  Article 1  </span>
 
 The Constitutional Court shall rule in the form of judgments on actions for full or partial
 annulment of a statute, decree or rule referred to in Article 134 of the Constitution for infringement of:
@@ -1772,7 +1772,7 @@ annulment of a statute, decree or rule referred to in Article 134 of the Constit
 3.  Article 143, § 1, of the Constitution.
 <br/>
 
-``` Art. 2 ```
+<span class="code">  Art. 2  </span>
 
 The actions referred to in Article 1 shall be instituted:
 1. by the Council of Ministers or by the Government of a Community or Region;
@@ -1783,7 +1783,7 @@ The actions referred to in Article 1 shall be instituted:
 The provisions of this Act that concern the Community or Regional governments shall apply to the Joint
 Board of the Common Community Commission and the Board of the French Community Commission.
 
-``` Art. 3 ```
+<span class="code">  Art. 3  </span>
 
 § 1. Without prejudice to what is provided in paragraph 2 and Article 4, the actions for full or
 partial annulment of a statute, decree or rule referred to in Article 134 of the Constitution shall only be
@@ -1795,14 +1795,14 @@ Constitution by which a convention is ratified shall only be admissible insofar 
 Constitution.
 
 
-``` Art. 3 bis ```  
+<span class="code">  Art. 3 bis  </span>
 
 For actions for annulment of a decree or rule referred to in Article 134 of the Constitution,
 which are based on a breach of Articles 6, § 2, and 9, § 1, of the Special Act of 16 January 1989 on the
 financing of the communities and regions, the six-month period provided for by Article 3 shall only begin
 as soon as the assessment term stipulated in Article 359 of the Income Tax Code of 1992 has expired.
 
-``` Art. 4 ```  
+<span class="code">  Art. 4  </span>
 
 The Council of Ministers or the Government of a Community or Region shall have a new sixmonth period in which to institute an action for annulment of a statute, decree or rule referred to in Article 134 of the Constitution if:
 
@@ -1818,7 +1818,7 @@ has decided that this statute, decree or rule referred to in Article 134 of the 
 the rules or articles of the Constitution referred to in Article 1. This period shall begin on the day after
 the date of publication of the judgment in the *Moniteur belge*.
 
-``` Art. 5 ```  
+<span class="code">  Art. 5  </span>
 
 Actions for annulment shall be instituted before the Court by means of a petition which, as the
 case may be, is signed by the Prime Minister, by a member of the Government designated by that
@@ -1832,7 +1832,7 @@ lawyer.
 <p>Art. 5. Actions for annulment shall be instituted before the Court by means of a petition filed by the Prime Minister, by a member of the Government designated by that Government, by the president of a legislative assembly, or by a party with a justifiable interest or its lawyer.</p>
 </div>
 
-``` Art. 6 ```  
+<span class="code">  Art. 6  </span>
 
 The petition shall be dated and signed. It shall state the subject of the appeal and shall set out
 the facts and grounds.
@@ -1844,7 +1844,7 @@ the facts and grounds.
 <p>The petition shall state the subject of the appeal and shall set out the facts and grounds.</p>
 </div>
 
-``` Art. 7 ```   
+<span class="code">  Art. 7  </span>
 
 The petitioning party shall attach to its petition a copy of the statute, decree or rule referred to in
 Article 134 of the Constitution against which the action for annulment is instituted, along with, where
@@ -1858,7 +1858,7 @@ Where a legal person institutes the action or intervenes in the proceedings, thi
 request, submit proof of the decision to institute or continue the action or to intervene in the proceedings and, if its articles of association must be published in the Annexes to the *Moniteur belge*, a
 copy of this publication.
 
-``` Art. 8 ```   
+<span class="code">  Art. 8  </span>
 
 If the action is well-founded, the Constitutional Court shall entirely or partially annul the statute,
 decree or rule referred to in Article 134 of the Constitution against which the action was instituted.
@@ -1874,7 +1874,7 @@ the Court.
 
 ###### <span class="sections"> SECTION II </br> EFFECTS OF ANNULMENT JUDGMENTS</span>
 
-``` Art. 9 ```    
+<span class="code">  Art. 9  </span>
 
 § 1. The annulment judgments delivered by the Constitutional Court shall have final and binding
 effect as from their publication in the *Moniteur belge*.
@@ -1882,14 +1882,14 @@ effect as from their publication in the *Moniteur belge*.
 § 2. The judgments delivered by the Constitutional Court whereby actions for annulment are dismissed
 shall be binding on the courts with respect to the points of law settled by those judgments.
 
-``` Art. 10 ```    
+<span class="code">  Art. 10  </span>
 
 A final and conclusive judgment of a criminal court may be entirely or partially revoked by that
 court insofar as the judgment in question is based on a provision of a statute, decree or rule referred to
 in Article 134 of the Constitution which has been subsequently nullified by the Constitutional Court, or
 on a regulation implementing such statute, decree or rule referred to in Article 134 of the Constitution.
 
-``` Art. 11 ```    
+<span class="code">  Art. 11  </span>
 
 It shall be for the Public Prosecution Service to demand such revocation.
 
@@ -1901,7 +1901,7 @@ The right to demand the revocation shall also be vested in:
 4. the party who has been declared liable under civil law for the convicted person or, where appropriate, the person with regard to whom a decision has been given ordering deferment of the pronouncement of the judgment.
 <br/>
 
-``` Art. 12 ```    
+<span class="code">  Art. 12  </span>
 
  § 1. The case shall be brought before the competent court, either at the suit of the Public
 Prosecution Service, or by a petition stating the ground for revocation. On pain of nullity, the action
@@ -1935,7 +1935,7 @@ revocation decision be published in abstract form in a newspaper which it design
 § 7. The costs of the proceedings shall be borne by the State.
 
 
-``` Art. 13 ```  
+<span class="code">  Art. 13  </span>
 
 § 1. Judgments delivered in criminal cases on the basis of a nullified statute, nullified decree or
 nullified rule referred to in Article 134 of the Constitution, or of a regulation implementing such statute,
@@ -1962,14 +1962,14 @@ pursuance of the revoked judgment.
 refer the case to the competent court. Articles 660 to 663 of the Judicial Code and Article 16, §§ 1 and
 2, of the present Act shall also apply to such referral.
 
-``` Art. 14 ```
+<span class="code">  Art. 14  </span>
 
 Decisions to confine suspects and accused persons who are in a state of insanity, mental
 disturbance or mental deficiency, which have been delivered by virtue of the Act on the protection of
 society against abnormal persons or habitual criminals may be revoked in accordance with Articles 10
 to 13.
 
-``` Art. 15 ```    
+<span class="code">  Art. 15  </span>
 
 Notwithstanding Article 1082, second paragraph, of the Judicial Code, a second appeal to the
 Supreme Court may be brought if this relies exclusively upon the annulment by the Constitutional Court
@@ -1977,7 +1977,7 @@ of the provision of a statute, decree or rule referred to in Article 134 of the 
 constituted the basis of the challenged decision, or of a regulation implementing such statute, decree or
 rule
 
-``` Art. 16 ```    
+<span class="code">  Art. 16  </span>
 
  § 1. A final and conclusive judgment of a civil court may be entirely or partially revoked at the
 suit of the persons who were party to, or were duly summoned to appear in, those proceedings, insofar
@@ -1995,7 +1995,7 @@ parties involved in the challenged decision.
 § 4. On pain of nullity, the action shall be instituted within six months after publication of the judgment
 of the Constitutional Court in the *Moniteur belge*.
 
-``` Art. 17 ```    
+<span class="code">  Art. 17  </span>
 
 A judgment of the Council of State may be entirely or partially revoked, insofar as it is based on
 a provision of a statute, decree or rule referred to in Article 134 of the Constitution which has been
@@ -2005,7 +2005,7 @@ or rule.
 The time limit for appeals shall be six months from the date of publication of the judgment of the
 Constitutional Court in the *Moniteur belge*.
 
-``` Art. 18 ```    
+<span class="code">  Art. 18  </span>
 
 Notwithstanding the expiry of the time limits set by the laws and special regulations,
 administrative or judicial appeals, as the case may be, may still be lodged against acts and regulations
@@ -2017,13 +2017,13 @@ six months after publication of the judgment of the Constitutional Court in the 
 
 ###### <span class="sections"> SECTION III </br>SUSPENSION</span>
 
-``` Art. 19 ```
+<span class="code">  Art. 19  </span>
 
 At the suit of the petitioning party, the Court may, by a duly reasoned decision, entirely or
 partially suspend the statute, decree or rule referred to in Article 134 of the Constitution against which
 an action for annulment has been brought.
 
-``` Art. 20 ```
+<span class="code">  Art. 20  </span>
 
 Without prejudice to Article 16ter of the Special Act of 8 August 1980 on institutional reform and
 Article 5ter of the Special Act of 12 January 1989 on the Brussels institutions, suspension may only be
@@ -2033,7 +2033,7 @@ decided in the following cases:
 2. if an appeal has been lodged against a rule which is identical or similar to a rule already nullified by the Constitutional Court and which has been adopted by the same legislative body.
 <br/>
 
-``` Art. 21 ```
+<span class="code">  Art. 21  </span>
 
 The suspension shall be demanded in the petition for annulment or in a separate document
 signed in accordance with Article 5, attached to the petition or submitted in the course of the
@@ -2042,7 +2042,7 @@ proceedings.
 Notwithstanding Article 3, petitions for suspension shall only be admissible if they are filed within three
 months after publication of the statute, decree or rule referred to in Article 134 of the Constitution.
 
-``` Art. 22 ```
+<span class="code">  Art. 22  </span>
 
 Without prejudice to Article 16ter of the Special Act of 8 August 1980 on institutional reform and
 Article 5ter of the Special Act of 12 January 1989 on the Brussels institutions, the action referred to in
@@ -2052,19 +2052,19 @@ challenged rule is liable to cause serious detriment which is difficult to remed
 If the action is instituted by a separate document, it shall be dated and signed and shall specify the rule
 against which the action for annulment is being instituted.
 
-``` Art. 23 ```
+<span class="code">  Art. 23  </span>
 
 Without prejudice to Articles 70 to 73, the Court shall rule on the action without delay in a duly
 reasoned judgment after hearing the parties.
 
-``` Art. 24 ```
+<span class="code">  Art. 24  </span>
 
 The judgment ordering the suspension shall be formulated in Dutch, French and German. At the request of the registrar of the Court, the judgment shall be published in its entirety or in abstract
 form in the *Moniteur belge*.
 
 The judgment shall be effective from the date of publication.
 
-``` Art. 25 ```
+<span class="code">  Art. 25  </span>
 
 The Court shall deliver its judgment on the main action within three months after
 pronouncement of the judgment ordering the suspension. This time limit cannot be extended.
@@ -2074,7 +2074,7 @@ cease to have effect.
 
 ###### <span class="sections"> SECTION IV </br>ACTIONS FOR ANNULMENT OF DECISIONS OF THE CAMPAIGN FINANCE REVIEW COMMITTEE ON EXPENDITURE FOR THE ELECTIONS OF THE HOUSE OF REPRESENTATIVES</span>
 
-``` Art. 25 bis ```
+<span class="code">  Art. 25 bis  </span>
 
 The Court shall rule by way of judgments on actions for annulment, on the ground of
 infringement of procedural requirements which are essential or breach of which leads to nullity, or of
@@ -2084,7 +2084,7 @@ House of Representatives, the financing and open accounting of political parties
 
 For the investigation of such actions, the Court has the powers vested in it by Article 26, §§ 1 and 1*bis*.
 
-``` Art. 25 ter ```
+<span class="code">  Art. 25 ter  </span>
 
 The actions referred to in Article 25*bis* shall be instituted by the elected candidate against
 whom the Review Committee has pronounced a penalty decision.
@@ -2096,7 +2096,7 @@ existence of said action for annulment and the formalities and time limits to be
 condition is not fulfilled, the limitation period shall begin four months after the person concerned has
 been notified of the decision of the Review Committee.
 
-``` Art. 25 quater ```
+<span class="code">  Art. 25 quater  </span>
 
  Actions for annulment shall be instituted before the Court by means of a petition signed
 by the elected candidate referred to in Article 25ter or by his lawyer.
@@ -2107,7 +2107,7 @@ and grounds.
 Without prejudice to Articles 70 to 73, the Court shall rule on the action for annulment within three
 months after its submission, in a duly reasoned judgment after hearing the parties.
 
-``` Art. 25 quinquies ```
+<span class="code">  Art. 25 quinquies  </span>
 
 The petitioning party shall attach to its petition a copy of the decision of the Review
 Committee referred to in Article 14/1 of the Act of 4 July 1989 on the limitation and control of election
@@ -2126,7 +2126,7 @@ petitioning party, who shall have fifteen days from the date of receipt in which
 reply to the registry. Those time limits may be shortened or extended by a duly reasoned order of the
 president.
 
-``` Art. 25 sexies ```
+<span class="code">  Art. 25 sexies  </span>
 
 If the action is well-founded, the Court shall annul the decision of the Review Committee
 against which the action was instituted.
@@ -2134,7 +2134,7 @@ against which the action was instituted.
 The registrar shall notify the judgments to the parties and to the president of the House of
 Representatives.
 
-``` Art. 25 septies ```
+<span class="code">  Art. 25 septies  </span>
 
 Articles 74, 76, 78, 80, 85 to 89*bis* and 113 shall not apply to actions for annulment of decisions of the Review Committee. If, however, the Court is requested to make use of its powers in
 accordance with Article 26, the Council of Ministers shall be notified thereof by the registrar. In that
@@ -2145,7 +2145,7 @@ Artikel 90 is van toepassing op het beroep bedoeld in artikel 25 *bis* mits de i
 
 ###### <span class="chapters"> CHAPTER II: PRELIMINARY ISSUES </span>
 
-``` Art. 26 ```
+<span class="code">  Art. 26  </span>
 
 § 1. The Constitutional Court shall, by way of preliminary ruling, settle in the form of judgments
 issues relating to:
@@ -2201,7 +2201,7 @@ Court shall not apply:
 4. if the court of law finds that it appears from a judgment delivered by the Constitutional Court that the provision of Title II of the Constitution has manifestly been infringed.
 <br/>
 
-``` Art. 27 ```
+<span class="code">  Art. 27  </span>
 
 § 1. Preliminary questions shall be referred to the Constitutional Court by communication of a
 certified true copy of the referral decision signed by the president and registrar of the court of law.
@@ -2211,7 +2211,7 @@ certified true copy of the referral decision signed by the president and registr
 specify which articles of the Constitution or of the special laws are relevant in that respect. The
 Constitutional Court, however, may reformulate the preliminary question referred.
 
-``` Art. 28 ```
+<span class="code">  Art. 28  </span>
 
 The court of law which posed the preliminary question and any other court of law passing
 judgment in the same case shall comply with the ruling given by the Constitutional Court in the
@@ -2221,7 +2221,7 @@ Where the Court so deems necessary, it shall, by a general ruling, specify which
 provisions which have been declared unconstitutional are to be considered maintained or be
 provisionally maintained for the period appointed by the Court.
 
-``` Art. 29 ```
+<span class="code">  Art. 29  </span>
 
 § 1. No legal remedy shall lie against a decision of a court of law insofar as it refers a question
 to the Constitutional Court for a preliminary ruling.
@@ -2230,7 +2230,7 @@ to the Constitutional Court for a preliminary ruling.
 the reason for the refusal. No separate legal remedy shall lie against the decision of a court of law that
 refuses to refer such a question.
 
-``` Art. 30 ```
+<span class="code">  Art. 30  </span>
 
 A decision to refer a question to the Constitutional Court for a preliminary ruling shall have the
 effect of suspending the proceedings and the time limits for proceedings and limitation periods from the
@@ -2242,7 +2242,7 @@ protection of the rights that are granted by European Union law.
 
 ###### <span class="chapters"> CHAPTER III: COMMON PROVISIONS</span>
 
-``` Art. 30 bis ```
+<span class="code">  Art. 30 bis  </span>
 
 For the purposes of Articles 1 and 26, § 1, rules referred to in 1° of these two provisions
 shall mean the consultation, involvement, provision of information, opinions, unanimous opinions,
@@ -2254,7 +2254,7 @@ Communities and Regions or in any other statute adopted in pursuance of Articles
 
 ###### <span class="chapters"> CHAPTER IV: REVIEW OF REFERENDUMS</span>
 
-``` Art. 30 ter ```
+<span class="code">  Art. 30 ter  </span>
 
 The Constitutional Court shall rule by way of decisions on all regional referendums, prior to
 the organization thereof, by examining whether the statutes, decrees or rules referred to in Article 1 as
@@ -2276,7 +2276,7 @@ shall not be held. The referendum cannot be held as long as the Court has not gi
 
 ###### <span class="chapters"> CHAPTER V: PROTECTION OF PRIVACY</span>
 
-``` Art. 30 quater ```
+<span class="code">  Art. 30 quater  </span>
 
 At every stage of the judicial procedure, and even after the judgment has been
 pronounced, the president may, ex officio or at the simple request of a party or of a third party with a
@@ -2288,7 +2288,7 @@ or on its own initiative.
 
 ###### <span class="chapters"> CHAPTER I: JUDGES OF THE CONSTITUTIONAL COURT</span>
 
-``` Art. 31 ```
+<span class="code">  Art. 31  </span>
 
 The Constitutional Court shall be composed of twelve judges: six Dutch-speaking judges, who
 form the Dutch language group of the Court, and six French-speaking judges, who form the French
@@ -2299,7 +2299,7 @@ judges referred to in Article 34, § 1, 1°, be determined by the language of th
 judges referred to in Article 34, § 1, 2°, by the parliamentary language group to which they last
 belonged.
 
-``` Art. 32 ```
+<span class="code">  Art. 32  </span>
 
 The judges shall be appointed for life by the King from a list of two candidates, nominated
 alternately by the House of Representatives and by the Senate. The list of candidates shall be adopted
@@ -2311,12 +2311,12 @@ This publication shall take place at the earliest three months prior to the vaca
 All nominations shall be published in the *Moniteur belge*; no appointment shall take place earlier than
 fifteen days after this publication.
 
-``` Art. 33 ```
+<span class="code">  Art. 33  </span>
 
 The Dutch-speaking and French-speaking judges of the Constitutional Court shall elect a
 Dutch-speaking and French-speaking president from their respective language groups.
 
-``` Art. 34 ```
+<span class="code">  Art. 34  </span>
 
 § 1. To be appointed judge at the Constitutional Court, candidates shall be at least forty years
 of age and shall satisfy one of the following conditions:
@@ -2353,7 +2353,7 @@ The Court shall consist of at least one-third of judges of each gender. <sup>3</
 
 ###### <span class="chapters">CHAPTER II: LEGAL SECRETARIES</span>
 
-``` Art. 35 ```
+<span class="code">  Art. 35  </span>
 
 The Constitutional Court shall be assisted by maximum twenty-four legal secretaries, half of
 whom Dutch-speaking and the other half French-speaking, according to the language of their degree,
@@ -2365,7 +2365,7 @@ At least one Dutch-speaking and one French-speaking legal secretary shall furnis
 adequate knowledge of German before an examination board composed by the Managing Director of
 the Selection and Recruitment Office of the Federal Government.
 
-``` Art. 36 ```
+<span class="code">  Art. 36  </span>
 
 To be appointed legal secretary, candidates shall be at least twenty-five years of age and shall
 hold a degree of Doctor or Licentiate of Law.
@@ -2374,7 +2374,7 @@ Appointments shall only be possible if there is a vacancy and at least fifteen d
 the vacancy in the *Moniteur belge*. This publication shall take place at the earliest three months prior to
 the vacancy occurring.
 
-``` Art. 37 ```
+<span class="code">  Art. 37  </span>
 
 With a view to their appointment, candidates shall be ranked on the basis of an open competition of which the Court shall determine the conditions and appoint the examination board.
 
@@ -2387,7 +2387,7 @@ The open competition shall, with respect to its effects, be equated with the ope
 the government services and the public utility institutions give access to the post of administrative
 secretary-lawyer.
 
-``` Art. 38 ```
+<span class="code">  Art. 38  </span>
 
 The legal secretaries shall be appointed by the Court for an internship of three years according
 to their ranking on the basis of the open competition referred to in Article 37.
@@ -2395,7 +2395,7 @@ to their ranking on the basis of the open competition referred to in Article 37.
 After those three years, the appointment shall be definitive, unless the Court decides otherwise during
 the third year of internship.
 
-``` Art. 39 ```
+<span class="code">  Art. 39  </span>
 
 The office of legal secretary at the Constitutional Court shall be equated with the judicial offices
 with respect to the appointment conditions stipulated in Articles 70 and 71 of the laws on the Council of
@@ -2407,7 +2407,7 @@ Council of State or the Constitutional Court which the legal secretaries might s
 
 ###### <span class="chapters">CHAPTER III: REGISTRARS</span>
 
-``` Art. 40 ```
+<span class="code">  Art. 40  </span>
 
 § 1. The King shall appoint two registrars from two lists of two candidates each, one nominated
 by the Dutch linguistic group and the other by the French linguistic group at the Constitutional Court.
@@ -2417,7 +2417,7 @@ Article 32, second and third paragraph, shall apply to these nominations.
 § 2. The linguistic group of a registrar shall be determined by the linguistic group of the Constitutional
 Court by which he was nominated.
 
-``` Art. 41 ```
+<span class="code">  Art. 41  </span>
 
 To qualify for appointment as registrar with the Constitutional Court, candidates shall:
 
@@ -2441,7 +2441,7 @@ Council of State, as coordinated on 12 January 1973.
 
 ###### <span class="chapters">CHAPTER IV: ADMINISTRATIVE STAFF </span>
 
-``` Art. 42 ```
+<span class="code">  Art. 42  </span>
 
 The Constitutional Court shall have its own staff. The Court shall determine the organizational
 hierarchy and linguistic framework of the staff, with due regard for linguistic parity at each level; the
@@ -2454,7 +2454,7 @@ Unless the Court decides otherwise, as required for the proper functioning of it
 established in a set of rules approved by Royal Decree, the staff shall be subject to the legal and
 statutory rules that apply to permanently appointed public servants of the Kingdom.
 
-``` Art. 43 ```
+<span class="code">  Art. 43  </span>
 
 The Constitutional Court shall decide on the duties, reasons for non-attendance, replacements,
 absences, leave and holiday arrangements of the members of the administrative staff.
@@ -2465,7 +2465,7 @@ group, appointed by the Court for a renewable term of four years.
 
 ###### <span class="chapters">CHAPTER V: INCOMPATIBILITIES </span>
 
-``` Art. 44 ```
+<span class="code">  Art. 44  </span>
 
 The offices of judge, legal secretary and registrar shall be incompatible with the judicial offices,
 with the exercise of a public office won by election, with any public function or position of a political or
@@ -2480,12 +2480,12 @@ depart from the first paragraph in the following cases:
 3. membership of an advisory commission, board or committee, insofar as the number of remunerated assignments or posts remains limited to two, and the total remuneration does not exceed one-tenth of the annual gross salary of the principal office at the Constitutional Court.
 <br/>
 
-``` Art. 45 ```
+<span class="code">  Art. 45  </span>
 
 The presidents, judges, legal secretaries and registrars shall not be called upon for any other
 public service, except in the cases provided for by law.
 
-``` Art. 46 ```
+<span class="code">  Art. 46  </span>
 
 The presidents, judges, legal secretaries and registrars shall be prohibited from:
 
@@ -2494,12 +2494,12 @@ The presidents, judges, legal secretaries and registrars shall be prohibited fro
 3.  either personally or through an intermediary, carrying out a professional activity, engaging in trade, acting as agents, taking part in the management, administration or supervision of companies or industrial or commercial establishments.
 <br/>
 
-``` Art. 47 ```
+<span class="code">  Art. 47  </span>
 
 Relatives or in-laws up to the third degree of kinship shall not at the same time be president or
 judge and legal secretary, unless the King has lifted this restriction.
 
-``` Art. 48 ```
+<span class="code">  Art. 48  </span>
 
 § 1. Article 44, first paragraph, and Article 46, 1° and 2°, shall likewise apply to members of the
 administrative staff of the Constitutional Court.
@@ -2509,13 +2509,13 @@ officials allow these officials or their spouses to engage in certain supplement
 
 ###### <span class="chapters">CHAPTER VI: DISCIPLINARY RULES  </span>
 
-``` Art. 49 ```
+<span class="code">  Art. 49  </span>
 
 Presidents and judges who have infringed the dignity of their office or have fallen short of the
 obligations of their position may be removed or suspended from their office by a judgment pronounced
 by the Constitutional Court.
 
-``` Art. 50 ```
+<span class="code">  Art. 50  </span>
 
  § 1. Legal secretaries and registrars who are neglectful in the discharge of their duty shall be
 cautioned and reprimanded by the president, and suspended or dismissed by the Constitutional Court.
@@ -2537,7 +2537,7 @@ withholding of salary for the duration of the penalty period or for part of the 
 
 ###### <span class="chapters">CHAPTER VII: MISCELLANEOUS PROVISIONS</span>
 
-``` Art. 51 ```
+<span class="code">  Art. 51  </span>
 
 § 1. The president and the judges shall take the oath before the King as required by Article 2 of
 the Decree of 20 July 1831.
@@ -2549,26 +2549,26 @@ them, failing which they may be replaced.
 
 § 4. The oath may be taken in Dutch or in French according to whether the person concerned is Dutchspeaking or French-speaking.
 
-``` Art. 52 ```
+<span class="code">  Art. 52  </span>
 
  The King shall determine the regalia which office-bearers of the Constitutional Court shall wear
 at court sessions and official ceremonies.
 
 He shall also establish the rules of precedence and honours.
 
-``` Art. 53 ```
+<span class="code">  Art. 53  </span>
 
 The King shall establish a concordance service at the Constitutional Court.
 
 ##### <span class="titles">TITLE III </span><br/>OPERATION OF THE CONSTITUTIONAL COURT
 
-``` Art. 54 ```
+<span class="code">  Art. 54  </span>
 
 The presidency of the Constitutional Court shall be assumed by each president for a one-year term on a rotary basis.
 
 This term shall commence on September the first of each year.
 
-``` Art. 55 ```
+<span class="code">  Art. 55  </span>
 
 Without prejudice to Article 56, the Constitutional Court shall hold its sessions, deliberate and
 pass judgment by benches of seven judges: three Dutch-speaking judges, three French-speaking
@@ -2586,7 +2586,7 @@ group.
 
 All decisions shall be adopted by a majority vote of the members.
 
-``` Art. 56 ```
+<span class="code">  Art. 56  </span>
 
 The Constitutional Court shall meet in full session in order to take the necessary decisions in
 pursuance of Articles 37, 38, 42, 43, 44, 49, 50, 100 and 122.
@@ -2604,17 +2604,17 @@ If the Court rules in full session, the president shall have a casting vote in t
 president is absent or unable to attend, he shall be replaced by the earliest appointed judge or, where
 appropriate, by the most senior judge in age of the same linguistic group.
 
-``` Art. 57 ```
+<span class="code">  Art. 57  </span>
 
 Article 258 of the Penal Code on the refusal of the court to exercise its powers shall also apply
 to the judges of the Constitutional Court.
 
-``` Art. 58 ```
+<span class="code">  Art. 58  </span>
 
 Each year on 1 September the presidents shall, for the purposes of the service, draw up a list
 of the judges in their linguistic group.
 
-``` Art. 59 ```
+<span class="code">  Art. 59  </span>
 
 The presidents shall sit in all cases.
 
@@ -2634,13 +2634,13 @@ On the list of the other president he shall put:
 
 The order of the cases shall be that determined in Article 67.
 
-``` Art. 60 ```
+<span class="code">  Art. 60  </span>
 
 If a judge who is not a president is absent or unable to attend, he shall be replaced by the judge
 who, appointed by virtue of the same provision, next comes after him on the list or, if he is the last one
 on the list, by the first judge on the list.
 
-``` Art. 60 bis ```
+<span class="code">  Art. 60 bis  </span>
 
 The presidents and judges who are due to retire on account of their age shall remain in
 office for the cases which they have tried and which were taken into deliberation before the date of their
@@ -2653,7 +2653,7 @@ For the purposes of Article 56, first paragraph, the presidents and judges who a
 account of their age shall remain in office until such time as their successor has taken the oath.
 
 
-``` Art. 61 ```
+<span class="code">  Art. 61  </span>
 
 The Court shall be assisted by the registrar whose language shall be that of the investigation.
 
@@ -2661,7 +2661,7 @@ The Court shall be assisted by the registrar whose language shall be that of the
 
 ###### <span class="chapters">CHAPTER I: USE OF LANGUAGES BEFORE THE CONSTITUTIONAL COURT</span>
 
-``` Art. 62 ```
+<span class="code">  Art. 62  </span>
 
 Cases shall be instituted before the Constitutional Court in Dutch, French or German.
 
@@ -2682,7 +2682,7 @@ Ministers, the Governments, the Presidents of the legislative assemblies and of 
 the laws on the use of languages in administrative matters that are not addressed to the Court in the
 language imposed by the second paragraph.
 
-``` Art. 63 ```
+<span class="code">  Art. 63  </span>
 
 § 1. Subject to what is provided for in §§ 2 and 3, the investigation of the case shall be conducted in the language of the document with which the case is brought before the Court.
 
@@ -2700,12 +2700,12 @@ Joint cases shall be heard in the language of the case that was first brought be
 § 4. All documents to be used by the Court shall be translated into Dutch or into French as the case
 may be.
 
-``` Art. 64 ```
+<span class="code">  Art. 64  </span>
 
 All verbal statements made at the hearings shall be made in Dutch, French or German with
 simultaneous translation.
 
-``` Art. 65 ```
+<span class="code">  Art. 65  </span>
 
 The judgments of the Court shall be drafted and pronounced in Dutch and in French. They shall
 be published in the *Moniteur belge* in the manner stipulated in Article 114, together with a German
@@ -2718,7 +2718,7 @@ annulment or if the case was brought before the Court in German.
 
 ###### <span class="chapters">CHAPTER II: USE OF LANGUAGES IN THE SERVICES OF THE CONSTITUTIONAL COURT</span>
 
-``` Art. 66 ```
+<span class="code">  Art. 66  </span>
 
 The administrative activities of the Constitutional Court and the organization of the services
 shall be subject to the provisions of the laws on the use of languages in administrative matters, which
@@ -2728,11 +2728,11 @@ apply to the services whose scope of activity covers the whole country.
 
 ###### <span class="chapters">CHAPTER I: ENTRY ON THE CAUSE LIST AND APPOINTMENT OF THE JUDGESRAPPORTEURS</span>
 
-``` Art. 67 ```
+<span class="code">  Art. 67  </span>
 
 The registrar shall enter the cases on the cause list of the Court in their order of receipt.
 
-``` Art. 68 ```
+<span class="code">  Art. 68  </span>
 
 For each case, the judges-rapporteurs shall be the judges who are mentioned first on the lists
 referred to in Article 59.
@@ -2741,18 +2741,18 @@ The duty of the judges-rapporteurs shall be to handle the cases and to report on
 
 ###### <span class="chapters">CHAPTER II: PRELIMINIARY PROCEDURE</span>
 
-``` Art. 69 ```
+<span class="code">  Art. 69  </span>
 
  There shall be a restricted chamber, composed of the president and the two judgesrapporteurs.
 
-``` Art. 70 ```
+<span class="code">  Art. 70  </span>
 
 Immediately upon receipt of an action for annulment or a referral decision, the judgesrapporteurs shall examine whether upon investigation of the petition or the referral decision it is clear
 that the action or the preliminary question is manifestly inadmissible or unfounded, that the action or
 preliminary question manifestly falls outside the jurisdiction of the Constitutional Court, or that the case
 can be settled with a judgment delivered after a preliminary procedure.
 
-``` Art. 71 ```
+<span class="code">  Art. 71  </span>
 
 If the action for annulment or the preliminary question is manifestly inadmissible or manifestly
 falls outside the jurisdiction of the Court, the judges-rapporteurs shall report on this to the president
@@ -2771,7 +2771,7 @@ has no jurisdiction to try the case.
 If the proposal to deliver a judgment of inadmissibility or lack of jurisdiction is not adopted, the restricted
 chamber shall establish this by order.
 
-``` Art. 72 ```
+<span class="code">  Art. 72  </span>
 
  If the judges-rapporteurs consider that the action for annulment is manifestly unfounded, the
 preliminary question evidently calls for a negative reply, or the case, owing to its very nature or the
@@ -2794,14 +2794,14 @@ question, as the case may be.
 If the proposal to deliver a judgment after a preliminary procedure is not adopted, the Court shall
 establish this by order.
 
-``` Art. 73 ```
+<span class="code">  Art. 73  </span>
 
 The judgments referred to in Articles 71, third paragraph, and 72, third paragraph, shall be
 notified to the parties.
 
 ###### <span class="chapters">CHAPTER III: PUBLICATION AND NOTIFICATION OF THE ACTIONS AND PRELIMINARY QUESTIONS  </span>
 
-``` Art. 74 ```
+<span class="code">  Art. 74  </span>
 
  If Articles 71 and 72 have not been applied, or after inspection of the order referred to in Article
 71, fourth paragraph, or of the order referred to in Article 72, fourth paragraph, the registrar shall
@@ -2813,14 +2813,14 @@ days from the date of publication referred to in the first paragraph.
 
 The procedure shall be continued in accordance with the provisions set out below.
 
-``` Art. 75 ```
+<span class="code">  Art. 75  </span>
 
 The Court may appoint a lawyer ex officio. This appointment shall be considered null and void if
 the party concerned chooses its own legal adviser.
 
 The King shall determine the manner in which legal aid shall be provided.
 
-``` Art. 76 ```
+<span class="code">  Art. 76  </span>
 
 § 1. The registrar shall notify actions for annulment instituted by the Council of Ministers to the
 governments of the Communities and Regions and to the presidents of the legislative assemblies.
@@ -2837,13 +2837,13 @@ of the other legislative assemblies.
 Council of Ministers, to the governments of the Communities and Regions, and to the presidents of the
 legislative assemblies.
 
-``` Art. 77 ```
+<span class="code">  Art. 77  </span>
 
 The registrar shall notify referral decisions to the Council of Ministers, to the governments of the
 Communities and Regions, to the presidents of the legislative assemblies, and to the parties in the
 lawsuit before the court of law that took the referral decision.
 
-``` Art. 78 ```
+<span class="code">  Art. 78  </span>
 
 Where one and the same provision is the subject of an action for annulment and of an earlier
 referral decision, the registrar shall notify the action for annulment to the parties in the lawsuit before
@@ -2875,11 +2875,11 @@ Subject to the application of Article 100, the Court shall first rule on the act
 
 ###### <span class="chapters">CHAPTER IV: INVESTIGATION </span>
 
-``` Art. 79 ```  
+<span class="code">  Art. 79  </span>
 
 The investigation shall be conducted in writing.
 
-``` Art. 80 ```  
+<span class="code">  Art. 80  </span>
 
 The notifications made to the Council of Ministers shall be addressed to the office of the Prime
 Minister.
@@ -2890,7 +2890,7 @@ president of the Government.
 The notifications made to the presidents of the legislative assemblies shall be addressed to the registry
 of the legislative assembly
 
-``` Art. 81 ```  
+<span class="code">  Art. 81  </span>
 
  Any party who is not a public authority shall indicate in the petition or written submission its
 domicile or registered office in Belgium or the domicile which it elects in Belgium.
@@ -2915,7 +2915,7 @@ has deceased.
     <br/>
 </div>
 
-``` Art. 82 ```  
+<span class="code">  Art. 82  </span>
 
 All documents of the proceedings shall be sent to the Court by registered mail.
 
@@ -2941,18 +2941,18 @@ correspondence are concerned.
     <br/>
 </div>
 
-``` Art. 83 ```
+<span class="code">  Art. 83  </span>
 
 [repealed]
 
-``` Art. 84 ```
+<span class="code">  Art. 84  </span>
 
 The petitions and written submissions addressed to the Court shall contain a list of the
 documents that are supplied as evidence.
 
 Each case file shall be sent together with a list of the documents that make up the case file.
 
-``` Art. 85 ```
+<span class="code">  Art. 85  </span>
 
 Within 45 days after receipt of the notifications sent by the registrar by virtue of Articles 76, 77
 and 78, the Council of Ministers, the Governments, the presidents of the legislative assemblies and the
@@ -2961,13 +2961,13 @@ persons to whom said notifications are addressed may make a written submission t
 Where the case involves an action for annulment, those submissions may contain new grounds. After
 that, the parties shall no longer be able to adduce new grounds.
 
-``` Art. 86 ```
+<span class="code">  Art. 86  </span>
 
 Any written submissions as referred to in Articles 71, second paragraph, 72, second paragraph,
 85, 87 and 89, which have not been filed within the time limit stipulated by the present Act shall be
 barred from the proceedings.
 
-``` Art. 87 ```
+<span class="code">  Art. 87  </span>
 
 § 1. When the Constitutional Court, by way of preliminary ruling, decides on questions as
 referred to in Article 26, any party declaring a justifiable interest may make a written submission to the
@@ -2979,11 +2979,11 @@ party declaring a justifiable interest may address its comments to the Court in 
 within thirty days after the publication stipulated in Article 74. Consequently, said party shall be deemed
 to be party to the proceedings.
 
-``` Art. 88 ```
+<span class="code">  Art. 88  </span>
 
  Any party who in pursuance of Articles 85 and 87 makes a written submission to the Court shall be obliged to enclose with its submission the case file in its possession.
 
-``` Art. 89 ```
+<span class="code">  Art. 89  </span>
 
 § 1. When the Court, by way of preliminary ruling, decides on questions as referred to in Article
 26, the registrar shall send a copy of the written submissions received to the other parties who have
@@ -3001,7 +3001,7 @@ have thirty days from the date of receipt in which to send a statement of rejoin
 the expiry of this time limit, the registrar shall send a copy of the statements of rejoinder received to the
 petitioning party and to the other parties who filed a written submission.
 
-``` Art. 89 bis ```
+<span class="code">  Art. 89 bis  </span>
 
 The time limits stipulated in Articles 85, 87 and 89 may be shortened or extended by a duly
 reasoned order of the president.
@@ -3009,7 +3009,7 @@ reasoned order of the president.
 Where a time limit stipulated in Article 87 is shortened or extended in accordance with the first
 paragraph, the registrar shall mention this in the notification referred to in Article 74, first paragraph.
 
-``` Art. 90 ```
+<span class="code">  Art. 90  </span>
 
 After the expiry of the time limits stipulated in Article 89, the Court shall decide, after having
 heard the judges-rapporteurs, whether or not the case is ready for hearing and whether a hearing will
@@ -3031,7 +3031,7 @@ The orders shall be notified to the parties. If no hearing has been set, each pa
 be heard. This petition shall be filed within seven days after the order referred to in the second
 paragraph has been notified.
 
-``` Art. 91 ```
+<span class="code">  Art. 91  </span>
 
 The Court shall have the most extensive powers of inquiry and investigation.
 
@@ -3046,7 +3046,7 @@ It may, more particularly:
 
 It may, by special order, delegate to the judges-rapporteurs the powers of inquiry and investigation of its choice.
 
-``` Art. 92 ```
+<span class="code">  Art. 92  </span>
 
 The Court can decide that the persons referred to in Article 91, 3° be heard under oath after the
 parties and their lawyers have been summoned.
@@ -3072,11 +3072,11 @@ witnesses shall also apply to the investigation procedure provided in the presen
 The report of the examination shall be signed by the president or by the judges of the Court who
 conducted the examination, by the registrar and by the persons heard.
 
-``` Art. 93 ```
+<span class="code">  Art. 93  </span>
 
 In case of an official visit to the spot, the parties and their lawyers shall be summoned.
 
-``` Art. 94 ```
+<span class="code">  Art. 94  </span>
 
 The Court shall decide by order the terms of reference of the experts it appoints, as well as the
 time limit for the submission of their report. The registrar shall notify this order to the experts and to the
@@ -3114,7 +3114,7 @@ The Court may, for serious reasons and in a duly reasoned decision, terminate th
 experts and arrange for them to be replaced after having heard them. The registrar shall notify this
 decision to the experts and the parties.
 
-``` Art. 94 bis ```  
+<span class="code">  Art. 94 bis  </span>
 
 § 1. If a preliminary question is referred to the Court by the Council of State by virtue of Article 6, § 1,
 VIII, 5º, of the Special Act of 8 August 1980 on institutional reform, the registrar shall give notice of the
@@ -3133,7 +3133,7 @@ and the date set for the hearing, the parties may consult the case file at the r
 
 ###### <span class="sections">SECTION I <br/>PLEA OF FORGERY</span>
 
-``` Art. 95 ```   
+<span class="code">  Art. 95  </span>
 
 If a party pleads that a submitted document is a forgery, the party who submitted the document
 shall be requested by the Court to declare forthwith whether said party persists in its intention to make
@@ -3152,13 +3152,13 @@ the legal proceedings shall be continued.
 
 ###### <span class="sections">SECTION II: <br/> RESUMPTION OF LEGAL PROCEEDINGS</span>
 
-``` Art. 96 ```  
+<span class="code">  Art. 96  </span>
 
 If a person with a justifiable interest who has brought an action for annulment or one of the
 parties referred to in Article 87 dies before the close of the proceedings, the legal proceedings shall be
 continued without there being any ground for resumption of the lawsuit.
 
-``` Art. 97 ```  
+<span class="code">  Art. 97  </span>
 
 If one of the parties to a lawsuit before a court of law that has referred a preliminary question
 dies before the close of the proceedings after having become a party before the Court, the legal proceedings before the Court shall be suspended.
@@ -3168,7 +3168,7 @@ the Court of the resumption of the lawsuit.
 
 ###### <span class="sections">SECTION III <br/> WITHDRAWAL FROM PROCEEDINGS</span>
 
-``` Art. 98 ```  
+<span class="code">  Art. 98  </span>
 
 The petitioning parties may withdraw their action for annulment.
 
@@ -3178,7 +3178,7 @@ decision.
 
 If there are grounds for doing so, the Court shall allow the withdrawal, having heard the other parties.
 
-``` Art. 99 ```  
+<span class="code">  Art. 99  </span>
 
 Such withdrawal, accepted or allowed by the court of law that referred a preliminary question,
 shall put an end to the legal proceedings before the Court.
@@ -3187,7 +3187,7 @@ The court of law shall send a certified true copy of its decision to the Court.
 
 ###### <span class="sections">SECTION IV <br/> JOINING OF CASES</span>
 
-``` Art.100 ```  
+<span class="code">  Art.100  </span>
 
 The Constitutional Court in full session may join actions for annulment or preliminary
 questions relating to one and the same regulation to be ruled on in one and the same judgment. In this
@@ -3200,7 +3200,7 @@ Article 68 were appointed to the case of which the Court was first seized.
 
 ###### <span class="sections">SECTION V <br/>  RECUSAL AND EXCUSAL </span>
 
-``` Art. 101 ```  
+<span class="code">  Art. 101  </span>
 
  The judges of the Court may be recused for the reasons which according to Articles 828 and
 830 of the Judicial Code give cause for recusal.
@@ -3212,7 +3212,7 @@ shall not in itself constitute a ground for recusal.
 Any judge of the Court who is aware of the existence of a ground for recusal against him shall notify the
 Court thereof, which shall decide whether he should abstain from the case.
 
-``` Art. 102 ```  
+<span class="code">  Art. 102  </span>
 
  Any party who intends to recuse a judge shall do so as soon as it has knowledge of the
 ground for recusal.
@@ -3227,7 +3227,7 @@ Article 56 and Article 60, as the case may be.
 
 ###### <span class="chapters">CHAPTER VI: HEARING </span>
 
-``` Art. 103 ```  
+<span class="code">  Art. 103  </span>
 
 The parties who have filed a petition or a written submission, their representatives and their
 lawyers shall be notified fifteen days in advance of the date of the hearing.
@@ -3237,12 +3237,12 @@ communicated to the parties involved.
 
 During the period specified in the first paragraph, the parties may consult the case file at the registry.
 
-``` Art. 104 ```  
+<span class="code">  Art. 104  </span>
 
  The hearings of the Court shall be open to the public, unless this should constitute a threat to
 public order or decency; in that case, this shall be so declared by the Court in a duly reasoned ruling.
 
-``` Art. 105 ```  
+<span class="code">  Art. 105  </span>
 
 Those who attend the hearing shall do so with head uncovered, respectfully and in silence.
 
@@ -3252,7 +3252,7 @@ strictly and promptly complied with.
 The same instruction shall be observed in the places where the judges of the Court perform the duties
 of their office.
 
-``` Art. 106 ```  
+<span class="code">  Art. 106  </span>
 
 At the hearing, the judge-rapporteur who belongs to the group whose language is that of the
 investigation shall sum up the circumstances of the case and shall state the points of law which the
@@ -3271,7 +3271,7 @@ The president shall subsequently close the proceedings and take the case into de
 
 ###### <span class="chapters">CHAPTER VII: REOPENING OF THE PROCEEDINGS</span>
 
-``` Art. 107 ```  
+<span class="code">  Art. 107  </span>
 
 The Court may ex officio order the reopening of the proceedings. The Court is obliged to do so
 before it can allow a plea or an argument concerning which the parties had been unable to explain
@@ -3281,11 +3281,11 @@ The Court shall set the time limits within which the parties may submit a final 
 
 ###### <span class="chapters">HOOFDSTUK VIII: HET ARREST</span>
 
-``` Art. 108 ```  
+<span class="code">  Art. 108  </span>
 
  The deliberations of the Court shall be held in secret.
 
-``` Art. 109 ```  
+<span class="code">  Art. 109  </span>
 
 Without prejudice to Article 25, Article 25*quater*, third paragraph, and Article 6, § 1, VIII, 5°, of
 the Special Act of 8 August 1980 on institutional reform, judgments shall be delivered within six months
@@ -3295,12 +3295,12 @@ However, if after expiry of that time limit the case is not yet ready for a hear
 reasoned decision extend this period for the time required. This extension may be renewed if
 necessary, without the length of such extensions totalling more than six months.
 
-``` Art. 110 ```  
+<span class="code">  Art. 110  </span>
 
 Unless the president decides to pronounce the judgment in open court, its publication on the
 website of the Court shall count as pronouncement.
 
-``` Art. 111 ```  
+<span class="code">  Art. 111  </span>
 
 The judgment shall contain the grounds and the operative part. It shall state:
 
@@ -3310,11 +3310,11 @@ The judgment shall contain the grounds and the operative part. It shall state:
 4. the date of signature of the judgment and the names of the judges who deliberated on it.
 <br/>
 
-``` Art. 112 ```  
+<span class="code">  Art. 112  </span>
 
 The judgments shall be signed by the president and the registrar.
 
-``` Art. 113 ```  
+<span class="code">  Art. 113  </span>
 
 The judgments shall be notified by the registrar to:
 
@@ -3330,21 +3330,21 @@ They shall be notified electronically to:
 2.  the presidents of the Legislative Chambers, the Flemish Parliament, the Parliament of the Frenchspeaking Community, the Walloon Parliament, the Parliament of the German-speaking Community, and the Legislative Assemblies of the Brussels-Capital Region.
 <br/>
 
-``` Art. 114 ```  
+<span class="code">  Art. 114  </span>
 
 The judgments shall be published on the initiative of the registrar on the website of the Court,
 as well as in their entirety or in abstract form in the *Moniteur belge*. The abstract shall contain the
 grounds and the operative part of the judgments.
 
-``` Art. 115 ```  
+<span class="code">  Art. 115  </span>
 
 The judgments shall be enforceable by operation of law.
 
-``` Art.116 ```  
+<span class="code">  Art.116  </span>
 
 Judgments of the Court are final and conclusive and not open to appeal.
 
-``` Art. 117 ```  
+<span class="code">  Art. 117  </span>
 
 § 1. Subject to Article 118, the Court may, either ex officio or at the request of one of the
 parties, arrange for any clerical or computational errors or obvious inaccuracies to be rectified within
@@ -3359,7 +3359,7 @@ comments within a time limit to be set by the president.
 emended judgment. Reference to this order shall be made in the margin of the original of the emended
 judgment.
 
-``` Art. 118 ```  
+<span class="code">  Art. 118  </span>
 
 At the suit of the parties to an action for annulment or of the court of law that referred a
 preliminary question, the Court shall furnish an interpretation of the judgment. Actions for interpretation
@@ -3374,7 +3374,7 @@ interpretive ruling shall be made in the margin of the interpreted judgment.
 
 ###### <span class="chapters">CHAPTER VIII BIS: REVIEW PROCEDURE FOR REFERENDUMS</span>
 
-``` Art. 118 bis ```  
+<span class="code">  Art. 118 bis  </span>
 
 Art. 118*bis*. Articles 67, <span class="gray-bg inline"> 78*bis* <sup>8</sup></span>, 79, 80 to 82, 91, first paragraph, second paragraph, 1° to 4°, and third paragraph, 92, 93, 95, 101, 102, 108 and 119, shall apply to the review procedure for referendums.
 
@@ -3386,13 +3386,13 @@ Article 68 shall apply, provided that the words “at the hearings” in the sec
 Article 98 shall apply, provided that the words “and their petition” are added after the words “action for
 annulment” in the first paragraph.
 
-``` Art.118 ter ```  
+<span class="code">  Art.118 ter  </span>
 
 The registrar shall immediately notify the petitions to the Council of Ministers, the
 Community and Regional Governments, the presidents of the legislative assemblies other than the one
 that initiated the petition, and the initiator of the referendum.
 
-``` Art. 118 quater ```
+<span class="code">  Art. 118 quater  </span>
 
 Within ten days after receipt of the notifications sent by the registrar by virtue of Article
 118ter, the Council of Ministers, the Community and Regional Governments, the presidents of the
@@ -3408,7 +3408,7 @@ shall be barred from the proceedings.
 
 ###### <span class="chapters"> CHAPTER IX: GENERAL PROVISIONS </span>
 
-``` Art. 119 ```  
+<span class="code">  Art. 119  </span>
 
 The date of an instrument that marks the start of a particular time limit shall not be included in
 that time limit.
@@ -3418,26 +3418,26 @@ The expiry date shall be included in the time limit.
 If that day is a Saturday, Sunday or public holiday, that expiry date shall be moved to the next working
 day.
 
-``` Art. 120 ```  
+<span class="code">  Art. 120  </span>
 
 The time limits shall run against minors, persons who have been declared incapable, and
 other incompetent persons. The Court, however, may exempt these persons from lapse if it is certain
 that their representation was not assured prior to the expiry of the time limits.
 
-``` Art. 121 ```  
+<span class="code">  Art. 121  </span>
 
 The registry shall be open every day, except on Saturdays, Sundays and public holidays.
 
 The King shall determine the opening hours.
 
-``` Art. 122 ```  
+<span class="code">  Art. 122  </span>
 
 The Court shall adopt its standing orders. It shall attend to the publication thereof in the
 *Moniteur belge*.
 
 ##### <span class="titles"> TITLE VI </span><br/> FINAL PROVISIONS
 
-``` Art. 123 ```  
+<span class="code">  Art. 123  </span>
 
 § 1. The funds that are necessary for the operation of the Constitutional Court shall be
 appropriated in the Allocations budget.
@@ -3446,26 +3446,26 @@ appropriated in the Allocations budget.
 
 ##### <span class="titles">TITLE VII </span><br/>  TRANSITIONAL PROVISIONS
 
-``` Art. 124 ```  
+<span class="code">  Art. 124  </span>
 
 [repealed]
 
-``` Art. 124 bis ```
+<span class="code">  Art. 124 bis  </span>
 
 (see Art. 30*bis*)
 
-``` Art. 125 ```
+<span class="code">  Art. 125  </span>
 
 The appointment of the legal secretaries recruited by the Court of Arbitration on the basis of
 the Act of 28 June 1983 on the organization, jurisdiction and operation of the Court of Arbitration shall
 become final.
 
-``` Art. 126 ```  
+<span class="code">  Art. 126  </span>
 
 The provision of Article 41, first paragraph, on holding a degree of Doctor or Licentiate of Law
 shall not apply to registrars in office on the effective date of the present Act.
 
-``` Art. 127 ```  
+<span class="code">  Art. 127  </span>
 
 The following shall be repealed:
 
@@ -3477,7 +3477,7 @@ The following shall be repealed:
 4. Article 5 of the Act of 2 February 1984 on the salaries of the members, legal secretaries and registrars of the Court of Arbitration, their nomination and appointment, and acts of defamation and violence against members of this Court; 5° the Act of 10 May 1985 on the effects of the annulment judgments delivered by the Court of Arbitration
 <br/>
 
-``` Art. 128 ```  
+<span class="code">  Art. 128  </span>
 
 Article 34, § 5 shall become effective at the latest from the third appointment following the
 entry into force of the Special Act of 9 March 2003 amending the Special Act of 6 January 1989 on the
