@@ -66,7 +66,7 @@ De staat van Belg wordt verkregen, behouden en verloren volgens de regelen bij d
 &emsp;In afwijking van het tweede lid kan de wet het stemrecht regelen van de burgers van de Europese Unie die niet de Belgische nationaliteit hebben, overeenkomstig de internationale en supranationale verplichtingen van België. <br/>
 &emsp;Het stemrecht bedoeld in het vorige lid kan door de wet worden uitgebreid tot de in België verblijvende niet-Europese Unie onderdanen, onder de voorwaarden en op de wijze door haar bepaald.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 De wet bedoeld in het vierde lid kan niet worden aangenomen vóór 1 januari 2001.
 
@@ -239,7 +239,7 @@ De uitoefening van bepaalde machten kan door een verdrag of door een wet worden 
 De federale overheid is slechts bevoegd voor de aangelegenheden die de Grondwet en de wetten, krachtens de Grondwet zelf uitgevaardigd, haar uitdrukkelijk toekennen.<br/>
 &emsp;De gemeenschappen of de gewesten zijn, ieder wat hem betreft, bevoegd voor de overige aangelegenheden onder de voorwaarden en op de wijze be- paald door de wet. Deze wet moet worden aangenomen met de meerderheid bepaald in artikel 4, laatste lid.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 De wet bedoeld in het tweede lid bepaalt de dag waarop dit artikel in werking treedt. Deze dag kan niet voorafgaan aan de dag waarop het nieuw in titel III van de Grondwet in te voegen artikel in werking treedt dat de exclusieve bevoegdheden van de federale overheid bepaalt.
 
@@ -268,7 +268,7 @@ Met uitsluiting van de aangelegenheden die betrekking hebben op de financiën of
 
 De wet, het decreet of de in artikel 134 bedoelde regel die de verkiezingen voor de Kamer van volksvertegenwoordigers of voor een Gemeenschaps- of Gewestparlement regelt, en die minder dan een jaar voor de voorziene datum van het einde van de zittingsperiode wordt afgekondigd, treedt in werking ten vroegste een jaar na de afkondiging ervan.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de eerste verkiezingen voor het Europese Parlement die volgen op de bekendmaking van dit artikel in het _Belgisch Staatsblad_.
 
@@ -298,7 +298,7 @@ De leden van beide Kamers vertegenwoordigen de Natie en niet enkel degenen die h
 § 2. Voor de bij de Grondwet bepaalde gevallen worden de senatoren, met uitzondering van de senator aangewezen door het Parlement van de Duitstalige Gemeenschap, in een Nederlandse en een Franse taalgroep ingedeeld.<br/>
 &emsp;De senatoren bedoeld in artikel 67, § 1, 1° en 6°, vormen de Nederlandse taalgroep van de Senaat. De senatoren bedoeld in artikel 67, § 1, 2° tot 4° en 7°, vormen de Franse taalgroep van de Senaat.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. <br/>
 &emsp;Tot die dag zijn de volgende bepalingen van toepassing:
@@ -315,7 +315,7 @@ De Kamers komen van rechtswege bijeen ieder jaar, de tweede dinsdag van oktober,
 &emsp;De zitting wordt door de Koning gesloten. <br/>
 &emsp;De Koning heeft het recht de Kamers in buitengewone zitting bijeen te roepen.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 De tweede zin van het tweede lid treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014.
 
@@ -335,7 +335,7 @@ De Koning kan de Kamers verdagen. Evenwel mag de verdaging, zonder instemming va
    &emsp;In geval van ontbinding van beide Kamers overeenkomstig artikel 195 worden de Kamers binnen drie maanden bijeengeroepen.<br/>
    &emsp;In geval van vervroegde ontbinding zal de nieuwe federale zittingsperiode uiterlijk duren tot de dag van de eerstvolgende verkiezingen voor het Europese Parlement die op deze ontbinding volgen.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Een wet, aangenomen met de meerderheid bepaald in artikel 4, laatste lid, bepaalt na de verkiezingen voor het Europese Parlement van 2014 de datum waarop het zesde lid in werking treedt. Deze datum stemt overeen met de datum van inwerkingtreding van artikel 65, derde lid, en artikel 118, § 2, vierde lid.<br/>
 &emsp;Het vierde en het vijfde lid treden in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewest- parlementen in 2014. Tot die datum zijn, in plaats van het vierde en het vijfde lid, de volgende bepalingen van toepassing:
@@ -391,7 +391,7 @@ De stemmingen geschieden bij zitten en opstaan of bij naamafroeping; over de wet
 De Kamer van volksvertegenwoordigers heeft het recht van onderzoek.<br/>
 &emsp;De Senaat kan, op verzoek van vijftien van zijn leden, op verzoek van de Kamer van volksvertegenwoordigers, van een Gemeenschaps- of Gewestparlement of van de Koning, bij volstrekte meerderheid van de uitgebrachte stemmen, met ten minste een derde van de uitgebrachte stemmen in elke taalgroep, beslissen dat een vraagstuk dat eveneens gevolgen heeft voor de bevoegdheden van de gemeenschappen of de gewesten, het voorwerp zal uitmaken van een informatieverslag. Het verslag wordt goedgekeurd bij volstrekte meerderheid van de uitgebrachte stemmen, met ten minste een derde van de uitgebrachte stemmen in elke taalgroep.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag is de volgende bepaling van toepassing:
 
@@ -402,7 +402,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 Het is verboden in persoon aan de Kamers verzoekschriften aan te bieden.<br/>
 &emsp;De Kamer van volksvertegenwoordigers heeft het recht de bij haar ingediende verzoekschriften naar de ministers te verwijzen. De ministers zijn verplicht omtrent de inhoud uitleg te verstrekken, zo dikwijls als de Kamer het eist.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Het tweede lid treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag is de volgende bepaling van toepassing in plaats van het tweede lid:
 
@@ -465,7 +465,7 @@ De samenstelling van de kiescolleges wordt door de wet geregeld.<br/>
 
 Geen andere voorwaarde tot verkiesbaarheid kan worden vereist.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Het eerste lid, 3°, treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag moet men, onverminderd artikel 64, eerste lid, 1°, 2° en 4°, de volle leeftijd van eenentwintig jaar hebben bereikt.
 
@@ -475,7 +475,7 @@ De leden van de Kamer van volksvertegenwoordigers worden gekozen voor vijf jaar.
 &emsp;De Kamer wordt om de vijf jaar geheel vernieuwd.<br/>
 &emsp;De verkiezingen voor de Kamer vinden plaats op dezelfde dag als de verkiezingen voor het Europese Parlement.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Een wet, aangenomen met de meerderheid bepaald in artikel 4, laatste lid, bepaalt na de verkiezingen voor het Europese Parlement van 2014 de datum waarop het derde lid in werking treedt. Die datum stemt overeen met de datum van inwerkingtreding van artikel 46, zesde lid, en artikel 118, § 2, vierde lid.<br/>
 &emsp;Federale wetgevende verkiezingen zullen in elk geval op dezelfde dag plaatsvinden als de eerste verkiezingen voor het Europese Parlement die volgen op de bekendmaking van deze herziening in het _Belgisch Staatsblad_.
@@ -509,7 +509,7 @@ Ieder lid van de Kamer van volksvertegenwoordigers geniet een jaarlijkse vergoed
 
 § 4. Indien een lijst bedoeld in artikel 68, § 2, niet vertegenwoordigd is door senatoren bedoeld in respectievelijk § 1, 1°, of § 1, 2°, 3° of 4°, kan de aanwijzing van de senatoren bedoeld in § 1, 6°, of § 1, 7°, gebeuren door de volksvertegenwoordigers die verkozen zijn op de voornoemde lijst.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag zijn de volgende bepalingen van toepassing:
 
@@ -540,7 +540,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op algeh
 &emsp;Een lijst kan slechts in aanmerking worden genomen voor de zetelverdeling van een enkele taalgroep.<br/>
 &emsp;De wet bepaalt de aanwijzing van de senatoren bedoeld in artikel 67, § 1, 6° en 7°.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014, met uitzondering van paragraaf 2, eerste lid, laatste zin. Tot die dag zijn de volgende bepalingen van toepassing:
 
@@ -565,7 +565,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 4. zijn woonplaats hebben in België.
    <br/>
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag zijn de volgende bepalingen van toepassing:
 
@@ -582,7 +582,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 Het mandaat van de senatoren bedoeld in artikel 67, § 1, 1° tot 5°, vangt aan op de dag van hun eedaflegging in de Senaat en eindigt, na de algehele vernieuwing van het Parlement dat hen heeft aangewezen, op de dag van de opening van de eerste zitting ervan.<br/>
 &emsp;Het mandaat van de senatoren bedoeld in artikel 67, § 1, 6° en 7°, vangt aan op de dag van hun eedaflegging in de Senaat en eindigt op de dag van de opening van de eerste zitting van de Kamer van volksvertegenwoordigers na de algehele vernieuwing ervan.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die datum zijn de volgende bepalingen van toepassing:
 
@@ -598,7 +598,7 @@ De Senatoren genieten geen wedde.<br/>
 &emsp;De vergoeding van de senatoren bedoeld in artikel 67, § 1, 6° en 7°, valt ten laste van de dotatie van de Senaat.<br/>
 &emsp;Binnen de grenzen van de Staat hebben de senatoren vrij verkeer op alle verkeerswegen door de openbare overheden geëxploiteerd of in concessie gegeven.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 De invoeging van het derde tot en met het vijfde lid van dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014.<br/>
 &emsp;Tot die dag hebben de senatoren recht op een vergoeding van vierduizend frank per jaar.
@@ -617,7 +617,7 @@ Elke vergadering van de Senaat die mocht worden gehouden buiten de zitting van d
 
 In afwijking van artikel 36 wordt de federale wetgevende macht gezamenlijk uitgeoefend door de Koning en de Kamer van volksvertegenwoordigers voor de andere aangelegenheden dan die bedoeld in de artikelen 77 en 78.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag zijn de volgende bepalingen van toepassing:
 
@@ -634,7 +634,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 Het recht van initiatief behoort aan elke tak van de federale wetgevende macht. Het initiatiefrecht van de Senaat is evenwel beperkt tot de aangelegenheden bedoeld in artikel 77.<br/>
 &emsp;Voor de aangelegenheden bedoeld in artikel 78 worden de wetsontwerpen die aan de Kamers op initiatief van de Koning worden voorgelegd, ingediend in de Kamer van volksvertegenwoordigers en vervolgens overgezonden aan de Senaat.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag zijn de volgende bepalingen van toepassing:
 
@@ -648,7 +648,7 @@ Een wetsontwerp kan door een Kamer eerst worden aangenomen nadat daarover artike
 &emsp;De Kamers hebben het recht de artikelen en de voorgestelde amendementen te wijzigen en te splitsen.<br/>
 &emsp;Het reglement van de Kamer van volksvertegenwoordigers voorziet in een procedure van een tweede lezing.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Het derde lid treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014.
 
@@ -665,7 +665,7 @@ Het derde lid treedt in werking op de dag van de verkiezingen met het oog op de 
 
 Een wet aangenomen met de meerderheid bepaald in artikel 4, laatste lid, kan andere aangelegenheden aanduiden waarvoor de Kamer van volksvertegenwoordigers en de Senaat gelijkelijk bevoegd zijn.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag zijn de volgende bepalingen van toepassing:
 
@@ -704,7 +704,7 @@ Een wet aangenomen met de meerderheid bepaald in artikel 4, laatste lid, kan and
 Indien de Senaat zich niet binnen de voorgeschreven termijn heeft uitgesproken of indien hij de Kamer van volksvertegenwoordigers in kennis heeft gesteld van zijn beslissing om het wetsontwerp niet te amenderen, zendt de Kamer van volksvertegenwoordigers het ontwerp over aan de Koning.<br/>
 &emsp;Indien het ontwerp is geamendeerd, zendt de Senaat het over aan de Kamer van volksvertegenwoordigers, die een definitieve beslissing neemt door het wetsontwerp hetzij aan te nemen, hetzij te amenderen.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag zijn de volgende bepalingen van toepassing:
 
@@ -738,7 +738,7 @@ Een parlementaire overlegcommissie, paritair samengesteld uit leden van de Kamer
 &emsp;Is er geen meerderheid in de twee samenstellende delen van de commissie, dan beslist deze bij meerderheid van twee derden van haar leden. <br/>
 &emsp;Een wet bepaalt de samenstelling en de werkwijze van de commissie, alsmede de berekeningswijze van de in artikel 78 gestelde termijnen.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag zijn de volgende bepalingen van toepassing:
 
@@ -835,7 +835,7 @@ De Ministerraad telt ten hoogste vijftien leden.<br/>
 De ministers hebben zitting in elke Kamer en het woord moet hun worden verleend wanneer zij het vragen.<br/>
 &emsp;De Kamer van volksvertegenwoordigers kan de aanwezigheid van de ministers vorderen. De Senaat kan hun aanwezigheid vorderen in het kader van de aangelegenheden bedoeld in de artikelen 77 of 78. Voor de andere aangelegenheden kan hij hun aanwezigheid vragen.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 De tweede zin van het tweede lid treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag is, onverminderd het eerste lid en de eerste en de laatste zin van het tweede lid, de volgende bepaling van toepassing:
 
@@ -861,7 +861,7 @@ Ministers worden voor misdrijven die zij in de uitoefening van hun ambt mochten 
 &emsp;Aan een overeenkomstig het eerste lid veroordeeld minister kan geen genade worden verleend dan op verzoek van de Kamer van volksvertegenwoordigers.<br/>
 &emsp;De wet bepaalt in welke gevallen en volgens welke regels de benadeelde partijen een burgerlijke rechtsvordering kunnen instellen.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel is niet van toepassing op de feiten waarvoor daden van opsporing werden verricht en op vervolgingen ingesteld vóór de inwerkingtreding van de wet tot uitvoering ervan.<br/>
 &emsp;Hiervoor geldt de volgende regeling: de Kamer van volksvertegenwoordigers heeft het recht ministers in beschuldiging te stellen en hen te brengen voor het Hof van Cassatie. Dit alleen is bevoegd om hen te berechten, in verenigde kamers, in de gevallen en met toepassing van de straffen die in de strafwetten zijn bepaald. De wet van 17 december 1996 houdende tijdelijke en gedeeltelijke uitvoering van artikel 103 van de Grondwet blijft terzake gelden.
@@ -955,7 +955,7 @@ betreft.<br/>
 &emsp;Een wet duidt de aangelegenheden aan betreffende de verkiezing, de samenstelling en de werking van het Parlement van de Duitstalige Gemeenschap, welke door dit Parlement bij decreet worden geregeld. Dat decreet moet worden aangenomen met een meerderheid van twee derden van de uitgebrachte stemmen, op voorwaarde dat de meerderheid van de leden van het Parlement aanwezig is.<br/>
 &emsp;De in het eerste of in het derde lid bedoelde wet, naar gelang van het geval, kan de Gemeenschaps- en Gewestparlementen de bevoegdheid toevertrouwen om elk voor zich, bij decreet of bij een in artikel 134 bedoelde regel, naar gelang van het geval, de duur van hun zittingsperiode en de datum van de verkiezing van hun Parlement te regelen. Dat decreet en die in artikel 134 bedoelde regel moeten worden aangenomen met de meerderheden bedoeld in het eerste tot het derde lid.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Een wet, aangenomen met de meerderheid bepaald in artikel 4, laatste lid, bepaalt, na de verkiezingen voor het Europese Parlement van 2014, de datum van inwerkingtreding van paragraaf 2, vierde lid. Die datum stemt overeen met de datum van inwerkingtreding van artikel 46, zesde lid, en artikel 65, derde lid.
 
@@ -967,7 +967,7 @@ Binnen de grenzen van de Staat hebben de leden van de Parlementen van de in de a
 
 Een lid van een Gemeenschaps- of Gewestparlement kan niet tegelijk lid zijn van de Kamer van volksvertegenwoordigers. Het kan evenmin tegelijk senator zijn als bedoeld in artikel 67, § 1, 6° en 7°.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag zijn de volgende bepalingen van toepassing:
 
@@ -1015,7 +1015,7 @@ De leden van een Gemeenschaps- of Gewestregering worden voor misdrijven die zij 
 &emsp;De wet bepaalt in welke gevallen en volgens welke regels de benadeelde partijen een burgerlijke rechtsvordering kunnen instellen.<br/>
 &emsp;De wetten bedoeld in dit artikel moeten worden aangenomen met de meerderheid bepaald in artikel 4, laatste lid.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel is niet van toepassing op de feiten waarvoor daden van opsporing werden verricht en op vervolgingen ingesteld vóór de inwerkingtreding van de wet tot uitvoering ervan.<br/>
 &emsp;Hiervoor geldt de volgende regeling: de Gemeenschaps- en de Gewestparlementen hebben het recht de leden van hun regering in beschuldiging te stellen en hen te brengen voor het Hof van Cassatie. Dit alleen is bevoegd om hen te berechten, in verenigde kamers, in de gevallen en met toepassing van de straffen die in de strafwetten zijn bepaald. De bijzondere wet van 28 februari 1997 houdende tijdelijke en gedeeltelijke uitvoering van artikel 125 van de Grondwet blijft terzake gelden.
@@ -1170,7 +1170,7 @@ De zaak kan bij het Hof aanhangig worden gemaakt door iedere bij wet aangewezen 
 
 § 4. De in de §§ 2 en 3 bedoelde procedures zijn niet van toepassing op de wetten, besluiten, reglementen, handelingen en beslissingen van de federale Staat met betrekking tot de belastbare grondslag, de belastingtarieven, de vrijstellingen of elk ander element dat in de berekening van de personenbelasting ingrijpt.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 De gewone wet van 9 augustus 1980 tot hervorming der instellingen blijft, wat de voorkoming en de regeling van de belangenconflicten betreft, van toepassing; maar zij kan slechts worden opgeheven, aangevuld, gewijzigd of vervangen door de wetten bedoeld in §§ 2 en 3.
 
@@ -1248,7 +1248,7 @@ De wet bepaalt in welke gevallen en op welke wijze de benoemings- en aanwijzings
 
 § 6. Op de wijze bij de wet bepaald, worden de rechters, de titularissen van de functies bedoeld in § 5, vierde lid, en de ambtenaren van het openbaar ministerie onderworpen aan een evaluatie.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 De bepalingen van de §§ 3 tot 6 treden in werking na de installatie van de Hoge Raad voor de Justitie, zoals bedoeld in § 2.<br/>
 &emsp;Op deze datum worden de eerste voorzitter, de voorzitter en de afdelingsvoorzitters van het Hof van Cassatie, de eerste voorzitters en de kamervoorzitters van de hoven en de voorzitters en de ondervoorzitters van de rechtbanken geacht in deze functies te zijn aangewezen voor de duur en onder de voorwaarden bij de wet bepaald en tegelijk te zijn benoemd in respectievelijk het Hof van Cassatie, het hof van beroep of het arbeidshof en de overeenkomstige rechtbank.<br/>
@@ -1295,7 +1295,7 @@ Er zijn militaire gerechten wanneer de staat van oorlog bepaald in artikel 167, 
 &emsp;De wet regelt eveneens de organisatie van de arbeidsgerechten, hun bevoegdheid, de wijze van benoeming en de duur van het ambt van hun leden.<br/>
 &emsp;Er zijn strafuitvoeringsrechtbanken in de plaatsen die de wet aanwijst. Zij regelt hun organisatie, hun bevoegdheid, alsmede de wijze van benoeming en de duur van het ambt van hun leden.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Het eerste lid treedt in werking op de datum van opheffing van de wet van 15 juni 1899 houdende titel I en II van het Wetboek van strafrechtspleging voor het leger.<br/>
 &emsp;Tot dan blijft de hiernavolgende bepaling van toepassing:<br/>
@@ -1305,7 +1305,7 @@ Het eerste lid treedt in werking op de datum van opheffing van de wet van 15 jun
 
 De essentiële elementen van de hervorming met betrekking tot het gebruik der talen in gerechtszaken in het gerechtelijk arrondissement Brussel, alsook de ermee overeenstemmende aspecten inzake het parket, de zetel en het rechtsgebied, kunnen niet worden gewijzigd dan bij een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 De wet stelt de datum van inwerkingtreding van dit artikel vast. Deze datum stemt overeen met de datum van inwerkingtreding van de wet van 19 juli 2012 betreffende de hervorming van het gerechtelijk arrondissement Brussel.
 
@@ -1325,7 +1325,7 @@ Er bestaat voor geheel België een Raad van State, waarvan de samenstelling, de 
 &emsp;De Raad van State doet bij wege van arrest uitspraak als administratief rechtscollege en geeft advies in de door de wet bepaalde gevallen.<br/>
 &emsp;Aan de bepalingen betreffende de algemene vergadering van de afdeling bestuursrechtspraak van de Raad van State die op dezelfde dag als dit lid in werking treden, kan geen verandering worden aangebracht dan bij een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 Dit artikel treedt in werking op 14 oktober 2012.
 
@@ -1402,7 +1402,7 @@ Het opmaken van de akten van de burgerlijke stand en het houden van de registers
 § 5. De Koning kan de verdragen die voor 18 mei 1993 gesloten werden en betrekking hebben op de in § 3 bedoelde aangelegenheden, opzeggen in overeenstemming met de betrokken Gemeenschaps- en Gewestregeringen.<br/>
 &emsp;De Koning zegt deze verdragen op indien de betrokken Gemeenschaps- en Gewestregeringen hem daarom verzoeken. Een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid regelt de procedure bij gebreke van overeenstemming tussen de betrokken Gemeenschaps- en Gewestregeringen.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 De tweede zin van § 2 treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag hebben de verdragen bedoeld in § 2 eerst gevolg nadat zij de instemming van beide Kamers hebben verkregen.
 
@@ -1506,7 +1506,7 @@ Het legercontingent wordt jaarlijks goedgekeurd. De wet die het vaststelt, is sl
 
 De organisatie en de bevoegdheid van de geïntegreerde politiedienst, gestructureerd op twee niveaus, worden bij de wet geregeld. De essentiële elementen van het statuut van de personeelsleden van de geïntegreerde politiedienst, gestructureerd op twee niveaus, worden bij de wet geregeld.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 De Koning kan echter de essentiële elementen van het statuut van de personeelsleden van de geïntegreerde politiedienst, gestructureerd op twee niveaus, vaststellen en uitvoeren, voor zover het besluit, met betrekking tot die elementen, bekrachtigd wordt bij de wet vóór 30 april 2002.
 
@@ -1562,7 +1562,7 @@ De federale wetgevende macht heeft het recht te verklaren dat er redenen zijn to
 &emsp;Deze Kamers beslissen, in overeenstemming met de Koning, over de punten die aan herziening zijn onderworpen.<br/>
 &emsp;In dit geval mogen de Kamers niet beraadslagen wanneer niet ten minste twee derden van de leden waaruit elke Kamer bestaat, aanwezig zijn; en een verandering is alleen dan aangenomen, indien zij ten minste twee derden van de stemmen heeft verkregen.
 
-`Overgangsbepaling`
+<span class="code"> Overgangsbepaling </span>
 
 <p class="no-bottom-margin">Evenwel kunnen de Kamers, samengesteld ingevolge de vernieuwing van de Kamers van 13 juni 2010, in overeenstemming met de Koning, beslissen over de herziening van de volgende bepalingen, artikelen en groeperingen van artikelen, uitsluitend in de hierna aangeduide zin:</p>
 
