@@ -3201,6 +3201,74 @@ L’arrêté royal du 16 février 1984 réglant la préséance de la Cour d’ar
 
 ::
 
+::AccordionItem{aria-label="Arrêté royal du 12 septembre 2024 royal « relatif à la procédure par voie électronique pour la Cour constitutionnelle », Cliquez pour ouvrir le texte intégral"}
+
+<template v-slot:title>
+<span class="titles">Arrêté royal du 12 septembre 2024 royal « relatif à la procédure par voie électronique pour la Cour constitutionnelle »</span>
+</template>
+
+<div role="region" id="orgBesl7" class="accordion-content">
+
+(Moniteur belge, 19 septembre 2024)
+
+<br/>
+
+<span class="code">  Article 1er  </span>
+
+La plateforme électronique visée à l'article 78bis de la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle, en ce qui concerne l'introduction de requêtes et l'envoi de pièces de procédure, est mise à disposition par la Cour constitutionnelle. Cette plateforme est accessible sur le site internet de la Cour constitutionnelle.
+Tout document déposé dans le cadre de la procédure par une partie ou son avocat au moyen de la plateforme électronique est réputé être la version originale de ce document.
+
+<span class="code">  Art. 2  </span>
+
+A moins qu'elle ne soit signée au moyen d'une signature électronique qualifiée au sens de l'article 3, 12°, du règlement (UE) 910/2014 du Parlement européen et du Conseil du 23 juillet 2014 sur l'identification électronique et les services de confiance pour les transactions électroniques au sein du marché intérieur et abrogeant la Directive 1999/93/CE, toute requête ou toute pièce de procédure est réputée signée par la personne qui l'a déposée au moyen de la plateforme électronique.
+Si les signatures de plusieurs personnes physiques sont requises, ces signatures sont apposées électroniquement au moyen de la signature électronique qualifiée visée à l'alinéa 1er.
+
+<span class="code">  Art. 3  </span>
+
+Les pièces à l'appui, mentionnées dans l'inventaire, sont également déposées au moyen de la plateforme électronique. Les pièces à l'appui qui, pour des raisons d'ordre technique, ne peuvent pas être déposées au moyen de la plateforme électronique, sont envoyées par pli recommandé à la poste au plus tard le premier jour ouvrable qui suit le dépôt électronique de la requête ou de la pièce de procédure.
+
+<span class="code">  Art. 4  </span>
+
+Lorsqu'une partie ou son avocat, dans une affaire, dépose une requête ou une pièce de procédure au moyen de la plateforme électronique, ce dépôt, pour l'affaire dans laquelle il est fait, tient lieu d'enregistrement au sens de l'article 82, alinéa 1er, de la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle.
+
+<span class="code">  Art. 5  </span>
+
+(…)
+
+<span class="code">  Art. 6  </span>
+
+(…)
+
+<span class="code">  Art. 7  </span>
+
+En cas de défaillance de la plateforme électronique, de sorte que le dépôt électronique de documents est impossible, un message d'erreur est affiché à l'utilisateur. Ce message d'erreur peut être imprimé et, si cette défaillance intervient à la date d'échéance d'un délai, elle constitue un commencement de preuve d'un cas de force majeure au sens de l'article 78bis, § 4, de la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle.
+
+<span class="code">  Art. 8  </span>
+
+Tous les documents déposés au moyen de la plateforme électronique respectent les conditions suivantes&nbsp;:
+- les documents ont été établis sous la forme d'un fichier dans le format " Portable Document Format " (PDF);
+- les documents sont exempts de virus et peuvent être ouverts et lus par les employés de la Cour constitutionnelle;
+- le texte des documents peut être copié, dans la mesure du possible.
+La Cour constitutionnelle peut publier sur son site internet une note explicative relative à l'utilisation de la plateforme électronique. Cette note explicative peut également contenir des directives concernant la taille maximale, ainsi que les autres exigences techniques applicables aux documents déposés.
+
+<span class="code">  Art. 9  </span>
+
+Le présent arrêté est applicable immédiatement aux affaires qui sont déjà pendantes au moment de l'entrée en vigueur.
+
+<span class="code">  Art. 10  </span>
+
+Entrent en vigueur à une date fixée par Nous et au plus tard le premier jour du douzième mois suivant le mois de la publication au Moniteur belge du présent arrêté :
+1° les articles 4, 5, 19, 20, 22 et 36, 1°, de la loi spéciale du 4 avril 2014 modifiant la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle;
+2° le présent arrêté.
+
+<span class="code">  Art. 11  </span>
+
+Le Premier Ministre est chargé de l'exécution du présent arrêté.
+
+</div>
+
+::
+
 ::
 
 ### 4\. Règlements
@@ -3283,7 +3351,6 @@ Le président en exercice peut désigner un référendaire pour exercer la fonct
 La présente décision est insérée au règlement d'ordre de la Cour.
 
 ::
-
 
 ::AccordionItem{aria-label="Directive de la Cour d'arbitrage du 20 juin 1996 concernant les mémoires tardifs, Cliquez pour ouvrir le texte intégral"}
 
