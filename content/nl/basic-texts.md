@@ -3230,6 +3230,75 @@ Het koninklijk besluit van 16 februari 1984 houdende regeling betreffende de eer
 </div>
 </div>
 
+
+::
+
+::AccordionItem{aria-label="Koninklijk besluit van 12 september 2024 \“betreffende de elektronische procesvoering voor het Grondwettelijk Hof\”, klik om de volledige tekst te openen."}
+
+<template v-slot:title>
+<span class="titles">Koninklijk besluit van 12 september 2024 “betreffende de elektronische procesvoering voor het Grondwettelijk Hof”</span>
+</template>
+
+<div role="region" id="reg1" class="accordion-content">
+
+(Belgisch Staatsblad, 19 september 2024)
+
+<br/>
+
+``` Artikel 1 ```  
+
+Het in artikel 78bis van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof bedoelde elektronisch platform wordt, wat het indienen van verzoekschriften en het verzenden van stukken van rechtspleging betreft, ter beschikking gesteld door het Grondwettelijk Hof. Dat platform is toegankelijk via de website van het Grondwettelijk Hof.
+Elk document in het kader van de rechtspleging dat door een partij of haar advocaat door middel van het elektronisch platform wordt neergelegd, wordt geacht de originele versie van dat stuk te zijn.
+
+``` Art. 2 ```  
+
+Tenzij het werd ondertekend door middel van een gekwalificeerde elektronische handtekening in de zin van artikel 3, 12°, van de verordening (EU) 910/2014 van het Europees Parlement en de Raad van 23 juli 2014 betreffende elektronische identificatie en vertrouwensdiensten voor elektronische transacties in de interne markt en tot intrekking van Richtlijn 1999/93/EG, wordt elk verzoekschrift of stuk van rechtspleging geacht ondertekend te zijn door de persoon die het heeft neergelegd door middel van het elektronisch platform.
+Wanneer de handtekeningen van verscheidene fysieke personen noodzakelijk zijn, worden deze elektronisch aangebracht door middel van de in het eerste lid bedoelde gekwalificeerde elektronische handtekening.
+
+``` Art. 3 ```  
+
+De tot staving aangevoerde stukken, vermeld in de inventaris, worden eveneens door middel van het elektronisch platform neergelegd. De tot staving aangevoerde stukken die om technische redenen niet door middel van het elektronisch platform kunnen worden neergelegd, worden bij ter post aangetekende zending verstuurd uiterlijk de eerste werkdag na de elektronische neerlegging van het verzoekschrift of het stuk van rechtspleging.
+
+``` Art. 4 ```  
+
+Wanneer een partij of haar advocaat in een zaak een verzoekschrift of een stuk van rechtspleging neerlegt door middel van het elektronisch platform, geldt die neerlegging, voor de zaak waarin zij wordt gedaan, als registratie in de zin van artikel 82, eerste lid, van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof.
+
+``` Art. 5 ```  
+
+(…)
+
+``` Art. 6 ```  
+
+(…)
+
+``` Art. 7 ```  
+
+In geval van een systeemfout van het elektronisch platform, waardoor het elektronisch neerleggen van documenten onmogelijk is, wordt een foutmelding getoond aan de gebruiker. Die foutmelding kan worden geprint en geldt, indien de systeemfout plaatsvindt op de vervaldag van een termijn, als begin van bewijs van overmacht in de zin van artikel 78bis, § 4, van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof.
+
+``` Art. 8 ```  
+
+Alle documenten die door middel van het elektronisch platform worden neergelegd, voldoen aan de volgende voorwaarden:
+- de documenten zijn opgemaakt in de vorm van een bestand in het "Portable Document Format" (PDF)-formaat;
+- de documenten zijn virusvrij, en kunnen worden geopend en gelezen door de medewerkers van het Grondwettelijk Hof;
+- de tekst van de documenten is, voor zover mogelijk, kopieerbaar.
+Het Grondwettelijk Hof kan op zijn website een handleiding publiceren met betrekking tot het gebruik van het elektronisch platform. Die handleiding kan eveneens richtlijnen bevatten voor de maximale grootte en de andere technische vereisten die gesteld worden aan de neergelegde documenten.
+
+``` Art. 9 ```  
+
+Dit besluit is onmiddellijk van toepassing op de zaken die reeds hangende zijn op het ogenblik van de inwerkingtreding.
+
+``` Art. 10 ```  
+
+Op een door Ons te bepalen datum en uiterlijk op de eerste dag van de twaalfde maand volgend op de maand waarin dit besluit wordt bekendgemaakt in het Belgisch Staatsblad, treden in werking :
+1° de artikelen 4, 5, 19, 20, 22 en 36, 1°, van de bijzondere wet van 4 april 2014 tot wijziging van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof;
+2° dit besluit.
+
+``` Art. 11 ```  
+
+De Eerste Minister is belast met de uitvoering van dit besluit.
+
+</div>
+
 ::
 ::
 
@@ -3240,7 +3309,6 @@ Het koninklijk besluit van 16 februari 1984 houdende regeling betreffende de eer
 </div>
 
 ::AccordionGroup
-
 ::AccordionItem{aria-label="Reglement van orde van 15 december 1987 , klik om de volledige tekst te openen."}
 
 <template v-slot:title>
@@ -3309,7 +3377,6 @@ De richtlijn van 15 december 1987, met opschrift "Neerlegging en mededeling van 
 Wat de zaken betreft die zijn ingeschreven op de rol van het Hof vanaf de inwerkingtreding van de bijzondere wet van 6 januari 1989 en waarbij een vordering tot schorsing is ingesteld, wordt, onverminderd de [artikelen 70 tot 73](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.70) van voormelde bijzondere wet, de beschikking tot dagstelling ter kennis gebracht van de partij of de partijen en van de overheden die zijn vermeld in [artikel 76](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76) van de wet, in voorkomend geval met opgave van de termijn waarover elk van die overheden beschikt om schriftelijke opmerkingen ter griffie te doen toekomen. Eenmaal die termijn verstreken, wordt geen enkel ander geschrift op de mondelinge behandeling ter terechtzitting van de vordering tot schorsing toegelaten.
 
 </div>
-</div>
 
 ::
 
@@ -3329,7 +3396,6 @@ De voorzitter in functie kan een referendaris aanwijzen om het ambt van griffier
 
 Onderhavige beslissing wordt ingevoegd in het reglement van orde van het Hof.
 
-</div>
 </div>
 
 ::
@@ -3356,5 +3422,8 @@ Diegenen welke een memorie laattijdig hebben ingediend kunnen het feit dat voorm
 
 Deze beslissing wordt ingevoegd in het reglement van orde van het Hof.
 
-</div></div>
 </div>
+
+::
+
+::
