@@ -19,47 +19,47 @@ posterUrl: ~/assets/img/newsletter-background.png
 
 ##### <span class="titles"> TITEL I </span> <br/> HET FEDERALE BELGIË, ZIJN SAMENSTELLING EN ZIJN GRONDGEBIED
 
-`Artikel 1`
+<span class="code"> Artikel 1 </span>
 
 België is een federale Staat, samengesteld uit de gemeenschappen en de gewesten.
 
-`Art. 2`
+<span class="code"> Art. 2 </span>
 
 België omvat drie gemeenschappen: de Vlaamse Gemeenschap, de Franse Gemeenschap en de Duitstalige Gemeenschap.
 
-`Art. 3`
+<span class="code"> Art. 3 </span>
 
 België omvat drie gewesten: het Vlaamse Gewest, het Waalse Gewest en het Brusselse Gewest.
 
-`Art. 4`
+<span class="code"> Art. 4 </span>
 
 België omvat vier taalgebieden: het Nederlandse taalgebied, het Franse taalgebied, het tweetalige gebied Brussel-Hoofdstad en het Duitse taalgebied. <br />
 &emsp;Elke gemeente van het Rijk maakt deel uit van een van deze taalgebieden.<br/>
 &emsp;De grenzen van de vier taalgebieden kunnen niet worden gewijzigd of gecorrigeerd dan bij een wet, aangenomen met de meerderheid van de stemmen in elke taalgroep van elke Kamer, op voorwaarde dat de meerderheid van de leden van elke taalgroep aanwezig is en voor zover het totaal van de ja-stemmen in beide taalgroepen twee derden van de uitgebrachte stemmen bereikt.
 
-`Art. 5`
+<span class="code"> Art. 5 </span>
 
 Het Vlaamse Gewest omvat de provincies Antwerpen, Limburg, Oost-Vlaanderen, Vlaams-Brabant en West-Vlaanderen. Het Waalse Gewest omvat de provincies Henegouwen, Luik, Luxemburg, Namen en Waals-Brabant.<br/>
 &emsp; Een wet kan bepaalde gebieden, waarvan zij de grenzen vaststelt, aan de indeling in provincies onttrekken, ze onder het rechtstreekse gezag plaatsen van de federale uitvoerende macht en ze een eigen statuut toekennen. Deze wet moet worden aangenomen met de meerderheid bepaald in artikel 4, laatste lid.
 
-`Art. 6`
+<span class="code"> Art. 6 </span>
 
 De onderverdelingen van de provincies kunnen alleen door de wet worden vastgesteld.
 
-`Art. 7`
+<span class="code"> Art. 7 </span>
 
 De grenzen van de Staat, van de provincies en van de gemeenten kunnen niet worden gewijzigd of gecorrigeerd dan krachtens een wet.
 
 ##### <span class="titles"> TITEL I BIS </span> <br /> ALGEMENE BELEIDSDOELSTELLINGEN VAN HET FEDERALE <br/> BELGIË, DE GEMEENSCHAPPEN EN DE GEWESTEN
 
-`Art. 7 bis`
+<span class="code"> Art. 7 bis </span>
 
 Bij de uitoefening van hun respectieve bevoegdheden streven de federale Staat, de gemeenschappen en de gewesten de doelstellingen na van een duurzame ontwikkeling in haar sociale, economische en milieugebonden aspecten, rekening houdend met de solidariteit tussen de generaties. <br/>
 &emsp; Bij de uitoefening van hun respectieve bevoegdheden streven de federale Staat, de gemeenschappen en de gewesten naar bescherming van en zorg voor dieren als wezens met gevoel.
 
 ##### <span class="titles"> TITEL II </span> <br /> DE BELGEN EN HUN RECHTEN
 
-`Art. 8`
+<span class="code"> Art. 8 </span>
 
 De staat van Belg wordt verkregen, behouden en verloren volgens de regelen bij de burgerlijke wet gesteld. <br/>
 &emsp;De Grondwet en de overige wetten op de politieke rechten bepalen welke de vereisten zijn waaraan men moet voldoen, benevens de staat van Belg, om die rechten te kunnen uitoefenen. <br/>
@@ -70,81 +70,81 @@ De staat van Belg wordt verkregen, behouden en verloren volgens de regelen bij d
 
 De wet bedoeld in het vierde lid kan niet worden aangenomen vóór 1 januari 2001.
 
-`Art. 9`
+<span class="code"> Art. 9 </span>
 
 Naturalisatie wordt verleend door de federale wetgevende macht.
 
-`Art. 10`
+<span class="code"> Art. 10 </span>
 
 Er is in de Staat geen onderscheid van standen.<br/>
 &emsp;De Belgen zijn gelijk voor de wet; zij alleen zijn tot de burgerlijke en militaire bedieningen benoembaar, behoudens de uitzonderingen die voor bijzondere gevallen door een wet kunnen worden gesteld.<br/>
 &emsp;De gelijkheid van vrouwen en mannen is gewaarborgd.
 
-`Art. 11`
+<span class="code"> Art. 11 </span>
 
 Het genot van de rechten en vrijheden aan de Belgen toegekend moet zonder discriminatie verzekerd worden. Te dien einde waarborgen de wet en het decreet inzonderheid de rechten en vrijheden van de ideologische en filosofische minderheden.
 
-`Art. 11 bis`
+<span class="code"> Art. 11 bis </span>
 
 De wet, het decreet of de in artikel 134 bedoelde regel waarborgen voor vrouwen en mannen de gelijke uitoefening van hun rechten en vrijheden, en bevorderen meer bepaald hun gelijke toegang tot de door verkiezing verkregen mandaten en de openbare mandaten.<br/>
 &emsp;De Ministerraad en de Gemeenschaps- en Gewestregeringen tellen personen van verschillend geslacht.<br/>
 &emsp;De wet, het decreet of de in artikel 134 bedoelde regel organiseren de aanwezigheid van personen van verschillend geslacht binnen de bestendige deputaties van de provincieraden, de colleges van burgemeester en schepenen, de raden voor maatschappelijk welzijn, de vaste bureaus van de openbare centra voor maatschappelijk welzijn en in de uitvoerende organen van elk ander interprovinciaal, bovengemeentelijk, intercommunaal of binnengemeentelijk territoriaal orgaan.<br/>
 &emsp;Het voorgaande lid is niet van toepassing wanneer de wet, het decreet of de in artikel 134 bedoelde regel de rechtstreekse verkiezing organiseren van de bestendig afgevaardigden van de provincieraden, van de schepenen, van de leden van de raad voor maatschappelijk welzijn, van de leden van het vast bureau van de openbare centra voor maatschappelijk welzijn of van de leden van de uitvoerende organen van elk ander interprovinciaal, bovengemeentelijk, intercommunaal of binnengemeentelijk territoriaal orgaan.
 
-`Art. 12`
+<span class="code"> Art. 12 </span>
 
 De vrijheid van de persoon is gewaarborgd.<br/>
 &emsp;Niemand kan worden vervolgd dan in de gevallen die de wet bepaalt en in
 de vorm die zij voorschrijft.<br/>
 &emsp;Behalve bij ontdekking op heterdaad kan niemand worden aangehouden dan krachtens een met redenen omkleed bevel van de rechter dat uiterlijk binnen achtenveertig uren te rekenen van de vrijheidsberoving moet worden betekend en enkel tot voorlopige inhechtenisneming kan strekken.
 
-`Art. 13`
+<span class="code"> Art. 13 </span>
 
 Niemand kan tegen zijn wil worden afgetrokken van de rechter die de wet hem toekent.
 
-`Art. 14`
+<span class="code"> Art. 14 </span>
 
 Geen straf kan worden ingevoerd of toegepast dan krachtens de wet.
 
-`Art. 14 bis`
+<span class="code"> Art. 14 bis </span>
 
 De doodstraf is afgeschaft.
 
-`Art. 15`
+<span class="code"> Art. 15 </span>
 
 De woning is onschendbaar; geen huiszoeking kan plaatshebben dan in de gevallen die de wet bepaalt en in de vorm die zij voorschrijft.
 
-`Art. 16`
+<span class="code"> Art. 16 </span>
 
 Niemand kan van zijn eigendom worden ontzet dan ten algemenen nutte, in de gevallen en op de wijze bij de wet bepaald en tegen billijke en voorafgaande schadeloosstelling.
 
-`Art. 17`
+<span class="code"> Art. 17 </span>
 
 De straf van verbeurdverklaring der goederen kan niet worden ingevoerd.
 
-`Art. 18`
+<span class="code"> Art. 18 </span>
 
 De burgerlijke dood is afgeschaft; hij kan niet opnieuw worden ingevoerd.
 
-`Art. 19`
+<span class="code"> Art. 19 </span>
 
 De vrijheid van eredienst, de vrije openbare uitoefening ervan, alsmede de vrijheid om op elk gebied zijn mening te uiten, zijn gewaarborgd, behoudens bestraffing van de misdrijven die ter gelegenheid van het gebruikmaken van die vrijheden worden gepleegd.
 
-`Art. 20`
+<span class="code"> Art. 20 </span>
 
 Niemand kan worden gedwongen op enigerlei wijze deel te nemen aan handelingen en aan plechtigheden van een eredienst of de rustdagen ervan te onderhouden.
 
-`Art. 21`
+<span class="code"> Art. 21 </span>
 
 De Staat heeft niet het recht zich te bemoeien met de benoeming of de installatie der bedienaren van enige eredienst of hun te verbieden briefwisse- ling te houden met hun overheid en de akten van deze overheid openbaar te maken, onverminderd, in laatstgenoemd geval, de gewone aansprakelijkheid inzake drukpers en openbaarmaking.<br/>
 &emsp;Het burgerlijk huwelijk moet altijd aan de huwelijksinzegening voorafgaan, behoudens de uitzonderingen door de wet te stellen, indien daartoe redenen zijn.
 
-`Art. 22`
+<span class="code"> Art. 22 </span>
 
 Ieder heeft recht op eerbiediging van zijn privé-leven en zijn gezinsleven, behoudens in de gevallen en onder de voorwaarden door de wet bepaald. <br/>
 &emsp;De wet, het decreet of de in artikel 134 bedoelde regel waarborgen de bescherming van dat recht.
 
-`Art. 22 bis`
+<span class="code"> Art. 22 bis </span>
 
 Elk kind heeft recht op eerbiediging van zijn morele, lichamelijke, geestelijke en seksuele integriteit.<br/>
 &emsp;Elk kind heeft het recht zijn mening te uiten in alle aangelegenheden die het aangaan; met die mening wordt rekening gehouden in overeenstemming met zijn leeftijd en zijn onderscheidingsvermogen.<br/>
@@ -152,12 +152,12 @@ Elk kind heeft recht op eerbiediging van zijn morele, lichamelijke, geestelijke 
 &emsp;Het belang van het kind is de eerste overweging bij elke beslissing die het kind aangaat.<br/>
 &emsp;De wet, het decreet of de in artikel 134 bedoelde regel waarborgen deze rechten van het kind.
 
-`Art. 22 ter`
+<span class="code"> Art. 22 ter </span>
 
 Iedere persoon met een handicap heeft recht op volledige inclusie in de samenleving, met inbegrip van het recht op redelijke aanpassingen.<br/>
 &emsp;De wet, het decreet of de in artikel 134 bedoelde regel waarborgen de bescherming van dat recht.
 
-`Art. 23`
+<span class="code"> Art. 23 </span>
 
 <p class="no-bottom-margin">Ieder heeft het recht een menswaardig leven te leiden. <br/>
 &emsp;Daartoe waarborgen de wet, het decreet of de in artikel 134 bedoelde regel, rekening houdend met de overeenkomstige plichten, de economische, sociale en culturele rechten, waarvan ze de voorwaarden voor de uitoefening bepalen.<br/>
@@ -171,7 +171,7 @@ Iedere persoon met een handicap heeft recht op volledige inclusie in de samenlev
 6. het recht op gezinsbijslagen.
    <br/>
 
-`Art. 24`
+<span class="code"> Art. 24 </span>
 
 § 1. Het onderwijs is vrij; elke preventieve maatregel is verboden; de bestraffing van de misdrijven wordt alleen door de wet of het decreet geregeld.<br/>
 &emsp;De gemeenschap waarborgt de keuzevrijheid van de ouders.<br/>
@@ -187,54 +187,54 @@ Iedere persoon met een handicap heeft recht op volledige inclusie in de samenlev
 
 § 5. De inrichting, erkenning of subsidiëring van het onderwijs door de gemeenschap wordt geregeld door de wet of het decreet.
 
-`Art. 25`
+<span class="code"> Art. 25 </span>
 
 De drukpers is vrij; de censuur kan nooit worden ingevoerd; geen borgstelling kan worden geëist van de schrijvers, uitgevers of drukkers.<br/>
 &emsp;Wanneer de schrijver bekend is en zijn woonplaats in België heeft, kan de uitgever, de drukker of de verspreider niet worden vervolgd.
 
-`Art. 26`
+<span class="code"> Art. 26 </span>
 
 De Belgen hebben het recht vreedzaam en ongewapend te vergaderen, mits zij zich gedragen naar de wetten, die het uitoefenen van dit recht kunnen regelen zonder het echter aan een voorafgaand verlof te onderwerpen. <br/>
 &emsp;Deze bepaling is niet van toepassing op bijeenkomsten in de open lucht, die ten volle aan de politiewetten onderworpen blijven.
 
-`Art. 27`
+<span class="code"> Art. 27 </span>
 
 De Belgen hebben het recht van vereniging; dit recht kan niet aan enige preventieve maatregel worden onderworpen.
 
-`Art. 28`
+<span class="code"> Art. 28 </span>
 
 Ieder heeft het recht verzoekschriften, door een of meer personen ondertekend, bij de openbare overheden in te dienen. <br/>
 &emsp;Alleen de gestelde overheden hebben het recht verzoekschriften in gemeenschappelijke naam in te dienen.
 
-`Art. 29`
+<span class="code"> Art. 29 </span>
 
 Het briefgeheim is onschendbaar. <br/>
 &emsp;De wet bepaalt welke agenten verantwoordelijk zijn voor de schending van het geheim der aan de post toevertrouwde brieven.
 
-`Art. 30`
+<span class="code"> Art. 30 </span>
 
 Het gebruik van de in België gesproken talen is vrij; het kan niet worden geregeld dan door de wet en alleen voor handelingen van het openbaar gezag en voor gerechtszaken.
 
-`Art. 31`
+<span class="code"> Art. 31 </span>
 
 Geen voorafgaand verlof is nodig om vervolgingen in te stellen tegen openbare ambtenaren wegens daden van hun bestuur, behoudens wat ten opzichte van de ministers en de leden van de Gemeenschaps- en Gewestregeringen is bepaald.
 
-`Art. 32`
+<span class="code"> Art. 32 </span>
 
 Ieder heeft het recht elk bestuursdocument te raadplegen en er een afschrift van te krijgen, behoudens in de gevallen en onder de voorwaarden bepaald door de wet, het decreet of de regel bedoeld in artikel 134.
 
 ##### <span class="titles"> TITEL III </span> <br/> DE MACHTEN
 
-`Art. 33`
+<span class="code"> Art. 33 </span>
 
 Alle machten gaan uit van de Natie. <br/>
 &emsp;Zij worden uitgeoefend op de wijze bij de Grondwet bepaald.
 
-`Art. 34`
+<span class="code"> Art. 34 </span>
 
 De uitoefening van bepaalde machten kan door een verdrag of door een wet worden opgedragen aan volkenrechtelijke instellingen.
 
-`Art. 35`
+<span class="code"> Art. 35 </span>
 
 De federale overheid is slechts bevoegd voor de aangelegenheden die de Grondwet en de wetten, krachtens de Grondwet zelf uitgevaardigd, haar uitdrukkelijk toekennen.<br/>
 &emsp;De gemeenschappen of de gewesten zijn, ieder wat hem betreft, bevoegd voor de overige aangelegenheden onder de voorwaarden en op de wijze be- paald door de wet. Deze wet moet worden aangenomen met de meerderheid bepaald in artikel 4, laatste lid.
@@ -243,28 +243,28 @@ De federale overheid is slechts bevoegd voor de aangelegenheden die de Grondwet 
 
 De wet bedoeld in het tweede lid bepaalt de dag waarop dit artikel in werking treedt. Deze dag kan niet voorafgaan aan de dag waarop het nieuw in titel III van de Grondwet in te voegen artikel in werking treedt dat de exclusieve bevoegdheden van de federale overheid bepaalt.
 
-`Art. 36`
+<span class="code"> Art. 36 </span>
 
 De federale wetgevende macht wordt gezamenlijk uitgeoefend door de Koning, de Kamer van volksvertegenwoordigers en de Senaat.
 
-`Art. 37`
+<span class="code"> Art. 37 </span>
 
 De federale uitvoerende macht, zoals zij door de Grondwet is geregeld, berust bij de Koning.
 
-`Art. 38`
+<span class="code"> Art. 38 </span>
 
 Elke gemeenschap heeft de bevoegdheden welke haar door de Grondwet of door de wetten aangenomen krachtens deze laatste, worden toegekend.
 
-`Art. 39`
+<span class="code"> Art. 39 </span>
 
 De wet draagt aan de gewestelijke organen welke zij opricht en welke samengesteld zijn uit verkozen mandatarissen de bevoegdheid op om de aangelegenheden te regelen welke zij aanduidt met uitsluiting van die bedoeld in de artikelen 30 en 127 tot 129 en dit binnen het gebied en op de wijze die zij bepaalt. Deze wet moet worden aangenomen met de meerderheid bepaald in artikel 4, laatste lid.
 
-`Art. 39 bis`
+<span class="code"> Art. 39 bis </span>
 
 Met uitsluiting van de aangelegenheden die betrekking hebben op de financiën of op de begroting of de aangelegenheden die met een meerderheid van twee derde van de uitgebrachte stemmen worden geregeld, kan over de uitsluitend aan de gewestelijke organen opgedragen aangelegenheden, in het betrokken gewest, een volksraadpleging worden gehouden. <br/>
 &emsp;De in artikel 134 bedoelde regel bepaalt de nadere regels en de organisatie van de volksraadpleging, en wordt aangenomen met een meerderheid van twee derden van de uitgebrachte stemmen, op voorwaarde dat de meerderheid van de leden van het betrokken Parlement aanwezig is. Een wet, aangenomen met de in artikel 4, laatste lid, bedoelde meerderheid voorziet in bijkomende meerderheidsvereisten voor het Parlement van het Brusselse Hoofdstedelijke Gewest.
 
-`Art. 39 ter`
+<span class="code"> Art. 39 ter </span>
 
 De wet, het decreet of de in artikel 134 bedoelde regel die de verkiezingen voor de Kamer van volksvertegenwoordigers of voor een Gemeenschaps- of Gewestparlement regelt, en die minder dan een jaar voor de voorziene datum van het einde van de zittingsperiode wordt afgekondigd, treedt in werking ten vroegste een jaar na de afkondiging ervan.
 
@@ -272,12 +272,12 @@ De wet, het decreet of de in artikel 134 bedoelde regel die de verkiezingen voor
 
 Dit artikel treedt in werking op de dag van de eerste verkiezingen voor het Europese Parlement die volgen op de bekendmaking van dit artikel in het _Belgisch Staatsblad_.
 
-`Art. 40`
+<span class="code"> Art. 40 </span>
 
 De rechterlijke macht wordt uitgeoefend door de hoven en rechtbanken. <br/>
 &emsp;De arresten en vonnissen worden in naam des Konings ten uitvoer gelegd.
 
-`Art. 41`
+<span class="code"> Art. 41 </span>
 
 De uitsluitend gemeentelijke of provinciale belangen worden door de gemeenteraden of de provincieraden geregeld volgens de beginselen bij de Grondwet vastgesteld. Ter uitvoering van een wet aangenomen met de in artikel 4, laatste lid, bedoelde meerderheid, kan de in artikel 134 bedoelde regel echter de provinciale instellingen afschaffen. In dit geval kan de in artikel 134 bedoelde regel ze vervangen door bovengemeentelijke besturen waarvan de raden de uitsluitend bovengemeentelijke belangen regelen volgens de beginselen bij de Grondwet vastgesteld. De in artikel 134 bedoelde regel moet worden aangenomen met een meerderheid van twee derden van de uitgebrachte stemmen, op voorwaarde dat de meerderheid van de leden van het betrokken Parlement aanwezig is. <br/>
 &emsp;De in artikel 134 bedoelde regel stelt de bevoegdheden, de werkingsregels en de wijze van verkiezing vast van de binnengemeentelijke territoriale organen die aangelegenheden van gemeentelijk belang kunnen regelen.<br/>
@@ -287,11 +287,11 @@ De uitsluitend gemeentelijke of provinciale belangen worden door de gemeenterade
 
 ###### <span class="chapters">HOOFDSTUK I <br/> DE FEDERALE KAMERS </span>
 
-`Art. 42`
+<span class="code"> Art. 42 </span>
 
 De leden van beide Kamers vertegenwoordigen de Natie en niet enkel degenen die hen hebben verkozen.
 
-`Art. 43`
+<span class="code"> Art. 43 </span>
 
 § 1. Voor de bij de Grondwet bepaalde gevallen worden de gekozen leden van de Kamer van volksvertegenwoordigers in een Nederlandse en een Franse taalgroep ingedeeld op de bij de wet vastgestelde wijze.
 
@@ -308,7 +308,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 § 2. De senatoren bedoeld in artikel 67, § 1, 1°, 3° en 6°, vormen de Nederlandse taalgroep van de Senaat. De senatoren bedoeld in artikel 67, § 1, 2°,
 4° en 7° vormen de Franse taalgroep van de Senaat.".
 
-`Art. 44`
+<span class="code"> Art. 44 </span>
 
 De Kamers komen van rechtswege bijeen ieder jaar, de tweede dinsdag van oktober, behalve wanneer zij reeds voordien door de Koning zijn bijeengeroepen. <br/>
 &emsp;De Kamers moeten ieder jaar ten minste veertig dagen in zitting blijven. De Senaat is een niet-permanent orgaan.<br/>
@@ -319,11 +319,11 @@ De Kamers komen van rechtswege bijeen ieder jaar, de tweede dinsdag van oktober,
 
 De tweede zin van het tweede lid treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014.
 
-`Art. 45`
+<span class="code"> Art. 45 </span>
 
 De Koning kan de Kamers verdagen. Evenwel mag de verdaging, zonder instemming van de Kamers, de termijn van een maand niet overschrijden, noch gedurende eenzelfde zitting worden herhaald.
 
-`Art. 46`
+<span class="code"> Art. 46 </span>
 
 <p class="no-bottom-margin">De Koning heeft enkel het recht de Kamer van volksvertegenwoordigers te ontbinden wanneer zij, bij volstrekte meerderheid van haar leden:</p>
 
@@ -344,49 +344,49 @@ Een wet, aangenomen met de meerderheid bepaald in artikel 4, laatste lid, bepaal
 &emsp;Het ontbindingsbesluit bevat oproeping van de kiezers binnen veertig dagen en bijeenroeping van de Kamers binnen twee maanden.<br/>
 &emsp;De ontbinding van de Kamer van volksvertegenwoordigers die aanleiding zou geven tot de federale wetgevende verkiezingen die op dezelfde dag zullen worden gehouden als de verkiezingen voor de Gemeenschaps- en Gewestparlementen in 2014, heeft de ontbinding van de Senaat tot gevolg. De kiezers voor de Kamer van volksvertegenwoordigers worden opgeroepen binnen veertig dagen. De Kamers worden bijeengeroepen binnen drie maanden.".
 
-`Art. 47`
+<span class="code"> Art. 47 </span>
 
 De vergaderingen van de Kamers zijn openbaar.<br/>
 &emsp;Elke Kamer vergadert evenwel met gesloten deuren, op verzoek van haar voorzitter of van tien leden.<br/>
 &emsp;Zij beslist daarna, bij volstrekte meerderheid, of de vergadering in het openbaar zal worden hervat ter behandeling van hetzelfde onderwerp.
 
-`Art. 48`
+<span class="code"> Art. 48 </span>
 
 Elke Kamer onderzoekt de geloofsbrieven van haar leden en beslecht de geschillen die hieromtrent rijzen.
 
-`Art. 49`
+<span class="code"> Art. 49 </span>
 
 Men kan niet tegelijk lid van beide Kamers zijn.
 
-`Art. 50`
+<span class="code"> Art. 50 </span>
 
 Een lid van een van beide Kamers dat door de Koning tot minister wordt benoemd en de benoeming aanneemt, houdt op zitting te hebben en neemt zijn mandaat weer op wanneer de Koning een einde heeft gemaakt aan zijn ambt van minister. De wet stelt de nadere regelen van zijn vervanging in de betrokken Kamer vast.
 
-`Art. 51`
+<span class="code"> Art. 51 </span>
 
 Een lid van een van beide Kamers dat door de federale Regering wordt benoemd tot een ander bezoldigd ambt dan dat van minister en de benoeming aanneemt, houdt onmiddellijk op zitting te hebben en treedt niet weder in functie dan krachtens een nieuwe verkiezing.
 
-`Art. 52`
+<span class="code"> Art. 52 </span>
 
 Bij iedere zitting benoemt elke Kamer haar voorzitter, haar ondervoorzitters en stelt haar bureau samen.
 
-`Art. 53`
+<span class="code"> Art. 53 </span>
 
 Elk besluit wordt bij volstrekte meerderheid van stemmen genomen, behoudens hetgeen door de reglementen der Kamers zal worden bepaald met betrekking tot verkiezingen en voordrachten.<br/>
 &emsp;Bij staking van stemmen is het behandelde voorstel verworpen.<br/>
 &emsp;Geen van beide Kamers kan een besluit nemen indien niet de meerderheid van haar leden aanwezig is.
 
-`Art. 54`
+<span class="code"> Art. 54 </span>
 
 Behoudens voor de begrotingen alsook voor de wetten waarvoor een bijzondere meerderheid is vereist, kan een met redenen omklede motie, ondertekend door ten minste drie vierden van de leden van een der taalgroepen en ter tafel gelegd na de indiening van het verslag en vóór de eindstemming in openbare vergadering, verklaren dat de bepalingen die zij aanwijst in een ontwerp of voorstel van wet de betrekkingen tussen de gemeenschappen ernstig in het gedrang kunnen brengen.<br/>
 &emsp;In dat geval wordt de parlementaire procedure opgeschort en de motie verwezen naar de Ministerraad, die binnen dertig dagen daarover zijn gemotiveerd advies geeft en de betrokken Kamer uitnodigt zich uit te spreken hetzij over dit advies, hetzij over het eventueel geamendeerde ontwerp of voorstel.<br/>
 &emsp;Deze procedure kan slechts eenmaal worden toegepast door de leden van een taalgroep betreffende eenzelfde ontwerp of voorstel van wet.
 
-`Art. 55`
+<span class="code"> Art. 55 </span>
 
 De stemmingen geschieden bij zitten en opstaan of bij naamafroeping; over de wetten in hun geheel wordt altijd bij naamafroeping gestemd. Verkiezingen en voordrachten van kandidaten geschieden bij geheime stemming.
 
-`Art. 56`
+<span class="code"> Art. 56 </span>
 
 De Kamer van volksvertegenwoordigers heeft het recht van onderzoek.<br/>
 &emsp;De Senaat kan, op verzoek van vijftien van zijn leden, op verzoek van de Kamer van volksvertegenwoordigers, van een Gemeenschaps- of Gewestparlement of van de Koning, bij volstrekte meerderheid van de uitgebrachte stemmen, met ten minste een derde van de uitgebrachte stemmen in elke taalgroep, beslissen dat een vraagstuk dat eveneens gevolgen heeft voor de bevoegdheden van de gemeenschappen of de gewesten, het voorwerp zal uitmaken van een informatieverslag. Het verslag wordt goedgekeurd bij volstrekte meerderheid van de uitgebrachte stemmen, met ten minste een derde van de uitgebrachte stemmen in elke taalgroep.
@@ -397,7 +397,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 
 "Elke Kamer heeft het recht van onderzoek.".
 
-`Art. 57`
+<span class="code"> Art. 57 </span>
 
 Het is verboden in persoon aan de Kamers verzoekschriften aan te bieden.<br/>
 &emsp;De Kamer van volksvertegenwoordigers heeft het recht de bij haar ingediende verzoekschriften naar de ministers te verwijzen. De ministers zijn verplicht omtrent de inhoud uitleg te verstrekken, zo dikwijls als de Kamer het eist.
@@ -408,11 +408,11 @@ Het tweede lid treedt in werking op de dag van de verkiezingen met het oog op de
 
 "Elke Kamer heeft het recht de bij haar ingediende verzoekschriften naar de ministers te verwijzen. De ministers zijn verplicht omtrent de inhoud uitleg te verstrekken, zo dikwijls als de Kamer het eist.".
 
-`Art. 58`
+<span class="code"> Art. 58 </span>
 
 Geen lid van een van beide Kamers kan worden vervolgd of aan enig onderzoek onderworpen naar aanleiding van een mening of een stem, in de uitoefening van zijn functie uitgebracht.
 
-`Art. 59`
+<span class="code"> Art. 59 </span>
 
 Behalve bij ontdekking op heterdaad kan geen lid van een van beide Kamers, tijdens de zitting en in strafzaken, worden verwezen naar of rechtstreeks gedagvaard voor een hof of een rechtbank, of worden aangehouden dan met verlof van de Kamer waarvan het lid deel uitmaakt.<br/>
 &emsp;Behalve bij ontdekking op heterdaad kunnen de dwangmaatregelen waarvoor het optreden van een rechter is vereist, ten opzichte van een lid van een van beide Kamers, tijdens de zitting en in strafzaken, alleen worden bevolen door de eerste voorzitter van het hof van beroep op verzoek van de bevoegde rechter. Deze beslissing wordt aan de voorzitter van de betrokken Kamer meegedeeld.<br/>
@@ -421,24 +421,24 @@ Behalve bij ontdekking op heterdaad kan geen lid van een van beide Kamers, tijde
 &emsp;In elke stand van het onderzoek kan het betrokken lid van een van beide Kamers, tijdens de zitting en in strafzaken, aan de Kamer waarvan hij deel uit- maakt de schorsing van de vervolging vragen. Deze Kamer dient hiertoe met een meerderheid van twee derden van de uitgebrachte stemmen te beslissen.<br/>
 &emsp;De hechtenis van een lid van een van beide Kamers of zijn vervolging voor een hof of een rechtbank wordt tijdens de zitting geschorst indien de Kamer waarvan het lid deel uitmaakt, het vordert.
 
-`Art. 60`
+<span class="code"> Art. 60 </span>
 
 Elke Kamer bepaalt, in haar reglement, de wijze waarop zij haar bevoegdheden uitoefent.
 
 ###### <span class="sections"> AFDELING I <br> DE KAMER VAN VOLKSVERTEGENWOORDIGERS</span>
 
-`Art. 61`
+<span class="code"> Art. 61 </span>
 
 De leden van de Kamer van volksvertegenwoordigers worden rechtstreeks gekozen door de burgers die volle achttien jaar oud zijn en die niet verkeren in een der gevallen van uitsluiting bij de wet bepaald.<br/>
 &emsp;Ieder kiezer heeft recht op slechts één stem.
 
-`Art. 62`
+<span class="code"> Art. 62 </span>
 
 De samenstelling van de kiescolleges wordt door de wet geregeld.<br/>
 &emsp;De verkiezingen geschieden volgens het stelsel van evenredige vertegenwoordiging dat door de wet wordt vastgesteld.<br/>
 &emsp;De stemming is verplicht en geheim. Zij heeft plaats in de gemeente, behoudens de bij de wet te stellen uitzonderingen.
 
-`Art. 63`
+<span class="code"> Art. 63 </span>
 
 § 1. De Kamer van volksvertegenwoordigers telt honderdvijftig leden.
 
@@ -454,7 +454,7 @@ De samenstelling van de kiescolleges wordt door de wet geregeld.<br/>
 &emsp;Teneinde de gewettigde belangen van de Nederlandstaligen en de Franstaligen in de vroegere provincie Brabant te vrijwaren, voorziet de wet echter in bijzondere modaliteiten.<br/>
 &emsp;Aan de regels die deze bijzondere modaliteiten vaststellen, kan geen wijziging worden aangebracht dan bij een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid.
 
-`Art. 64`
+<span class="code"> Art. 64 </span>
 
 <p class="no-bottom-margin"> Om verkiesbaar te zijn moet men: </p>
 
@@ -469,7 +469,7 @@ Geen andere voorwaarde tot verkiesbaarheid kan worden vereist.
 
 Het eerste lid, 3°, treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag moet men, onverminderd artikel 64, eerste lid, 1°, 2° en 4°, de volle leeftijd van eenentwintig jaar hebben bereikt.
 
-`Art. 65`
+<span class="code"> Art. 65 </span>
 
 De leden van de Kamer van volksvertegenwoordigers worden gekozen voor vijf jaar.<br/>
 &emsp;De Kamer wordt om de vijf jaar geheel vernieuwd.<br/>
@@ -480,7 +480,7 @@ De leden van de Kamer van volksvertegenwoordigers worden gekozen voor vijf jaar.
 Een wet, aangenomen met de meerderheid bepaald in artikel 4, laatste lid, bepaalt na de verkiezingen voor het Europese Parlement van 2014 de datum waarop het derde lid in werking treedt. Die datum stemt overeen met de datum van inwerkingtreding van artikel 46, zesde lid, en artikel 118, § 2, vierde lid.<br/>
 &emsp;Federale wetgevende verkiezingen zullen in elk geval op dezelfde dag plaatsvinden als de eerste verkiezingen voor het Europese Parlement die volgen op de bekendmaking van deze herziening in het _Belgisch Staatsblad_.
 
-`Art. 66`
+<span class="code"> Art. 66 </span>
 
 Ieder lid van de Kamer van volksvertegenwoordigers geniet een jaarlijkse vergoeding van twaalfduizend frank.<br/>
 &emsp;Binnen de grenzen van de Staat hebben de leden van de Kamer van volksvertegenwoordigers vrij verkeer op alle verkeerswegen door de openbare overheden geëxploiteerd of in concessie gegeven.<br/>
@@ -489,7 +489,7 @@ Ieder lid van de Kamer van volksvertegenwoordigers geniet een jaarlijkse vergoed
 
 ###### <span class="sections"> AFDELING II <br/> DE SENAAT</span>
 
-`Art. 67`
+<span class="code"> Art. 67 </span>
 
 <p class="no-bottom-margin"> § 1. De Senaat telt zestig senatoren, van wie: </p>
 
@@ -527,7 +527,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op algeh
 § 2. Ten minste een van de senatoren bedoeld in § 1, 1°, 3° en 6°, heeft op de dag van zijn verkiezing zijn woonplaats in het tweetalige gebied Brussel-Hoofdstad.<br/>
 &emsp;Ten minste zes van de senatoren bedoeld in § 1, 2°, 4° en 7°, hebben op de dag van hun verkiezing hun woonplaats in het tweetalige gebied Brussel-Hoofdstad. Indien niet ten minste vier van de senatoren bedoeld in § 1, 2°, op de dag van hun verkiezing hun woonplaats hebben in het tweetalige gebied Brussel-Hoofdstad, moeten ten minste twee van de senatoren bedoeld in § 1, 4°, op de dag van hun verkiezing hun woonplaats hebben in het tweetalige gebied Brussel-Hoofdstad.".
 
-`Art. 68`
+<span class="code"> Art. 68 </span>
 
 § 1. De Senaatszetels bedoeld in artikel 67, § 1, 1°, worden verdeeld onder de lijsten, volgens het door de wet bepaalde stelsel van evenredige vertegen- woordiging, op grond van de opgetelde stemcijfers van de lijsten, behaald in de verschillende kieskringen bij de verkiezingen voor het Vlaams Parlement, overeenkomstig de bij de wet bepaalde regels.<br/>
 &emsp;De lijsten, waarvan de stemcijfers worden opgeteld krachtens het eerste lid, mogen enkel deelnemen aan de zetelverdeling voor de Senaat bedoeld in artikel 67, § 1, 1°, indien zij ten minste een zetel in het Vlaams Parlement hebben behaald. <br/>
@@ -555,7 +555,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 &emsp;De senator bedoeld in artikel 67, § 1, 5°, wordt aangewezen door het Parlement van de Duitstalige Gemeenschap bij volstrekte meerderheid van de uitgebrachte stemmen.<br/>
 &emsp;De wet regelt de aanwijzing van de senatoren bedoeld in artikel 67, § 1, 6° en 7°.".
 
-`Art. 69`
+<span class="code"> Art. 69 </span>
 
 <p class="no-bottom-margin">Om tot senator aangewezen te kunnen worden, moet men:</p>
 
@@ -577,7 +577,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 4. zijn woonplaats hebben in België."
    <br/>
 
-`Art. 70`
+<span class="code"> Art. 70 </span>
 
 Het mandaat van de senatoren bedoeld in artikel 67, § 1, 1° tot 5°, vangt aan op de dag van hun eedaflegging in de Senaat en eindigt, na de algehele vernieuwing van het Parlement dat hen heeft aangewezen, op de dag van de opening van de eerste zitting ervan.<br/>
 &emsp;Het mandaat van de senatoren bedoeld in artikel 67, § 1, 6° en 7°, vangt aan op de dag van hun eedaflegging in de Senaat en eindigt op de dag van de opening van de eerste zitting van de Kamer van volksvertegenwoordigers na de algehele vernieuwing ervan.
@@ -589,7 +589,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 "De senatoren bedoeld in artikel 67, § 1, 1° en 2°, worden gekozen voor vier jaar. De senatoren bedoeld in artikel 67, § 1, 6° en 7°, worden aangewezen voor vier jaar.<br/>
 &emsp;In elk geval wordt de Senaat algeheel vernieuwd bij de verkiezingen voor de Gemeenschaps- en Gewestparlementen in 2014.".
 
-`Art. 71`
+<span class="code"> Art. 71 </span>
 
 De Senatoren genieten geen wedde.<br/>
 &emsp;Zij hebben evenwel recht op vergoeding van hun onkosten.<br/>
@@ -603,17 +603,17 @@ De Senatoren genieten geen wedde.<br/>
 De invoeging van het derde tot en met het vijfde lid van dit artikel treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014.<br/>
 &emsp;Tot die dag hebben de senatoren recht op een vergoeding van vierduizend frank per jaar.
 
-`Art. 72`
+<span class="code"> Art. 72 </span>
 
 [opgeheven]
 
-`Art. 73`
+<span class="code"> Art. 73 </span>
 
 Elke vergadering van de Senaat die mocht worden gehouden buiten de zitting van de Kamer van volksvertegenwoordigers, is van rechtswege nietig.
 
 ###### <span class="chapters"> HOOFDSTUK II <br/> DE FEDERALE WETGEVENDE MACHT</span>
 
-`Art. 74`
+<span class="code"> Art. 74 </span>
 
 In afwijking van artikel 36 wordt de federale wetgevende macht gezamenlijk uitgeoefend door de Koning en de Kamer van volksvertegenwoordigers voor de andere aangelegenheden dan die bedoeld in de artikelen 77 en 78.
 
@@ -629,7 +629,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 4. de vaststelling van het legercontingent."
    <br/>
 
-`Art. 75`
+<span class="code"> Art. 75 </span>
 
 Het recht van initiatief behoort aan elke tak van de federale wetgevende macht. Het initiatiefrecht van de Senaat is evenwel beperkt tot de aangelegenheden bedoeld in artikel 77.<br/>
 &emsp;Voor de aangelegenheden bedoeld in artikel 78 worden de wetsontwerpen die aan de Kamers op initiatief van de Koning worden voorgelegd, ingediend in de Kamer van volksvertegenwoordigers en vervolgens overgezonden aan de Senaat.
@@ -642,7 +642,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 &emsp;Behalve voor de aangelegenheden bedoeld in artikel 77 worden de wetsontwerpen voorgelegd aan de Kamers op initiatief van de Koning, ingediend in de Kamer van volksvertegenwoordigers en vervolgens overgezonden aan de Senaat.<br/>
 &emsp;De wetsontwerpen houdende instemming met verdragen voorgelegd aan de Kamers op initiatief van de Koning, worden ingediend in de Senaat en vervolgens overgezonden aan de Kamer van volksvertegenwoordigers.".
 
-`Art. 76`
+<span class="code"> Art. 76 </span>
 
 Een wetsontwerp kan door een Kamer eerst worden aangenomen nadat daarover artikelsgewijs is gestemd.<br/>
 &emsp;De Kamers hebben het recht de artikelen en de voorgestelde amendementen te wijzigen en te splitsen.<br/>
@@ -652,7 +652,7 @@ Een wetsontwerp kan door een Kamer eerst worden aangenomen nadat daarover artike
 
 Het derde lid treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014.
 
-`Art. 77`
+<span class="code"> Art. 77 </span>
 
 <p class="no-bottom-margin">De Kamer van volksvertegenwoordigers en de Senaat zijn gelijkelijk bevoegd voor:</p>
 
@@ -684,7 +684,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 
 Een wet aangenomen met de meerderheid bepaald in artikel 4, laatste lid, kan andere wetten aanduiden waarvoor de Kamer van volksvertegenwoordigers en de Senaat gelijkelijk bevoegd zijn.".
 
-`Art. 78`
+<span class="code"> Art. 78 </span>
 
 <p class="no-bottom-margin">§ 1. Onder voorbehoud van artikel 77, wordt het wetsontwerp dat door de Kamer van volksvertegenwoordigers is aangenomen in de hierna vermelde aangelegenheden, overgezonden aan de Senaat:</p>
 
@@ -720,19 +720,19 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 Indien de Senaat zich niet binnen de voorgeschreven termijn heeft uitgesproken of indien hij de Kamer van volksvertegenwoordigers in kennis heeft gesteld van zijn beslissing om het wetsontwerp niet te amenderen, zendt de Kamer van volksvertegenwoordigers het ontwerp over aan de Koning.<br/>
 &emsp;Indien het ontwerp is geamendeerd, zendt de Senaat het over aan de Kamer van volksvertegenwoordigers, die een definitieve beslissing neemt door alle of sommige van de door de Senaat aangenomen amendementen hetzij aan te nemen, hetzij te verwerpen.".
 
-`Art. 79`
+<span class="code"> Art. 79 </span>
 
 [opgeheven]
 
-`Art. 80`
+<span class="code"> Art. 80 </span>
 
 [opgeheven]
 
-`Art. 81`
+<span class="code"> Art. 81 </span>
 
 [opgeheven]
 
-`Art. 82`
+<span class="code"> Art. 82 </span>
 
 Een parlementaire overlegcommissie, paritair samengesteld uit leden van de Kamer van volksvertegenwoordigers en van de Senaat, regelt de bevoegdheidsconflicten tussen de twee Kamers en kan, in onderlinge overeenstemming, te allen tijde de in artikel 78 voorgeschreven termijn van onderzoek verlengen.<br/>
 &emsp;Is er geen meerderheid in de twee samenstellende delen van de commissie, dan beslist deze bij meerderheid van twee derden van haar leden. <br/>
@@ -746,11 +746,11 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 &emsp;Is er geen meerderheid in de twee samenstellende delen van de commissie, dan beslist deze bij meerderheid van twee derden van haar leden.<br/>
 &emsp;Een wet bepaalt de samenstelling en de werkwijze van de commissie, alsmede de berekeningswijze van de in de artikelen 78 tot 81 gestelde termijnen.".
 
-`Art. 83`
+<span class="code"> Art. 83 </span>
 
 Elk wetsvoorstel en elk wetsontwerp vermeldt of het een aangelegenheid regelt bedoeld in artikel 74, in artikel 77 of in artikel 78.
 
-`Art. 84`
+<span class="code"> Art. 84 </span>
 
 Alleen de wet kan een authentieke uitlegging van de wetten geven.
 
@@ -758,79 +758,79 @@ Alleen de wet kan een authentieke uitlegging van de wetten geven.
 
 ###### <span class="sections"> AFDELING I <br/> DE KONING</span>
 
-`Art. 85`
+<span class="code"> Art. 85 </span>
 
 De grondwettelijke macht van de Koning gaat bij erfopvolging over op de natuurlijke en wettige nakomelingschap, in de rechte lijn, van Z.M. Leopold, Joris, Christiaan, Frederik van Saksen-Coburg en volgens eerstgeboorterecht.<br/>
 &emsp;De in het eerste lid bedoelde nakomeling die huwt zonder toestemming van de Koning of van hen die, bij gebreke van de Koning, zijn macht uitoefenen in de bij de Grondwet bepaalde gevallen, verliest zijn recht op de kroon.<br/>
 &emsp;Hij kan echter in zijn recht worden hersteld door de Koning of door hen die, bij gebreke van de Koning, zijn macht uitoefenen in de bij de Grondwet bepaalde gevallen, doch alleen met instemming van beide Kamers.
 
-`Art. 86`
+<span class="code"> Art. 86 </span>
 
 Bij gebreke van nakomelingschap van Z.M. Leopold, Joris, Christiaan, Frederik van Saksen-Coburg, kan de Koning zijn opvolger benoemen, mits de Kamers daarmee instemmen op de wijze als in artikel 87 is voorgeschreven.<br/>
 &emsp;Indien geen opvolger op deze wijze is benoemd, is de troon onbezet.
 
-`Art. 87`
+<span class="code"> Art. 87 </span>
 
 De Koning kan niet tegelijk hoofd van een andere Staat zijn zonder instemming van beide Kamers.<br/>
 &emsp;Geen van beide Kamers kan hierover beraadslagen, wanneer niet ten minste twee derden van haar leden aanwezig zijn, en het besluit is alleen dan aangenomen, indien het ten minste twee derden van de uitgebrachte stemmen heeft verkregen.
 
-`Art. 88`
+<span class="code"> Art. 88 </span>
 
 De persoon des Konings is onschendbaar; zijn ministers zijn verantwoordelijk.
 
-`Art. 89`
+<span class="code"> Art. 89 </span>
 
 De civiele lijst wordt door de wet vastgesteld voor de duur van de regering van elke Koning.
 
-`Art. 90`
+<span class="code"> Art. 90 </span>
 
 Bij overlijden van de Koning komen de Kamers zonder bijeenroeping samen, uiterlijk de tiende dag na die van het overlijden. Indien de Kamers tevoren ontbonden zijn en het ontbindingsbesluit bijeenroeping bevat tegen een later tijdstip dan de tiende dag, treden de oude Kamers opnieuw in functie totdat de Kamers die hun plaats moeten innemen, bijeenkomen.<br/>
 &emsp;Te rekenen van het overlijden van de Koning en tot de eedaflegging van zijn troonopvolger of van de Regent, wordt de grondwettelijke macht van de Koning in naam van het Belgische volk uitgeoefend door de in raad verenigde ministers en onder hun verantwoordelijkheid.
 
-`Art. 91`
+<span class="code"> Art. 91 </span>
 
 De Koning is meerderjarig op de volle leeftijd van achttien jaar.<br/>
 &emsp;De Koning neemt eerst bezit van de troon nadat hij, in een vergadering der verenigde Kamers, de volgende eed plechtig heeft afgelegd:<br/>
 &emsp;“Ik zweer dat ik de Grondwet en de wetten van het Belgische volk zal naleven, ’s Lands onafhankelijkheid handhaven en het grondgebied ongeschonden bewaren.”.<br/>
 
-`Art. 92`
+<span class="code"> Art. 92 </span>
 
 Indien, bij overlijden van de Koning, zijn opvolger minderjarig is, komen beide Kamers in verenigde vergadering bijeen, ten einde in het regentschap en in de voogdij te voorzien.
 
-`Art. 93`
+<span class="code"> Art. 93 </span>
 
 Indien de Koning in de onmogelijkheid verkeert te regeren, roepen de ministers, na deze onmogelijkheid te hebben laten vaststellen, de Kamers dadelijk bijeen. Door de verenigde Kamers wordt in de voogdij en in het regentschap voorzien.
 
-`Art. 94`
+<span class="code"> Art. 94 </span>
 
 Het regentschap mag slechts aan één persoon worden opgedragen.<br/>
 &emsp;De Regent treedt eerst in functie nadat hij de bij artikel 91 voorgeschreven eed heeft afgelegd.
 
-`Art. 95`
+<span class="code"> Art. 95 </span>
 
 Ingeval de troon onbezet is, voorzien de Kamers, samen beraadslagend, voorlopig in het regentschap totdat de geheel vernieuwde Kamers bijeenkomen; deze bijeenkomst heeft plaats uiterlijk binnen twee maanden. De nieuwe Kamers, samen beraadslagend, voorzien voorgoed in het bezetten van de troon.
 
 ###### <span class="sections"> AFDELING II <br/> DE FEDERALE REGERING</span>
 
-`Art. 96`
+<span class="code"> Art. 96 </span>
 
 De Koning benoemt en ontslaat zijn ministers.<br/>
 &emsp;De federale Regering biedt haar ontslag aan de Koning aan wanneer de Kamer van volksvertegenwoordigers, bij volstrekte meerderheid van haar leden, een motie van wantrouwen aanneemt die een opvolger voor de eerste minister voor benoeming aan de Koning voordraagt, of een opvolger voor de eerste minister voor benoeming aan de Koning voordraagt binnen drie dagen na het verwerpen van een motie van vertrouwen. De Koning benoemt de voorgedragen opvolger tot eerste minister, die in functie treedt op het ogenblik van de eedaflegging van de nieuwe federale Regering.
 
-`Art. 97`
+<span class="code"> Art. 97 </span>
 
 Alleen Belgen kunnen minister zijn.
 
-`Art. 98`
+<span class="code"> Art. 98 </span>
 
 Geen lid van de koninklijke familie kan minister zijn.
 
-`Art. 99`
+<span class="code"> Art. 99 </span>
 
 De Ministerraad telt ten hoogste vijftien leden.<br/>
 &emsp;De Eerste Minister eventueel uitgezonderd, telt de Ministerraad evenveel Nederlandstalige als Franstalige ministers.
 
-`Art. 100`
+<span class="code"> Art. 100 </span>
 
 De ministers hebben zitting in elke Kamer en het woord moet hun worden verleend wanneer zij het vragen.<br/>
 &emsp;De Kamer van volksvertegenwoordigers kan de aanwezigheid van de ministers vorderen. De Senaat kan hun aanwezigheid vorderen in het kader van de aangelegenheden bedoeld in de artikelen 77 of 78. Voor de andere aangelegenheden kan hij hun aanwezigheid vragen.
@@ -841,16 +841,16 @@ De tweede zin van het tweede lid treedt in werking op de dag van de verkiezingen
 
 "De Senaat kan hun aanwezigheid vorderen voor de bespreking van een wetsontwerp of wetsvoorstel bedoeld in artikel 77, of van een wetsontwerp bedoeld in artikel 78, of voor de uitoefening van zijn recht van onderzoek bedoeld in artikel 56.".
 
-`Art. 101`
+<span class="code"> Art. 101 </span>
 
 De ministers zijn verantwoordelijk tegenover de Kamer van volksvertegenwoordigers.<br/>
 &emsp;Geen minister kan worden vervolgd of aan enig onderzoek onderworpen naar aanleiding van een mening in de uitoefening van zijn ambt uitgebracht.
 
-`Art. 102`
+<span class="code"> Art. 102 </span>
 
 In geen geval kan een mondeling of schriftelijk bevel van de Koning een minister van zijn verantwoordelijkheid ontheffen.
 
-`Art. 103`
+<span class="code"> Art. 103 </span>
 
 Ministers worden voor misdrijven die zij in de uitoefening van hun ambt mochten hebben gepleegd, uitsluitend berecht door het hof van beroep. Hetzelfde geldt voor misdrijven die ministers buiten de uitoefening van hun ambt mochten hebben gepleegd en waarvoor zij worden berecht tijdens hun ambtstermijn. De artikelen 59 en 120 zijn in voorkomend geval niet van toepassing.<br/>
 &emsp;De wet bepaalt op welke wijze tegen hen in rechte wordt opgetreden, zowel bij de vervolging als bij de berechting.<br/>
@@ -866,7 +866,7 @@ Ministers worden voor misdrijven die zij in de uitoefening van hun ambt mochten 
 Dit artikel is niet van toepassing op de feiten waarvoor daden van opsporing werden verricht en op vervolgingen ingesteld vóór de inwerkingtreding van de wet tot uitvoering ervan.<br/>
 &emsp;Hiervoor geldt de volgende regeling: de Kamer van volksvertegenwoordigers heeft het recht ministers in beschuldiging te stellen en hen te brengen voor het Hof van Cassatie. Dit alleen is bevoegd om hen te berechten, in verenigde kamers, in de gevallen en met toepassing van de straffen die in de strafwetten zijn bepaald. De wet van 17 december 1996 houdende tijdelijke en gedeeltelijke uitvoering van artikel 103 van de Grondwet blijft terzake gelden.
 
-`Art. 104`
+<span class="code"> Art. 104 </span>
 
 De Koning benoemt en ontslaat de federale staatssecretarissen.<br/>
 &emsp;Zij zijn lid van de federale Regering. Zij maken geen deel uit van de Ministerraad. Zij worden toegevoegd aan een minister.<br/>
@@ -875,46 +875,46 @@ De Koning benoemt en ontslaat de federale staatssecretarissen.<br/>
 
 ###### <span class="sections"> AFDELING III </br> DE BEVOEGDHEDEN</span>
 
-`Art. 105`
+<span class="code"> Art. 105 </span>
 
 De Koning heeft geen andere macht dan die welke de Grondwet en de bijzondere wetten, krachtens de Grondwet zelf uitgevaardigd, hem uitdrukkelijk toekennen.
 
-`Art. 106`
+<span class="code"> Art. 106 </span>
 
 Geen akte van de Koning kan gevolg hebben, wanneer zij niet medeondertekend is door een minister, die daardoor alleen reeds, ervoor verantwoordelijk wordt.
 
-`Art. 107`
+<span class="code"> Art. 107 </span>
 
 De Koning verleent de graden in het leger.<br/>
 &emsp;Hij benoemt de ambtenaren bij het algemeen bestuur en bij de buitenlandse
 betrekkingen, behoudens de door de wetten gestelde uitzonderingen.<br/>
 &emsp;Andere ambtenaren benoemt hij alleen krachtens een uitdrukkelijke wetsbepaling.
 
-`Art. 108`
+<span class="code"> Art. 108 </span>
 
 De Koning maakt de verordeningen en neemt de besluiten die voor de uitvoering van de wetten nodig zijn, zonder ooit de wetten zelf te mogen schorsen of vrijstelling van hun uitvoering te mogen verlenen.
 
-`Art. 109`
+<span class="code"> Art. 109 </span>
 
 De Koning bekrachtigt de wetten en kondigt ze af.
 
-`Art. 110`
+<span class="code"> Art. 110 </span>
 
 De Koning heeft het recht de door de rechters uitgesproken straffen kwijt te schelden of te verminderen, behoudens hetgeen ten aanzien van de ministers en van de leden van de Gemeenschaps- en Gewestregeringen is bepaald.
 
-`Art. 111`
+<span class="code"> Art. 111 </span>
 
 De Koning kan aan een door het Hof van Cassatie veroordeeld minister of lid van een Gemeenschaps- of Gewestregering geen genade verlenen dan op verzoek van de Kamer van volksvertegenwoordigers of het betrokken Parlement.
 
-`Art. 112`
+<span class="code"> Art. 112 </span>
 
 De Koning heeft het recht munt te slaan, ter uitvoering van de wet.
 
-`Art. 113`
+<span class="code"> Art. 113 </span>
 
 De Koning heeft het recht adeldom te verlenen, zonder ooit enig voorrecht daaraan te mogen verbinden.
 
-`Art. 114`
+<span class="code"> Art. 114 </span>
 
 De Koning verleent de militaire orden, met inachtneming van wat de wet daaromtrent voorschrijft.
 
@@ -924,28 +924,28 @@ De Koning verleent de militaire orden, met inachtneming van wat de wet daaromtre
 
 ###### <span class="subsections"> ONDERAFDELING I </br> DE GEMEENSCHAPS- EN GEWESTPARLEMENTEN</span>
 
-`Art. 115`
+<span class="code"> Art. 115 </span>
 
 § 1. Er is een Parlement van de Vlaamse Gemeenschap, Vlaams Parlement genoemd, en een Parlement van de Franse Gemeenschap, waarvan de samenstelling en de werking worden bepaald door de wet, aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid.<br/>
 &emsp;Er is een Parlement van de Duitstalige Gemeenschap, waarvan de samenstelling en de werking door de wet worden bepaald.
 
 § 2. Onverminderd artikel 137, omvatten de gewestelijke organen bedoeld in artikel 39, voor elk gewest, een Parlement.
 
-`Art. 116`
+<span class="code"> Art. 116 </span>
 
 § 1. De Gemeenschaps- en Gewestparlementen zijn samengesteld uit verkozen mandatarissen.
 
 § 2. Elk Gemeenschapsparlement is samengesteld uit leden rechtstreeks gekozen tot lid van het betrokken Gemeenschapsparlement of tot lid van een Gewestparlement.<br/>
 &emsp;Behoudens in geval van toepassing van artikel 137, is elk Gewestparlement samengesteld uit leden rechtstreeks gekozen tot lid van het betrokken Gewestparlement of tot lid van een Gemeenschapsparlement.
 
-`Art. 117`
+<span class="code"> Art. 117 </span>
 
 De leden van de Gemeenschaps- en Gewestparlementen worden gekozen voor vijf jaar. De Gemeenschaps- en Gewestparlementen worden om de vijf
 jaar geheel vernieuwd.<br/>
 &emsp;De verkiezingen voor de Gemeenschaps- en Gewestparlementen vinden plaats op dezelfde dag die samenvalt met die van de verkiezingen voor het Europese Parlement.<br/>
 &emsp;In uitvoering van een wet bedoeld in artikel 118, § 2, vierde lid, kan een decreet of een in artikel 134 bedoelde regel, aangenomen overeenkomstig artikel 118, § 2, vierde lid, afwijken van het eerste en het tweede lid.
 
-`Art. 118`
+<span class="code"> Art. 118 </span>
 
 § 1. De wet regelt de in artikel 116, § 2, bedoelde verkiezingen, evenals de samenstelling en de werking van de Gemeenschaps- en Gewestparlementen. Behoudens voor het Parlement van de Duitstalige Gemeenschap, wordt deze wet aangenomen met de meerderheid bepaald in artikel 4, laatste lid.
 
@@ -959,11 +959,11 @@ betreft.<br/>
 
 Een wet, aangenomen met de meerderheid bepaald in artikel 4, laatste lid, bepaalt, na de verkiezingen voor het Europese Parlement van 2014, de datum van inwerkingtreding van paragraaf 2, vierde lid. Die datum stemt overeen met de datum van inwerkingtreding van artikel 46, zesde lid, en artikel 65, derde lid.
 
-`Art. 118 bis`
+<span class="code"> Art. 118 bis </span>
 
 Binnen de grenzen van de Staat hebben de leden van de Parlementen van de in de artikelen 2 en 3 bedoelde gemeenschappen en gewesten vrij verkeer op alle verkeerswegen door de openbare overheden geëxploiteerd of in concessie gegeven.
 
-`Art. 119`
+<span class="code"> Art. 119 </span>
 
 Een lid van een Gemeenschaps- of Gewestparlement kan niet tegelijk lid zijn van de Kamer van volksvertegenwoordigers. Het kan evenmin tegelijk senator zijn als bedoeld in artikel 67, § 1, 6° en 7°.
 
@@ -973,24 +973,24 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 
 "Een lid van een Gemeenschaps- of Gewestparlement kan niet tegelijk lid zijn van de Kamer van volksvertegenwoordigers. Het kan evenmin tegelijk senator zijn als bedoeld in artikel 67, § 1, 1°, 2°, 6° en 7°.".
 
-`Art. 120`
+<span class="code"> Art. 120 </span>
 
 Ieder lid van een Gemeenschaps- of Gewestparlement geniet de onschendbaarheid bepaald in de artikelen 58 en 59.
 
 ###### <span class="subsections"> ONDERAFDELING II </br> DE GEMEENSCHAPS- EN GEWESTREGERINGEN</span>
 
-`Art. 121`
+<span class="code"> Art. 121 </span>
 
 § 1. Er is een Regering van de Vlaamse Gemeenschap en een Regering van de Franse Gemeenschap, waarvan de samenstelling en de werking worden bepaald door de wet, aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid.<br/>
 &emsp;Er is een Regering van de Duitstalige Gemeenschap, waarvan de samenstelling en de werking door de wet worden bepaald.
 
 § 2. Onverminderd artikel 137, omvatten de gewestelijke organen bedoeld in artikel 39, voor elk gewest, een Regering.
 
-`Art. 122`
+<span class="code"> Art. 122 </span>
 
 De leden van elke Gemeenschaps- of Gewestregering worden gekozen door hun Parlement.
 
-`Art. 123`
+<span class="code"> Art. 123 </span>
 
 § 1. De wet regelt de samenstelling en de werking van de Gemeenschaps- en Gewestregeringen. Behoudens voor de Regering van de Duitstalige Gemeenschap, wordt deze wet aangenomen met de meerderheid bepaald in artikel 4, laatste lid.
 
@@ -999,11 +999,11 @@ De leden van elke Gemeenschaps- of Gewestregering worden gekozen door hun Parlem
 betreft.<br/>
 &emsp;Een wet duidt de aangelegenheden aan betreffende de samenstelling en de werking van de regering van de Duitstalige Gemeenschap, welke door zijn Parlement bij decreet worden geregeld. Dat decreet moet worden aangenomen met een meerderheid van twee derden van de uitgebrachte stemmen, op voorwaarde dat de meerderheid van de leden van het Parlement aanwezig is.
 
-`Art. 124`
+<span class="code"> Art. 124 </span>
 
 Geen lid van een Gemeenschaps- of Gewestregering kan worden vervolgd of aan enig onderzoek onderworpen naar aanleiding van een mening of een stem in de uitoefening van zijn ambt uitgebracht.
 
-`Art. 125`
+<span class="code"> Art. 125 </span>
 
 De leden van een Gemeenschaps- of Gewestregering worden voor misdrijven die zij in de uitoefening van hun ambt mochten hebben gepleegd, uitsluitend berecht door het hof van beroep. Hetzelfde geldt voor misdrijven die de leden van een Gemeenschaps- of Gewestregering buiten de uitoefening van hun ambt mochten hebben gepleegd en waarvoor zij worden berecht tijdens hun ambtstermijn. De artikelen 120 en 59 zijn in voorkomend geval niet van toepassing.<br/>
 &emsp;De wet bepaalt op welke wijze tegen hen in rechte wordt opgetreden, zowel bij de vervolging als bij de berechting.<br/>
@@ -1020,7 +1020,7 @@ De leden van een Gemeenschaps- of Gewestregering worden voor misdrijven die zij 
 Dit artikel is niet van toepassing op de feiten waarvoor daden van opsporing werden verricht en op vervolgingen ingesteld vóór de inwerkingtreding van de wet tot uitvoering ervan.<br/>
 &emsp;Hiervoor geldt de volgende regeling: de Gemeenschaps- en de Gewestparlementen hebben het recht de leden van hun regering in beschuldiging te stellen en hen te brengen voor het Hof van Cassatie. Dit alleen is bevoegd om hen te berechten, in verenigde kamers, in de gevallen en met toepassing van de straffen die in de strafwetten zijn bepaald. De bijzondere wet van 28 februari 1997 houdende tijdelijke en gedeeltelijke uitvoering van artikel 125 van de Grondwet blijft terzake gelden.
 
-`Art. 126`
+<span class="code"> Art. 126 </span>
 
 De grondwettelijke bepalingen betreffende de leden van de Gemeenschaps- en Gewestregeringen, alsmede de uitvoeringswetten bedoeld in artikel 125, laatste lid, zijn mede van toepassing op de gewestelijke staatssecretarissen.
 
@@ -1028,7 +1028,7 @@ De grondwettelijke bepalingen betreffende de leden van de Gemeenschaps- en Gewes
 
 ###### <span class="subsections"> ONDERAFDELING I </br> DE GEMEENSCHAPSBEVOEGDHEDEN</span>
 
-`Art. 127`
+<span class="code"> Art. 127 </span>
 
 <p class="no-bottom-margin">§ 1. De Parlementen van de Vlaamse en de Franse Gemeenschap regelen, elk voor zich, bij decreet:</p>
 
@@ -1043,14 +1043,14 @@ Een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid, stelt
 
 § 2. Deze decreten hebben kracht van wet respectievelijk in het Nederlandse taalgebied en in het Franse taalgebied, alsmede ten aanzien van de instellingen gevestigd in het tweetalige gebied Brussel-Hoofdstad die, wegens hun activiteiten, moeten worden beschouwd uitsluitend te behoren tot de ene of de andere gemeenschap.
 
-`Art. 128`
+<span class="code"> Art. 128 </span>
 
 § 1. De Parlementen van de Vlaamse en de Franse Gemeenschap regelen, elk voor zich, bij decreet, de persoonsgebonden aangelegenheden, alsook, voor deze aangelegenheden, de samenwerking tussen de gemeenschappen en de internationale samenwerking, met inbegrip van het sluiten van verdragen.<br/>
 &emsp;Een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid, stelt deze persoonsgebonden aangelegenheden vast, alsook de vormen van samenwerking en de nadere regelen voor het sluiten van verdragen.
 
 § 2. Deze decreten hebben kracht van wet respectievelijk in het Nederlandse taalgebied en in het Franse taalgebied, alsmede, tenzij wanneer een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid er anders over beschikt, ten aanzien van de instellingen gevestigd in het tweetalige gebied Brussel-Hoofdstad die, wegens hun organisatie, moeten worden beschouwd uitsluitend te behoren tot de ene of de andere gemeenschap.
 
-`Art. 129`
+<span class="code"> Art. 129 </span>
 
 <p class="no-bottom-margin"> §1. De Parlementen van de Vlaamse en de Franse Gemeenschap regelen, bij uitsluiting van de federale wetgever, elk voor zich, bij decreet, het gebruik van de talen voor:</p>
 
@@ -1066,7 +1066,7 @@ Een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid, stelt
 - de door de wet aangewezen federale en internationale instellingen waarvan de werking gemeen is aan meer dan één gemeenschap.
   <br/>
 
-`Art. 130`
+<span class="code"> Art. 130 </span>
 
 <p class="no-bottom-margin">§ 1. Het Parlement van de Duitstalige Gemeenschap regelt bij decreet:</p>
 
@@ -1080,56 +1080,56 @@ De wet stelt de in 1° en 2° vermelde culturele en persoonsgebonden aangelegenh
 
 § 2. Deze decreten hebben kracht van wet in het Duitse taalgebied.
 
-`Art. 131`
+<span class="code"> Art. 131 </span>
 
 De wet stelt de regelen vast ter voorkoming van elke discriminatie om ideologische en filosofische redenen.
 
-`Art. 132`
+<span class="code"> Art. 132 </span>
 
 Het recht van initiatief berust bij de Gemeenschapsregering en bij de leden van het Gemeenschapsparlement.
 
-`Art. 133`
+<span class="code"> Art. 133 </span>
 
 Alleen het decreet kan een authentieke uitlegging van de decreten geven.
 
 ###### <span class="subsections"> ONDERAFDELING II </br> DE GEWESTBEVOEGDHEDEN</span>
 
-`Art. 134`
+<span class="code"> Art. 134 </span>
 
 De wetten ter uitvoering van artikel 39 bepalen de rechtskracht van de regelen die de organen, welke zij oprichten, uitvaardigen in de aangelegenheden, welke zij aanduiden.<br/>
 &emsp;Zij kunnen aan deze organen de bevoegdheid toekennen om decreten met kracht van wet uit te vaardigen op het gebied en op de wijze die zij bepalen.
 
 ###### <span class="subsections"> ONDERAFDELING III </br> BIJZONDERE BEPALINGEN</span>
 
-`Art. 135`
+<span class="code"> Art. 135 </span>
 
 Een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid wijst de overheden aan die voor het tweetalige gebied Brussel-Hoofdstad de bevoegdheden uitoefenen die niet zijn toegewezen aan de gemeenschappen voor de aangelegenheden bedoeld in artikel 128, § 1.
 
-`Art. 135 bis`
+<span class="code"> Art. 135 bis </span>
 
 Een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid kan, voor het tweetalige gebied Brussel-Hoofdstad, aan het Brusselse Hoofdstedelijke Gewest bevoegdheden toewijzen die niet zijn toegewezen aan de gemeenschappen voor de aangelegenheden bedoeld in artikel 127, § 1, eerste lid, 1°, en, voor wat deze aangelegenheden betreft, 3°.
 
-`Art. 136`
+<span class="code"> Art. 136 </span>
 
 Er bestaan taalgroepen in het Parlement van het Brusselse Hoofdstedelijke Gewest, en Colleges, bevoegd voor de gemeenschapsaangelegenheden; hun samenstelling, werking, bevoegdheden en, onverminderd artikel 175, hun financiering worden geregeld door een wet, aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid.<br/>
 &emsp;De Colleges vormen samen het Verenigd College, dat fungeert als overleg- en coördinatieorgaan tussen de beide gemeenschappen.
 
-`Art. 137`
+<span class="code"> Art. 137 </span>
 
 Met het oog op de toepassing van artikel 39 kunnen het Parlement van de Vlaamse Gemeenschap en het Parlement van de Franse Gemeenschap en hun regeringen de bevoegdheden uitoefenen van respectievelijk het Vlaamse en het Waalse Gewest, onder de voorwaarden en op de wijze die de wet bepaalt. Deze wet moet worden aangenomen met de meerderheid bepaald in artikel 4, laatste lid.
 
-`Art. 138`
+<span class="code"> Art. 138 </span>
 
 Het Parlement van de Franse Gemeenschap enerzijds en het Parlement van het Waalse Gewest en de Franse taalgroep van het Parlement van het Brus- selse Hoofdstedelijke Gewest anderzijds kunnen in onderlinge overeenstemming en elk bij decreet beslissen dat het Parlement van het Waalse Gewest en zijn regering in het Franse taalgebied en de Franse taalgroep van het Parlement van het Brusselse Hoofdstedelijke Gewest en zijn College in het tweetalige gebied Brussel-Hoofdstad geheel of gedeeltelijk bevoegdheden van de Franse Gemeenschap uitoefenen.<br/>
 &emsp;Deze decreten worden aangenomen met een meerderheid van twee derden van de uitgebrachte stemmen in het Parlement van de Franse Gemeenschap en met volstrekte meerderheid van de uitgebrachte stemmen in het Parlement van het Waalse Gewest en in de Franse taalgroep van het Parlement van het Brusselse Hoofdstedelijke Gewest, op voorwaarde dat de meerderheid van de leden van het betrokken Parlement of de betrokken taalgroep aanwezig is. Zij kunnen de financiering van de bevoegdheden die zij aanduiden, regelen, alsook de overdracht van het personeel, de goederen, rechten en verplichtingen die erop betrekking hebben.<br/>
 &emsp;Deze bevoegdheden worden, naar gelang van het geval, uitgeoefend bij wege van decreten, besluiten of verordeningen.
 
-`Art. 139`
+<span class="code"> Art. 139 </span>
 
 Op voorstel van hun respectieve Regeringen kunnen het Parlement van de Duitstalige Gemeenschap en het Parlement van het Waalse Gewest in onderlinge overeenstemming en elk bij decreet beslissen dat het Parlement en de regering van de Duitstalige Gemeenschap in het Duitse taalgebied geheel of gedeeltelijk bevoegdheden van het Waalse Gewest uitoefenen.<br/>
 &emsp;Deze bevoegdheden worden, naar gelang van het geval, uitgeoefend bij wege van decreten, besluiten of verordeningen.
 
-`Art. 140`
+<span class="code"> Art. 140 </span>
 
 Het Parlement en de Regering van de Duitstalige Gemeenschap oefenen, bij wege van besluiten en verordeningen, elke andere bevoegdheid uit die de wet hun toekent.<br/>
 &emsp;Artikel 159 is van toepassing op deze besluiten en verordeningen.
@@ -1138,13 +1138,13 @@ Het Parlement en de Regering van de Duitstalige Gemeenschap oefenen, bij wege va
 
 ###### <span class="sections"> AFDELING I </br> DE VOORKOMING VAN DE BEVOEGDHEIDSCONFLICTEN </span>
 
-`Art. 141`
+<span class="code"> Art. 141 </span>
 
 De wet stelt de procedure in om de conflicten tussen de wet, het decreet en de in artikel 134 bedoelde regelen, alsook tussen de decreten onderling, en tussen de in artikel 134 bedoelde regelen onderling te voorkomen.
 
 ###### <span class="sections"> AFDELING II </br> HET GRONDWETTELIJK HOF</span>
 
-`Art. 142`
+<span class="code"> Art. 142 </span>
 
 <p class="no-bottom-margin">Er bestaat voor geheel België een Grondwettelijk Hof, waarvan de samenstelling, de bevoegdheid en de werking door de wet worden bepaald.</p>
 <p class="no-bottom-margin"> Dit Hof doet, bij wege van arrest, uitspraak over: </p>
@@ -1160,7 +1160,7 @@ De zaak kan bij het Hof aanhangig worden gemaakt door iedere bij wet aangewezen 
 
 ###### <span class="sections"> AFDELING III </br> DE VOORKOMING EN DE REGELING VAN DE BELANGENCONFLICTEN</span>
 
-`Art. 143`
+<span class="code"> Art. 143 </span>
 
 § 1. Met het oog op het vermijden van de belangenconflicten nemen de federale Staat, de gemeenschappen, de gewesten en de Gemeenschappelijke Gemeenschapscommissie, in de uitoefening van hun respectieve bevoegdheden, de federale loyauteit in acht.
 
@@ -1176,38 +1176,38 @@ De gewone wet van 9 augustus 1980 tot hervorming der instellingen blijft, wat de
 
 ###### <span class="chapters"> HOOFDSTUK VI </br> DE RECHTERLIJKE MACHT</span>
 
-`Art. 144`
+<span class="code"> Art. 144 </span>
 
 Geschillen over burgerlijke rechten behoren bij uitsluiting tot de bevoegdheid van de rechtbanken.<br/>
 &emsp;De wet kan echter, volgens de door haar bepaalde nadere regels, de Raad van State of de federale administratieve rechtscolleges machtigen om te beslissen over de burgerrechtelijke gevolgen van hun beslissingen.
 
-`Art. 145`
+<span class="code"> Art. 145 </span>
 
 Geschillen over politieke rechten behoren tot de bevoegdheid van de rechtbanken, behoudens de bij de wet gestelde uitzonderingen.
 
-`Art. 146`
+<span class="code"> Art. 146 </span>
 
 Geen rechtbank, geen met eigenlijke rechtspraak belast orgaan kan worden ingesteld dan krachtens een wet. Geen buitengewone rechtbanken of commissies kunnen, onder welke benaming ook, in het leven worden geroepen.
 
-`Art. 147`
+<span class="code"> Art. 147 </span>
 
 Er bestaat voor geheel België een Hof van Cassatie.<br/>
 &emsp;Dit Hof treedt niet in de beoordeling van de zaken zelf.
 
-`Art. 148`
+<span class="code"> Art. 148 </span>
 
 De terechtzittingen van de rechtbanken zijn openbaar, tenzij de openbaarheid gevaar oplevert voor de orde of de goede zeden; in dat geval wordt zulks door de rechtbank bij vonnis verklaard.<br/>
 &emsp;Inzake politieke misdrijven en drukpersmisdrijven kan het sluiten der deuren niet dan met algemene stemmen worden uitgesproken.
 
-`Art. 149`
+<span class="code"> Art. 149 </span>
 
 Elk vonnis is met redenen omkleed. Het wordt openbaar bekendgemaakt op de wijze bepaald door de wet. In strafzaken wordt het beschikkend gedeelte uitgesproken in openbare terechtzitting.
 
-`Art. 150`
+<span class="code"> Art. 150 </span>
 
 De jury wordt ingesteld voor alle criminele zaken, alsmede voor politieke misdrijven en drukpersmisdrijven, behoudens voor drukpersmisdrijven die door racisme of xenofobie ingegeven zijn.
 
-`Art. 151`
+<span class="code"> Art. 151 </span>
 
 § 1. De rechters zijn onafhankelijk in de uitoefening van hun rechtsprekende bevoegdheden. Het openbaar ministerie is onafhankelijk in de individuele opsporing en vervolging onverminderd het recht van de bevoegde minister om de vervolging te bevelen en om de bindende richtlijnen van het strafrechtelijk beleid, inclusief die van het opsporings- en vervolgingsbeleid, vast te leggen.<br/>
 &emsp;Via de in het eerste lid bedoelde minister beschikken de regeringen van de gemeenschappen en de gewesten, elk wat haar betreft, bovendien over het recht om de vervolging te bevelen in de aangelegenheden die tot hun bevoegdheden behoren. Een wet aangenomen met de in artikel 4, laatste lid, bepaalde
@@ -1260,24 +1260,24 @@ De bepalingen van de §§ 3 tot 6 treden in werking na de installatie van de Hog
 &emsp;Alle voordrachten worden openbaar gemaakt ten minste vijftien dagen voor de benoeming.<br/>
 &emsp;De hoven kiezen uit hun leden, hun voorzitters en ondervoorzitters.
 
-`Art. 152`
+<span class="code"> Art. 152 </span>
 
 De rechters worden voor het leven benoemd. Zij worden in ruste gesteld op de bij de wet bepaalde leeftijd en genieten het bij de wet bepaalde pensioen.<br/>
 &emsp;Geen rechter kan uit zijn ambt worden ontzet of worden geschorst dan door een vonnis.<br/>
 &emsp;De overplaatsing van een rechter kan niet geschieden dan door een nieuwe benoeming en met zijn toestemming.
 
-`Art. 153`
+<span class="code"> Art. 153 </span>
 
 De Koning benoemt en ontslaat de ambtenaren van het openbaar ministerie bij de hoven en rechtbanken.
 
-`Art. 154`
+<span class="code"> Art. 154 </span>
 
 De wedden van de leden der rechterlijke orde worden door de wet vastgesteld.
 
-`Art. 155`
+<span class="code"> Art. 155 </span>
 Geen rechter mag van een regering bezoldigde ambten aanvaarden, tenzij hij die onbezoldigd uitoefent en behoudens de gevallen van onverenigbaarheid bij de wet bepaald.
 
-`Art. 156`
+<span class="code"> Art. 156 </span>
 
 <p class="no-bottom-margin">Er zijn in België vijf hoven van beroep:</p>
 
@@ -1288,7 +1288,7 @@ Geen rechter mag van een regering bezoldigde ambten aanvaarden, tenzij hij die o
 5. dat van Bergen, waarvan het rechtsgebied de provincie Henegouwen omvat.
    <br/>
 
-`Art. 157`
+<span class="code"> Art. 157 </span>
 
 Er zijn militaire gerechten wanneer de staat van oorlog bepaald in artikel 167, § 1, tweede lid, is vastgesteld. De organisatie van de militaire gerechten, hun bevoegdheid, de rechten en verplichtingen van de leden van deze gerech- ten, alsmede de duur van hun ambt worden bij wet geregeld.<br/>
 &emsp;Er zijn rechtbanken van koophandel in de plaatsen die de wet aanwijst. Zij regelt hun organisatie, hun bevoegdheid, alsmede de wijze van benoeming en de duur van het ambt van hun leden.<br/>
@@ -1301,7 +1301,7 @@ Het eerste lid treedt in werking op de datum van opheffing van de wet van 15 jun
 &emsp;Tot dan blijft de hiernavolgende bepaling van toepassing:<br/>
 &emsp;De organisatie van de militaire rechtbanken, hun bevoegdheid, de rechten en de verplichtingen van de leden van deze rechtbanken, alsmede de duur van hun ambt wordt door bijzondere wetten geregeld.
 
-`Art. 157 bis`
+<span class="code"> Art. 157 bis </span>
 
 De essentiële elementen van de hervorming met betrekking tot het gebruik der talen in gerechtszaken in het gerechtelijk arrondissement Brussel, alsook de ermee overeenstemmende aspecten inzake het parket, de zetel en het rechtsgebied, kunnen niet worden gewijzigd dan bij een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid.
 
@@ -1309,17 +1309,17 @@ De essentiële elementen van de hervorming met betrekking tot het gebruik der ta
 
 De wet stelt de datum van inwerkingtreding van dit artikel vast. Deze datum stemt overeen met de datum van inwerkingtreding van de wet van 19 juli 2012 betreffende de hervorming van het gerechtelijk arrondissement Brussel.
 
-`Art. 158`
+<span class="code"> Art. 158 </span>
 
 Het Hof van Cassatie doet uitspraak over conflicten van attributie, op de wijze bij de wet geregeld.
 
-`Art. 159`
+<span class="code"> Art. 159 </span>
 
 De hoven en rechtbanken passen de algemene, provinciale en plaatselijke besluiten en verordeningen alleen toe in zoverre zij met de wetten overeenstemmen.
 
 ###### <span class="chapters"> HOOFDSTUK VII <br/> DE RAAD VAN STATE EN </br>DE ADMINISTRATIEVE RECHTSCOLLEGES</span>
 
-`Art. 160`
+<span class="code"> Art. 160 </span>
 
 Er bestaat voor geheel België een Raad van State, waarvan de samenstelling, de bevoegdheid en de werking door de wet worden bepaald. De wet kan evenwel aan de Koning de macht toekennen de rechtspleging te regelen overeenkomstig de beginselen die zij vaststelt.<br/>
 &emsp;De Raad van State doet bij wege van arrest uitspraak als administratief rechtscollege en geeft advies in de door de wet bepaalde gevallen.<br/>
@@ -1329,13 +1329,13 @@ Er bestaat voor geheel België een Raad van State, waarvan de samenstelling, de 
 
 Dit artikel treedt in werking op 14 oktober 2012.
 
-`Art. 161`
+<span class="code"> Art. 161 </span>
 
 Geen administratief rechtscollege kan worden ingesteld dan krachtens een wet.
 
 ###### <span class="chapters"> HOOFDSTUK VIII <br/> DE PROVINCIALE EN GEMEENTELIJKE INSTELLINGEN</span>
 
-`Art. 162`
+<span class="code"> Art. 162 </span>
 
 <p class="no-bottom-margin">De provinciale en gemeentelijke instellingen worden bij de wet geregeld.</p>
 
@@ -1351,16 +1351,16 @@ Geen administratief rechtscollege kan worden ingesteld dan krachtens een wet.
 De bovengemeentelijke besturen worden geregeld bij de in artikel 134 bedoelde regel. Die regel verzekert de toepassing van de in het tweede lid bedoelde beginselen. De in artikel 134 bedoelde regel kan andere beginselen die hij essentieel acht vaststellen, al dan niet via een meerderheid van twee derden van de uitgebrachte stemmen, op voorwaarde dat de meerderheid van de leden van het betrokken Parlement aanwezig is. De artikelen 159 en 190 zijn van toepassing op besluiten en verordeningen van de bovengemeentelijke besturen.<br/>
 &emsp;Ter uitvoering van een wet, aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid, regelt het decreet of de in artikel 134 bedoelde regel de voorwaarden waaronder en de wijze waarop verscheidene provincies, verscheidene bovengemeentelijke besturen of verscheidene gemeenten zich met elkaar kunnen verstaan of zich kunnen verenigen. Evenwel kan aan verscheidene provincieraden, aan verscheidene raden van bovengemeentelijke besturen of aan verscheidene gemeenteraden niet worden toegestaan samen te beraadslagen.
 
-`Art. 163`
+<span class="code"> Art. 163 </span>
 
 De bevoegdheden die in het Vlaamse en het Waalse Gewest worden uitgeoefend door verkozen provinciale organen, worden in het tweetalige gebied Brussel-Hoofdstad uitgeoefend door de Vlaamse en de Franse Gemeenschap en door de Gemeenschappelijke Gemeenschapscommissie, elk voor wat betreft de aangelegenheden die krachtens de artikelen 127 en 128 tot hun bevoegdheid behoren, en door het Brusselse Hoofdstedelijke Gewest voor wat de andere aangelegenheden betreft.<br/>
 &emsp;Evenwel stelt een wet, aangenomen met de meerderheid bepaald in artikel 4, laatste lid, de nadere regelen vast volgens welke het Brusselse Hoofdstedelijke Gewest of elke instelling waarvan het de leden benoemt, de in het eerste lid bedoelde bevoegdheden uitoefent die geen in artikel 39 bedoelde aangelegenheden betreffen. Een wet aangenomen met dezelfde meerderheid stelt de nadere regelen vast voor de toewijzing aan de in artikel 136 bedoelde instellingen van bepaalde of van alle in het eerste lid bedoelde bevoegdheden die in de artikelen 127 en 128 bedoelde aangelegenheden betreffen.
 
-`Art. 164`
+<span class="code"> Art. 164 </span>
 
 Het opmaken van de akten van de burgerlijke stand en het houden van de registers behoren bij uitsluiting tot de bevoegdheid van de gemeentelijke overheid.
 
-`Art. 165`
+<span class="code"> Art. 165 </span>
 
 § 1. De wet richt agglomeraties en federaties van gemeenten op. Zij bepaalt hun organisatie en hun bevoegdheid en verzekert daarbij de toepassing van de beginselen vermeld in artikel 162.<br/>
 &emsp;Elke agglomeratie en elke federatie heeft een raad en een uitvoerend college.<br/>
@@ -1372,7 +1372,7 @@ Het opmaken van de akten van de burgerlijke stand en het houden van de registers
 
 § 3. Verscheidene federaties van gemeenten mogen zich met elkaar of met een of meer agglomeraties verstaan of zich verenigen, onder de voorwaarden en op de wijze door de wet te bepalen, om zaken die tot hun bevoegdheid behoren gemeenschappelijk te regelen en te beheren. Het is hun raden niet toegestaan samen te beraadslagen.
 
-`Art. 166`
+<span class="code"> Art. 166 </span>
 
 § 1. Artikel 165 is van toepassing op de agglomeratie waartoe de hoofdstad van het Rijk behoort, behoudens het hierna bepaalde.
 
@@ -1387,7 +1387,7 @@ Het opmaken van de akten van de burgerlijke stand en het houden van de registers
 
 ##### <span class="titles"> TITEL IV </span> <br/> DE BUITENLANDSE BETREKKINGEN
 
-`Art. 167`
+<span class="code"> Art. 167 </span>
 
 § 1. De Koning heeft de leiding van de buitenlandse betrekkingen, onverminderd de bevoegdheid van de gemeenschappen en de gewesten om de internationale samenwerking te regelen, met inbegrip van het sluiten van verdragen, voor de aangelegenheden waarvoor zij door of krachtens de Grondwet bevoegd zijn.<br/>
 &emsp;De Koning voert het bevel over de krijgsmacht, stelt de staat van oorlog vast alsook het einde van de vijandelijkheden. Hij geeft daarvan kennis aan de Kamers, zodra het belang en de veiligheid van de Staat het toelaten, onder toevoeging van de passende mededelingen.<br/>
@@ -1406,22 +1406,22 @@ Het opmaken van de akten van de burgerlijke stand en het houden van de registers
 
 De tweede zin van § 2 treedt in werking op de dag van de verkiezingen met het oog op de algehele vernieuwing van de Gemeenschaps- en Gewestparlementen in 2014. Tot die dag hebben de verdragen bedoeld in § 2 eerst gevolg nadat zij de instemming van beide Kamers hebben verkregen.
 
-`Art. 168`
+<span class="code"> Art. 168 </span>
 
 Van bij het begin der onderhandelingen over elke herziening van de verdragen tot oprichting van de Europese Gemeenschappen en van de verdragen en akten waarbij deze verdragen zijn gewijzigd of aangevuld, worden de Kamers daarover geïnformeerd. Zij krijgen kennis van het verdragsontwerp vóór de ondertekening ervan.
 
-`Art. 168 bis`
+<span class="code"> Art. 168 bis </span>
 
 Voor de verkiezingen van het Europese Parlement voorziet de wet in bijzondere modaliteiten teneinde de gewettigde belangen van de Nederlandstaligen en de Franstaligen in de vroegere provincie Brabant te vrijwaren.<br/>
 &emsp;Aan de regels die deze bijzondere modaliteiten vaststellen, kan geen wijziging worden aangebracht dan bij een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid.
 
-`Art.169`
+<span class="code"> Art.169 </span>
 
 Om de naleving van internationale of supranationale verplichtingen te verzekeren, kunnen de in de artikelen 36 en 37 bedoelde machten, mits de door de wet bepaalde voorwaarden worden nageleefd, tijdelijk in de plaats treden van de in de artikelen 115 en 121 bedoelde organen. Deze wet moet worden aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid.
 
 ##### <span class="titles"> TITEL V </span> <br/> DE FINANCIËN
 
-`Art. 170`
+<span class="code"> Art. 170 </span>
 
 § 1. Geen belasting ten behoeve van de Staat kan worden ingevoerd dan door een wet.
 
@@ -1435,49 +1435,49 @@ Om de naleving van internationale of supranationale verplichtingen te verzekeren
 § 4. Geen last of belasting kan door de agglomeratie, de federatie van gemeenten en de gemeente worden ingevoerd dan door een beslissing van hun raad.<br/>
 &emsp;De wet bepaalt ten aanzien van de in het eerste lid bedoelde belastingen, de uitzonderingen waarvan de noodzakelijkheid blijkt.
 
-`Art. 171`
+<span class="code"> Art. 171 </span>
 
 Over de belastingen ten behoeve van de Staat, de gemeenschap en het gewest wordt jaarlijks gestemd.<br/>
 &emsp;De regelen die ze invoeren, zijn slechts voor een jaar van kracht indien zij niet worden vernieuwd.
 
-`Art. 172`
+<span class="code"> Art. 172 </span>
 
 Inzake belastingen kunnen geen voorrechten worden ingevoerd.<br/>
 &emsp;Geen vrijstelling of vermindering van belasting kan worden ingevoerd dan door een wet.
 
-`Art. 173`
+<span class="code"> Art. 173 </span>
 
 Behalve voor de provincies, de polders en wateringen en de gevallen uitdrukkelijk uitgezonderd door de wet, het decreet en de regelen bedoeld in artikel 134, kan van de burgers geen retributie worden gevorderd dan alleen als belasting ten behoeve van de Staat, de gemeenschap, het gewest, de agglomeratie, de federatie van gemeenten of de gemeente.
 
-`Art. 174`
+<span class="code"> Art. 174 </span>
 
 Elk jaar wordt door de Kamer van volksvertegenwoordigers de eindrekening vastgesteld en de begroting goedgekeurd. Evenwel stellen elk jaar de Kamer van volksvertegenwoordigers en de Senaat, ieder wat hem betreft, de dotatie voor hun werking vast.<br/>
 &emsp;Alle staatsontvangsten en -uitgaven moeten op de begroting en in de rekeningen worden gebracht.
 
-`Art. 175`
+<span class="code"> Art. 175 </span>
 
 Een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid stelt het financieringsstelsel voor de Vlaamse en de Franse Gemeenschap vast.<br/>
 &emsp;De Parlementen van de Vlaamse en de Franse Gemeenschap regelen, elk voor zich, de bestemming van hun ontvangsten bij decreet.
 
-`Art. 176`
+<span class="code"> Art. 176 </span>
 
 Een wet stelt het financieringsstelsel voor de Duitstalige Gemeenschap vast.<br/>
 &emsp;Het Parlement van de Duitstalige Gemeenschap regelt de bestemming van de ontvangsten bij decreet.
 
-`Art. 177`
+<span class="code"> Art. 177 </span>
 
 Een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid stelt het financieringsstelsel vast voor de gewesten.<br/>
 &emsp;De Gewestparlementen regelen, elk voor zich, de bestemming van hun ontvangsten bij de in artikel 134 bedoelde regelen.
 
-`Art. 178`
+<span class="code"> Art. 178 </span>
 
 Onder de voorwaarden en op de wijze die de wet, aangenomen met de meerderheid bepaald in artikel 4, laatste lid, bepaalt, draagt het Parlement van het Brusselse Hoofdstedelijke Gewest, bij de in artikel 134 bedoelde regel, financiële middelen over aan de Gemeenschappelijke Gemeenschapscommissie en aan de Vlaamse en de Franse Gemeenschapscommissies.
 
-`Art. 179`
+<span class="code"> Art. 179 </span>
 
 Geen pensioen, geen gratificatie ten laste van de staatskas kan worden toegekend dan krachtens een wet.
 
-`Art. 180`
+<span class="code"> Art. 180 </span>
 
 De leden van het Rekenhof worden door de Kamer van volksvertegenwoordigers benoemd, voor de tijd bij de wet bepaald.<br/>
 &emsp;Dit Hof is belast met het nazien en het verevenen der rekeningen van het algemeen bestuur en van allen die tegenover de staatskas rekenplichtig zijn.
@@ -1486,7 +1486,7 @@ Het waakt ervoor dat geen artikel van de uitgaven der begroting wordt overschred
 &emsp;De wet kan aan het Rekenhof de controle op de begrotingen en de boekhouding van de gemeenschappen en de gewesten alsook de instellingen van openbaar nut die ervan afhangen, opdragen. Deze kan eveneens toelaten dat het decreet of de in artikel 134 bedoelde regel deze controle regelen. Behoudens voor de Duitstalige Gemeenschap, wordt deze wet aangenomen met de meerderheid bepaald in artikel 4, laatste lid.<br/>
 &emsp;De wet, het decreet of de in artikel 134 bedoelde regel kunnen bijkomende taken toekennen aan het Hof. Op eensluidend advies van het Hof stelt het decreet of de in artikel 134 bedoelde regel de vergoeding van het Hof vast voor de uitoefening van deze taken. Er is geen enkele vergoeding verschuldigd voor een taak die door het Hof wordt uitgevoerd voor een gemeenschap of een gewest voor de datum van inwerkingtreding van dit lid.
 
-`Art. 181`
+<span class="code"> Art. 181 </span>
 
 § 1. De wedden en pensioenen van de bedienaren der erediensten komen ten laste van de Staat; de daartoe vereiste bedragen worden jaarlijks op de begroting uitgetrokken.
 
@@ -1494,15 +1494,15 @@ Het waakt ervoor dat geen artikel van de uitgaven der begroting wordt overschred
 
 ##### <span class="titles"> TITEL VI </span> <br/> DE GEWAPENDE MACHT
 
-`Art. 182`
+<span class="code"> Art. 182 </span>
 
 De wet bepaalt op welke wijze het leger wordt aangeworven. Zij regelt eveneens de bevordering, de rechten en de verplichtingen van de militairen.
 
-`Art. 183`
+<span class="code"> Art. 183 </span>
 
 Het legercontingent wordt jaarlijks goedgekeurd. De wet die het vaststelt, is slechts voor een jaar van kracht, indien zij niet wordt vernieuwd.
 
-`Art. 184`
+<span class="code"> Art. 184 </span>
 
 De organisatie en de bevoegdheid van de geïntegreerde politiedienst, gestructureerd op twee niveaus, worden bij de wet geregeld. De essentiële elementen van het statuut van de personeelsleden van de geïntegreerde politiedienst, gestructureerd op twee niveaus, worden bij de wet geregeld.
 
@@ -1510,51 +1510,51 @@ De organisatie en de bevoegdheid van de geïntegreerde politiedienst, gestructur
 
 De Koning kan echter de essentiële elementen van het statuut van de personeelsleden van de geïntegreerde politiedienst, gestructureerd op twee niveaus, vaststellen en uitvoeren, voor zover het besluit, met betrekking tot die elementen, bekrachtigd wordt bij de wet vóór 30 april 2002.
 
-`Art. 185`
+<span class="code"> Art. 185 </span>
 
 Vreemde troepen mogen niet dan krachtens een wet tot de dienst van de Staat worden toegelaten, het grondgebied bezetten of er doorheen trekken.
 
-`Art. 186`
+<span class="code"> Art. 186 </span>
 
 Militairen kunnen niet van hun graden, ererechten en pensioenen worden ontzet dan op de wijze bij de wet bepaald.
 
 ##### <span class="titles"> TITEL VII </span> <br/> ALGEMENE BEPALINGEN
 
-`Art. 187`
+<span class="code"> Art. 187 </span>
 
 De Grondwet kan noch geheel, noch ten dele worden geschorst.
 
-`Art. 188`
+<span class="code"> Art. 188 </span>
 
 Met ingang van de dag waarop de Grondwet uitvoerbaar wordt, zijn alle daarmee strijdige wetten, decreten, besluiten, reglementen en andere akten opgeheven.
 
-`Art. 189`
+<span class="code"> Art. 189 </span>
 
 De tekst van de Grondwet is in het Nederlands, in het Frans en in het Duits gesteld.
 
-`Art. 190`
+<span class="code"> Art. 190 </span>
 
 Geen wet, geen besluit of verordening van algemeen, provinciaal of gemeentelijk bestuur is verbindend dan na te zijn bekendgemaakt in de vorm bij de wet bepaald.
 
-`Art. 191`
+<span class="code"> Art. 191 </span>
 
 Iedere vreemdeling die zich op het grondgebied van België bevindt, geniet de bescherming verleend aan personen en aan goederen, behoudens de bij de wet gestelde uitzonderingen.
 
-`Art. 192`
+<span class="code"> Art. 192 </span>
 
 Geen eed kan worden opgelegd dan krachtens de wet. Deze stelt de formule vast.
 
-`Art. 193`
+<span class="code"> Art. 193 </span>
 
 De Belgische Natie kiest als kleuren rood, geel en zwart, en als rijkswapen de Belgische Leeuw met de kenspreuk EENDRACHT MAAKT MACHT.
 
-`Art. 194`
+<span class="code"> Art. 194 </span>
 
 De stad Brussel is de hoofdstad van België en de zetel van de federale Regering.
 
 ##### <span class="titles"> TITEL VIII </span> <br/> DE HERZIENING VAN DE GRONDWET
 
-`Art. 195`
+<span class="code"> Art. 195 </span>
 
 De federale wetgevende macht heeft het recht te verklaren dat er redenen zijn tot herziening van zodanige grondwettelijke bepaling als zij aanwijst.<br/>
 &emsp;Na deze verklaring zijn beide Kamers van rechtswege ontbonden.<br/>
@@ -1585,15 +1585,15 @@ De federale wetgevende macht heeft het recht te verklaren dat er redenen zijn to
 Over de punten bedoeld in het eerste lid mogen de Kamers niet beraadslagen wanneer niet ten minste twee derden van de leden waaruit elke Kamer bestaat, aanwezig zijn; en een verandering is alleen dan aangenomen, indien zij ten minste twee derden van de stemmen heeft verkregen.<br/>
 &emsp;Deze overgangsbepaling is geen verklaring in de zin van artikel 195, tweede lid.
 
-`Art. 196`
+<span class="code"> Art. 196 </span>
 
 Er mag geen herziening van de Grondwet worden ingezet of voortgezet in oorlogstijd of wanneer de Kamers verhinderd zijn vrij bijeen te komen op het federale grondgebied.
 
-`Art. 197`
+<span class="code"> Art. 197 </span>
 
 Tijdens een regentschap mag in de Grondwet geen verandering worden aangebracht wat betreft de grondwettelijke macht van de Koning en de artikelen 85 tot 88, 91 tot 95, 106 en 197 van de Grondwet.
 
-`Art. 198`
+<span class="code"> Art. 198 </span>
 
 In overeenstemming met de Koning kunnen de grondwetgevende Kamers de nummering van de artikelen en de onderverdelingen van artikelen van de Grondwet, evenals de onderverdeling van de Grondwet in titels, hoofdstukken en afdelingen aanpassen, de terminologie van de niet aan herziening onderworpen bepalingen wijzigen om deze in overeenstemming te brengen met de terminologie van de nieuwe bepalingen en de Nederlandse, de Franse en de Duitse tekst van de Grondwet met elkaar in overeenstemming brengen.<br/>
 &emsp;In dit geval mogen de Kamers niet beraadslagen wanneer niet ten minste twee derden van de leden waaruit elke Kamer bestaat, aanwezig zijn; en de veranderingen zijn alleen dan aangenomen, indien het geheel van de wijzigingen ten minste twee derden van de stemmen heeft verkregen.
@@ -1649,7 +1649,7 @@ VI. — § 1. [opgeheven]
 
 ###### <span class="sections"> AFDELING I </br> BEROEPEN</span>
 
-`Artikel 1`
+<span class="code"> Artikel 1 </span>
 
 Het Grondwettelijk Hof doet, bij wege van arrest, uitspraak op de beroepen tot gehele of gedeeltelijke vernietiging van een wet, een decreet of een in artikel 134 van de Grondwet bedoelde regel wegens schending van :
 
@@ -1658,7 +1658,7 @@ Het Grondwettelijk Hof doet, bij wege van arrest, uitspraak op de beroepen tot g
 3. artikel 143, § 1, van de Grondwet.
    <br/>
 
-`Art. 2`
+<span class="code"> Art. 2 </span>
 
 De in artikel 1 bedoelde beroepen worden ingesteld:
 
@@ -1669,17 +1669,17 @@ De in artikel 1 bedoelde beroepen worden ingesteld:
 
 De bepalingen van deze wet die betrekking hebben op de Gemeenschaps- of Gewestregeringen zijn van toepassing op het Verenigd College van de Gemeenschappelijke Gemeenschapscommissie en op het College van de Franse Gemeenschapscommissie.
 
-`Art. 3`
+<span class="code"> Art. 3 </span>
 
 § 1. Onverminderd het bepaalde in paragraaf 2 en artikel 4 zijn de beroepen strekkende tot gehele of gedeeltelijke vernietiging van een wet, een decreet of een in artikel 134 van de Grondwet bedoelde regel, slechts ontvankelijk indien zij worden ingesteld binnen een termijn van zes maanden na de bekendmaking van de wet, het decreet of de in het artikel 134 van de Grondwet bedoelde regel.
 
 § 2. De beroepen strekkende tot gehele of gedeeltelijke vernietiging van een wet, een decreet of een in artikel 134 van de Grondwet bedoelde regel waardoor een verdrag instemming verkrijgt, zijn slechts ontvankelijk, indien zij worden ingesteld binnen een termijn van zestig dagen na de bekendmaking van de wet, het decreet of de in artikel 134 van de Grondwet bedoelde regel.
 
-`Art. 3 bis`
+<span class="code"> Art. 3 bis </span>
 
 Voor de beroepen tot nietigverklaring van een decreet of een regel bedoeld in artikel 134 van de Grondwet, die gegrond zijn op de schending van de artikelen 6, § 2, en 9, § 1, van de bijzondere wet van 16 januari 1989 betreffende de financiering van de gemeenschappen en de gewesten, begint de termijn van zes maanden waarin artikel 3 voorziet pas te lopen zodra de inkohieringstermijn bepaald in artikel 359 van het Wetboek van de inkomstenbelastingen 1992 verstreken is.
 
-`Art. 4`
+<span class="code"> Art. 4 </span>
 
 Voor de Ministerraad of voor de Regering van een Gemeenschap of van een Gewest staat een nieuwe termijn van zes maanden open voor het instellen van een beroep tot vernietiging tegen een wet, een decreet of een in artikel 134 van de Grondwet bedoelde regel, wanneer:
 
@@ -1689,7 +1689,7 @@ Voor de Ministerraad of voor de Regering van een Gemeenschap of van een Gewest s
 
 Voor de Ministerraad, voor de Regering van een Gemeenschap of van een Gewest, voor de voorzitters van de wetgevende vergaderingen op verzoek van twee derde van hun leden of voor iedere natuurlijke persoon of rechtspersoon die doet blijken van een belang staat een nieuwe termijn van zes maanden open voor het instellen van een beroep tot vernietiging tegen een wet, een decreet of een in artikel 134 van de Grondwet bedoelde regel, wanneer het Hof, uitspraak doende op een prejudiciële vraag, verklaard heeft dat die wet, dat decreet of die in artikel 134 van de Grondwet bedoelde regel een van de in artikel 1 bedoelde regels of artikelen van de Grondwet schendt. De termijn gaat in op de dag na de datum van de bekendmaking van het arrest in het _Belgisch Staatsblad_.
 
-`Art. 5`
+<span class="code"> Art. 5 </span>
 
 Een beroep tot vernietiging wordt bij het Hof aanhangig gemaakt door middel van een verzoekschrift dat, al naar het geval, ondertekend wordt door de Eerste Minister, door een lid van de Regering, door haar aangewezen, door de voorzitter van een wetgevende vergadering of door degene die doet blijken van een belang of hun advocaat.
 
@@ -1700,7 +1700,7 @@ Een beroep tot vernietiging wordt bij het Hof aanhangig gemaakt door middel van 
 <p>Een beroep tot vernietiging wordt bij het Hof aanhangig gemaakt door middel van een verzoekschrift dat uitgaat van de eerste minister, van een lid van de regering, door haar aangewezen, van de voorzitter van een wetgevende vergadering of van degene die doet blijken van een belang of hun advocaat.</p>
 </div>
 
-`Art. 6`
+<span class="code"> Art. 6 </span>
 
 Het verzoekschrift wordt gedagtekend. Het vermeldt het onderwerp van het beroep en bevat een uiteenzetting van de feiten en middelen.
 
@@ -1711,7 +1711,7 @@ Het verzoekschrift wordt gedagtekend. Het vermeldt het onderwerp van het beroep 
 <p>Het verzoekschrift vermeldt het onderwerp van het beroep en bevat een uiteenzetting van de feiten en middelen.</p>
 </div>
 
-`Art. 7`
+<span class="code"> Art. 7 </span>
 
 De verzoekende partij voegt bij haar verzoekschrift een afschrift van de wet, het decreet of de in artikel 134 van de Grondwet bedoelde regel waartegen het beroep gericht is, en, in voorkomend geval, van de bijlagen ervan.
 
@@ -1719,7 +1719,7 @@ Indien het beroep wordt ingesteld door de Ministerraad, door de Regering van een
 
 Indien een rechtspersoon het beroep instelt of in het geding tussenkomt, legt deze partij, op het eerste verzoek, het bewijs voor van de beslissing om het beroep in te stellen of voort te zetten of om tussen te komen en, wanneer haar statuten moeten worden bekendgemaakt in de bijlagen bij het _Belgisch Staatsblad_, een kopie van die bekendmaking.
 
-`Art. 8`
+<span class="code"> Art. 8 </span>
 
 Indien het beroep gegrond is, vernietigt het Grondwettelijk Hof geheel of ten dele de wet, het decreet of de in artikel 134 van de Grondwet bedoelde regel waartegen het beroep is gericht.
 
@@ -1729,17 +1729,17 @@ Zo het Hof dit nodig oordeelt, wijst het, bij wege van algemene beschikking, die
 
 ###### <span class="sections"> AFDELING II </br> GEVOLGEN VAN DE VERNIETIGINGSARRESTEN</span>
 
-`Art. 9`
+<span class="code"> Art. 9 </span>
 
 § 1. De door het Grondwettelijk Hof gewezen vernietigingsarresten hebben een absoluut gezag van gewijsde vanaf hun bekendmaking in het _Belgisch Staatsblad_.
 
 § 2. De door het Grondwettelijk Hof gewezen arresten waarbij beroepen tot vernietiging verworpen worden, zijn bindend voor de rechtscolleges wat de door die arresten beslechte rechtspunten betreft.
 
-`Art. 10`
+<span class="code"> Art. 10 </span>
 
 De in kracht van gewijsde gegane beslissing van een strafgerecht kan, in zoverre zij gegrond is op een bepaling van een wet, een decreet of een in artikel 134 van de Grondwet bedoelde regel die vervolgens door het Grondwettelijk Hof is vernietigd, of op een verordening ter uitvoering van zodanige wet, decreet of in artikel 134 van de Grondwet bedoelde regel, geheel of ten dele worden ingetrokken door het gerecht dat die beslissing heeft gewezen.
 
-`Art. 11`
+<span class="code"> Art. 11 </span>
 
 Het staat aan het openbaar ministerie de intrekking te vorderen.
 
@@ -1751,7 +1751,7 @@ Het recht om de intrekking te vorderen, behoort bovendien:
 4. aan de partij die burgerrechtelijk aansprakelijk is verklaard voor de veroordeelde of, in voorkomend geval, voor degene ten aanzien van wie een beslissing is gewezen waarbij opschorting van de uitspraak van de veroordeling wordt gelast.
    <br/>
 
-`Art. 12`
+<span class="code"> Art. 12 </span>
 
 § 1. De zaak wordt bij het bevoegde gerecht aanhangig gemaakt, hetzij door een vordering van het openbaar ministerie, hetzij door een verzoekschrift dat de grond tot intrekking omschrijft.
 
@@ -1773,7 +1773,7 @@ Dat gerecht kan ook, indien de aangevoerde middelen ernstig lijken en van dien a
 
 § 7. De procedurekosten komen ten laste van de Staat.
 
-`Art. 13`
+<span class="code"> Art. 13 </span>
 
 § 1. De veroordelingen in strafzaken gegrond op een vernietigde wet, een vernietigd decreet of een in artikel 134 van de Grondwet bedoelde vernietigde regel, of op een verordening ter uitvoering van zodanige wet, decreet of in artikel 134 van de Grondwet bedoelde regel, evenals de beslissingen tot opschorting van de uitspraak van dergelijke veroordelingen worden door de intrekking ongedaan gemaakt binnen de grenzen waarin zij is uitgesproken.
 
@@ -1787,15 +1787,15 @@ Artikel 28 van de wet van 13 maart 1973 betreffende de vergoeding voor onwerkzam
 
 § 5. Indien de rechter ten gevolge van de intrekking niet langer bevoegd is om uitspraak te doen op de burgerlijke rechtsvordering, verwijst hij deze naar de bevoegde rechter. De artikelen 660 tot 663 van het Gerechtelijk Wetboek en artikel 16, §§ 1 en 2, van deze wet zijn mede van toepassing op die verwijzing.
 
-`Art. 14`
+<span class="code"> Art. 14 </span>
 
 De beslissingen tot internering van verdachten en beschuldigden in staat van krankzinnigheid, geestesstoornis of zwakzinnigheid, uitgesproken krachtens de wet tot bescherming van de maatschappij tegen abnormalen en gewoontemisdadigers, kunnen worden ingetrokken overeenkomstig de artikelen 10 tot 13.
 
-`Art. 15`
+<span class="code"> Art. 15 </span>
 
 In afwijking van artikel 1082, tweede lid, van het Gerechtelijk Wetboek, kan een tweede voorziening in cassatie worden ingesteld wanneer die zich uitsluitend beroept op de vernietiging door het Grondwettelijk Hof van de bepaling van een wet, een decreet of een in artikel 134 van de Grondwet bedoelde regel die ten grondslag aan de bestreden beslissing heeft gelegen of van een verordening die ter uitvoering van zodanige norm is vastgesteld.
 
-`Art. 16`
+<span class="code"> Art. 16 </span>
 
 § 1. De in kracht van gewijsde gegane beslissing van een burgerlijk gerecht kan, in zoverre zij gegrond is op een bepaling van een wet, een decreet of een in artikel 134 van de Grondwet bedoelde regel die vervolgens door het Grondwettelijk Hof is vernietigd, of op een verordening ter uitvoering van zodanige norm, geheel of ten dele worden ingetrokken op verzoek van degenen die daarbij partij zijn geweest of behoorlijk opgeroepen.
 
@@ -1805,23 +1805,23 @@ In afwijking van artikel 1082, tweede lid, van het Gerechtelijk Wetboek, kan een
 
 § 4. Op straffe van verval moet de vordering worden ingesteld binnen zes maanden na de bekendmaking van het arrest van het Grondwettelijk Hof in het _Belgisch Staatsblad_.
 
-`Art. 17`
+<span class="code"> Art. 17 </span>
 
 Een arrest van de Raad van State kan, in zoverre het gegrond is op een bepaling van een wet, een decreet of een in artikel 134 van de Grondwet bedoelde regel die vervolgens door het Grondwettelijk Hof is vernietigd, of op een verordening ter uitvoering van zodanige norm, geheel of ten dele worden ingetrokken.
 
 De termijn van beroep is zes maanden te rekenen van de dag waarop het arrest van het Grondwettelijk Hof in het _Belgisch Staatsblad_ wordt bekendgemaakt.
 
-`Art. 18`
+<span class="code"> Art. 18 </span>
 
 Niettegenstaande de door de wetten en bijzondere verordeningen bepaalde termijnen verstreken zijn, kan tegen de handelingen en verordeningen van de verschillende bestuursorganen alsook tegen de beslissingen van andere gerechten dan die bedoeld in artikel 16 van deze wet, voor zover die gegrond zijn op een bepaling van een wet, een decreet of een in artikel 134 van de Grondwet bedoelde regel, die vervolgens door het Grondwettelijk Hof is vernietigd, of op een verordening ter uitvoering van zodanige norm, al naar het geval, elk administratief of rechterlijk beroep worden ingesteld dat daartegen openstaat, binnen zes maanden na de bekendmaking van het arrest van het Grondwettelijk Hof in het _Belgisch Staatsblad_.
 
 ###### <span class="sections"> AFDELING III </br>SCHORSING</span>
 
-`Art. 19`
+<span class="code"> Art. 19 </span>
 
 Op vordering van de verzoekende partij kan het Hof, bij een met redenen omklede beslissing, de wet, het decreet of de in artikel 134 van de Grondwet bedoelde regel, waartegen een beroep tot vernietiging gericht is, geheel of ten dele schorsen.
 
-`Art. 20`
+<span class="code"> Art. 20 </span>
 
 Onverminderd artikel 16*ter* van de bijzondere wet van 8 augustus 1980 tot hervorming der instellingen en artikel 5*ter* van de bijzondere wet van 12 januari 1989 met betrekking tot de Brusselse instellingen, kan slechts tot schorsing worden besloten :
 
@@ -1829,29 +1829,29 @@ Onverminderd artikel 16*ter* van de bijzondere wet van 8 augustus 1980 tot hervo
 2. als een beroep is ingesteld tegen een norm die identiek is met of gelijkaardig aan een reeds door het Grondwettelijk Hof vernietigde norm en die door dezelfde wetgever is aangenomen.
    <br/>
 
-`Art. 21`
+<span class="code"> Art. 21 </span>
 
 De schorsing wordt gevorderd in het verzoekschrift tot vernietiging of in een afzonderlijke, overeenkomstig artikel 5 ondertekende akte, die bij het verzoekschrift gevoegd of in de loop van het geding ingediend wordt.
 
 In afwijking van artikel 3, zijn de verzoekschriften tot schorsing slechts ontvankelijk wanneer zij worden ingediend binnen een termijn van drie maanden na de bekendmaking van de wet, het decreet of de in artikel 134 van de Grondwet bedoelde regel.
 
-`Art. 22`
+<span class="code"> Art. 22 </span>
 
 Onverminderd het bepaalde in artikel 16*ter* van de bijzondere wet van 8 augustus 1980 tot hervorming der instellingen en in artikel 5 ter van de bijzondere wet van 12 januari 1989 met betrekking tot de Brusselse instellingen, bevat de vordering bedoeld in artikel 20, 1º, een uiteenzetting van de feiten waaruit moet blijken dat de onmiddellijke toepassing van de bestreden norm een moeilijk te herstellen ernstig nadeel kan berokkenen.
 
 Wanneer de vordering bij een afzonderlijke akte wordt ingesteld, wordt zij gedagtekend en vermeldt zij de norm waartegen het beroep tot vernietiging gericht is.
 
-`Art. 23`
+<span class="code"> Art. 23 </span>
 
 Onverminderd de bepalingen van de artikelen 70 tot 73, doet het Hof onverwijld uitspraak op de vordering bij een met redenen omkleed arrest, na de partijen te hebben gehoord.
 
-`Art. 24`
+<span class="code"> Art. 24 </span>
 
 Het arrest dat de schorsing beveelt, wordt in het Nederlands, in het Frans en in het Duits gesteld. Ten verzoeke van de griffier wordt het binnen vijf dagen na de uitspraak in zijn geheel of bij uittreksel in het _Belgisch Staatsblad_ bekendgemaakt.
 
 Het heeft gevolg vanaf de dag van zijn bekendmaking.
 
-`Art. 25`
+<span class="code"> Art. 25 </span>
 
 Het Hof wijst zijn arrest op de hoofdvordering binnen drie maanden na de uitspraak van het arrest dat de schorsing beveelt. De termijn kan niet worden verlengd.
 
@@ -1859,20 +1859,20 @@ Indien het arrest op de hoofdvordering niet gewezen is binnen die termijn, houdt
 
 ###### <span class="sections"> AFDELING IV </br>BEROEPEN TEGEN BESLISSINGEN VAN DE CONTROLECOMMISSIE INZAKE DE CONTROLE VAN DE VERKIEZINGSUITGAVEN VOOR DE VERKIEZING VAN DE KAMER VAN VOLKSVERTEGENWOORDIGERS</span>
 
-`Art. 25 bis`
+<span class="code"> Art. 25 bis </span>
 
 Het Hof doet, bij wege van arrest, uitspraak over de beroepen tot vernietiging wegens schending van hetzij substantiële, hetzij op straffe van nietigheid voorgeschreven vormen, overschrijding of afwending van macht, ingesteld tegen de beslissingen van de Controlecommissie bedoeld in artikel 14/1 van de wet van 4 juli 1989 betreffende de beperking en de controle van de verkiezingsuitgaven voor de verkiezing van de Kamer van volksvertegenwoordigers, de financiering en de open boekhouding van de politieke partijen.
 
 In het kader van het onderzoek van dit beroep beschikt het Hof over de hem in artikel 26, §§ 1 en 1*bis*, toegekende bevoegdheden.
 
-`Art. 25 ter`
+<span class="code"> Art. 25 ter </span>
 
 De in artikel 25*bis* bedoelde beroepen worden ingeleid door de verkozen kandidaat die het voorwerp uitmaakt van de sanctiebeslissing van de Controlecommissie.
 
 Deze beroepen zijn slechts ontvankelijk indien zij worden ingesteld binnen een termijn van dertig dagen na de kennisgeving van de beslissing van de Controlecommissie. De verjaringstermijn voor de in dit artikel bedoelde beroepen neemt alleen een aanvang als de kennisgeving van de sanctiebeslissing door de Controlecommissie het bestaan van dit beroep en de na te leven vormen en termijnen vermeldt.
 Wanneer aan die voorwaarde niet is voldaan, neemt de verjaringstermijn een aanvang vier maanden nadat de betrokkene in kennis werd gesteld van de beslissing van de Controlecommissie.
 
-`Art. 25 quater`
+<span class="code"> Art. 25 quater </span>
 
 Een beroep tot vernietiging wordt bij het Hof aanhangig gemaakt door middel van een verzoekschrift ondertekend door de verkozen kandidaat bedoeld in artikel 25 _ter_ of zijn advocaat.
 
@@ -1880,7 +1880,7 @@ Het verzoekschrift wordt gedagtekend. Het geeft het voorwerp van het beroep weer
 
 Onverminderd de artikelen 70 tot 73, doet het Hof uitspraak binnen drie maanden na de indiening van het beroep tot vernietiging, bij een met redenen omkleed arrest, na de partijen te hebben gehoord.
 
-`Art. 25 quinquies`
+<span class="code"> Art. 25 quinquies </span>
 
 De verzoekende partij voegt bij het verzoekschrift een kopie van de beslissing van de Controlecommissie bedoeld in artikel 14/1 van de wet van 4 juli 1989 betreffende de beperking en de controle van de verkiezingsuitgaven voor de verkiezing van de Kamer van volksvertegenwoordigers, de financiering en de open boekhouding van de politieke partijen, die het voorwerp uitmaakt van het beroep en, in voorkomend geval, van de bijlagen ervan.
 
@@ -1888,13 +1888,13 @@ De griffier geeft kennis van het verzoekschrift aan de voorzitter van de Kamer v
 
 Binnen dertig dagen na ontvangst van de kennisgeving door de griffier kan de Controlecommissie een memorie bij het Hof indienen. De memorie die niet binnen die termijn werd ingediend, wordt uit de debatten geweerd. De griffier maakt een kopie van de memorie over aan de verzoekende partij. Die beschikt over vijftien dagen vanaf de datum van ontvangst om bij de griffie een memorie van wederantwoord in te dienen. Deze termijnen kunnen worden verkort of verlengd bij een met redenen omklede beschikking van de voorzitter.
 
-`Art. 25 sexies`
+<span class="code"> Art. 25 sexies </span>
 
 Indien het beroep gegrond is, vernietigt het Hof de beslissing van de Controlecommissie waartegen het beroep is gericht.
 
 De griffier geeft kennis van de arresten aan de partijen en aan de voorzitter van de Kamer van volksvertegenwoordigers.
 
-`Art. 25 septies`
+<span class="code"> Art. 25 septies </span>
 
 De artikelen 74, 76, 78, 80, 85 tot 89*bis* en 113 zijn niet van toepassing op de beroepen tegen de beslissingen van de Controlecommissie. Indien het Hof evenwel wordt verzocht om toepassing te maken van zijn bevoegdheden overeenkomstig artikel 26, wordt de Ministerraad hiervan op de hoogte gebracht door de griffier. De Ministerraad beschikt in dat geval over een termijn van vijftien dagen om een memorie bij het Hof in te dienen.
 
@@ -1902,7 +1902,7 @@ Artikel 90 is van toepassing op het beroep bedoeld in artikel 25*bis* mits de in
 
 ###### <span class="chapters"> HOOFDSTUK II: PREJUDICIELE VRAGEN</span>
 
-`Art. 26`
+<span class="code"> Art. 26 </span>
 
 § 1. Het Grondwettelijk Hof doet, bij wijze van prejudiciële beslissing, uitspraak bij wege van arrest op vragen omtrent:
 
@@ -1936,25 +1936,25 @@ In afwijking van het eerste lid geldt de verplichting een prejudiciële vraag te
 4. wanneer het rechtscollege oordeelt dat uit een arrest van het Grondwettelijk Hof blijkt dat de bepaling uit titel II van de Grondwet klaarblijkelijk geschonden is.
    <br/>
 
-`Art. 27`
+<span class="code"> Art. 27 </span>
 
 § 1. Prejudiciële vragen worden bij het Hof aanhangig gemaakt door overzending van een door de voorzitter en door de griffier van het rechtscollege ondertekende expeditie van de beslissing tot verwijzing.
 
 § 2. De beslissing tot verwijzing vermeldt de bepalingen van de wet, het decreet of de in artikel 134 van de Grondwet bedoelde regel die het onderwerp uitmaken van de vraag; in voorkomend geval preciseert zij bovendien welke artikelen van de Grondwet of van de bijzondere wetten ter zake dienend zijn. Het Grondwettelijk Hof kan evenwel de gestelde prejudiciële vraag herformuleren.
 
-`Art. 28`
+<span class="code"> Art. 28 </span>
 
 Het rechtscollege dat de prejudiciële vraag heeft gesteld evenals elk ander rechtscollege dat in dezelfde zaak uitspraak doet, moeten voor de oplossing van het geschil naar aanleiding waarvan de in artikel 26 bedoelde vragen zijn gesteld, zich voegen naar het arrest van het Grondwettelijk Hof.
 
 Zo het Hof dit nodig oordeelt, wijst het, bij wege van algemene beschikking, die gevolgen van de ongrondwettig bevonden bepalingen aan welke als gehandhaafd moeten worden beschouwd of voorlopig gehandhaafd worden voor de termijn die het vaststelt.
 
-`Art. 29`
+<span class="code"> Art. 29 </span>
 
 § 1. Tegen de beslissing van een rechtscollege kan, in zover dit aan het Grondwettelijk Hof een prejudiciële vraag stelt, geen enkel rechtsmiddel worden aangewend.
 
 § 2. De beslissing waarbij een rechtscollege weigert een prejudiciële vraag te stellen, moet de redenen van de weigering aangeven. Tegen de beslissing van een rechtscollege kan, in zover dit een dergelijke vraag weigert te stellen, geen afzonderlijk rechtsmiddel worden aangewend.
 
-`Art. 30`
+<span class="code"> Art. 30 </span>
 
 De beslissing om aan het Grondwettelijk Hof een prejudiciële vraag te stellen schort de procedure en de termijnen van procedure en verjaring op vanaf de datum van die beslissing tot de datum waarop het arrest van het Grondwettelijk Hof ter kennis wordt gebracht van het rechtscollege dat de prejudiciële vraag heeft gesteld. Een afschrift ervan wordt aan de partijen gezonden.
 
@@ -1962,13 +1962,13 @@ Het rechtscollege kan evenwel, zelfs ambtshalve, de vereiste voorlopige maatrege
 
 ###### <span class="chapters"> HOOFDSTUK III: GEMEENSCHAPPELIJKE BEPALINGEN</span>
 
-`Art. 30 bis`
+<span class="code"> Art. 30 bis </span>
 
 Voor de toepassing van de artikelen 1 en 26 , § 1, worden als regels bedoeld in 1° van deze twee bepalingen, beschouwd het overleg, de betrokkenheid, het geven van inlichtingen, de adviezen, de eensluidende adviezen, de akkoorden, de gemeenschappelijke akkoorden en de voorstellen waarvan sprake is in de bijzondere wet van 8 augustus 1980 tot hervorming der instellingen, de samenwerkingsakkoorden bedoeld in artikel 92*bis* van voornoemde wet uitgezonderd, alsook in de bijzondere wet van 16 januari 1989 betreffende de financiering van de Gemeenschappen en de Gewesten of in elke andere wet genomen ter uitvoering van de artikelen 39, 127, § 1, 128, § 1, 129, § 1, 130, § 1, 135, 136, 137 , 140, 166, 175, 176 en 177 van de Grondwet.
 
 ###### <span class="chapters"> HOOFDSTUK IV: CONTROLE OP DE VOLKSRAADPLEGINGEN</span>
 
-`Art. 30 ter`
+<span class="code"> Art. 30 ter </span>
 
 Het Grondwettelijk Hof doet, bij wege van beslissing, uitspraak over iedere gewestelijke volksraadpleging, voorafgaandelijk aan de organisatie ervan, door na te gaan of de in artikel 1 bedoelde normen alsmede de voorwaarden en nadere regels bepaald door of krachtens artikel 39*bis* van de Grondwet zijn nageleefd.
 
@@ -1980,7 +1980,7 @@ Indien de volksraadpleging een van de in het eerste lid bedoelde normen, voorwaa
 
 ###### <span class="chapters"> HOOFDSTUK V: BESCHERMING VAN HET PRIVÉLEVEN</span>
 
-`Art. 30 quater`
+<span class="code"> Art. 30 quater </span>
 
 In elke stand van de rechtspleging en zelfs na de uitspraak van het arrest kan de voorzitter, ambtshalve of op eenvoudig verzoek van een partij of een belanghebbende derde, beslissen dat vermeldingen, die van aard zijn hen rechtstreeks te identificeren, vanaf het meest gerede ogenblik, zullen worden weggelaten in elke publicatie waartoe het Hof krachtens deze bijzondere wet of uit eigen initiatief zou overgaan, of is overgegaan.
 
@@ -1988,13 +1988,13 @@ In elke stand van de rechtspleging en zelfs na de uitspraak van het arrest kan d
 
 ###### <span class="chapters"> HOOFDSTUK I: DE RECHTERS VAN HET GRONDWETTELIJK HOF</span>
 
-`Art. 31`
+<span class="code"> Art. 31 </span>
 
 Het Grondwettelijk Hof is samengesteld uit twaalf rechters : zes Nederlandstalige rechters, die de Nederlandse taalgroep van het Hof vormen, en zes Franstalige rechters, die de Franse taalgroep van het Hof vormen.
 
 De hoedanigheid van Nederlandstalige rechter of van Franstalige rechter van het Grondwettelijk Hof wordt, voor de in artikel 34, § 1, 1°, bedoelde rechters, bepaald door de taal van het diploma en voor de in artikel 34, § 1, 2°, bedoelde rechters, door de parlementaire taalgroep waartoe zij het laatst behoorden.
 
-`Art. 32`
+<span class="code"> Art. 32 </span>
 
 De rechters worden voor het leven door de Koning benoemd uit een lijst met twee kandidaten, beurtelings door de Kamer van volksvertegenwoordigers en door de Senaat voorgedragen. Het wordt aangenomen met een meerderheid van twee derde der stemmen van de aanwezige leden.
 
@@ -2002,11 +2002,11 @@ Geen voordracht kan geschieden dan ten minste vijftien dagen na bekendmaking van
 
 Iedere voordracht wordt in het _Belgisch Staatsblad_ bekendgemaakt; de benoeming mag niet vroeger dan vijftien dagen na die bekendmaking geschieden.
 
-`Art. 33`
+<span class="code"> Art. 33 </span>
 
 De Nederlandstalige en de Franstalige rechters van het Grondwettelijk Hof kiezen, elk wat hen betreft, uit hun midden een Nederlandstalige en een Franstalige voorzitter.
 
-`Art. 34`
+<span class="code"> Art. 34 </span>
 
 § 1. Om tot rechter van het Grondwettelijk Hof te worden benoemd, moet men volle veertig jaar oud zijn en aan een van de volgende voorwaarden voldoen:
 
@@ -2034,19 +2034,19 @@ Het Hof telt ten minste één derde rechters van elk geslacht. <sup>3</sup>
 
 ###### <span class="chapters">HOOFDSTUK II: DE REFERENDARISSEN</span>
 
-`Art. 35`
+<span class="code"> Art. 35 </span>
 
 Het Grondwettelijk Hof wordt bijgestaan door ten hoogste vierentwintig referendarissen, van wie de ene helft Nederlandstalig en de andere helft Franstalig is, al naar de taal van het diploma, en die het bewijs hebben geleverd van een voldoende kennis van de tweede landstaal, voor een examencommissie samengesteld door de afgevaardigd bestuurder van het Selectiebureau van de Federale Overheid.
 
 Ten minste één Nederlandstalige en één Franstalige referendaris moeten het bewijs leveren van een voldoende kennis van de Duitse taal, voor een examencommissie samengesteld door de afgevaardigd bestuurder van het Selectiebureau van de Federale Overheid.
 
-`Art. 36`
+<span class="code"> Art. 36 </span>
 
 Niemand kan tot referendaris worden benoemd tenzij hij vijfentwintig jaar oud en doctor of licentiaat in de rechten is.
 
 Geen benoeming kan geschieden dan bij vacature en ten minste vijftien dagen na bekendmaking van de vacature in het _Belgisch Staatsblad_. Die bekendmaking mag niet vroeger dan drie maanden vóór het ontstaan van de vacature geschieden.
 
-`Art. 37`
+<span class="code"> Art. 37 </span>
 
 De kandidaten worden met het oog op hun benoeming gerangschikt op grond van een vergelijkend examen waarvan het Hof de voorwaarden bepaalt en de examencommissie aanstelt.
 
@@ -2056,13 +2056,13 @@ De examenuitslag blijft drie jaar geldig.
 
 Het vergelijkend examen wordt, wat de gevolgen ervan betreft, gelijkgesteld met de vergelijkende examens die in de rijksbesturen en de instellingen van openbaar nut toegang verlenen tot het ambt van bestuurssecretaris-jurist.
 
-`Art. 38`
+<span class="code"> Art. 38 </span>
 
 De referendarissen worden door het Hof benoemd voor een stage van drie jaar volgens hun rangschikking bij het bij artikel 37 bedoelde vergelijkend examen.
 
 Na die drie jaar wordt de benoeming definitief, behoudens andersluidende beslissing genomen door het Hof tijdens het derde stagejaar.
 
-`Art. 39`
+<span class="code"> Art. 39 </span>
 
 Het ambt van referendaris bij het Grondwettelijk Hof wordt gelijkgesteld met de rechterlijke ambten ten aanzien van de benoemingsvoorwaarden bepaald in de artikelen 70 en 71 van de wetten op de Raad van State, gecoördineerd op 12 januari 1973, en in de artikelen 187 en volgende van het Gerechtelijk Wetboek.
 
@@ -2070,7 +2070,7 @@ De jaren, als referendaris bij het Grondwettelijk Hof doorgebracht, komen in aan
 
 ###### <span class="chapters">HOOFDSTUK III: DE GRIFFIERS</span>
 
-`Art. 40`
+<span class="code"> Art. 40 </span>
 
 § 1. De Koning benoemt twee griffiers uit twee lijsten van elk twee kandidaten, de ene door de Nederlandse taalgroep, de andere door de Franse taalgroep van het Grondwettelijk Hof voorgedragen.
 
@@ -2078,7 +2078,7 @@ Artikel 32, tweede en derde lid, is mede van toepassing op deze voordrachten.
 
 § 2. De taalrol van een griffier wordt bepaald door zijn voordracht door de overeenstemmende taalgroep van het Grondwettelijk Hof.
 
-`Art. 41`
+<span class="code"> Art. 41 </span>
 
 Om tot griffier van het Grondwettelijk Hof te kunnen worden benoemd moet de kandidaat:
 
@@ -2100,7 +2100,7 @@ Bovendien moet de Nederlandstalige kandidaat het bewijs leveren van de kennis va
 
 ###### <span class="chapters">HOOFDSTUK IV: HET ADMINISTRATIEF PERSONEEL</span>
 
-`Art. 42`
+<span class="code"> Art. 42 </span>
 
 Het Grondwettelijk Hof beschikt over eigen personeel. Het Hof stelt de personeelsformatie en het taalkader van het personeel vast, met inachtneming van de taalpariteit per niveau; het benoemt en ontslaat de leden van het personeel.
 
@@ -2109,7 +2109,7 @@ De Koning keurt de formatie en het kader bedoeld in het eerste lid goed.
 Behoudens andersluidende beslissing van het Hof, vereist voor de goede werking van zijn diensten en vastgelegd in een reglement goedgekeurd bij koninklijk besluit, is het personeel onderworpen aan de wettelijke en statutaire regelen die van toepassing zijn op de in vast verband benoemde ambtenaren
 van het Rijk.
 
-`Art. 43`
+<span class="code"> Art. 43 </span>
 
 Het Grondwettelijk Hof beslist over de opdrachten, de verhindering en de vervanging, de afwezigheid, het verlof en de vakantie van de leden van het administratief personeel.
 
@@ -2117,7 +2117,7 @@ Het Hof kan die bevoegdheid geheel of ten dele opdragen aan een personeelscommis
 
 ###### <span class="chapters">HOOFDSTUK V: ONVERENIGBAARHEDEN</span>
 
-`Art. 44`
+<span class="code"> Art. 44 </span>
 
 De ambten van rechter, van referendaris en van griffier zijn onverenigbaar met de rechterlijke ambten, met de uitoefening van een bij verkiezing verleend openbaar mandaat, met enige openbare functie of openbaar ambt van politieke of administratieve aard, met het ambt van notaris of van gerechtsdeurwaarder, met het beroep van advocaat, met de militaire stand en met de functie van bedienaar van een erkende eredienst.
 
@@ -2128,11 +2128,11 @@ Van het eerste lid kan door de Koning, op gunstig en beredeneerd advies van het 
 3. wanneer het gaat om de deelneming aan een commissie, een raad of comité van advies, voor zover het aantal bezoldigde opdrachten of ambten beperkt blijft tot twee en het geheel van de bezoldiging niet hoger is dan een tiende van de jaarlijkse brutowedde van het hoofdambt in het Hof.
    <br/>
 
-`Art. 45`
+<span class="code"> Art. 45 </span>
 
 De voorzitters, de rechters, de referendarissen en de griffiers mogen niet voor enige andere openbare dienst worden opgevorderd, behoudens de gevallen die de wet bepaalt.
 
-`Art. 46`
+<span class="code"> Art. 46 </span>
 
 Het is de voorzitters, de rechters, de referendarissen en de griffiers verboden:
 
@@ -2141,11 +2141,11 @@ Het is de voorzitters, de rechters, de referendarissen en de griffiers verboden:
 3. hetzij persoonlijk, hetzij door een tussenpersoon, enige beroepsactiviteit uit te oefenen, enige handel te drijven, als zaakwaarnemer op te treden, deel te nemen aan de leiding, het bestuur van of het toezicht op handelsvennootschappen of nijverheids- of handelsinrichtingen.
    <br/>
 
-`Art. 47`
+<span class="code"> Art. 47 </span>
 
 De bloed- en aanverwanten, tot en met de derde graad, mogen, tenzij de Koning dit verbod heeft opgeheven, niet tegelijkertijd voorzitter of rechter en referendaris zijn.
 
-`Art. 48`
+<span class="code"> Art. 48 </span>
 
 § 1. Artikel 44, eerste lid, en artikel 46, 1° en 2°, zijn mede van toepassing op de leden van het administratief personeel van het Grondwettelijk Hof.
 
@@ -2153,11 +2153,11 @@ De bloed- en aanverwanten, tot en met de derde graad, mogen, tenzij de Koning di
 
 ###### <span class="chapters">HOOFDSTUK VI: TUCHT </span>
 
-`Art. 49`
+<span class="code"> Art. 49 </span>
 
 De voorzitters en de rechters die te kort geschoten zijn in de waardigheid van hun ambt of aan de plichten van hun staat, kunnen uit hun ambt ontzet of daarin geschorst worden, bij een arrest dat door het Grondwettelijk Hof wordt uitgesproken.
 
-`Art. 50`
+<span class="code"> Art. 50 </span>
 
 § 1. De referendarissen en de griffiers die zich aan plichtsverzuim schuldig maken, worden vermaand en berispt door de voorzitter, en geschorst en ontslagen door het Grondwettelijk Hof. Op de schorsing staat inhouding van wedde, met al de gevolgen van dien, zowel ten aanzien van het pensioen als van de latere weddeverhogingen.
 
@@ -2169,7 +2169,7 @@ De schorsing bij ordemaatregel wordt uitgesproken voor de tijd van één maand e
 
 ###### <span class="chapters">HOOFDSTUK VII : DIVERSE BEPALINGEN</span>
 
-`Art. 51`
+<span class="code"> Art. 51 </span>
 
 § 1. De voorzitters en de rechters leggen in handen van de Koning de eed af die voorgeschreven is bij artikel 2 van het decreet van 20 juli 1831.
 
@@ -2179,25 +2179,25 @@ De schorsing bij ordemaatregel wordt uitgesproken voor de tijd van één maand e
 
 § 4. De eed wordt in het Nederlands of in het Frans afgelegd naargelang de betrokkene Nederlandstalig of Franstalig is.
 
-`Art. 52`
+<span class="code"> Art. 52 </span>
 
 De Koning bepaalt de ambtskledij die de ambtsdragers van het Grondwettelijk Hof op terechtzittingen en bij officiële plechtigheden dragen.
 
 Hij regelt voorrang en eerbewijzen.
 
-`Art. 53`
+<span class="code"> Art. 53 </span>
 
 De Koning richt een concordantiedienst bij het Grondwettelijk Hof op.
 
 ##### <span class="titles">TITEL III </span><br/>WERKWIJZE VAN HET GRONDWETTELIJK HOF
 
-`Art. 54`
+<span class="code"> Art. 54 </span>
 
 Het voorzitterschap wordt om beurten door elke voorzitter waargenomen voor een termijn van een jaar.
 
 Deze termijn neemt een aanvang op één september van elk jaar.
 
-`Art. 55`
+<span class="code"> Art. 55 </span>
 
 Onverminderd het bepaalde in artikel 56 houdt het Grondwettelijk Hof zijn terechtzittingen, beraadslaagt het en doet het uitspraak met zeven rechters : drie Nederlandstalige, drie Franstalige en de voorzitter, of bij diens ontstentenis, de oudstbenoemde rechter of, in voorkomend geval, de oudste rechter in jaren van dezelfde taalgroep.
 
@@ -2208,7 +2208,7 @@ andere taalgroep.
 
 Elke beslissing wordt genomen bij meerderheid van stemmen van de leden.
 
-`Art. 56`
+<span class="code"> Art. 56 </span>
 
 Het Grondwettelijk Hof komt in voltallige zitting bijeen om de nodige beslissingen te nemen met toepassing van de artikelen 37, 38, 42, 43, 44, 49, 50, 100 en 122.
 
@@ -2218,17 +2218,17 @@ In voltallige zitting kan het Hof slechts uitspraak doen voor zover er ten minst
 
 Wanneer het Hof uitspraak doet in voltallige zitting, is bij staking van stemmen, de stem van de voorzitter beslissend. Wanneer de voorzitter afwezig of verhinderd is, wordt hij vervangen door de oudstbenoemde rechter of, in voorkomend geval, de oudste rechter in jaren van dezelfde taalgroep.
 
-`Art. 57`
+<span class="code"> Art. 57 </span>
 
 Artikel 258 van het Strafwetboek betreffende de rechtsweigering is mede van toepassing op de
 rechters bij het Grondwettelijk Hof.
 
-`Art. 58`
+<span class="code"> Art. 58 </span>
 
 Op 1 september van elk jaar maken de voorzitters, ten behoeve van de dienst, een lijst op van
 de rechters van hun taalgroep.
 
-`Art. 59`
+<span class="code"> Art. 59 </span>
 
 De voorzitters nemen zitting in alle zaken.
 
@@ -2248,11 +2248,11 @@ Op de lijst van de andere voorzitter plaatst hij:
 
 De volgorde van de zaken is die bepaald in artikel 67.
 
-`Art. 60`
+<span class="code"> Art. 60 </span>
 
 Bij afwezigheid of verhindering van een rechter die geen voorzitter is, wordt die rechter vervangen door degene die, benoemd op grond van dezelfde bepaling, na hem komt op de lijst of, als hij de laatste is op die lijst, door de eerste.
 
-`Art. 60 bis`
+<span class="code"> Art. 60 bis </span>
 
 De voorzitters en de rechters die wegens hun leeftijd in ruste worden gesteld, blijven hun ambt uitoefenen in de zaken waarin zij zitting hadden ter terechtzitting en die in beraad zijn genomen vóór de datum van hun inrustestelling en nog niet tot een beslissing hebben geleid, behalve indien de voorzitter in functie hen op hun verzoek daarvan vrijstelt.
 
@@ -2260,7 +2260,7 @@ De verlenging van de ambtsuitoefening kan de termijn van zes maanden niet oversc
 
 Voor de toepassing van artikel 56, eerste lid, nemen de voorzitters en de rechters die wegens hun leeftijd in ruste worden gesteld, zitting tot op het ogenblik waarop hun opvolger de eed heeft afgelegd.
 
-`Art. 61`
+<span class="code"> Art. 61 </span>
 
 Het Hof wordt bijgestaan door de griffier wiens taal die van het onderzoek is.
 
@@ -2268,7 +2268,7 @@ Het Hof wordt bijgestaan door de griffier wiens taal die van het onderzoek is.
 
 ###### <span class="chapters">HOOFDSTUK I: GEBRUIK VAN DE TALEN VOOR HET GRONDWETTELIJK HOF</span>
 
-`Art. 62`
+<span class="code"> Art. 62 </span>
 
 De zaken worden bij het Grondwettelijk Hof ingediend in het Nederlands, in het Frans of in het
 Duits.
@@ -2287,7 +2287,7 @@ In de akten en verklaringen:
 
 Het Hof stelt ambtshalve de nietigheid vast van de akten en verklaringen van de Ministerraad, van de Regeringen, van de voorzitters van de wetgevende vergaderingen en van de personen onderworpen aan de wetgeving op het gebruik der talen in bestuurszaken die niet aan het Hof worden gericht in de door het tweede lid opgelegde taal.
 
-`Art. 63`
+<span class="code"> Art. 63 </span>
 
 § 1. Onder voorbehoud van het bepaalde in de §§ 2 en 3 geschiedt het onderzoek van de zaak in de taal van de akte waardoor de zaak bij het Hof aanhangig wordt gemaakt.
 
@@ -2300,11 +2300,11 @@ De samengevoegde zaken worden verder behandeld in de taal van de eerst aanhangig
 § 4. De stukken ten behoeve van het Hof worden vertaald in het Nederlands of het Frans naar gelang
 van het geval.
 
-`Art. 64`
+<span class="code"> Art. 64 </span>
 
 De mondelinge verklaringen ter terechtzitting geschieden in het Nederlands, het Frans of het Duits, met simultaanvertaling.
 
-`Art. 65`
+<span class="code"> Art. 65 </span>
 
 De arresten van het Hof worden in het Nederlands en in het Frans gesteld en uitgesproken. Zij worden in het _Belgisch Staatsblad_ bekendgemaakt op de wijze bepaald in artikel 114, met een vertaling in het Duits.
 
@@ -2314,7 +2314,7 @@ Zij worden tevens in het Duits uitgesproken en bekendgemaakt wanneer het gaat om
 
 ###### <span class="chapters">HOOFDSTUK II: GEBRUIK VAN DE TALEN IN DE DIENSTEN VAN HET GRONDWETTELIJK HOF</span>
 
-`Art. 66`
+<span class="code"> Art. 66 </span>
 
 De administratieve werkzaamheden van het Grondwettelijk Hof en de organisatie van de diensten zijn onderworpen aan de bepalingen van de wetgeving op het gebruik der talen in bestuurszaken, die gelden voor de diensten waarvan de werkkring het hele land bestrijkt.
 
@@ -2322,11 +2322,11 @@ De administratieve werkzaamheden van het Grondwettelijk Hof en de organisatie va
 
 ###### <span class="chapters">HOOFDSTUK I: INSCHRIJVING OP DE ROL EN AANWIJZING VAN DE VERSLAGGEVERS</span>
 
-`Art. 67`
+<span class="code"> Art. 67 </span>
 
 De griffier brengt de zaken op de rol van het Hof in de volgorde van ontvangst.
 
-`Art. 68`
+<span class="code"> Art. 68 </span>
 
 Voor elke zaak zijn de verslaggevers de rechters die op ieder van de in artikel 59 bedoelde lijsten als eerste vermeld staan.
 
@@ -2334,15 +2334,15 @@ Elke verslaggever heeft tot taak het dossier te behandelen en ter terechtzitting
 
 ###### <span class="chapters">HOOFDSTUK II: VOORAFGAANDE RECHTSPLEGING</span>
 
-`Art. 69`
+<span class="code"> Art. 69 </span>
 
 Er is een beperkte kamer, bestaande uit de voorzitter en de twee verslaggevers.
 
-`Art. 70`
+<span class="code"> Art. 70 </span>
 
 Dadelijk na ontvangst van een beroep tot vernietiging of van een verwijzingsbeslissing onderzoeken de verslaggevers of het bij inzage van het verzoekschrift of van de verwijzingsbeslissing, duidelijk is dat het beroep of de vraag klaarblijkelijk niet ontvankelijk of niet gegrond is, dat het Grondwettelijk Hof klaarblijkelijk niet bevoegd is om er kennis van te nemen of dat de zaak lijkt te kunnen worden afgedaan met een arrest gewezen op voorafgaande rechtspleging.
 
-`Art. 71`
+<span class="code"> Art. 71 </span>
 
 Indien het beroep tot vernietiging of de prejudiciële vraag klaarblijkelijk niet ontvankelijk lijkt of klaarblijkelijk niet tot de bevoegdheid van het Hof behoort, brengen de verslaggevers hierover bij de voorzitter verslag uit binnen een termijn van maximum dertig dagen na ontvangst van het verzoekschrift of van de verwijzingsbeslissing; indien de bestreden regel tevens het onderwerp is van een vordering tot schorsing, wordt deze termijn teruggebracht tot maximum vijftien dagen.
 
@@ -2352,7 +2352,7 @@ De beperkte kamer kan dan, met eenparigheid van stemmen beslissen dat de zaak zo
 
 Wordt het voorstel om een arrest van niet-ontvankelijkheid of niet-bevoegdheid uit te spreken niet gevolgd, dan stelt de beperkte kamer dit bij beschikking vast.
 
-`Art. 72`
+<span class="code"> Art. 72 </span>
 
 Indien de verslaggevers oordelen dat het beroep tot vernietiging klaarblijkelijk niet gegrond is, de prejudiciële vraag klaarblijkelijk negatief moet worden beantwoord of de zaak, wegens de aard ervan of de relatieve eenvoud van de erin opgeworpen problemen, kan worden afgedaan met een arrest gewezen op voorafgaande rechtspleging, brengen zij hierover bij het Hof verslag uit binnen een termijn van maximum dertig dagen na ontvangst van het verzoekschrift of de verwijzingsbeslissing; indien de bestreden regel tevens het onderwerp is van een vordering tot schorsing, wordt deze termijn teruggebracht tot maximum vijftien dagen.
 
@@ -2362,13 +2362,13 @@ Het Hof kan dan beslissen dat de zaak zonder verdere rechtspleging wordt afgedaa
 
 Wordt het voorstel om een arrest gewezen op voorafgaande rechtspleging uit te spreken niet gevolgd, dan stelt het Hof dit bij beschikking vast.
 
-`Art. 73`
+<span class="code"> Art. 73 </span>
 
 Van de arresten bedoeld in de artikelen 71, derde lid, en 72, derde lid, wordt kennis gegeven aan de partijen.
 
 ###### <span class="chapters">HOOFDSTUK III: BEKENDMAKING EN KENNISGEVING VAN DE BEROEPEN EN DE PREJUDICIELE VRAGEN </span>
 
-`Art. 74`
+<span class="code"> Art. 74 </span>
 
 Wanneer geen toepassing is gegeven aan de artikelen 71 en 72 of na inzage van de in artikel 71 , vierde lid, bedoelde beschikking of van de beschikking bedoeld in artikel 72, vierde lid, laat de griffier in het _Belgisch Staatsblad_, in het Nederlands, het Frans en het Duits een bericht bekendmaken waarin de indiener en het onderwerp van het beroep of van de prejudiciële vraag worden aangegeven.
 
@@ -2376,13 +2376,13 @@ Het verzoekschrift tot vernietiging kan worden geraadpleegd ter griffie van het 
 
 De procedure wordt voortgezet overeenkomstig de navolgende bepalingen.
 
-`Art. 75`
+<span class="code"> Art. 75 </span>
 
 Het Hof kan ambtshalve een advocaat aanstellen. De aanstelling zal als nietig worden beschouwd indien de belanghebbende partij een persoonlijke raadsman kiest.
 
 De Koning bepaalt op welke wijze de bijstand zal worden verleend.
 
-`Art. 76`
+<span class="code"> Art. 76 </span>
 
 § 1. De griffier brengt de door de Ministerraad ingestelde beroepen tot vernietiging ter kennis van de Gemeenschaps- en Gewestregeringen en van de voorzitters van de wetgevende vergaderingen.
 
@@ -2392,11 +2392,11 @@ De Koning bepaalt op welke wijze de bijstand zal worden verleend.
 
 § 4. Hij brengt de door een individuele belanghebbende ingestelde beroepen tot vernietiging ter kennis van de Ministerraad en van de Gemeenschaps- en Gewestregeringen en van de voorzitters van de wetgevende vergaderingen.
 
-`Art. 77`
+<span class="code"> Art. 77 </span>
 
 De griffier brengt de verwijzingsbeslissingen ter kennis van de Ministerraad, van de Gemeenschaps- en Gewestregeringen, en van de voorzitters van de wetgevende vergaderingen, evenals van de partijen in het geding voor het rechtscollege dat de verwijzingsbeslissing genomen heeft.
 
-`Art. 78`
+<span class="code"> Art. 78 </span>
 
 Indien een zelfde bepaling het onderwerp van een beroep tot vernietiging en van een vroegere verwijzingsbeslissing is, brengt de griffier het beroep tot vernietiging ter kennis van de partijen in het geding voor het rechtscollege dat de prejudiciële vraag heeft gesteld. De kennisgeving vermeldt binnen welke termijn zij een memorie kunnen indienen overeenkomstig artikel 85.
 
@@ -2425,11 +2425,11 @@ Behoudens toepassing van artikel 100, doet het Hof eerst uitspraak op het beroep
 
 ###### <span class="chapters">HOOFDSTUK IV: HET ONDERZOEK</span>
 
-`Art. 79`
+<span class="code"> Art. 79 </span>
 
 Het onderzoek is schriftelijk.
 
-`Art. 80`
+<span class="code"> Art. 80 </span>
 
 De kennisgevingen aan de Ministerraad worden gedaan aan het kabinet van de Eerste Minister.
 
@@ -2437,7 +2437,7 @@ De kennisgevingen aan de Gemeenschaps- en Gewestregeringen worden gedaan aan het
 
 De kennisgevingen aan de voorzitters van de wetgevende vergaderingen worden gedaan aan de griffie van de vergadering.
 
-`Art. 81`
+<span class="code"> Art. 81 </span>
 
 Elke partij die geen openbare overheid is, vermeldt in het verzoekschrift of de memorie, haar woonplaats of zetel in België dan wel de woonplaats die zij in België kiest.
 
@@ -2459,7 +2459,7 @@ Elke kennisgeving wordt door de griffie aan de vermelde zetel of woonplaats geda
     <br/>
 </div>
 
-`Art. 82`
+<span class="code"> Art. 82 </span>
 
 Alle stukken van de rechtspleging worden bij een ter post aangetekende brief aan het Hof gezonden.
 
@@ -2482,51 +2482,51 @@ De datum van het postmerk heeft bewijskracht zowel voor de verzending als voor d
     <br/>
 </div>
 
-`Art. 83`
+<span class="code"> Art. 83 </span>
 
 [Opgeheven]
 
-`Art. 84`
+<span class="code"> Art. 84 </span>
 
 De tot het Hof gerichte verzoekschriften en memories bevatten een inventaris van de tot staving
 aangevoerde stukken.
 
 Elk dossier wordt toegezonden met een inventaris van de stukken waaruit het samengesteld is.
 
-`Art. 85`
+<span class="code"> Art. 85 </span>
 
 Binnen 45 dagen na ontvangst van de door de griffier krachtens de artikelen 76, 77 en 78 gedane kennisgevingen kunnen de Ministerraad, de Regeringen, de voorzitters van de wetgevende vergaderingen en de personen aan wie die kennisgevingen zijn gericht, een memorie bij het Hof indienen.
 
 Wanneer de zaak een beroep tot vernietiging betreft, mogen die memories nieuwe middelen bevatten. De partijen kunnen nadien geen nieuwe middelen meer voordragen.
 
-`Art. 86`
+<span class="code"> Art. 86 </span>
 
 De memories bedoeld in de artikelen 71, tweede lid, 72, tweede lid, 85, 87 en 89, die niet zijn ingediend binnen de door deze wet bepaalde termijn, worden uit de debatten geweerd.
 
-`Art. 87`
+<span class="code"> Art. 87 </span>
 
 § 1. Wanneer het Grondwettelijk Hof, bij wijze van prejudiciële beslissing, uitspraak doet op vragen als bedoeld in artikel 26, kan ieder die van een belang doet blijken, een memorie aan het Hof richten binnen dertig dagen na de bekendmaking voorgeschreven in artikel 74. Hij wordt daardoor geacht partij in het geding te zijn.
 
 § 2. Wanneer het Grondwettelijk Hof uitspraak doet op beroepen tot vernietiging als bedoeld in artikel 1, kan ieder die van een belang doet blijken, zijn opmerkingen in een memorie aan het Hof richten binnen dertig dagen na de bekendmaking voorgeschreven in artikel 74. Hij wordt daardoor geacht partij in het geding te zijn.
 
-`Art. 88`
+<span class="code"> Art. 88 </span>
 
 Ieder die met toepassing van de artikelen 85 en 87 een memorie aan het Hof richt, is gehouden er het dossier bij te voegen waarover hij beschikt.
 
-`Art. 89`
+<span class="code"> Art. 89 </span>
 
 § 1. Wanneer het Hof, bij wijze van prejudiciële beslissing, uitspraak doet op vragen als bedoeld in artikel 26, zendt de griffier een afschrift van de ingediende memories aan de andere partijen die een memorie hebben ingediend. Deze beschikken dan over dertig dagen vanaf de dag van ontvangst om aan de griffie een memorie van antwoord te doen geworden. Bij het verstrijken van die termijn zendt de griffier een afschrift van de ingediende memories van antwoord aan de partijen die een memorie hebben ingediend.
 
 § 2. Wanneer het Hof uitspraak doet op beroepen tot vernietiging bedoeld in artikel 1, zendt de griffier, bij het verstrijken van de in de artikelen 85 en 87 bedoelde termijnen, een afschrift van de ingediende memories aan de verzoekende partij. Die beschikt over dertig dagen vanaf de dag van ontvangst om aan de griffie een memorie van antwoord te doen geworden. Bij het verstrijken van die termijn zendt de griffier aan elke partij die een memorie heeft ingediend een afschrift van de door de verzoekende partij ingediende memorie van antwoord en van de memories die zijn ingediend door de andere partijen. De bestemmelingen van die kennisgeving beschikken over dertig dagen vanaf de dag van ontvangst om
 aan de griffie een memorie van wederantwoord te doen geworden. Bij het verstrijken van die termijn zendt de griffier een afschrift van de ingediende memories van wederantwoord aan de verzoekende partij en aan de andere partijen die een memorie hebben ingediend.
 
-`Art. 89 bis`
+<span class="code"> Art. 89 bis </span>
 
 De in de artikelen 85, 87 en 89 vastgestelde termijnen kunnen worden verkort of verlengd bij een met redenen omklede beschikking van de voorzitter.
 
 Wanneer een in artikel 87 vastgestelde termijn wordt verkort of verlengd overeenkomstig het eerste lid, maakt de griffier daarvan melding in het in artikel 74, eerste lid, bedoelde bericht.
 
-`Art. 90`
+<span class="code"> Art. 90 </span>
 
 Na het verstrijken van de termijnen bepaald in artikel 89, beslist het Hof, nadat de verslaggevers zijn gehoord, of de zaak al dan niet in staat van wijzen is en of er een terechtzitting wordt gehouden.
 
@@ -2536,7 +2536,7 @@ De beschikking waarbij beslist wordt dat de zaak niet in staat van wijzen is, ve
 
 Van de beschikkingen wordt aan de partijen kennis gegeven. Indien geen terechtzitting is bepaald, kan elke partij een verzoek indienen om te worden gehoord. Dit verzoek wordt ingediend binnen zeven dagen nadat de in het tweede lid bedoelde beschikking ter kennis is gebracht.
 
-`Art. 91`
+<span class="code"> Art. 91 </span>
 
 Het Hof beschikt over de ruimste onderzoeks- en opsporingsbevoegdheden.
 
@@ -2551,7 +2551,7 @@ Het kan met name:
 
 Het kan, bij beschikking, aan de verslaggevers de onderzoeks- of opsporingsbevoegdheden delegeren die het bepaalt.
 
-`Art. 92`
+<span class="code"> Art. 92 </span>
 
 Het Hof kan beslissen dat de in artikel 91, 3° bedoelde personen onder ede worden gehoord, nadat de partijen en hun advocaten zijn opgeroepen.
 
@@ -2571,11 +2571,11 @@ De bepalingen van het Strafwetboek betreffende valse getuigenis in burgerlijke z
 
 Het proces-verbaal van het verhoor wordt getekend door de voorzitter of door de rechters van het Hof die het verhoor hebben gehouden, door de griffier en door de gehoorde personen.
 
-`Art. 93`
+<span class="code"> Art. 93 </span>
 
 In geval van plaatsopneming worden de partijen en hun advocaten opgeroepen.
 
-`Art. 94`
+<span class="code"> Art. 94 </span>
 
 Het Hof bepaalt bij beschikking de opdracht van de deskundigen die het aanstelt, alsook de
 termijn voor het indienen van hun verslag. De griffier geeft van dat bevel kennis aan de deskundigen en
@@ -2603,7 +2603,7 @@ De minuut van het verslag wordt ter griffie neergelegd. De partijen worden hierv
 
 Het Hof kan, om gewichtige redenen en bij gemotiveerde beslissing, een einde maken aan de opdracht van de deskundigen en in hun vervanging voorzien na hen te hebben gehoord. De griffier geeft van de beslissing kennis aan de deskundigen en aan de partijen.
 
-`Art. 94 bis`
+<span class="code"> Art. 94 bis </span>
 
 § 1. Wanneer bij het Hof een prejudiciële vraag aanhangig wordt gemaakt die is gesteld door de Raad van State krachtens artikel 6, § 1, VIII, 5º, van de bijzondere wet van 8 augustus 1980 tot hervorming der instellingen, geeft de griffier kennis van de verwijzingsbeslissing overeenkomstig artikel 77.
 
@@ -2615,7 +2615,7 @@ Het Hof kan, om gewichtige redenen en bij gemotiveerde beslissing, een einde mak
 
 ###### <span class="sections"> AFDELING I <br/>BETICHTING VAN VALSHEID</span>
 
-`Art. 95`
+<span class="code"> Art. 95 </span>
 
 Ingeval een partij een overgelegd stuk van valsheid beticht, wordt de partij die het stuk heeft overgelegd, door het Hof verzocht verwijl te verklaren of zij volhardt in haar voornemen ervan gebruik te maken.
 
@@ -2627,11 +2627,11 @@ Indien uitspraak kan worden gedaan zonder dat met het van valsheid betichte stuk
 
 ###### <span class="sections">AFDELING II <br/> HERVATTING VAN HET RECHTSGEDING</span>
 
-`Art. 96`
+<span class="code"> Art. 96 </span>
 
 Indien, vóór de sluiting van de debatten, een belanghebbende die een beroep tot vernietiging heeft ingesteld of een in artikel 87 bedoelde partij komt te overlijden, wordt de rechtspleging voortgezet zonder dat er grond is tot hervatting van het rechtsgeding.
 
-`Art. 97`
+<span class="code"> Art. 97 </span>
 
 Indien, vóór de sluiting van de debatten, een van de partijen in het geding voor het rechtscollege dat de prejudiciële vraag heeft gesteld, komt te overlijden nadat zij partij voor het Hof is geworden, wordt de rechtspleging voor het Hof geschorst.
 
@@ -2639,7 +2639,7 @@ De rechtspleging wordt hervat wanneer het rechtscollege dat de prejudiciële vra
 
 ###### <span class="sections">AFDELING III <br/> AFSTAND VAN HET GEDING</span>
 
-`Art. 98`
+<span class="code"> Art. 98 </span>
 
 De verzoekende partijen kunnen afstand doen van hun beroep tot vernietiging.
 
@@ -2647,7 +2647,7 @@ Bij de mededeling die de Ministerraad en de Gemeenschaps- en Gewestregeringen va
 
 Indien daartoe grond bestaat, wijst het Hof de afstand toe, de andere partijen gehoord.
 
-`Art. 99`
+<span class="code"> Art. 99 </span>
 
 Met de afstand, aanvaard of toegelaten door het rechtscollege dat de prejudiciële vraag heeft gesteld, komt een eind aan de rechtspleging voor het Hof.
 
@@ -2655,7 +2655,7 @@ Het rechtscollege zendt een expeditie van zijn beslissing aan het Hof.
 
 ###### <span class="sections">AFDELING IV <br/> SAMENHANG</span>
 
-`Art.100`
+<span class="code"> Art.100 </span>
 
 Het Grondwettelijk Hof in voltallige zitting kan de beroepen tot vernietiging of de prejudiciële vragen betreffende een zelfde norm waarover in een en hetzelfde arrest uitspraak dient te worden gedaan samenvoegen. In dat geval worden de zaken onderzocht door de zetel waarbij de eerste zaak is aanhangig gemaakt.
 
@@ -2665,7 +2665,7 @@ Wanneer twee of meer zaken zijn samengevoegd, zijn de verslaggevers degenen die,
 
 ###### <span class="sections">AFDELING V <br/> WRAKING EN VERSCHONING</span>
 
-`Art. 101`
+<span class="code"> Art. 101 </span>
 
 De rechters van het Hof kunnen worden gewraakt om de redenen die luidens de artikelen 828 en 830 van het Gerechtelijk Wetboek tot wraking aanleiding geven.
 
@@ -2673,7 +2673,7 @@ Het feit dat een rechter van het Hof heeft deelgenomen aan de totstandkoming van
 
 Iedere rechter van het Hof die weet dat er een reden van wraking tegen hem bestaat, moet daarvan kennis geven aan het Hof, dat beslist of hij zich van de zaak moet onthouden.
 
-`Art. 102`
+<span class="code"> Art. 102 </span>
 
 Hij die wil wraken, moet dit doen zodra hij van de wrakingsgrond kennis heeft.
 
@@ -2687,7 +2687,7 @@ lid, artikel 56 en artikel 60, al naar het geval.
 
 ###### <span class="chapters">HOOFDSTUK VI: TERECHTZITTING</span>
 
-`Art. 103`
+<span class="code"> Art. 103 </span>
 
 De partijen die een verzoekschrift of een memorie hebben ingediend, hun vertegenwoordigers en hun advocaten worden vijftien dagen vooraf in kennis gesteld van de datum van de terechtzitting.
 
@@ -2695,11 +2695,11 @@ Samen met de kennisgeving met de datum van de terechtzitting, wordt het verslag 
 
 Gedurende de in het eerste lid bepaalde termijn kunnen zij op de griffie inzage nemen van het dossier.
 
-`Art. 104`
+<span class="code"> Art. 104 </span>
 
 De terechtzittingen van het Hof zijn openbaar, tenzij die openbaarheid gevaar oplevert voor de orde of de goede zeden; in dat geval wordt zulks door het Hof bij een met redenen omkleed arrest verklaard.
 
-`Art. 105`
+<span class="code"> Art. 105 </span>
 
 De aanwezigen wonen de terechtzitting bij met ongedekten hoofde, eerbiedig en in stilte.
 
@@ -2707,7 +2707,7 @@ Alles wat de voorzitter met het oog op de handhaving van de orde beveelt, wordt 
 
 Hetzelfde voorschrift wordt nageleefd in de plaatsen waar de rechters van het Hof de functies van hun ambt waarnemen.
 
-`Art. 106`
+<span class="code"> Art. 106 </span>
 
 Op de terechtzitting vat de verslaggever die behoort tot de groep waarvan de taal die van het onderzoek is, de feitelijke toedracht van de zaak samen en vermeldt hij de rechtsvragen die het Hof moet oplossen.
 
@@ -2721,7 +2721,7 @@ De voorzitter verklaart daarna de debatten voor gesloten en stelt de zaak in ber
 
 ###### <span class="chapters">HOOFDSTUK VII: HEROPENING DER DEBATTEN</span>
 
-`Art. 107`
+<span class="code"> Art. 107 </span>
 
 Het Hof kan de heropening van de debatten ambtshalve bevelen. Het moet ze bevelen
 alvorens te bewilligen in een exceptie of een middel waaromtrent de partijen niet in staat zijn gesteld
@@ -2731,21 +2731,21 @@ Het Hof bepaalt de termijnen waarbinnen de partijen een laatste memorie kunnen n
 
 ###### <span class="chapters">HOOFDSTUK VIII: HET ARREST</span>
 
-`Art. 108`
+<span class="code"> Art. 108 </span>
 
 De beraadslagingen van het Hof zijn geheim.
 
-`Art. 109`
+<span class="code"> Art. 109 </span>
 
 Onverminderd artikel 25, artikel 25*quater*, derde lid en artikel 6, § 1, VIII, 5°, van de bijzondere wet van 8 augustus 1980 tot hervorming der instellingen, worden de arresten gewezen binnen zes maanden na de indiening van het beroep tot vernietiging of na ontvangst van de verwijzingsbeslissing.
 
 Evenwel, wanneer een zaak na afloop van die termijn niet in staat van wijzen is, kan het Hof, bij een met redenen omklede beslissing, deze termijn voor de nodige tijd verlengen. Desnoods kan de verlenging worden hernieuwd, zonder dat de totale duur der verlengingen zes maanden mag overschrijden.
 
-`Art. 110`
+<span class="code"> Art. 110 </span>
 
 Tenzij de voorzitter beslist het arrest in openbare terechtzitting uit te spreken, geldt de bekendmaking ervan op de website van het Hof als uitspraak.
 
-`Art. 111`
+<span class="code"> Art. 111 </span>
 
 Het arrest bevat de gronden en het beschikkend gedeelte. Het vermeldt:
 
@@ -2755,11 +2755,11 @@ Het arrest bevat de gronden en het beschikkend gedeelte. Het vermeldt:
 4. de datum van ondertekening van het arrest en de naam van de rechters die erover hebben beraadslaagd.
    <br/>
 
-`Art. 112`
+<span class="code"> Art. 112 </span>
 
 De arresten worden door de voorzitter en de griffier getekend.
 
-`Art. 113`
+<span class="code"> Art. 113 </span>
 
 Van de arresten wordt door de griffier kennis gegeven:
 
@@ -2775,19 +2775,19 @@ Zij worden op elektronische wijze meegedeeld:
 2. aan de voorzitters van de Wetgevende Kamers, van het Vlaams Parlement, van het Parlement van de Franse Gemeenschap, van het Waals Parlement, van het Parlement van de Duitstalige Gemeenschap en van de Wetgevende Vergaderingen van het Brusselse Hoofdstedelijke Gewest.
    <br/>
 
-`Art. 114`
+<span class="code"> Art. 114 </span>
 
 De arresten worden door toedoen van de griffier bekendgemaakt op de website van het Hof, alsook in hun geheel of bij uittreksel in het _Belgisch Staatsblad_. Het uittreksel bevat de gronden en het beschikkend gedeelte.
 
-`Art. 115`
+<span class="code"> Art. 115 </span>
 
 De arresten zijn van rechtswege uitvoerbaar.
 
-`Art.116`
+<span class="code"> Art.116 </span>
 
 Het arrest van het Hof is definitief en niet vatbaar voor beroep.
 
-`Art. 117`
+<span class="code"> Art. 117 </span>
 
 § 1. Onder voorbehoud van artikel 118 kan het Hof, hetzij ambtshalve, hetzij op verzoek van een der partijen, binnen twee weken na de kennisgeving van het arrest, de schrijf- en rekenfouten of klaarblijkelijke onnauwkeurigheden doen herstellen.
 
@@ -2797,7 +2797,7 @@ Het arrest van het Hof is definitief en niet vatbaar voor beroep.
 
 § 4. De minuut van de beschikking waarbij de verbetering wordt bevolen, wordt aan de minuut van het verbeterde arrest gehecht. Van die beschikking wordt melding gemaakt op de kant van de minuut van het verbeterde arrest.
 
-`Art. 118`
+<span class="code"> Art. 118 </span>
 
 Op vordering van de partijen bij het beroep tot vernietiging of van het rechtscollege dat de prejudiciële vraag heeft gesteld, geeft het Hof een uitlegging van het arrest. De vordering tot uitlegging wordt ingesteld overeenkomstig artikel 5 of artikel 27, naar gelang van het geval. Zij wordt medegedeeld aan alle partijen in het geding.
 
@@ -2807,7 +2807,7 @@ De minuut van het uitleggend arrest wordt aan de minuut van het uitgelegde arres
 
 ###### <span class="chapters">HOOFDSTUK VIII BIS: CONTROLEPROCEDURE VOOR DE VOLKSRAADPLEGINGEN</span>
 
-`Art. 118 bis`
+<span class="code"> Art. 118 bis </span>
 
 De artikelen 67, <span class="gray-bg inline">78 bis <sup>8</sup></span>, 79, 80 tot 82, 91, eerste lid, tweede lid, 1° tot 4°, en derde lid, 92, 93, 95, 101, 102, 108 en 119, zijn van toepassing op de controleprocedure voor de volksraadplegingen.
 
@@ -2817,11 +2817,11 @@ Artikel 68 is van toepassing, mits de woorden " ter [te]rechtzitting" in het twe
 
 Artikel 98 is van toepassing, mits de woorden "en van hun verzoek" in het eerste lid worden toegevoegd na de woorden "beroep tot vernietiging".
 
-`Art.118 ter`
+<span class="code"> Art.118 ter </span>
 
 De griffier brengt de verzoeken onmiddellijk ter kennis van de Ministerraad, van de Gewest- en Gemeenschapsregeringen, van de voorzitters van de andere wetgevende vergaderingen dan die waarvan het verzoek uitgaat en van de initiatiefnemer van de volksraadpleging.
 
-`Art. 118 quater`
+<span class="code"> Art. 118 quater </span>
 
 Binnen tien dagen na ontvangst van de door de griffier krachtens artikel 118*ter* gedane kennisgevingen kunnen de Ministerraad, de Gewest- en Gemeenschapsregeringen, de voorzitters van de andere wetgevende vergaderingen dan die waarvan het verzoek uitgaat en de initiatiefnemer van de volksraadpleging een memorie tot het Hof richten. De memorie bevat een inventaris van de ter staving aangevoerde stukken.
 
@@ -2831,7 +2831,7 @@ De memories die niet zijn ingediend binnen de in het eerste lid bepaalde termijn
 
 ###### <span class="chapters"> HOOFDSTUK IX: ALGEMENE BEPALINGEN</span>
 
-`Art. 119`
+<span class="code"> Art. 119 </span>
 
 De dag van de akte die het uitgangspunt is van een termijn, wordt er niet in begrepen.
 
@@ -2839,24 +2839,24 @@ De vervaldag wordt in de termijn meegerekend.
 
 Is die dag een zaterdag, een zondag of een wettelijke feestdag, dan wordt die vervaldag verplaatst tot de eerstvolgende werkdag.
 
-`Art. 120`
+<span class="code"> Art. 120 </span>
 
 De termijnen lopen tegen de minderjarigen, de onbekwaamverklaarden en de andere onbekwamen. Het Hof kan deze echter van het verval ontheffen wanneer vaststaat dat hun vertegenwoordiging niet was verzekerd vóór het verstrijken van de termijnen.
 
-`Art. 121`
+<span class="code"> Art. 121 </span>
 
 De griffie is open alle dagen behalve op zaterdagen, zondagen en wettelijke feestdagen.
 
 De Koning bepaalt de openingsuren.
 
-`Art. 122`
+<span class="code"> Art. 122 </span>
 
 Het Hof stelt zijn reglement van orde vast. Het draagt zorg voor de bekendmaking ervan in het
 _Belgisch Staatsblad_.
 
 ##### <span class="titles"> TITEL VI </span><br/> SLOTBEPALINGEN
 
-`Art. 123`
+<span class="code"> Art. 123 </span>
 
 § 1. De kredieten die voor de werking van het Grondwettelijk Hof nodig zijn, worden uitgetrokken op de begroting van de Dotaties.
 
@@ -2864,21 +2864,21 @@ _Belgisch Staatsblad_.
 
 ##### <span class="titles">TITEL VII </span><br/> OVERGANGSBEPALINGEN
 
-`Art. 124`
+<span class="code"> Art. 124 </span>
 
 [Opgeheven]
 
-`Art. 124 bis`<sup>9</sup>
+<span class="code"> Art. 124 bis </span>
 
-`Art. 125`
+<span class="code"> Art. 125 </span>
 
 De benoeming van de referendarissen aangeworven door het Arbitragehof op basis van de wet van 28 juni 1983 houdende de inrichting, de bevoegdheid en de werking van het Arbitragehof, wordt definitief.
 
-`Art. 126`
+<span class="code"> Art. 126 </span>
 
 De bepaling van artikel 41, eerste lid, betreffende het houden van een diploma van doctor of licentiaat in de rechten is niet van toepassing op de griffiers in dienst op de datum van inwerkingtreding van deze wet.
 
-`Art. 127`
+<span class="code"> Art. 127 </span>
 
 Opgeheven worden:
 
@@ -2891,7 +2891,7 @@ Opgeheven worden:
 5. de wet van 10 mei 1985 betreffende de gevolgen van de door het Arbitragehof gewezen vernietigende arresten.
    <br/>
 
-`Art. 128`
+<span class="code"> Art. 128 </span>
 
 Artikel 34, § 5, treedt in werking uiterlijk vanaf de derde benoeming volgend op de inwerkingtreding van de bijzondere wet van 9 maart 2003 tot wijziging van de bijzondere wet van 6 januari 1989 op het Arbitragehof.
 
@@ -2943,7 +2943,7 @@ rekening met de opeenvolgende wijzigingen van:
 </button>
 <div role="region" id="orgWet2" class="accordion-content">
 
-`Artikel 1`
+<span class="code"> Artikel 1 </span>
 
 De wedden van de rechters en van de referendarissen van het Grondwettelijk Hof worden bepaald als volgt:
 
@@ -2956,43 +2956,43 @@ De artikelen 360, 361, 362, 363, 365 en 377 van het Gerechtelijk Wetboek zijn me
 
 De referendarissen genieten gedurende de stageperiode van drie jaar, bedoeld in artikel 40, eerste lid, van de bijzondere wet op het Grondwettelijk Hof, de bezoldigingsregeling van de adjunct-referendarissen van de Raad van State; gedurende de tien daaropvolgende jaren genieten zij de bezoldigingsregeling van de referendarissen; na het dertiende jaar volgend op hun benoeming genieten zij de bezoldigingsregeling van de eerste referendarissen.
 
-`Art. 2`
+<span class="code"> Art. 2 </span>
 
 De griffiers van het Grondwettelijk Hof genieten dezelfde bezoldigingsregeling als deze die in artikel 1, eerste en derde lid, van toepassing is verklaard op de referendarissen.
 
-`Art. 3`
+<span class="code"> Art. 3 </span>
 
 De artikelen 391, 392, 393, 395, 396 en 397 van het Gerechtelijk Wetboek zijn mede van toepassing op de rechters van het Grondwettelijk Hof, op de referendarissen en op de griffiers.
 
 Voor de toepassing van deze artikelen wordt met de duur van het parlementair mandaat rekening gehouden bij de berekening van de in aanmerking genomen ambten.
 
-`Art. 4`
+<span class="code"> Art. 4 </span>
 
 De rechters van het Grondwettelijk Hof worden in ruste gesteld wanneer zij wegens zware en blijvende gebrekkigheid niet meer in staat zijn hun ambt naar behoren te vervullen of wanneer zij de leeftijd van zeventig jaar hebben bereikt.
 
 De voorzitters en rechters van het Grondwettelijk Hof die hun ambt uitoefenen krachtens artikel 60*bis* van de bijzondere wet van 6 januari 1989 op het Arbitragehof, genieten hun wedde overeenkomstig de bepalingen vastgesteld in deze wet, en niet hun pensioen.
 
-`Art. 5`
+<span class="code"> Art. 5 </span>
 
 De referendarissen, de griffiers en de leden van het administratief personeel worden in ruste gesteld, wanneer zij wegens zware en blijvende gebrekkigheid niet meer in staat zijn hun ambt naar behoren te vervullen of wanneer zij de leeftijd van vijfenzestig jaar hebben bereikt.
 
-`Art. 6`
+<span class="code"> Art. 6 </span>
 
 De algemene wet op de burgerlijke pensioenen is mede van toepassing op de leden van het administratief personeel.
 
-`Art. 7`
+<span class="code"> Art. 7 </span>
 
 De leden van het administratief personeel die op 24 augustus 1968 administratieve of gerechtelijke diensten vervulden die in aanmerking komen voor een rustpensioen ten bezware van de Openbare Schatkist, maar die, op de leeftijd van volle vijfenzestig jaar, niet de wettelijke dienstvoorwaarden vervullen om dat pensioen te verkrijgen, worden in disponibiliteit gesteld volgens dezelfde regeling als die voor het Rijkspersoneel, tenzij wanneer zij, overeenkomstig de bepalingen van artikel 4, § 4, tweede en derde lid, van de wet van 5 augustus 1968 tot vaststelling van een zeker verband tussen de pensioenstelsels van de openbare sector en die van de particuliere sector, om de toepassing van artikel 4, § 1 en § 2, van dezelfde wet verzoeken.
 
-`Art. 8`
+<span class="code"> Art. 8 </span>
 
 De Koning kan het emeritaat verlenen aan de rechters van het Grondwettelijk Hof in functie op de datum van de inwerkingtreding van deze wet, zelfs indien zij niet in de bij artikel 4 van deze wet vastgestelde voorwaarden mochten verkeren, zonder evenwel hieraan geldelijke gevolgen te verbinden.
 
-`Art. 9`
+<span class="code"> Art. 9 </span>
 
 In artikel 3, § 3, eerste lid, 2°, van de wet van 5 april 1955 inzake de wedden van de ambtsdragers bij de Raad van State, gewijzigd door de wetten van 3 juni 1971 en 2 augustus 1974, worden tussen het woord "magistratuur" en de woorden "als professor" ingevoegd de woorden "het ambt van referendaris bij het Arbitragehof inbegrepen".
 
-`Art. 10`
+<span class="code"> Art. 10 </span>
 
 Worden opgeheven:
 
@@ -3022,11 +3022,11 @@ Worden opgeheven:
 
 <br/>
 
-`Artikel 1`
+<span class="code"> Artikel 1 </span>
 
 De griffie van het Grondwettelijk Hof is open alle dagen, behalve op zaterdagen, zondagen en wettelijke feestdagen, van negen tot dertien uur.
 
-`Art. 2`
+<span class="code"> Art. 2 </span>
 
 \[...\].
 
@@ -3047,7 +3047,7 @@ De griffie van het Grondwettelijk Hof is open alle dagen, behalve op zaterdagen,
 
 <br/>
 
-`Artikel 1`
+<span class="code"> Artikel 1 </span>
 
 Het bewijs van de voldoende kennis van de Duitse taal, bedoeld in artikel 34, § 4, van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof, kan worden geleverd:
 
@@ -3058,25 +3058,25 @@ Het bewijs van de voldoende kennis van de Duitse taal, bedoeld in artikel 34, §
 5. hetzij door het slagen voor een mondeling examen over onderwerpen van algemene aard die verband houden met de bevoegdheden van het Grondwettelijk Hof.
    <br/>
 
-`Art. 2`
+<span class="code"> Art. 2 </span>
 
 Het in artikel 1, 5°, bedoelde mondeling examen wordt afgelegd voor een examencommissie die wordt voorgezeten door de afgevaardigd bestuurder van SELOR - Selectiebureau van de federale Overheid, of zijn afgevaardigde en verder bestaat uit twee hoogleraren aangeduid door de voorzitters van het Grondwettelijk Hof.
 
 Het examen bestaat in een gesprek tijdens hetwelk de leden van de examencommissie Duits spreken en de kandidaat, naar eigen keuze, het Duits of de taal van zijn diploma gebruikt.
 
-`Art. 3`
+<span class="code"> Art. 3 </span>
 
 De examencommissie wordt op initiatief van de Eerste Minister samengesteld telkens wanneer het nodig is. (…) (zin opgeheven).
 
 De examencommissie zendt het proces-verbaal van haar werkzaamheden aan de Eerste Minister.
 
-`Art. 4`
+<span class="code"> Art. 4 </span>
 
 Met de uitzondering van de afgevaardigd bestuurder van SELOR - Selectiebureau van de federale Overheid of zijn afgevaardigde, hebben de leden van de examencommissie recht op een vacatietoelage, gelijk aan die welke voor de examencommissie van niveau 1 bepaald is bij artikel 2 van het koninklijk besluit van 22 april 1974 tot vaststelling van de toelagen en vergoedingen voor de leden, secretarissen en helpers van de examencommissies van de examens, georganiseerd of voorgezeten door de Vaste Wervingssecretaris.
 
 De leden van de examencommissie hebben eveneens recht op de vergoeding wegens verblijfkosten en op de terugbetaling van hun reiskosten, voor de ambtenaren van rang A5 bepaald bij het koninklijk besluit van 24 december 1964 tot vaststelling van de vergoedingen wegens verblijfkosten toegekend aan de leden van het personeel der ministeries en bij het koninklijk besluit van 18 januari 1965 houdende algemene regeling inzake reiskosten.
 
-`Art. 5`
+<span class="code"> Art. 5 </span>
 
 ()
 
@@ -3097,17 +3097,17 @@ De leden van de examencommissie hebben eveneens recht op de vergoeding wegens ve
 
 <br/>
 
-`Artikel 1`
+<span class="code"> Artikel 1 </span>
 
 Het bewijs van de voldoende kennis van de tweede landstaal of van het Duits, bedoeld in artikel 35, tweede lid, van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof wordt geleverd door het slagen voor een mondeling examen over onderwerpen van algemene aard die verband houden met de bevoegdheden van het Grondwettelijk Hof.
 
-`Art. 2`
+<span class="code"> Art. 2 </span>
 
 Het in artikel 1 bedoelde mondelinge examen wordt afgelegd voor een examencommissie samengesteld door de afgevaardigd bestuurder van SELOR - Selectiebureau van de federale Overheid of zijn afgevaardigde.
 
 Het Examen bestaat in een gesprek tijdens hetwelk de leden van de examencommissie de taal spreken, waarvan de voldoende kennis moet worden bewezen, en de kandidaat, naar eigen keuze, de taal van zijn diploma of de taal waarvan de kennis moet worden bewezen gebruikt.
 
-`Art. 3`
+<span class="code"> Art. 3 </span>
 
 ()
 
@@ -3128,7 +3128,7 @@ Het Examen bestaat in een gesprek tijdens hetwelk de leden van de examencommissi
 
 <br/>
 
-`Artikel 1`
+<span class="code"> Artikel 1 </span>
 
 § 1. Op de gewone zittingen dragen de leden van het Hof een toga van zwarte stof met wijde mouwen, met opslagen, kraag en mouwrand van zwarte zijde, een koningsblauwe gordel, een geplisseerde hangende bef van wit batist en een baret van effen zwarte zijde.
 
@@ -3142,17 +3142,17 @@ De opslagen van de toga van de voorzitter zijn met wit bont belegd. Hij draagt d
 
 Op de plechtige zittingen en bij officiële plechtigheden dragen de griffiers een toga van koningsblauwe stof van hetzelfde model als de zwarte, met opslagen, kraag en mouwrand van koningsblauwe zijde, een bef van witte kant, een op franjes van zwarte zijde uitlopende zwarte gordel en een met zwarte fluwelen boordsel met gulden bies omzette baret van koningsblauw fluweel.
 
-`Art. 2`
+<span class="code"> Art. 2 </span>
 
 De leden van het Grondwettelijk Hof dragen de schouderversiering, een stuk van dezelfde kleur als de toga, in het midden gefronseld en beide uiteinden met wit bont geboorde stof, die op de borst en de rug neerhangt.
 
 De griffiers, doctors of licentiaten in de rechten, dragen eveneens de schouderversiering.
 
-`Art. 3`
+<span class="code"> Art. 3 </span>
 
 Dit besluit treedt in werking op 4 maart 1984.
 
-`Art. 4`
+<span class="code"> Art. 4 </span>
 
 ()
 
@@ -3173,19 +3173,19 @@ Dit besluit treedt in werking op 4 maart 1984.
 
 <br/>
 
-`Artikel 1`
+<span class="code"> Artikel 1 </span>
 
 Wanneer het Grondwettelijk Hof, overeenkomstig artikel 75 van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof, ambtshalve een advocaat aanstelt, verzoekt het de stafhouder van de Orde van Advocaten van het gerechtelijk arrondissement van de woon- of verblijfplaats van de aanvrager die aan te wijzen. Indien de woon- of verblijfplaats van de aanvrager zich niet in België bevindt of wanneer het in het eerste lid bedoelde gerechtelijk arrondissement dat van Brussel is, legt het Grondwettelijk Hof de zaak voor aan de stafhouder van de Nederlandse Orde van Advocaten bij de Brusselse Balie of van de Franse Orde van Advocaten bij de Brusselse Balie, naargelang de gewenste taal, overeenkomstig de artikelen 62, tweede lid, 6°, en 63, § 2, van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof.
 
-`Art. 2`
+<span class="code"> Art. 2 </span>
 
 Wanneer de persoon die moet worden bijgestaan niet voldoet aan de in artikel 508/13 van het Gerechtelijk Wetboek bedoelde inkomensvoorwaarden, wijst de stafhouder bedoeld in artikel 1, een advocaat aan uit de in artikel 508/7 van het Gerechtelijk Wetboek bedoelde lijst. In de gevallen die hij spoedeisend acht, wijst de stafhouder een advocaat aan die deelneemt aan de in voormeld artikel 508/7 bedoelde wachtdiensten. Aan de ambtshalve toegevoegde advocaat wordt een rijksvergoeding toegekend wegens de werkzaamheden waarvoor de toevoeging heeft plaatsgehad. Hoofdstuk V van het Gerechtelijk Wetboek is van toepassing op deze vergoeding.
 
-`Art. 3`
+<span class="code"> Art. 3 </span>
 
 Wanneer de bijgestane persoon voldoet aan de bij artikel 508/13 van het Gerechtelijk Wetboek bepaalde inkomensvoorwaarden, wijst het bureau voor juridische bijstand van de Orde van advocaten bedoeld in artikel 1, een advocaat aan uit de in artikel 508/7 van het Gerechtelijk Wetboek bedoelde lijst. In de gevallen die hij spoedeisend acht, wijst de stafhouder een advocaat aan die is ingeschreven op de in voormeld artikel 508/7 bedoelde lijst en geeft hij hiervan kennis aan het bureau. Voor het overige zijn de hoofdstukken IV en V van het Gerechtelijk Wetboek van toepassing.
 
-`Art. 4`
+<span class="code"> Art. 4 </span>
 
 De Eerste Minister en de Minister van Justitie zijn, ieder wat hem betreft, belast met de uitvoering van dit besluit.
 
@@ -3206,23 +3206,23 @@ De Eerste Minister en de Minister van Justitie zijn, ieder wat hem betreft, bela
 
 <br/>
 
-`Artikel 1`
+<span class="code"> Artikel 1 </span>
 
 In de protocollaire orde neemt het Grondwettelijk Hof rang onmiddellijk vóór het Hof van Cassatie.
 
-`Art. 2`
+<span class="code"> Art. 2 </span>
 
 De voorzitter in functie en de andere voorzitter van het Grondwettelijk Hof nemen rang onmiddellijk vóór de eerste voorzitter en de procureur-generaal van het Hof van Cassatie.
 
-`Art. 3`
+<span class="code"> Art. 3 </span>
 
 Wanneer zij op een officiële plechtigheid zijn uitgenodigd, volgen de referendarissen en de griffiers van het Grondwettelijk Hof, successievelijk en geplaatst volgens de orde van hun benoeming, na de rechters van het Grondwettelijk Hof, eveneens geplaatst volgens de orde van hun benoeming.
 
-`Art. 4`
+<span class="code"> Art. 4 </span>
 
 Het koninklijk besluit van 16 februari 1984 houdende regeling betreffende de eer- en voorrangsbewijzen ten aanzien van het Arbitragehof, wordt opgeheven.
 
-`Art. 5`
+<span class="code"> Art. 5 </span>
 
 ()
 
@@ -3245,37 +3245,37 @@ Het koninklijk besluit van 16 februari 1984 houdende regeling betreffende de eer
 
 <br/>
 
-``` Artikel 1 ```  
+<span class="code"> Artikel 1 </span>
 
 Het in artikel 78bis van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof bedoelde elektronisch platform wordt, wat het indienen van verzoekschriften en het verzenden van stukken van rechtspleging betreft, ter beschikking gesteld door het Grondwettelijk Hof. Dat platform is toegankelijk via de website van het Grondwettelijk Hof.
 Elk document in het kader van de rechtspleging dat door een partij of haar advocaat door middel van het elektronisch platform wordt neergelegd, wordt geacht de originele versie van dat stuk te zijn.
 
-``` Art. 2 ```  
+<span class="code"> Art. 2 </span>
 
 Tenzij het werd ondertekend door middel van een gekwalificeerde elektronische handtekening in de zin van artikel 3, 12°, van de verordening (EU) 910/2014 van het Europees Parlement en de Raad van 23 juli 2014 betreffende elektronische identificatie en vertrouwensdiensten voor elektronische transacties in de interne markt en tot intrekking van Richtlijn 1999/93/EG, wordt elk verzoekschrift of stuk van rechtspleging geacht ondertekend te zijn door de persoon die het heeft neergelegd door middel van het elektronisch platform.
 Wanneer de handtekeningen van verscheidene fysieke personen noodzakelijk zijn, worden deze elektronisch aangebracht door middel van de in het eerste lid bedoelde gekwalificeerde elektronische handtekening.
 
-``` Art. 3 ```  
+<span class="code"> Art. 3 </span>
 
 De tot staving aangevoerde stukken, vermeld in de inventaris, worden eveneens door middel van het elektronisch platform neergelegd. De tot staving aangevoerde stukken die om technische redenen niet door middel van het elektronisch platform kunnen worden neergelegd, worden bij ter post aangetekende zending verstuurd uiterlijk de eerste werkdag na de elektronische neerlegging van het verzoekschrift of het stuk van rechtspleging.
 
-``` Art. 4 ```  
+<span class="code"> Art. 4 </span>
 
 Wanneer een partij of haar advocaat in een zaak een verzoekschrift of een stuk van rechtspleging neerlegt door middel van het elektronisch platform, geldt die neerlegging, voor de zaak waarin zij wordt gedaan, als registratie in de zin van artikel 82, eerste lid, van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof.
 
-``` Art. 5 ```  
+<span class="code"> Art. 5 </span>
 
 (…)
 
-``` Art. 6 ```  
+<span class="code"> Art. 6 </span>
 
 (…)
 
-``` Art. 7 ```  
+<span class="code"> Art. 7 </span>
 
 In geval van een systeemfout van het elektronisch platform, waardoor het elektronisch neerleggen van documenten onmogelijk is, wordt een foutmelding getoond aan de gebruiker. Die foutmelding kan worden geprint en geldt, indien de systeemfout plaatsvindt op de vervaldag van een termijn, als begin van bewijs van overmacht in de zin van artikel 78bis, § 4, van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof.
 
-``` Art. 8 ```  
+<span class="code"> Art. 8 </span>
 
 Alle documenten die door middel van het elektronisch platform worden neergelegd, voldoen aan de volgende voorwaarden:
 - de documenten zijn opgemaakt in de vorm van een bestand in het "Portable Document Format" (PDF)-formaat;
@@ -3283,17 +3283,17 @@ Alle documenten die door middel van het elektronisch platform worden neergelegd,
 - de tekst van de documenten is, voor zover mogelijk, kopieerbaar.
 Het Grondwettelijk Hof kan op zijn website een handleiding publiceren met betrekking tot het gebruik van het elektronisch platform. Die handleiding kan eveneens richtlijnen bevatten voor de maximale grootte en de andere technische vereisten die gesteld worden aan de neergelegde documenten.
 
-``` Art. 9 ```  
+<span class="code"> Art. 9 </span>
 
 Dit besluit is onmiddellijk van toepassing op de zaken die reeds hangende zijn op het ogenblik van de inwerkingtreding.
 
-``` Art. 10 ```  
+<span class="code"> Art. 10 </span>
 
 Op een door Ons te bepalen datum en uiterlijk op de eerste dag van de twaalfde maand volgend op de maand waarin dit besluit wordt bekendgemaakt in het Belgisch Staatsblad, treden in werking :
 1° de artikelen 4, 5, 19, 20, 22 en 36, 1°, van de bijzondere wet van 4 april 2014 tot wijziging van de bijzondere wet van 6 januari 1989 op het Grondwettelijk Hof;
 2° dit besluit.
 
-``` Art. 11 ```  
+<span class="code"> Art. 11 </span>
 
 De Eerste Minister is belast met de uitvoering van dit besluit.
 
@@ -3368,11 +3368,11 @@ Het Hof bevestigt, met toepassing van [artikel 122](/nl/court/basic-text/special
 
 <br/>
 
-`Artikel 1`
+<span class="code"> Artikel 1 </span>
 
 De richtlijn van 15 december 1987, met opschrift "Neerlegging en mededeling van conclusies", bekendgemaakt in het _Belgisch Staatsblad_ van 29 december 1987, blijft toepasselijk op de zaken die zijn ingeschreven op de rol van het Hof tot en met het nr. 82; het gaat immers om zaken die aanhangig waren op het ogenblik van de inwerkingtreding van de bijzondere wet van 6 januari 1989 en die luidens [artikel 124](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.124) van die wet door de bepalingen van de organieke wet van 28 juni 1983 beheerst blijven. De richtlijn van 15 december 1987 zal niet langer van toepassing zijn op de zaken die zijn ingeschreven op de rol van het Hof vanaf de inwerkingtreding van de bijzondere wet van 6 januari 1989, en wel onder de nrs. 83 en volgende.
 
-`Art. 2`
+<span class="code"> Art. 2 </span>
 
 Wat de zaken betreft die zijn ingeschreven op de rol van het Hof vanaf de inwerkingtreding van de bijzondere wet van 6 januari 1989 en waarbij een vordering tot schorsing is ingesteld, wordt, onverminderd de [artikelen 70 tot 73](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.70) van voormelde bijzondere wet, de beschikking tot dagstelling ter kennis gebracht van de partij of de partijen en van de overheden die zijn vermeld in [artikel 76](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76) van de wet, in voorkomend geval met opgave van de termijn waarover elk van die overheden beschikt om schriftelijke opmerkingen ter griffie te doen toekomen. Eenmaal die termijn verstreken, wordt geen enkel ander geschrift op de mondelinge behandeling ter terechtzitting van de vordering tot schorsing toegelaten.
 
@@ -3423,7 +3423,3 @@ Diegenen welke een memorie laattijdig hebben ingediend kunnen het feit dat voorm
 Deze beslissing wordt ingevoegd in het reglement van orde van het Hof.
 
 </div>
-
-::
-
-::
