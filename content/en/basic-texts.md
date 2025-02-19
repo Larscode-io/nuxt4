@@ -223,7 +223,7 @@ legal aid; <br/>
 3. the right to decent accommodation; <br/>
 4. the right to the protection of a healthy environment; <br/>
 5. the right to cultural and social fulfilment; <br/>
-6. the right to family allowances.<br/>
+6. the right to family allowances.<br/><br/>
 
 <span class="code"> Art. 24 </span>
 
@@ -449,7 +449,7 @@ The motions of confidence and no confidence can only be voted on forty-eight hou
 &emsp;Moreover, the King may, in the event of the resignation of the Federal Government, dissolve the House of Representatives after having received its agreement expressed by the absolute majority of its members. <br/>
 &emsp;The act of dissolution convenes the electorate within forty days and the House of Representatives within two months. <br/>
 &emsp;In case both Houses are dissolved in accordance with Article 195, the Houses are convened within three months.<br/>
-&emsp;In case of early dissolution, the new federal parliamentary term may not extend beyond the day when the first election of the European Parliament following this dis¬solution is held.
+&emsp;In case of early dissolution, the new federal parliamentary term may not extend beyond the day when the first election of the European Parliament following this dis¬solution is held.<br/><br/>
 
 <span class="code"> Transitional provision </span>
 
@@ -678,7 +678,7 @@ When their Parliament is re-elected as a whole and this re-election does not coi
 2. enjoy civil and political rights;
 3. have reached the age of eighteen;
 4. be resident in Belgium.
-<br/>
+<br/><br/>
 
 <span class="code"> Transitional provision </span>
 
@@ -690,7 +690,7 @@ This article comes into force on the day when elections take place with a view t
 2. enjoy civil and political rights;
 3. have reached the age of twenty-one;
 4. be resident in Belgium.”.
-<br/>
+<br/><br/>
 
 <span class="code"> Art. 70 </span>
 
@@ -742,7 +742,7 @@ This article comes into force on the day when elections take place with a view t
 2. laws relating to the civil and criminal liability of the King’s ministers;
 3. State budgets and accounts, without prejudice to Article 174, first paragraph, second sentence;
 4. the setting of army quotas.”.
-<br/>
+<br/><br/>
 
 <span class="code"> Art. 75 </span>
 
@@ -1151,14 +1151,14 @@ Constitutional provisions that apply to members of the Regional and Community Go
 
 A law adopted by a majority as described in Article 4, last paragraph designates the cultural matters referred to in 1° and determines the forms of cooperation referred to in 3°, as well as the specific arrangements for the concluding of treaties referred to in 3°.
 
-<p class="no-bottom-margin">§ 2. These federate laws have the force of law in the Dutch-speaking and French-speaking regions respectively, as well as in those institutions established in the bilingual region of Brussels-Capital which, because of their activities, must be considered as belonging exclusively to one Community or the other.</p>
+<p class="no-bottom-margin">§ 2. These federate laws have the force of law in the Dutch-speaking and French-speaking regions respectively, as well as in those institutions established in the bilingual region of Brussels-Capital which, because of their activities, must be considered as belonging exclusively to one Community or the other.</p><br/>
 
 <span class="code"> Art. 128 </span>
 
 <p class="no-bottom-margin">§ 1. The Parliaments of the Flemish and French Communities regulate by federate law, each one in so far as it is concerned, person-related matters, as well as, in such matters, cooperation between the Communities and international cooperation, including the concluding of treaties. <br/>
 &emsp;A law adopted by a majority as described in Article 4, last paragraph designates such person-related matters and determines the forms of cooperation, as well as the specific arrangements for the concluding of treaties.</p>
 
-<p class="no-bottom-margin">§ 2. These federate laws have the force of law in the Dutch-speaking and French-speaking regions respectively, as well as – unless a law adopted by a majority as described in Article 4, last paragraph determines otherwise – with regard to those institutions established in the bilingual region of Brussels-Capital which, because of their organisation, must be considered as belonging exclusively to one Community or the other.</p>
+<p class="no-bottom-margin">§ 2. These federate laws have the force of law in the Dutch-speaking and French-speaking regions respectively, as well as – unless a law adopted by a majority as described in Article 4, last paragraph determines otherwise – with regard to those institutions established in the bilingual region of Brussels-Capital which, because of their organisation, must be considered as belonging exclusively to one Community or the other.</p><br/>
 
 <span class="code"> Art. 129 </span>
 
@@ -1770,7 +1770,7 @@ annulment of a statute, decree or rule referred to in Article 134 of the Constit
 1.  the rules that have been established by or in pursuance of the Constitution to determine the respective powers of the State, the Communities and the Regions; or
 2.  the articles of Title II, “The Belgians and their Rights”, and Articles 170, 172 and 191 of the Constitution.
 3.  Article 143, § 1, of the Constitution.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 2  </span>
 
@@ -1899,7 +1899,7 @@ The right to demand the revocation shall also be vested in:
 2. the person with regard to whom a decision has been given ordering deferment of the pronouncement of the judgment;
 3. in the event that the convicted person or, where appropriate, the person with regard to whom a decision has been given ordering deferment of the pronouncement of the judgment has deceased or has been declared incompetent or absent, in his spouse, his direct descendants or ascendants, his brothers and sisters;
 4. the party who has been declared liable under civil law for the convicted person or, where appropriate, the person with regard to whom a decision has been given ordering deferment of the pronouncement of the judgment.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 12  </span>
 
@@ -2031,7 +2031,7 @@ decided in the following cases:
 
 1. if valid grounds are adduced and on condition that the immediate implementation of the statute, decree or rule referred to in Article 134 of the Constitution against which the appeal has been brought is liable to cause serious detriment which is difficult to remedy;
 2. if an appeal has been lodged against a rule which is identical or similar to a rule already nullified by the Constitutional Court and which has been adopted by the same legislative body.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 21  </span>
 
@@ -2199,7 +2199,7 @@ Court shall not apply:
 2. if the court of law finds that the provision of Title II of the Constitution has manifestly not been infringed;
 3. if the court of law finds that it appears from a judgment delivered by an international court of law that the provision of European or international law has manifestly been infringed;
 4. if the court of law finds that it appears from a judgment delivered by the Constitutional Court that the provision of Title II of the Constitution has manifestly been infringed.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 27  </span>
 
@@ -2478,7 +2478,7 @@ depart from the first paragraph in the following cases:
 1. position of professor or teacher, tutor, lecturer or assistant at an institution for higher education, insofar as this position is exercised for no more than five hours per week and for no more than two half days per week;
 2. position of member of an examination board;
 3. membership of an advisory commission, board or committee, insofar as the number of remunerated assignments or posts remains limited to two, and the total remuneration does not exceed one-tenth of the annual gross salary of the principal office at the Constitutional Court.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 45  </span>
 
@@ -2492,7 +2492,7 @@ The presidents, judges, legal secretaries and registrars shall be prohibited fro
 1. conducting the defence, verbally or in writing, of the interested parties or giving them advice;
 2. acting as arbitrators for remuneration;
 3.  either personally or through an intermediary, carrying out a professional activity, engaging in trade, acting as agents, taking part in the management, administration or supervision of companies or industrial or commercial establishments.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 47  </span>
 
@@ -2727,6 +2727,7 @@ apply to the services whose scope of activity covers the whole country.
 ##### <span class="titles">TITLE V </span><br/>PROCEDURE BEFORE THE CONSTITUTIONAL COURT
 
 ###### <span class="chapters">CHAPTER I: ENTRY ON THE CAUSE LIST AND APPOINTMENT OF THE JUDGESRAPPORTEURS</span>
+<br/>
 
 <span class="code">  Art. 67  </span>
 
@@ -3308,7 +3309,7 @@ The judgment shall contain the grounds and the operative part. It shall state:
 2. the provisions concerning the use of languages that have been applied;
 3. the written submissions filed by the parties, and the fact that the parties and their lawyers were present at the hearing;
 4. the date of signature of the judgment and the names of the judges who deliberated on it.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 112  </span>
 
@@ -3328,7 +3329,7 @@ They shall be notified electronically to:
 
 1. the Prime Minister and the presidents of the Governments;
 2.  the presidents of the Legislative Chambers, the Flemish Parliament, the Parliament of the Frenchspeaking Community, the Walloon Parliament, the Parliament of the German-speaking Community, and the Legislative Assemblies of the Brussels-Capital Region.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 114  </span>
 
@@ -3475,7 +3476,7 @@ The following shall be repealed:
 2. Article 31*bis* of the laws on the Council of State, coordinated on 12 January 1973, inserted by the Act of 10 May 1985;
 3.  the Act of 28 June 1983 on the organization, jurisdiction and operation of the Court of Arbitration, as amended by the Act of 31 December 1983, with the exception of Articles 31 to 34 and 112;
 4. Article 5 of the Act of 2 February 1984 on the salaries of the members, legal secretaries and registrars of the Court of Arbitration, their nomination and appointment, and acts of defamation and violence against members of this Court; 5° the Act of 10 May 1985 on the effects of the annulment judgments delivered by the Court of Arbitration
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 128  </span>
 
