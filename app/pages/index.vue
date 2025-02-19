@@ -52,7 +52,6 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
-        style=".v-col-xl-2 { flex: 0 0 33.66666666667% }"
       >
         <template
           #item="{
@@ -74,7 +73,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
             class="equal-height-card highlighted-card libra-image d-flex flex-column"
             @click="goToJudgmentPage(id, thisYearOrPreviousYear)"
           >
-            <div class="flex-grow-1; min-width: 388px !important;">
+            <div class="flex-grow-1">
               <v-card-text>
                 <v-row class="top-infos">
                   <v-col cols="5">
