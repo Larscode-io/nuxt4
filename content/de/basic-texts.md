@@ -5,7 +5,7 @@ posterUrl: ~/assets/img/newsletter-background.png
 locale: de
 ---
 
-## 1\. Die Verfassung des föderalen Belgien
+### 1\. Die Verfassung des föderalen Belgien
 
 ::AccordionGroup
 
@@ -15,7 +15,8 @@ locale: de
     <span class="titles">Die Verfassung Belgiens - März 2021</span>
 </template>
 
-#### <span class="titles">TITEL I</span> <br/> DAS FÖDERALE BELGIEN, SEINE ZUSAMMENSETZUNG UND SEIN STAATSGEBIET
+## <span class="titles">TITEL I</span> <br/> DAS FÖDERALE BELGIEN, SEINE ZUSAMMENSETZUNG UND SEIN STAATSGEBIET
+<br/>
 
 
 <span class="code"> Artikel 1 </span>
@@ -168,6 +169,8 @@ Jeder Mensch mit einer Behinderung hat das Recht auf vollständige Inklusion in 
 4.	das Recht auf den Schutz einer gesunden Umwelt; <br/>
 5.	das Recht auf kulturelle und soziale Entfaltung;<br/>
 6.	das Recht auf Familienleistungen. 
+<br/>
+<br/>
 
 <span class="code"> Art. 24  </span>
 
@@ -330,7 +333,7 @@ Der König hat nur dann das Recht, die Abgeordnetenkammer aufzulösen, wenn sie 
 &emsp;Außerdem kann der König im Falle des Rücktritts der Föderalregierung die Abgeordnetenkammer auflösen, nachdem Er deren mit absoluter Mehrheit ihrer Mitglieder ausgesprochene Zustimmung erhalten hat. <br/>
 &emsp;Der Auflösungsbeschluss enthält die Einberufung der Wähler binnen vierzig Tagen und die der Abgeordnetenkammer binnen zwei Monaten. <br/>
 &emsp;Im Falle einer Auflösung beider Kammern gemäß Artikel 195 werden die Kammern binnen drei Monaten einberufen. <br/>
-&emsp;Im Falle einer vorzeitigen Auflösung darf die Dauer der neuen föderalen Legislaturperiode nicht über den Tag der ersten Wahlen für das Europäische Parlament, die dieser Auflösung folgen, hinausgehen. <br/>
+&emsp;Im Falle einer vorzeitigen Auflösung darf die Dauer der neuen föderalen Legislaturperiode nicht über den Tag der ersten Wahlen für das Europäische Parlament, die dieser Auflösung folgen, hinausgehen. <br/><br/>
 
 <span class="code"> Übergangsbestimmung </span>
 
@@ -558,7 +561,7 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 1. Belgier ist, <br/>
 2. die zivilen und politischen Rechte besitzt, <br/>
 3. das achtzehnte Lebensjahr vollendet hat und <br/>
-4. seinen Wohnsitz in Belgien hat. <br/>
+4. seinen Wohnsitz in Belgien hat. <br/><br/>
 
 <span class="code"> Übergangsbestimmung </span>
 
@@ -570,6 +573,7 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 2. die zivilen und politischen Rechte besitzt, <br/>
 3. das einundzwanzigste Lebensjahr vollendet hat und <br/>
 4. seinen Wohnsitz in Belgien hat.“ <br/>
+<br/>
 
 <span class="code"> Art. 70  </span>
 
@@ -622,6 +626,7 @@ Vorliegender Artikel tritt am Tag der Wahlen im Hinblick auf die vollständige E
 2.	Gesetze über die zivil- und strafrechtliche Verantwortlichkeit der Minister des Königs, <br/>
 3.	Haushaltspläne und Rechnungen des Staates, unbeschadet des Artikels 174 Absatz 1 zweiter Satz, <br/>
 4.	die Festlegung des Armeekontingentes.“ <br/>
+<br/>
 
 <span class="code"> Art. 75  </span>
 
@@ -1065,6 +1070,7 @@ Ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenomm
 - die an ein anderes Sprachgebiet grenzenden Gemeinden oder Gemeindegruppen, wo das Gesetz den Gebrauch einer anderen Sprache als der des Gebietes, in dem sie gelegen sind, vorschreibt oder zulässt. Für diese Gemeinden können die Bestimmungen über den Gebrauch der Sprachen für die in § 1 erwähnten Angelegenheiten nur durch ein Gesetz, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, abgeändert werden; <br/>
 - die Dienststellen, deren Tätigkeit über das Sprachgebiet, in dem sie errichtet sind, hinausgeht; <br/>
 - die durch das Gesetz bezeichneten föderalen und internationalen Einrichtungen, deren Tätigkeit mehr als eine Gemeinschaft betrifft. <br/>
+<br/>
 
 <span class="code"> Art. 130 </span>
 
@@ -1158,7 +1164,7 @@ Es gibt für ganz Belgien einen Verfassungsgerichtshof, dessen Zusammensetzung, 
 Die in Absatz 1, Absatz 2 unter Nr. 3 und in den Absätzen 3 bis 5 erwähnten Gesetze werden mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen. 
 
 
-###### <span class="titles">ABSCHNITT III <br/> DIE VORBEUGUNG UND BEILEGUNG VON INTERESSENKONFLIKTEN</span>
+###### <span class="titles">ABSCHNITT III <br/> DIE VORBEUGUNG UND BEILEGUNG VON INTERESSENKONFLIKTEN</span><br/><br/>
 
 <span class="code"> Art. 143 </span>
 
@@ -1346,6 +1352,7 @@ Die provinzialen und kommunalen Einrichtungen werden durch Gesetz geregelt. <br/
 6. das Eingreifen der Aufsichtsbehörde oder der föderalen gesetzgebenden Gewalt, um zu verhindern, dass gegen das Gesetz verstoßen oder das Gemeinwohl geschädigt wird. <br/>
 &emsp;Die suprakommunalen Körperschaften werden durch die in Artikel 134 erwähnte Regel geregelt. Diese Regel gewährleistet die Anwendung der in Absatz 2 erwähnten Grundsätze. Die in Artikel 134 erwähnte Regel kann andere Grundsätze, die sie für wesentlich erachtet, festlegen, mit oder ohne Zweidrittelmehrheit der abgegebenen Stimmen, vorausgesetzt, die Mehrheit der Mitglieder des betreffenden Parlaments ist anwesend. Die Artikel 159 und 190 finden Anwendung auf Erlasse und Verordnungen der suprakommunalen Körperschaften. <br/>
 &emsp;In Ausführung eines Gesetzes, das mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen wird, regelt das Dekret oder die in Artikel 134 erwähnte Regel, unter welchen Bedingungen und wie mehrere Provinzen, mehrere suprakommunale Körperschaften oder mehrere Gemeinden sich verständigen oder vereinigen dürfen. Jedoch darf es mehreren Provinzialräten, mehreren suprakommunalen Körperschaften oder mehreren Gemeinderäten nicht erlaubt werden, gemeinsam zu beraten. <br/>
+<br/>
 
 <span class="code"> Art. 163 </span>
 
@@ -1626,8 +1633,7 @@ VI. - § 1 [Aufgehoben] <br/>
 ::
 
 ::
-
-## 2\. Grundlagengesetzgebung
+### 2\. Grundlagengesetzgebung
 
 ::AccordionGroup
 
@@ -1637,7 +1643,7 @@ VI. - § 1 [Aufgehoben] <br/>
     <span class="titles">Sondergesetz vom 6. Januar 1989 über den Verfassungsgerichtshof</span>
 </template>
 
-## SONDERGESETZ VOM 6. JANUAR 1989 ÜBER DEN VERFASSUNGSGERICHTSHOF
+### SONDERGESETZ VOM 6. JANUAR 1989 ÜBER DEN VERFASSUNGSGERICHTSHOF
 
 Inoffizielle koordinierte deutsche Übersetzung
 
@@ -1648,7 +1654,6 @@ Letzte Bearbeitung: 26. Oktober 2020.<br/>
 ### TITEL I: ZUSTÄNDIGKEIT DES VERFASSUNGSGERICHTSHOFES
 
 #### KAPITEL I: NICHTIGKEITSKLAGEN
-
 *Abschnitt I: Klagen*
 
 Art. 1. Der Verfassungsgerichtshof befindet durch Entscheid über Klagen auf völlige oder teilweise Nichtigerklärung eines Gesetzes, eines Dekrets oder einer in Artikel 134 der Verfassung erwähnten Regel wegen Verletzung:
@@ -2677,27 +2682,11 @@ Art. 128. Artikel 34 § 5 tritt spätestens ab der dritten Ernennung nach dem In
 
 ::
 
-## 3\. Grundlagenerlasse
+### 3\. Grundlagenerlasse
 
-::AccordionGroup
-
-::AccordionItem{aria-label="N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch"}
-
-<template v-slot:title>
-    <span class="titles">N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch</span>
-</template>
-
-::
-
-::
+#### N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch
 
 
-## 4\. Verordnungen
+### 4\. Verordnungen
 
-::AccordionGroup
-
-::AccordionItem{aria-label="N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch"}
-
-<template v-slot:title>
-    <span class="titles">N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch</span>
-</template>
+#### N/A in dieser Sprache, bitte ändern Sie Ihre Sprache in Französisch oder Niederländisch
