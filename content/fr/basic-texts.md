@@ -172,7 +172,7 @@ Chaque personne en situation de handicap a le droit à une pleine inclusion dans
 4. le droit à la protection d’un environnement sain;<br/>
 5. le droit à l’épanouissement culturel et social;<br/>
 6. le droit aux prestations familiales.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 24  </span>
 
@@ -338,7 +338,7 @@ Le Roi peut ajourner les Chambres. Toutefois, l’ajournement ne peut excéder l
 &emsp;En outre, le Roi peut, en cas de démission du Gouvernement fédéral, dissoudre la Chambre des représentants après avoir reçu son assentiment exprimé à la majorité absolue de ses membres.<br/>
 &emsp;L'acte de dissolution contient la convocation des électeurs dans les quarante jours et de la Chambre des représentants dans les deux mois.<br/>
 &emsp;En cas de dissolution des deux Chambres, conformément à l'article 195, les Chambres sont convoquées dans les trois mois.<br/>
-&emsp;En cas de dissolution anticipée, la nouvelle législature fédérale ne pourra courir au-delà du jour des premières élections pour le Parlement européen suivant cette dissolution.
+&emsp;En cas de dissolution anticipée, la nouvelle législature fédérale ne pourra courir au-delà du jour des premières élections pour le Parlement européen suivant cette dissolution.<br/><br/>
 
 <span class="code">  Disposition transitoire  </span>
 
@@ -568,7 +568,7 @@ Le présent article entre en vigueur le jour des élections en vue du renouvelle
 2. jouir des droits civils et politiques;
 3. être âgé de dix-huit ans accomplis;
 4. être domicilié en Belgique.
-<br/>
+<br/><br/>
 
 <span class="code">  Disposition transitoire  </span>
 
@@ -580,7 +580,7 @@ Le présent article entre en vigueur le jour des élections en vue du renouvelle
 2. jouir des droits civils et politiques;
 3. être âgé de vingt-et-un ans accomplis;
 4. être domicilié en Belgique. ».
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 70  </span>
 
@@ -633,7 +633,7 @@ Le présent article entre en vigueur le jour des élections en vue du renouvelle
 2. les lois relatives à la responsabilité civile et pénale des ministres du Roi;
 3. les budgets et les comptes de l'État, sans préjudice de l'article 174, alinéa 1er, deuxième phrase;
 4. la fixation du contingent de l'armée. ».
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 75  </span>
 
@@ -1072,7 +1072,7 @@ Une loi adoptée à la majorité prévue à l’article 4, dernier alinéa, arr�
 - les communes ou groupes de communes contigus à une autre région linguistique et où la loi prescrit ou permet l’emploi d’une autre langue que celle de la région dans laquelle ils sont situés. Pour ces communes, une modification aux règles sur l’emploi des langues dans les matières visées au § 1er ne peut être apportée que par une loi adoptée à la majorité prévue à l’article 4, dernier alinéa;
 - les services dont l’activité s’étend au-delà de la région linguistique dans laquelle ils sont établis;
 - les institutions fédérales et internationales désignées par la loi dont l’activité est commune à plus d’une communauté.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 130  </span>
 
@@ -1674,7 +1674,7 @@ La Cour constitutionnelle statue, par voie d'arrêt, sur les recours en annulati
 1. des règles qui sont établies par la Constitution ou en vertu de celle-ci pour déterminer les compétences respectives de l'État, des Communautés et des Régions; [ou]
 2. des articles du titre II « Des Belges et de leurs droits », et des articles 170, 172 et 191 et de la Constitution;
 3. de l'article 143, § 1er, de la Constitution.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 2  </span>
 
@@ -1767,7 +1767,7 @@ Le droit de demander la rétractation appartient en outre :
 2. à celui qui a fait l'objet d'une décision ordonnant la suspension du prononcé de la condamnation;
 3. si le condamné ou, le cas échéant, celui qui a fait l'objet d'une décision ordonnant la suspension du prononcé de la condamnation est décédé, si son interdiction a été prononcée ou s'il se trouve en état d'absence déclarée, à son conjoint, à ses descendants, à ses ascendants, à ses frères et soeurs;
 4. à la partie déclarée civilement responsable pour le condamné ou, le cas échéant, pour celui qui a fait l'objet d'une décision ordonnant la suspension du prononcé de la condamnation.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 12  </span>
 
@@ -1846,7 +1846,7 @@ Sans préjudice de l'article 16 ter de la loi spéciale du 8 août 1980 de réfo
 
 1. si des moyens sérieux sont invoqués et à la condition que l'exécution immédiate de la loi, du décret ou de la règle visée à l'article 134 de la Constitution faisant l'objet du recours risque de causer un préjudice grave difficilement réparable;
 2. si un recours est exercé contre une norme identique ou similaire à une norme déjà annulée par la Cour constitutionnelle et qui a été adoptée par le même législateur.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 21  </span>
 
@@ -1876,7 +1876,7 @@ La Cour rend son arrêt sur la demande principale dans les trois mois du prononc
 
 Si l'arrêt sur la demande principale n'est pas rendu dans ce délai, la suspension cesse immédiatement ses effets.
 
-###### <span class="sections"> SECTION IV </br>DES RECOURS CONTRE DES DÉCISIONS DE LA COMMISSION DE CONTRÔLE EN MATIÈRE DE CONTRÔLE DES DÉPENSES ÉLECTORALES ENGAGÉES POUR LES ÉLECTIONS DE LA CHAMBRE DES REPRÉSENTANTS</span>
+###### <span class="sections"> SECTION IV </br>DES RECOURS CONTRE DES DÉCISIONS DE LA COMMISSION DE CONTRÔLE EN MATIÈRE DE CONTRÔLE DES DÉPENSES ÉLECTORALES ENGAGÉES POUR LES ÉLECTIONS DE LA CHAMBRE DES REPRÉSENTANTS</span><br/><br/>
 
 <span class="code">  Art. 25 bis  </span>
 
@@ -1952,7 +1952,7 @@ Par dérogation à l’alinéa 1er, l’obligation de poser une question préjud
 2. lorsque la juridiction estime que la disposition du titre II de la Constitution n’est manifestement pas violée;
 3. lorsque la juridiction estime qu’un arrêt d’une juridiction internationale fait apparaître que la disposition de droit européen ou de droit international est manifestement violée;
 4. lorsque la juridiction estime qu’un arrêt de la Cour constitutionnelle fait apparaître que la disposition du titre II de la Constitution est manifestement violée.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 27  </span>
 
@@ -2141,7 +2141,7 @@ Il peut être dérogé par le Roi, sur avis favorable et motivé de la Cour, à 
 1. lorsqu'il s'agit de l'exercice de fonctions de professeur, chargé de cours, maître de conférence ou assistant dans les établissements d'enseignement supérieur, pour autant que ces fonctions ne s'exercent pas pendant plus de cinq heures par semaine ni en plus de deux demi-jours par semaine;
 2. lorsqu'il s'agit de l'exercice de fonctions de membre d'un jury d'examen;
 3. lorsqu'il s'agit de la participation à une commission, à un conseil ou comité consultatif, pour autant que le nombre de charges ou fonctions rémunérées soit limité à deux et que l'ensemble de leurs rémunérations ne soit pas supérieur au dixième du traitement brut annuel de la fonction principale à la Cour.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 45  </span>
 
@@ -2154,7 +2154,7 @@ Les présidents, les juges, les référendaires et les greffiers ne peuvent :
 1. assumer la défense des intéressés, ni verbalement, ni par écrit, ni leur donner des consultations;
 2. faire de l'arbitrage rémunéré;
 3. soit personnellement, soit par personne interposée, exercer aucune activité professionnelle, aucune espèce de commerce, être agent d'affaires, participer à la direction, à l'administration ou à la surveillance de sociétés commerciales ou d'établissements industriels ou commerciaux.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 47  </span>
 
@@ -2277,7 +2277,7 @@ La Cour est assistée par le greffier dont la langue est celle de l'instruction.
 
 ##### <span class="titles">TITRE IV </span><br/> DE L'EMPLOI DES LANGUES
 
-###### <span class="chapters">CHAPITRE Ier : DE L'EMPLOI DES LANGUES DEVANT LA COUR CONSTITUTIONNELLE</span>
+###### <span class="chapters">CHAPITRE Ier : DE L'EMPLOI DES LANGUES DEVANT LA COUR CONSTITUTIONNELLE</span><br/><br/>
 
 <span class="code">  Art. 62  </span>
 
@@ -2321,7 +2321,7 @@ Les arrêts sont prononcés en français et en néerlandais par les présidents.
 
 Ils sont également prononcés et publiés en allemand lorsqu'il s'agit d'arrêts rendus sur recours en annulation ou lorsque l'affaire a été introduite en allemand.
 
-###### <span class="chapters">CHAPITRE II : DE L'EMPLOI DES LANGUES DANS LES SERVICES DE LA COUR CONSTITUTIONNELLE</span>
+###### <span class="chapters">CHAPITRE II : DE L'EMPLOI DES LANGUES DANS LES SERVICES DE LA COUR CONSTITUTIONNELLE</span><br/><br/>
 
 <span class="code">  Art. 66  </span>
 
@@ -2754,7 +2754,7 @@ L'arrêt contient les motifs et le dispositif. Il porte mention:
 2. des dispositions sur l'emploi des langues dont il est fait application;
 3. des mémoires introduits par les parties, ainsi que de la présence éventuelle des parties et de leurs conseils à l'audience;
 4. de la date de la signature de l'arrêt et du nom des juges qui en ont délibéré.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 112  </span>
 
@@ -2774,7 +2774,7 @@ Ils sont communiqués par voie électronique :
 
 1. au Premier ministre et aux présidents des gouvernements;
 2. aux présidents des Chambres législatives, du Parlement de la Communauté française, du Parlement wallon, du Parlement flamand, du Parlement de la Communauté germanophone et des Assemblées législatives de la Région de Bruxelles-Capitale.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 114  </span>
 
@@ -2806,7 +2806,7 @@ Pour le surplus, la procédure prévue pour la requête en annulation ou pour la
 
 La minute de l'arrêt interprétatif est annexée à la minute de l'arrêt interprété. Mention de l'arrêt interprétatif est faite en marge de l'arrêt interprété.
 
-###### <span class="chapters">Chapitre VIII BIS : DE LA PROCÉDURE DE CONTRÔLE DES CONSULTATIONS POPULAIRES</span>
+###### <span class="chapters">Chapitre VIII BIS : DE LA PROCÉDURE DE CONTRÔLE DES CONSULTATIONS POPULAIRES</span><br/><br/>
 
 <span class="code">  Art. 118 bis  </span>
 
@@ -2889,7 +2889,7 @@ Sont abrogés :
 3. la loi du 28 juin 1983 portant l'organisation, la compétence et le fonctionnement de la Cour d'arbitrage, modifiée par la loi du 31 décembre 1983, à l'exception des articles 31 à 34 et 112;
 4. l'article 5 de la loi du 2 février 1984 relative aux traitements des membres, des référendaires et greffiers de la Cour d'arbitrage, à leur présentation et nomination, ainsi qu'aux outrages et violences envers les membres de cette Cour;
 5. la loi du 10 mai 1985 relative aux effets des arrêts d'annulation rendus par la Cour d'arbitrage.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 128  </span>
 
@@ -3049,7 +3049,7 @@ La justification de la connaissance suffisante de la langue allemande, prévue �
 3. soit par la production d'une attestation du recteur de l'université, constatant qu'il est de notoriété publique que l'intéressé possède dans l'exercice de ses fonctions une connaissance passive de cette langue;
 4. soit, conformément aux dispositions, de l'arrêté royal du 28 septembre 1983 fixant les règles pour la justification d'une connaissance suffisante de la seconde langue nationale et de l'allemand, à fournir par les candidats référendaires à la Cour constitutionnelle;
 5. soit par la réussite d'une épreuve orale portant sur des sujets d'ordre général en rapport avec les attributions de la Cour constitutionnelle.
-<br/>
+<br/><br/>
 
 <span class="code">  Art. 2  </span>
 
@@ -3249,7 +3249,7 @@ Tous les documents déposés au moyen de la plateforme électronique respectent 
 - les documents ont été établis sous la forme d'un fichier dans le format " Portable Document Format " (PDF);
 - les documents sont exempts de virus et peuvent être ouverts et lus par les employés de la Cour constitutionnelle;
 - le texte des documents peut être copié, dans la mesure du possible.
-La Cour constitutionnelle peut publier sur son site internet une note explicative relative à l'utilisation de la plateforme électronique. Cette note explicative peut également contenir des directives concernant la taille maximale, ainsi que les autres exigences techniques applicables aux documents déposés.
+La Cour constitutionnelle peut publier sur son site internet une note explicative relative à l'utilisation de la plateforme électronique. Cette note explicative peut également contenir des directives concernant la taille maximale, ainsi que les autres exigences techniques applicables aux documents déposés.<br/><br/>
 
 <span class="code">  Art. 9  </span>
 
