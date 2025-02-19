@@ -169,7 +169,7 @@ Iedere persoon met een handicap heeft recht op volledige inclusie in de samenlev
 4. het recht op de bescherming van een gezond leefmilieu;<br/>
 5. het recht op culturele en maatschappelijke ontplooiing;<br/>
 6. het recht op gezinsbijslagen.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 24 </span>
 
@@ -333,7 +333,7 @@ De Koning kan de Kamers verdagen. Evenwel mag de verdaging, zonder instemming va
    &emsp;Bovendien kan de Koning bij ontslag van de federale Regering de Kamer van volksvertegenwoordigers ontbinden, nadat deze daarmee bij volstrekte meerderheid van haar leden heeft ingestemd.<br/>
    &emsp;Het ontbindingsbesluit bevat de oproeping van de kiezers binnen veertig dagen en bijeenroeping van de Kamer van volksvertegenwoordigers binnen twee maanden.<br/>
    &emsp;In geval van ontbinding van beide Kamers overeenkomstig artikel 195 worden de Kamers binnen drie maanden bijeengeroepen.<br/>
-   &emsp;In geval van vervroegde ontbinding zal de nieuwe federale zittingsperiode uiterlijk duren tot de dag van de eerstvolgende verkiezingen voor het Europese Parlement die op deze ontbinding volgen.
+   &emsp;In geval van vervroegde ontbinding zal de nieuwe federale zittingsperiode uiterlijk duren tot de dag van de eerstvolgende verkiezingen voor het Europese Parlement die op deze ontbinding volgen.<br/><br/>
 
 <span class="code"> Overgangsbepaling </span>
 
@@ -563,7 +563,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 2. het genot hebben van de burgerlijke en politieke rechten;
 3. de volle leeftijd van achttien jaar hebben bereikt;
 4. zijn woonplaats hebben in België.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Overgangsbepaling </span>
 
@@ -575,7 +575,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 2. het genot hebben van de burgerlijke en politieke rechten;
 3. de volle leeftijd van eenentwintig jaar hebben bereikt;
 4. zijn woonplaats hebben in België."
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 70 </span>
 
@@ -627,7 +627,7 @@ Dit artikel treedt in werking op de dag van de verkiezingen met het oog op de al
 2. de wetten betreffende de burgerrechtelijke en strafrechtelijke aansprakelijkheid van de ministers van de Koning;
 3. de begrotingen en de rekeningen van de Staat, onverminderd artikel 174, eerste lid, tweede zin;
 4. de vaststelling van het legercontingent."
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 75 </span>
 
@@ -1064,7 +1064,7 @@ Een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid, stelt
 - de gemeenten of groepen van gemeenten palend aan een ander taalgebied en waar de wet het gebruik van een andere taal dan die van het gebied waarin zij gelegen zijn, voorschrijft of toelaat. Voor deze gemeenten kan in de bepalingen betreffende het gebruik van de talen voor de aangelegenheden bedoeld in § 1 geen verandering worden aangebracht dan bij een wet aangenomen met de in artikel 4, laatste lid, bepaalde meerderheid;
 - de diensten waarvan de werkkring verder reikt dan het taalgebied waarin zij gevestigd zijn;
 - de door de wet aangewezen federale en internationale instellingen waarvan de werking gemeen is aan meer dan één gemeenschap.
-  <br/>
+  <br/><br/>
 
 <span class="code"> Art. 130 </span>
 
@@ -1286,7 +1286,7 @@ Geen rechter mag van een regering bezoldigde ambten aanvaarden, tenzij hij die o
 3. dat van Antwerpen, waarvan het rechtsgebied de provincies Antwerpen en Limburg omvat;
 4. dat van Luik, waarvan het rechtsgebied de provincies Luik, Namen en Luxemburg omvat;
 5. dat van Bergen, waarvan het rechtsgebied de provincie Henegouwen omvat.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 157 </span>
 
@@ -1656,7 +1656,7 @@ Het Grondwettelijk Hof doet, bij wege van arrest, uitspraak op de beroepen tot g
 1. de regels die door of krachtens de Grondwet zijn vastgesteld voor het bepalen van de onderscheiden bevoegdheid van de Staat, de Gemeenschappen en de Gewesten; [of]
 2. de artikelen van titel II « De Belgen en hun rechten », en de artikelen 170, 172 en 191 van de Grondwet;
 3. artikel 143, § 1, van de Grondwet.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 2 </span>
 
@@ -1749,7 +1749,7 @@ Het recht om de intrekking te vorderen, behoort bovendien:
 2. aan degene ten aanzien van wie een beslissing is gewezen waarbij opschorting van de uitspraak van de veroordeling wordt gelast;
 3. ingeval de veroordeelde of, in voorkomend geval, de persoon ten aanzien van wie een beslissing is gewezen waarbij opschorting van de uitspraak van de veroordeling wordt gelast, overleden is dan wel onbekwaam of afwezig verklaard is, aan zijn echtgenoot, aan de bloedverwanten in de neerdalende en de opgaande lijn, aan zijn broers en zusters;
 4. aan de partij die burgerrechtelijk aansprakelijk is verklaard voor de veroordeelde of, in voorkomend geval, voor degene ten aanzien van wie een beslissing is gewezen waarbij opschorting van de uitspraak van de veroordeling wordt gelast.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 12 </span>
 
@@ -1827,7 +1827,7 @@ Onverminderd artikel 16*ter* van de bijzondere wet van 8 augustus 1980 tot hervo
 
 1. als ernstige middelen worden aangevoerd en op voorwaarde dat de onmiddellijke uitvoering van de wet, het decreet of de in artikel 134 van de Grondwet bedoelde regel, waartegen het beroep gericht is, een moeilijk te herstellen ernstig nadeel kan berokkenen;
 2. als een beroep is ingesteld tegen een norm die identiek is met of gelijkaardig aan een reeds door het Grondwettelijk Hof vernietigde norm en die door dezelfde wetgever is aangenomen.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 21 </span>
 
@@ -1857,7 +1857,7 @@ Het Hof wijst zijn arrest op de hoofdvordering binnen drie maanden na de uitspra
 
 Indien het arrest op de hoofdvordering niet gewezen is binnen die termijn, houdt de schorsing onmiddellijk op gevolg te hebben.
 
-###### <span class="sections"> AFDELING IV </br>BEROEPEN TEGEN BESLISSINGEN VAN DE CONTROLECOMMISSIE INZAKE DE CONTROLE VAN DE VERKIEZINGSUITGAVEN VOOR DE VERKIEZING VAN DE KAMER VAN VOLKSVERTEGENWOORDIGERS</span>
+###### <span class="sections"> AFDELING IV </br>BEROEPEN TEGEN BESLISSINGEN VAN DE CONTROLECOMMISSIE INZAKE DE CONTROLE VAN DE VERKIEZINGSUITGAVEN VOOR DE VERKIEZING VAN DE KAMER VAN VOLKSVERTEGENWOORDIGERS</span><br/><br/>
 
 <span class="code"> Art. 25 bis </span>
 
@@ -1934,7 +1934,7 @@ In afwijking van het eerste lid geldt de verplichting een prejudiciële vraag te
 2. wanneer het rechtscollege oordeelt dat de bepaling uit titel II van de Grondwet klaarblijkelijk niet geschonden is;
 3. wanneer het rechtscollege oordeelt dat uit een arrest van een internationaal rechtscollege blijkt dat de bepaling uit het Europees of internationaal recht klaarblijkelijk geschonden is;
 4. wanneer het rechtscollege oordeelt dat uit een arrest van het Grondwettelijk Hof blijkt dat de bepaling uit titel II van de Grondwet klaarblijkelijk geschonden is.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 27 </span>
 
@@ -2126,7 +2126,7 @@ Van het eerste lid kan door de Koning, op gunstig en beredeneerd advies van het 
 1. wanneer het gaat om de uitoefening van het ambt van hoogleraar of leraar, docent, lector of assistent in een inrichting voor hoger onderwijs, voor zover het ambt gedurende niet meer dan vijf uur per week en gedurende niet meer dan twee halve dagen per week wordt uitgeoefend;
 2. wanneer het gaat om de uitoefening van het ambt van lid van een examencommissie;
 3. wanneer het gaat om de deelneming aan een commissie, een raad of comité van advies, voor zover het aantal bezoldigde opdrachten of ambten beperkt blijft tot twee en het geheel van de bezoldiging niet hoger is dan een tiende van de jaarlijkse brutowedde van het hoofdambt in het Hof.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 45 </span>
 
@@ -2139,7 +2139,7 @@ Het is de voorzitters, de rechters, de referendarissen en de griffiers verboden:
 1. mondeling of schriftelijk de verdediging van de belanghebbenden te voeren of hun consult te geven;
 2. in een scheidsgerecht op te treden tegen bezoldiging;
 3. hetzij persoonlijk, hetzij door een tussenpersoon, enige beroepsactiviteit uit te oefenen, enige handel te drijven, als zaakwaarnemer op te treden, deel te nemen aan de leiding, het bestuur van of het toezicht op handelsvennootschappen of nijverheids- of handelsinrichtingen.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 47 </span>
 
@@ -2312,7 +2312,7 @@ De arresten worden in het Nederlands en in het Frans uitgesproken door de voorzi
 
 Zij worden tevens in het Duits uitgesproken en bekendgemaakt wanneer het gaat om arresten gewezen op beroepen tot vernietiging of wanneer de zaak in het Duits aanhangig is gemaakt.
 
-###### <span class="chapters">HOOFDSTUK II: GEBRUIK VAN DE TALEN IN DE DIENSTEN VAN HET GRONDWETTELIJK HOF</span>
+###### <span class="chapters">HOOFDSTUK II: GEBRUIK VAN DE TALEN IN DE DIENSTEN VAN HET GRONDWETTELIJK HOF</span><br/><br/>
 
 <span class="code"> Art. 66 </span>
 
@@ -2320,7 +2320,7 @@ De administratieve werkzaamheden van het Grondwettelijk Hof en de organisatie va
 
 ##### <span class="titles">TITEL V </span><br/>RECHTSPLEGING VOOR HET GRONDWETTELIJK HOF
 
-###### <span class="chapters">HOOFDSTUK I: INSCHRIJVING OP DE ROL EN AANWIJZING VAN DE VERSLAGGEVERS</span>
+###### <span class="chapters">HOOFDSTUK I: INSCHRIJVING OP DE ROL EN AANWIJZING VAN DE VERSLAGGEVERS</span><br/><br/>
 
 <span class="code"> Art. 67 </span>
 
@@ -2753,7 +2753,7 @@ Het arrest bevat de gronden en het beschikkend gedeelte. Het vermeldt:
 2. de bepalingen op het gebruik van de talen die zijn toegepast;
 3. de memories ingediend door de partijen, alsmede hun eventuele aanwezigheid en die van hun raadslieden op de terechtzitting;
 4. de datum van ondertekening van het arrest en de naam van de rechters die erover hebben beraadslaagd.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 112 </span>
 
@@ -2773,7 +2773,7 @@ Zij worden op elektronische wijze meegedeeld:
 
 1. aan de eerste minister en aan de voorzitters van de regeringen;
 2. aan de voorzitters van de Wetgevende Kamers, van het Vlaams Parlement, van het Parlement van de Franse Gemeenschap, van het Waals Parlement, van het Parlement van de Duitstalige Gemeenschap en van de Wetgevende Vergaderingen van het Brusselse Hoofdstedelijke Gewest.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 114 </span>
 
@@ -2783,7 +2783,7 @@ De arresten worden door toedoen van de griffier bekendgemaakt op de website van 
 
 De arresten zijn van rechtswege uitvoerbaar.
 
-<span class="code"> Art.116 </span>
+<span class="code"> Art. 116 </span>
 
 Het arrest van het Hof is definitief en niet vatbaar voor beroep.
 
@@ -2805,7 +2805,7 @@ Voor het overige is de voor het verzoekschrift tot vernietiging of voor de preju
 
 De minuut van het uitleggend arrest wordt aan de minuut van het uitgelegde arrest gehecht. Van het uitleggend arrest wordt melding gemaakt op de kant van het uitgelegde arrest.
 
-###### <span class="chapters">HOOFDSTUK VIII BIS: CONTROLEPROCEDURE VOOR DE VOLKSRAADPLEGINGEN</span>
+###### <span class="chapters">HOOFDSTUK VIII BIS: CONTROLEPROCEDURE VOOR DE VOLKSRAADPLEGINGEN</span><br/><br/>
 
 <span class="code"> Art. 118 bis </span>
 
@@ -2889,7 +2889,7 @@ Opgeheven worden:
 3. de wet van 28 juni 1983 houdende de inrichting, de bevoegdheid en de werking van het Arbitragehof, gewijzigd bij de wet van 31 december 1983, met uitzondering van de artikelen 31 tot 34 en 112;
 4. artikel 5 van de wet van 2 februari 1984 betreffende de wedden van de leden, de referendarissen en de griffiers van het Arbitragehof, hun voordracht en benoeming, evenals de smaad en het geweld tegen de leden van dit Hof;
 5. de wet van 10 mei 1985 betreffende de gevolgen van de door het Arbitragehof gewezen vernietigende arresten.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 128 </span>
 
@@ -3056,7 +3056,7 @@ Het bewijs van de voldoende kennis van de Duitse taal, bedoeld in artikel 34, §
 3. hetzij door overlegging van een attest door de rector van de universiteit waaruit blijkt dat het algemeen bekend is dat betrokkene in de uitoefening van zijn ambt een passieve kennis van die taal bezit;
 4. hetzij overeenkomstig de bepalingen van het koninklijk besluit van 28 september 1983 tot vaststelling van de regelen voor het leveren van het bewijs van een voldoende kennis van de tweede landstaal en van het Duits door de kandidaat-referendarissen bij het Grondwettelijk Hof;
 5. hetzij door het slagen voor een mondeling examen over onderwerpen van algemene aard die verband houden met de bevoegdheden van het Grondwettelijk Hof.
-   <br/>
+   <br/><br/>
 
 <span class="code"> Art. 2 </span>
 
