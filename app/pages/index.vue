@@ -219,6 +219,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
         </h2>
       </div>
 
+      <DatePicker />
       <AgendaCard
         :api-url="`${baseURL}${ApiUrl.pressJudgment}?lang=${locale}`"
         :max-items="0"
