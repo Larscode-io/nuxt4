@@ -199,7 +199,7 @@ const startIntersectionObserver = () => {
   });
 };
 
-const alternateLang = (mems) => {
+const alternateLang = (mems: any) => {
   let startLang: string;
   if (locale.value === Languages.FRENCH || locale.value === Languages.GERMAN) {
     startLang = Languages.FRENCH
@@ -207,8 +207,8 @@ const alternateLang = (mems) => {
     startLang = Languages.DUTCH
   }
   const altLang = startLang === 'fr' ? 'nl' : 'fr',
-    p = mems.filter(m => m.lang === startLang),
-    s = mems.filter(m => m.lang === altLang),
+    p = mems.filter((m: { lang: string; }) => m.lang === startLang),
+    s = mems.filter((m: { lang: string; }) => m.lang === altLang),
     r = [];
   for (let i = 0; i < Math.max(p.length, s.length); i++) {
     p[i] && r.push(p[i]);
