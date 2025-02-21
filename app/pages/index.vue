@@ -49,40 +49,32 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
           {{ t("menu.decisions.title") }}
         </h2>
       </div>
-      <DecisionBox
-        :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
-        :max-items="6"
-      >
-        <template
-          #item="{
-            year: thisYearOrPreviousYear,
-            item: {
-              id,
-              formatedJudmentDate,
-              nr,
-              courtVerdict,
-              description,
-              availablePart,
-              title,
-            },
-          }: {
-            item: Judgment,
-          }"
-        >
-          <v-card
-            class="equal-height-card highlighted-card libra-image d-flex flex-column"
-            @click="goToJudgmentPage(id, thisYearOrPreviousYear)"
-          >
+
+
+      <DecisionBox :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`" :max-items="6">
+        <template #item="{
+          year: thisYearOrPreviousYear,
+          item: {
+            id,
+            formatedJudmentDate,
+            nr,
+            courtVerdict,
+            description,
+            availablePart,
+            title,
+          },
+        }: {
+          item: Judgment,
+        }">
+          <v-card class="equal-height-card highlighted-card libra-image d-flex flex-column"
+            @click="goToJudgmentPage(id, thisYearOrPreviousYear)">
             <div class="flex-grow-1">
               <v-card-text>
                 <v-row class="top-infos">
                   <v-col cols="5">
                     <span class="judgment-date">{{ formatedJudmentDate }}</span>
                   </v-col>
-                  <v-col
-                    cols="7"
-                    class="d-flex justify-end"
-                  >
+                  <v-col cols="7" class="d-flex justify-end">
                     <span class="judgment-number">
                       <span>{{
                         t("general.message.add-judgment-number-label")
@@ -98,10 +90,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                   courtVerdict
                 }}
               </v-card-title>
-              <v-card-text
-                v-if="title"
-                class="judgment-title"
-              >
+              <v-card-text v-if="title" class="judgment-title">
                 {{ title }}
               </v-card-text>
               <v-card-text class="judgment-description">
@@ -110,10 +99,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
             </div>
             <span class="justify-start">
               <span v-if="availablePart">
-                <p
-                  class="judgment-available-part"
-                  v-html="availablePart"
-                />
+                <p class="judgment-available-part" v-html="availablePart" />
               </span>
               <span v-else>
                 {{ t("general.message.not-available") }}
@@ -136,46 +122,24 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
           {{ t("general.message.latest-press-release") }}
         </h2>
       </div>
-      <MediaCard
-        :api-url-press="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
+      <MediaCard :api-url-press="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
-        :max-items="3"
-        class="mediaCard"
-      >
+        :max-items="3" class="mediaCard">
         <template #default="{ items }">
           <v-container class="pa-0 ma-0">
-            <v-row>
-              <v-col
-                v-for="(item, index) in items"
-                :key="item.id"
-                cols="12"
-                md="4"
-                class="pa-0 ma-0"
-              >
-                <v-card
-                  class="pa-4 ma-4 elevation-2 hover-effect"
-                  max-width="388"
+            <div class="grid-container">
+              <div v-for="(item, index) in items" :key="item.id" cols="12" md="4" class="grid-item pa-0 ma-0">
+                <v-card class="pa-4 ma-4 elevation-2 hover-effect" max-width="388" height="100%"
                   :aria-labelledby="`artDate${item.id} arrestNr${item.id} publicationTitle${item.id}`"
-                  :style="{ position: 'relative', overflow: 'visible' }"
-                >
-                  <v-img
-                    :src="getImage(`media-${index}`)"
-                    :alt="`Dynamic Image media-${index}`"
-                    height="320px"
-                    class="mb-4 mx-auto"
-                    max-width="100%"
-                    cover
-                    style="transform: translateY(-40px)"
-                  />
+                  :style="{ position: 'relative', overflow: 'visible' }">
+                  <v-img :src="getImage(`media-${index}`)" :alt="`Dynamic Image media-${index}`" height="320px"
+                    class="mb-4 mx-auto" max-width="100%" cover style="transform: translateY(-40px)" />
                   <div class="d-flex justify-space-between mb-4">
                     <p :id="`artDate${item.id}`">
                       {{ item.formatedJudmentDate }}
                     </p>
-                    <p
-                      v-if="item.type === MediaType.pressReleaseForJudgments"
-                      :id="`arrestNr${item.id}`"
-                      :aria-label="item.ariaLabelReference"
-                    >
+                    <p v-if="item.type === MediaType.pressReleaseForJudgments" :id="`arrestNr${item.id}`"
+                      :aria-label="item.ariaLabelReference">
                       {{ t("general.message.add-judgment-number-label") }}
                       {{ item.nr }}
                     </p>
@@ -183,32 +147,24 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                       {{ t("general.message.general-press-releases") }}
                     </p>
                   </div>
-                  <h3
-                    :id="`publicationTitle${item.id}`"
-                    :aria-label="
-                      item.title
-                        + ' '
-                        + t('aria.label.description.continueReading')
-                    "
-                    class="text-h6 mb-4"
-                  >
+                  <h3 :id="`publicationTitle${item.id}`" :aria-label="item.title
+                    + ' '
+                    + t('aria.label.description.continueReading')
+                    " class="text-h6 mb-4">
                     {{ item.title }}
                   </h3>
                   <v-list-item-subtitle class="text-truncate-4 mb-4">
                     {{ item.shortDescription }}
                   </v-list-item-subtitle>
-                  <div
-                    class="d-flex align-center justify-start"
-                    @click="goToMediaPage(item.id, item.type)"
-                  >
+                  <div class="d-flex align-center justify-start" @click="goToMediaPage(item.id, item.type)">
                     {{ t("general.message.read-more") }}
                     <v-icon class="ml-2">
                       mdi-arrow-right
                     </v-icon>
                   </div>
                 </v-card>
-              </v-col>
-            </v-row>
+              </div>
+            </div>
           </v-container>
         </template>
       </MediaCard>
@@ -219,24 +175,16 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
         </h2>
       </div>
 
-      <AgendaCard
-        :api-url="`${baseURL}${ApiUrl.pressJudgment}?lang=${locale}`"
-        :max-items="0"
-      >
-        <template
-          #item="{
-            item: { day, month, shortDescription, id, joinedcases },
-          }: {
-            item: Decision,
-          }"
-        >
+      <AgendaCard :api-url="`${baseURL}${ApiUrl.pressJudgment}?lang=${locale}`" :max-items="0">
+        <template #item="{
+          item: { day, month, shortDescription, id, joinedcases },
+        }: {
+          item: Decision,
+        }">
           <v-card class="hammer-image equal-height-card">
             <v-card-text>
               <v-row>
-                <v-col
-                  cols="4"
-                  class="date-box1 d-flex flex-column align-center justify-center"
-                >
+                <v-col cols="4" class="date-box1 d-flex flex-column align-center justify-center">
                   <div class="day1">
                     {{ day }}
                   </div>
@@ -244,10 +192,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                     {{ month }}
                   </div>
                 </v-col>
-                <v-col
-                  cols="8"
-                  class="d-flex flex-column"
-                >
+                <v-col cols="8" class="d-flex flex-column">
                   <v-row>
                     <v-card-title class="font-weight-bold">
                       {{ t("menu.decisions.title2") }}
@@ -269,10 +214,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
               <div>{{ shortDescription }}</div>
             </v-card-text>
             <v-card-text v-if="joinedcases.length !== 0">
-              <v-icon
-                class="mr-1"
-                color="primary"
-              >
+              <v-icon class="mr-1" color="primary">
                 mdi-link-variant
               </v-icon>
               {{ joinedcases }}
@@ -281,36 +223,24 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
         </template>
       </AgendaCard>
 
-      <PleadingCard
-        :api-url="`${baseURL}${ApiUrl.pressPleadings}?lang=${locale}`"
-        :max-items="0"
-      >
-        <template
-          #item="{
-            item: {
-              id,
-              processingLanguage,
-              day,
-              month,
-              hora,
-              shortDescription,
-            },
-          }: {
-            item: Pleading,
-          }"
-        >
-          <v-card
-            class="equal-height-card"
-            :style="{ maxWidth: '300px' }"
-            @click="gotoMediaPage(id)"
-          >
+      <PleadingCard :api-url="`${baseURL}${ApiUrl.pressPleadings}?lang=${locale}`" :max-items="0">
+        <template #item="{
+          item: {
+            id,
+            processingLanguage,
+            day,
+            month,
+            hora,
+            shortDescription,
+          },
+        }: {
+          item: Pleading,
+        }">
+          <v-card class="equal-height-card" :style="{ maxWidth: '300px' }" @click="gotoMediaPage(id)">
             <v-card-text>
               <v-row>
                 <!-- Date Box -->
-                <v-col
-                  cols="4"
-                  class="date-box d-flex flex-column align-center justify-center"
-                >
+                <v-col cols="4" class="date-box d-flex flex-column align-center justify-center">
                   <div class="day">
                     {{ day }}
                   </div>
@@ -320,10 +250,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                 </v-col>
 
                 <!-- Time and Location -->
-                <v-col
-                  cols="6"
-                  class="d-flex flex-column indi"
-                >
+                <v-col cols="6" class="d-flex flex-column indi">
                   <div class="d-flex align-center mb-2">
                     <v-icon class="mr-1">
                       mdi-clock-time-four-outline
@@ -355,15 +282,26 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
         </template>
       </PleadingCard>
     </v-container>
-    <NewsletterSection
-      fluid
-      class="ma-0 pa-0"
-      @mail-submitted="goToMailings"
-    />
+    <NewsletterSection fluid class="ma-0 pa-0" @mail-submitted="goToMailings" />
   </div>
 </template>
 
 <style scoped lang="scss">
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  /* ensures grid items stretch to the same height */
+}
+
+.grid-item {
+  // background-color: #f1f1f1;
+  // padding: 16px;
+  // border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
 .index-banner {
   display: block;
   height: 60vh;
@@ -378,6 +316,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   @media (max-width: 1366px) {
     background-attachment: scroll;
   }
+
   // Specific settings for normal iPad in landscape mode
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     background-position: 50% 50%; // Center the image vertically
@@ -510,9 +449,11 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   font-size: 16px;
   text-transform: uppercase;
 }
+
 .ray {
   color: $rajahYellow;
 }
+
 .day {
   font-size: 32px;
   font-weight: bold;
@@ -526,6 +467,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 .indi {
   color: $indigo;
 }
+
 .v-card-title {
   font-weight: bold;
 }
@@ -552,7 +494,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   justify-content: flex-end;
 }
 
-.v-row > .v-col > .span {
+.v-row>.v-col>.span {
   position: relative;
 }
 
