@@ -1,43 +1,43 @@
 <script setup lang="ts">
-import { useLanguage } from '@/composables/useLanguage'
-import { RoutePathKeys, ApiUrl, MediaType } from '@/core/constants'
+import { useLanguage } from "@/composables/useLanguage";
+import { RoutePathKeys, ApiUrl, MediaType } from "@/core/constants";
 import type {
   GeneralPressJudgment,
   GeneralPressRelease,
   Judgment,
   Pleading,
   Decision,
-} from '@/core/constants'
+} from "@/core/constants";
 
-const { localePath } = useLanguage()
+const { localePath } = useLanguage();
 
-const { getImage } = useImageLoader()
+const { getImage } = useImageLoader();
 
 definePageMeta({
-  layout: 'default',
-})
+  layout: "default",
+});
 
-const config = useRuntimeConfig()
-const baseURL = config.public.apiBaseUrl
-const { t, locale } = useLanguage()
+const config = useRuntimeConfig();
+const baseURL = config.public.apiBaseUrl;
+const { t, locale } = useLanguage();
 
 const goToJudgmentPage = (id: number, year: string) => {
   navigateTo(
-    localePath(RoutePathKeys.judgmentsHome) + `?year=${year}` + `&id=${id}`,
-  )
-}
+    localePath(RoutePathKeys.judgmentsHome) + `?year=${year}` + `&id=${id}`
+  );
+};
 const goToMediaPage = (id: number, type: MediaType) => {
   navigateTo(
-    localePath(RoutePathKeys.mediaPressReleasesConcerningTheJudgments)
-    + '?with-archive=true'
-    + `&id=${id}`,
-  )
-}
+    localePath(RoutePathKeys.mediaPressReleasesConcerningTheJudgments) +
+      "?with-archive=true" +
+      `&id=${id}`
+  );
+};
 // const goToMailings = ({ mailinfo }) => {
 const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
-  const dest = localePath(RoutePathKeys.informed)
-  navigateTo({ path: dest, query: { mailinfo: mailinfo } })
-}
+  const dest = localePath(RoutePathKeys.informed);
+  navigateTo({ path: dest, query: { mailinfo: mailinfo } });
+};
 </script>
 
 <template>
@@ -79,10 +79,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                   <v-col cols="5">
                     <span class="judgment-date">{{ formatedJudmentDate }}</span>
                   </v-col>
-                  <v-col
-                    cols="7"
-                    class="d-flex justify-end"
-                  >
+                  <v-col cols="7" class="d-flex justify-end">
                     <span class="judgment-number">
                       <span>{{
                         t("general.message.add-judgment-number-label")
@@ -94,14 +91,9 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                 </v-row>
               </v-card-text>
               <v-card-title class="judgment-verdict">
-                {{
-                  courtVerdict
-                }}
+                {{ courtVerdict }}
               </v-card-title>
-              <v-card-text
-                v-if="title"
-                class="judgment-title"
-              >
+              <v-card-text v-if="title" class="judgment-title">
                 {{ title }}
               </v-card-text>
               <v-card-text class="judgment-description">
@@ -110,10 +102,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
             </div>
             <span class="justify-start">
               <span v-if="availablePart">
-                <p
-                  class="judgment-available-part"
-                  v-html="availablePart"
-                />
+                <p class="judgment-available-part" v-html="availablePart" />
               </span>
               <span v-else>
                 {{ t("general.message.not-available") }}
@@ -122,9 +111,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
             <v-card-actions class="justify-start">
               <div class="judgment-readmore">
                 {{ t("general.message.read-more") }}
-                <v-icon class="arrow-hover">
-                  mdi-arrow-right
-                </v-icon>
+                <v-icon class="arrow-hover"> mdi-arrow-right </v-icon>
               </div>
             </v-card-actions>
           </v-card>
@@ -186,9 +173,9 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                   <h3
                     :id="`publicationTitle${item.id}`"
                     :aria-label="
-                      item.title
-                        + ' '
-                        + t('aria.label.description.continueReading')
+                      item.title +
+                      ' ' +
+                      t('aria.label.description.continueReading')
                     "
                     class="text-h6 mb-4"
                   >
@@ -202,9 +189,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                     @click="goToMediaPage(item.id, item.type)"
                   >
                     {{ t("general.message.read-more") }}
-                    <v-icon class="ml-2">
-                      mdi-arrow-right
-                    </v-icon>
+                    <v-icon class="ml-2"> mdi-arrow-right </v-icon>
                   </div>
                 </v-card>
               </v-col>
@@ -222,16 +207,13 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
       <DatePicker />
       <AgendaCard
         :api-url="`${baseURL}${ApiUrl.pressJudgment}?lang=${locale}`"
-        :max-items="0"
+        :max-items="4"
+        class="flex-wrap justify-space-between agenda-container"
       >
         <template
-          #item="{
-            item: { day, month, shortDescription, id, joinedcases },
-          }: {
-            item: Decision,
-          }"
+          #item="{ item: { day, month, shortDescription } }: { item: Decision }"
         >
-          <v-card class="hammer-image equal-height-card">
+          <v-card class="agenda-card hammer-image equal-height-card">
             <v-card-text>
               <v-row>
                 <v-col
@@ -245,38 +227,25 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                     {{ month }}
                   </div>
                 </v-col>
-                <v-col
-                  cols="8"
-                  class="d-flex flex-column"
-                >
+                <v-col cols="8" class="d-flex flex-column">
                   <v-row>
-                    <v-card-title class="font-weight-bold">
+                    <v-card-title class="text-uppercase">
                       {{ t("menu.decisions.title2") }}
                     </v-card-title>
-                  </v-row>
-                  <v-row>
-                    <v-card-text>
-                      <v-icon class="mr-1 ray">
-                        mdi-file-document-outline
-                      </v-icon>
-                      {{ id }}
+                    <v-card-text class="font-weight-bold">
+                      <span
+                        class="text-capitalize"
+                        v-html="shortDescription.split(' ')[0]"
+                      />
+                      <span
+                        v-html="
+                          ' ' + shortDescription.split(' ').splice(1).join(' ')
+                        "
+                      />
                     </v-card-text>
                   </v-row>
                 </v-col>
               </v-row>
-            </v-card-text>
-
-            <v-card-text>
-              <div>{{ shortDescription }}</div>
-            </v-card-text>
-            <v-card-text v-if="joinedcases.length !== 0">
-              <v-icon
-                class="mr-1"
-                color="primary"
-              >
-                mdi-link-variant
-              </v-icon>
-              {{ joinedcases }}
             </v-card-text>
           </v-card>
         </template>
@@ -321,26 +290,17 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                 </v-col>
 
                 <!-- Time and Location -->
-                <v-col
-                  cols="6"
-                  class="d-flex flex-column indi"
-                >
+                <v-col cols="6" class="d-flex flex-column indi">
                   <div class="d-flex align-center mb-2">
-                    <v-icon class="mr-1">
-                      mdi-clock-time-four-outline
-                    </v-icon>
+                    <v-icon class="mr-1"> mdi-clock-time-four-outline </v-icon>
                     <span>{{ hora || "14-17h" }}</span>
                   </div>
                   <div class="d-flex align-center mb-2">
-                    <v-icon class="mr-1">
-                      mdi-map-marker
-                    </v-icon>
+                    <v-icon class="mr-1"> mdi-map-marker </v-icon>
                     {{ t("general.brussels") }}
                   </div>
                   <div class="d-flex align-center">
-                    <v-icon class="mr-1">
-                      mdi-file-document-outline
-                    </v-icon>
+                    <v-icon class="mr-1"> mdi-file-document-outline </v-icon>
                     {{ id }} ({{ processingLanguage }})
                   </div>
                 </v-col>
@@ -356,11 +316,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
         </template>
       </PleadingCard>
     </v-container>
-    <NewsletterSection
-      fluid
-      class="ma-0 pa-0"
-      @mail-submitted="goToMailings"
-    />
+    <NewsletterSection fluid class="ma-0 pa-0" @mail-submitted="goToMailings" />
   </div>
 </template>
 
@@ -422,7 +378,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 .hammer-image {
   background-image: url("~~/app/assets/img/hammer.svg");
   background-position: top right;
-  background-size: contain;
+  background-size: 20%;
   background-repeat: no-repeat;
 }
 
@@ -448,32 +404,6 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-
-.date-box1 {
-  background: $rajahExtraLight;
-  border: 4px solid $rajahYellow;
-  border-radius: 4px;
-  margin-right: 8px;
-  color: $textOnRajah;
-  margin-top: 5px;
-  padding-top: 5px;
-  max-width: 80px;
-  /* Adjust as necessary */
-  min-width: 80px;
-
-  p:first-of-type {
-    font-size: 2.5rem;
-    margin: 0;
-    line-height: 32px;
-    padding: 11px 0 2px 0;
-  }
-
-  p:last-of-type {
-    font-size: 1.25rem;
-    margin: 0;
-    text-transform: uppercase;
-  }
 }
 
 .date-box {
@@ -502,15 +432,6 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   }
 }
 
-.day1 {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.month1 {
-  font-size: 16px;
-  text-transform: uppercase;
-}
 .ray {
   color: $rajahYellow;
 }
@@ -619,5 +540,77 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 .top-infos {
   display: flex;
   margin-top: -4px;
+}
+
+.agenda-card {
+  width: 360px;
+  display: flex;
+  background-position: center right;
+  height: fit-content;
+  padding: 16px;
+
+  .date-box1 {
+    background: $rajahExtraLight;
+    border: 4px solid $rajahYellow;
+    border-radius: 4px;
+    margin-right: 8px;
+    color: $textOnRajah;
+    margin-top: 5px;
+    padding-top: 5px;
+    max-height: 80px;
+    min-height: 80px;
+    max-width: 80px;
+    /* Adjust as necessary */
+    min-width: 80px;
+
+    p:first-of-type {
+      font-size: 2.5rem;
+      margin: 0;
+      line-height: 32px;
+      padding: 11px 0 2px 0;
+    }
+
+    p:last-of-type {
+      font-size: 1.25rem;
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  .day1 {
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  .month1 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .v-card-title {
+    font-size: 16px;
+    font-weight: 400 !important;
+  }
+
+  .v-card-text {
+    font-size: 16px;
+    line-height: 19px;
+    text-align: left;
+    overflow: hidden;
+    white-space: pre-wrap;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+}
+
+.agenda-container {
+  width: 100%;
+  max-width: 760px;
+  // margin: 0;
+  display: flex;
 }
 </style>

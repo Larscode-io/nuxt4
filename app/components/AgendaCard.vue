@@ -47,8 +47,9 @@ if (error.value) {
         :key="index"
         cols="12"
         sm="12"
-        md="4"
-        xl="2"
+        md="6"
+        xl="3"
+        style="width: 360px"
       >
         <slot
           name="item"
