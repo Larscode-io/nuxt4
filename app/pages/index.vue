@@ -156,7 +156,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                 class="grid-item pa-0 ma-0"
               >
                 <v-card
-                  class="pa-4 ma-4 elevation-2 hover-effect"
+                  class="pa-4 ma-4 elevation-2 hover-effect media-card"
                   max-width="388"
                   height="100%"
                   :aria-labelledby="`artDate${item.id} arrestNr${item.id} publicationTitle${item.id}`"
@@ -171,10 +171,16 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                     cover
                     style="transform: translateY(-80px)"
                   />
-                  <div class="d-flex justify-space-between mb-4" style="padding-top: -62px;">
-                    <p :id="`artDate${item.id}`">
-                      {{ item.formatedJudmentDate }}
-                    </p>
+                  <div
+                    class="d-flex justify-space-between mb-4"
+                    style="margin-top: -80px;"
+                  >
+                    <div>
+                      <p :id="`artDate${item.id}`">
+                        {{ item.formatedJudmentDate }}
+                      </p>
+                      <div class="border-bottom-blue" />
+                    </div>
                     <p
                       v-if="item.type === MediaType.pressReleaseForJudgments"
                       :id="`arrestNr${item.id}`"
@@ -216,7 +222,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
         </template>
       </MediaCard>
 
-      <div class="mt-2 title-container">
+      <div class="mt-8 title-container">
         <h2 class="title-h2">
           {{ t("menu.agenda.title") }}
         </h2>
@@ -603,6 +609,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   h3 {
     font-size: 1.125rem;
     font-weight: 400;
+    font-size: 18px;
     line-height: 20px;
     text-align: left;
     margin-bottom: 20px;
