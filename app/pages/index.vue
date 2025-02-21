@@ -44,11 +44,12 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   <div>
     <span class="index-banner" />
     <v-container max-width="1260px">
-      <div class="mt-2 title-container">
+      <div class="mt-2 title-container pb-4">
         <h2 class="title-h2">
           {{ t("menu.decisions.title") }}
         </h2>
       </div>
+
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
@@ -66,7 +67,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
               title,
             },
           }: {
-            item: Judgment,
+          item: Judgment,
           }"
         >
           <v-card
@@ -94,9 +95,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                 </v-row>
               </v-card-text>
               <v-card-title class="judgment-verdict">
-                {{
-                  courtVerdict
-                }}
+                {{ courtVerdict }}
               </v-card-title>
               <v-card-text
                 v-if="title"
@@ -115,7 +114,10 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                   v-html="availablePart"
                 />
               </span>
-              <span v-else>
+              <span
+                v-else
+                class="judgment-available-part"
+              >
                 {{ t("general.message.not-available") }}
               </span>
             </span>
@@ -141,20 +143,22 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
         :max-items="3"
         class="mediaCard"
+        style="padding-top: 62px;"
       >
         <template #default="{ items }">
           <v-container class="pa-0 ma-0">
-            <v-row>
-              <v-col
+            <div class="grid-container">
+              <div
                 v-for="(item, index) in items"
                 :key="item.id"
                 cols="12"
                 md="4"
-                class="pa-0 ma-0"
+                class="grid-item pa-0 ma-0"
               >
                 <v-card
-                  class="pa-4 ma-4 elevation-2 hover-effect"
+                  class="pa-4 ma-4 elevation-2 hover-effect media-card"
                   max-width="388"
+                  height="100%"
                   :aria-labelledby="`artDate${item.id} arrestNr${item.id} publicationTitle${item.id}`"
                   :style="{ position: 'relative', overflow: 'visible' }"
                 >
@@ -165,12 +169,18 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                     class="mb-4 mx-auto"
                     max-width="100%"
                     cover
-                    style="transform: translateY(-40px)"
+                    style="transform: translateY(-80px)"
                   />
-                  <div class="d-flex justify-space-between mb-4">
-                    <p :id="`artDate${item.id}`">
-                      {{ item.formatedJudmentDate }}
-                    </p>
+                  <div
+                    class="d-flex justify-space-between mb-4"
+                    style="margin-top: -80px;"
+                  >
+                    <div>
+                      <p :id="`artDate${item.id}`">
+                        {{ item.formatedJudmentDate }}
+                      </p>
+                      <div class="border-bottom-blue" />
+                    </div>
                     <p
                       v-if="item.type === MediaType.pressReleaseForJudgments"
                       :id="`arrestNr${item.id}`"
@@ -185,10 +195,9 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                   </div>
                   <h3
                     :id="`publicationTitle${item.id}`"
-                    :aria-label="
-                      item.title
-                        + ' '
-                        + t('aria.label.description.continueReading')
+                    :aria-label="item.title
+                      + ' '
+                      + t('aria.label.description.continueReading')
                     "
                     class="text-h6 mb-4"
                   >
@@ -207,13 +216,13 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                     </v-icon>
                   </div>
                 </v-card>
-              </v-col>
-            </v-row>
+              </div>
+            </div>
           </v-container>
         </template>
       </MediaCard>
 
-      <div class="mt-2 title-container">
+      <div class="mt-8 title-container">
         <h2 class="title-h2">
           {{ t("menu.agenda.title") }}
         </h2>
@@ -227,7 +236,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
           #item="{
             item: { day, month, shortDescription, id, joinedcases },
           }: {
-            item: Decision,
+          item: Decision,
           }"
         >
           <v-card class="hammer-image equal-height-card">
@@ -296,7 +305,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
               shortDescription,
             },
           }: {
-            item: Pleading,
+          item: Pleading,
           }"
         >
           <v-card
@@ -364,6 +373,21 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 </template>
 
 <style scoped lang="scss">
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  /* ensures grid items stretch to the same height */
+}
+
+.grid-item {
+  // background-color: #f1f1f1;
+  // padding: 16px;
+  // border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
 .index-banner {
   display: block;
   height: 60vh;
@@ -378,6 +402,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   @media (max-width: 1366px) {
     background-attachment: scroll;
   }
+
   // Specific settings for normal iPad in landscape mode
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     background-position: 50% 50%; // Center the image vertically
@@ -510,9 +535,11 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   font-size: 16px;
   text-transform: uppercase;
 }
+
 .ray {
   color: $rajahYellow;
 }
+
 .day {
   font-size: 32px;
   font-weight: bold;
@@ -526,6 +553,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 .indi {
   color: $indigo;
 }
+
 .v-card-title {
   font-weight: bold;
 }
@@ -541,10 +569,51 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   padding: 8px 16px;
 }
 
+.border-bottom-blue,
 .border-bottom {
   border-bottom: 2px solid;
   border-color: #3d3a44;
   margin-top: -1.5px;
+}
+
+.border-bottom-blue {
+  border-color: #0065ca;
+  border-width: 2px;
+}
+
+.media-card {
+  /* the old site uses a lighter box-shadow, but it's not in the new one as of yet
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.08) !important;
+  */
+
+  font-weight: 400;
+
+  .v-list-item-subtitle {
+    display: -webkit-box;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+    -webkit-line-clamp: 4;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+    line-height: 20px;
+  }
+
+  .d-flex,
+  .mb-4 {
+    color: #0065ca;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
 }
 
 .v-card-actions {
@@ -552,7 +621,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   justify-content: flex-end;
 }
 
-.v-row > .v-col > .span {
+.v-row>.v-col>.span {
   position: relative;
 }
 
@@ -563,8 +632,21 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 
 .hover-effect:hover,
 .hover-effect:focus {
-  background-color: #3f51b5 !important;
+  background-color: #0065ca !important;
   color: white !important;
+
+  .border-bottom-blue {
+    border-color: white !important;
+  }
+
+  .d-flex,
+  .mb-4 {
+    color: white !important;
+  }
+
+  .v-list-item-subtitle {
+    color: white !important;
+  }
 }
 
 .arrow-hover {
