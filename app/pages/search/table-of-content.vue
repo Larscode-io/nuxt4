@@ -1,0 +1,350 @@
+<template>
+  <v-container fluid class="fill-height pa-0 d-block">
+    <BannerImage :title="t('menu.search.title')" :description="t('menu.search.title-description')" :image="img" />
+
+    <v-row class="d-flex" align="start" justify="center">
+
+
+      <!-- Show skeleton loader when loading -->
+      <v-row v-if="loading" class="d-flex" align="flex-start" justify="center">
+        <div class="col-12 col-md-12">
+          <v-skeleton-loader class="mx-auto" max-width="300" type="article" />
+        </div>
+      </v-row>
+
+      <!-- Show error card if there was a search error -->
+      <v-row v-else-if="searchError" class="d-flex" align="flex-start" justify="center">
+        <div class="col-12 col-md-12">
+          <ErrorCard :message="t('error.fetchingData')" :show-go-home="false" />
+        </div>
+      </v-row>
+
+      <!-- Main content: Tabs, search form, and results -->
+      <v-row v-else class="d-flex">
+        <v-col cols="12" md="4" class="mt-4">
+          <v-tabs color="primary" direction="vertical" class="vertical-tabs" background-color="white" grow>
+            <v-tab :text="tab.label" v-for="tab in tabs" :key="tab.id" :to="tab.to" class="tab" ripple />
+          </v-tabs>
+        </v-col>
+
+        <v-col cols="12" md="8" class="mt-6">
+          <client-only :placeholder="t('general.loading')">
+            <form @submit.prevent="submit">
+              <div class="d-flex">
+                <v-text-field v-model.lazy="formValues.judgmentDateStart" v-date-format hint="DD/MM/YYYY"
+                  :label="t('general.message.date-of-judgment-start')" persistent-hint />
+                <span class="px-2" />
+                <v-text-field v-model.lazy="formValues.judgmentDateEnd" v-date-format hint="DD/MM/YYYY"
+                  :label="t('general.message.date-of-judgment-end')" persistent-hint />
+              </div>
+
+              <v-text-field v-model="formValues.searchTerm" :label="t('general.message.search-label')" />
+
+              <v-btn type="submit" class="mr-4 submit-button" :loading="loading" :aria-label="t('aria.label.submit')">
+                {{ t('general.submit') }}
+              </v-btn>
+
+              <v-btn v-if="hasResults" class="mr-4" :aria-label="t('aria.label.print')" @click.prevent="print('list')">
+                <v-icon left>mdi-printer</v-icon>
+                {{ t('general.message.print-list') }}
+              </v-btn>
+            </form>
+          </client-only>
+
+          <!-- Display search results -->
+          <div v-if="hasResults" ref="list" class="mt-6">
+            <div v-for="(result, resultIndex) in formattedSearchResult" :key="resultIndex" class="table-container">
+              <ul>
+                <li v-for="(title, index) in result.paths" :key="index"
+                  :style="{ marginLeft: `${index * 0.5}em`, marginBottom: '8px' }" :class="`li-l${index + 1}`">
+                  <span v-if="canDisplayPath(resultIndex, index)">
+                    {{ title }}
+                  </span>
+                </li>
+              </ul>
+              <div class="judgment-links">
+                <span>
+                  {{ t(i18nKeys.general.message.judgmentNumber, result.judgments?.length || 0) }}
+                  {{ t(i18nKeys.general.message.colon).trim() }}
+                </span>
+                <a v-for="judgment in result.judgments" :key="judgment.filePath" :href="judgment.filePath">
+                  {{ judgment.label }}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="(loaded && !hasResults) || searchError" class="mt-6">
+            <EmptyComponent />
+          </div>
+        </v-col>
+
+      </v-row>
+    </v-row>
+
+  </v-container>
+</template>
+
+<script setup lang="ts">
+import { ref, reactive, computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+import BannerImage from '../../components/BannerImage.vue'
+import ErrorCard from '../../components/ErrorCard.vue'
+import EmptyComponent from '../../components/EmptyComponent.vue'
+import img from '~/assets/img/banner-text.png'
+import { ApiUrl, RoutePathKeys } from "../../core/constants";
+
+const { t, locale } = useI18n()
+const localePath = useLocalePath()
+
+// Reactive form data
+const formValues = reactive({
+  judgmentDateStart: '',
+  judgmentDateEnd: '',
+  searchTerm: ''
+})
+
+// State variables for search
+const loading = ref(false)
+const loaded = ref(false)
+const searchError = ref(null)
+const searchResponse = ref(null)
+
+const searchTabs = [
+  { id: "general.message.judgment", to: RoutePathKeys.searchJudgment },
+  { id: "general.message.standard", to: RoutePathKeys.searchStandard },
+  { id: "general.message.systematic-table-contents-label", to: RoutePathKeys.searchTableOfContent },
+  { id: "general.message.judgment-keywords-summary", to: RoutePathKeys.searchJudgmentKeywordSummary },
+  { id: "general.message.full-text-of-judgments", to: RoutePathKeys.searchFullTextJudgment },
+  { id: "general.message.keywords-judgments-pending-cases", to: RoutePathKeys.searchJudgmentsAndPendingCases },
+];
+
+// Compute the tabs using the localePath and i18n messages
+const tabs = computed(() =>
+  searchTabs.map((tab) => ({
+    id: tab.id,
+    to: localePath(tab.to),
+    label: t(tab.id, 2)
+  }))
+)
+
+// Compute search results and whether there are any
+const formattedSearchResult = computed(() => searchResponse.value || [])
+const hasResults = computed(() => formattedSearchResult.value.length > 0)
+
+// Ref for the result list (for printing)
+const list = ref(null)
+
+// Determine whether a given path should be displayed
+function canDisplayPath(resultIndex: number, pathIndex: number): boolean {
+  const results = formattedSearchResult.value
+  const previousResult = results[resultIndex - 1]
+  const currentResult = results[resultIndex]
+  if (!previousResult) {
+    return true
+  }
+  return (
+    previousResult.paths[pathIndex] !== currentResult.paths[pathIndex] ||
+    previousResult.paths[pathIndex - 1] !== currentResult.paths[pathIndex - 1]
+  )
+}
+
+// Handle form submission
+async function submit() {
+  // Basic check: if all fields are empty, do nothing
+  if (
+    !formValues.judgmentDateStart &&
+    !formValues.judgmentDateEnd &&
+    !formValues.searchTerm
+  ) {
+    return
+  }
+
+  loading.value = true
+  loaded.value = false
+  searchError.value = null
+  searchResponse.value = null
+
+  // Prepare payload: convert dates from DD/MM/YYYY to YYYY-MM-DD
+  const payload = {
+    ...formValues,
+    judgmentDates: [formValues.judgmentDateStart, formValues.judgmentDateEnd].map((date) =>
+      date ? date.split('/').reverse().join('-') : ''
+    )
+  }
+
+  try {
+    // Use Nuxt 3’s $fetch for the POST request
+    const response = await $fetch(
+      `${ApiUrl.searchForTableOfContent}?lang=${locale.value}`,
+      {
+        method: 'POST',
+        body: payload
+      }
+    )
+    loaded.value = true
+    searchResponse.value = response
+  } catch (err) {
+    searchError.value = err
+  } finally {
+    loading.value = false
+  }
+}
+
+// Print the result list (assuming a global print function is available)
+function print(refName: string) {
+  // @ts-ignore
+  $print(list.value)
+}
+
+// Set head metadata using Nuxt 3's useHead
+useHead({
+  title: t('menu.search.title') || t('general.message.constsCourt'),
+  meta: [
+    {
+      name: 'description',
+      content: t('menu.search.title') || ''
+    }
+  ]
+})
+</script>
+
+<style lang="scss" scoped>
+.container {
+  padding: 0 !important;
+
+  @include mobile {
+    padding: 32px;
+  }
+}
+
+.d-flex {
+  max-width: 1260px !important;
+  margin: auto;
+  width: 100%;
+
+  @include mobile {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.nuxt-content {
+  padding-top: 32px;
+}
+
+.v-tabs {
+  margin-bottom: 32px;
+}
+
+button {
+  margin-top: 24px;
+}
+
+.submit-button {
+  background: $indigo !important;
+  color: white;
+}
+
+.v-input {
+  margin: 32px 0 !important;
+}
+
+.d-flex .v-input__slot {
+  box-shadow: none !important;
+}
+
+.table-container {
+  padding: 16px 32px;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.08);
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    padding: 8px 0;
+  }
+
+  .li-l1 {
+    list-style-type: none;
+    font-weight: 600;
+
+    p {
+      font-weight: 600;
+    }
+  }
+
+  .li-l2 {
+    list-style-type: none;
+    color: $indigo;
+  }
+
+  .li-l3 {
+    list-style-type: none;
+    color: $successGreen;
+  }
+
+  .li-l4 {
+    list-style-type: none;
+    color: $warningOrange;
+  }
+
+  .li-l5 {
+    list-style-type: none;
+    color: $rajahYellow;
+  }
+
+  .li-l6 {
+    list-style-type: none;
+    color: $skyBlue;
+    padding-left: 4px;
+  }
+
+  .li-l7 {
+    list-style-type: none;
+    color: $errorRed;
+    padding-left: 4px;
+  }
+
+  .li-l8 {
+    list-style-type: none;
+    color: #18dcb5;
+  }
+
+  .li-l9 {
+    color: #7d52e0;
+    list-style-type: none;
+  }
+
+  .li-l10 {
+    color: #e760aa;
+    list-style-type: none;
+  }
+
+  .li-l11 {
+    color: $logoColor;
+    list-style-type: none;
+  }
+
+  .li-l12 {
+    color: #01a6d6;
+    list-style-type: none;
+  }
+
+  .li-l13 {
+    color: #f3b86d;
+    list-style-type: none;
+  }
+
+  .judgment-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    a {
+      padding-left: 8px;
+    }
+  }
+}
+</style>

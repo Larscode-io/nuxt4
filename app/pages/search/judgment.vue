@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="fill-height pa-0">
+  <v-container fluid class="fill-height pa-0 d-block">
 
     <!-- Banner -->
     <BannerImage :title="t('menu.search.title')" :description="t('menu.search.title-description')" :image="img"
@@ -20,7 +20,7 @@
       </v-row>
 
       <!-- Main content -->
-      <v-row v-else>
+      <v-row class="d-flex" v-else>
         <v-col cols="12" md="4" class="mt-4">
           <v-tabs color="primary" direction="vertical" class="vertical-tabs" background-color="white" grow>
             <v-tab :text="tab.label" v-for="tab in tabs" :key="tab.id" :to="tab.to" class="tab" ripple />
@@ -28,16 +28,15 @@
         </v-col>
 
         <!-- Right column: Form and Results -->
-        <v-col cols="12" md="8">
+        <v-col cols="12" md="8" class="mt-6">
           <client-only :placeholder="t('general.loading')">
             <form @submit.prevent="submit">
               <!-- Radio group for search type -->
-              <div class="mb-4">
-                <v-radio-group v-model="payload.type" row :error="errors.type.length > 0" :error-messages="errors.type">
-                  <v-radio v-for="stype in searchTypesForJudgment" :key="stype.id" :label="stype.label" :value="stype.id"
-                    name="type" :disabled="loading" />
-                </v-radio-group>
-              </div>
+
+              <v-radio-group v-model="payload.type" inline :error="errors.type.length > 0" :error-messages="errors.type">
+                <v-radio class="mr-2 text-gray" color="primary" v-for="stype in searchTypesForJudgment" :key="stype.id"
+                  :label="stype.label" :value="stype.id" name="type" :disabled="loading" />
+              </v-radio-group>
 
               <!-- Applicant fields (if search type is applicant) -->
               <div v-if="isSearchJudgmentsTypeApplicant">
@@ -57,51 +56,50 @@
                   :label="t('general.message.jurisdisction-area')" item-value="id" item-title="label"
                   :error-messages="errors.jurisdictionArea" required />
                 <div class="d-flex">
-                  <v-text-field v-model.lazy="payload.referralDecisionDates[0]"
-                    v-cleave="{ date: true, datePattern: ['d', 'm', 'Y'] }" hint="DD/MM/YYYY"
+                  <v-text-field v-model.lazy="payload.referralDecisionDates[0]" v-date-format hint="DD/MM/YYYY"
                     :label="t('general.message.date-of-judgment-start')" persistent-hint
-                    :error-messages="[errors.referralDecisionDates[0]]" />
+                    :error-messages="errors.referralDecisionDates[0]" />
                   <span class="px-2" />
                   <v-text-field v-model.lazy="payload.referralDecisionDates[1]"
-                    v-cleave="{ date: true, datePattern: ['d', 'm', 'Y'] }" hint="DD/MM/YYYY"
+                    v-cleave="{ date: true, datePattern: ['d', 'm', 'Y'] }" v-date-format hint="DD/MM/YYYY"
                     :label="t('general.message.date-of-judgment-end')" persistent-hint
-                    :error-messages="[errors.referralDecisionDates[1]]" />
+                    :error-messages="errors.referralDecisionDates[1]" />
                 </div>
               </div>
 
               <!-- Common fields -->
               <v-text-field v-model="payload.judgmentNumber" :label="t('general.message.judgment-number')"
-                :error-messages="errors.judgmentNumber" required hint="XX/YYYY" persistent-hint
+                :error-messages="errors.beOfficialJournalDates[0]" required hint="XX/YYYY" persistent-hint
                 :disabled="!isSearchJudgmentsTypeSelected" />
               <div v-if="isSearchJudgmentsTypeRollNumber">
                 <v-text-field v-model="payload.rollNumber" :label="t('general.message.roll-number')"
                   :error-messages="errors.rollNumber" required />
               </div>
               <div class="d-flex">
-                <v-text-field v-model.lazy="payload.judgmentDates[0]"
+                <v-text-field v-model.lazy="payload.judgmentDates[0]" v-date-format
                   v-cleave="{ date: true, datePattern: ['d', 'm', 'Y'] }" hint="DD/MM/YYYY"
                   :label="t('general.message.date-of-judgment-start')" persistent-hint
-                  :error-messages="[errors.judgmentDates[0]]" />
+                  :error-messages="errors.judgmentDates[0]" />
                 <span class="px-2" />
-                <v-text-field v-model.lazy="payload.judgmentDates[1]"
+                <v-text-field v-model.lazy="payload.judgmentDates[1]" v-date-format
                   v-cleave="{ date: true, datePattern: ['d', 'm', 'Y'] }" hint="DD/MM/YYYY"
                   :label="t('general.message.date-of-judgment-end')" persistent-hint
-                  :error-messages="[errors.judgmentDates[1]]" />
+                  :error-messages="errors.judgmentDates[1]" />
               </div>
 
               <v-select v-model="payload.judgmentTypes" :items="judgmentTypesFiltered" multiple
                 :label="t('general.message.judgment-type')" item-value="id" item-title="label"
                 :error-messages="errors.judgmentTypes" required :disabled="!isSearchJudgmentsTypeSelected" />
               <div v-if="isSearchJudgmentsTypeRollNumber" class="d-flex">
-                <v-text-field v-model.lazy="payload.beOfficialJournalDates[0]"
+                <v-text-field v-model.lazy="payload.beOfficialJournalDates[0]" v-date-format 
                   v-cleave="{ date: true, datePattern: ['d', 'm', 'Y'] }" hint="DD/MM/YYYY"
                   :label="t('general.message.date-of-be-official-journal-start')" persistent-hint
-                  :error-messages="[errors.beOfficialJournalDates[0]]" />
+                  :error-messages="errors.beOfficialJournalDates[0]" />
                 <span class="px-2" />
-                <v-text-field v-model.lazy="payload.beOfficialJournalDates[1]"
+                <v-text-field v-model.lazy="payload.beOfficialJournalDates[1]" v-date-format 
                   v-cleave="{ date: true, datePattern: ['d', 'm', 'Y'] }" hint="DD/MM/YYYY"
                   :label="t('general.message.date-of-be-official-journal-end')" persistent-hint
-                  :error-messages="[errors.beOfficialJournalDates[1]]" />
+                  :error-messages="errors.beOfficialJournalDates[1]" />
               </div>
 
               <!-- Submit & Print Buttons -->
@@ -156,11 +154,11 @@ import img from '~/assets/img/banner-text.png'
 
 // --- Helper: Create fresh default payload ---
 const createDefaultPayload = () => ({
-  judgmentNumber: "",
-  rollNumber: "",
-  applicant: "",
-  jurisdiction: "",
-  jurisdictionArea: "",
+  judgmentNumber: null,
+  rollNumber: null,
+  applicant: null,
+  jurisdiction: null,
+  jurisdictionArea: null,
   referralDecisionDates: ["", ""],
   judgmentTypes: [] as number[],
   judgmentDates: ["", ""],
@@ -198,6 +196,32 @@ const errors = ref({
   beOfficialJournalDates: ["", ""],
 });
 
+// De logica van de directive: 
+// Bij input wordt de waarde ontdaan van niet-cijfers, beperkt tot 8 cijfers en opgemaakt als dd/mm/yyyy.
+const dateMask = {
+  mounted(el: HTMLInputElement) {
+    el.addEventListener("input", () => {
+      let val = el.value;
+      let digits = val.replace(/\D/g, "");
+      if (digits.length > 8) {
+        digits = digits.slice(0, 8);
+      }
+      let formatted = "";
+      if (digits.length > 4) {
+        formatted = digits.slice(0, 2) + "/" + digits.slice(2, 4) + "/" + digits.slice(4);
+      } else if (digits.length > 2) {
+        formatted = digits.slice(0, 2) + "/" + digits.slice(2);
+      } else {
+        formatted = digits;
+      }
+      if (formatted !== el.value) {
+        el.value = formatted;
+        el.dispatchEvent(new Event("input"));
+      }
+    });
+  }
+};
+
 // Reset payload when search type changes
 watch(
   () => payload.type,
@@ -211,6 +235,7 @@ watch(
 // --- Async Data Fetching ---
 const { data: asyncData, error: asyncError, status, refresh } = useAsyncData(() =>
   Promise.all([
+    //TODO: replace localhost url with actual api url
     $fetch<JudgmentType[]>(`http://localhost:3000${ApiUrl.judgmentTypes}?lang=${locale.value}`),
     $fetch<ApplicantTable[]>(`http://localhost:3000${ApiUrl.applicantList}?lang=${locale.value}`),
     $fetch<ApplicantCategoryTable[]>(`http://localhost:3000${ApiUrl.applicantTypes}?lang=${locale.value}`),
@@ -346,27 +371,12 @@ const validateForm = (): boolean => {
   min-height: 100vh;
 }
 
-.vertical-tabs .v-list-item {
-  cursor: pointer;
-}
-
-.vertical-tabs .v-list-item:hover {
-  background-color: rgba(0, 0, 0, 0.04);
-}
-
 .submit-button {
   background: $indigo !important;
   color: white;
 }
 
-.v-input {
-  margin: 32px 0 !important;
-  box-shadow: none;
-}
-
-.v-tab {
-  text-transform: none !important;
-  text-decoration: none !important;
-  justify-content: center;
+.text-grey {
+  color: #00000099 !important;
 }
 </style>
