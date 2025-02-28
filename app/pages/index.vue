@@ -235,11 +235,11 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                     <v-card-text class="font-weight-bold">
                       <span
                         class="text-capitalize"
-                        v-html="shortDescription.split(' ')[0]"
+                        v-html="shortDescription?.split(' ')[0]"
                       />
                       <span
                         v-html="
-                          ' ' + shortDescription.split(' ').splice(1).join(' ')
+                          ' ' + shortDescription?.split(' ').splice(1).join(' ')
                         "
                       />
                     </v-card-text>
