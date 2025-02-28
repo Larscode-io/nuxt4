@@ -21,12 +21,12 @@
         </v-tabs>
       </v-col>
 
-      <v-col cols="12" md="8">
-        <client-only :placeholder="t('general.message.loading')">
+      <v-col cols="12" md="8" class="mt-6">
+        <client-only :placeholder="t('general.loading')">
           <form @submit.prevent="submit">
             <v-text-field v-model="payload.search" :label="t('general.message.search-label')" required />
             <div>
-              <v-checkbox color="primary" v-for="choice in choices" :key="choice.id" v-model="payload.choices"
+              <v-checkbox class="p-0" color="primary" v-for="choice in choices" :key="choice.id" v-model="payload.choices"
                 :label="choice.label" :value="choice.id" />
             </div>
             <v-btn type="submit" class="mr-4 submit-button" :loading="loading" :aria-label="t('aria.label.submit')">

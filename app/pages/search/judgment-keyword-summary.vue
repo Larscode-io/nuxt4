@@ -1,191 +1,75 @@
 <template>
-  <v-container class="fill-height" fluid>
-    <BannerImage
-      :title="$t(i18nKeys.menu.search.title)"
-      :description="$t(i18nKeys.menu.search.titleDescription)"
-      :image="img"
-    />
-    <v-row
-      v-if="$fetchState.pending"
-      class="d-flex"
-      align="flex-start"
-      justify="center"
-    >
+  <v-container fluid class="fill-height pa-0 d-block">
+    <BannerImage :title="t('menu.search.title')" :description="t('menu.search.titleDescription')" :image="img" />
+    <v-row v-if="pending" class="d-flex" align="flex-start" justify="center">
       <div class="col-12 col-md-12">
         <v-skeleton-loader class="mx-auto" max-width="300" type="article" />
       </div>
     </v-row>
-    <v-row
-      v-else-if="$fetchState.error"
-      class="d-flex"
-      align="flex-start"
-      justify="center"
-    >
+    <v-row v-else-if="error" class="d-flex" align="flex-start" justify="center">
       <div class="col-12 col-md-12">
-        <ErrorCard
-          :message="$t($i18nKeys.error.fetchingData)"
-          :show-go-home="false"
-        />
+        <ErrorCard :message="t('error.fetchingData')" :show-go-home="false" />
       </div>
     </v-row>
-    <v-row v-else class="d-flex">
-      <div class="col-4 col-xs-9 col-md-4">
-        <v-tabs show-arrows vertical left>
-          <v-tab
-            v-for="tab of tabs"
-            :key="tab.id"
-            :value="tab.id"
-            :to="tab.to"
-            nuxt
-            style="text-transform: none"
-          >
+    <v-row class="d-flex" justify="center">
+      <v-col cols="12" md="4" class="mt-4">
+        <v-tabs v-model="activeTab" color="primary" direction="vertical" class="vertical-tabs" background-color="white"
+          grow>
+          <v-tab v-for="tab of tabs" :key="tab.id" :value="tab.id" :to="tab.to" class="text-none">
             {{ tab.label }}
           </v-tab>
         </v-tabs>
-      </div>
-      <div class="col-8 col-xs-8 col-md-8">
-        <client-only :placeholder="$i18nKeys.general.message.loading">
-          <ValidationObserver ref="observer" slim>
-            <form>
-              <!--              <ValidationProvider-->
-              <!--                v-slot="{ errors }"-->
-              <!--                :key="toNameKey($tc(i18nKeys.general.message.judgmentNumber))"-->
-              <!--                :name="toNameKey($tc(i18nKeys.general.message.judgmentNumber))"-->
-              <!--                rules-->
-              <!--              >-->
-              <!--                <v-text-field-->
-              <!--                  v-model="payload.judgmentNumber"-->
-              <!--                  :label="$tc(i18nKeys.general.message.judgmentNumber)"-->
-              <!--                  :error-messages="errors"-->
-              <!--                  hint="XX/YYYY"-->
-              <!--                  :persistent-hint="true"-->
-              <!--                  required-->
-              <!--                ></v-text-field>-->
-              <!--              </ValidationProvider>-->
+      </v-col>
+      <div class="v-col-md-8 v-col-12 mt-6">
+        <ClientOnly>
+          <template #fallback>
+            {{ t('general.loading') }}
+          </template>
+          <form @submit.prevent="submit">
+            <div class="d-flex">
+              <v-text-field v-date-format v-model="payload.judgmentDates[0]" :label="t('general.message.date-of-judgment-start')"
+                :error-messages="judgmentDateErrors" hint="DD/MM/YYYY" persistent-hint v-maska data-maska="##/##/####" />
+              <div class="px-2"></div>
+              <v-text-field v-date-format v-model="payload.judgmentDates[1]" :label="t('general.message.date-of-judgment-end')"
+                hint="DD/MM/YYYY" persistent-hint v-maska data-maska="##/##/####" />
+            </div>
 
-              <ValidationProvider
-                v-slot="{ errors }"
-                :key="toNameKey($tc(i18nKeys.general.message.dateOfJudgment))"
-                class="d-flex"
-                :name="toNameKey($tc(i18nKeys.general.message.dateOfJudgment))"
-              >
-                <v-text-field
-                  v-model.lazy="payload.judgmentDates[0]"
-                  v-cleave="{
-                    date: true,
-                    datePattern: ['d', 'm', 'Y'],
-                  }"
-                  hint="DD/MM/YYYY"
-                  :label="$tc(i18nKeys.general.message.dateOfJudgmentStart)"
-                  persistent-hint
-                  :error-messages="errors"
-                />
-                <span class="px-2" />
-                <v-text-field
-                  v-model.lazy="payload.judgmentDates[1]"
-                  v-cleave="{
-                    date: true,
-                    datePattern: ['d', 'm', 'Y'],
-                  }"
-                  hint="DD/MM/YYYY"
-                  :label="$tc(i18nKeys.general.message.dateOfJudgmentEnd)"
-                  persistent-hint
-                  :error-messages="errors"
-                />
-              </ValidationProvider>
+            <v-text-field v-model="payload.keywords" :label="t('general.message.keywords', 2)"
+              :error-messages="keywordsErrors" required />
 
-              <ValidationProvider
-                v-slot="{ errors }"
-                :key="toNameKey($tc(i18nKeys.general.message.keywords))"
-                :name="toNameKey($tc(i18nKeys.general.message.keywords))"
-                rules
-              >
-                <v-text-field
-                  v-model="payload.keywords"
-                  :label="$tc(i18nKeys.general.message.keywords, 2)"
-                  :error-messages="errors"
-                  required
-                />
-              </ValidationProvider>
+            <v-text-field v-model="payload.summary" :label="t('general.message.summary', 2)"
+              :error-messages="summaryErrors" required />
 
-              <ValidationProvider
-                v-slot="{ errors }"
-                :key="toNameKey($tc(i18nKeys.general.message.summary))"
-                :name="toNameKey($tc(i18nKeys.general.message.summary))"
-                rules
-              >
-                <v-text-field
-                  v-model="payload.summary"
-                  :label="$tc(i18nKeys.general.message.summary, 2)"
-                  :error-messages="errors"
-                  required
-                />
-              </ValidationProvider>
+            <v-checkbox v-model="payload.lookForEntirePhrase" :label="$t('general.message.look-for-entire-sentence')"
+              :error-messages="lookForEntirePhraseErrors" required />
 
-              <ValidationProvider
-                v-slot="{ errors }"
-                :key="
-                  toNameKey($t(i18nKeys.general.message.lookForEntireSentence))
-                "
-                :name="
-                  toNameKey($t(i18nKeys.general.message.lookForEntireSentence))
-                "
-                rules
-              >
-                <v-checkbox
-                  v-model="payload.lookForEntirePhrase"
-                  :label="$t(i18nKeys.general.message.lookForEntireSentence)"
-                  :error-messages="errors"
-                  required
-                />
-              </ValidationProvider>
-
-              <v-btn
-                type="submit"
-                class="mr-4 submit-button"
-                :loading="loading"
-                :aria-label="$tc(i18nKeys.aria.label.submit)"
-                @click.prevent="submit"
-              >
-                {{ $t(i18nKeys.general.submit) }}
-              </v-btn>
-              <v-btn
-                v-if="hasResults"
-                class="mr-4"
-                @click.prevent="print('list')"
-              >
-                <v-icon left>
-                  mdi-printer
-                </v-icon>
-                {{ $t(i18nKeys.general.message.printList) }}
-              </v-btn>
-            </form>
-          </ValidationObserver>
-        </client-only>
+            <v-btn type="submit" class="mr-4 submit-button" :loading="loading" :aria-label="t('aria.label.submit')"
+              color="indigo" variant="flat">
+              {{ t('general.submit') }}
+            </v-btn>
+            <v-btn v-if="hasResults" class="mr-4" @click.prevent="print('list')" variant="text">
+              <v-icon start>mdi-printer</v-icon>
+              {{ t('general.message.print-list') }}
+            </v-btn>
+          </form>
+        </ClientOnly>
         <div v-if="hasResults" class="mt-6">
-          <v-expansion-panels ref="list" :value="openedPanels" multiple>
-            <v-expansion-panel
-              v-for="result in formattedSearchResult"
-              :key="result"
-            >
-              <v-expansion-panel-header>
+          <v-expansion-panels ref="list" :model-value="openedPanels" multiple>
+            <v-expansion-panel v-for="result in formattedSearchResult" :key="result">
+              <v-expansion-panel-title>
                 <v-row no-gutters>
                   <v-col cols="6">
-                    {{ $tc(i18nKeys.general.message.judgmentNumber) }} :
+                    {{ t('general.message.judgment-number') }} :
                     <a :href="result.filePath">{{ getId(result.fileName) }}</a>
                   </v-col>
                   <v-col cols="6">
-                    {{ $tc(i18nKeys.general.message.dateOfJudgment) }} :
+                    {{ t('general.message.date-of-judgment') }} :
                     {{ result.formatedJudmentDate }}
                   </v-col>
                 </v-row>
-              </v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <div
-                  v-for="data of result.summaries"
-                  :key="data.summary"
-                  class="my-2 p"
-                >
+              </v-expansion-panel-title>
+              <v-expansion-panel-text>
+                <div v-for="data of result.summaries" :key="data.summary" class="my-2 p">
                   <ul class="my-2">
                     <li v-for="key of data.keywords" :key="key">
                       {{ key }}
@@ -196,7 +80,7 @@
                   </p>
                   <v-divider class="my-2" />
                 </div>
-              </v-expansion-panel-content>
+              </v-expansion-panel-text>
             </v-expansion-panel>
           </v-expansion-panels>
         </div>
@@ -208,181 +92,188 @@
   </v-container>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { localize, ValidationObserver, ValidationProvider } from 'vee-validate'
+<script setup lang="ts">
+import { ref, computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { ApiUrl } from '../../core/constants'
 import { to } from '../../core/utilities'
-import { i18nKeys } from '../../lang/keys'
-import ErrorCard from '../../components/ErrorCard.vue'
-import { veeValidateLocalizeMap } from '../../server/vee-validate'
-import { searchTabs } from '../../server/constants'
-import EmptyComponent from '../../components/EmptyComponent.vue'
-import BannerImage from '~/components/BannerImage.vue'
-import img from '~/assets/img/banner-text.png'
+import img from '@/assets/img/banner-text.png'
+import { RoutePathKeys } from "../../core/constants";
 
-export default Vue.extend({
-  name: 'JudgmentKeywordSummarySearch',
-  components: {
-    BannerImage,
-    ErrorCard,
-    ValidationProvider,
-    ValidationObserver,
-    EmptyComponent,
-  },
-  data() {
-    return {
-      img,
-      i18nKeys,
-      searchPendingCaseResponse: null,
-      loading: false,
-      loaded: false,
-      searchError: null,
-      searchResponse: null,
-      tabs: searchTabs.map((tab) => {
-        return {
-          id: tab.id,
-          to: this.localePath(tab.to),
-          label: this.$tc(tab.id, 2),
-        }
-      }),
-      payload: {
-        judgmentDates: [],
-      },
-    }
-  },
-  fetch() {
-    const lang = this.$i18n.locale
-    localize(lang, veeValidateLocalizeMap[lang])
-  },
-  head() {
-    const title =
-      this.$t(this.$i18nKeys.menu.search.title) ||
-      this.$tc(this.$i18nKeys.general.message.constsCourt)
-    const description = this.$t(this.$i18nKeys.menu.search.title) || ''
+// Validation with vee-validate is replaced with simple state management
+const judgmentDateErrors = ref<string[]>([])
+const keywordsErrors = ref<string[]>([])
+const summaryErrors = ref<string[]>([])
+const lookForEntirePhraseErrors = ref<string[]>([])
 
-    return {
-      title,
-      htmlAttrs: {
-        title,
-      },
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: description,
-        },
-      ],
-    }
-  },
-  computed: {
-    locale() {
-      return this.$i18n.locale
-    },
-    isFormInvalid() {
-      return (
-        !this.payload?.judgmentNumber &&
-        !this.payload?.keywords &&
-        !this.payload?.summary &&
-        (!this.payload?.judgmentDates ||
-          this.payload?.judgmentDates?.length === 0)
-      )
-    },
+const { t, locale } = useI18n()
+const config = useRuntimeConfig()
+const nuxtApp = useNuxtApp()
 
-    formattedSearchResult() {
-      if (!this.searchResponse) {
-        return []
-      }
+const pending = ref(false)
+const error = ref(null)
+const loading = ref(false)
+const loaded = ref(false)
+const searchError = ref(null)
+const searchResponse = ref(null)
 
-      return this.searchResponse
-    },
-    hasResults() {
-      return this.formattedSearchResult && this.formattedSearchResult.length > 0
-    },
-    openedPanels() {
-      return this.formattedSearchResult.map((_, i) => i)
-    },
-  },
-  watch: {
-    '$i18n.locale'(lang) {
-      localize(lang, veeValidateLocalizeMap[lang])
-    },
-    payload() {
-      this.searchResponse = null
-      this.searchError = null
-    },
-  },
-  methods: {
-    toNameKey(val = '') {
-      return val?.toLowerCase()
-    },
-    getId(val = '') {
-      const split = val?.split('-')
-      const year = split?.[0]?.trim()
-      const id = split?.[1]?.trim()
-      return `${id ? `${id}/` : ''} ${year || ''}`
-    },
-    async submit() {
-      const valid = await this.$refs.observer.validate()
+const payload = ref({
+  judgmentDates: ['', ''],
+  keywords: '',
+  summary: '',
+  lookForEntirePhrase: false
+})
 
-      if (!valid) {
-        return
-      }
+const localePath = useLocalePath();
 
-      if (this.isFormInvalid) {
-        return
-      }
+const searchTabs = [
+  { id: "general.message.judgment", to: RoutePathKeys.searchJudgment },
+  { id: "general.message.standard", to: RoutePathKeys.searchStandard },
+  { id: "general.message.systematic-table-contents-label", to: RoutePathKeys.searchTableOfContent },
+  { id: "general.message.judgment-keywords-summary", to: RoutePathKeys.searchJudgmentKeywordSummary },
+  { id: "general.message.full-text-of-judgments", to: RoutePathKeys.searchFullTextJudgment },
+  { id: "general.message.keywords-judgments-pending-cases", to: RoutePathKeys.searchJudgmentsAndPendingCases },
+];
+const activeTab = ref("general.message.judgment-keywords-summary");
 
-      this.loading = true
-      this.loaded = false
-      this.searchError = null
-      this.searchResponse = null
+const tabs = searchTabs.map((tab) => ({
+  id: tab.id,
+  to: localePath(tab.to),
+  label: t(tab.id, 2),
+}));
 
-      const [error, response] = await to(
-        this.$axios.$post(
-          `${ApiUrl.searchByJudgmentKeywordsSummary}?lang=${this.locale}`,
-          {
-            ...this.payload,
-            judgmentDates: this.payload.judgmentDates?.map((date) =>
-              date?.split('/')?.reverse()?.join('-'),
-            ),
-          },
+const isFormInvalid = computed(() => {
+  return (
+    !payload.value?.keywords &&
+    !payload.value?.summary &&
+    (!payload.value?.judgmentDates ||
+      payload.value?.judgmentDates?.length === 0 ||
+      !payload.value?.judgmentDates[0])
+  )
+})
+
+const formattedSearchResult = computed(() => {
+  if (!searchResponse.value) {
+    return []
+  }
+  return searchResponse.value
+})
+
+const hasResults = computed(() => {
+  return formattedSearchResult.value && formattedSearchResult.value.length > 0
+})
+
+const openedPanels = computed(() => {
+  return formattedSearchResult.value.map((_, i) => i)
+})
+
+watch(() => payload.value, () => {
+  searchResponse.value = null
+  searchError.value = null
+}, { deep: true })
+
+// Methods
+function toNameKey(val = '') {
+  return val?.toLowerCase()
+}
+
+function getId(val = '') {
+  const split = val?.split('-')
+  const year = split?.[0]?.trim()
+  const id = split?.[1]?.trim()
+  return `${id ? `${id}/` : ''} ${year || ''}`
+}
+
+async function submit() {
+  // Simple validation
+  let valid = true
+
+  judgmentDateErrors.value = []
+  keywordsErrors.value = []
+  summaryErrors.value = []
+  lookForEntirePhraseErrors.value = []
+
+  if (!payload.value.keywords) {
+    keywordsErrors.value.push('Keywords are required')
+    valid = false
+  }
+
+  if (!payload.value.summary) {
+    summaryErrors.value.push('Summary is required')
+    valid = false
+  }
+
+  if (!valid || isFormInvalid.value) {
+    return
+  }
+
+  loading.value = true
+  loaded.value = false
+  searchError.value = null
+  searchResponse.value = null
+
+  const [error, response] = await to(
+    $fetch(`${config.public.apiBase}${ApiUrl.searchByJudgmentKeywordsSummary}`, {
+      method: 'POST',
+      params: { lang: locale.value },
+      body: {
+        ...payload.value,
+        judgmentDates: payload.value.judgmentDates?.map((date) =>
+          date?.split('/')?.reverse()?.join('-')
         ),
-      )
-
-      this.loading = false
-
-      if (error || !response) {
-        this.searchError = error || new Error("fout in judgment-keyword-summary")
-        return
       }
+    })
+  )
 
-      this.loaded = true
-      this.searchResponse = response
-    },
-    closeJudgmentDatesMenuDatePicker() {
-      if (this.payload.judgmentDates) {
-        this.judgmentDatesMenuDatePicker = false
-      }
-    },
-    print(ref) {
-      this.$print(this.$refs[ref])
-    },
-  },
+  loading.value = false
+
+  if (error || !response) {
+    searchError.value = error || new Error("Error in judgment-keyword-summary")
+    return
+  }
+
+  loaded.value = true
+  searchResponse.value = response
+}
+
+function print(ref) {
+  // Implementation depends on your print utility in Nuxt 3
+  // You may need to adapt this based on your printing solution
+  if (typeof window !== 'undefined') {
+    window.print()
+  }
+}
+
+// Define the meta for the page
+useHead({
+  title: computed(() => t('menu.search.title') || t('general.message.const-court')),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => t('menu.search.title') || '')
+    }
+  ]
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .container {
   padding: 0 !important;
-  @include mobile {
-    padding: 32px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 32px !important;
   }
 }
+
 .d-flex {
   max-width: 1260px !important;
   margin: auto;
-  @include mobile {
+}
+
+@media (max-width: 600px) {
+  .d-flex {
     width: 100%;
   }
 }
@@ -390,14 +281,15 @@ export default Vue.extend({
 .nuxt-content {
   padding-top: 32px;
 }
+
 .submit-button {
-  background: $indigo !important;
   color: white;
 }
 
 .v-input {
   margin: 32px 0 !important;
 }
+
 .d-flex .v-input__slot {
   box-shadow: none !important;
 }

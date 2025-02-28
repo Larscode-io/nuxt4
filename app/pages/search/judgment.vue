@@ -196,32 +196,6 @@ const errors = ref({
   beOfficialJournalDates: ["", ""],
 });
 
-// De logica van de directive: 
-// Bij input wordt de waarde ontdaan van niet-cijfers, beperkt tot 8 cijfers en opgemaakt als dd/mm/yyyy.
-const dateMask = {
-  mounted(el: HTMLInputElement) {
-    el.addEventListener("input", () => {
-      let val = el.value;
-      let digits = val.replace(/\D/g, "");
-      if (digits.length > 8) {
-        digits = digits.slice(0, 8);
-      }
-      let formatted = "";
-      if (digits.length > 4) {
-        formatted = digits.slice(0, 2) + "/" + digits.slice(2, 4) + "/" + digits.slice(4);
-      } else if (digits.length > 2) {
-        formatted = digits.slice(0, 2) + "/" + digits.slice(2);
-      } else {
-        formatted = digits;
-      }
-      if (formatted !== el.value) {
-        el.value = formatted;
-        el.dispatchEvent(new Event("input"));
-      }
-    });
-  }
-};
-
 // Reset payload when search type changes
 watch(
   () => payload.type,

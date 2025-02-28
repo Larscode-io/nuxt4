@@ -84,7 +84,6 @@ import { ref, reactive } from "vue";
 import { useI18n } from "vue-i18n";
 import { RoutePathKeys } from "../../core/constants";
 import img from "~/assets/img/banner-text.png";
-import { useLocalePath } from "#imports"; // Adjust this import as needed
 
 const { t } = useI18n();
 const localePath = useLocalePath();
