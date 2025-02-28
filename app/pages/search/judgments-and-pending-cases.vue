@@ -13,12 +13,7 @@
     </v-row>
     <v-row v-else class="d-flex">
       <v-col cols="12" md="4" class="mt-4">
-        <v-tabs v-model="activeTab" color="primary" direction="vertical" class="vertical-tabs" background-color="white"
-          grow>
-          <v-tab v-for="tab in tabs" :key="tab.id" :value="tab.id" :to="tab.to" nuxt style="text-transform: none">
-            {{ tab.label }}
-          </v-tab>
-        </v-tabs>
+        <SearchTabs active-tab="general.message.keywords-judgments-pending-cases"/>
       </v-col>
 
       <v-col cols="12" md="8" class="mt-6">
@@ -94,6 +89,7 @@ import BannerImage from '../../components/BannerImage.vue'
 import ErrorCard from '../../components/ErrorCard.vue'
 import img from '~/assets/img/banner-text.png'
 import { RoutePathKeys } from "../../core/constants";
+import SearchTabs from "../../components/SearchTabs.vue";
 
 // i18n setup
 const { t } = useI18n()
