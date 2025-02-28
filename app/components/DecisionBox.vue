@@ -41,19 +41,8 @@ if (error.value) {
 
 <template>
   <v-row>
-    <v-col
-      v-for="(item, index) in items"
-      :key="index"
-      cols="12"
-      sm="6"
-      md="4"
-      xl="4"
-    >
-      <slot
-        name="item"
-        :item="item"
-        :year="theYearWeUse"
-      />
+    <v-col style="padding: 16px" v-for="(item, index) in items" :key="index" cols="12" sm="6" md="4" xl="4">
+      <slot name="item" :item="item" :year="theYearWeUse" />
     </v-col>
   </v-row>
 </template>
