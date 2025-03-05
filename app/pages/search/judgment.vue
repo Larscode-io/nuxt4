@@ -317,14 +317,8 @@ async function submit() {
   }
 }
 
-const print = (id: string) => {
-  // Using the printContent function that will be imported
-  // You'll need to add the import statement later
+const print = () => {
   printContent('.print-area');
-  
-  // If you need to use the reference element (id parameter), you could use:
-  // const selector = `#${id}` or `.${id}`;
-  // printContent(selector);
 };
 </script>
 

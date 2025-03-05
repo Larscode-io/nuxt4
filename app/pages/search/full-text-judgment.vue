@@ -8,7 +8,7 @@
     </v-row>
     <v-row class="row d-flex">
       <v-col cols="12" md="4" class="mt-4">
-        <SearchTabs active-tab="general.message.full-text-of-judgments"/>
+        <SearchTabs active-tab="general.message.full-text-of-judgments" />
       </v-col>
       <v-col cols="12" md="8" class="mt-6">
         <ClientOnly :placeholder="'general.loading'">
@@ -38,7 +38,7 @@
             </v-btn>
           </form>
         </ClientOnly>
-        <div v-if="hasResults" ref="list" class="mt-6">
+        <div v-if="hasResults" ref="list" class="mt-6 print-area">
           <FullTextSearchJudgmentCard v-for="result of formattedSearchResult" :key="result.id" :search-term="payload.term"
             :pdf-url="result.filePath" :date="result.formatedJudmentDate" :title="result.fileName" :score="result.score"
             :description="result.highlightHTML" :page-count="result.pageCount" />
@@ -172,28 +172,9 @@ async function submit() {
   }
 }
 
-function print(refName) {
-  // Print functionality
-  const printElement = list.value
-  if (printElement) {
-    const printWindow = window.open('', '_blank')
-    printWindow.document.write(`
-      <html>
-        <head>
-          <title>Print</title>
-          <style>
-            body { font-family: Arial, sans-serif; }
-          </style>
-        </head>
-        <body>
-          ${printElement.innerHTML}
-        </body>
-      </html>
-    `)
-    printWindow.document.close()
-    printWindow.print()
-  }
-}
+const print = () => {
+  printContent('.print-area');
+};
 
 // Watch for sort changes to automatically resubmit
 watch(() => payload.value.sort, () => {
