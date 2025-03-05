@@ -5,33 +5,31 @@
 
     <v-row class="d-flex" justify="center">
       <v-col cols="12" md="4" class="mt-4">
-        <v-tabs v-model="activeTab" color="primary" direction="vertical" class="vertical-tabs" background-color="white" grow>
-          <v-tab :value="tab.id" :text="tab.label" v-for="tab in tabs" :key="tab.id" :to="tab.to" class="tab" ripple />
-        </v-tabs>
+        <SearchTabs active-tab="general.message.standard" />
       </v-col>
 
       <v-col cols="12" md="8" class="mt-6">
         <client-only :placeholder="t('general.loading')">
           <form @submit.prevent="submit">
             <!-- Radio group for search type -->
-            <v-radio-group color="primary" inline v-model="payload.type" row :error="!!errors.type" :error-messages="errors.type || []">
-              <v-radio class="mr-2 text-gray" v-for="type in types" :key="type.id" :label="type.label" :value="type.id" name="type" :disabled="loading" />
+            <v-radio-group color="primary" inline v-model="payload.type" row :error="!!errors.type"
+              :error-messages="errors.type || []">
+              <v-radio class="mr-2 text-gray" v-for="type in types" :key="type.id" :label="type.label" :value="type.id"
+                name="type" :disabled="loading" />
             </v-radio-group>
 
-            <v-text-field v-model="payload.searchTerm" :label="t('general.message.search-label')" :error-messages="errors.searchTerm || []" required />
+            <v-text-field v-model="payload.searchTerm" :label="t('general.message.search-label')"
+              :error-messages="errors.searchTerm || []" required />
 
-            <v-text-field
-              v-model.lazy="payload.standardDate"
-              v-date-format
-              hint="DD/MM/YYYY"
-              :label="t('general.message.standard-date')"
-              persistent-hint
-              :error-messages="errors.standardDate || []"
-            />
+            <v-text-field v-model.lazy="payload.standardDate" v-date-format hint="DD/MM/YYYY"
+              :label="t('general.message.standard-date')" persistent-hint :error-messages="errors.standardDate || []" />
 
-            <v-text-field v-model="payload.clauseNumber" :label="t('general.message.article-number')" :error-messages="errors.clauseNumber || []" required />
+            <v-text-field v-model="payload.clauseNumber" :label="t('general.message.article-number')"
+              :error-messages="errors.clauseNumber || []" required />
 
-            <v-checkbox v-model="payload.searchByExactClauseNumber" :label="t('general.message.search-by-exact-clause-number')" :error-messages="errors.searchByExactClauseNumber || []" />
+            <v-checkbox v-model="payload.searchByExactClauseNumber"
+              :label="t('general.message.search-by-exact-clause-number')"
+              :error-messages="errors.searchByExactClauseNumber || []" />
 
             <v-btn type="submit" class="mr-4 submit-button" :loading="loading">
               {{ t("general.submit") }}
@@ -48,7 +46,8 @@
         </div>
 
         <div v-if="hasResults" ref="list" class="mt-6">
-          <div v-for="result in Object.values(formattedSearchResult)" :key="result[0].standard" class="table-standard-container">
+          <div v-for="result in Object.values(formattedSearchResult)" :key="result[0].standard"
+            class="table-standard-container">
             <h3 v-if="result[0].standard">
               {{ result[0].formatedStandardDate }} - {{ result[0].standard }}
             </h3>
@@ -116,22 +115,6 @@ const errors = reactive({
   clauseNumber: undefined,
   searchByExactClauseNumber: undefined,
 });
-
-// --- Tabs & Search Type Options ---
-const searchTabs = [
-  { id: "general.message.judgment", to: RoutePathKeys.searchJudgment },
-  { id: "general.message.standard", to: RoutePathKeys.searchStandard },
-  { id: "general.message.systematic-table-contents-label", to: RoutePathKeys.searchTableOfContent },
-  { id: "general.message.judgment-keywords-summary", to: RoutePathKeys.searchJudgmentKeywordSummary },
-  { id: "general.message.full-text-of-judgments", to: RoutePathKeys.searchFullTextJudgment },
-  { id: "general.message.keywords-judgments-pending-cases", to: RoutePathKeys.searchJudgmentsAndPendingCases },
-];
-const activeTab = ref("general.message.standard");
-const tabs = searchTabs.map((tab) => ({
-  id: tab.id,
-  to: localePath(tab.to),
-  label: t(tab.id, 2),
-}));
 
 // Dummy variables for demonstration (replace with actual implementation as needed)
 const loading = ref(false);

@@ -22,9 +22,7 @@
       <!-- Main content: Tabs, search form, and results -->
       <v-row v-else class="d-flex">
         <v-col cols="12" md="4" class="mt-4">
-          <v-tabs color="primary" direction="vertical" class="vertical-tabs" background-color="white" grow>
-            <v-tab :text="tab.label" v-for="tab in tabs" :key="tab.id" :to="tab.to" class="tab" ripple />
-          </v-tabs>
+          <SearchTabs active-tab="general.message.table-of-content" />
         </v-col>
 
         <v-col cols="12" md="8" class="mt-6">
@@ -109,24 +107,6 @@ const loading = ref(false)
 const loaded = ref(false)
 const searchError = ref(null)
 const searchResponse = ref(null)
-
-const searchTabs = [
-  { id: "general.message.judgment", to: RoutePathKeys.searchJudgment },
-  { id: "general.message.standard", to: RoutePathKeys.searchStandard },
-  { id: "general.message.systematic-table-contents-label", to: RoutePathKeys.searchTableOfContent },
-  { id: "general.message.judgment-keywords-summary", to: RoutePathKeys.searchJudgmentKeywordSummary },
-  { id: "general.message.full-text-of-judgments", to: RoutePathKeys.searchFullTextJudgment },
-  { id: "general.message.keywords-judgments-pending-cases", to: RoutePathKeys.searchJudgmentsAndPendingCases },
-];
-
-// Compute the tabs using the localePath and i18n messages
-const tabs = computed(() =>
-  searchTabs.map((tab) => ({
-    id: tab.id,
-    to: localePath(tab.to),
-    label: t(tab.id, 2)
-  }))
-)
 
 // Compute search results and whether there are any
 const formattedSearchResult = computed(() => searchResponse.value || [])
@@ -231,10 +211,6 @@ useHead({
 
 .nuxt-content {
   padding-top: 32px;
-}
-
-.v-tabs {
-  margin-bottom: 32px;
 }
 
 button {

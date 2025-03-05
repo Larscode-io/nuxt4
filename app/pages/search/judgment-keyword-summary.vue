@@ -13,12 +13,7 @@
     </v-row>
     <v-row class="d-flex" justify="center">
       <v-col cols="12" md="4" class="mt-4">
-        <v-tabs v-model="activeTab" color="primary" direction="vertical" class="vertical-tabs" background-color="white"
-          grow>
-          <v-tab v-for="tab of tabs" :key="tab.id" :value="tab.id" :to="tab.to" class="text-none">
-            {{ tab.label }}
-          </v-tab>
-        </v-tabs>
+        <SearchTabs active-tab="general.message.judgment-keywords-summary"/>
       </v-col>
       <div class="v-col-md-8 v-col-12 mt-6">
         <ClientOnly>
@@ -125,22 +120,6 @@ const payload = ref({
 })
 
 const localePath = useLocalePath();
-
-const searchTabs = [
-  { id: "general.message.judgment", to: RoutePathKeys.searchJudgment },
-  { id: "general.message.standard", to: RoutePathKeys.searchStandard },
-  { id: "general.message.systematic-table-contents-label", to: RoutePathKeys.searchTableOfContent },
-  { id: "general.message.judgment-keywords-summary", to: RoutePathKeys.searchJudgmentKeywordSummary },
-  { id: "general.message.full-text-of-judgments", to: RoutePathKeys.searchFullTextJudgment },
-  { id: "general.message.keywords-judgments-pending-cases", to: RoutePathKeys.searchJudgmentsAndPendingCases },
-];
-const activeTab = ref("general.message.judgment-keywords-summary");
-
-const tabs = searchTabs.map((tab) => ({
-  id: tab.id,
-  to: localePath(tab.to),
-  label: t(tab.id, 2),
-}));
 
 const isFormInvalid = computed(() => {
   return (

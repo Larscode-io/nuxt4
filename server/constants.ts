@@ -22,30 +22,3 @@ export enum HttpErrorResponseCode {
 export const HttpErrorResponseCodeToTranslateLabelKey = {}
 
 export const EMPTY_VALUE = '----'
-
-/* export const searchTabs = [
-  {
-    id: 'general.message.judgment',
-    to: RoutePathKeys.searchJudgment,
-  },
-  {
-    id: 'general.message.standard',
-    to: RoutePathKeys.searchStandard,
-  },
-  {
-    id: 'general.message.systematic-table-contents-label',
-    to: RoutePathKeys.searchTableOfContent,
-  },
-  {
-    id: 'general.message.judgment-keywords-summary',
-    to: RoutePathKeys.searchJudgmentKeywordSummary,
-  },
-  {
-    id: 'general.message.full-text-of-judgments',
-    to: RoutePathKeys.searchFullTextJudgment,
-  },
-  {
-    id: 'general.message.keywords-judgments-pending-cases',
-    to: RoutePathKeys.searchJudgmentsAndPendingCases,
-  },
-] */

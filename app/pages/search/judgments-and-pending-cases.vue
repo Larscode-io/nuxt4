@@ -32,7 +32,7 @@
               <v-icon left>
                 mdi-printer
               </v-icon>
-              {{ t('general.message.printList') }}
+              {{ t('general.message.print-list') }}
             </v-btn>
           </form>
         </client-only>
@@ -132,22 +132,6 @@ const choices = ref([
     label: t('general.message.judgment', 2),
   },
 ])
-// --- Tabs & Search Type Options ---
-const searchTabs = [
-  { id: "general.message.judgment", to: RoutePathKeys.searchJudgment },
-  { id: "general.message.standard", to: RoutePathKeys.searchStandard },
-  { id: "general.message.systematic-table-contents-label", to: RoutePathKeys.searchTableOfContent },
-  { id: "general.message.judgment-keywords-summary", to: RoutePathKeys.searchJudgmentKeywordSummary },
-  { id: "general.message.full-text-of-judgments", to: RoutePathKeys.searchFullTextJudgment },
-  { id: "general.message.keywords-judgments-pending-cases", to: RoutePathKeys.searchJudgmentsAndPendingCases },
-];
-const activeTab = ref("general.message.keywords-judgments-pending-cases");
-
-const tabs = searchTabs.map((tab) => ({
-  id: tab.id,
-  to: localePath(tab.to),
-  label: t(tab.id, 2),
-}));
 
 // Head metadata
 useHead({

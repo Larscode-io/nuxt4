@@ -6,19 +6,9 @@
         <v-skeleton-loader class="mx-auto" max-width="300" type="article" />
       </v-col>
     </v-row>
-    <v-row v-else-if="error" class="row d-flex" align="flex-start" justify="center">
-      <v-col class="col-12 col-md-12">
-        <ErrorCard :message="t('error-fetching-data')" :show-go-home="false" />
-      </v-col>
-    </v-row>
-    <v-row v-else class="row d-flex">
+    <v-row class="row d-flex">
       <v-col cols="12" md="4" class="mt-4">
-        <v-tabs v-model="activeTab" color="primary" direction="vertical" class="vertical-tabs" background-color="white"
-          grow>
-          <v-tab v-for="tab in tabs" :key="tab.id" :value="tab.id" :to="tab.to" nuxt style="text-transform: none">
-            {{ tab.label }}
-          </v-tab>
-        </v-tabs>
+        <SearchTabs active-tab="general.message.full-text-of-judgments"/>
       </v-col>
       <v-col cols="12" md="8" class="mt-6">
         <ClientOnly :placeholder="'general.loading'">
@@ -40,11 +30,11 @@
               {{ t('general.submit') }}
             </v-btn>
 
-            <v-btn v-if="hasResults" class="mr-4" @click.prevent="print('list')">
+            <v-btn v-if="hasResults" class="mr-4 mt-4" @click.prevent="print('list')">
               <v-icon left>
                 mdi-printer
               </v-icon>
-              {{ t('general.message.print-list') }}
+              <p class="ml-2">{{ t('general.message.print-list') }}</p>
             </v-btn>
           </form>
         </ClientOnly>
@@ -66,6 +56,7 @@ import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ApiUrl, ContentKeys, RoutePathKeys } from '../../core/constants'
 import img from '~/assets/img/banner-text.png'
+import FullTextSearchJudgmentCard from '../../components/FullTextSearchJudgementCard.vue'
 
 // Setup composables
 const { t, locale } = useI18n()
@@ -90,6 +81,7 @@ const { data, pending, error } = await useAsyncData(
   () => queryContent(`/${locale.value}/${ContentKeys.fullTextSearchExplanation}`).findOne()
 )
 
+
 page.value = data.value
 
 // Computed properties
@@ -110,23 +102,6 @@ const sorts = computed(() => [
     label: t('general.message.sort-by-alphabetical'),
   },
 ])
-
-// --- Tabs & Search Type Options ---
-const searchTabs = [
-  { id: "general.message.judgment", to: RoutePathKeys.searchJudgment },
-  { id: "general.message.standard", to: RoutePathKeys.searchStandard },
-  { id: "general.message.systematic-table-contents-label", to: RoutePathKeys.searchTableOfContent },
-  { id: "general.message.judgment-keywords-summary", to: RoutePathKeys.searchJudgmentKeywordSummary },
-  { id: "general.message.full-text-of-judgments", to: RoutePathKeys.searchFullTextJudgment },
-  { id: "general.message.keywords-judgments-pending-cases", to: RoutePathKeys.searchJudgmentsAndPendingCases },
-];
-const activeTab = ref("general.message.keywords-judgments-pending-cases");
-
-const tabs = searchTabs.map((tab) => ({
-  id: tab.id,
-  to: localePath(tab.to),
-  label: t(tab.id, 2),
-}));
 
 const payload = ref({
   sort: 'score',
@@ -174,23 +149,19 @@ function validateForm() {
 }
 
 async function submit() {
-  if (!validateForm()) {
-    return
-  }
-
   loading.value = true
   loaded.value = false
   searchError.value = null
   searchResponse.value = null
 
-  const url = `${ApiUrl.searchFullTextOfJudgments}?lang=${locale.value}&term=${payload.value.term}&sort=${payload.value.sort}`
-
   try {
-    const { data } = await useFetch(url, { method: 'GET' })
+    const { data } = await cFetch(`${ApiUrl.searchFullTextOfJudgments}?lang=${locale.value}&term=${payload.value.term}&sort=${payload.value.sort}`)
 
     if (!data.value) {
       throw new Error("No data received")
     }
+
+    console.log('data.value: ', data.value)
 
     searchResponse.value = data.value
     loaded.value = true
