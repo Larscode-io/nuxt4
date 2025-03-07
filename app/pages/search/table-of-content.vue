@@ -6,14 +6,14 @@
 
 
       <!-- Show skeleton loader when loading -->
-      <v-row v-if="loading" class="d-flex" align="flex-start" justify="center">
+      <!-- <v-row v-if="loading" class="d-flex" align="flex-start" justify="center">
         <div class="col-12 col-md-12">
           <v-skeleton-loader class="mx-auto" max-width="300" type="article" />
         </div>
-      </v-row>
+      </v-row> -->
 
       <!-- Show error card if there was a search error -->
-      <v-row v-else-if="searchError" class="d-flex" align="flex-start" justify="center">
+      <v-row v-if="searchError" class="d-flex" align="flex-start" justify="center">
         <div class="col-12 col-md-12">
           <ErrorCard :message="t('error.fetchingData')" :show-go-home="false" />
         </div>
@@ -62,8 +62,8 @@
               </ul>
               <div class="judgment-links">
                 <span>
-                  {{ t(i18nKeys.general.message.judgmentNumber, result.judgments?.length || 0) }}
-                  {{ t(i18nKeys.general.message.colon).trim() }}
+                  {{ t('general.message.judgment-number', result.judgments?.length || 0) }}
+                  {{ t('general.message.colon').trim() }}
                 </span>
                 <a v-for="judgment in result.judgments" :key="judgment.filePath" :href="judgment.filePath">
                   {{ judgment.label }}
@@ -109,8 +109,16 @@ const searchError = ref(null)
 const searchResponse = ref(null)
 
 // Compute search results and whether there are any
-const formattedSearchResult = computed(() => searchResponse.value || [])
-const hasResults = computed(() => formattedSearchResult.value.length > 0)
+const formattedSearchResult = computed(() => {
+  console.log('test, searchResponse.value: ', searchResponse.value)
+  return searchResponse.value?.value || []
+}
+
+)
+const hasResults = computed(() => {
+  console.log('wtf', formattedSearchResult.value);
+  return formattedSearchResult.value.length > 0
+})
 
 // Ref for the result list (for printing)
 const list = ref(null)
@@ -131,39 +139,31 @@ function canDisplayPath(resultIndex: number, pathIndex: number): boolean {
 
 // Handle form submission
 async function submit() {
-  // Basic check: if all fields are empty, do nothing
-  if (
-    !formValues.judgmentDateStart &&
-    !formValues.judgmentDateEnd &&
-    !formValues.searchTerm
-  ) {
-    return
-  }
 
   loading.value = true
   loaded.value = false
   searchError.value = null
   searchResponse.value = null
 
-  // Prepare payload: convert dates from DD/MM/YYYY to YYYY-MM-DD
+  // Create payload with dates array instead of separate props
   const payload = {
-    ...formValues,
-    judgmentDates: [formValues.judgmentDateStart, formValues.judgmentDateEnd].map((date) =>
-      date ? date.split('/').reverse().join('-') : ''
-    )
+    searchTerm: formValues.searchTerm,
+    // Convert dates from DD/MM/YYYY to YYYY-MM-DD and put in array
+    judgmentDates: [
+      formValues.judgmentDateStart ? formValues.judgmentDateStart.split('/').reverse().join('-') : '',
+      formValues.judgmentDateEnd ? formValues.judgmentDateEnd.split('/').reverse().join('-') : ''
+    ]
   }
 
   try {
-    // Use Nuxt 3’s $fetch for the POST request
-    const response = await $fetch(
-      `${ApiUrl.searchForTableOfContent}?lang=${locale.value}`,
-      {
-        method: 'POST',
-        body: payload
-      }
+    const { data } = await cPost(`${ApiUrl.searchForTableOfContent}?lang=${locale.value}`,
+      payload,
     )
+
+    console.log('data: ', data)
+
     loaded.value = true
-    searchResponse.value = response
+    searchResponse.value = data
   } catch (err) {
     searchError.value = err
   } finally {

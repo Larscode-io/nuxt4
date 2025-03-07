@@ -1,77 +1,86 @@
 <template>
   <v-container fluid class="fill-height pa-0 d-block">
-    <!-- Banner -->
     <BannerImage :title="t('menu.search.title')" :description="t('menu.search.title-description')" :image="img" />
-
-    <v-row class="d-flex" justify="center">
+    <v-row v-if="pending" class="row d-flex" align="flex-start" justify="center">
+      <v-col class="col-12 col-md-12">
+        <v-skeleton-loader class="mx-auto" max-width="300" type="article" />
+      </v-col>
+    </v-row>
+    <v-row class="row d-flex">
       <v-col cols="12" md="4" class="mt-4">
         <SearchTabs active-tab="general.message.standard" />
       </v-col>
-
       <v-col cols="12" md="8" class="mt-6">
-        <client-only :placeholder="t('general.loading')">
+        <ClientOnly :placeholder="t('general.loading')">
           <form @submit.prevent="submit">
             <!-- Radio group for search type -->
-            <v-radio-group color="primary" inline v-model="payload.type" row :error="!!errors.type"
+            <v-radio-group v-model="payload.type" inline color="primary" :error="!!errors.type"
               :error-messages="errors.type || []">
-              <v-radio class="mr-2 text-gray" v-for="type in types" :key="type.id" :label="type.label" :value="type.id"
-                name="type" :disabled="loading" />
+              <v-radio class="mr-2 text-gray" color="primary" v-for="type in types" :key="type.id" :label="type.label"
+                :value="type.id" name="type" required :disabled="loading" />
             </v-radio-group>
 
-            <v-text-field v-model="payload.searchTerm" :label="t('general.message.search-label')"
-              :error-messages="errors.searchTerm || []" required />
+            <v-text-field v-model="payload.searchTerm" name="searchfield" :label="t('general.message.search-label')"
+              :error-messages="errors.searchTerm || []" />
 
             <v-text-field v-model.lazy="payload.standardDate" v-date-format hint="DD/MM/YYYY"
               :label="t('general.message.standard-date')" persistent-hint :error-messages="errors.standardDate || []" />
 
             <v-text-field v-model="payload.clauseNumber" :label="t('general.message.article-number')"
-              :error-messages="errors.clauseNumber || []" required />
+              :error-messages="errors.clauseNumber || []" />
 
             <v-checkbox v-model="payload.searchByExactClauseNumber"
               :label="t('general.message.search-by-exact-clause-number')"
               :error-messages="errors.searchByExactClauseNumber || []" />
 
-            <v-btn type="submit" class="mr-4 submit-button" :loading="loading">
-              {{ t("general.submit") }}
+            <section v-if="hasContent" class="col-12 col-md-12">
+              <ContentRenderer :value="page" class="section-content" />
+            </section>
+
+            <v-btn type="submit" class="mr-4 mt-4 submit-button" :loading="loading" :aria-label="t('aria-label-submit')">
+              {{ t('general.submit') }}
             </v-btn>
-            <v-btn v-if="hasResults" class="mr-4" @click.prevent="print('list')">
-              <v-icon left> mdi-printer </v-icon>
-              {{ t("general.message.print-list") }}
+
+            <v-btn v-if="hasResults" class="mr-4 mt-4" @click.prevent="print('list')">
+              <v-icon left>
+                mdi-printer
+              </v-icon>
+              <p class="ml-2">{{ t('general.message.print-list') }}</p>
             </v-btn>
           </form>
-        </client-only>
+        </ClientOnly>
 
-        <div v-if="(loaded && !hasResults) || searchError" class="mt-6">
-          <EmptyComponent />
-        </div>
-
-        <div v-if="hasResults" ref="list" class="mt-6">
-          <div v-for="result in Object.values(formattedSearchResult)" :key="result[0].standard"
-            class="table-standard-container">
-            <h3 v-if="result[0].standard">
+        <div v-if="hasResults" ref="list" class="mt-6 print-area">
+          <div v-for="(result, key) in Object.values(formattedSearchResults)" :key="key" class="table-standard-container">
+            <h3 class="subtitle" v-if="result && result[0] && result[0].standard">
               {{ result[0].formatedStandardDate }} - {{ result[0].standard }}
             </h3>
-            <v-simple-table dense>
+            <v-table density="compact">
               <thead>
                 <tr>
-                  <th class="text-left">{{ t("general.message.article") }}</th>
-                  <th class="text-left">{{ t("general.message.judgment") }}</th>
+                  <th style="font-size: 12px; color: #666" class=" text-left">{{ t("general.message.article") }}</th>
+                  <th style="font-size: 12px; color: #666" class="text-left">{{ t("general.message.judgment") }}
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                <!-- <tr v-for="data in result" :key="data.clauseNumber">
+                <tr v-for="data in result" :key="data.clauseNumber">
                   <td>{{ data.clauseNumber }}</td>
                   <td>
-                    <ul>
-                      <li v-for="judgment in data.judgments" :key="judgment.filePath">
+                    <ul class="no-padding">
+                      <li class="no-bullets" v-for="judgment in data.judgments" :key="judgment.filePath">
                         <a :href="judgment.filePath">{{ judgment.label }}</a>
                       </li>
                     </ul>
                   </td>
-                </tr> -->
+                </tr>
               </tbody>
-            </v-simple-table>
+            </v-table>
           </div>
+        </div>
+
+        <div v-if="(loaded && !hasResults) || searchError" class="mt-6">
+          <EmptyComponent />
         </div>
       </v-col>
     </v-row>
@@ -79,33 +88,32 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
-import { useI18n } from "vue-i18n";
-import { RoutePathKeys } from "../../core/constants";
-import img from "~/assets/img/banner-text.png";
+import { ref, computed, reactive, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { ApiUrl, ContentKeys, RoutePathKeys } from '../../core/constants'
+import img from '~/assets/img/banner-text.png'
+import { groupBy } from '../../core/utilities'
 
-const { t } = useI18n();
-const localePath = useLocalePath();
+// Setup composables
+const { t, locale } = useI18n()
+const localePath = useLocalePath()
 
-// Define payload with default radio selection matching the first option's ID
+// Data refs
+const page = ref(null)
+const loading = ref(false)
+const loaded = ref(false)
+const searchError = ref(null)
+const searchResults = ref(null)
+const list = ref(null)
+
+// Define payload with default radio selection
 const payload = reactive({
-  type: "general.message.controlled", // Updated default value
+  type: "general.message.controlled",
   searchTerm: "",
   standardDate: "",
   clauseNumber: "",
   searchByExactClauseNumber: false,
-});
-
-const types = [
-  {
-    id: "general.message.controlled",
-    label: t("general.message.controlled", 2),
-  },
-  {
-    id: "general.message.reference",
-    label: t("general.message.reference", 2),
-  },
-];
+})
 
 // Define errors
 const errors = reactive({
@@ -114,43 +122,148 @@ const errors = reactive({
   standardDate: undefined,
   clauseNumber: undefined,
   searchByExactClauseNumber: undefined,
-});
+})
 
-// Dummy variables for demonstration (replace with actual implementation as needed)
-const loading = ref(false);
-const hasResults = false; // Set to true if search results exist
-const loaded = true;
-const searchError = false;
-const formattedSearchResult = [];
+// Fetch page content
+const { data, pending, error } = await useAsyncData(
+  'standard-search-explanation',
+  () => queryContent(`/${locale.value}/${ContentKeys.standardSearchExplanation}`).findOne()
+)
 
-// Validation function
-const validateForm = (): boolean => {
-  errors.searchTerm = payload.searchTerm ? undefined : ["Search term is required"];
-  return !errors.searchTerm;
-};
+page.value = data.value
 
-// Submit function
-const submit = async () => {
-  if (!validateForm()) return;
-  console.log("submit", JSON.stringify(payload));
-};
+// Computed properties
+const types = computed(() => [
+  {
+    id: "general.message.controlled",
+    label: t("general.message.controlled", 2),
+  },
+  {
+    id: "general.message.reference",
+    label: t("general.message.reference", 2),
+  },
+])
 
-// Print function
-const print = (ref: string) => {
-  console.log("Print", ref);
-};
+const hasContent = computed(() =>
+  page.value?.body?.children?.length > 0
+)
+
+const formattedSearchResults = computed(() => {
+  if (!searchResults.value) {
+    return {}
+  }
+
+  return groupBy(searchResults.value, 'groupById')
+})
+
+const hasResults = computed(() =>
+  formattedSearchResults.value && Object.keys(formattedSearchResults.value).length > 0
+)
+
+const validateForm = () => {
+  // Reset errors
+  Object.keys(errors).forEach(key => {
+    errors[key] = undefined
+  })
+
+  let isValid = true
+
+  // Add validation logic here as needed
+  // Example:
+  // if (!payload.searchTerm) {
+  //   errors.searchTerm = t('general.message.required-field')
+  //   isValid = false
+  // }
+
+  return isValid
+}
+
+async function submit() {
+  if (!validateForm()) {
+    return
+  }
+
+  loading.value = true
+  loaded.value = false
+  searchError.value = null
+  searchResults.value = null
+
+  const { type, ...payloadData } = payload
+
+  // Format the date from DD/MM/YYYY to YYYY-MM-DD for API
+  const formattedPayload = {
+    ...payloadData,
+    standardDate: payload.standardDate
+      ? payload.standardDate.split('/').reverse().join('-')
+      : undefined,
+  }
+
+  try {
+    // Determine which API endpoint to use based on the selected type
+    const apiUrl = type === 'general.message.controlled'
+      ? ApiUrl.searchByControlledStandard
+      : ApiUrl.searchByReferenceStandard
+
+    const { data } = await cPost(`${apiUrl}?lang=${locale.value}`,
+      formattedPayload,
+    )
+
+    if (!data.value) {
+      throw new Error("No data received")
+    }
+
+    searchResults.value = data.value
+    console.log('searchResults.value: ', searchResults.value)
+    console.log('formattedSearchResults: ', formattedSearchResults.value)
+    loaded.value = true
+  } catch (err) {
+    searchError.value = err || new Error("Error in standard search page")
+    console.error("Search error:", err)
+  } finally {
+    loading.value = false
+  }
+}
+
+const print = (ref) => {
+  printContent('.print-area')
+}
+
+// Meta
+useHead({
+  title: computed(() =>
+    t('menu.search.title') || t('general.message.consts-court')
+  ),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => t('menu.search.title') || '')
+    }
+  ]
+})
 </script>
 
 <style scoped lang="scss">
-.d-flex {
-  max-width: 1260px !important;
-  margin: auto;
-  margin-bottom: 40px;
+.container {
+  padding: 0 !important;
 
   @include mobile {
-    margin-bottom: 24px;
+    padding: 32px;
+  }
+}
+
+.row.d-flex {
+  max-width: 1260px !important;
+  margin: auto;
+  margin-bottom: 80px;
+
+  @include mobile {
+    margin-bottom: 40px;
     width: 100%;
   }
+}
+
+.section-content {
+  padding-top: 32px;
 }
 
 .submit-button {
@@ -158,9 +271,21 @@ const print = (ref: string) => {
   color: white;
 }
 
+.v-input {
+  margin: 32px 0 !important;
+}
+
+.d-flex .v-input__slot {
+  box-shadow: none !important;
+}
+
 .table-standard-container {
   padding: 16px 32px;
   box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.08);
   margin-bottom: 32px;
+}
+
+a {
+  color: #1976d2;
 }
 </style>

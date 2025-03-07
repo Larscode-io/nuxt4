@@ -119,9 +119,23 @@ label.v-label.v-field-label {
 }
 
 ul, li {
-  padding: revert !important;
+  padding: revert;
 }
 
 .no-decoration {
   text-decoration: none !important; 
+}
+
+.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 16px;
 }

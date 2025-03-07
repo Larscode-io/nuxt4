@@ -30,13 +30,13 @@
             </div>
 
             <v-text-field v-model="payload.keywords" :label="t('general.message.keywords', 2)"
-              :error-messages="keywordsErrors" required />
+              :error-messages="keywordsErrors" />
 
             <v-text-field v-model="payload.summary" :label="t('general.message.summary', 2)"
-              :error-messages="summaryErrors" required />
+              :error-messages="summaryErrors" />
 
-            <v-checkbox v-model="payload.lookForEntirePhrase" :label="$t('general.message.look-for-entire-sentence')"
-              :error-messages="lookForEntirePhraseErrors" required />
+            <v-checkbox v-model="payload.lookForEntirePhrase" :label="t('general.message.look-for-entire-sentence')"
+              :error-messages="lookForEntirePhraseErrors" />
 
             <v-btn type="submit" class="mr-4 submit-button" :loading="loading" :aria-label="t('aria.label.submit')"
               color="indigo" variant="flat">
@@ -171,16 +171,6 @@ async function submit() {
   keywordsErrors.value = []
   summaryErrors.value = []
   lookForEntirePhraseErrors.value = []
-
-  if (!payload.value.keywords) {
-    keywordsErrors.value.push('Keywords are required')
-    valid = false
-  }
-
-  if (!payload.value.summary) {
-    summaryErrors.value.push('Summary is required')
-    valid = false
-  }
 
   if (!valid || isFormInvalid.value) {
     return
