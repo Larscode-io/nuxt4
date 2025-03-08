@@ -15,6 +15,7 @@ import { RoutePathKeys } from '~/core/constants'
 const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage, localePath } = useLanguage()
 const description = computed(() => t('general.banner'))
 const ogTitle = computed(() => t('general.message.consts-court'))
+const config = useRuntimeConfig();
 
 useSeoMeta({
   ogTitle,
@@ -239,6 +240,7 @@ watch(smAndDown, (value) => {
       </ClientOnly>
       <div style="margin-left: auto">
         <ClientOnly>
+          {{ config.public.gitBranch }} {{ config.public.gitCommit }}
           <nuxt-link
             v-if="isHydrated && lgAndUp"
             :to="localePath(RoutePathKeys.informed) || '#'"

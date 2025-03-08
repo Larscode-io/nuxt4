@@ -1,6 +1,10 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
+import { getGitInfo } from './app/utils/gitInfo';
+
+const gitInfo = getGitInfo();
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
@@ -13,6 +17,8 @@ export default defineNuxtConfig({
   $development: {
     runtimeConfig: {
       public: {
+        gitBranch: gitInfo.branch,
+        gitCommit: gitInfo.commit,
         redirectUri: import.meta.env.REDIRECT_URI_DEV,
         // Falling back to legacy server URL as long as the .env variable is not set.
         // This is to develop pages without the need to have api's ready (next step).
