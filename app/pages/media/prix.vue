@@ -3,7 +3,7 @@
     class="fill-height"
     fluid
   >
-    <ContentRendererMarkdown
+    <ContentRenderer
       :value="page?.body || {}"
       class="nuxt-content content-renderer"
     />
@@ -20,8 +20,11 @@ const { locale } = useLanguage()
 const contentPath = ref(`${ContentKeys.prize}`)
 const { data: page } = await useAsyncData('content', async () => {
   try {
-    const doc = await queryContent(`${locale.value}/${contentPath.value}`)
-      .findOne()
+    const collectionName = `pages_${locale.value}`
+    const folderName = locale.value
+    const doc = await queryCollection(collectionName)
+      .path(`/${folderName}/${contentPath.value}`)
+      .first()
     return doc
   }
   catch (error) {

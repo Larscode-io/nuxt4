@@ -144,7 +144,6 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    vueI18n: './i18n.config.ts',
     lazy: true,
     defaultLocale: 'nl',
     strategy: 'prefix',
@@ -160,7 +159,11 @@ export default defineNuxtConfig({
       fallbackLocale: 'fr',
       redirectOn: 'root',
     },
-  },
+    legacy: false,
+    globalInjection: true,
+    fallbackLocale: 'fr',
+    silentTranslationWarn: false,
+},
   server: {
     host: '0.0.0.0',
     port: 3001,

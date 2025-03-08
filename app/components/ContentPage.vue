@@ -11,19 +11,29 @@ const { locale } = useLanguage()
 
 const currentActiveContentInToc = ref<string>('')
 
-const { data: page } = await useAsyncData('content', async () => {
+const page = ref(null)
+
+const fetchContent = async () => {
   try {
-    const doc = await queryContent(`${locale.value}/${props.contentPath}`)
-      .findOne()
-    const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
+    const collectionName = `pages_${locale.value}`
+    const folderName = locale.value
+    const doc = await queryCollection(collectionName)
+      .path(`/${folderName}/${props.contentPath}`)
+      .first()
+    const idsTo = 'body' in doc ? doc.body?.toc?.links?.map(toc => toc.id) || [] : []
     currentActiveContentInToc.value
       = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
-    return doc
+    page.value = doc
   }
   catch (error) {
     console.error('Error fetching content:', error)
-    return null
+    page.value = null
   }
+}
+
+onMounted(() => {
+  fetchContent()
+  startIntersectionObserver()
 })
 
 const sideBarLinks = computed(() => {
@@ -110,7 +120,7 @@ onUpdated(() => {
           md="8"
         >
           <article v-if="page">
-            <ContentRendererMarkdown
+            <ContentRenderer
               :value="page.body || {}"
               class="nuxt-content content-renderer"
             />

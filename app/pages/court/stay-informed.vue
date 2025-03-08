@@ -17,8 +17,12 @@ const currentActiveContentInToc = ref<string>('')
 const contentPath = ref(`${ContentKeys.informed}`)
 const { data: page } = await useAsyncData('content', async () => {
   try {
-    const doc = await queryContent(`${locale.value}/${contentPath.value}`)
-      .findOne()
+
+    const collectionName = `pages_${locale.value}`
+    const folderName = locale.value
+    const doc = await queryCollection(collectionName)
+      .path(`/${folderName}/${contentPath.value}`)
+      .first()
     const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
     const hash = route.hash.substring(1)
 
@@ -121,7 +125,7 @@ onUpdated(() => {
           md="8"
         >
           <article v-if="page">
-            <ContentRendererMarkdown
+            <ContentRenderer
               :value="page.body || {}"
               :data="mdcVars"
               class="nuxt-content content-renderer"
