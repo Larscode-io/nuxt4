@@ -50,7 +50,7 @@
           </client-only>
 
           <!-- Display search results -->
-          <div v-if="hasResults" ref="list" class="mt-6">
+          <div v-if="hasResults" ref="list" class="mt-6 print-area">
             <div v-for="(result, resultIndex) in formattedSearchResult" :key="resultIndex" class="table-container">
               <ul>
                 <li v-for="(title, index) in result.paths" :key="index"
@@ -110,13 +110,11 @@ const searchResponse = ref(null)
 
 // Compute search results and whether there are any
 const formattedSearchResult = computed(() => {
-  console.log('test, searchResponse.value: ', searchResponse.value)
   return searchResponse.value?.value || []
 }
 
 )
 const hasResults = computed(() => {
-  console.log('wtf', formattedSearchResult.value);
   return formattedSearchResult.value.length > 0
 })
 
@@ -171,10 +169,8 @@ async function submit() {
   }
 }
 
-// Print the result list (assuming a global print function is available)
-function print(refName: string) {
-  // @ts-ignore
-  $print(list.value)
+const print = () => {
+  printContent('.print-area')
 }
 
 // Set head metadata using Nuxt 3's useHead

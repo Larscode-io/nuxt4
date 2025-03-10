@@ -224,7 +224,7 @@ async function submit() {
   }
 }
 
-const print = (ref) => {
+const print = () => {
   printContent('.print-area')
 }
 

@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="fill-height pa-0 d-block">
-    <BannerImage :title="t('menu.search.title')" :description="t('menu.search.titleDescription')" :image="img" />
+    <BannerImage :title="t('menu.search.title')" :description="t('menu.search.title-description')" :image="img" />
     <v-row v-if="pending" class="d-flex" align="flex-start" justify="center">
       <div class="col-12 col-md-12">
         <v-skeleton-loader class="mx-auto" max-width="300" type="article" />
@@ -13,7 +13,7 @@
     </v-row>
     <v-row class="d-flex" justify="center">
       <v-col cols="12" md="4" class="mt-4">
-        <SearchTabs active-tab="general.message.judgment-keywords-summary"/>
+        <SearchTabs active-tab="general.message.judgment-keywords-summary" />
       </v-col>
       <div class="v-col-md-8 v-col-12 mt-6">
         <ClientOnly>
@@ -22,11 +22,12 @@
           </template>
           <form @submit.prevent="submit">
             <div class="d-flex">
-              <v-text-field v-date-format v-model="payload.judgmentDates[0]" :label="t('general.message.date-of-judgment-start')"
-                :error-messages="judgmentDateErrors" hint="DD/MM/YYYY" persistent-hint v-maska data-maska="##/##/####" />
+              <v-text-field v-date-format v-model="payload.judgmentDates[0]"
+                :label="t('general.message.date-of-judgment-start')" :error-messages="judgmentDateErrors"
+                hint="DD/MM/YYYY" persistent-hint />
               <div class="px-2"></div>
-              <v-text-field v-date-format v-model="payload.judgmentDates[1]" :label="t('general.message.date-of-judgment-end')"
-                hint="DD/MM/YYYY" persistent-hint v-maska data-maska="##/##/####" />
+              <v-text-field v-date-format v-model="payload.judgmentDates[1]"
+                :label="t('general.message.date-of-judgment-end')" hint="DD/MM/YYYY" persistent-hint />
             </div>
 
             <v-text-field v-model="payload.keywords" :label="t('general.message.keywords', 2)"
@@ -42,20 +43,22 @@
               color="indigo" variant="flat">
               {{ t('general.submit') }}
             </v-btn>
-            <v-btn v-if="hasResults" class="mr-4" @click.prevent="print('list')" variant="text">
-              <v-icon start>mdi-printer</v-icon>
-              {{ t('general.message.print-list') }}
+            <v-btn v-if="hasResults" class="mr-4" @click.prevent="print('list')">
+              <v-icon left>
+                mdi-printer
+              </v-icon>
+              <p class="ml-2">{{ t('general.message.print-list') }}</p>
             </v-btn>
           </form>
         </ClientOnly>
-        <div v-if="hasResults" class="mt-6">
+        <div v-if="hasResults" class="mt-6 print-area">
           <v-expansion-panels ref="list" :model-value="openedPanels" multiple>
             <v-expansion-panel v-for="result in formattedSearchResult" :key="result">
               <v-expansion-panel-title>
                 <v-row no-gutters>
                   <v-col cols="6">
                     {{ t('general.message.judgment-number') }} :
-                    <a :href="result.filePath">{{ getId(result.fileName) }}</a>
+                    <a class="link" :href="result.filePath">{{ getId(result.fileName) }}</a>
                   </v-col>
                   <v-col cols="6">
                     {{ t('general.message.date-of-judgment') }} :
@@ -132,10 +135,9 @@ const isFormInvalid = computed(() => {
 })
 
 const formattedSearchResult = computed(() => {
-  if (!searchResponse.value) {
-    return []
-  }
-  return searchResponse.value
+  console.log('---- ', searchResponse.value)
+  console.log('---- 2 ', searchResponse.value?.data)
+  return searchResponse.value?.data || []
 })
 
 const hasResults = computed(() => {
@@ -182,16 +184,15 @@ async function submit() {
   searchResponse.value = null
 
   const [error, response] = await to(
-    $fetch(`${config.public.apiBase}${ApiUrl.searchByJudgmentKeywordsSummary}`, {
-      method: 'POST',
-      params: { lang: locale.value },
-      body: {
+    cPost(
+      `${ApiUrl.searchByJudgmentKeywordsSummary}?lang=${locale.value}`,
+      {
         ...payload.value,
         judgmentDates: payload.value.judgmentDates?.map((date) =>
           date?.split('/')?.reverse()?.join('-')
         ),
       }
-    })
+    )
   )
 
   loading.value = false
@@ -205,12 +206,8 @@ async function submit() {
   searchResponse.value = response
 }
 
-function print(ref) {
-  // Implementation depends on your print utility in Nuxt 3
-  // You may need to adapt this based on your printing solution
-  if (typeof window !== 'undefined') {
-    window.print()
-  }
+const print = () => {
+  printContent('.print-area')
 }
 
 // Define the meta for the page
@@ -261,5 +258,23 @@ useHead({
 
 .d-flex .v-input__slot {
   box-shadow: none !important;
+}
+
+/* Nieuwe stijlen voor de rotatieanimatie */
+.rotate-icon {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
+}
+
+/* Zorg ervoor dat de link duidelijk klikbaar lijkt */
+.link {
+  position: relative;
+  z-index: 1;
+  text-decoration: underline;
+  color: #1976d2;
+}
+
+.link:hover {
+  color: #0d47a1;
 }
 </style>
