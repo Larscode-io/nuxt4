@@ -13,7 +13,7 @@
     </v-row>
     <v-row v-else class="d-flex">
       <v-col cols="12" md="4" class="mt-4">
-        <SearchTabs active-tab="general.message.keywords-judgments-pending-cases"/>
+        <SearchTabs active-tab="general.message.keywords-judgments-pending-cases" />
       </v-col>
 
       <v-col cols="12" md="8" class="mt-6">
@@ -38,16 +38,16 @@
         </client-only>
 
         <v-tabs v-if="hasJudgments || hasPendingCases" ref="list" v-model="selectedTab" :vertical="false" class="my-6">
-          <v-tab v-if="hasPendingCases" href="#tab1">
+          <v-tab value="tab1" v-if="hasPendingCases" href="#tab1">
             {{ t('general.message.pending-case') }}
           </v-tab>
-          <v-tab v-if="hasJudgments" href="#tab2">
+          <v-tab value="tab2" v-if="hasJudgments" href="#tab2">
             {{ t('general.message.judgment') }}
           </v-tab>
 
-          <v-tab-item :hidden="!hasPendingCases" value="tab1">
+          <v-tabs-window-item :hidden="!hasPendingCases" value="tab1">
             <!-- TODO: fix judgementCard -->
-            <!-- <v-col cols="12">
+            <v-col cols="12">
               <PendingCaseCard v-for="pendingCase in searchPendingCasesResponse" :key="pendingCase.id"
                 :id="pendingCase.id" :processing-language="pendingCase.processingLanguage"
                 :receipt-date="pendingCase.dateReceived" :date-of-hearing="pendingCase.dateOfHearing"
@@ -57,9 +57,9 @@
                 :notification-art74-to-official-journal-date="pendingCase.dateArt74"
                 :joined-cases="pendingCase.joinedCases" :keywords="pendingCase.keywords"
                 :linked-case-number="pendingCase.linkedCaseNumber" />
-            </v-col> -->
-          </v-tab-item>
-          <v-tab-item :hidden="!hasJudgments" value="tab2">
+            </v-col>
+          </v-tabs-window-item>
+          <v-tabs-window-item :hidden="!hasJudgments" value="tab2">
             <!-- TODO: fix judgementCard -->
             <!-- <v-col cols="12">
               <JudgmentCard v-for="judgment in searchJudgmentsResponse" :key="judgment.id" :id="judgment.id"
@@ -67,7 +67,7 @@
                 :description="judgment.description" :state="judgment.availablePart" :keywords="judgment.keywords"
                 :pdf-url="judgment.filePath" :summary="judgment.summary" />
             </v-col> -->
-          </v-tab-item>
+          </v-tabs-window-item>
         </v-tabs>
         <v-col v-if="(loaded && !hasJudgments && !hasPendingCases) || fetchState.error" cols="12">
           <EmptyComponent />
@@ -92,8 +92,7 @@ import { RoutePathKeys } from "../../core/constants";
 import SearchTabs from "../../components/SearchTabs.vue";
 
 // i18n setup
-const { t } = useI18n()
-
+const { t, locale } = useI18n()
 // Router en route
 const route = useRoute()
 const router = useRouter()
@@ -145,7 +144,10 @@ useHead({
 })
 
 // Computed properties
-const hasPendingCases = computed(() => searchPendingCasesResponse.value.length > 0)
+const hasPendingCases = computed(() => {
+  console.log('searchPendingCasesResponse: ', searchPendingCasesResponse.value?.value)
+  return searchPendingCasesResponse.value?.value?.length > 0
+})
 const hasJudgments = computed(() => searchJudgmentsResponse.value.length > 0)
 
 // Watchers
@@ -174,18 +176,12 @@ async function submit() {
   loaded.value = false
   searchError.value = null
 
-  // Bepaal welke requests verzonden moeten worden op basis van payload.choices
   const judgmentRequest = payload.choices.includes('general.message.judgment')
-    ? $fetch(`${ApiUrl.searchJudgments}?lang=${t('locale')}`, {
-      method: 'POST',
-      body: payload,
-    })
+    ? cPost(`${ApiUrl.searchJudgments}?lang=${locale.value}`, payload)
     : Promise.resolve([])
+
   const pendingCaseRequest = payload.choices.includes('general.message.pending-case')
-    ? $fetch(`${ApiUrl.searchPendingCases}?lang=${t('locale')}`, {
-      method: 'POST',
-      body: payload,
-    })
+    ? cPost(`${ApiUrl.searchPendingCases}?lang=${locale.value}`, payload)
     : Promise.resolve([])
 
   const [error, response] = await to(Promise.all([pendingCaseRequest, judgmentRequest]))
@@ -196,8 +192,10 @@ async function submit() {
     return
   }
   loaded.value = true
-  searchPendingCasesResponse.value = response[0]
-  searchJudgmentsResponse.value = response[1]
+
+  console.log('response: ', response[1])
+  searchPendingCasesResponse.value = response[0]?.data
+  searchJudgmentsResponse.value = response[1]?.data
 }
 function print(refName: string) {
   // Gebruik een globale printfunctie indien beschikbaar

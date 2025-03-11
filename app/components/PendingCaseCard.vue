@@ -4,57 +4,51 @@
       <div class="float-md-right float-lg-right pb-3">
         <v-btn v-if="isSubscribable" depressed elevation="2" medium rounded class="pending-case-btn"
           @click="dialog = true">
-          {{ $t(i18nKeys.newsletter.rol.subscribe) }}
+          {{ t('newsletter.rol.subscribe') }}
         </v-btn>
         <div v-else>
-          {{ $tc(i18nKeys.general.message.judgmentDeliveries, 1) }}
+          {{ t('general.message.judgmentDeliveries', 1) }}
         </div>
       </div>
       <div class="row-to-column">
         <h3>
-          {{ $tc(i18nKeys.general.message.rollNumber) }}: {{ id }} ({{
-            processingLanguage
-          }})
+          {{ t('general.message.rollNumber') }}: {{ id }} ({{ processingLanguage }})
         </h3>
       </div>
       <div class="row-to-column">
         <p class="h4">
-          {{ $tc(i18nKeys.general.message.receiptDate) }}
+          {{ t('general.message.receiptDate') }}
         </p>
         <p>{{ receiptDate || emptyValue }}</p>
       </div>
       <div class="row-to-column">
         <p class="h4">
-          {{ $tc(i18nKeys.general.message.dateOfHearing) }}
+          {{ t('general.message.dateOfHearing') }}
         </p>
         <p>{{ dateOfHearing || emptyValue }}</p>
       </div>
       <div class="row-to-column">
         <p class="h4">
-          {{ $tc(i18nKeys.general.message.dateOfJudgment) }}
+          {{ t('general.message.dateOfJudgment') }}
         </p>
         <p>{{ dateOfJudgment || emptyValue }}</p>
       </div>
       <div class="row-to-column">
         <p class="h4">
-          {{ $tc(i18nKeys.general.message.concerning) }}
+          {{ t('general.message.concerning') }}
         </p>
         <p>{{ concerning || emptyValue }}</p>
       </div>
       <div v-if="linkedCaseNumber" class="row-to-column">
         <p class="h4">
-          {{ $tc(i18nKeys.general.message.caseJoinedWithCaseNumbers) }}
+          {{ t('general.message.caseJoinedWithCaseNumbers') }}
         </p>
         <p>
-          <a :href="`#pending-cases-card-${linkedCaseNumber}`">{{
-            linkedCaseNumber
-          }}</a>
+          <a :href="`#pending-cases-card-${linkedCaseNumber}`">{{ linkedCaseNumber }}</a>
         </p>
       </div>
-      <div v-if="notificationArt74ToOfficialJournalLink &&
-          notificationArt74ToOfficialJournalDate
-          " class="row-to-column">
-        <p class="h4" v-html="$tc(i18nKeys.general.message.notificationArt74BeOfficialJournal)
+      <div v-if="notificationArt74ToOfficialJournalLink && notificationArt74ToOfficialJournalDate" class="row-to-column">
+        <p class="h4" v-html="t('general.message.notificationArt74BeOfficialJournal')
             .replace('Moniteur belge', '<i>Moniteur belge</i>')
             .replace('Belgisch Staatsblad', '<i>Belgisch Staatsblad</i>')
           " />
@@ -66,7 +60,7 @@
       </div>
       <div v-if="joinedCases && joinedCases.length > 0" class="row-to-column">
         <p class="h4">
-          {{ $tc(i18nKeys.general.message.joinedCase, joinedCases.length) }}
+          {{ t('general.message.joinedCase', joinedCases.length) }}
         </p>
         <p>
           <a v-for="caseNumber of joinedCases" :key="caseNumber" :href="`#pending-cases-card-${caseNumber}`" class="mr-3">
@@ -75,33 +69,33 @@
       </div>
       <div class="row-to-column">
         <p class="h4">
-          {{ $tc(i18nKeys.general.message.keywords, 2) }}
+          {{ t('general.message.keywords', 2) }}
         </p>
 
         <v-banner elevation="3" class="subtitle my-2">
-          {{ keywords || $t(i18nKeys.error.noDataAvailable) }}
+          {{ keywords || t('error.noDataAvailable') }}
         </v-banner>
       </div>
     </v-card>
     <v-dialog v-model="dialog" persistent max-width="590" @keydown.esc="dialog = false" @click:outside="dialog = false">
       <v-card class="mx-auto pa-12 pb-8" elevation="8" rounded="lg">
         <v-card-title class="headline">
-          {{ $t(i18nKeys.newsletter.rol.titel) }} {{ id }}
+          {{ t('newsletter.rol.titel') }} {{ id }}
         </v-card-title>
         <v-card-text>
-          <v-text-field v-model="user.email" outlined :label="$t(i18nKeys.general.emailPlaceholder)" autofocus
+          <v-text-field v-model="user.email" outlined :label="t('general.emailPlaceholder')" autofocus
             prepend-inner-icon="mdi-email-outline" @keyup.enter="subscribe" />
           <input id="check00" v-model="user.checkedAllGroups" type="checkbox">
-          <label for="check00" class="mb-2">{{ $t(i18nKeys.newsletter.rol.allgroups) }}</label>
+          <label for="check00" class="mb-2">{{ t('newsletter.rol.allgroups') }}</label>
           <p v-if="subscriptionResult" class="mt-2 subscription-result">{{ subscriptionResult }}</p>
         </v-card-text>
         <v-card-actions>
           <v-spacer />
           <v-btn color="green darken-3" text @click="dialog = false">{{
-            $t(i18nKeys.general.message.close)
+            t('general.message.close')
           }}</v-btn>
           <v-btn color="green darken-3" text @click="subscribe">{{
-            $t(i18nKeys.general.subscribe)
+            t('general.subscribe')
           }}</v-btn>
         </v-card-actions>
       </v-card>
@@ -109,129 +103,125 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { MailmanUrl, RoutePathKeys } from '../core/constants'
-import { EMPTY_VALUE } from '~/server/constants'
-import { flatten } from '@/server/utils'
+import { EMPTY_VALUE } from '../../server/constants'
+import { flatten } from '../../server/utils/utils'
 
-export default {
-  name: 'PendingCaseCard',
-  props: {
-    id: {
-      type: Number,
-      required: true,
-    },
-    processingLanguage: {
-      type: String,
-      required: true,
-    },
-    receiptDate: {
-      type: String,
-      required: true,
-    },
-    dateOfHearing: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    dateOfJudgment: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    concerning: {
-      type: String,
-      required: true,
-    },
-    linkedCaseNumber: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    notificationArt74ToOfficialJournalDate: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    notificationArt74ToOfficialJournalLink: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    joinedCases: {
-      type: Array,
-      required: true,
-    },
-    keywords: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    isSubscribable: {
-      type: Boolean,
-      required: false,
-      default: true,
-    },
+const { t } = useI18n()
+
+const props = defineProps({
+  id: {
+    type: Number,
+    required: true,
   },
-  emits: ['subscribe'],
-  data() {
-    return {
-      dialog: false,
-      i18nKeys,
-      user: {
-        email: null,
-        checkedAllGroups: false,
+  processingLanguage: {
+    type: String,
+    required: true,
+  },
+  receiptDate: {
+    type: String,
+    required: true,
+  },
+  dateOfHearing: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  dateOfJudgment: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  concerning: {
+    type: String,
+    required: true,
+  },
+  linkedCaseNumber: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  notificationArt74ToOfficialJournalDate: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  notificationArt74ToOfficialJournalLink: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  joinedCases: {
+    type: Array,
+    required: true,
+  },
+  keywords: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  isSubscribable: {
+    type: Boolean,
+    required: false,
+    default: true,
+  },
+})
+
+const emit = defineEmits(['subscribe'])
+
+const dialog = ref(false)
+const user = ref({
+  email: null,
+  checkedAllGroups: false,
+})
+const emptyValue = EMPTY_VALUE
+const routePathKeys = RoutePathKeys
+const lookupEncInz = ref('')
+const subscriptionResult = ref('')
+
+const splittedKeywords = computed(() => {
+  if (!props.keywords) {
+    return []
+  }
+  return flatten(props.keywords.split(' - ').map((key) => key.split('– ')))
+})
+
+async function subscribe() {
+  const { email, checkedAllGroups } = user.value
+  try {
+    const url = checkedAllGroups
+      ? MailmanUrl.rolout
+      : `${MailmanUrl.subscribe}/${props.id}`
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-      emptyValue: EMPTY_VALUE,
-      routePathKeys: RoutePathKeys,
-      lookupEncInz: '',
-      subscriptionResult: '',
+      body: new URLSearchParams({
+        email,
+        'email-button': 'Subscribe',
+      }).toString(),
+    })
+    if (response.ok) {
+      const responseText = await response.text()
+      const doWeHaveResponse = !!responseText
+      if (doWeHaveResponse && responseText.includes('Your subscription request has been received, and will soon be acted upon')) {
+        subscriptionResult.value = t('general.message.mailman.subscriptionSucces')
+      } else if (doWeHaveResponse && (responseText.includes('The email address you supplied is not valid') || responseText.includes('You must supply a valid email address'))) {
+        subscriptionResult.value = t('general.message.mailman.subscriptionInvalidEmail')
+      } else {
+        subscriptionResult.value = t('general.message.mailman.subscriptionFailure')
+      }
+    } else {
+      throw new Error('HTTP error, status = ' + response.status)
     }
-  },
-  computed: {
-    splittedKeywords() {
-      if (!this.keywords) {
-        return []
-      }
-      return flatten(this.keywords.split(' - ').map((key) => key.split('– ')))
-    },
-  },
-  methods: {
-    async subscribe() {
-      const { email, checkedAllGroups } = this.user;
-      try {
-        const url = checkedAllGroups
-          ? MailmanUrl.rolout
-          : `${MailmanUrl.subscribe}/${this.id}`;
-        const response = await fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: new URLSearchParams({
-            email,
-            'email-button': 'Subscribe',
-          }).toString(),
-        });
-        if (response.ok) {
-          const responseText = await response.text();
-          const doWeHaveResponse = !!responseText;
-          if (doWeHaveResponse && responseText.includes('Your subscription request has been received, and will soon be acted upon')) {
-            this.subscriptionResult = t('general.message.mailman.subscriptionSucces');
-          } else if (doWeHaveResponse && (responseText.includes('The email address you supplied is not valid') || responseText.includes('You must supply a valid email address'))) {
-            this.subscriptionResult = t('general.message.mailman.subscriptionInvalidEmail');
-          } else {
-            this.subscriptionResult = t('general.message.mailman.subscriptionFailure');
-          }
-        } else {
-          throw new Error('HTTP error, status = ' + response.status);
-        }
-      } catch (error) {
-        console.error(error);
-        this.subscriptionResult = 'An error occurred while subscribing.'
-      }
-    },
-  },
+  } catch (error) {
+    console.error(error)
+    subscriptionResult.value = 'An error occurred while subscribing.'
+  }
 }
 </script>
 
