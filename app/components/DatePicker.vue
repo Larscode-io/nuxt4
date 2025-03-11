@@ -84,49 +84,32 @@ onMounted(() => {
   }
 
   .v-date-picker__title,
+  .v-picker-title,
   .v-date-picker-header {
     display: none;
+    max-height: 0px !important;
+    max-width: 0px !important;
+  }
+
+  .v-date-picker-month__day {
+    pointer-events: none;
+  }
+
+  .v-date-picker-month__day--selected {
+    .v-btn {
+      background-color: #82b1ff;
+    }
   }
 
   .v-date-picker-controls {
-    margin: 16px 0;
+    margin: 0;
     border-radius: 0;
-  }
-
-  .v-date-picker-month {
-    .v-date-picker-month__day--selected {
-      background-color: $indigo;
-      color: white;
-    }
-
-    button {
-      color: $indigo;
-    }
-  }
-
-  .v-date-picker-table__current {
-    background-color: $indigo;
-    color: white !important;
-    position: relative;
-
-    &:after {
-      content: "";
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 8px solid rgba(0, 170, 231, 0.24);
-    }
   }
 
   .v-date-picker-table {
     padding: 12px;
     height: auto;
   }
-}
-
-.v-application .accent {
-  background-color: $indigo !important;
 }
 
 .v-picker__body .v-btn::before {
