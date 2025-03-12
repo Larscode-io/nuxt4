@@ -1,35 +1,45 @@
 <template>
   <div>
-    <v-card :id="`pending-cases-card-${id}`" class="pending-case-card">
+    <v-card
+      :id="`pending-cases-card-${id}`"
+      class="pending-case-card"
+    >
       <div class="float-md-right float-lg-right pb-3">
-        <v-btn v-if="isSubscribable" depressed elevation="2" medium rounded class="pending-case-btn"
-          @click="dialog = true">
+        <v-btn
+          v-if="isSubscribable"
+          depressed
+          elevation="2"
+          medium
+          rounded
+          class="pending-case-btn"
+          @click="dialog = true"
+        >
           {{ t('newsletter.rol.subscribe') }}
         </v-btn>
         <div v-else>
-          {{ t('general.message.judgmentDeliveries', 1) }}
+          {{ t('general.message.judgment-deliveries', 1) }}
         </div>
       </div>
       <div class="row-to-column">
         <h3>
-          {{ t('general.message.rollNumber') }}: {{ id }} ({{ processingLanguage }})
+          {{ t('general.message.roll-number') }}: {{ id }} ({{ processingLanguage }})
         </h3>
       </div>
       <div class="row-to-column">
         <p class="h4">
-          {{ t('general.message.receiptDate') }}
+          {{ t('general.message.receipt-date') }}
         </p>
         <p>{{ receiptDate || emptyValue }}</p>
       </div>
       <div class="row-to-column">
         <p class="h4">
-          {{ t('general.message.dateOfHearing') }}
+          {{ t('general.message.date-of-hearing') }}
         </p>
         <p>{{ dateOfHearing || emptyValue }}</p>
       </div>
       <div class="row-to-column">
         <p class="h4">
-          {{ t('general.message.dateOfJudgment') }}
+          {{ t('general.message.date-of-judgment') }}
         </p>
         <p>{{ dateOfJudgment || emptyValue }}</p>
       </div>
@@ -39,31 +49,48 @@
         </p>
         <p>{{ concerning || emptyValue }}</p>
       </div>
-      <div v-if="linkedCaseNumber" class="row-to-column">
+      <div
+        v-if="linkedCaseNumber"
+        class="row-to-column"
+      >
         <p class="h4">
-          {{ t('general.message.caseJoinedWithCaseNumbers') }}
+          {{ t('general.message.case-joined-with-case-numbers') }}
         </p>
         <p>
           <a :href="`#pending-cases-card-${linkedCaseNumber}`">{{ linkedCaseNumber }}</a>
         </p>
       </div>
-      <div v-if="notificationArt74ToOfficialJournalLink && notificationArt74ToOfficialJournalDate" class="row-to-column">
-        <p class="h4" v-html="t('general.message.notificationArt74BeOfficialJournal')
+      <div
+        v-if="notificationArt74ToOfficialJournalLink && notificationArt74ToOfficialJournalDate"
+        class="row-to-column"
+      >
+        <p
+          class="h4"
+          v-html="t('general.message.notification-art74-be-official-journal')
             .replace('Moniteur belge', '<i>Moniteur belge</i>')
             .replace('Belgisch Staatsblad', '<i>Belgisch Staatsblad</i>')
-          " />
+          "
+        />
         <p>
-          <a :href="notificationArt74ToOfficialJournalLink">{{
+          <a style="color: #1976d2" :href="notificationArt74ToOfficialJournalLink">{{
             notificationArt74ToOfficialJournalDate || emptyValue
           }}</a>
         </p>
       </div>
-      <div v-if="joinedCases && joinedCases.length > 0" class="row-to-column">
+      <div
+        v-if="joinedCases && joinedCases.length > 0"
+        class="row-to-column"
+      >
         <p class="h4">
-          {{ t('general.message.joinedCase', joinedCases.length) }}
+          {{ t('general.message.joined-case', joinedCases.length) }}
         </p>
         <p>
-          <a v-for="caseNumber of joinedCases" :key="caseNumber" :href="`#pending-cases-card-${caseNumber}`" class="mr-3">
+          <a
+            v-for="caseNumber of joinedCases"
+            :key="caseNumber"
+            :href="`#pending-cases-card-${caseNumber}`"
+            class="mr-3"
+          >
             {{ caseNumber }}</a>
         </p>
       </div>
@@ -72,31 +99,74 @@
           {{ t('general.message.keywords', 2) }}
         </p>
 
-        <v-banner elevation="3" class="subtitle my-2">
-          {{ keywords || t('error.noDataAvailable') }}
+        <v-banner
+          elevation="3"
+          class="subtitle my-2"
+        >
+          {{ keywords || t('error.no-data-available') }}
         </v-banner>
       </div>
     </v-card>
-    <v-dialog v-model="dialog" persistent max-width="590" @keydown.esc="dialog = false" @click:outside="dialog = false">
-      <v-card class="mx-auto pa-12 pb-8" elevation="8" rounded="lg">
+    <v-dialog
+      v-model="dialog"
+      persistent
+      @keydown.esc="dialog = false"
+      @click:outside="dialog = false"
+    >
+      <v-card
+        max-width="590"
+        class="mx-auto pa-12 pb-8"
+        elevation="8"
+        rounded="lg"
+      >
         <v-card-title class="headline">
           {{ t('newsletter.rol.titel') }} {{ id }}
         </v-card-title>
         <v-card-text>
-          <v-text-field v-model="user.email" outlined :label="t('general.emailPlaceholder')" autofocus
-            prepend-inner-icon="mdi-email-outline" @keyup.enter="subscribe" />
-          <input id="check00" v-model="user.checkedAllGroups" type="checkbox">
-          <label for="check00" class="mb-2">{{ t('newsletter.rol.allgroups') }}</label>
-          <p v-if="subscriptionResult" class="mt-2 subscription-result">{{ subscriptionResult }}</p>
+          <v-text-field
+            v-model="user.email"
+            outlined
+            :label="t('general.email-placeholder')"
+            autofocus
+            prepend-inner-icon="mdi-email-outline"
+            @keyup.enter="subscribe"
+          />
+          <input
+            id="check00"
+            v-model="user.checkedAllGroups"
+            type="checkbox"
+          >
+          <label
+            for="check00"
+            class="mb-2 ml-2"
+          >{{ t('newsletter.rol.allgroups') }}</label>
+          <p
+            v-if="subscriptionResult"
+            class="mt-2 subscription-result"
+          >
+            {{ subscriptionResult }}
+          </p>
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn color="green darken-3" text @click="dialog = false">{{
-            t('general.message.close')
-          }}</v-btn>
-          <v-btn color="green darken-3" text @click="subscribe">{{
-            t('general.subscribe')
-          }}</v-btn>
+          <v-btn
+            color="green darken-3"
+            text
+            @click="dialog = false"
+          >
+            {{
+              t('general.message.close')
+            }}
+          </v-btn>
+          <v-btn
+            color="green darken-3"
+            text
+            @click="subscribe"
+          >
+            {{
+              t('general.subscribe')
+            }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -170,6 +240,8 @@ const props = defineProps({
   },
 })
 
+console.log('props', props);
+
 const emit = defineEmits(['subscribe'])
 
 const dialog = ref(false)
@@ -186,7 +258,7 @@ const splittedKeywords = computed(() => {
   if (!props.keywords) {
     return []
   }
-  return flatten(props.keywords.split(' - ').map((key) => key.split('– ')))
+  return flatten(props.keywords.split(' - ').map(key => key.split('– ')))
 })
 
 async function subscribe() {
@@ -210,15 +282,19 @@ async function subscribe() {
       const doWeHaveResponse = !!responseText
       if (doWeHaveResponse && responseText.includes('Your subscription request has been received, and will soon be acted upon')) {
         subscriptionResult.value = t('general.message.mailman.subscriptionSucces')
-      } else if (doWeHaveResponse && (responseText.includes('The email address you supplied is not valid') || responseText.includes('You must supply a valid email address'))) {
+      }
+      else if (doWeHaveResponse && (responseText.includes('The email address you supplied is not valid') || responseText.includes('You must supply a valid email address'))) {
         subscriptionResult.value = t('general.message.mailman.subscriptionInvalidEmail')
-      } else {
+      }
+      else {
         subscriptionResult.value = t('general.message.mailman.subscriptionFailure')
       }
-    } else {
+    }
+    else {
       throw new Error('HTTP error, status = ' + response.status)
     }
-  } catch (error) {
+  }
+  catch (error) {
     console.error(error)
     subscriptionResult.value = 'An error occurred while subscribing.'
   }
@@ -275,6 +351,8 @@ async function subscribe() {
 
   p {
     width: calc(100% - 200px);
+    margin-bottom: 8px;
+    font-weight: 400;
   }
 
   @include mobile {

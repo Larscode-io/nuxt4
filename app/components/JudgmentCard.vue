@@ -1,56 +1,106 @@
 <template>
-  <v-card :id="`judgment-card-${id}`" class="judgement-card mx-auto my-4">
+  <v-card
+    :id="`judgment-card-${id}`"
+    class="judgement-card mx-auto my-4"
+  >
     <div class="top-infos">
       <p>{{ date }}</p>
       <p>{{ title }}</p>
     </div>
-    <h3>
-      <a v-if="pdfUrl" :href="pdfUrl" rel="noopener noreferrer" target="_blank"
-        :aria-label="tc(i18nKeys.aria.label.downloadPdf)">
-        <v-icon v-if="pdf_exists" color="red" large>
+    <p>
+      <a
+        v-if="pdfUrl"
+        :href="pdfUrl"
+        rel="noopener noreferrer"
+        target="_blank"
+        :aria-label="t('aria.label.download-pdf')"
+      >
+        <v-icon
+          v-if="pdf_exists"
+          color="pdfRed"
+          size="36"
+        >
           mdi-file-pdf-box
         </v-icon>
-        <v-icon v-else large>
-          mdi-file-pdf-box theme--light
+        <v-icon
+          v-else
+          color="grey"
+          size="36"
+        >
+          mdi-file-pdf-box
         </v-icon>
       </a>
-      <v-icon v-if="summary && isEnglish" color="grey" large :aria-label="tc(i18nKeys.aria.label.downloadPdf)"
-        @click="showSummary = true">
+      <v-icon
+        v-if="summary && isEnglish"
+        color="grey"
+        size="36"
+        :aria-label="t('aria.label.download-pdf')"
+        @click="showSummary = true"
+      >
         mdi-file
       </v-icon>
       {{ reference }}
-    </h3>
-    <span class="subtitle my-2" v-html="description || t(i18nKeys.error.noDataAvailable)" />
-    <span class="state my-2" v-html="state || t(i18nKeys.error.noDataAvailable)" />
-    <span v-if="idsRole && idsRole.length" class="py-4">
-      {{ `${tc(i18nKeys.general.message.rollNumber)}${t(i18nKeys.general.message.colon)} ${idsRole.join(' - ')}` }}
+    </p>
+    <span
+      class="subtitle my-2"
+      v-html="description || t('error.no-data-available')"
+    />
+    <span
+      class="state my-2"
+      v-html="state || t('error.no-data-available')"
+    />
+    <span
+      v-if="idsRole && idsRole.length"
+      class="py-4"
+    >
+      {{ `${t('general.message.roll-number')}${t('general.message.colon')} ${idsRole.join(' - ')}` }}
     </span>
-    <span v-else class="py-4">
-      {{ t(i18nKeys.error.noDataAvailable) }}
+    <span
+      v-else
+      class="py-4"
+    >
+      {{ t('error.no-data-available') }}
     </span>
     <p class="subtitle my-2">
-      {{ `${tc(i18nKeys.general.message.keywords, 2)}${t(i18nKeys.general.message.colon)}` }}
+      {{ `${t('general.message.keywords')}${t('general.message.colon')}` }}
     </p>
-    <v-banner elevation="3" class="subtitle my-2">
-      <span v-html="keywords || t(i18nKeys.error.noDataAvailable)" />
+    <v-banner
+      elevation="3"
+      class="subtitle my-2"
+    >
+      <span v-html="JSON.stringify(keywords).replaceAll(',', ', ').replace('[', '[ ').replace(']', ' ]') || t('error.no-data-available')" />
     </v-banner>
     <p class="subtitle my-2">
-      <a v-if="pressReleaseFilePath" :href="pressReleaseFilePath" style="text-decoration: underline;"
-        class="d-inline-block mt-3" rel="noopener noreferrer" target="_blank"
-        :aria-label="tc(i18nKeys.aria.label.downloadPdf)">
-        {{ tc(i18nKeys.general.message.pressReleases, 1) }}
+      <a
+        v-if="pressReleaseFilePath"
+        :href="pressReleaseFilePath"
+        style="text-decoration: underline;"
+        class="d-inline-block mt-3"
+        rel="noopener noreferrer"
+        target="_blank"
+        :aria-label="t('aria.label.download-pdf')"
+      >
+        {{ t('general.message.press-releases') }}
       </a>
     </p>
-    <v-dialog v-model="showSummary" scrollable max-width="600px">
+    <v-dialog
+      v-model="showSummary"
+      scrollable
+      max-width="600px"
+    >
       <v-card class="mx-auto my-4">
         <v-card-title class="headline">
-          {{ tc(i18nKeys.general.message.summary) }}
+          {{ t('general.message.summary') }}
         </v-card-title>
         <v-card-text>{{ summary }}</v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn text :aria-label="tc(i18nKeys.aria.label.chip.filter)" @click="showSummary = false">
-            {{ t(i18nKeys.general.message.close) }}
+          <v-btn
+            variant="text"
+            :aria-label="t('aria.label.chip.filter')"
+            @click="showSummary = false"
+          >
+            {{ t('general.message.close') }}
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -61,7 +111,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, defineProps, defineEmits } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { i18nKeys } from '~/lang/keys'
+import { pdfFileExists } from '~/core/utilities'
 
 // Define props
 interface Props {
@@ -96,8 +146,9 @@ const isEnglish = computed(() => locale.value === Languages.ENGLISH)
 onMounted(async () => {
   try {
     pdf_exists.value = await pdfFileExists(props.pdfUrl)
-  } catch (error) {
-    console.log("Error checking PDF existence:", error)
+  }
+  catch (error) {
+    console.log('Error checking PDF existence:', error)
   }
 })
 
@@ -144,7 +195,7 @@ function navigate(id: number) {
     justify-content: space-between;
 
     p {
-      font-size: 1rem;
+      font-size: 20px;
       line-height: 24px;
     }
 
@@ -163,7 +214,7 @@ function navigate(id: number) {
     }
   }
 
-  h3 {
+  p {
     font-size: 1.125rem;
     line-height: 20px;
     text-align: left;
@@ -171,6 +222,11 @@ function navigate(id: number) {
 
     a {
       color: transparent;
+
+      .v-icon {
+        margin-right: 20px;
+        padding-bottom: 8px;
+      }
     }
   }
 
