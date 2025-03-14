@@ -1,49 +1,122 @@
 <template>
-  <v-container fluid class="fill-height pa-0 d-block">
-    <BannerImage :title="t('menu.search.title')" :description="t('menu.search.title-description')" :image="img" />
-    <v-row v-if="pending" class="row d-flex" align="flex-start" justify="center">
+  <v-container
+    fluid
+    class="fill-height pa-0 d-block"
+  >
+    <BannerImage
+      :title="t('menu.search.title')"
+      :description="t('menu.search.title-description')"
+      :image="img"
+    />
+    <v-row
+      v-if="pending"
+      class="row d-flex"
+      align="flex-start"
+      justify="center"
+    >
       <v-col class="col-12 col-md-12">
-        <v-skeleton-loader class="mx-auto" max-width="300" type="article" />
+        <v-skeleton-loader
+          class="mx-auto"
+          max-width="300"
+          type="article"
+        />
       </v-col>
     </v-row>
     <v-row class="row d-flex">
-      <v-col cols="12" md="4" class="mt-4">
+      <v-col
+        cols="12"
+        md="4"
+        class="mt-4"
+      >
         <SearchTabs active-tab="general.message.full-text-of-judgments" />
       </v-col>
-      <v-col cols="12" md="8" class="mt-6">
+      <v-col
+        cols="12"
+        md="8"
+        class="mt-6"
+      >
         <ClientOnly :placeholder="'general.loading'">
           <form @submit.prevent="submit">
-            <v-text-field v-model="payload.term" name="inputfield" :label="t('general.message.search-label')"
-              :error-messages="formErrors.term" />
+            <v-text-field
+              v-model="payload.term"
+              name="inputfield"
+              :label="t('general.message.search-label')"
+              :error-messages="formErrors.term"
+            />
 
-            <v-radio-group v-model="payload.sort" inline :error="!!formErrors.sort">
-              <v-radio class="mr-2 text-gray" color="primary" v-for="sort of sorts" :key="sort.id" :label="sort.label"
-                :value="sort.value" name="type" required :disabled="loading" />
+            <v-radio-group
+              v-model="payload.sort"
+              inline
+              :error="!!formErrors.sort"
+            >
+              <v-radio
+                v-for="sort of sorts"
+                :key="sort.id"
+                class="mr-2 text-gray"
+                color="primary"
+                :label="sort.label"
+                :value="sort.value"
+                name="type"
+                required
+                :disabled="loading"
+              />
             </v-radio-group>
 
-            <section v-if="hasContent" class="col-12 col-md-12">
-              <ContentRenderer :value="page" class="section-content" />
+            <section
+              v-if="hasContent"
+              class="col-12 col-md-12"
+            >
+              <ContentRenderer
+                :value="page"
+                class="pt-8"
+              />
             </section>
 
-            <v-btn name="knop" type="submit" class="mr-4 mt-4 submit-button" :loading="loading"
-              :aria-label="t('aria-label-submit')">
+            <v-btn
+              name="knop"
+              type="submit"
+              class="mr-4 mt-4 submit-button"
+              :loading="loading"
+              :aria-label="t('aria-label-submit')"
+            >
               {{ t('general.submit') }}
             </v-btn>
 
-            <v-btn v-if="hasResults" class="mr-4 mt-4" @click.prevent="print('list')">
+            <v-btn
+              v-if="hasResults"
+              class="mr-4 mt-4"
+              @click.prevent="print('list')"
+            >
               <v-icon left>
                 mdi-printer
               </v-icon>
-              <p class="ml-2">{{ t('general.message.print-list') }}</p>
+              <p class="ml-2">
+                {{ t('general.message.print-list') }}
+              </p>
             </v-btn>
           </form>
         </ClientOnly>
-        <div v-if="hasResults" ref="list" class="mt-6 print-area">
-          <FullTextSearchJudgmentCard v-for="result of formattedSearchResult" :key="result.id" :search-term="payload.term"
-            :pdf-url="result.filePath" :date="result.formatedJudmentDate" :title="result.fileName" :score="result.score"
-            :description="result.highlightHTML" :page-count="result.pageCount" />
+        <div
+          v-if="hasResults"
+          ref="list"
+          class="mt-6 print-area"
+        >
+          <FullTextSearchJudgmentCard
+            v-for="result of formattedSearchResult"
+            :key="result.id"
+            :search-term="payload.term"
+            :pdf-url="result.filePath"
+            :date="result.formatedJudmentDate"
+            :title="result.fileName"
+            :score="result.score"
+            :description="result.highlightHTML"
+            :page-count="result.pageCount"
+          />
         </div>
-        <div v-if="(loaded && !hasResults) || searchError" class="mt-6">
+        <div
+          v-if="(loaded && !hasResults) || searchError"
+          class="mt-6"
+        >
           <EmptyComponent />
         </div>
       </v-col>
@@ -54,14 +127,12 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { ApiUrl, ContentKeys, RoutePathKeys } from '../../core/constants'
-import img from '~/assets/img/banner-text.png'
+import { ApiUrl, ContentKeys } from '../../core/constants'
 import FullTextSearchJudgmentCard from '../../components/FullTextSearchJudgementCard.vue'
+import img from '~/assets/img/banner-text.png'
 
 // Setup composables
 const { t, locale } = useI18n()
-const localePath = useLocalePath()
-
 
 // Data refs
 const page = ref(null)
@@ -72,15 +143,14 @@ const searchResponse = ref(null)
 const list = ref(null)
 const formErrors = ref({
   term: '',
-  sort: ''
+  sort: '',
 })
 
 // Fetch page content
-const { data, pending, error } = await useAsyncData(
+const { data, pending } = await useAsyncData(
   'full-text-search-explanation',
-  () => queryContent(`/${locale.value}/${ContentKeys.fullTextSearchExplanation}`).findOne()
+  () => queryContent(`/${locale.value}/${ContentKeys.fullTextSearchExplanation}`).findOne(),
 )
-
 
 page.value = data.value
 
@@ -105,7 +175,7 @@ const sorts = computed(() => [
 
 const payload = ref({
   sort: 'score',
-  term: ''
+  term: '',
 })
 
 const formattedSearchResult = computed(() => {
@@ -116,11 +186,11 @@ const formattedSearchResult = computed(() => {
 })
 
 const hasContent = computed(() =>
-  page.value?.body?.children?.length > 0
+  page.value?.body?.children?.length > 0,
 )
 
 const hasResults = computed(() =>
-  formattedSearchResult.value && formattedSearchResult.value.length > 0
+  formattedSearchResult.value && formattedSearchResult.value.length > 0,
 )
 
 // Methods
@@ -128,7 +198,7 @@ function validateForm() {
   // Reset errors
   formErrors.value = {
     term: '',
-    sort: ''
+    sort: '',
   }
 
   let isValid = true
@@ -154,27 +224,32 @@ async function submit() {
   searchError.value = null
   searchResponse.value = null
 
+  if (!validateForm()) {
+    loading.value = false
+    return
+  }
+
   try {
     const { data } = await cFetch(`${ApiUrl.searchFullTextOfJudgments}?lang=${locale.value}&term=${payload.value.term}&sort=${payload.value.sort}`)
 
     if (!data.value) {
-      throw new Error("No data received")
+      throw new Error('No data received')
     }
-
-    console.log('data.value: ', data.value)
 
     searchResponse.value = data.value
     loaded.value = true
-  } catch (err) {
-    searchError.value = err || new Error("fout in full-text-judgment")
-  } finally {
+  }
+  catch (err) {
+    searchError.value = err || new Error('fout in full-text-judgment')
+  }
+  finally {
     loading.value = false
   }
 }
 
 const print = () => {
-  printContent('.print-area');
-};
+  printContent('.print-area')
+}
 
 // Watch for sort changes to automatically resubmit
 watch(() => payload.value.sort, () => {
@@ -186,14 +261,14 @@ watch(() => payload.value.sort, () => {
 // Meta
 useHead({
   title: computed(() =>
-    t('menu.search.title') || t('general.message.consts-court')
+    t('menu.search.title') || t('general.message.consts-court'),
   ),
   meta: [
     {
       name: 'description',
-      content: computed(() => t('menu.search.title') || '')
-    }
-  ]
+      content: computed(() => t('menu.search.title') || ''),
+    },
+  ],
 })
 </script>
 
@@ -215,10 +290,6 @@ useHead({
     margin-bottom: 40px;
     width: 100%;
   }
-}
-
-.section-content {
-  padding-top: 32px;
 }
 
 .submit-button {
