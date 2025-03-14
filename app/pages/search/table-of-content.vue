@@ -1,10 +1,19 @@
 <template>
-  <v-container fluid class="fill-height pa-0 d-block">
-    <BannerImage :title="t('menu.search.title')" :description="t('menu.search.title-description')" :image="img" />
+  <v-container
+    fluid
+    class="fill-height pa-0 d-block"
+  >
+    <BannerImage
+      :title="t('menu.search.title')"
+      :description="t('menu.search.title-description')"
+      :image="img"
+    />
 
-    <v-row class="d-flex" align="start" justify="center">
-
-
+    <v-row
+      class="d-flex"
+      align="start"
+      justify="center"
+    >
       <!-- Show skeleton loader when loading -->
       <!-- <v-row v-if="loading" class="d-flex" align="flex-start" justify="center">
         <div class="col-12 col-md-12">
@@ -13,48 +22,104 @@
       </v-row> -->
 
       <!-- Show error card if there was a search error -->
-      <v-row v-if="searchError" class="d-flex" align="flex-start" justify="center">
+      <v-row
+        v-if="searchError"
+        class="d-flex"
+        align="flex-start"
+        justify="center"
+      >
         <div class="col-12 col-md-12">
-          <ErrorCard :message="t('error.fetchingData')" :show-go-home="false" />
+          <ErrorCard
+            :message="t('error.fetchingData')"
+            :show-go-home="false"
+          />
         </div>
       </v-row>
 
       <!-- Main content: Tabs, search form, and results -->
-      <v-row v-else class="d-flex">
-        <v-col cols="12" md="4" class="mt-4">
+      <v-row
+        v-else
+        class="d-flex"
+      >
+        <v-col
+          cols="12"
+          md="4"
+          class="mt-4"
+        >
           <SearchTabs active-tab="general.message.table-of-content" />
         </v-col>
 
-        <v-col cols="12" md="8" class="mt-6">
+        <v-col
+          cols="12"
+          md="8"
+          class="mt-6"
+        >
           <client-only :placeholder="t('general.loading')">
             <form @submit.prevent="submit">
               <div class="d-flex">
-                <v-text-field v-model.lazy="formValues.judgmentDateStart" v-date-format hint="DD/MM/YYYY"
-                  :label="t('general.message.date-of-judgment-start')" persistent-hint />
+                <v-text-field
+                  v-model.lazy="formValues.judgmentDateStart"
+                  v-date-format
+                  hint="DD/MM/YYYY"
+                  :label="t('general.message.date-of-judgment-start')"
+                  persistent-hint
+                />
                 <span class="px-2" />
-                <v-text-field v-model.lazy="formValues.judgmentDateEnd" v-date-format hint="DD/MM/YYYY"
-                  :label="t('general.message.date-of-judgment-end')" persistent-hint />
+                <v-text-field
+                  v-model.lazy="formValues.judgmentDateEnd"
+                  v-date-format
+                  hint="DD/MM/YYYY"
+                  :label="t('general.message.date-of-judgment-end')"
+                  persistent-hint
+                />
               </div>
 
-              <v-text-field v-model="formValues.searchTerm" :label="t('general.message.search-label')" />
+              <v-text-field
+                v-model="formValues.searchTerm"
+                :label="t('general.message.search-label')"
+              />
 
-              <v-btn type="submit" class="mr-4 submit-button" :loading="loading" :aria-label="t('aria.label.submit')">
+              <v-btn
+                type="submit"
+                class="mr-4 mt-6 submit-button"
+                :loading="loading"
+                :aria-label="t('aria.label.submit')"
+              >
                 {{ t('general.submit') }}
               </v-btn>
 
-              <v-btn v-if="hasResults" class="mr-4" :aria-label="t('aria.label.print')" @click.prevent="print('list')">
-                <v-icon left>mdi-printer</v-icon>
+              <v-btn
+                v-if="hasResults"
+                class="mr-4 mt-6"
+                :aria-label="t('aria.label.print')"
+                @click.prevent="print('list')"
+              >
+                <v-icon left>
+                  mdi-printer
+                </v-icon>
                 {{ t('general.message.print-list') }}
               </v-btn>
             </form>
           </client-only>
 
           <!-- Display search results -->
-          <div v-if="hasResults" ref="list" class="mt-6 print-area">
-            <div v-for="(result, resultIndex) in formattedSearchResult" :key="resultIndex" class="table-container">
+          <div
+            v-if="hasResults"
+            ref="list"
+            class="mt-6 print-area"
+          >
+            <div
+              v-for="(result, resultIndex) in formattedSearchResult"
+              :key="resultIndex"
+              class="table-container"
+            >
               <ul>
-                <li v-for="(title, index) in result.paths" :key="index"
-                  :style="{ marginLeft: `${index * 0.5}em`, marginBottom: '8px' }" :class="`li-l${index + 1}`">
+                <li
+                  v-for="(title, index) in result.paths"
+                  :key="index"
+                  :style="{ marginLeft: `${index * 0.5}em`, marginBottom: '8px' }"
+                  :class="`li-l${index + 1}`"
+                >
                   <span v-if="canDisplayPath(resultIndex, index)">
                     {{ title }}
                   </span>
@@ -65,41 +130,45 @@
                   {{ t('general.message.judgment-number', result.judgments?.length || 0) }}
                   {{ t('general.message.colon').trim() }}
                 </span>
-                <a v-for="judgment in result.judgments" :key="judgment.filePath" :href="judgment.filePath">
+                <a
+                  v-for="judgment in result.judgments"
+                  :key="judgment.filePath"
+                  :href="judgment.filePath"
+                >
                   {{ judgment.label }}
                 </a>
               </div>
             </div>
           </div>
 
-          <div v-if="(loaded && !hasResults) || searchError" class="mt-6">
+          <div
+            v-if="(loaded && !hasResults) || searchError"
+            class="mt-6"
+          >
             <EmptyComponent />
           </div>
         </v-col>
-
       </v-row>
     </v-row>
-
   </v-container>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, watch } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BannerImage from '../../components/BannerImage.vue'
 import ErrorCard from '../../components/ErrorCard.vue'
 import EmptyComponent from '../../components/EmptyComponent.vue'
+import { ApiUrl } from '../../core/constants'
 import img from '~/assets/img/banner-text.png'
-import { ApiUrl, RoutePathKeys } from "../../core/constants";
 
 const { t, locale } = useI18n()
-const localePath = useLocalePath()
 
 // Reactive form data
 const formValues = reactive({
   judgmentDateStart: '',
   judgmentDateEnd: '',
-  searchTerm: ''
+  searchTerm: '',
 })
 
 // State variables for search
@@ -111,7 +180,7 @@ const searchResponse = ref(null)
 // Compute search results and whether there are any
 const formattedSearchResult = computed(() => {
   return searchResponse.value?.value || []
-}
+},
 
 )
 const hasResults = computed(() => {
@@ -130,14 +199,13 @@ function canDisplayPath(resultIndex: number, pathIndex: number): boolean {
     return true
   }
   return (
-    previousResult.paths[pathIndex] !== currentResult.paths[pathIndex] ||
-    previousResult.paths[pathIndex - 1] !== currentResult.paths[pathIndex - 1]
+    previousResult.paths[pathIndex] !== currentResult.paths[pathIndex]
+    || previousResult.paths[pathIndex - 1] !== currentResult.paths[pathIndex - 1]
   )
 }
 
 // Handle form submission
 async function submit() {
-
   loading.value = true
   loaded.value = false
   searchError.value = null
@@ -149,8 +217,8 @@ async function submit() {
     // Convert dates from DD/MM/YYYY to YYYY-MM-DD and put in array
     judgmentDates: [
       formValues.judgmentDateStart ? formValues.judgmentDateStart.split('/').reverse().join('-') : '',
-      formValues.judgmentDateEnd ? formValues.judgmentDateEnd.split('/').reverse().join('-') : ''
-    ]
+      formValues.judgmentDateEnd ? formValues.judgmentDateEnd.split('/').reverse().join('-') : '',
+    ],
   }
 
   try {
@@ -162,9 +230,11 @@ async function submit() {
 
     loaded.value = true
     searchResponse.value = data
-  } catch (err) {
+  }
+  catch (err) {
     searchError.value = err
-  } finally {
+  }
+  finally {
     loading.value = false
   }
 }
@@ -179,9 +249,9 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: t('menu.search.title') || ''
-    }
-  ]
+      content: t('menu.search.title') || '',
+    },
+  ],
 })
 </script>
 
@@ -207,10 +277,6 @@ useHead({
 
 .nuxt-content {
   padding-top: 32px;
-}
-
-button {
-  margin-top: 24px;
 }
 
 .submit-button {
