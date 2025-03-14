@@ -78,7 +78,7 @@
             </div>
             <v-btn
               type="submit"
-              class="mr-4 submit-button"
+              class="mr-4 mt-6 submit-button"
               :loading="loading"
               :aria-label="t('aria.label.submit')"
             >
@@ -86,7 +86,7 @@
             </v-btn>
             <v-btn
               v-if="hasJudgments || hasPendingCases"
-              class="mr-4"
+              class="mr-4 mt-6"
               :aria-label="t('aria.label.print')"
               @click.prevent="print('list')"
             >
@@ -103,7 +103,7 @@
           ref="list"
           v-model="selectedTab"
           :vertical="false"
-          class="my-6"
+          class="my-6 mb-8"
         >
           <v-tab
             v-if="hasPendingCases"
@@ -333,21 +333,9 @@ function print(refName: string) {
   padding-top: 32px;
 }
 
-.v-tabs {
-  margin-bottom: 32px;
-}
-
-button {
-  margin-top: 24px;
-}
-
 .submit-button {
   background: $indigo !important;
   color: white;
-}
-
-.v-input {
-  // margin: 32px 0 !important;
 }
 
 .d-flex .v-input__slot {
