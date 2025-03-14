@@ -250,7 +250,7 @@ const hasPendingCases = computed(() => {
   console.log('searchPendingCasesResponse: ', searchPendingCasesResponse.value?.value)
   return searchPendingCasesResponse.value?.value?.length > 0
 })
-const hasJudgments = computed(() => searchJudgmentsResponse.value.value?.length > 0)
+const hasJudgments = computed(() => searchJudgmentsResponse.value?.value?.length > 0)
 
 // Watchers
 watch(
