@@ -206,6 +206,7 @@ onUpdated(() => {
     transition: transform 0.2s linear;
   }
   h4 {
+    font-size: 14px;
     transition: font-size 0.2s linear, font-weight 0.2s linear;
   }
 
@@ -215,9 +216,7 @@ onUpdated(() => {
     }
 
     h4 {
-      // padding-top: 1rem;
-      // padding-bottom: 24px;
-      font-size: 2rem;
+      font-size: 24px;
       font-weight: 600;
       @include tablet-portrait {
         padding-top: 24px;

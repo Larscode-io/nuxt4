@@ -1,92 +1,36 @@
 <template>
-  <v-container
-    fluid
-    class="fill-height pa-0 d-block"
-  >
-    <BannerImage
-      :title="t('menu.search.title')"
-      :description="t('menu.search.title-description')"
-      :image="img"
-    />
-    <v-row
-      v-if="pending"
-      class="row d-flex"
-      align="flex-start"
-      justify="center"
-    >
+  <v-container fluid class="fill-height pa-0 d-block">
+    <BannerImage :title="t('menu.search.title')" :description="t('menu.search.title-description')" :image="img" />
+    <v-row v-if="pending" class="row d-flex" align="flex-start" justify="center">
       <v-col class="col-12 col-md-12">
-        <v-skeleton-loader
-          class="mx-auto"
-          max-width="300"
-          type="article"
-        />
+        <v-skeleton-loader class="mx-auto" max-width="300" type="article" />
       </v-col>
     </v-row>
     <v-row class="row d-flex">
-      <v-col
-        cols="12"
-        md="4"
-        class="mt-4"
-      >
+      <v-col cols="12" md="4" class="mt-4">
         <SearchTabs active-tab="general.message.full-text-of-judgments" />
       </v-col>
-      <v-col
-        cols="12"
-        md="8"
-        class="mt-6"
-      >
+      <v-col cols="12" md="8" class="mt-6">
         <ClientOnly :placeholder="t('general.loading')">
           <form @submit.prevent="submit">
-            <v-text-field
-              v-model="payload.term"
-              name="inputfield"
-              :label="t('general.message.search-label')"
-              :error-messages="formErrors.term"
-            />
+            <v-text-field v-model="payload.term" name="inputfield" :label="t('general.message.search-label')"
+              :error-messages="formErrors.term" />
 
-            <v-radio-group
-              v-model="payload.sort"
-              inline
-              :error="!!formErrors.sort"
-            >
-              <v-radio
-                v-for="sort of sorts"
-                :key="sort.id"
-                class="mr-2 text-gray"
-                color="primary"
-                :label="sort.label"
-                :value="sort.value"
-                name="type"
-                required
-                :disabled="loading"
-              />
+            <v-radio-group v-model="payload.sort" inline :error="!!formErrors.sort">
+              <v-radio v-for="sort of sorts" :key="sort.id" class="mr-2 text-gray" color="primary" :label="sort.label"
+                :value="sort.value" name="type" required :disabled="loading" />
             </v-radio-group>
 
-            <section
-              v-if="hasContent"
-              class="col-12 col-md-12"
-            >
-              <ContentRenderer
-                :value="page"
-                class="pt-8"
-              />
+            <section v-if="hasContent" class="col-12 col-md-12">
+              <ContentRenderer :value="page" class="pt-8" />
             </section>
 
-            <v-btn
-              name="knop"
-              type="submit"
-              class="mr-4 mt-4 submit-button"
-              :loading="loading"
-              :aria-label="t('aria-label-submit')"
-            >
+            <v-btn name="knop" type="submit" class="mr-4 mt-4 submit-button" :loading="loading"
+              :aria-label="t('aria-label-submit')">
               {{ t('general.submit') }}
             </v-btn>
 
-            <v-btn
-              v-if="hasResults"
-              class="mr-4 mt-4"
-              @click.prevent="print('list')"
-            >
+            <v-btn v-if="hasResults" class="mr-4 mt-4" @click.prevent="print('list')">
               <v-icon left>
                 mdi-printer
               </v-icon>
@@ -96,27 +40,12 @@
             </v-btn>
           </form>
         </ClientOnly>
-        <div
-          v-if="hasResults"
-          ref="list"
-          class="mt-6 print-area"
-        >
-          <FullTextSearchJudgmentCard
-            v-for="result of formattedSearchResult"
-            :key="result.id"
-            :search-term="payload.term"
-            :pdf-url="result.filePath"
-            :date="result.formatedJudmentDate"
-            :title="result.fileName"
-            :score="result.score"
-            :description="result.highlightHTML"
-            :page-count="result.pageCount"
-          />
+        <div v-if="hasResults" ref="list" class="mt-6 print-area">
+          <FullTextSearchJudgmentCard v-for="result of formattedSearchResult" :key="result.id" :search-term="payload.term"
+            :pdf-url="result.filePath" :date="result.formatedJudmentDate" :title="result.fileName" :score="result.score"
+            :description="result.highlightHTML" :page-count="result.pageCount" />
         </div>
-        <div
-          v-if="(loaded && !hasResults) || searchError"
-          class="mt-6"
-        >
+        <div v-if="(loaded && !hasResults) || searchError" class="mt-6">
           <EmptyComponent />
         </div>
       </v-col>
