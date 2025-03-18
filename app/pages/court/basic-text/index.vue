@@ -1,6 +1,6 @@
 <!-- Content based Page -->
 <template>
-  <div>
+  <div class="basicTextWrapper">
     <BannerImage
       v-if="page"
       :title="page.title"
@@ -48,7 +48,7 @@
         <v-col
           v-if="hasSidebarLinks"
           cols="12"
-          md="3"
+          md="4"
         >
           <Sidebar
             :active="currentActiveContentInToc"
@@ -59,7 +59,7 @@
         <v-col
           v-if="hasSidebarLinks"
           cols="12"
-          md="9"
+          md="8"
         >
           <article v-if="page">
             <ContentRendererMarkdown
@@ -167,6 +167,7 @@ onUpdated(() => {
 </script>
 
 <style lang="scss" scoped>
+
 .d-flex {
   max-width: 1260px !important;
   margin: auto;
@@ -187,6 +188,7 @@ onUpdated(() => {
   }
   h4 {
     text-align: left;
+    font-weight: 400;
   }
 
   .accordion-trigger {
@@ -314,5 +316,10 @@ onUpdated(() => {
 }
 .space {
   height: 40vh;
+}
+
+.nuxt-content p {
+  text-indent: 1rem;
+  margin-bottom: 16px;
 }
 </style>

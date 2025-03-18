@@ -57,22 +57,20 @@
               {{ t('general.message.presidents') }}
             </h4>
 
-            <div class="d-flex justify-space-between flex-wrap">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusPresidents" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
             <h4 class="heading-h3">
               {{ t('general.message.judges') }}
             </h4>
 
-            <div class="d-flex justify-space-between flex-wrap">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusJudges" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
 
@@ -80,22 +78,20 @@
               {{ t('general.message.legal-secretaries') }}
             </h4>
 
-            <div class="d-flex justify-space-between flex-wrap">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusOfficeStaffMembers" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
             <h4 class="heading-h3">
               {{ t('general.message.registrars') }}
             </h4>
 
-            <div class="lowImageGallery">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersEmeritusRegistrars" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
             <div class="section-content nuxt-content">
@@ -108,22 +104,22 @@
               {{ t('general.message.presidents') }}
             </h4>
 
-            <div class="d-flex justify-space-between flex-wrap">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersHistoricPresidents" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :startDate="member.startDate" :endDate="member.endDate"
+                :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
             <h4 class="heading-h3">
               {{ t('general.message.judges') }}
             </h4>
 
-            <div class="d-flex justify-space-between flex-wrap">
+            <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard v-for="member of membersHistoricJudges" :headline-level="5" :slug="member.slug"
                 :infos="getInfo(member.infos)" :isSmall="true" :name="member.name" :with-image="false"
-                :jobTitle="member.role" :startDate="member.startDate" :endDate="member.endDate" :isAlive="member.isAlive"
-                :femaleTitle="member.femaleTitle" />
+                :jobTitle="member.role" :lang="member.lang" :startDate="member.startDate" :endDate="member.endDate"
+                :isAlive="member.isAlive" :femaleTitle="member.femaleTitle" />
             </div>
 
           </v-row>
@@ -199,23 +195,35 @@ const startIntersectionObserver = () => {
   });
 };
 
+<<<<<<< HEAD
 const alternateLang = (mems: any) => {
+=======
+const alternateLang = (mems: Member[]): Member[] => {
+>>>>>>> feature/presentation-organization
   let startLang: string;
   if (locale.value === Languages.FRENCH || locale.value === Languages.GERMAN) {
-    startLang = Languages.FRENCH
+    startLang = Languages.FRENCH;
   } else {
-    startLang = Languages.DUTCH
+    startLang = Languages.DUTCH;
   }
   const altLang = startLang === 'fr' ? 'nl' : 'fr',
+<<<<<<< HEAD
     p = mems.filter((m: { lang: string; }) => m.lang === startLang),
     s = mems.filter((m: { lang: string; }) => m.lang === altLang),
     r = [];
+=======
+    p = mems.filter(m => m.lang === startLang),
+    s = mems.filter(m => m.lang === altLang),
+    r: Member[] = [];
+
+>>>>>>> feature/presentation-organization
   for (let i = 0; i < Math.max(p.length, s.length); i++) {
-    p[i] && r.push(p[i]);
-    s[i] && r.push(s[i]);
+    p[i] && r.push(p[i]!);  // same check + non-null assertion
+    s[i] && r.push(s[i]!);  // same check + non-null assertion
   }
   return r;
-}
+};
+
 
 const updateMembers = () => {
   const filterByRole = (response: any, roles: string[]): Member[] => {
@@ -235,11 +243,6 @@ const updateMembers = () => {
   officeStaffMembers.value = alternateLang(filterByRole(membersResponse.value, ['legalSecretaries']));
   registrarMembers.value = alternateLang(filterByRole(membersResponse.value, ['registrars']));
 };
-
-watch(locale, (newVal, oldVal) => {
-  console.log('locale changed', newVal, oldVal);
-  updateMembers()
-});
 
 const getInfo = (infos: Infos) => {
   if (!infos) {
@@ -339,23 +342,25 @@ onMounted(() => {
 
 .heading-h3 {
   width: 100%;
-  ;
 }
 
 .gallery {
   padding: 0 16px;
 }
 
-.lowImageGallery {
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
+@media (max-width: 579px) {
+  .gallery {
+    width: 100%;
+    float: none;
+    justify-content: center !important;
+  }
 }
 
 @media (max-width: 480px) {
   .gallery {
     width: 100%;
     float: none;
+    justify-content: center !important;
   }
 
   .left-column,

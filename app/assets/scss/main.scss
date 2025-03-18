@@ -70,6 +70,40 @@ body {
   font-family: "Proxima Nova", sans-serif;
 }
 
+// content
+code,
+.code {
+  background-color: #f2f2f2;
+  padding: 2px 6px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.content-wrapper .nuxt-content h3 a {
+  text-decoration: none;
+}
+
+code,
+.code {
+  background-color: #f2f2f2;
+  padding: 2px 6px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.basicTextWrapper .nuxt-content p {
+  text-indent: 1rem;
+  margin-bottom: 16px;
+}
+
+.basicTextWrapper p a {
+  color: #00709d;
+}
+
+h3 a:hover {
+  text-decoration: none;
+}
+
 // Form styles
 .v-label {
   color: rgba(0, 0, 0, 0.6) !important;
