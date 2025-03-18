@@ -182,7 +182,6 @@ import { ApiUrl } from '../../core/constants'
 import { to } from '../../core/utilities'
 import img from '@/assets/img/banner-text.png'
 
-// Validation with vee-validate is replaced with simple state management
 const judgmentDateErrors = ref<string[]>([])
 const keywordsErrors = ref<string[]>([])
 const summaryErrors = ref<string[]>([])
@@ -215,8 +214,6 @@ const isFormInvalid = computed(() => {
 })
 
 const formattedSearchResult = computed(() => {
-  console.log('---- ', searchResponse.value)
-  console.log('---- 2 ', searchResponse.value?.data)
   return searchResponse.value?.data || []
 })
 
@@ -246,7 +243,6 @@ function getId(val = '') {
 }
 
 async function submit() {
-  // Simple validation
   const valid = true
 
   judgmentDateErrors.value = []

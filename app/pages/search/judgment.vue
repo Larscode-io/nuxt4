@@ -3,7 +3,6 @@
     fluid
     class="min-h-screen pa-0 d-block"
   >
-    <!-- Banner, etc. - will not show in print -->
     <BannerImage
       :title="t('menu.search.title')"
       :description="t('menu.search.title-description')"
@@ -11,8 +10,7 @@
       class="non-printable"
       :alt="t('alt.banner.books')"
     />
-
-    <!-- Loading / Error states - also hidden in print -->
+    
     <v-row
       v-if="pending"
       class="non-printable d-flex"
@@ -47,7 +45,6 @@
       class="d-flex"
       justify="center"
     >
-      <!-- Left Column (Tabs, etc.) - hidden in print -->
       <v-col
         cols="12"
         md="4"
@@ -55,8 +52,6 @@
       >
         <SearchTabs active-tab="general.message.judgment" />
       </v-col>
-
-      <!-- Right Column: Form + Search results -->
       <v-col
         cols="12"
         md="8"
@@ -67,7 +62,6 @@
           class="non-printable"
         >
           <form @submit.prevent="submit">
-            <!-- Radio group for search type -->
             <v-radio-group
               v-model="payload.type"
               inline
@@ -86,7 +80,6 @@
               />
             </v-radio-group>
 
-            <!-- Applicant fields (if search type is applicant) -->
             <div v-if="isSearchJudgmentsTypeApplicant">
               <v-select
                 v-model="payload.applicantTypes"
@@ -109,7 +102,6 @@
               />
             </div>
 
-            <!-- Jurisdiction fields (if search type is jurisdiction) -->
             <div v-if="isSearchJudgmentsTypeJurisdiction">
               <v-select
                 v-model="payload.jurisdiction"
@@ -151,7 +143,6 @@
               </div>
             </div>
 
-            <!-- Common fields -->
             <v-text-field
               v-model="payload.judgmentNumber"
               :label="t('general.message.judgment-number')"
@@ -230,7 +221,6 @@
               />
             </div>
 
-            <!-- Submit & Print Buttons -->
             <v-btn
               type="submit"
               class="mr-4 submit-button"
@@ -257,7 +247,6 @@
           </form>
         </client-only>
 
-        <!-- Search Results (print-area) -->
         <div
           v-if="hasResults"
           ref="list"
@@ -316,7 +305,6 @@ import ErrorCard from '../../components/ErrorCard.vue'
 import EmptyComponent from '../../components/EmptyComponent.vue'
 import BannerImage from '../../components/BannerImage.vue'
 import SearchTabs from '../../components/SearchTabs.vue'
-// Import will be added by you later
 import { printContent } from '../../utils/searchUtils'
 import img from '~/assets/img/banner-text.png'
 
@@ -364,7 +352,6 @@ const errors = ref({
 watch(
   () => payload.type,
   (val) => {
-    // reset relevant fields if needed
     payload.judgmentNumber = null
     payload.rollNumber = null
     payload.applicant = null
@@ -380,7 +367,6 @@ watch(
   },
 )
 
-// Pull static data (judgment types, applicant lists, etc.)
 const { data: asyncData, error: asyncError } = useAsyncData(() =>
   Promise.all([
     $fetch<JudgmentType[]>(`http://localhost:3000${ApiUrl.judgmentTypes}?lang=${locale.value}`),
@@ -441,7 +427,6 @@ const formattedSearchResult = computed(() => {
 
 const hasResults = computed(() => formattedSearchResult.value.length > 0)
 
-// Submission
 async function submit() {
   loading.value = true
   loaded.value = false
@@ -449,7 +434,6 @@ async function submit() {
   searchResponse.value = null
 
   try {
-    // format user-provided dd/mm/yyyy into yyyy-mm-dd
     const formatDates = (dates: string[]) => dates.map(d => d ? d.split('/').reverse().join('-') : '')
 
     const { data: response, error } = await cPost(

@@ -267,13 +267,6 @@ const validateForm = () => {
 
   const isValid = true
 
-  // Add validation logic here as needed
-  // Example:
-  // if (!payload.searchTerm) {
-  //   errors.searchTerm = t('general.message.required-field')
-  //   isValid = false
-  // }
-
   return isValid
 }
 

@@ -215,7 +215,7 @@ function navigate(id: number) {
   }
 
   p {
-    font-size: 1.125rem;
+    font-size: 16px;
     line-height: 20px;
     text-align: left;
     margin-bottom: 20px;
@@ -233,14 +233,12 @@ function navigate(id: number) {
   .subtitle {
     text-align: left;
     margin-bottom: 8px;
-    font-size: 0.875rem;
     line-height: 20px;
     font-weight: 400;
     word-break: break-word;
   }
 
   .state {
-    font-size: 0.875rem;
     line-height: 20px;
     color: $errorRed;
     font-style: italic;
@@ -255,7 +253,6 @@ function navigate(id: number) {
 
     .v-chip__content {
       font-weight: 600;
-      font-size: 0.875rem !important;
     }
 
     &:hover {
@@ -273,7 +270,6 @@ function navigate(id: number) {
   }
 
   .py-4 {
-    font-size: 0.875rem;
     line-height: 20px;
   }
 

@@ -1,5 +1,3 @@
-const apiUrl = "http://localhost:3000";
-
 export async function fetchMultipleByPaths(paths: any[]) {
   try {
     const docs = await Promise.all(
@@ -28,10 +26,6 @@ export const cFetch = (
 ) => {
   const config = useRuntimeConfig();
   const apiUrl = config.public.apiBaseUrl || "";
-
-  console.log("config.public.apiBaseUrl: ", config.public.apiBaseUrl);
-
-  console.log(`${apiUrl}${url}`);
   return useFetch(`${apiUrl}${url}`, {
     method,
     ...options,

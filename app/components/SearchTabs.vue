@@ -9,7 +9,6 @@
 import { computed, ref, watch } from 'vue';
 import { RoutePathKeys } from "../core/constants";
 
-// Define props for active tab
 const props = defineProps({
     activeTab: {
         type: String,
@@ -17,11 +16,9 @@ const props = defineProps({
     }
 });
 
-// Get language utilities
 const { t } = useLanguage();
 const localePath = useLocalePath();
 
-// The 6 search tabs as specified
 const searchTabs = [
     { id: "general.message.judgment", to: RoutePathKeys.searchJudgment },
     { id: "general.message.standard", to: RoutePathKeys.searchStandard },
@@ -31,7 +28,6 @@ const searchTabs = [
     { id: "general.message.keywords-judgments-pending-cases", to: RoutePathKeys.searchJudgmentsAndPendingCases },
 ];
 
-// Transform tabs with proper localization
 const tabs = computed(() =>
     searchTabs.map((tab) => ({
         id: tab.id,
@@ -40,10 +36,8 @@ const tabs = computed(() =>
     }))
 );
 
-// Handle active tab
 const activeTabModel = ref(props.activeTab || searchTabs[0].id);
 
-// Watch for prop changes to update internal state
 watch(() => props.activeTab, (newValue) => {
     if (newValue) {
         activeTabModel.value = newValue;

@@ -40,13 +40,10 @@
 </template>
   
 <script setup lang="ts">
-// Import constants
 import { EMPTY_VALUE } from '../../server/constants';
 
-// Composables
 const { t, locale } = useLanguage();
 
-// Define props using TypeScript interface
 interface Props {
   id: number;
   judgmentNumber: string;
@@ -58,7 +55,6 @@ interface Props {
   belgianOfficialPage?: string;
 }
 
-// Define props with defaults
 const props = withDefaults(defineProps<Props>(), {
   rollNumbers: () => [],
   judgmentTypes: () => [],
@@ -66,11 +62,10 @@ const props = withDefaults(defineProps<Props>(), {
   belgianOfficialPage: '',
 });
 
-// Constants
 const emptyValue = EMPTY_VALUE;
 </script>
   
-<style lang="scss">
+<style scoped lang="scss">
 .search-result-card {
   color: black !important;
   padding: 40px;
@@ -125,11 +120,6 @@ const emptyValue = EMPTY_VALUE;
     justify-content: space-between;
   }
 }
-
-// .v-icon {
-//   width: 24px;
-//   margin-right: 24px;
-// }
 
 a {
   text-decoration: none;
