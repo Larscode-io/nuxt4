@@ -35,7 +35,7 @@
         md="8"
         class="mt-6"
       >
-        <ClientOnly :placeholder="'general.loading'">
+        <ClientOnly :placeholder="t('general.loading')">
           <form @submit.prevent="submit">
             <v-text-field
               v-model="payload.term"

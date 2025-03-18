@@ -195,11 +195,7 @@ const startIntersectionObserver = () => {
   });
 };
 
-<<<<<<< HEAD
-const alternateLang = (mems: any) => {
-=======
 const alternateLang = (mems: Member[]): Member[] => {
->>>>>>> feature/presentation-organization
   let startLang: string;
   if (locale.value === Languages.FRENCH || locale.value === Languages.GERMAN) {
     startLang = Languages.FRENCH;
@@ -207,16 +203,9 @@ const alternateLang = (mems: Member[]): Member[] => {
     startLang = Languages.DUTCH;
   }
   const altLang = startLang === 'fr' ? 'nl' : 'fr',
-<<<<<<< HEAD
     p = mems.filter((m: { lang: string; }) => m.lang === startLang),
     s = mems.filter((m: { lang: string; }) => m.lang === altLang),
     r = [];
-=======
-    p = mems.filter(m => m.lang === startLang),
-    s = mems.filter(m => m.lang === altLang),
-    r: Member[] = [];
-
->>>>>>> feature/presentation-organization
   for (let i = 0; i < Math.max(p.length, s.length); i++) {
     p[i] && r.push(p[i]!);  // same check + non-null assertion
     s[i] && r.push(s[i]!);  // same check + non-null assertion
