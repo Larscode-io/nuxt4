@@ -225,7 +225,7 @@ function navigate(id: number) {
 
       .v-icon {
         margin-right: 20px;
-        padding-bottom: 8px;
+        padding-bottom: 3px;
       }
     }
   }
