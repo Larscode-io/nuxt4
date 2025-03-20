@@ -1,61 +1,179 @@
 @font-face {
-    font-family: 'Tiempos Headline';
-    src: url('/nuxt/fonts/TiemposHeadline/TiemposHeadline-Semibold.woff') format('woff'),
-        url('https://www.const-court.be/public/fonts/TiemposHeadline/TiemposHeadline-Semibold.woff') format('woff');
-    font-weight: 600;
-    /* Semibold corresponds to 600 */
-    font-style: normal;
-    font-display: swap;
+  font-family: "Tiempos Headline";
+  src: url("/nuxt/fonts/TiemposHeadline/TiemposHeadline-Semibold.woff")
+      format("woff"),
+    url("https://www.const-court.be/public/fonts/TiemposHeadline/TiemposHeadline-Semibold.woff")
+      format("woff");
+  font-weight: 600;
+  /* Semibold corresponds to 600 */
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Tiempos Headline';
-    src: url('/nuxt/fonts/TiemposHeadline/TiemposHeadline-SemiboldItalic.woff') format('woff'),
-        url('https://www.const-court.be/public/fonts/TiemposHeadline/TiemposHeadline-SemiboldItalic.woff') format('woff');
-    font-weight: 600;
-    /* Semibold corresponds to 600 */
-    font-style: italic;
-    font-display: swap;
+  font-family: "Tiempos Headline";
+  src: url("/nuxt/fonts/TiemposHeadline/TiemposHeadline-SemiboldItalic.woff")
+      format("woff"),
+    url("https://www.const-court.be/public/fonts/TiemposHeadline/TiemposHeadline-SemiboldItalic.woff")
+      format("woff");
+  font-weight: 600;
+  /* Semibold corresponds to 600 */
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('/nuxt/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
-        url('/nuxt/fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2')
-        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2'),
-        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff');
-    font-weight: 400;
-    /* Regular corresponds to 400 */
-    font-style: normal;
-    font-display: swap;
+  font-family: "Proxima Nova";
+  src: url("/nuxt/fonts/ProximaNova/ProximaNova-Regular.woff") format("woff"),
+    url("/nuxt/fonts/ProximaNova/ProximaNova-Regular.woff2") format("woff2")
+      url("https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Regular.woff2")
+      format("woff2"),
+    url("https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Regular.woff")
+      format("woff");
+  font-weight: 400;
+  /* Regular corresponds to 400 */
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('/nuxt/fonts/ProximaNova/ProximaNova-SemiBold.woff') format('woff'),
-        url('/nuxt/fonts/ProximaNova/ProximaNova-SemiBold.woff2') format('woff2'),
-        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-SemiBold.woff') format('woff'),
-        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    /* Semibold corresponds to 600 */
-    font-style: normal;
-    font-display: swap;
+  font-family: "Proxima Nova";
+  src: url("/nuxt/fonts/ProximaNova/ProximaNova-SemiBold.woff") format("woff"),
+    url("/nuxt/fonts/ProximaNova/ProximaNova-SemiBold.woff2") format("woff2"),
+    url("https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-SemiBold.woff")
+      format("woff"),
+    url("https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-SemiBold.woff2")
+      format("woff2");
+  font-weight: 600;
+  /* Semibold corresponds to 600 */
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('/nuxt/fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
-        url('/nuxt/fonts/ProximaNova/ProximaNova-Bold.woff2') format('woff2'),
-        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
-        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Bold.woff2') format('woff2');
-    font-weight: 700;
-    /* Bold corresponds to 700 */
-    font-style: normal;
-    font-display: swap;
+  font-family: "Proxima Nova";
+  src: url("/nuxt/fonts/ProximaNova/ProximaNova-Bold.woff") format("woff"),
+    url("/nuxt/fonts/ProximaNova/ProximaNova-Bold.woff2") format("woff2"),
+    url("https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Bold.woff")
+      format("woff"),
+    url("https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Bold.woff2")
+      format("woff2");
+  font-weight: 700;
+  /* Bold corresponds to 700 */
+  font-style: normal;
+  font-display: swap;
 }
 
 // // This rule ensures that non-Vuetify parts of your app (e.g., custom HTML or non-Vuetify components)
 // // use Proxima Nova  because it uses Roboto by default.
 body {
-    font-family: 'Proxima Nova', sans-serif;
+  font-family: "Proxima Nova", sans-serif;
+}
+
+// content
+code,
+.code {
+  background-color: #f2f2f2;
+  padding: 2px 6px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.content-wrapper .nuxt-content h3 a {
+  text-decoration: none;
+}
+
+code,
+.code {
+  background-color: #f2f2f2;
+  padding: 2px 6px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.basicTextWrapper .nuxt-content p {
+  text-indent: 1rem;
+  margin-bottom: 16px;
+}
+
+.basicTextWrapper p a {
+  color: #00709d;
+}
+
+h3 a:hover {
+  text-decoration: none;
+}
+
+// Form styles
+.v-label {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+.v-field__field,
+.v-field__overlay {
+  background-color: white !important;
+}
+label.v-label.v-field-label {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.vertical-tabs .v-list-item {
+  cursor: pointer;
+}
+
+.vertical-tabs .v-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.v-tab__slider {
+  background-color: #0078d4 !important;
+}
+
+.v-tab--selected .v-btn__content {
+  color: #0078d4 !important;
+}
+
+.v-tab {
+  text-transform: none !important;
+  text-decoration: none !important;
+  justify-content: center !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.vertical-tabs .v-list-item {
+  cursor: pointer !important;
+}
+
+.vertical-tabs .v-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.v-input {
+  margin: 20px 0 !important;
+  box-shadow: none !important;
+}
+
+ul, li {
+  padding: revert;
+}
+
+.no-decoration {
+  text-decoration: none !important; 
+}
+
+.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.link {
+  color: #0078d4;
 }

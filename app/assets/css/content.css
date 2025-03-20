@@ -1,0 +1,53 @@
+.content-wrapper .container {
+  padding: 0 !important;
+}
+
+@media (max-width: 960px) {
+  .content-wrapper .container {
+    padding: 32px;
+  }
+}
+
+.content-wrapper .d-flex {
+  max-width: 1260px !important;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 960px) {
+  .content-wrapper .d-flex {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+}
+
+.content-wrapper .nuxt-content h3 {
+  padding-top: 32px;
+  padding-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .content-wrapper .nuxt-content h3 {
+    padding-top: 24px;
+    padding-bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 960px) {
+    .content-wrapper .nuxt-content h3 {
+      padding-top: 24px;
+      padding-bottom: 16px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .content-wrapper .nuxt-content h3 a {
+    text-decoration: none;
+  }
+
+  /* .content-wrapper .nuxt-content p {
+    padding: 10px;
+  } */
+}
