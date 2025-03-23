@@ -73,7 +73,7 @@ const encode = (link: string): string => {
     width: 100%;
     top: 20px;
     position: sticky;
-    top: 162px;
+    top: 1px;
     li {
       margin-bottom: 24px;
       list-style-type: none;
