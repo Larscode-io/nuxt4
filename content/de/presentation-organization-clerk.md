@@ -2,6 +2,7 @@
 title: Organisation des Verfassungsgerichtshofes
 description: Organisation des Verfassungsgerichtshofes
 posterUrl: ~/assets/img/newsletter-background.png
+locale: de
 ---
 
 ### Die Kanzler
