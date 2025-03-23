@@ -39,7 +39,6 @@
 </template>
 
 <script setup lang="ts">
-// import AnnualReportCard from '../../components/AnnualReportCard.vue'
 import img from '~/assets/img/banner-media.png'
 import { ApiUrl, DISCOURS_WORDS_FOR_FILTERING } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
