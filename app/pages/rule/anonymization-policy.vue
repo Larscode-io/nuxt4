@@ -9,19 +9,7 @@
     <v-container class="flex-column align-start flex-nowrap">
       <v-row>
         <v-col
-          v-if="hasSidebarLinks"
           cols="12"
-          md="4"
-        >
-          <Sidebar
-            :active="currentActiveContentInToc"
-            :toc="sideBarLinks"
-            @click="updateCurrentActiveContentInToc"
-          />
-        </v-col>
-        <v-col
-          cols="12"
-          md="8"
         >
           <article v-if="page">
             <ContentRendererMarkdown
@@ -72,14 +60,12 @@ const sideBarLinks = computed(() => {
     ?.filter(toc => toc.depth === 3)
     ?.map((toc) => {
       return {
-        ...toc,
         id: toc.id,
         text: toc.text ? toc.text.split('.')[1]?.trim() || '' : '',
       }
     }) || []
   return r
 })
-const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
 
 const updateCurrentActiveContentInToc = (section: string) => {

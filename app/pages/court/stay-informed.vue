@@ -36,8 +36,6 @@ const sideBarLinks = computed(() => {
   if (!page.value) {
     return []
   }
-  // log toc in body
-  console.log('page.value.body.toc', page.value.body.toc)
   const links = page.value?.body?.toc?.links
     ?.filter(toc => toc.depth === 3)
     ?.map((toc) => {
@@ -46,7 +44,6 @@ const sideBarLinks = computed(() => {
         text: toc.text && toc.text.trim() ? toc.text.trim() : 'Untitled',
       }
     }) || []
-  console.log('links', links)
   return links
 })
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
