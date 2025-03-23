@@ -38,6 +38,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
           {{ t('menu.decisions.title') }}
         </h2>
       </div>
+
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
