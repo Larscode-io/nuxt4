@@ -31,7 +31,7 @@ const sideBarLinks = computed(() => {
   if (!page.value) {
     return []
   }
-  const x = extractSideBarLinks(page)
+  return extractSideBarLinks(page)
 })
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
