@@ -7,7 +7,7 @@
       readonly
       :aria-label="ariaLabel"
       @update:model-value="handleChange"
-      :title="'none needed'"
+      :title="'none'"
     />
   </v-locale-provider>
 </template>
