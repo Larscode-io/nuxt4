@@ -36,15 +36,18 @@ const sideBarLinks = computed(() => {
   if (!page.value) {
     return []
   }
-  return page.value?.body?.toc?.links
+  // log toc in body
+  console.log('page.value.body.toc', page.value.body.toc)
+  const links = page.value?.body?.toc?.links
     ?.filter(toc => toc.depth === 3)
     ?.map((toc) => {
       return {
-        ...toc,
         id: toc.id,
-        text: toc.text ? toc.text.split('.')[1]?.trim() || 'Untitled' : 'Untitled',
+        text: toc.text && toc.text.trim() ? toc.text.trim() : 'Untitled',
       }
     }) || []
+  console.log('links', links)
+  return links
 })
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
