@@ -2,7 +2,7 @@
 import { ref, computed, onMounted, onUpdated } from 'vue'
 import img from '~/assets/img/newsletter-background-opt.png'
 import { useLanguage } from '@/composables/useLanguage'
-import { extractSideBarLinks } from '~/utils/contentUtils';
+import { extractSideBarLinks } from '../utils/contentUtils';
 
 const props = defineProps<{ contentPath: string }>()
 

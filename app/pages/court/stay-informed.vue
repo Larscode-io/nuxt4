@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import BannerImage from '~/components/BannerImage.vue'
-// import ErrorCard from '~/components/ErrorCard.vue'
-// import EmptyComponent from '~/components/EmptyComponent.vue'
 import img from '~/assets/img/newsletter-background-opt.png'
 import { ContentKeys } from '~/core/constants'
 import { useLanguage } from '@/composables/useLanguage'
+import { extractSideBarLinks } from '../../utils/contentUtils';
 
 const { locale } = useLanguage()
 const route = useRoute()
@@ -36,16 +34,9 @@ const sideBarLinks = computed(() => {
   if (!page.value) {
     return []
   }
-  const links = page.value?.body?.toc?.links
-    ?.filter(toc => toc.depth === 3)
-    ?.map((toc) => {
-      return {
-        id: toc.id,
-        text: toc.text && toc.text.trim() ? toc.text.trim() : 'Untitled',
-      }
-    }) || []
-  return links
+  return extractSideBarLinks(page)
 })
+
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
 
