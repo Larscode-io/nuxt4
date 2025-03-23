@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onUpdated } from 'vue'
 import img from '~/assets/img/newsletter-background-opt.png'
 import { useLanguage } from '@/composables/useLanguage'
+import { extractSideBarLinks } from '~/utils/contentUtils';
 
 const props = defineProps<{ contentPath: string }>()
 
@@ -30,16 +31,7 @@ const sideBarLinks = computed(() => {
   if (!page.value) {
     return []
   }
-  const r = page.value?.body?.toc?.links
-    ?.filter(toc => toc.depth === 3)
-    ?.map((toc) => {
-      return {
-        ...toc,
-        id: toc.id,
-        text: toc.text ? toc.text.split('.')[1]?.trim() || '' : '',
-      }
-    }) || []
-  return r
+  const x = extractSideBarLinks(page)
 })
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
