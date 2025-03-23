@@ -1,3 +1,26 @@
+<script setup lang="ts">
+import { ref, computed, onMounted, onUpdated } from 'vue'
+import img from '~/assets/img/newsletter-background-opt.png'
+import { ContentKeys } from '~/core/constants'
+
+const route = useRoute()
+const hash = route.hash.substring(1)
+const { t, locale } = useLanguage()
+
+const { data: page } = await useAsyncData('content', async () => {
+  try {
+    const doc = await queryContent(`${locale.value}/${ContentKeys.ruleAnonymizationPolicy}`)
+      .findOne()
+    return doc
+  }
+  catch (error) {
+    console.error('Error fetching content:', error)
+    return null
+  }
+})
+
+</script>
+
 <template>
   <div>
     <BannerImage
@@ -23,90 +46,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref, computed, onMounted, onUpdated } from 'vue'
-import img from '~/assets/img/newsletter-background-opt.png'
-import { useLanguage } from '@/composables/useLanguage'
-import { ContentKeys } from '~/core/constants'
 
-// const props = defineProps<{ contentPath: string }>()
-
-const route = useRoute()
-const hash = route.hash.substring(1)
-const { t, locale } = useLanguage()
-
-const currentActiveContentInToc = ref<string>('')
-
-const { data: page } = await useAsyncData('content', async () => {
-  try {
-    const doc = await queryContent(`${locale.value}/${ContentKeys.ruleAnonymizationPolicy}`)
-      .findOne()
-    const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
-    currentActiveContentInToc.value
-      = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
-    return doc
-  }
-  catch (error) {
-    console.error('Error fetching content:', error)
-    return null
-  }
-})
-
-const sideBarLinks = computed(() => {
-  if (!page.value) {
-    return []
-  }
-  const r = page.value?.body?.toc?.links
-    ?.filter(toc => toc.depth === 3)
-    ?.map((toc) => {
-      return {
-        id: toc.id,
-        text: toc.text ? toc.text.split('.')[1]?.trim() || '' : '',
-      }
-    }) || []
-  return r
-})
-const ids = computed(() => sideBarLinks.value.map(link => link.id))
-
-const updateCurrentActiveContentInToc = (section: string) => {
-  // router.push({ hash: `#${section}` })
-  currentActiveContentInToc.value = section
-}
-
-const startIntersectionObserver = () => {
-  const options = {
-    root: null,
-    rootMargin: '0px', // margin around the root (top, right, bottom, left)
-    threshold: 0.5, // 0.5 means when 50% of the element is visible
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const elem = entry.target
-
-        if (entry.intersectionRatio >= 0) {
-          updateCurrentActiveContentInToc(elem.id)
-        }
-      }
-    })
-  }, options)
-
-  const sections = document.querySelectorAll('h3')
-  sections.forEach((el) => {
-    if (ids.value.includes(el.id)) {
-      observer.observe(el)
-    }
-  })
-}
-
-onMounted(() => {
-  startIntersectionObserver()
-})
-onUpdated(() => {
-  startIntersectionObserver()
-})
-</script>
 
 <style lang="scss" scoped>
 .container {
