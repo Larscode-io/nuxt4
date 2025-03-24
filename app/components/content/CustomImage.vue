@@ -13,7 +13,6 @@ const resolvedSrc = ref('')
 const resolvedLazySrc = ref('')
 
 const loadImage = async () => {
-  console.log('props.src', props)
   const imagePath = '../../assets/img/'
   resolvedSrc.value = new URL(`${imagePath}/${props.src}`, import.meta.url).href
   resolvedLazySrc.value = new URL(`${imagePath}/${props.lazySrc || props.src}`, import.meta.url).href
