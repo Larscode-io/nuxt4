@@ -386,17 +386,19 @@ watch(smAndDown, (value) => {
     </v-main>
     <footer>
       <v-container fluid>
-        <v-row class="d-flex justify-space-between">
+        <v-row
+          class="align-center justify-space-between pa-6"
+        >
           <v-col cols="auto">
             <nuxt-link
-              class="pa-2"
+              class="pr-10 pl-10"
               :to="localePath(RoutePathKeys.courtContacts) || '#'"
               aria-label="Contact"
             >
               {{ t('menu.footer.contact') }}
             </nuxt-link>
             <nuxt-link
-              class="pa-2"
+              class="pr-10"
               :to="localePath(RoutePathKeys.legalDisclaimer) || '#'"
               aria-label="Legal Disclaimer"
             >
@@ -412,9 +414,8 @@ watch(smAndDown, (value) => {
             >
               {{ t('menu.footer.documents-download') }}
             </a>
-
             <nuxt-link
-              class="pa-2"
+              class="pl-10"
               :to="localePath(RoutePathKeys.privacyPolicy) || '#'"
               aria-label="Privacy Policy"
             >
@@ -422,7 +423,7 @@ watch(smAndDown, (value) => {
             </nuxt-link>
           </v-col>
           <v-col cols="auto">
-            <div class="d-flex align-center">
+            <div class="d-flex align-center pr-10">
               <span class="mr-2">{{ t('menu.footer.twitter') }}</span>
               <nuxt-link
                 to="https://www.linkedin.com/company/const-court-be"
@@ -433,6 +434,7 @@ watch(smAndDown, (value) => {
                 <img
                   src="~/assets/img/linkedin.svg"
                   :style="{ width: '32px', height: '32px' }"
+                  class="ml-2"
                   alt="LinkedIn"
                 >
               </nuxt-link>
