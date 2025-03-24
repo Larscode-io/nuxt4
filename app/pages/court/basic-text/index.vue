@@ -1,85 +1,9 @@
 <!-- Content based Page -->
-<template>
-  <div>
-    <BannerImage
-      v-if="page"
-      :title="page.title"
-      :description="page.description"
-      :image="img"
-      alt=""
-    />
-    <v-container
-      class="flex-column align-start flex-nowrap"
-      fluid
-    >
-      <v-row
-        v-if="status === 'loading'"
-        class="d-flex"
-        align="flex-start"
-        justify="center"
-      >
-        <div class="col-12 col-md-12">
-          <v-skeleton-loader
-            class="mx-auto"
-            max-width="300"
-            type="article"
-          />
-        </div>
-      </v-row>
-      <v-row
-        v-else-if="status === 'error'"
-        class="d-flex"
-        align="flex-start"
-        justify="center"
-      >
-        <div class="col-12 col-md-12">
-          <ErrorCard
-            :message="t('error.fetchingData')"
-            :show-go-home="false"
-          />
-        </div>
-      </v-row>
-      <v-row
-        v-else
-        class="d-flex"
-        align="flex-start"
-        justify="center"
-      >
-        <v-col
-          v-if="hasSidebarLinks"
-          cols="12"
-          md="3"
-        >
-          <Sidebar
-            :active="currentActiveContentInToc"
-            :toc="sideBarLinks"
-            @click="updateCurrentActiveContentInToc"
-          />
-        </v-col>
-        <v-col
-          v-if="hasSidebarLinks"
-          cols="12"
-          md="9"
-        >
-          <article v-if="page">
-            <ContentRendererMarkdown
-              :value="page.body"
-              class="nuxt-content"
-            />
-          </article>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref, computed, onMounted, onUpdated } from 'vue'
-
-import BannerImage from '~/components/BannerImage.vue'
 import img from '~/assets/img/banner-text.png'
-import { ContentKeys } from '~/core/constants'
-import { useLanguage } from '@/composables/useLanguage'
+import { ContentKeys } from '../../../core/constants'
+import { extractSideBarLinks } from '../../../utils/contentUtils';
 
 const { t, locale } = useLanguage()
 const route = useRoute()
@@ -116,15 +40,7 @@ const sideBarLinks = computed(() => {
   if (!page.value) {
     return []
   }
-  return page.value?.body?.toc?.links
-    ?.filter(toc => toc.depth === 3)
-    ?.map((toc) => {
-      return {
-        ...toc,
-        id: toc.id,
-        text: toc.text ? toc.text.split('.')[1]?.trim() : 'Untitled',
-      }
-    }) || []
+  return extractSideBarLinks(page)
 })
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
@@ -166,7 +82,79 @@ onUpdated(() => {
 })
 </script>
 
+<template>
+  <div class="basicTextWrapper">
+    <BannerImage
+      v-if="page"
+      :title="page.title || ''"
+      :description="page.description"
+      :image="img"
+      alt=""
+    />
+    <v-container
+      class="flex-column align-start flex-nowrap"
+      fluid
+    >
+      <v-row
+        v-if="status === 'loading'"
+        class="d-flex"
+        justify="center"
+      >
+        <div class="col-12 col-md-12">
+          <v-skeleton-loader
+            class="mx-auto"
+            max-width="300"
+            type="article"
+          />
+        </div>
+      </v-row>
+      <v-row
+        v-else-if="status === 'error'"
+        class="d-flex"
+        justify="center"
+      >
+        <div class="col-12 col-md-12">
+          <ErrorCard
+            :message="t('error.fetchingData')"
+            :show-go-home="false"
+          />
+        </div>
+      </v-row>
+      <v-row
+        v-else
+        class="d-flex"
+        justify="center"
+      >
+        <v-col
+          v-if="hasSidebarLinks"
+          cols="12"
+          md="4"
+        >
+          <Sidebar
+            :active="currentActiveContentInToc"
+            :toc="sideBarLinks"
+            @click="updateCurrentActiveContentInToc"
+          />
+        </v-col>
+        <v-col
+          v-if="hasSidebarLinks"
+          cols="12"
+          md="8"
+        >
+          <article v-if="page">
+            <ContentRendererMarkdown
+              :value="page.body"
+              class="nuxt-content"
+            />
+          </article>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+</template>
+
 <style lang="scss" scoped>
+
 .d-flex {
   max-width: 1260px !important;
   margin: auto;
@@ -187,6 +175,7 @@ onUpdated(() => {
   }
   h4 {
     text-align: left;
+    font-weight: 400;
   }
 
   .accordion-trigger {
@@ -204,6 +193,7 @@ onUpdated(() => {
     transition: transform 0.2s linear;
   }
   h4 {
+    font-size: 14px;
     transition: font-size 0.2s linear, font-weight 0.2s linear;
   }
 
@@ -213,9 +203,7 @@ onUpdated(() => {
     }
 
     h4 {
-      // padding-top: 1rem;
-      // padding-bottom: 24px;
-      font-size: 2rem;
+      font-size: 24px;
       font-weight: 600;
       @include tablet-portrait {
         padding-top: 24px;
@@ -314,5 +302,10 @@ onUpdated(() => {
 }
 .space {
   height: 40vh;
+}
+
+.nuxt-content p {
+  text-indent: 1rem;
+  margin-bottom: 16px;
 }
 </style>
