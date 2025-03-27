@@ -49,7 +49,7 @@
 
 ### Using Custom Colors
 
-To create a balanced, visually appealing, and accessible website, use the following custom colors defined 
+To create a balanced, visually appealing, and accessible website, use the following custom colors
 
 $logoColor: #043c72;
 $indigo: #0065ca;
