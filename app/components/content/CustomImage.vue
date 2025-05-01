@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { ref, watchEffect } from 'vue'
+import { useImageMap } from '@/composables/useImageMap'
+
 const props = defineProps<{
   src: string
-  lazySrc?: string
   alt?: string
   width?: string
   height?: string
@@ -10,27 +12,23 @@ const props = defineProps<{
 }>()
 
 const resolvedSrc = ref('')
-const resolvedLazySrc = ref('')
+const { imageMap, getImageUrlx }  = useImageMap()
 
-const loadImage = async () => {
-  const imagePath = '../../assets/img/'
-  resolvedSrc.value = new URL(`${imagePath}/${props.src}`, import.meta.url).href
-  resolvedLazySrc.value = new URL(`${imagePath}/${props.lazySrc || props.src}`, import.meta.url).href
-}
-onMounted(loadImage)
+// watchEffect(() => {
+//   resolvedSrc.value = props.src ? getImageUrl(props.src)  : ''
+// })
 </script>
 
 <template>
-<div class="d-flex justify-center my-6" :style="{ width: width || 'auto' }">
+  <div class="d-flex justify-center my-6" :style="{ width: width || 'auto' }">
     <v-img
-      :src="resolvedSrc"
-      :lazy-src="resolvedLazySrc"
+      :src="getImageUrlx(props.src)"
       :alt="alt || ''"
       :height="height || 'auto'"
       :cover="cover"
       :contain="contain"
-      s="rounded-lg elevation-1"
-      :transition="'fade-transition'"
+      class="rounded-lg elevation-1"
+      transition="fade-transition"
     >
       <template #placeholder>
         <div class="d-flex align-center justify-center fill-height">
