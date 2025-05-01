@@ -5,8 +5,8 @@ import img from '~/assets/img/organisation-Y-0050.png'
 import { extractSideBarLinks } from '~/utils/contentUtils'
 import { fetchMultipleByPaths } from '~/utils/requestUtils'
 import '~/assets/css/content.css'
-import { type Member, type Infos } from '@types/members'
-import { type PageContent } from '@types/content'
+import type { Member, Infos } from '@types/members'
+import type { PageContent } from '@types/content'
 
 const { t, locale } = useLanguage()
 
@@ -42,7 +42,7 @@ const startIntersectionObserver = () => {
   const options = {
     threshold: 0.9,
     rootMargin: '0px 0px -50% 0px',
-  };
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -67,7 +67,8 @@ const alternateLang = (mems: Member[]): Member[] => {
   let startLang: string
   if (locale.value === Languages.FRENCH || locale.value === Languages.GERMAN) {
     startLang = Languages.FRENCH
-  } else {
+  }
+  else {
     startLang = Languages.DUTCH
   }
   const altLang = startLang === 'fr' ? 'nl' : 'fr',
@@ -84,7 +85,7 @@ const alternateLang = (mems: Member[]): Member[] => {
 const updateMembers = () => {
   const filterByRole = (response: any, roles: string[]): Member[] => {
     if (!response?.data) return []
-    return response.data.filter((member: Member) => roles.includes(member.role));
+    return response.data.filter((member: Member) => roles.includes(member.role))
   }
 
   membersHistoricPresidents.value = filterByRole(membersHistoricResponse.value, ['president'])
@@ -163,7 +164,8 @@ const fetchData = async () => {
     ] = results
     updateMembers()
     updateSideBarLinks()
-  } catch (error) {
+  }
+  catch (error) {
     console.error('Error fetching content:', error)
   }
 }
@@ -180,23 +182,33 @@ onMounted(() => {
       :description="pageJudge?.description"
       :image="img"
       :alt="t('alt.banner.flag')"
-      />
+    />
     <v-container>
       <v-row
         class="d-flex"
         justify="center"
       >
-        <v-col v-if="hasSidebarLinks" cols="12" md="4">
+        <v-col
+          v-if="hasSidebarLinks"
+          cols="12"
+          md="4"
+        >
           <Sidebar
             :active="currentActiveContentInToc"
             :toc="sideBarLinks"
-            @click="updateCurrentActiveContentInToc" />
+            @click="updateCurrentActiveContentInToc"
+          />
         </v-col>
-        <v-col cols="12" md="8">
+        <v-col
+          cols="12"
+          md="8"
+        >
           <v-row>
             <article v-if="pageJudge ">
               <ContentRendererMarkdown
-              :value="pageJudge.body" class="nuxt-content content-renderer" />
+                :value="pageJudge.body"
+                class="nuxt-content content-renderer"
+              />
             </article>
 
             <div
@@ -221,7 +233,10 @@ onMounted(() => {
             </div>
 
             <article v-if="pageReferendar">
-              <ContentRendererMarkdown :value="pageReferendar.body" class="nuxt-content" />
+              <ContentRendererMarkdown
+                :value="pageReferendar.body"
+                class="nuxt-content"
+              />
             </article>
             <div
               v-for="(member, index) in officeStaffMembers"
@@ -274,7 +289,9 @@ onMounted(() => {
 
             <article v-if="pageOfficeStaff">
               <ContentRendererMarkdown
-               :value="pageOfficeStaff.body" class="nuxt-content" />
+                :value="pageOfficeStaff.body"
+                class="nuxt-content"
+              />
             </article>
 
             <div class="section-content nuxt-content">
@@ -391,7 +408,8 @@ onMounted(() => {
                 :start-date="member.startDate"
                 :end-date="member.endDate"
                 :is-alive="member.isAlive"
-                :female-title="member.femaleTitle" />
+                :female-title="member.femaleTitle"
+              />
             </div>
 
             <h4 class="heading-h3">
