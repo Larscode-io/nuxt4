@@ -24,11 +24,12 @@ export default {
     title: {
       type: String,
       required: true,
+      default: 'A Banner Title',
     },
     description: {
       type: [String, null],
       required: false,
-      default: '',
+      default: 'A Banner Description',
     },
     image: {
       type: String,
@@ -37,6 +38,7 @@ export default {
     alt: {
       type: String,
       required: true,
+      default: 'A Banner Image',
     },
     maxWidth: {
       type: Number,
