@@ -2,8 +2,6 @@
 
 ## General Guidelines
 
-- Include a comment saying 'Custom instruction applied' at the beginning of each generated code snippet.
-
 - **Style & Formatting:**  
   - Prefer Vuetify utility classes over SCSS for custom styling.
   - Use Vuetify for UI components and utility classes for fine-grained control.

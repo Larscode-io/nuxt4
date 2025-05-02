@@ -1,12 +1,21 @@
 {
-    "eslint.workingDirectories": [
-        "./app",
-        "./server"
-    ],
-    "cSpell.words": [
-        "jobtitle",
-        "legalsecretaries",
-        "referendar",
-        "lars"
-    ]
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on",
+    "strings": "on"
+  },
+  "files.associations": {
+    "*.vue": "vue",
+    "*.js": "javascript"
+  },
+  "eslint.workingDirectories": [
+    { "directory": "./app", "changeProcessCWD": true },
+    { "directory": "./server", "changeProcessCWD": true }
+  ],
+  "cSpell.words": ["jobtitle", "legalsecretaries", "referendar", "lars"]
 }

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
-import { ContentKeys, type Locale } from '~/core/constants'
+import type { Member, Infos } from '@types/members'
+import type { PageContent } from '@types/content'
+import { ContentKeys } from '~/core/constants'
 import img from '~/assets/img/organisation-Y-0050.png'
 import { extractSideBarLinks } from '~/utils/contentUtils'
 import { fetchMultipleByPaths } from '~/utils/requestUtils'
 import '~/assets/css/content.css'
-import type { Member, Infos } from '@types/members'
-import type { PageContent } from '@types/content'
 
 const { t, locale } = useLanguage()
 
@@ -83,7 +83,7 @@ const alternateLang = (mems: Member[]): Member[] => {
 }
 
 const updateMembers = () => {
-  const filterByRole = (response: any, roles: string[]): Member[] => {
+  const filterByRole = (response: { data?: Member[] } | null, roles: string[]): Member[] => {
     if (!response?.data) return []
     return response.data.filter((member: Member) => roles.includes(member.role))
   }
