@@ -1,0 +1,84 @@
+{
+    "version": "0.2",
+    "language": "en,nl,fr,de",
+    "dictionaryDefinitions": [
+        {
+            "name": "custom-dict",
+            "path": "./.cspell-dict.txt"
+        },
+        {
+            "name": "custom-nl",
+            "path": "./.cspell-nl.txt"
+        },
+        {
+            "name": "custom-fr",
+            "path": "./.cspell-fr.txt"
+        },
+        {
+            "name": "custom-de",
+            "path": "./.cspell-de.txt"
+        },
+        {
+            "name": "custom-en",
+            "path": "./.cspell-en.txt"
+        },
+        {
+            "name": "nl-official",
+            "path": "package:cspell-dict-nl-nl/dictionaries/nl_NL.trie.gz",
+            "addWords": true
+        },
+        {
+            "name": "fr-official",
+            "path": "package:cspell-dict-fr-fr/dictionaries/fr_FR.trie.gz",
+            "addWords": true
+        },
+        {
+            "name": "de-official",
+            "path": "package:cspell-dict-de-de/dictionaries/de_DE.trie.gz",
+            "addWords": true
+        },
+        {
+            "name": "en-official",
+            "path": "package:cspell-dict-en-gb/dictionaries/en_GB.trie.gz",
+            "addWords": true
+        }
+    ],
+    "dictionaries": [
+        "custom-dict",
+        "en"
+    ],
+    "overrides": [
+        {
+            "pattern": "content/fr/**/*.md",
+            "language": "fr",
+            "dictionaries": [
+                "custom-fr",
+                "fr-official"
+            ]
+        },
+        {
+            "pattern": "content/de/**/*.md",
+            "language": "de",
+            "dictionaries": [
+                "custom-de",
+                "de-official"
+            ]
+        },
+        {
+            "pattern": "content/en/**/*.md",
+            "language": "en",
+            "dictionaries": [
+                "custom-en",
+                "en-official"
+            ]
+        },
+        {
+            "pattern": "content/nl/**/*.md",
+            "language": "nl",
+            "dictionaries": [
+                "custom-nl",
+                "nl-official"
+            ]
+        }
+    ]
+}

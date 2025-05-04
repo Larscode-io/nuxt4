@@ -29,7 +29,7 @@ export default defineEventHandler(async () => {
               title: 'menu.court.presentation.how-the-court-works',
             },
             {
-              to: RoutePathKeys.presentationAccomodation,
+              to: RoutePathKeys.presentationAccommodation,
               title: 'menu.court.presentation.building',
             },
             {

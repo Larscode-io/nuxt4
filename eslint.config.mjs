@@ -1,25 +1,49 @@
 import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
+import stylistic from '@stylistic/eslint-plugin'
+import vue from 'eslint-plugin-vue'
+import ts from '@typescript-eslint/eslint-plugin'
 
 export default createConfigForNuxt({
+  plugins: {
+    '@stylistic': stylistic,
+    vue,
+    '@typescript-eslint': ts,
+  },
   rules: {
-    'no-console': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+    // Algemene JS/TS regels
+    'no-console': 'warn',
+    'prefer-const': 'error',
+    '@typescript-eslint/no-explicit-any': 'warn',
+
+    // Stylistic (opmaak) regels
+    '@stylistic/semi': ['error', 'never'],
+    '@stylistic/indent': ['error', 2],
+    '@stylistic/arrow-parens': ['error', 'always'],
+    '@stylistic/operator-linebreak': ['error', 'before'],
+    '@stylistic/no-trailing-spaces': 'error',
+    '@stylistic/no-multiple-empty-lines': ['error', { max: 1 }],
+    '@stylistic/quotes': ['error', 'single'],
+
+    // Vue component layout & attributen
     'vue/multi-word-component-names': 'off',
-    'vue/singleline-html-element-content-newline': 'off', // Disable new lines for single-line elements
-    '@stylistic/semi': 'off',
-    'vue/html-indent': 'on',
-    'vue/max-attributes-per-line': 'on',
-    'vue/first-attribute-linebreak': 'on',
-    'vue/attributes-order': 'on',
-    'prefer-const': 'on',
-    '@stylistic/indent': 'on',
-    '@stylistic/no-trailing-spaces': 'on',
-    '@stylistic/no-multiple-empty-lines': 'on',
-    '@stylistic/operator-linebreak': 'on',
-    '@stylistic/arrow-parens': 'off',
+    'vue/html-indent': ['error', 2],
+    'vue/max-attributes-per-line': ['error', {
+      singleline: 3,
+      multiline: 1,
+    }],
+    'vue/first-attribute-linebreak': ['error', {
+      singleline: 'beside',
+      multiline: 'below',
+    }],
+    'vue/attributes-order': 'warn',
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/html-closing-bracket-newline': ['error', {
+      singleline: 'never',
+      multiline: 'always',
+    }],
   },
   ignores: ['**/dist', '**/node_modules', '**/.nuxt'],
   features: {
-    stylistic: true, // auto format on save
+    stylistic: true,
   },
 })

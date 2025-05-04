@@ -1,15 +1,13 @@
 {
-    "recommendations": [
-      "Vue.volar",                      // Vue 3 support (syntax highlighting, type checking)
-      "Vue.vscode-typescript-vue-plugin", // Required for full Volar functionality
-      "esbenp.prettier-vscode",         // Code formatting
-      "dbaeumer.vscode-eslint",         // Linting with ESLint
-      "nuxt.nuxt-vscode-extensions",    // Official Nuxt extension pack
-      "streetsidesoftware.code-spell-checker", // Spell checker
-      "editorconfig.editorconfig"       // EditorConfig support (if used)
-    ],
-    "unwantedRecommendations": [
-        "octref.vetur",                     // Vetur (legacy Vue 2 support)
-    ]
-  }
-  
+  "recommendations": [
+    "Vue.volar", // Vue 3 support (syntax highlighting, type checking)
+    "Vue.vscode-typescript-vue-plugin", // Required for full Volar functionality
+    "dbaeumer.vscode-eslint", // Linting with ESLint
+    "nuxt.nuxt-vscode-extensions", // Official Nuxt extension pack
+    "streetsidesoftware.code-spell-checker", // Spell checker
+    "editorconfig.editorconfig" // EditorConfig support (if used)
+  ],
+  "unwantedRecommendations": [
+    "octref.vetur", // Vetur (legacy Vue 2 support)
+  ]
+}

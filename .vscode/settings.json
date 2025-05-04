@@ -1,21 +1,47 @@
 {
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": null,
   "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "editor.quickSuggestions": {
-    "other": "on",
-    "comments": "on",
-    "strings": "on"
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "vue",
+    "javascript",
+    "typescript"
+  ],
   "files.associations": {
     "*.vue": "vue",
     "*.js": "javascript"
   },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
   "eslint.workingDirectories": [
-    { "directory": "./app", "changeProcessCWD": true },
-    { "directory": "./server", "changeProcessCWD": true }
+    {
+      "directory": "./app",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "./server",
+      "changeProcessCWD": true
+    }
   ],
-  "cSpell.words": ["jobtitle", "legalsecretaries", "referendar", "lars"]
+  "cSpell.language": "en,nl,fr,de",
+  "cSpell.dictionaries": [
+    "custom-dict",
+    "nl",
+    "fr",
+    "de",
+    "en"
+  ],
+  "cSpell.enabled": true
 }
