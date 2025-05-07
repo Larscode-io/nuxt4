@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { GeneralPressJudgment, GeneralPressRelease, Judgment, Pleading, Decision } from '@core/constants'
-import { RoutePathKeys, ApiUrl, MediaType } from '../core/constants'
+import { RoutePathKeys, ApiUrl, MediaType } from '@core/constants'
 
 const { localePath } = useLanguage()
 
