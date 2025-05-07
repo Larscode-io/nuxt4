@@ -8,6 +8,6 @@
 
 <script setup lang="ts">
 import { ContentKeys } from '../../../core/constants'
-import img from '~/assets/img/newsletter-background-opt.png'
+import img from '~/assets/img/banner-text.png'
 // banner-text
 </script>
