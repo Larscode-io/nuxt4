@@ -1,7 +1,6 @@
 <!-- Content based Page -->
 <script setup lang="ts">
 import { ref, computed, onMounted, onUpdated } from 'vue'
-import { extractSideBarLinks } from '../../../utils/contentUtils'
 import { ContentKeys } from '../../../core/constants'
 import img from '~/assets/img/banner-text.png'
 

@@ -1,4 +1,4 @@
-import path from 'path'
+import { resolve } from 'path'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
@@ -98,6 +98,13 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   vite: {
+    resolve: {
+      alias: {
+        '@core': resolve(__dirname, 'app/core'),
+        '@utils': resolve(__dirname, 'app/utils'),
+        '@types': resolve(__dirname, 'types'),
+      },
+    },
     server: {
       hmr: {
         overlay: false,

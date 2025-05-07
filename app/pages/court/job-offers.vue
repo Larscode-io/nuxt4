@@ -26,9 +26,8 @@
 </template>
 
 <script setup lang="ts">
+import { ContentKeys } from '@core/constants'
 import img from '~/assets/img/newsletter-background-opt.png'
-import { useLanguage } from '@/composables/useLanguage'
-import { ContentKeys } from '~/core/constants'
 
 const { t, locale } = useLanguage()
 

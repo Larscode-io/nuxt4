@@ -2,8 +2,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import img from 'assets/img/newsletter-background-opt.png'
-import { ContentKeys } from '../../core/constants'
-import { extractSideBarLinks } from '../../utils/contentUtils'
+import { ContentKeys } from '@core/constants'
 
 const { locale } = useLanguage()
 const route = useRoute()
