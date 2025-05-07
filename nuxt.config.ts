@@ -1,3 +1,4 @@
+import path from 'path'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
@@ -101,9 +102,9 @@ export default defineNuxtConfig({
       hmr: {
         overlay: false,
       },
-      define: {
-        'process.env.DEBUG': false,
-      },
+    },
+    define: {
+      'process.env.DEBUG': false,
     },
     css: {
       // inject shared variables and mixins into all style files

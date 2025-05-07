@@ -8,11 +8,14 @@
       "@/*": [
         "./*"
       ],
+      "@core/*": [
+        "app/core/*"
+      ],
       "@types/*": [
         "types/*"
       ],
-      "~~/*": [
-        "./*"
+      "@utils/*": [
+        "app/utils/*"
       ],
       "#imports": [
         "./.nuxt/imports.d.ts"

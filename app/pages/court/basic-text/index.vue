@@ -1,9 +1,9 @@
 <!-- Content based Page -->
 <script setup lang="ts">
 import { ref, computed, onMounted, onUpdated } from 'vue'
-import img from '~/assets/img/banner-text.png'
+import { extractSideBarLinks } from '../../../utils/contentUtils'
 import { ContentKeys } from '../../../core/constants'
-import { extractSideBarLinks } from '../../../utils/contentUtils';
+import img from '~/assets/img/banner-text.png'
 
 const { t, locale } = useLanguage()
 const route = useRoute()
@@ -154,7 +154,6 @@ onUpdated(() => {
 </template>
 
 <style lang="scss" scoped>
-
 .d-flex {
   max-width: 1260px !important;
   margin: auto;

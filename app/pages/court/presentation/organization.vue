@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 import type { Member, Infos } from '@types/members'
-import type { PageContent } from '@types/content'
-import { ContentKeys } from '~/core/constants'
+import { extractSideBarLinks } from '../../../utils/contentUtils'
+import { fetchMultipleByPaths } from '../../../utils/requestUtils'
+import { ContentKeys } from '../../../core/constants'
+import type { PageContent } from '@/types/content'
 import img from '~/assets/img/organisation-Y-0050.png'
-import { extractSideBarLinks } from '~/utils/contentUtils'
-import { fetchMultipleByPaths } from '~/utils/requestUtils'
 import '~/assets/css/content.css'
 
 const { t, locale } = useLanguage()

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { extractSideBarLinks } from '../../utils/contentUtils'
+import img from 'assets/img/newsletter-background-opt.png'
 import { ContentKeys } from '../../core/constants'
-import img from '~/assets/img/newsletter-background-opt.png'
+import { extractSideBarLinks } from '../../utils/contentUtils'
 
 const { locale } = useLanguage()
 const route = useRoute()

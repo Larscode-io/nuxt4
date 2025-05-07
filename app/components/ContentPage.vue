@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUpdated } from 'vue'
-import { extractSideBarLinks } from '@/utils/contentUtils'
-import { useLanguage } from '@/composables/useLanguage'
+import { extractSideBarLinks } from '@utils/contentUtils'
 import fallbackImg from '~/assets/img/newsletter-background-opt.png'
 
 interface Props {

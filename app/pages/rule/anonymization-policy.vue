@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUpdated } from 'vue'
 import img from '~/assets/img/newsletter-background-opt.png'
-import { ContentKeys } from '~/core/constants'
+import { ContentKeys } from '@/core/constants'
 
 const route = useRoute()
 const hash = route.hash.substring(1)
@@ -18,7 +17,6 @@ const { data: page } = await useAsyncData('content', async () => {
     return null
   }
 })
-
 </script>
 
 <template>
@@ -45,8 +43,6 @@ const { data: page } = await useAsyncData('content', async () => {
     </v-container>
   </div>
 </template>
-
-
 
 <style lang="scss" scoped>
 .container {

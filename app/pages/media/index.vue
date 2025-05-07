@@ -90,8 +90,7 @@ import { ref } from 'vue'
 // import { useContent } from '@nuxt/content'
 import img from '~/assets/img/banner-media.png'
 
-import { ContentKeys } from '~/core/constants'
-import { useLanguage } from '@/composables/useLanguage'
+import { ContentKeys } from '@/core/constants'
 
 // import ContactCard from '~/components/ContactCard.vue'
 import contactImgMartin from '~/assets/img/members/martin-vranken.jpg'
