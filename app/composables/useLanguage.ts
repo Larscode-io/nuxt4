@@ -1,8 +1,11 @@
-import { useRouter } from 'vue-router'
+// import { useRouter } from 'vue-router'
 import { nlBE, fr, de, enGB } from 'date-fns/locale'
 import { computed } from 'vue'
+import type { Ref } from 'vue'
 import { useI18n, useSwitchLocalePath } from '#imports'
 import type { MessageSchema } from '~~/types/i18n' // ~~ is an alias for the src directory
+
+type MaybeComputedRefOrFalsy<T> = T | false | null | undefined | Ref<T>
 
 export enum Languages {
   ENGLISH = 'en',
@@ -25,7 +28,8 @@ export const defaultListLang: Record<string, string> = {
 }
 
 export function useLanguage() {
-  const router = useRouter()
+  // const router = import.meta.client ? useRouter() : null
+
   const { t, locales, locale, setLocale, defaultLocale } = useI18n<
     [MessageSchema],
     Languages.DUTCH | Languages.FRENCH | Languages.ENGLISH | Languages.GERMAN
@@ -36,13 +40,13 @@ export function useLanguage() {
     return locales.value.filter(i => i.code !== locale.value)
   })
 
-  const ogLocaleAlternate: 'MaybeComputedRefOrFalsy<Arrayable<string> | null | undefined>' = locales.value.map(el => el.language)
+  const ogLocaleAlternate: (string | undefined)[] = locales.value.map(el => el.language)
   const ogLocale: MaybeComputedRefOrFalsy<string | null | undefined> = locales.value
     .filter(i => i.code === locale.value)
-    .map(el => el.language)
+    .map(el => el.language)[0] || null
 
-  const switchLanguage = (lang: any) => {
-    router.push({ path: `${switchLocalePath(lang)}` })
+  const switchLanguage = (lang: Languages): string => {
+    return switchLocalePath(lang)
   }
 
   const activeLocale = (locale: any) => {
@@ -57,17 +61,23 @@ export function useLanguage() {
         return enGB
     }
   }
+
+  function getLocalizedPath(contentPath: string): string {
+    return `${locale.value}/${contentPath}`
+  }
+
   return {
     t,
     locale,
     switchLocalePath,
+    switchLanguage,
     localePath,
     setLocale,
     availableLocales,
     ogLocale,
     ogLocaleAlternate,
-    switchLanguage,
     defaultLocale,
     activeLocale,
+    getLocalizedPath,
   }
 }

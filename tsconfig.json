@@ -5,8 +5,18 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@types/*": ["types/*"]
+      "@/*": [
+        "./*"
+      ],
+      "@types/*": [
+        "types/*"
+      ],
+      "~~/*": [
+        "./*"
+      ],
+      "#imports": [
+        "./.nuxt/imports.d.ts"
+      ]
     }
   }
 }

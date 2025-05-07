@@ -1,39 +1,49 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUpdated } from 'vue'
-import img from '~/assets/img/newsletter-background-opt.png'
+import { extractSideBarLinks } from '@/utils/contentUtils'
 import { useLanguage } from '@/composables/useLanguage'
-import { extractSideBarLinks } from '../utils/contentUtils';
+import fallbackImg from '~/assets/img/newsletter-background-opt.png'
 
-const props = defineProps<{ contentPath: string }>()
+interface Props {
+  contentPath: string
+  img?: string
+  enableToc?: boolean
+}
 
-const route = useRoute()
-const hash = route.hash.substring(1)
+const props = withDefaults(defineProps<Props>(), {
+  enableToc: true,
+})
+
+const showBanner = props.img ?? true
+const enableToc = props.enableToc ?? true
+const img = props.img || fallbackImg
+
+let hash = ''
+if (import.meta.client) {
+  const route = useRoute()
+  hash = route.hash.substring(1)
+}
+
 const { locale } = useLanguage()
-
 const currentActiveContentInToc = ref<string>('')
 
-const { data: page } = await useAsyncData('content', async () => {
-  try {
-    const doc = await queryContent(`${locale.value}/${props.contentPath}`)
-      .findOne()
-    const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
-    currentActiveContentInToc.value
-      = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
-    return doc
-  }
-  catch (error) {
-    console.error('Error fetching content:', error)
-    return null
-  }
-})
+const { data: page, pending } = await useAsyncData(
+  `content-${locale.value}-${props.contentPath}`,
+  async () => {
+    return await queryContent(`${locale.value}/${props.contentPath}`).findOne()
+  },
+)
 
-const sideBarLinks = computed(() => {
-  if (!page.value) {
-    return []
-  }
-  return extractSideBarLinks(page)
-})
-const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
+if (page.value) {
+  const idsTo = page.value?.body?.toc?.links?.map(toc => toc.id) || []
+
+  currentActiveContentInToc.value = (hash && idsTo.includes(hash))
+    ? hash
+    : idsTo[0] || ''
+}
+
+const sideBarLinks = computed(() => page.value ? extractSideBarLinks(page) : [])
+const hasSidebarLinks = computed(() => enableToc && sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
 
 const updateCurrentActiveContentInToc = (section: string) => {
@@ -41,23 +51,17 @@ const updateCurrentActiveContentInToc = (section: string) => {
 }
 
 const startIntersectionObserver = () => {
-  const options = {
-    root: null,
-    rootMargin: '0px', // margin around the root (top, right, bottom, left)
-    threshold: 0.5, // 0.5 means when 50% of the element is visible
-  }
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const elem = entry.target
-
-        if (entry.intersectionRatio >= 0) {
-          updateCurrentActiveContentInToc(elem.id)
-        }
+        updateCurrentActiveContentInToc(entry.target.id)
       }
     })
-  }, options)
+  }, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  })
 
   const sections = document.querySelectorAll('h3')
   sections.forEach((el) => {
@@ -70,6 +74,7 @@ const startIntersectionObserver = () => {
 onMounted(() => {
   startIntersectionObserver()
 })
+
 onUpdated(() => {
   startIntersectionObserver()
 })
@@ -78,7 +83,7 @@ onUpdated(() => {
 <template>
   <div>
     <BannerImage
-      v-if="page"
+      v-if="showBanner && !pending && page"
       :title="page?.title || ''"
       :description="page?.description"
       :image="img"
@@ -99,7 +104,7 @@ onUpdated(() => {
         </v-col>
         <v-col
           cols="12"
-          md="8"
+          :md="hasSidebarLinks ? 8 : 12"
         >
           <article v-if="page">
             <ContentRendererMarkdown

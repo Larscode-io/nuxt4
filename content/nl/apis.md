@@ -10,10 +10,10 @@ Onze website maakt gebruik van API's voor de presentatie van pagina's. Het Hof h
 
 ## Voorbeelden van beschikbare API's
 
-- **Informatie over de arresten:**  
+- **Informatie over de arresten:**
   [https://node04.const-court.be/api/v1/press/judgments?lang=nl](https://node04.const-court.be/api/v1/press/judgments?lang=nl)
 
-- **Informatie over de hangende zaken:**  
+- **Informatie over de hangende zaken:**
   [https://node04.const-court.be/api/v1/juris/pending-cases?lang=nl](https://node04.const-court.be/api/v1/juris/pending-cases?lang=nl)
 
 > **Let op:** De servernaam `node04.const-court.be` kan wijzigen. Het is aanbevolen om de stabielere URL te gebruiken:
@@ -29,7 +29,7 @@ Onze website maakt gebruik van API's voor de presentatie van pagina's. Het Hof h
 
 De API's kunnen in de toekomst wijzigingen ondergaan. Het is uw verantwoordelijkheid om eventuele aanpassingen in uw systemen door te voeren.
 
-Wij verzoeken u vriendelijk om bij het gebruik van onze API's een verantwoorde benadering te hanteren. Overmatig of frequent opvragen van gegevens kan de prestaties van onze systemen beïnvloeden.  
+Wij verzoeken u vriendelijk om bij het gebruik van onze API's een verantwoorde benadering te hanteren. Overmatig of frequent opvragen van gegevens kan de prestaties van onze systemen beïnvloeden.
 Wij raden aan om:
 
 - cachingmechanismen te implementeren;
@@ -39,13 +39,13 @@ Zo kunnen we een efficiënte en duurzame toegang tot de informatie waarborgen vo
 
 ## Juridische aspecten
 
-Hergebruik van de arresten en prejudiciële vragen van het Grondwettelijk Hof is niet onderworpen aan een specifieke regeling.  
+Hergebruik van de arresten en prejudiciële vragen van het Grondwettelijk Hof is niet onderworpen aan een specifieke regeling.
 Gebruikers zijn echter zelf verantwoordelijk voor het naleven van:
 
 - de toepasselijke regelgeving inzake gegevensbescherming (zie onze [privacyverklaring](/privacy));
 - andere relevante wettelijke bepalingen.
 
-> **Opgelet:**  
+> **Opgelet:**
 > De wet betreffende het centrale register voor de beslissingen van de rechterlijke orde voorziet in de pseudonimisering van vonnissen en arresten. Dit is **niet** het geval voor de arresten van het Hof.
 >
 > Massaal downloaden van gegevens is verboden.

@@ -89,6 +89,13 @@ function toggleMenu() {
   hoveredMenu.value = hoveredMenu.value === null ? 0 : null
 }
 
+function changeLanguage(lang: string) {
+  if (lang !== locale.value) {
+    const x = switchLanguage(lang)
+    navigateTo(x)
+    mobileDrawer.value = false
+  }
+}
 const { lgAndUp, mdAndUp, smAndDown } = useDisplay()
 
 watch(smAndDown, (value) => {
@@ -279,7 +286,7 @@ watch(smAndDown, (value) => {
               :key="lang.code"
               role="menuitem"
               :aria-label="lang.name"
-              @click="switchLanguage(lang.code)"
+              @click="changeLanguage(lang.code)"
             >
               <v-list-item-title>
                 {{ lang.name }}

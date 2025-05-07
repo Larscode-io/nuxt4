@@ -1,8 +1,13 @@
 <template>
-  <ContentPage :content-path="`${ContentKeys.presentationPublicationsOnTheCourt}`" />
+  <ContentPage
+    :content-path="`${ContentKeys.presentationPublicationsOnTheCourt}`"
+    :img
+    :enable-toc="false"
+  />
 </template>
 
 <script setup lang="ts">
-import ContentPage from '@/components/ContentPage.vue'
-import { ContentKeys } from '~/core/constants'
+import { ContentKeys } from '../../../core/constants'
+import img from '~/assets/img/newsletter-background-opt.png'
+// banner-text
 </script>

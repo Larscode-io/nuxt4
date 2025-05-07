@@ -1,6 +1,6 @@
 <template>
   <ContentPage
-    :content-path="`${ContentKeys.presentationSituation}`"
+    :content-path="`${ContentKeys.presentationAccommodation}`"
     :img
     :enable-toc="true"
   />
@@ -8,5 +8,5 @@
 
 <script setup lang="ts">
 import { ContentKeys } from '../../../core/constants'
-import img from '~/assets/img/newsletter-background-opt.png'
+import img from '~/assets/img/banner-job.png'
 </script>

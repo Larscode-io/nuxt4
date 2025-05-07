@@ -5,23 +5,7 @@ locale: nl
 ---
 <br><br>
 
-<foto-component-prize
-id="prize-content-img-court"
-max-width="50%"
-src="../../assets/img/prize/court-transparent.png"
-alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof"
-link="">
-</foto-component-prize>
-
 <p id="prize-content-title">Prijs naar aanleiding van de 40ste verjaardag van het Grondwettelijk Hof</p>
-
-<foto-component-prize
-id="prize-content-img-deco"
-max-width="60%"
-src="../../assets/img/prize/deco-transparent.png"
-alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof"
-link="">
-</foto-component-prize>
 
 <br>
 
@@ -54,14 +38,6 @@ link="">
 <p class="prize-content-text prize-content-text-wide" id="prize-content-text-7">De laureaten krijgen een aandenken evenals de gelegenheid om kort hun verhandeling of essay te presenteren ter gelegenheid van de viering van 40 jaar Grondwettelijk Hof. Ze krijgen tevens een geldprijs van 500 Euro voor de laatstejaarsleerlingen van het secundair onderwijs of 1000 Euro voor de masterstudenten rechten.</p>
 
 <br>
-
-<foto-component-prize
-id="prize-content-img-deco"
-max-width="60%"
-src="../../assets/img/prize/deco-transparent.png"
-alt="Prijzen voor de 40ste Verjaardag van het Grondwettelijk Hof"
-link="">
-</foto-component-prize>
 
 <style scoped>
 

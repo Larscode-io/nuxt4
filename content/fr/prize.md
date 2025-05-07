@@ -5,23 +5,7 @@ locale: fr
 ---
 <br><br>
 
-<foto-component-prize
-id="prize-content-img-court"
-max-width="50%"
-src="../../assets/img/prize/court-transparent.png"
-alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle"
-link="">
-</foto-component-prize>
-
 <p id="prize-content-title">Prix en vue du 40e anniversaire de la Cour constitutionnelle</p>
-
-<foto-component-prize
-id="prize-content-img-deco"
-max-width="60%"
-src="../../assets/img/prize/deco-transparent.png"
-alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle"
-link="">
-</foto-component-prize>
 
 <br>
 
@@ -53,14 +37,6 @@ link="">
 
 <br>
 
-<foto-component-prize
-id="prize-content-img-deco"
-max-width="60%"
-src="../../assets/img/prize/deco-transparent.png"
-alt="Prix en vue du 40e anniversaire de la Cour constitutionnelle"
-link="">
-</foto-component-prize>
-
 <style scoped>
 
 .v-main__wrap {
@@ -68,49 +44,49 @@ link="">
 }
 
 #prize-content-img-court {
-    max-width: 50%; 
+    max-width: 50%;
     margin: 10px auto;
 }
 #prize-content-img-flyer {
-    max-width: 40%; 
-    margin: 70px 25px 50px 70px; 
+    max-width: 40%;
+    margin: 70px 25px 50px 70px;
     float: left;
 }
 #prize-content-img-deco {
-    max-width: 15%; 
+    max-width: 15%;
     margin: 15px auto;
     opacity: .2;
 }
 
 #prize-content-title {
-    display: block; 
-    text-align: center; 
-    line-height: 3.5; 
+    display: block;
+    text-align: center;
+    line-height: 3.5;
     font-size: 22px;
-    font-weight: 600; 
-    color: #043c72; 
+    font-weight: 600;
+    color: #043c72;
 }
 
 .prize-content-text {
-    display: block; 
-    overflow: hidden; 
-    text-align: justify; 
-    color: #043c72; 
+    display: block;
+    overflow: hidden;
+    text-align: justify;
+    color: #043c72;
     margin: auto !important;
     margin-bottom: 0 !important;
 }
 .prize-content-text-wide {
-    width: 75%; 
+    width: 75%;
 }
 .prize-content-text-short {
-    width: 40%; 
+    width: 40%;
 }
 
 @media screen and (max-width: 1250px) {
     #prize-content-img-flyer {
         float: none;
-        max-width: 65%; 
-        margin: 25px 50px auto; 
+        max-width: 65%;
+        margin: 25px 50px auto;
     }
     .prize-content-text {
         width: 100%;
