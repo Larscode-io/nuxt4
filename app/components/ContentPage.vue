@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUpdated } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import fallbackImg from '~/assets/img/newsletter-background-opt.png'
 
 interface Props {
@@ -12,15 +12,9 @@ const props = withDefaults(defineProps<Props>(), {
   enableToc: true,
 })
 
-const showBanner = props.img ?? true
+const img = props.img ?? fallbackImg
+const showBanner = !!props.img
 const enableToc = props.enableToc ?? true
-const img = props.img || fallbackImg
-
-let hash = ''
-if (import.meta.client) {
-  const route = useRoute()
-  hash = route.hash.substring(1)
-}
 
 const { locale } = useLanguage()
 const currentActiveContentInToc = ref<string>('')
@@ -32,13 +26,9 @@ const { data: page, pending } = await useAsyncData(
   },
 )
 
-if (page.value) {
-  const idsTo = page.value?.body?.toc?.links?.map(toc => toc.id) || []
-
-  currentActiveContentInToc.value = (hash && idsTo.includes(hash))
-    ? hash
-    : idsTo[0] || ''
-}
+const idsTo = computed(() =>
+  page.value?.body?.toc?.links?.map(toc => toc.id) || [],
+)
 
 const sideBarLinks = computed(() => page.value ? extractSideBarLinks(page) : [])
 const hasSidebarLinks = computed(() => enableToc && sideBarLinks.value.length > 0)
@@ -48,14 +38,22 @@ const updateCurrentActiveContentInToc = (section: string) => {
   currentActiveContentInToc.value = section
 }
 
+let observer: IntersectionObserver | null = null
+const handleIntersection = throttle((entries: IntersectionObserverEntry[]) => {
+  for (const entry of entries) {
+    if (entry.isIntersecting) {
+      updateCurrentActiveContentInToc(entry.target.id)
+      break
+    }
+  }
+}, 100)
 const startIntersectionObserver = () => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        updateCurrentActiveContentInToc(entry.target.id)
-      }
-    })
-  }, {
+  // Disconnect old observer if it exists
+  if (observer) {
+    observer.disconnect()
+  }
+
+  observer = new IntersectionObserver(handleIntersection, {
     root: null,
     rootMargin: '0px',
     threshold: 0.5,
@@ -64,16 +62,22 @@ const startIntersectionObserver = () => {
   const sections = document.querySelectorAll('h3')
   sections.forEach((el) => {
     if (ids.value.includes(el.id)) {
-      observer.observe(el)
+      observer!.observe(el)
     }
   })
 }
 
 onMounted(() => {
+  const hash = window.location.hash.substring(1)
+  if (page.value) {
+    currentActiveContentInToc.value = (hash && idsTo.value.includes(hash))
+      ? hash
+      : idsTo.value[0] || ''
+  }
   startIntersectionObserver()
 })
 
-onUpdated(() => {
+watch([ids, page], () => {
   startIntersectionObserver()
 })
 </script>
