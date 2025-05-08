@@ -5,15 +5,16 @@ import fallbackImg from '~/assets/img/newsletter-background-opt.png'
 interface Props {
   contentPath: string
   img?: string
+  hideImage?: boolean
   enableToc?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  hideImage: false,
   enableToc: true,
 })
 
 const img = props.img ?? fallbackImg
-const showBanner = !!props.img
 const enableToc = props.enableToc ?? true
 
 const { locale } = useLanguage()
@@ -85,7 +86,7 @@ watch([ids, page], () => {
 <template>
   <div>
     <BannerImage
-      v-if="showBanner && !pending && page"
+      v-if="!hideImage && !pending && page"
       :title="page?.title || ''"
       :description="page?.description"
       :image="img"
