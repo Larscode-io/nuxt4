@@ -4,6 +4,8 @@
 .nuxt
 .nitro
 .cache
+.vite
+node_modules/.cache
 dist
 
 # Node dependencies
