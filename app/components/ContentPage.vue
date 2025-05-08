@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watchEffect } from 'vue'
 import fallbackImg from '~/assets/img/newsletter-background-opt.png'
 
 interface Props {
