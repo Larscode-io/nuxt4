@@ -44,10 +44,11 @@ if (error.value) {
     <v-col
       v-for="(item, index) in items"
       :key="index"
+      style="padding: 16px"
       cols="12"
-      sm="12"
+      sm="6"
       md="4"
-      xl="2"
+      xl="4"
     >
       <slot
         name="item"
