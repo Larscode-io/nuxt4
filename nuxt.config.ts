@@ -32,7 +32,7 @@ export default defineNuxtConfig({
     },
   },
   ssr: true,
-  devtools: { enabled: process.env.NODE_ENV !== 'production' }
+  devtools: { enabled: process.env.NODE_ENV !== 'production' },
   app: {
     baseURL: '/nuxt/',
     head: {
