@@ -19,7 +19,7 @@
           {{ $t(i18nKeys.error.pageNotFound) }}
         </h1>
         <p class="error-description">
-          {{ $t(i18nKeys.error.loadingPage) }}
+          {{ $t(i18nKeys.error.loading-page) }}
         </p>
         <p class="error-description error-description__technical-code">
           <small> Error: {{ message }} </small>
@@ -69,12 +69,12 @@ const props = defineProps({
 
 const i18nKeys = {
   error: {
-    pageNotFound: 'error.pageNotFound',
-    loadingPage: 'error.loadingPage',
+    pageNotFound: 'error.page-not-found',
+    loadingPage: 'error.loading-page',
   },
   general: {
     refresh: 'general.refresh',
-    goHome: 'general.goHome',
+    goHome: 'general.go-home',
   },
 }
 
