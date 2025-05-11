@@ -37,6 +37,7 @@
 <script setup lang="ts">
 import { ContentKeys } from '@core/constants'
 
+const config = useRuntimeConfig()
 console.log('Base URL:', config.public)
 
 const { data: imageList } = await useAsyncData('carrousel-images', async () => {
@@ -52,7 +53,7 @@ const { data: imageList } = await useAsyncData('carrousel-images', async () => {
 const images = computed(() => imageList.value || [])
 
 const getImagePath = (imageName: string) => {
-  const url = `/nuxt/prize/carrousel/${imageName}`
+  const url = `${useRuntimeConfig().app.baseURL}prize/carrousel/${imageName}`
   console.log('Generated image URL:', url)
   return url
 }
