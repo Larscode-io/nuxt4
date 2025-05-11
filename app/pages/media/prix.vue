@@ -61,7 +61,6 @@ const images = computed(() => imageList.value || [])
 
 const getImagePath = (imageName: string) => {
   const url = `${useRuntimeConfig().app.baseURL}prize/carrousel/${imageName}`
-  console.log('Generated image URL:', url)
   return url
 }
 </script>
