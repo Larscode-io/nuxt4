@@ -1,19 +1,21 @@
 <template>
-  <div
-    class="banner-image-container"
-    :alt="alt"
-  >
+  <div class="banner-image-wrapper">
     <div
-      class="banner-image"
-      :style="{ backgroundImage: `url(${image})` }"
-    />
-    <div class="layover" />
-    <h2>
-      {{ title }}
-    </h2>
-    <p :style="cssProps">
-      {{ description }}
-    </p>
+      class="banner-image-container"
+      :alt="alt"
+    >
+      <div
+        class="banner-image"
+        :style="{ backgroundImage: `url(${image})` }"
+      />
+      <div class="layover" />
+      <h2>
+        {{ title }}
+      </h2>
+      <p :style="cssProps">
+        {{ description }}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -55,6 +57,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.banner-image-wrapper {
+  width: 100vw; /* Make the element span the full width of the viewport, regardless of its parent container but with overflow */
+  margin-left: calc(50% - 50vw); /* The 50% first aligns the left edge with the center of the parent so the image in halfway the viewport and then Center-align the full-width element */
+}
+
 .banner-image-container {
   width: 100%;
   z-index: 0;
@@ -125,9 +132,5 @@ export default {
     bottom: 0px;
     z-index: -1;
   }
-}
-
-.banner-image-container>* {
-  z-index: 10;
 }
 </style>
