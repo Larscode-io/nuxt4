@@ -3,27 +3,18 @@ import { ref, computed, onMounted, watch } from 'vue'
 import img from 'assets/img/newsletter-background-opt.png'
 import { ContentKeys } from '@core/constants'
 
-// Use injected locale to avoid calling useRoute() during middleware phase
-// Value is set in plugins/safe-locale.ts based on route.params.locale or a fallback
-// Nuxt runs all plugins after routing is resolved and before <script setup> executes.
-// This ensures the injected locale is available synchronously before any async data fetching.
-// const { locale } = useI18n() or useRoute() at the top level would trigger this warning:
-// [nuxt] Calling useRoute within middleware may lead to misleading results...
-// because they internally access useRoute() while a middleware-driven redirect is still being resolved.
-// This plugin-based approach avoids that and keeps SSR support intact
-// otherwise, we'd have to delay async data fetching until onMounted, which breaks SSR.
-
-const { $safeLocale } = useNuxtApp()
-const locale = $safeLocale as string
+// ⚠️ This may warn in dev due to useRoute() inside useI18n()
+// It's safe as we only use it after route has resolved
+const { locale } = useI18n()
 
 const currentActiveContentInToc = ref<string>('')
 const contentPath = ref(`${ContentKeys.informed}`)
 
 const { data: page, pending } = await useAsyncData(
-  `content-${locale}-${contentPath.value}`,
+  `content-${locale.value}-${contentPath.value}`,
   async () => {
     try {
-      const doc = await queryContent(`${locale}/${contentPath.value}`).findOne()
+      const doc = await queryContent(`${locale.value}/${contentPath.value}`).findOne()
       return doc
     }
     catch (error) {
@@ -56,6 +47,7 @@ const handleIntersection = throttle((entries: IntersectionObserverEntry[]) => {
 }, 100)
 
 const startIntersectionObserver = () => {
+  // Disconnect old observer if it exists
   if (observer) {
     observer.disconnect()
   }
@@ -75,8 +67,8 @@ const startIntersectionObserver = () => {
 }
 
 // Handle locale changes and ensure proper hydration
-watch([() => locale, contentPath], async () => {
-  const doc = await queryContent(`${locale}/${contentPath.value}`).findOne()
+watch([locale, contentPath], async () => {
+  const doc = await queryContent(`${locale.value}/${contentPath.value}`).findOne()
   if (doc) {
     page.value = doc
     const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
@@ -86,6 +78,7 @@ watch([() => locale, contentPath], async () => {
   }
 })
 
+// Initialize on mount
 onMounted(() => {
   const hash = window.location.hash.substring(1)
   if (page.value) {
