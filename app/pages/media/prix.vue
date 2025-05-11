@@ -36,9 +36,15 @@
 <script setup lang="ts">
 import { ContentKeys } from '@core/constants'
 
-const { data: imageList } = await useAsyncData('carrousel-images', () =>
-  $fetch<string[]>('/api/carrousel-images'),
-)
+const { data: imageList } = await useAsyncData('carrousel-images', async () => {
+  try {
+    return await $fetch<string[]>('/api/carrousel-images')
+  }
+  catch (error) {
+    console.error('Failed to fetch carousel images:', error)
+    return []
+  }
+})
 
 const images = computed(() => imageList.value || [])
 
