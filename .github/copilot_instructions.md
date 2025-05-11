@@ -2,53 +2,75 @@
 
 ## General Guidelines
 
-- **Style & Formatting:**  
-  - Prefer Vuetify utility classes over SCSS for custom styling.
-  - Use Vuetify for UI components and utility classes for fine-grained control.
-  - Follow Vue.js and Nuxt naming conventions and indentation.
+### 🧩 Style & Formatting
 
-- **Framework & Libraries:**  
-  - Use Nuxt 3 compatibility mode 4 and Vue 3.
-  - Use Vue Composition API for components.
-  - Use Vue's reactivity system effectively and understandably.
-  - Avoid new dependencies unless necessary.
-  - Use nuxt-link for navigation with Nuxt router.
+1. Use **Vuetify Utility Classes (VUC)** for layout, spacing, alignment, and text styling.
+   **Examples:** `py-15`, `d-flex`, `text-white`, `px-6`, `text-h4`, `font-weight-semibold`.
 
-- **Readability & Maintainability:**  
-  - Write clear, well-structured code with descriptive variable names and modular functions.
+2. Use **scoped SCSS** only for custom visual effects:
+   - Background images (e.g. grayscale, `background-position`)
+   - Z-index layering (e.g. overlays, absolute banners)
+   - Decorative elements (e.g. underlines, custom fonts, transitions)
 
-- **Documentation & Comments:**  
-  - Include brief inline comments for complex logic and function/method docstrings.
+3. **Avoid duplication**: If a Vuetify class exists for a style (e.g. margin, padding, text color), prefer it over custom CSS.
 
-- **Coding Standards:**  
-  - Maintain consistent indentation, naming conventions, and file organization.
+4. Keep SCSS **clean and purposeful**. Extract reusable styles into global utility classes only if used across multiple components.
 
-- **Error Handling:**  
-  - Implement robust error handling using Nuxt's built-in utilities.
-  - Validate inputs, handle exceptions gracefully, and log errors appropriately.
+5. Mixing is allowed — but give each tool a clear role:
+   - **VUC** = structural layout
+   - **SCSS** = custom visual polish
 
-- **Performance & Optimization:**  
-  - Optimize code for efficiency without sacrificing readability.
+6. Follow **Vue.js and Nuxt conventions**: kebab-case for filenames, PascalCase for components, 2-space indentation, and clear structure.
 
-## Specific Considerations
+### ⚙️ Framework & Libraries
+
+- Use **Nuxt 3 (compatibility mode 4)** and **Vue 3**.
+- Use the **Composition API** for all components.
+- Leverage **Vue's reactivity** idiomatically.
+- Avoid adding new dependencies unless justified.
+- Use `<NuxtLink>` for client-side routing.
+
+### 🧼 Readability & Maintainability
+
+- Write **clear, modular, self-explanatory code**.
+- Use **descriptive variable and function names**.
+- Favor simplicity over cleverness.
+
+### 📝 Documentation & Comments
+
+- Add brief inline comments for non-obvious logic.
+- Use docstrings for composables or complex methods.
+
+### 💻 Coding Standards
+
+- Maintain consistent indentation and naming.
+- Follow a clean and logical file structure.
+
+### 🚨 Error Handling
+
+- Use Nuxt's built-in composables and utilities (`useFetch`, `useError`, `onErrorCaptured`, etc.).
+- Validate inputs and handle edge cases gracefully.
+- Log critical issues for debugging without polluting output.
+
+### 🚀 Performance & Optimization
+
+- Keep code efficient, but not at the cost of clarity.
+- Avoid over-engineering — optimize real bottlenecks.
+
+## ✅ Specific Practices
 
 - Write unit tests where applicable.
-- Use modern language features and best practices, avoiding unnecessary complexity.
-- Prioritize clarity over brevity.
-- Structure code for easy extension or refactoring.
+- Use modern JS/TS features (e.g. `optional chaining`, `nullish coalescing`, `async/await`) when helpful.
+- Prefer clarity over brevity.
+- Structure code for easy extension, reuse, or refactoring.
 
-## Additional notes
+## 🎨 Theming & Design
 
-- Generated code should be self-explanatory with minimal additional comments.
-- Follow the principle of "least astonishment."
-- Consider edge cases and include appropriate safeguards.
+### Custom Colors
 
-## Beautifying Templates with colors
+Use the following **project color palette** for consistent, accessible design.
 
-### Using Custom Colors
-
-To create a balanced, visually appealing, and accessible website, use the following custom colors
-
+```scss
 $logoColor: #043c72;
 $indigo: #0065ca;
 $indigoExtraLight: rgba(0, 101, 202, 0.14);
@@ -89,3 +111,4 @@ $pdfRed: #c90304;
     --text-on-rajah: #{$textOnRajah};
     --pdf-red: #{$pdfRed};
 }
+```
