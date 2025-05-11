@@ -8,10 +8,10 @@
         <v-carousel
           v-if="images.length > 0"
           hide-delimiter-background
+          show-arrows="hover"
           cycle
           interval="5000"
           transition="fade-transition"
-          show-arrows
           class="carousel-red"
         >
           <v-carousel-item
@@ -19,7 +19,6 @@
             :key="index"
             class="carousel-red mb-16"
           >
-            {{ getImagePath(imageName) }}
             <v-img
               :src="getImagePath(imageName)"
               :alt="`Afbeelding ${index + 1}`"
@@ -27,6 +26,17 @@
               contain
               height="500"
             />
+            <v-btn
+              icon
+              variant="tonal"
+              size="small"
+              class="position-absolute top-0 right-0 ma-2"
+              :href="getImagePath(imageName)"
+              :download="imageName"
+              target="_blank"
+            >
+              <v-icon>mdi-download</v-icon>
+            </v-btn>
           </v-carousel-item>
         </v-carousel>
       </template>
@@ -36,9 +46,6 @@
 
 <script setup lang="ts">
 import { ContentKeys } from '@core/constants'
-
-const config = useRuntimeConfig()
-console.log('Base URL:', config.public)
 
 const { data: imageList } = await useAsyncData('carrousel-images', async () => {
   try {
