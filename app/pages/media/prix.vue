@@ -19,6 +19,7 @@
             :key="index"
             class="carousel-red mb-16"
           >
+            {{ getImagePath(imageName) }}
             <v-img
               :src="getImagePath(imageName)"
               :alt="`Afbeelding ${index + 1}`"
@@ -36,6 +37,8 @@
 <script setup lang="ts">
 import { ContentKeys } from '@core/constants'
 
+console.log('Base URL:', config.public)
+
 const { data: imageList } = await useAsyncData('carrousel-images', async () => {
   try {
     return await $fetch<string[]>('/api/carrousel-images')
@@ -48,7 +51,11 @@ const { data: imageList } = await useAsyncData('carrousel-images', async () => {
 
 const images = computed(() => imageList.value || [])
 
-const getImagePath = (imageName: string) => `/prize/carrousel/${imageName}`
+const getImagePath = (imageName: string) => {
+  const url = `/nuxt/prize/carrousel/${imageName}`
+  console.log('Generated image URL:', url)
+  return url
+}
 </script>
 
 <style scoped lang="scss">
