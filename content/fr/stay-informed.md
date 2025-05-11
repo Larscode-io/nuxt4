@@ -11,7 +11,7 @@ Un [moteur de recherche](/fr/search/judgment) disponible sur le site Web de la C
 
 ### 2\. Lettre d’information
 
-::SubscribeLists{:email="mailinfo"}
+::SubscribeLists
 #default
 Vous pouvez vous abonner à la lettre d’information de la Cour en introduisant votre adresse mail dans la case ci-dessous:
 #email

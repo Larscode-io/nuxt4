@@ -65,12 +65,13 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import { useLanguage } from '@/composables/useLanguage'
 
-const route = useRoute()
+let route, router
 
-const router = useRouter()
+onMounted(() => {
+  route = useRoute()
+  router = useRouter()
+})
 const { t, locale } = useLanguage()
 
 const props = defineProps({

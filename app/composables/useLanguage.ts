@@ -1,9 +1,7 @@
-// import { useRouter } from 'vue-router'
 import { nlBE, fr, de, enGB } from 'date-fns/locale'
 import { computed } from 'vue'
 import type { Ref } from 'vue'
-import { useI18n, useSwitchLocalePath } from '#imports'
-import type { MessageSchema } from '~~/types/i18n' // ~~ is an alias for the src directory
+import type { MessageSchema } from '@/types/i18n' // ~~ is an alias for the src directory
 
 type MaybeComputedRefOrFalsy<T> = T | false | null | undefined | Ref<T>
 
@@ -28,14 +26,11 @@ export const defaultListLang: Record<string, string> = {
 }
 
 export function useLanguage() {
-  // const router = import.meta.client ? useRouter() : null
-
   const { t, locales, locale, setLocale, defaultLocale } = useI18n<
     [MessageSchema],
     Languages.DUTCH | Languages.FRENCH | Languages.ENGLISH | Languages.GERMAN
   >()
   const switchLocalePath = useSwitchLocalePath()
-  const localePath = useLocalePath()
   const availableLocales = computed(() => {
     return locales.value.filter(i => i.code !== locale.value)
   })
@@ -69,9 +64,8 @@ export function useLanguage() {
   return {
     t,
     locale,
-    switchLocalePath,
+    // switchLocalePath,
     switchLanguage,
-    localePath,
     setLocale,
     availableLocales,
     ogLocale,

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { useLanguage } from '@/composables/useLanguage'
+const localePath = useLocalePath()
 
-const { localePath } = useLanguage()
 interface MenuItem {
   title?: string
   to?: string

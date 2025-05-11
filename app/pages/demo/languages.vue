@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import type { MessageSchema } from '~~/types/i18n'
+import type { MessageSchema } from '@/types/i18n'
 
 const route = useRoute()
 const switchLocalePath = useSwitchLocalePath()

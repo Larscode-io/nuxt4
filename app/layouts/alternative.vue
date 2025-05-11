@@ -128,13 +128,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, useTemplateRef, onMounted, computed, watch } from 'vue'
-import { useLanguage } from '@/composables/useLanguage'
-import type { CourtItem } from '@/core/constants'
+import { ref, useTemplateRef, onMounted, computed } from 'vue'
+import { RoutePathKeys } from '@core/constants'
+import type { CourtItem } from '@core/constants'
 import ogImageUrl from '~/assets/img/ogImage.jpg'
-import { RoutePathKeys } from '~/core/constants'
 
-const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage, localePath } = useLanguage()
+const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage } = useLanguage()
+const localePath = useLocalePath()
+
 const description = computed(() => t('general.banner'))
 const ogTitle = computed(() => t('general.message.consts-court'))
 

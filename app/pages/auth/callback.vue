@@ -4,6 +4,7 @@ import { ref, onMounted } from 'vue'
 // import { useAuth } from '~/composables/useAuth'
 
 const { locale } = useI18n()
+const localePath = useLocalePath()
 
 const route = useRoute()
 const { handleCallback } = useAuth()

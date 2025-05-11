@@ -11,7 +11,7 @@ Om te zoeken in de bestaande rechtspraak van het Hof is er een [zoekmotor beschi
 
 ### Nieuwsbrief
 
-::SubscribeLists{:email="mailinfo"}
+::SubscribeLists
 #default
 U kan zich abonneren op de nieuwsbrief van het Hof door uw e-mailadres hieronder in te voeren:
 #email

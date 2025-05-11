@@ -51,12 +51,8 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-import { useLanguage } from '@/composables/useLanguage'
-import { RoutePathKeys } from '~~/app/core/constants'
 
-const { t, localePath } = useLanguage()
-const route = useRoute()
+const localePath = useLocalePath()
 
 const props = defineProps({
   error: {

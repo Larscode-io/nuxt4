@@ -257,7 +257,6 @@
 import { ref, computed, onMounted, onUpdated } from 'vue'
 import img from '~/assets/img/banner-job.png'
 import contactImgMartin from '~/assets/img/members/martin-vranken.jpg'
-import contactImgSarah from '~/assets/img/members/sarah-lambrecht.jpg'
 import contactImgThomas from '~/assets/img/members/thomas-leys.jpg'
 import contactImgFrank from '~/assets/img/members/frank-meersschaut.jpg'
 import contactImgTim from '~/assets/img/members/tim-souverijns.jpg'
@@ -269,7 +268,6 @@ import contactLibrary from '~/assets/img/contact/library.jpg'
 import contactPresidentOffice from '~/assets/img/contact/president-office.png'
 import contactSeat from '~/assets/img/contact/seat.jpg'
 
-const imgRef = ref(img)
 const currentActiveContentInToc = ref('')
 
 const { t, locale } = useLanguage()

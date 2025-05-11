@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { watch, ref, reactive, computed } from 'vue'
 
-import type { Languages } from '@/composables/useLanguage'
-import { useLanguage, defaultListLang } from '@/composables/useLanguage'
-import { useFaker } from '@/composables/useFaker'
-
 const { t, locale } = useLanguage()
 const faker = await useFaker(locale.value)
 
@@ -197,13 +193,12 @@ watch(() => form.userFeedbackMessage, () => {
 </script>
 
 <template>
-  <slot
+  <!-- <slot
     v-if="props.email"
     name="email"
     :email="props.email"
-  />
+  /> -->
   <slot
-    v-else
     name="default"
     email=""
   />
