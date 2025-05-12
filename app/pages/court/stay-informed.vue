@@ -1,3 +1,5 @@
+// stay-informed.vue
+
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 import img from 'assets/img/newsletter-background-opt.png'
