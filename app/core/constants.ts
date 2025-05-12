@@ -153,6 +153,7 @@ export enum RoutePathKeys {
   searchStandard = 'search-standard',
   searchTableOfContent = 'search-table-of-content',
   searchJudgmentKeywordSummary = 'search-judgment-keyword-summary',
+  mediaVideopresentaties = 'media-video',
   mediaGeneralPressReleases = 'media-general-press-releases',
   mediaPressReleasesConcerningTheJudgments = 'media-press-releases-concerning-the-judgments',
   courtBasicTextTableOfTheArticlesOfTheConstitutionReferredToByTheConstitutionalCourt = 'court-basic-table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court',
