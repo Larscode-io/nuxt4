@@ -2,8 +2,8 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
-import img from 'assets/img/newsletter-background-opt.png'
 import { ContentKeys } from '@core/constants'
+import img from 'assets/img/newsletter-background-opt.png'
 
 // ⚠️ This may warn in dev due to useRoute() inside useI18n()
 // It's safe as we only use it after route has resolved
