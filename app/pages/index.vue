@@ -31,12 +31,12 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   <div>
     <span class="index-banner" />
     <v-container max-width="1260px">
+      <MessageOfTheDay class="flex-wrap justify-center d-flex mt-2" />
       <div class="mt-2 title-container pb-4">
         <h2 class="title-h2">
           {{ t('menu.decisions.title') }}
         </h2>
       </div>
-
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
