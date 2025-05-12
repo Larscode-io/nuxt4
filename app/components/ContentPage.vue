@@ -118,9 +118,20 @@ watch([ids, page], () => {
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="12">
+        <v-col
+          cols="1"
+          md="2"
+        />
+        <v-col
+          cols="10"
+          md="8"
+        >
           <slot name="extra-content" />
         </v-col>
+        <v-col
+          cols="1"
+          md="2"
+        />
       </v-row>
     </v-container>
   </div>
