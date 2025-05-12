@@ -96,7 +96,7 @@ const getImagePath = (imageName: string) => {
 // Carousel arrow and dot color override for Vuetify 3
 ::v-deep(.v-carousel) {
   .v-btn--icon {
-    color: red !important;
+    color: rgb(38, 0, 255) !important;
   }
 
   .v-carousel__controls__prev,
