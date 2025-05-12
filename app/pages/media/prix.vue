@@ -5,40 +5,42 @@
       :content-path="`${ContentKeys.prize}`"
     >
       <template #extra-content>
-        <v-carousel
-          v-if="images.length > 0"
-          hide-delimiter-background
-          show-arrows="hover"
-          cycle
-          interval="5000"
-          transition="fade-transition"
-          class="carousel-red"
-        >
-          <v-carousel-item
-            v-for="(imageName, index) in images"
-            :key="index"
-            class="carousel-red mb-16"
+        <div class="carousel-container">
+          <v-carousel
+            v-if="images.length > 0"
+            hide-delimiter-background
+            show-arrows="hover"
+            cycle
+            interval="5000"
+            transition="fade-transition"
+            class="carousel-red"
           >
-            <v-img
-              :src="getImagePath(imageName)"
-              :alt="`Afbeelding ${index + 1}`"
-              loading="lazy"
-              contain
-              height="500"
-            />
-            <v-btn
-              icon
-              variant="tonal"
-              size="small"
-              class="position-absolute top-0 right-0 ma-2"
-              :href="getImagePath(imageName)"
-              :download="imageName"
-              target="_blank"
+            <v-carousel-item
+              v-for="(imageName, index) in images"
+              :key="index"
+              class="carousel-red mb-16"
             >
-              <v-icon>mdi-download</v-icon>
-            </v-btn>
-          </v-carousel-item>
-        </v-carousel>
+              <v-img
+                :src="getImagePath(imageName)"
+                :alt="`Afbeelding ${index + 1}`"
+                loading="lazy"
+                contain
+                height="500"
+              />
+              <v-btn
+                icon
+                variant="tonal"
+                size="small"
+                class="position-absolute top-0 right-0 ma-2"
+                :href="getImagePath(imageName)"
+                :download="imageName"
+                target="_blank"
+              >
+                <v-icon>mdi-download</v-icon>
+              </v-btn>
+            </v-carousel-item>
+          </v-carousel>
+        </div>
       </template>
     </ContentPage>
   </div>
@@ -91,8 +93,6 @@ const getImagePath = (imageName: string) => {
     margin-bottom: 80px;
     width: 100%;
   }
-}
-
 // Carousel arrow and dot color override for Vuetify 3
 ::v-deep(.v-carousel) {
   .v-btn--icon {
@@ -109,4 +109,11 @@ const getImagePath = (imageName: string) => {
     box-shadow: none !important;
   }
 }
+
+// Limit carousel width and center it
+.carousel-container {
+  max-width: 520px; // Adjust this value slightly larger than the largest image width
+  margin: 0 auto;
+}
+  }
 </style>
