@@ -19,7 +19,7 @@ defineProps<{
       style="display: inline-block;"
     >
       <img
-        :src="`${src}`"
+        :src
         :alt="alt || ''"
         :width="width || 'auto'"
         :height="height || 'auto'"
