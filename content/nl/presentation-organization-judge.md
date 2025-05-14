@@ -10,7 +10,7 @@ locale: nl
 Het Hof is samengesteld uit twaalf rechters, die voor het leven worden benoemd door de Koning uit een lijst met twee kandidaten, beurtelings voorgedragen door de Kamer van volksvertegenwoordigers en de Senaat met een meerderheid van minstens twee derden van de stemmen van de aanwezige leden.
 <br>
 <br>
-<CustomImage2 src="/Y-0050.jpg" alt="Foto van de rechters en griffiers van het Grondwettelijk Hof" width="90%" />
+<img src="/Y-0050.jpg" alt="Foto van de rechters en griffiers van het Grondwettelijk Hof" width="90%" />
 <br>
 Zes rechters behoren tot de Nederlandse taalgroep, zes tot de Franse taalgroep. Eén van de rechters moet een voldoende kennis hebben van de Duitse taal. Elke taalgroep bestaat op haar beurt uit drie rechters benoemd op grond van hun juridische ervaring (hoogleraar in de rechten aan een Belgische universiteit, magistraat bij het Hof van Cassatie of de Raad van State of referendaris bij het Grondwettelijk Hof) en drie rechters benoemd op grond van ten minste vijf jaar ervaring als gewezen parlementslid. Het Hof is samengesteld uit rechters van verschillend geslacht, naar rato van ten minste een derde voor de minst talrijke groep, met dien verstande dat die groep moet zijn vertegenwoordigd in de beide voormelde beroepscategorieën.
 
