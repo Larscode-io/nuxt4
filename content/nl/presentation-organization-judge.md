@@ -7,7 +7,7 @@ locale: nl
 
 ### De rechters
 
-Het Hof is samengesteld uit twaalf rechters, die voor het leven worden benoemd door de Koning uit een lijst met twee kandidaten, beurtelings voorgedragen door de Kamer van volksvertegenwoordigers en de Senaat met een meerderheid van minstens twee derden van de stemmen van de aanwezige leden.
+Het Hof is samengesteld uit twaalf rechters, die voor het leven worden benoemd door de Koning uit een lijst met twee kandidaten, beurtelings voorgedragen door de Kamer van volksvertegenwoordigers en de Senaat met een meerderheid van minstens twee derden van de stemmen van de aanwezige leden. ⚖️
 <br>
 <br>
 <img src="/Y-0050.jpg" alt="Foto van de rechters en griffiers van het Grondwettelijk Hof" width="90%" />
