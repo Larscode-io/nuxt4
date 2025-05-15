@@ -44,13 +44,13 @@ export function useLanguage() {
     return switchLocalePath(lang)
   }
 
-  const activeLocale = (locale: any) => {
+  const activeLocale = (locale: Languages) => {
     switch (locale) {
-      case 'nl':
+      case Languages.DUTCH:
         return nlBE
-      case 'fr':
+      case Languages.FRENCH:
         return fr
-      case 'de':
+      case Languages.GERMAN:
         return de
       default:
         return enGB
