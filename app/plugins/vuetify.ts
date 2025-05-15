@@ -23,7 +23,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             pdfRed: '#c90304',
             skyBlue: '#00aae7',
             logoColor: '#043c72',
-            myCustomRed: '#00aae7',
+            myCustomRed: '#C90304',
           },
           variables: {
           },
