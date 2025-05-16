@@ -1,0 +1,22 @@
+{
+  "name": "Nicolas DUPONT",
+  "slug": "nicolas-dupont",
+  "role": "registrars",
+  "isAlive": true,
+  "startDate": null,
+  "endDate": null,
+  "lang": "fr",
+  "picture": "nicolas-dupont.jpg",
+  "alt": {
+    "en": "Picture of Nicolas DUPONT",
+    "fr": "Photographie de Nicolas DUPONT",
+    "nl": "Foto van Nicolas DUPONT",
+    "de": "Foto von Nicolas DUPONT"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Quentin PIRONNET",
+  "slug": "quentin-pironnet",
+  "role": "legalSecretaries",
+  "isAlive": true,
+  "startDate": null,
+  "endDate": null,
+  "lang": "fr",
+  "picture": "quentin-pironnet.jpg",
+  "alt": {
+    "en": "Picture of Quentin PIRONNET",
+    "fr": "Photographie de Quentin PIRONNET",
+    "nl": "Foto van Quentin PIRONNET",
+    "de": "Foto von Quentin PIRONNET"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Romain VANDERBECK",
+  "femaleTitle": false,
+  "slug": "romain-vanderbeck",
+  "role": "legalSecretaries",
+  "isAlive": true,
+  "startDate": "01.10.2020",
+  "endDate": null,
+  "lang": "fr",
+  "picture": "romain-vanderbeck.jpg",
+  "alt": {
+    "en": "Picture of Romain VANDERBECK",
+    "fr": "Photographie de Romain VANDERBECK",
+    "nl": "Foto van Romain VANDERBECK",
+    "de": "Foto von Romain VANDERBECK"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  }
+}

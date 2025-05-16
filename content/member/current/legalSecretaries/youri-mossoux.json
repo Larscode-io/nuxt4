@@ -1,0 +1,23 @@
+{
+  "name": "Youri MOSSOUX",
+  "femaleTitle": false,
+  "slug": "youri-mossoux",
+  "role": "legalSecretaries",
+  "isAlive": true,
+  "startDate": "01.11.2020",
+  "endDate": null,
+  "lang": "fr",
+  "picture": "youri-mossoux.jpg",
+  "alt": {
+    "en": "Picture of Youri MOSSOUX",
+    "fr": "Photographie de Youri MOSSOUX",
+    "nl": "Foto van Youri MOSSOUX",
+    "de": "Foto von Youri MOSSOUX"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  }
+}

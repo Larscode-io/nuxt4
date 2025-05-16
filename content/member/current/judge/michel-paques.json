@@ -1,0 +1,50 @@
+{
+  "name": "Michel PÂQUES",
+  "slug": "michel-paques",
+  "role": "judge",
+  "isAlive": true,
+  "startDate": "09.09.2018",
+  "endDate": null,
+  "lang": "fr",
+  "picture": "michel-paques.jpg",
+  "alt": {
+    "en": "Picture of Michel PÂQUES",
+    "fr": "Photographie de Michel PÂQUES",
+    "nl": "Foto van Michel PÂQUES",
+    "de": "Foto von Michel PÂQUES"
+  },
+  "infos": {
+    "en": [
+      "Born in Visé on 2 June 1959",
+      "Master’s degree in law (Université de Liège, 1982) and doctor in law (Université de Liège, 1989)",
+      "Teaching assistant, professor, full professor at the Université de Liège (1982-2008); dean of the Law Faculty (2004-2008); professor at the Université de Liège since 2008 (administrative law and administrative litigation law)",
+      "Councillor of State (2008-2018)",
+      "Vice-President of the « Association internationale de droit de l’urbanisme »",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 9 September 2018 "
+    ],
+    "de": [
+      "Geboren in Visé am 2. Juni 1959",
+      "Lizentiat der Rechte (Universität Lüttich, 1982) und Doktor der Rechte (Universität Lüttich, 1989)",
+      "Assistent, Professor, ordentlicher Professor an der Universität Lüttich (1982-2008); Dekan der Rechtsfakultät (2004-2008); außerordentlicher Professor an der Universität Lüttich seit 2008 (Verwaltungsrecht und administrative Streitsachen)",
+      "Staatsrat (2008-2018)",
+      "Vizepräsident der « Association internationale de droit de l’urbanisme »",
+      "Durch königlichen Erlass vom 9. September 2018 zum Richter am Verfassungsgerichtshof ernannt"
+    ],
+    "nl": [
+      "Geboren te Wezet op 2 juni 1959",
+      "Licentiaat in de rechten (Université de Liège, 1982) en doctor in de rechten (Université de Liège, 1989)",
+      "Assistent, hoogleraar, gewoon hoogleraar aan de Université de Liège (1982-2008); decaan van de Faculteit Rechten (2004-2008); buitengewoon hoogleraar aan de Université de Liège sedert 2008 (Recht en bestuursrechtspraak)",
+      "Staatsraad (2008-2018)",
+      "Ondervoorzitter van de « Association internationale de droit de l’urbanisme »",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 9 september 2018"
+    ],
+    "fr": [
+      "Né à Visé le 2 juin 1959",
+      "Licencié en droit (Université de Liège, 1982) et docteur en droit (Université de Liège, 1989)",
+      "Assistant, professeur, professeur ordinaire à l’Université de Liège (1982-2008); doyen de la Faculté de Droit (2004-2008); professeur extraordinaire à l’Université de Liège depuis 2008 (Droit et contentieux administratif)",
+      "Conseiller d’Etat (2008-2018)",
+      "Vice-président de l’Association internationale de droit de l’urbanisme",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 9 septembre 2018"
+    ]
+  }
+}
