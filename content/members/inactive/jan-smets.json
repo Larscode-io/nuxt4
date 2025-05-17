@@ -1,0 +1,20 @@
+{
+  "name": "Jan Smets",
+  "slug": "jan-smets",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": [],
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

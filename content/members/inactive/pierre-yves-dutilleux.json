@@ -1,0 +1,20 @@
+{
+  "name": "Pierre-Yves Dutilleux",
+  "slug": "pierre-yves-dutilleux",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": [],
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "registrars",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

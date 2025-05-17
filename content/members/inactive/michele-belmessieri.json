@@ -1,0 +1,27 @@
+{
+  "name": "Michèle Belmessieri",
+  "femaleTitle": true,
+  "slug": "michele-belmessieri",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "michele-belmessieri.jpg",
+  "alt": {
+    "en": "Picture of Michèle BELMESSIERI",
+    "fr": "Photographie de Michèle BELMESSIERI",
+    "nl": "Foto van Michèle BELMESSIERI",
+    "de": "Foto von Michèle BELMESSIERI"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Louis de Grève",
+  "slug": "louis-de-greve",
+  "isAlive": false,
+  "lang": "nl",
+  "infos": {
+    "en": [
+      "Born in Halle on 17 October 1929.",
+      "Doctor of Law (1952).",
+      "Secretary of Administration (1956-1957), Deputy Adviser (1957-1960), Adviser (1960-1967), First Adviser (1968-1970), General Inspector (1971-1984) at the National Institute for the Social Security of the Self-employed.",
+      "Municipal Councillor (1958-1984); Mayor (1965-1971); Alderman (1976-1982); Provincial Councillor (1971-1974); Senator (1974-1977); Member of Parliament(1977-1984).",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 10 September 1984.",
+      "Elected President by the Dutch-speaking language group on 14 September 1993.",
+      "President Emeritus since 17 October 1999."
+    ],
+    "fr": [
+      "Né à Halle le 17 octobre 1929.",
+      "Docteur en droit (1952).",
+      "Secrétaire d’administration (1956-1957), conseiller adjoint (1957-1960), conseiller (1960-1967), premier conseiller (1968-1970), inspecteur-général (1971-1984) à l’Institut national d’assurances sociales pour travailleurs indépendants.",
+      "Conseiller communal (1958-1984); bourgmestre (1965-1971); échevin (1976-1982); conseiller provincial (1971-1974); sénateur (1974-1977); membre de la Chambre des représentants (1977-1984).",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 10 septembre 1984.",
+      "Élu président par le groupe linguistique néerlandophone le 14 septembre1993.",
+      "Président émérite depuis le 17 octobre 1999."
+    ],
+    "nl": [
+      "Geboren te Halle op 17 oktober 1929.",
+      "Doctor in de rechten (1952).",
+      "Bestuurssecretaris (1956-1957), adjunct-adviseur (1957-1960), adviseur (1960-1967), eerste adviseur (1968-1970), inspecteur-generaal (1971-1984) bij het Rijksinstituut voor de sociale verzekeringen der zelfstandigen.",
+      "Gemeenteraadslid (1958-1984); burgemeester (1965-1971); schepen (1976-1982); provincieraadslid (1971-1974); senator (1974-1977); volksvertegenwoordiger (1977-1984).",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 10 september 1984.",
+      "Verkozen tot voorzitter door de Nederlandse taalgroep op 14 september 1993.",
+      "Emeritus voorzitter sedert 17 oktober 1999."
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "10.09.1984",
+      "endDate": "16.10.1999"
+    },
+    {
+      "role": "president",
+      "startDate": "14.09.1993",
+      "endDate": "16.10.1999"
+    }
+  ]
+}

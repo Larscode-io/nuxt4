@@ -1,0 +1,43 @@
+{
+  "name": "Willy Calewaert",
+  "slug": "willy-calewaert",
+  "isAlive": false,
+  "lang": "nl",
+  "infos": {
+    "en": [
+      "Born in Antwerp on 26 October 1916.",
+      "Master’s degree in Criminology (1938); Doctor of Law (1939); Teaching qualification for upper secondary education (1953).",
+      "Research assistant (1957-1958), assistant professor (1958-1965), professor ordinarius (1966-1984) at the University of Ghent; assistant professor (1962-1964), professor extraordinarius (1964-1969), professor ordinarius (1969-1977) at the Free University of Brussels (VUB); professor extraordinarius (1972-1977), professor (1977-1984) at the Universitaire Instelling Antwerpen.",
+      "Senator (1968-1981).",
+      "Lawyer at the Bar of Antwerp (1939-1982).",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 10 September 1984.",
+      "Retired since 26 October 1986."
+    ],
+    "fr": [
+      "Né à Anvers le 26 octobre 1916.",
+      "Licencié en criminologie (1938); docteur en droit (1939); agrégé de l’enseignement supérieur (1953).",
+      "Assistant (1957-1958), chargé de cours (1958-1965), professeur ordinaire (1966-1984) à l’Université de Gand; chargé de cours (1962-1964), professeur extraordinaire (1964-1969), professeur ordinaire (1969-1977) à la VUB; professeur extraordinaire (1972-1977), professeur (1977-1984) à l’« Universitaire Instelling Antwerpen ».",
+      "Sénateur (1968-1981).",
+      "Avocat au barreau d’Anvers (1939-1982).",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 10 septembre 1984.",
+      "Admis à la retraite depuis le 26 octobre 1986."
+    ],
+    "nl": [
+      "Geboren te Antwerpen op 26 oktober 1916.",
+      "Licentiaat in de criminologie (1938); doctor in de rechten (1939); geaggregeerde voor het hoger onderwijs (1953).",
+      "Assistent (1957-1958), docent (1958-1965), gewoon hoogleraar (1966-1984) aan de Rijksuniversiteit Gent; docent (1962-1964), buitengewoon hoogleraar (1964-1969), gewoon hoogleraar (1969-1977) aan de Vrije Universiteit Brussel; buitengewoon hoogleraar (1972-1977), hoogleraar (1977-1984) aan de Universitaire Instelling Antwerpen.",
+      "Senator (1968-1981).",
+      "Advocaat aan de balie te Antwerpen (1939-1982).",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 10 september 1984.",
+      "In ruste gesteld met ingang van 26 oktober 1986."
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "10.09.1984",
+      "endDate": " 30.10.1986"
+    }
+  ]
+}

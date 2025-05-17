@@ -1,0 +1,29 @@
+{
+  "name": "Geert GOEDERTIER",
+  "slug": "geert-goedertier",
+  "role": "legalSecretaries",
+  "isAlive": true,
+  "startDate": null,
+  "endDate": null,
+  "lang": "nl",
+  "picture": "geert-goedertier.jpg",
+  "alt": {
+    "en": "Picture of Geert GOEDERTIER",
+    "fr": "Photographie de Geert GOEDERTIER",
+    "nl": "Foto van Geert GOEDERTIER",
+    "de": "Foto von Geert GOEDERTIER"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

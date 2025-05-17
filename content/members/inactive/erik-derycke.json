@@ -1,0 +1,48 @@
+{
+  "name": "Erik Derycke",
+  "slug": "erik-derycke",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "derycke2.jpg",
+  "infos": {
+    "en": [
+      "Born in Waregem on 28 October 1949",
+      "Master’s degree in law (Ghent University, 1972)",
+      "Lawyer (1972-2001)",
+      "Social Welfare Office (OCMW) councillor (1976- 1988) and municipal councillor (1988-2001) in Waregem; West Flanders provincial councillor (1978-1984); Federal Member of Parliament (1984- 2001); State Secretary for Science Policy (1990); Minister of Development Cooperation and Assistant Minister of Science Policy (1991); State Secretary for Development Cooperation (1991-1995); Minister of Foreign Affairs and Development Cooperation (1995); Minister of Foreign Affairs (1995-1999); member of the Parliamentary Assembly of the Council of Europe (1988-1989; 1999-2001); member of the Assembly of the Western European Union (1988-1989; 1999-2001) and of the Inter-Parliamentary Union (1999-2001)",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 10 August 2001",
+      "Judge emeritus since 28 October 2019"
+    ],
+    "fr": [
+      "Né à Waregem le 28 octobre 1949",
+      "Licencié en droit (Université de Gand, 1972)",
+      "Avocat (1972-2001)",
+      "Conseiller à l’aide sociale (1976-1988) et conseiller communal (1988-2001) de Waregem; conseiller provincial de Flandre occidentale (1978-1984); député fédéral (1984-2001); secrétaire d’Etat à la Politique scientifique (1990); ministre de la Coopération au développement et ministre, adjoint à la Politique scientifique (1991); secrétaire d’Etat à la Coopération au développement (1991-1995); ministre des Affaires étrangères et de la Coopération au développement (1995); ministre des Affaires étrangères (1995-1999); membre de l’Assemblée parlementaire du Conseil de l’Europe (1988-1989; 1999-2001), de l’Assemblée de l’Union de l’Europe occidentale (1988-1989; 1999- 2001) et de l’Union interparlementaire (1999-2001)",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 10 août 2001",
+      "Juge émérite depuis le 28 octobre 2019"
+    ],
+    "nl": [
+      "Geboren te Waregem op 28 oktober 1949",
+      "Licentiaat in de rechten (Universiteit Gent, 1972)",
+      "Advocaat (1972-2001)",
+      "OCMW-raadslid (1976-1988) en gemeenteraadslid (1988-2001) te Waregem; provincieraadslid West-Vlaanderen (1978-1984); federaal volksvertegenwoordiger (1984-2001); staatssecretaris voor Wetenschapsbeleid (1990); minister van Ontwikkelingssamenwerking en minister, adjunct voor Wetenschapsbeleid (1991); staatssecretaris voor Ontwikkelingssamenwerking (1991-1995); minister van Buitenlandse Zaken en Ontwikkelingssamenwerking (1995); minister van Buitenlandse Zaken (1995-1999); lid van de Parlementaire Vergadering van de Raad van Europa (1988-1989; 1999-2001), van de Vergadering van de West-Europese Unie (1988-1989; 1999-2001) en van de Interparlementaire Unie (1999-2001)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 10 augustus 2001",
+      "Emeritus rechter sedert 28 oktober 2019"
+    ],
+    "de": [
+      "Geboren in Waregem am 28. Oktober 1949",
+      "Lizentiat der Rechte (Universität Gent, 1972)",
+      "Rechtsanwalt (1972-2001)",
+      "Sozialhilferatsmitglied (1976-1988) und Gemeinderatsmitglied (1988-2001) in Waregem; Mitglied des Provinzialrates von Westflandern (1978-1984); föderaler Abgeordneter (1984-2001); Staatssekretär für Wissenschaftspolitik (1990); Minister der Entwicklungszusammenarbeit und Beigeordneter für Wissenschaftspolitik (1991); Staatssekretär für Entwicklungszusammenarbeit (1991-1995); Minister der Auswärtigen Angelegenheiten und der Entwicklungszusammenarbeit (1995); Minister der Auswärtigen Angelegenheiten (1995-1999); Mitglied der parlamentarischen Versammlung des Europarates (1988-1989; 1999-2001), der Versammlung der Westeuropäischen Union (1988-1989; 1999-2001) und der Interparlamentarischen Union (1999-2001)",
+      "Durch königlichen Erlass vom 10. August 2001 zum Richter am Verfassungsgerichtshof ernannt",
+      "Emeritus Richter seit 28. Oktober 2019"
+    ]
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "05.09.2001",
+      "endDate": "27.10.2019"
+    }
+  ]
+}

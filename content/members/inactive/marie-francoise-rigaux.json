@@ -1,0 +1,21 @@
+{
+  "name": "Marie-Françoise Rigaux",
+  "femaleTitle": true,
+  "slug": "marie-francoise-rigaux",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "marie-francoise-rigaux.jpg",
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

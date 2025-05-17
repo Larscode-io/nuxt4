@@ -1,0 +1,30 @@
+{
+  "name": "Klaas GOETHALS",
+  "femaleTitle": false,
+  "slug": "klaas-goethals",
+  "role": "legalSecretaries",
+  "isAlive": true,
+  "startDate": "01.01.2021",
+  "endDate": null,
+  "lang": "nl",
+  "picture": "klaas-goethals.jpg",
+  "alt": {
+    "en": "Picture of Klaas GOETHALS",
+    "fr": "Photographie de Klaas GOETHALS",
+    "nl": "Foto van Klaas GOETHALS",
+    "de": "Foto von Klaas GOETHALS"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "01.01.2021",
+      "endDate": null
+    }
+  ]
+}

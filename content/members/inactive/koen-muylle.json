@@ -1,0 +1,20 @@
+{
+  "name": "Koen Muylle",
+  "slug": "koen-muylle",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": [],
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

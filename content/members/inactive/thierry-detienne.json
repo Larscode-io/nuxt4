@@ -1,0 +1,52 @@
+{
+  "name": "Thierry Detienne",
+  "slug": "thierry-detienne",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "thierry-detienne.jpg",
+  "alt": {
+    "en": "Picture of Thierry DETIENNE",
+    "fr": "Photographie de Thierry DETIENNE",
+    "nl": "Foto van Thierry DETIENNE",
+    "de": "Foto von Thierry DETIENNE"
+  },
+  "infos": {
+    "en": [
+      "Born in Liège on 25 July 1959",
+      "University degree in Romance Philology and teaching degree in higher education (ULg 1981)",
+      "Trainer in continuing education and development cooperation until 1988, teacher at a centre for education and apprenticeship (secondary education) (1988-1991) and head teacher of a vocational secondary school (2006-2013); commissioner and delegate of the Government of the French-speaking Community to the Art Schools and Colleges (2013-2020)",
+      "Provincial councillor of Liège (1987-1991); member of the House of Representatives (1991-1999) and the Walloon Regional Council and the Council of the French-speaking Community (1991-1995); Minister of the Walloon Region for health and social security (1999-2004); municipal councillor of Sprimont (2006-2012)",
+      "Appointed judge to the Constitutional Court by Royal Decree of 12 July 2020"
+    ],
+    "de": [
+      "Geboren in Lüttich am 25. Juli 1959",
+      "Lizentiat der romanischen Philologie und Lehrbefähigter des Hochschulunterrichts (ULg 1981)",
+      "Animator in der ständigen Weiterbildung und Entwicklungszusammenarbeit bis 1988, Lehrkraft in einem Zentrum für duale Ausbildung (Sekundarunterricht) (1988 bis 1991) und Leiter einer Schule für qualifizierenden Sekundarunterricht von 2006 bis 2013",
+      "Provinzialratsmitglied der Provinz Lüttich von 1987 bis 1991",
+      "Mitglied der Abgeordnetenkammer von 1991 bis 1999, des Wallonischen Regionalrates und des Rates der Französischen Gemeinschaft von 1991 bis 1995. Minister der Wallonischen Region für Soziale Angelegenheiten und Volksgesundheit von 1999 bis 2004. Gemeinderatsmitglied von Sprimont von 2006 bis 2012. Kommissar und Vertreter der Regierung der Französischen Gemeinschaft bei den Hochschulen und Kunstakademien von 2013 bis 2020.",
+      "Durch königlichen Erlass vom 12. Juli 2020 zum Richter am Verfassungsgerichtshof ernannt"
+    ],
+    "nl": [
+      "Geboren te Luik op 25 juli 1959",
+      "Licentiaat in de Romaanse filologie en geagregeerde van het hoger onderwijs (ULg 1981)",
+      "Animator in de permanente opvoeding en de ontwikkelingssamenwerking tot in 1988; leerkracht in een Centrum voor Alternerende Opvoeding en Opleiding (secundair onderwijs) (1988-1991) en directeur van een school voor kwalificerend secundair onderwijs (2006-2013); commissaris en afgevaardigde van de Franse Gemeenschapsregering bij de hogescholen en de hogere kunstscholen (2013-2020)",
+      "Provincieraadslid van Luik (1987-1991); lid van de Kamer van volksvertegenwoordigers (1991-1999) en van de Waalse Gewestraad en van de Franse Gemeenschapsraad (1991-1995); minister van het Waalse Gewest belast met de Sociale Zaken en de Gezondheid (1999-2004); gemeenteraadslid in Sprimont (2006-2012)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 12 juli 2020"
+    ],
+    "fr": [
+      "Né à Liège le 25 juillet 1959",
+      "Licencié en philologie romane et agrégé de l’enseignement supérieur (ULg 1981)",
+      "Animateur dans l’éducation permanente et la coopération au développement jusqu’en 1988, enseignant dans un centre de Formation et d’éducation en alternance (enseignement secondaire) (1988 à 1991) et directeur d’une école d’enseignement secondaire qualifiant de 2006 à 2013.",
+      "Conseiller provincial à Liège de 1987 à 1991",
+      "Membre de la Chambre des représentants de 1991 à 1999, du Conseil régional wallon et du Conseil de la Communauté française de 1991 à 1995. Ministre de la Région wallonne chargé des affaires sociales et de la santé de 1999 à 2004. Conseiller communal à Sprimont de 2006 à 2012. Commissaire-délégué du Gouvernement de la Communauté française auprès des Hautes Écoles et des Écoles supérieures des Arts de 2013 à 2020.",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 12 juillet 2020"
+    ]
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "12.07.2020",
+      "endDate": "31.07.2023"
+    }
+  ]
+}

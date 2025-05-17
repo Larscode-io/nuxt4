@@ -1,0 +1,30 @@
+{
+  "name": "Nicolas BERNARD",
+  "femaleTitle": false,
+  "slug": "nicolas-barnard",
+  "role": "legalSecretaries",
+  "isAlive": true,
+  "startDate": "01.10.2020",
+  "endDate": null,
+  "lang": "fr",
+  "picture": "nicolas-bernard.jpg",
+  "alt": {
+    "en": "Picture of Nicolas BERNARD",
+    "fr": "Photographie de Nicolas BERNARD",
+    "nl": "Foto van Nicolas BERNARD",
+    "de": "Foto von Nicolas BERNARD"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "01.10.2020",
+      "endDate": null
+    }
+  ]
+}

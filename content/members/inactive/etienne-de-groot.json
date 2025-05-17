@@ -1,0 +1,59 @@
+{
+  "name": "Etienne de Groot",
+  "slug": "etienne-de-groot",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "degroot2.jpg",
+  "infos": {
+    "en": [
+      "Born in Antwerp on 17 February 1948",
+      "Doctor of medicine, surgery and obstetrics (Ghent University, 1973), master’s degree in law (Vrije Universiteit Brussel, VUB, 1980), doctorate in medical sciences (VUB, 2013)",
+      "General practitioner (1973-1999); second medical lieutenant with the fire brigade of Boom (1977-1983)",
+      "Professor at the Faculties of Physical Education, Physiotherapy, Medicine and Pharmacy (VUB, 1987-2013); member, in the capacity of Dutch-speaking magistrate, of the Advisory Committee on Bioethics (since 2000); member, in the capacity of physician, of the Federal Control and Evaluation Commission on euthanasia (since 2007)",
+      "Federal (1981-1995, 1999) and Flemish (1995-1999) Member of Parliament; alderman (1983-1985), then mayor of Boom (1986-1995); President of the Parliamentary Committee on Public Health and the Environment (1984- 1991); Vice-President of the Committee on Welfare, Health and Family Affairs (1995-1999); Vice-President of the ad hoc Committee on Special Youth Welfare (1998-1999)",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 17 December 1999, and elected (Dutchspeaking) President with effect from 1 February 2016 to 16 February 2018"
+    ],
+    "fr": [
+      "Né à Anvers le 17 février 1948",
+      "Docteur en médecine, chirurgie et accouchements (Université de Gand, 1973);",
+      "Licencié en droit (Université libre de Bruxelles (VUB), 1980)",
+      "Docteur en sciences médicales (Université libre de Bruxelles (VUB), 2013)",
+      "Médecin généraliste (1973-1999); sous-lieutenant médecin des services d’incendie de Boom (1977‑1983); chargé de cours aux Facultés Lichamelijke Opvoeding en Kinesitherapie et Geneeskunde en Farmacie de la VUB (depuis 1987); émérite depuis le 1er octobre 2013",
+      "Membre du Comité consultatif de Bioéthique en qualité de magistrat néerlandophone (depuis 2000); membre de la Commission fédérale de contrôle et d’évaluation Euthanasie, en qualité de médecin (depuis 2007)",
+      "Membre de la Chambre des représentants (1981-1995, 1999); échevin à Boom (1983-1985); président de la commission de la Chambre pour la Santé publique et l’Environnement (1984-1991); bourgmestre de Boom (1986-1995); membre du Parlement flamand (1995‑1999); vice-président de la Commissie voor Welzijn, Gezondheid en Gezin (1995-1999); viceprésident de la Commission ad hoc Bijzondere jeugdzorg (1998-1999)",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 17 décembre 1999 et élu président (néerlandophone) du 1er février 2016 au 16 février 2018",
+      "Président émérite depuis le 17 février 2018"
+    ],
+    "nl": [
+      "Geboren te Antwerpen op 17 februari 1948",
+      "Doctor in de genees-, heel- en verloskunde (RUG, 1973);",
+      "Licentiaat in de rechten (VUB, 1980)",
+      "Doctor in de medische wetenschappen (VUB, 2013)",
+      "Huisarts (1973-1999); onderluitenant-geneesheer van de Boomse Brandweer (1977-1983); professor Faculteiten Lichamelijke Opvoeding en Kinesitherapie en Geneeskunde en Farmacie (VUB, vanaf 1987); emeritus sinds 1 oktober 2013",
+      "Lid van het Raadgevend Comité voor Bio-Ethiek in de hoedanigheid van Nederlandstalig magistraat (vanaf 2000); lid van de Federale controle- en evaluatiecommissie voor de euthanasie in de hoedanigheid van arts (vanaf 2007)",
+      "Federaal volksvertegenwoordiger (1981-1995 en 1999); schepen van Boom (1983-1985); voorzitter van de Kamercommissie voor Volksgezondheid en Leefmilieu (1984-1991); burgemeester van Boom (1986-1995); Vlaams volksvertegenwoordiger (1995-1999); ondervoorzitter Commissie voor Welzijn, Gezondheid en Gezin (1995-1999); ondervoorzitter Commissie ad hoc Bijzondere Jeugdzorg (1998-1999)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 17 december 1999 en verkozen tot (Nederlandstalig) voorzitter van 1 februari 2016 tot 16 februari 2018",
+      "Emeritus voorzitter sedert 17 februari 2018"
+    ],
+    "de": [
+      "Geboren in Antwerpen am 17. Februar 1948",
+      "Doktor der Medizin, Chirurgie und Geburtshilfe (RUG, 1973), Lizentiat der Rechte (VUB, 1980), Doktor der Medizinwissenschaften (VUB, 2013)",
+      "Hausarzt (1973-1999); Unterleutnant-Arzt der Feuerwehr in Boom (1977-1983)",
+      "Professor an den Fakultäten « Lichamelijke Opvoeding en Kinesitherapie en Geneeskunde en Farmacie » der VUB (1987-2013); Mitglied des Beratenden Ausschusses für Bioethik, als niederländischsprachiger Magistrat (seit 2000); Mitglied der Föderalen Kontroll- und Bewertungskommission Euthanasie, als Arzt (seit 2007)",
+      "Mitglied der Abgeordnetenkammer (1981-1995, 1999) und des Flämischen Parlaments (1995-1999); Schöffe in Boom (1983-1985) und anschließend Bürgermeister von Boom (1986-1995); Vorsitzender des Kammerausschusses für Volksgesundheit und Umwelt (1984-1991); Vizevorsitzender der Commissie voor Welzijn, Gezondheid en Gezin (1995-1999); Vizevorsitzender der Ad-hoc-Kommission Bijzondere jeugdzorg (1998-1999)",
+      "Durch königlichen Erlass vom 17. Dezember 1999 zum Richter am Verfassungsgerichtshof ernannt und vom 1. Februar 2016 bis zum 16. Februar 2018 zum (niederländischsprachigen) Präsidenten gewählt"
+    ]
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "17.12.1999",
+      "endDate": "16.02.2018"
+    },
+    {
+      "role": "president",
+      "startDate": "01.02.2016",
+      "endDate": "16.02.2018"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "André Alen",
+  "slug": "andre-alen",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "andre-alen.jpg",
+  "infos": {
+    "en": [
+      "Born in Assent on 25 September 1950; appointed Baron by Royal Decree of 16 July 1993",
+      "Master’s degree in law (KU Leuven, 1973); PhD in law (KU Leuven, 1983)",
+      "Teaching assistant (KU Leuven, 1973-1977); lecturer (Antwerp Provincial Institute of Administrative Sciences, 1979-1986); (senior) lecturer (Ghent University, 1984-1992 and KU Leuven, 1986-1992); professor (KU Leuven, 1992- 2001); extraordinary professor (Ghent University, 1992-1994; UCL, 1997-1998; KU Leuven, 2001-2015); emeritus professor (KU Leuven, since 2015)",
+      "Legal adviser (1973); lawyer (1976-1978); Director of the Association of Belgian Provinces (1982-1986); adviser to the Minister of Justice (1978); commissioner at the office of the Prime Minister (1978); Deputy Head of Cabinet of the Deputy Prime Minister (1978-1979); Deputy Head of Cabinet of the Prime Minister (1979-1981); Head of Cabinet of the Minister of Institutional Reform (1981-1984); (honorary) Head of Cabinet of the Prime Minister (1984- 1987); (honorary) secretary of the Council of Ministers (1985-1992); assessor of the Legislation Section of the Council of State (1992-2001); ad hoc Judge in the European Court of Human Rights (since 2010)",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 16 March 2001; (Dutch-speaking) President with effect from 9 January 2014 to 31 January 2016 and with effect from 17 February 2018 to 24 September 2020"
+    ],
+    "de": [
+      "Geboren in Assent am 25. September 1950; durch königlichen Erlass vom 16. Juli 1993 zum Baron ernannt",
+      "Lizentiat der Rechte (KU Löwen, 1973); Doktor der Rechte (KU Löwen, 1983)",
+      "Assistent (KU Löwen, 1973-1977); Dozent (Provinciaal Hoger Instituut voor Bestuurswetenschappen Antwerpen, 1979- 1986); Dozent (Universität Gent, 1984-1992 und KU Löwen, 1986-1992); ordentlicher Professor (KU Löwen, 1992-2001), außerordentlicher Professor (Universität Gent, 1992-1994; Université catholique de Louvain, 1997-1998 und KU Löwen, 2001-2015); emeritierter Professor (KU Löwen, seit 2015))",
+      "Rechtsberater (1973); Rechtsanwalt (1976-1978); Direktor der Vereinigung der belgischen Provinzen (1982-1986); Berater des Ministers der Justiz (1978); Beauftragter beim Kabinett des Premierministers (1978); beigeordneter Kabinettschef des Vizepremierministers (1978-1979); beigeordneter Kabinettschef des Premierministers (1979-1981); Kabinettschef des Ministers der Institutionellen Reformen (1981-1984); (Honorar-)Kabinettschef des Premierministers (1984-1987); (Honorar-)Sekretär des Ministerrates (1985- 1992); Beisitzer der Gesetzgebungsabteilung des Staatsrates (1992-2001); Ad-hoc-Richter am Europäischen Gerichtshof für Menschenrechte (seit 2010)",
+      "Durch königlichen Erlass vom 16. März 2001 zum Richter am Verfassungsgerichtshof ernannt; (niederländischsprachiger) Präsident vom 9. Januar 2014 bis zum 31. Januar 2016 sowie vom 17. Februar 2018 bis zum 24. September 2020"
+    ],
+    "nl": [
+      "Geboren te Assent op 25 september 1950; benoemd tot baron bij koninklijk besluit van 16 juli 1993",
+      "Licentiaat in de rechten (KU Leuven, 1973); doctor in de rechten (KU Leuven, 1983)",
+      "Assistent (KU Leuven, 1973-1977); docent (Provinciaal Hoger Instituut voor Bestuurswetenschappen Antwerpen, 1979-1986); (hoofd)docent (Universiteit Gent, 1984-1992 en KU Leuven, 1986-1992); gewoon hoogleraar (KU Leuven, 1992-2001); buitengewoon hoogleraar (Universiteit Gent, 1992-1994; UCL, 1997-1998 en KU Leuven, sedert 2001)",
+      "Juridisch adviseur (1973); advocaat (1976-1978); directeur van de Vereniging van Belgische Provincies (1982-1986); adviseur van de Minister van Justitie (1978); opdrachthouder bij het kabinet van de Eerste Minister (1978); adjunct-kabinetschef van de Vice- Eerste Minister (1978-1979); adjunct-kabinetschef van de Eerste Minister (1979-1981); kabinetschef van de Minister voor Institutionele Hervormingen (1981-1984); (ere)kabinetschef van de Eerste Minister (1984-1987); (ere)secretaris van de Ministerraad (1985-1992); assessor van de afdeling wetgeving van de Raad van State (1992-2001)",
+      "Rechter ad hoc in het EHRM sinds 1 juni 2010",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 16 maart 2001 en verkozen tot (Nederlandstalig) voorzitter van 9 januari 2014 tot 31 januari 2016 en van 17 februari 2018 tot 24 september 2020"
+    ],
+    "fr": [
+      "Né à Assent le 25 septembre 1950; nommé baron par arrêté royal du 16 juillet 1993",
+      "Licencié en droit (Université catholique de Leuven, 1973); docteur en droit (Université catholique de Leuven, 1983)",
+      "Assistant (Université catholique de Leuven, 1973‑1977); chargé de cours (Provinciaal Hoger Instituut voor Bestuurswetenschappen Antwerpen, 1979‑1986); chargé de cours (Université de Gand, 1984-1992 et Université catholique de Leuven, 1986-1992); professeur",
+      "ordinaire (Université catholique de Leuven, 1992‑2001), professeur extraordinaire (Université de Gand, 1992‑1994; Université catholique de Louvain, 1997‑1998 et Université catholique de Leuven, depuis 2001)",
+      "Conseiller juridique (1973); avocat (1976-1978); directeur de l’Association des Provinces belges (1982-1986); conseiller du Ministre de la Justice (1978); chargé de mission au cabinet du Premier Ministre (1978); chef de cabinet adjoint du Vice-Premier Ministre (1978‑1979); chef de cabinet adjoint du Premier Ministre (1979‑1981); chef de cabinet du Ministre des Réformes institutionnelles (1981-1984); chef de cabinet (honoraire) du Premier Ministre (1984-1987); secrétaire (honoraire) du Conseil des Ministres (1985-1992); assesseur de la section de législation du Conseil d’Etat (1992-2001)",
+      "Juge ad hoc à la CEDH depuis le 1er juin 2010",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 16 mars 2001 et élu président (néerlandophone) du 9 janvier 2014 au 31 janvier 2016 et du 17 février 2018 au 24 septembre 2020"
+    ]
+  },
+  "roles": [
+    {
+      "role": "president",
+      "startDate": "25.09.1950",
+      "endDate": null
+    },
+    {
+      "role": "judge",
+      "startDate": "16.03.2001",
+      "endDate": "08.01.2014"
+    },
+    {
+      "role": "president",
+      "startDate": "09.01.2014",
+      "endDate": "31.01.2016"
+    },
+    {
+      "role": "president",
+      "startDate": "17.02.2018",
+      "endDate": "24.09.2020"
+    }
+  ]
+}

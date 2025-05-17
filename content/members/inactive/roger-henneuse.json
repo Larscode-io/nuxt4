@@ -1,0 +1,39 @@
+{
+  "name": "Roger Henneuse",
+  "slug": "roger-henneuse",
+  "isAlive": false,
+  "lang": "fr",
+  "picture": "henneuse2.jpg",
+  "infos": {
+    "en": [],
+    "fr": [
+      "Né à Bury le 19 juin 1943",
+      "Agrégé de l’enseignement secondaire inférieur (1963)",
+      "Enseignant (1963-1980); directeur de lycée (1980‑1987)",
+      "Conseiller communal (1977-1994) et bourgmestre (1989-1994) de Péruwelz; conseiller provincial (1981‑1985); sénateur (1987-1995)",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 6 janvier 1995 et élu président (francophone) à partir du 5 décembre 2010",
+      "Président émérite depuis le 19 juin 2013"
+    ],
+    "nl": [
+      "Geboren te Bury op 19 juni 1943",
+      "Geaggregeerde voor het lager secundair onderwijs (1963)",
+      "Leraar (1963-1980); directeur middelbare school (1980-1987)",
+      "Gemeenteraadslid (1977-1994) en burgemeester (1989-1994) te Péruwelz; provincieraadslid (1981-1985); senator (1987-1995)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 6 januari 1995 en verkozen tot (Franstalig) voorzitter met ingang van 5 december 2010",
+      "Emeritus voorzitter sedert 19 juni 2013"
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "06.01.1995",
+      "endDate": "18.06.2013"
+    },
+    {
+      "role": "president",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

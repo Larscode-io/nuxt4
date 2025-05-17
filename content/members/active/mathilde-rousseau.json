@@ -1,0 +1,30 @@
+{
+  "name": "Mathilde ROUSSEAU",
+  "femaleTitle": false,
+  "slug": "mathilde-rousseau",
+  "role": "legalSecretaries",
+  "isAlive": true,
+  "startDate": "21.08.2023",
+  "endDate": null,
+  "lang": "fr",
+  "picture": "mathilde-rousseau.jpg",
+  "alt": {
+    "en": "Picture of Mathilde ROUSSEAU",
+    "fr": "Photographie de Mathilde ROUSSEAU",
+    "nl": "Foto van Mathilde ROUSSEAU",
+    "de": "Foto von Mathilde ROUSSEAU"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "21.08.2023",
+      "endDate": null
+    }
+  ]
+}

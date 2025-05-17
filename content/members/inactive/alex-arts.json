@@ -1,0 +1,39 @@
+{
+  "name": "Alex Arts",
+  "slug": "alex-arts",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "arts.jpg",
+  "infos": {
+    "en": [],
+    "fr": [
+      "Né à Anvers le 9 octobre 1937.",
+      "Docteur en droit (KUL, 1962); licencié en sciences politiques et sociales (KUL, 1963).",
+      "Avocat au barreau de Tongres (1963-1994); président du CPAS à Genk (1971-1981); président national du Conseil supérieur de l'Aide sociale (1986-1988); senateur (1987-1994).",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 14 novembre 1994.",
+      "Elu président par le groupe linguistique néerlandophone à partir du 5 septembre 2001.",
+      "Président émérite depuis le 9 octobre 2007."
+    ],
+    "nl": [
+      "Geboren te Antwerpen op 9 oktober 1937.",
+      "Doctor in de rechten (KUL, 1962); licentiaat in de politieke en sociale wetenschappen (KUL, 1963).",
+      "Advocaat aan de balie te Tongeren (1963-1994); voorzitter OCMW Genk (1971-1981); nationaal voorzitter Hoge Raad voor Maatschappelijk Welzijn (1986-1988); senator (1987-1994).",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij K.B. van 14 november 1994.",
+      "Verkozen tot voorzitter door de Nederlandse taalgroep, met ingang van 5 september 2001.",
+      "Emeritus voorzitter sedert 9 oktober 2007."
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "14.11.1994",
+      "endDate": "08.10.2007"
+    },
+    {
+      "role": "president",
+      "startDate": "05.09.2001",
+      "endDate": "08.10.2007"
+    }
+  ]
+}

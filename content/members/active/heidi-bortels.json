@@ -1,0 +1,30 @@
+{
+  "name": "Heidi BORTELS",
+  "femaleTitle": true,
+  "slug": "heidi-bortels",
+  "role": "legalSecretaries",
+  "isAlive": true,
+  "startDate": null,
+  "endDate": null,
+  "lang": "nl",
+  "picture": "heidi-bortels.jpg",
+  "alt": {
+    "en": "Picture of Heidi BORTELS",
+    "fr": "Photographie de Heidi BORTELS",
+    "nl": "Foto van Heidi BORTELS",
+    "de": "Foto von Heidi BORTELS"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Jan Delva",
+  "slug": "jan-delva",
+  "isAlive": false,
+  "lang": "nl",
+  "picture": "jan-delva.jpg",
+  "alt": {
+    "en": "Picture of Jan DELVA",
+    "fr": "Photographie de Jan DELVA",
+    "nl": "Foto van Jan DELVA",
+    "de": "Foto von Jan DELVA"
+  },
+  "infos": {
+    "en": [
+      "Born in Bruges on 28 January 1923.",
+      "Doctor of Law (KU Leuven, 1945).",
+      "Lawyer at the Bar of Bruges (1945-1951); Substitute for the King’s Prosecutor at the Court of First Instance of Brussels (1951-1961); Judge at the Court of First Instance of Brussels (1961-1967); Juvenile Judge at the Court of First Instance of Brussels (1967-1970); Councillor at the Court of appeal of Brussels (1970-1974); Councillor at the Court of Cassation (1974-1983); Section President at the Court of Cassation (1983-1984).",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 10 September 1984.",
+      "Elected President by the Dutch-speaking language group on 3 October 1984.",
+      "President Emeritus since 28 January 1993."
+    ],
+    "fr": [
+      "Né à Bruges le 28 janvier1923.",
+      "Docteur en droit (KU Leuven, 1945).",
+      "Avocat au barreau de Bruges (1945-1951); substitut du procureur du Roi près le Tribunal de première instance de Bruxelles (1951-1961); juge au Tribunal de première instance de Bruxelles (1961-1967); juge de la jeunesse au Tribunal de première instance de Bruxelles (1967-1970); conseiller à la Cour d’appel de Bruxelles (1970-1974); conseiller à la Cour de cassation (1974-1983); président de section à la Cour de cassation (1983-1984).",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 10 septembre 1984.",
+      "Élu président par le groupe linguistique néerlandophone le 3 octobre 1984.",
+      "Président émérite depuis le 28 janvier 1993. Willy Calewaert  †",
+      "Born in Antwerp on 26 October 1916.",
+      "Master’s degree in Criminology (1938); Doctor of Law (1939); Teaching qualification for upper secondary education (1953).",
+      "Research assistant (1957-1958), assistant professor (1958-1965), professor ordinarius (1966-1984) at the University of Ghent; assistant professor (1962-1964), professor extraordinarius (1964-1969), professor ordinarius (1969-1977) at the Free University of Brussels (VUB); professor extraordinarius (1972-1977), professor (1977-1984) at the Universitaire Instelling Antwerpen.",
+      "Senator (1968-1981).",
+      "Lawyer at the Bar of Antwerp (1939-1982).",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 10 September 1984.",
+      "Retired since 26 October 1986."
+    ],
+    "nl": [
+      "Geboren te Brugge op 28 januari 1923.",
+      "Doctor in de rechten (Katholieke Universiteit Leuven, 1945).",
+      "Advocaat aan de balie te Brugge (1945-1951); substituut-procureur des Konings bij de rechtbank van eerste aanleg te Brussel (1951-1961); rechter in de rechtbank van eerste aanleg te Brussel (1961-1967); jeugdrechter in de rechtbank van eerste aanleg te Brussel (1967-1970); raadsheer in het Hof van Beroep te Brussel (1970-1974); raadsheer in het Hof van Cassatie (1974-1983); afdelingsvoorzitter in het Hof van Cassatie (1983-1984).",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 10 september 1984.",
+      "Verkozen tot voorzitter door de Nederlandse taalgroep op 3 oktober 1984.",
+      "Emeritus voorzitter sedert 28 januari 1993."
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "10.09.1984",
+      "endDate": "27.01.1993"
+    },
+    {
+      "role": "president",
+      "startDate": "03.10.1984",
+      "endDate": "27.01.1993"
+    }
+  ]
+}

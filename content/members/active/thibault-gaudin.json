@@ -1,0 +1,30 @@
+{
+  "name": "Thibault GAUDIN",
+  "femaleTitle": false,
+  "slug": "thibault-gaudin",
+  "role": "legalSecretaries",
+  "isAlive": true,
+  "startDate": "08.01.2024",
+  "endDate": null,
+  "lang": "fr",
+  "picture": "thibault-gaudin.jpg",
+  "alt": {
+    "en": "Picture of Thibault GAUDIN",
+    "fr": "Photographie de Thibault GAUDIN",
+    "nl": "Foto van Thibault GAUDIN",
+    "de": "Foto von Thibault GAUDIN"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "08.01.2024",
+      "endDate": null
+    }
+  ]
+}

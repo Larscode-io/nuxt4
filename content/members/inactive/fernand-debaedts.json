@@ -1,0 +1,24 @@
+{
+  "name": "Fernand Debaedts",
+  "slug": "fernand-debaedts",
+  "isAlive": false,
+  "lang": "nl",
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "10.09.1984",
+      "endDate": "06.08.1993"
+    },
+    {
+      "role": "president",
+      "startDate": "02.02.1993",
+      "endDate": "06.08.1993"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Georges de Baets",
+  "slug": "georges-de-baets",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "georges-de-baets.png",
+  "infos": {
+    "en": [],
+    "fr": [
+      "Né à Zwevezele le 14 mars 1931",
+      "Docteur en droit (KU Leuven, 1952), licencié en notariat (KU Leuven, 1952)",
+      "Avocat (1952-1958); substitut de l'auditeur militaire en campagne (1958-1961); substitut du procureur du Roi (1961-1962), juge (1962-1974), juge d'instruction (1963-1972) et vice-président (1974-1976) du tribunal de première instance à Gand; conseiller (1976-1984) et président de chambre (1984-1985) à la Cour d'appel de Gand; conseiller à la Cour de cassation (1985-1993); premier président néerlandophone du Collège de recrutement des magistrats (1992-1993)",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 25 janvier 1993",
+      "Elu président par le groupe linguistique néerlandophone à partir du 18 octobre 1999",
+      "Président émérite depuis le 14 mars 2001"
+    ],
+    "nl": [
+      "Geboren te Zwevezele op 14 maart 1931",
+      "Doctor in de rechten (KU Leuven, 1952), licentiaat in het notariaat (KU Leuven, 1952)",
+      "Advocaat (1952-1958); substituut-krijgsauditeur te velde (1958-1961); substituut-procureur des Konings (1961-1962), rechter (1962-1974), onderzoeksrechter (1963-1972) en ondervoorzitter (1974-1976) van de rechtbank van eerste aanleg te Gent; raadsheer (1976-1984) en kamervoorzitter (1984-1985) in het Hof van Beroep te Gent; raadsheer in het Hof van Cassatie (1985-1993); eerste Nederlandstalige voorzitter van het Wervingscollege der magistraten (1992-1993).  Benoemd tot rechter in het Grondwettelijk Hof bij K.B. van 25 januari 1993",
+      "Verkozen tot voorzitter door de Nederlandse taalgroep, met ingang van 18 oktober 1999",
+      "Emeritus voorzitter sedert 14 maart 2001"
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "15.01.1993",
+      "endDate": "13.03.2001"
+    },
+    {
+      "role": "president",
+      "startDate": "17.10.1999",
+      "endDate": "13.03.2001"
+    }
+  ]
+}

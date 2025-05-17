@@ -1,0 +1,58 @@
+{
+  "name": "Willem VERRIJDT",
+  "slug": "willem-verrijdt",
+  "role": "judge",
+  "isAlive": true,
+  "startDate": "21.03.2022",
+  "endDate": null,
+  "lang": "nl",
+  "picture": "willem-verrijdt.jpg",
+  "alt": {
+    "en": "Picture of Willem VERRIJDT",
+    "fr": "Photographie de Willem VERRIJDT",
+    "nl": "Foto van Willem VERRIJDT",
+    "de": "Foto von Willem VERRIJDT"
+  },
+  "infos": {
+    "en": [
+      "Born in Leuven on 15 July 1981",
+      "Master’s degree in law (KU Leuven, 2004)",
+      "Law clerk at the Constitutional Court (2008-2022)",
+      "Full-time research assistant (2004-2008), part-time teaching assistant (2008-2011), affiliated researcher (2011-2017) and lector (2017-2022) at KU Leuven; member of the editorial board, final editor and chief editor of Jura Falconis (2001-2004); member of the editorial board of the Bibliotheek Grondwettelijk Recht (2012-…); member of the editorial board of the loose-leaf commentary Publiek Procesrecht (2011-…); editorial secretary of the Tijdschrift voor Bestuurswetenschappen en Publiekrecht (2021-…); deputy member of the management board of the Federal Institute for the protection and promotion of Human Rights (2021-2022)",
+      "Appointed judge to the Constitutional Court by Royal Decree of 21 March 2022"
+    ],
+    "fr": [
+      "Né à Louvain le 15 juillet 1981",
+      "Licencié en droit (KU Leuven, 2004)",
+      "Référendaire à la Cour constitutionnelle (2008-2022)",
+      "Assistant (2004-2008), assistant à temps partiel (2008-2011), collaborateur scientifique volontaire (2011-2017) et maître de conférences (2017-2022) à la KU Leuven; membre du comité de rédaction, rédacteur final et rédacteur en chef de Jura Falconis (2001-2004); membre du comité de rédaction de Bibliotheek Grondwettelijk Recht (2012-...); membre du comité de rédaction du commentaire à feuillet mobile Publiek Procesrecht (2011-…); secrétaire du comité de rédaction de Tijdschrift voor Bestuurswetenschappen en Publiekrecht (2021-...); membre suppléant du conseil d'administration de l'Institut fédéral pour la protection et la promotion des droits humains (2021-2022)",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 21 mars 2022"
+    ],
+    "nl": [
+      "Geboren te Leuven op 15 juli 1981",
+      "Licentiaat in de rechten (KU Leuven, 2004)",
+      "Referendaris bij het Grondwettelijk Hof (2008-2022)",
+      "Assistent (2004-2008), deeltijds praktijkassistent (2008-2011), vrijwillig wetenschappelijk medewerker (2011-2017) en praktijklector (2017-2022) aan de KU Leuven; redactielid, eindredacteur en hoofdredacteur van Jura Falconis (2001-2004); redactielid van de Bibliotheek Grondwettelijk Recht (2012-…); redactielid van de losbladige commentaar Publiek Procesrecht (2011); redactiesecretaris van het Tijdschrift voor Bestuurswetenschappen en Publiekrecht (2021-…); plaatsvervangend lid van de raad van bestuur van het Federaal Instituut voor de bescherming en de bevordering van de Rechten van de Mens (2021-2022)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 21 maart 2022"
+    ],
+    "de": [
+      "Geboren in Löwen am 15. Juli 1981",
+      "Lizentiat der Rechte (KU Löwen, 2004)",
+      "Referent beim Verfassungsgerichtshof (2008-2022)",
+      "Assistent (2004-2008), Teilzeit-Assistent für praktische Kurse (2008-2011), freiwilliger wissenschaftlicher Mitarbeiter (2011-2017) und Lektor für praktische Kurse (2017-2022) an der KU Löwen; Redaktionsmitglied, Endredakteur und Chefredakteur von „Jura Falconis” (2001-2004); Redaktionsmitglied der „Bibliotheek Grondwettelijk Recht” (2012-…); Redaktionsmitglied des Loseblattkommentars „Publiek Procesrecht” (2011-…); Redaktionssekretär der „Tijdschrift voor Bestuurswetenschappen en Publiekrecht” (2021-…); stellvertretendes Mitglied des Verwaltungsrates des Föderalen Instituts für den Schutz und die Förderung der Menschenrechte (2021-2022)",
+      "Durch königlichen Erlass vom 21. März 2022 zum Richter am Verfassungsgerichtshof ernannt "
+    ]
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "21.03.2022",
+      "endDate": null
+    },
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}
