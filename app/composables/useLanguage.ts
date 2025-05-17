@@ -25,6 +25,13 @@ export const defaultListLang: Record<string, string> = {
   [Languages.GERMAN]: 'pdf_de',
 }
 
+const langCollection = {
+  [Languages.DUTCH]: 'collection_dutch',
+  [Languages.FRENCH]: 'collection_french',
+  [Languages.GERMAN]: 'collection_german',
+  [Languages.ENGLISH]: 'collection_english',
+} as const satisfies Record<Languages, string>
+
 export function useLanguage() {
   const { t, locales, locale, setLocale, defaultLocale } = useI18n<
     [MessageSchema],
@@ -73,5 +80,6 @@ export function useLanguage() {
     defaultLocale,
     activeLocale,
     getLocalizedPath,
+    langCollection,
   }
 }
