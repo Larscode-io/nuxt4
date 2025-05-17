@@ -13,15 +13,29 @@ export type Alt = {
 }
 
 export type Member = {
-  alt: Alt
-  endDate: string
-  infos: Infos
-  lang: string
   name: string
-  picture: string
-  role: string
-  slug: string
-  startDate: string
-  isAlive: boolean
-  femaleTitle: boolean
+  slug?: string
+  isAlive?: boolean
+  startDate: string | null
+  endDate: string | null
+  lang: string
+  picture?: string
+  femaleTitle?: boolean
+  alt?: {
+    en?: string
+    fr?: string
+    nl?: string
+    de?: string
+  }
+  infos?: {
+    en?: string[]
+    fr?: string[]
+    nl?: string[]
+    de?: string[]
+  }
+  roles?: {
+    role: string
+    startDate: string | null
+    endDate: string | null
+  }[]
 }
