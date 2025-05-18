@@ -57,7 +57,7 @@ export default defineContentConfig({
       schema: memberSchema,
     }),
     collection_member_inactive: defineCollection({
-      source: 'members/active/*.json',
+      source: 'members/inactive/*.json',
       type: 'data',
       schema: memberSchema,
     }),
