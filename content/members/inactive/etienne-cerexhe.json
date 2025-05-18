@@ -1,0 +1,13 @@
+{
+    "name": "Etienne Cerexhe (Baron)",
+    "slug": "etienne-cerexhe",
+    "isAlive": false,
+    "lang": "fr",
+    "roles": [
+        {
+            "role": "judge",
+            "startDate": "01.12.1993",
+            "endDate": "18.04.2001"
+        }
+    ]
+}

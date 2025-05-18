@@ -28,12 +28,12 @@
     {
       "role": "judge",
       "startDate": "06.01.1995",
-      "endDate": "18.06.2013"
+      "endDate": "04.10.2010"
     },
     {
       "role": "president",
-      "startDate": null,
-      "endDate": null
+      "startDate": "05.10.2010",
+      "endDate": "18.06.2013"
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "name": "Henri Boel",
+  "slug": "henri-boel",
+  "role": "president",
+  "isAlive": false,
+  "startDate": "14.03.2001",
+  "endDate": "04.09.2001",
+  "lang": "nl",
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "24.11.1986",
+      "endDate": "13.03.2001"
+    },
+    {
+      "role": "president",
+      "startDate": "14.03.2001",
+      "endDate": "04.09.2001"
+    }
+  ]
+}

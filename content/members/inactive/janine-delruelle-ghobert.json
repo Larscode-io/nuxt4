@@ -1,0 +1,14 @@
+{
+    "name": "Janine Delruelle-Ghobert",
+    "slug": "janine-delruelle-ghobert",
+    "femaleTitle": true,
+    "isAlive": false,
+    "lang": "fr",
+    "roles": [
+        {
+            "role": "judge",
+            "startDate": "21.12.1992",
+            "endDate": "24.04.2001"
+        }
+    ]
+}

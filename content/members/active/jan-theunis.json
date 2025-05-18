@@ -22,7 +22,7 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
+      "startDate": "01.01.1988",
       "endDate": null
     }
   ]

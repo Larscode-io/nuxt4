@@ -1,0 +1,40 @@
+{
+    "name": "Louis-Paul Suetens",
+    "slug": "louis-paul-suetens",
+    "isAlive": false,
+    "lang": "nl",
+    "infos": {
+        "en": [
+            "Born in Antwerp on 1 August 1936.",
+            "Doctor of Law (KU Leuven, 1959); Master of Laws (University of California, Berkeley, 1960); Doctor of Political and Social Sciences (KU Leuven, 1963).",
+            "Researcher at the National Fund for Scientific Research (1962-1965); assistant professor (1965-1968), professor ordinarius (1968-1979), professor extraordinarius (1979-1996) at the KU Leuven; professor at the School of Economics of Limburg (1968-1972).",
+            "Deputy Head and later Head of Cabinet of the Minister of Institutional Reform (1974-1977); acting President of the Royal Commission for Monuments and Sites (1974-1979); President of the European Environmental Bureau (1974-1979); Councillor at the Council of State (1979-1984).",
+            "Alderman for Education and Spatial Planning in Holsbeek (1970-1979).",
+            "Appointed Judge to the Constitutional Court by Royal Decree of 10 September 1984."
+        ],
+        "fr": [
+            "Né à Anvers le 1er août 1936.",
+            "Docteur en droit (KU Leuven, 1959); Master of Laws (Université de Californie, Berkeley, 1960); docteur en sciences politiques et sociales (KU Leuven, 1963).",
+            "Chercheur au Fonds national de la recherche scientifique (1962-1965); chargé de cours (1965-1968), professeur ordinaire (1968-1979), professeur extraordinaire (1979-1996) à la KU Leuven; professeur à l’École supérieure d’économie du Limbourg (1968-1972).",
+            "Chef de cabinet adjoint, puis chef de cabinet du ministre des Réformes institutionnelles (1974-1977); président faisant fonction de la Commission royale des monuments et sites (1974-1979); président du Bureau européen de l’environnement (1974-1979); conseiller d’État (1979-1984).",
+            "Échevin de l’enseignement et de l’aménagement du territoire à Holsbeek (1970-1979).",
+            "juge à la Cour constitutionnelle par arrêté royal du 10 septembre 1984."
+        ],
+        "nl": [
+            "Geboren te Antwerpen op 1 augustus 1936.",
+            "Doctor in de rechten (Katholieke Universiteit Leuven, 1959); Master of Laws (University of California, Berkeley, 1960); doctor in de politieke en sociale wetenschappen (Katholieke Universiteit Leuven, 1963).",
+            "Navorser Nationaal Fonds voor Wetenschappelijk Onderzoek (1962-1965); docent (1965-1968), gewoon hoogleraar (1968-1979), buitengewoon hoogleraar (1979-1996) aan de Katholieke Universiteit Leuven; hoogleraar aan de Economische Hogeschool Limburg (1968-1972).",
+            "Adjunct-kabinetschef, nadien kabinetschef van de minister voor Hervorming der Instellingen (1974-1977); waarnemend voorzitter van de Koninklijke Commissie voor Monumenten en Landschappen (1974-1979); voorzitter van het Europees Milieubureau (1974-1979); staatsraad (1979-1984).",
+            "Schepen van onderwijs en ruimtelijke ordening te Holsbeek (1970-1979).",
+            "tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 10 september 1984."
+        ],
+        "de": []
+    },
+    "roles": [
+        {
+            "role": "judge",
+            "startDate": "10.09.1984",
+            "endDate": " 02.09.1996 "
+        }
+    ]
+}

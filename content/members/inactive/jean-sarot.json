@@ -1,0 +1,14 @@
+{
+    "name": "Jean Sarot",
+    "slug": "jean-sarot",
+    "role": "president",
+    "isAlive": false,
+    "lang": "fr",
+    "roles": [
+        {
+            "role": "president",
+            "startDate": "28.11.1989",
+            "endDate": "31.12.1990"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Dieudonné André",
+    "role": "judge",
+    "isAlive": false,
+    "lang": "fr",
+    "roles": [
+        {
+            "role": "juge",
+            "startDate": "01.10.1984",
+            "endDate": "21.12.1992"
+        },
+        {
+            "role": "president",
+            "startDate": "22.12.1992",
+            "endDate": "07.03.1993"
+        }
+    ]
+}
