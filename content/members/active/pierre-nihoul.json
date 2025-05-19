@@ -1,9 +1,7 @@
 {
   "name": "Pierre NIHOUL",
   "slug": "pierre-nihoul",
-  "role": "president",
-  "startDate": "18.04.2010",
-  "endDate": null,
+  "isAlive": true,
   "lang": "fr",
   "picture": "pierre-nihoul.jpg",
   "alt": {
@@ -48,7 +46,7 @@
     {
       "role": "judge",
       "startDate": "18.04.2010",
-      "endDate": null
+      "endDate": "14.09.2021"
     },
     {
       "role": "president",

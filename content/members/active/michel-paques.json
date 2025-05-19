@@ -1,10 +1,7 @@
 {
   "name": "Michel PÂQUES",
   "slug": "michel-paques",
-  "role": "judge",
   "isAlive": true,
-  "startDate": "09.09.2018",
-  "endDate": null,
   "lang": "fr",
   "picture": "michel-paques.jpg",
   "alt": {

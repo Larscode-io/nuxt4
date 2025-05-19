@@ -1,10 +1,7 @@
 {
   "name": "Willem VERRIJDT",
   "slug": "willem-verrijdt",
-  "role": "judge",
   "isAlive": true,
-  "startDate": "21.03.2022",
-  "endDate": null,
   "lang": "nl",
   "picture": "willem-verrijdt.jpg",
   "alt": {
@@ -45,13 +42,13 @@
   },
   "roles": [
     {
-      "role": "judge",
-      "startDate": "21.03.2022",
-      "endDate": null
+      "role": "legalSecretaries",
+      "startDate": "01-02-2008",
+      "endDate": "20.03.2022"
     },
     {
-      "role": "legalSecretaries",
-      "startDate": null,
+      "role": "judge",
+      "startDate": "21.03.2022",
       "endDate": null
     }
   ]

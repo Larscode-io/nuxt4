@@ -1,11 +1,8 @@
 {
   "name": "Kattrin JADIN",
   "slug": "kattrin-jadin",
-  "role": "judge",
   "femaleTitle": true,
   "isAlive": true,
-  "startDate": "26.09.2022",
-  "endDate": null,
   "lang": "fr",
   "picture": "kattrin-jadin.jpg",
   "alt": {

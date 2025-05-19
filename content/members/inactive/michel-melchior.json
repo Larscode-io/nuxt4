@@ -5,7 +5,7 @@
     "lang": "fr",
     "roles": [
         {
-            "role": "juge",
+            "role": "judge",
             "startDate": "10.09.1984",
             "endDate": "31.03.1993"
         },
@@ -15,7 +15,7 @@
             "endDate": "17.08.2009"
         },
         {
-            "role": "juge",
+            "role": "judge",
             "startDate": "18.08.2009",
             "endDate": "28.03.2010"
         },

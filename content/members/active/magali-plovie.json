@@ -1,11 +1,8 @@
 {
   "name": "Magali PLOVIE",
   "slug": "magali-plovie",
-  "role": "judge",
   "femaleTitle": true,
   "isAlive": true,
-  "startDate": "11.09.2023",
-  "endDate": "",
   "lang": "fr",
   "picture": "magali-plovie.jpg",
   "alt": {
