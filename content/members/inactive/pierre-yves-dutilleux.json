@@ -13,8 +13,8 @@
   "roles": [
     {
       "role": "registrars",
-      "startDate": null,
-      "endDate": null
+      "startDate": "01.01.2001",
+      "endDate": "01.06.2023"
     }
   ]
 }
