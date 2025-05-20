@@ -2,6 +2,9 @@
 import { ref, computed, onMounted } from 'vue'
 import fallbackImg from '~/assets/img/newsletter-background-opt.png'
 
+const { t, locale, langCollection } = useLanguage()
+const currentLocale = locale.value
+
 interface Props {
   contentPath: string
   img?: string
@@ -17,20 +20,17 @@ const props = withDefaults(defineProps<Props>(), {
 const img = props.img ?? fallbackImg
 const enableToc = props.enableToc ?? true
 
-const { locale } = useLanguage()
 const currentActiveContentInToc = ref<string>('')
 
-const { data: page, pending } = await useAsyncData(
-  `content-${locale.value}-${props.contentPath}`,
-  async () => {
-    return await queryContent(`${locale.value}/${props.contentPath}`).findOne()
-  },
+//   () => queryCollection('nl').path('/nl/presentation-situation').first(),
+
+const { data: page, pending } = useAsyncData(
+  `content-${currentLocale}-${props.contentPath}`,
+  () => queryCollection(langCollection[currentLocale]).path(`/${currentLocale}/${props.contentPath}`).first(),
 )
 
-const idsTo = computed(() =>
-  page.value?.body?.toc?.links?.map(toc => toc.id) || [],
-)
-
+const hasContent = computed(() => Array.isArray(page.value?.body?.value) && page.value.body.value.length > 0)
+const idsTo = computed(() => page.value?.body?.toc?.links?.map(toc => toc.id) || [])
 const sideBarLinks = computed(() => page.value ? extractSideBarLinks(page) : [])
 const hasSidebarLinks = computed(() => enableToc && sideBarLinks.value.length > 0)
 const ids = computed(() => sideBarLinks.value.map(link => link.id))
@@ -106,15 +106,21 @@ watch([ids, page], () => {
           />
         </v-col>
         <v-col
+          v-if="hasContent"
           cols="12"
           :md="hasSidebarLinks ? 8 : 12"
         >
-          <article v-if="page">
-            <ContentRendererMarkdown
-              :value="page.body || {}"
-              class="nuxt-content content-renderer"
+          <article>
+            <ContentRenderer
+              :value="page || {}"
             />
           </article>
+        </v-col>
+        <v-col v-else>
+          <EmptyComponent
+            :message="t('empty.no-content')"
+            :show-icon="false"
+          />
         </v-col>
       </v-row>
       <v-row>
