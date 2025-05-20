@@ -1,5 +1,5 @@
 {
-  "name": "David KEYAERTS",
+  "name": "David Keyaerts",
   "slug": "david-keyaerts",
   "isAlive": true,
   "lang": "nl",
@@ -19,7 +19,7 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
+      "startDate": "01.06.2015",
       "endDate": null
     }
   ]

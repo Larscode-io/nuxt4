@@ -1,5 +1,5 @@
 {
-  "name": "Heidi BORTELS",
+  "name": "Heidi Bortels",
   "femaleTitle": true,
   "slug": "heidi-bortels",
   "isAlive": true,
@@ -20,7 +20,7 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
+      "startDate": "01.01.2015",
       "endDate": null
     }
   ]

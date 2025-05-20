@@ -1,5 +1,5 @@
 {
-  "name": "Quentin PIRONNET",
+  "name": "Quentin Pironnet",
   "slug": "quentin-pironnet",
   "isAlive": true,
   "lang": "fr",
@@ -19,7 +19,7 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
+      "startDate": "16.12.2019",
       "endDate": null
     }
   ]

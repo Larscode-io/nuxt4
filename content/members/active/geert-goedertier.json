@@ -1,5 +1,5 @@
 {
-  "name": "Geert GOEDERTIER",
+  "name": "Geert Goedertier",
   "slug": "geert-goedertier",
   "isAlive": true,
   "lang": "nl",
@@ -19,7 +19,7 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
+      "startDate": "01.09.2003",
       "endDate": null
     }
   ]

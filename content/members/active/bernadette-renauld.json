@@ -1,5 +1,5 @@
 {
-  "name": "Bernadette RENAULD",
+  "name": "Bernadette Renauld",
   "slug": "bernadette-renauld",
   "femaleTitle": true,
   "isAlive": true,
@@ -20,7 +20,7 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
+      "startDate": "01.01.1999",
       "endDate": null
     }
   ]

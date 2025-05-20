@@ -1,5 +1,5 @@
 {
-  "name": "Nicolas DUPONT",
+  "name": "Nicolas Dupont",
   "slug": "nicolas-dupont",
   "role": "registrars",
   "isAlive": true,
@@ -22,7 +22,7 @@
   "roles": [
     {
       "role": "registrars",
-      "startDate": null,
+      "startDate": "01.07.2023",
       "endDate": null
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "name": "Jean-Thierry DEBRY",
+  "name": "Jean-Thierry Debry",
   "slug": "jean-thierry-debry",
   "isAlive": true,
   "lang": "fr",
@@ -19,7 +19,7 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
+      "startDate": "01.01.2004",
       "endDate": null
     }
   ]

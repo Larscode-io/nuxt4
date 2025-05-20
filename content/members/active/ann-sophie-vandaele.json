@@ -1,5 +1,5 @@
 {
-  "name": "Ann-Sophie VANDAELE",
+  "name": "Ann-Sophie Vandaele",
   "femaleTitle": true,
   "slug": "ann-sophie-vandaele",
   "isAlive": true,
@@ -20,7 +20,7 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
+      "startDate": "01.04.2017",
       "endDate": null
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "name": "Sophie SEYS",
+  "name": "Sophie Seys",
   "femaleTitle": true,
   "slug": "sophie-seys",
   "isAlive": true,
@@ -20,7 +20,7 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
+      "startDate": "10.10.2016",
       "endDate": null
     }
   ]

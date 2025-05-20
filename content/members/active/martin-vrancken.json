@@ -1,5 +1,5 @@
 {
-  "name": "Martin VRANCKEN",
+  "name": "Martin Vrancken",
   "slug": "martin-vrancken",
   "isAlive": true,
   "lang": "fr",
@@ -19,7 +19,7 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
+      "startDate": "01.11.2018",
       "endDate": null
     }
   ]
