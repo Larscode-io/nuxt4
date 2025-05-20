@@ -34,12 +34,12 @@
     "knex": "^3.1.0",
     "mysql2": "^3.14.1",
     "nuxt": "^3.17.3",
-    "undici": "^7.9.0",
+    "undici": "^7.10.0",
     "vue": "latest"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.4.0",
-    "@nuxt/eslint-config": "^1.4.0",
+    "@nuxt/eslint": "^1.4.1",
+    "@nuxt/eslint-config": "^1.4.1",
     "@nuxt/types": "^2.18.1",
     "@stylistic/eslint-plugin": "^4.2.0",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
