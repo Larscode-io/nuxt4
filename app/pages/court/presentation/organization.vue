@@ -1,104 +1,43 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { ref, watch, computed } from 'vue'
 import type { Member, Infos } from '@types/members'
-import { fetchMultipleByPaths } from '../../../utils/requestUtils'
 import { ContentKeys } from '../../../core/constants'
 import type { PageContent } from '@/types/content'
 import img from '~/assets/img/organisation-Y-0050.png'
 import '~/assets/css/content.css'
 
-const { t, locale } = useLanguage()
+const { t, locale, langCollection } = useLanguage()
+const {
+  judgeMembers,
+  registrarMembers,
+  getMostRecentRole,
+  officeStaffMembers,
+  judgeMembersHistoric,
+  presidentMembersHistoric,
+  aliveNonActiveJudgeMembersHistoric,
+  aliveNonActivePresidentMembersHistoric,
+  aliveNonActiveRegistrarMembersHistoric,
+  aliveNonActiveOfficeStaffMembersHistoric,
+} = useMembers(locale)
 
-const currentActiveContentInToc = ref('')
-// setting a object with default values to avoid reloading the page
-const pageJudge: Ref<PageContent | null> = ref(null)
-const pageOfficeStaff: Ref<PageContent | null> = ref(null)
-const pageReferendar: Ref<PageContent | null> = ref(null)
-const pageClerk: Ref<PageContent | null> = ref(null)
-const membersResponse = ref<{ data: Member[] }>()
-const membersEmeritusResponse = ref<{ data: Member[] }>()
-const membersHistoricResponse = ref<{ data: Member[] }>()
-const sideBarLinks = ref([])
-// These include all roles that should be displayed in the "judges" section
-const judgeMembers = ref<Member[]>([])
-const officeStaffMembers = ref<Member[]>([])
-const registrarMembers = ref<Member[]>([])
-const membersEmeritusPresidents = ref<Member[]>([])
-const membersEmeritusJudges = ref<Member[]>([])
-const membersEmeritusOfficeStaffMembers = ref<Member[]>([])
-const membersEmeritusRegistrars = ref<Member[]>([])
+const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActiveSectionObserver('h3', 0.75)
 
-const membersHistoricPresidents = ref<Member[]>([])
-const membersHistoricJudges = ref<Member[]>([])
+// Minimal dummy page with only the required structure
+// so we can use the sidebar component for more than 1 content page
+const dummyPage = ref({
+  body: {
+    toc: {
+      links: [
+        {
+          id: 'dummyId',
+          text: 'No content available',
+        },
+      ],
+    },
+  } })
 
-const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
+const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(dummyPage)
 
-const updateCurrentActiveContentInToc = (id: string) => {
-  currentActiveContentInToc.value = id
-}
-
-const startIntersectionObserver = () => {
-  const options = {
-    threshold: 0.9,
-    rootMargin: '0px 0px -50% 0px',
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const elem = entry.target as HTMLElement
-
-        if (entry.intersectionRatio >= 0.75) {
-          updateCurrentActiveContentInToc(elem.id)
-        }
-      }
-    })
-  }, options)
-
-  document.querySelectorAll('h3').forEach((el) => {
-    if (sideBarLinks.value.map((toc: { id: string }) => toc.id).includes(el.id)) {
-      observer.observe(el)
-    }
-  })
-}
-
-const alternateLang = (mems: Member[]): Member[] => {
-  let startLang: string
-  if (locale.value === Languages.FRENCH || locale.value === Languages.GERMAN) {
-    startLang = Languages.FRENCH
-  }
-  else {
-    startLang = Languages.DUTCH
-  }
-  const altLang = startLang === 'fr' ? 'nl' : 'fr',
-    p = mems.filter((m: { lang: string }) => m.lang === startLang),
-    s = mems.filter((m: { lang: string }) => m.lang === altLang),
-    r = []
-  for (let i = 0; i < Math.max(p.length, s.length); i++) {
-    if (p[i]) r.push(p[i]!) // same check + non-null assertion
-    if (s[i]) r.push(s[i]!) // same check + non-null assertion
-  }
-  return r
-}
-
-const updateMembers = () => {
-  const filterByRole = (response: { data?: Member[] } | null, roles: string[]): Member[] => {
-    if (!response?.data) return []
-    return response.data.filter((member: Member) => roles.includes(member.role))
-  }
-
-  membersHistoricPresidents.value = filterByRole(membersHistoricResponse.value, ['president'])
-  membersHistoricJudges.value = filterByRole(membersHistoricResponse.value, ['judge'])
-
-  membersEmeritusPresidents.value = filterByRole(membersEmeritusResponse.value, ['president'])
-  membersEmeritusJudges.value = filterByRole(membersEmeritusResponse.value, ['judge'])
-  membersEmeritusOfficeStaffMembers.value = filterByRole(membersEmeritusResponse.value, ['legalSecretaries'])
-  membersEmeritusRegistrars.value = filterByRole(membersEmeritusResponse.value, ['registrars'])
-
-  judgeMembers.value = alternateLang(filterByRole(membersResponse.value, ['judge', 'president']))
-  officeStaffMembers.value = alternateLang(filterByRole(membersResponse.value, ['legalSecretaries']))
-  registrarMembers.value = alternateLang(filterByRole(membersResponse.value, ['registrars']))
-}
 const getInfo = (infos: Infos) => {
   if (!infos) {
     return []
@@ -107,70 +46,69 @@ const getInfo = (infos: Infos) => {
   return infos[locale.value as keyof Infos]
 }
 
-const updateSideBarLinks = () => {
-  if (!pageJudge.value || !pageOfficeStaff.value || !pageReferendar.value || !pageClerk.value) {
-    sideBarLinks.value = []
-    return
-  }
+const paths: string[] = [
+  `/${locale.value}/${ContentKeys.presentationOrganizationJudge}`,
+  `/${locale.value}/${ContentKeys.presentationOrganizationOfficeStaff}`,
+  `/${locale.value}/${ContentKeys.presentationOrganizationReferendar}`,
+  `/${locale.value}/${ContentKeys.presentationOrganizationClerk}`,
+]
+const collection: string = langCollection[locale.value] ?? 'collection_dutch'
 
-  const judgeLinks = extractSideBarLinks(pageJudge)
-  const referendarLinks = extractSideBarLinks(pageReferendar)
-  const clerkLinks = extractSideBarLinks(pageClerk)
-  const officeStaffLinks = extractSideBarLinks(pageOfficeStaff)
+const { data: results } = await useAsyncData(
+  `organisationPages-${locale.value}-${paths.join('-')}`,
+  () =>
+    Promise.all(
+      paths.map(path => queryCollection(collection).path(path as string).first()),
+    ),
+)
 
-  // set the first sidebar link as active by default
-  updateCurrentActiveContentInToc(judgeLinks[0].id)
+const [pageJudge, pageOfficeStaff, pageReferendar, pageClerk] = [
+  computed(() => results.value?.[0]),
+  computed(() => results.value?.[1]),
+  computed(() => results.value?.[2]),
+  computed(() => results.value?.[3]),
+]
 
-  sideBarLinks.value = judgeLinks
-    .concat(referendarLinks)
-    .concat(clerkLinks)
-    .concat(officeStaffLinks)
-    .concat([
-      {
-        id: toSlug(t('court.organization.emeritus-and-honorary-members')),
-        text: t('court.organization.emeritus-and-honorary-members'),
-      },
-      {
-        id: toSlug(t('court.organization.previous-incumbents')),
-        text: t('court.organization.previous-incumbents'),
-      },
-    ])
+const judgeLinks = computed(() =>
+  pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [],
+)
+const referendarLinks = computed(() =>
+  pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [],
+)
+const clerkLinks = computed(() =>
+  pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [],
+)
+const officeStaffLinks = computed(() =>
+  pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [],
+)
 
-  setTimeout(() => {
-    startIntersectionObserver()
-  }, 200)
-}
+const mergedSidebarLinks = computed(() => [
+  ...judgeLinks.value,
+  ...referendarLinks.value,
+  ...clerkLinks.value,
+  ...officeStaffLinks.value,
+  {
+    id: toSlug(t('court.organization.emeritus-and-honorary-members')),
+    depth: 3,
+    text: t('court.organization.emeritus-and-honorary-members'),
+  },
+  {
+    id: toSlug(t('court.organization.previous-incumbents')),
+    depth: 3,
+    text: t('court.organization.previous-incumbents'),
+  },
+])
 
-const fetchData = async () => {
-  try {
-    const results = await fetchMultipleByPaths([
-      `${locale.value}/${ContentKeys.presentationOrganizationJudge}`,
-      `${locale.value}/${ContentKeys.presentationOrganizationOfficeStaff}`,
-      `${locale.value}/${ContentKeys.presentationOrganizationReferendar}`,
-      `${locale.value}/${ContentKeys.presentationOrganizationClerk}`,
-      `${ContentKeys.presentationOrganizationCurrentMembership}`,
-      `${ContentKeys.presentationOrganizationCurrentMembershipEmeritus}`,
-      `${ContentKeys.presentationOrganizationCurrentMembershipHistoric}`,
-    ]);
-    [
-      pageJudge.value,
-      pageOfficeStaff.value,
-      pageReferendar.value,
-      pageClerk.value,
-      membersResponse.value,
-      membersEmeritusResponse.value,
-      membersHistoricResponse.value,
-    ] = results
-    updateMembers()
-    updateSideBarLinks()
-  }
-  catch (error) {
-    console.error('Error fetching content:', error)
-  }
-}
+watch(mergedSidebarLinks, (newLinks) => {
+  dummyPage.value.body.toc.links = newLinks
+}, { immediate: true })
 
 onMounted(() => {
-  fetchData()
+  const sidebarLinks = extractSideBarLinks({ value: dummyPage.value })
+  // jump to the first link in the sidebar
+  if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
+    updateCurrentActiveContentInToc(sidebarLinks[0]?.id)
+  }
 })
 </script>
 
@@ -204,7 +142,7 @@ onMounted(() => {
         >
           <v-row>
             <article v-if="pageJudge ">
-              <ContentRendererMarkdown
+              <ContentRenderer
                 :value="pageJudge.body"
                 class="nuxt-content content-renderer"
               />
@@ -223,16 +161,16 @@ onMounted(() => {
                 :image="member.picture"
                 :with-image="true"
                 :infos="getInfo(member.infos)"
-                :job-title="member.role"
+                :job-title="getMostRecentRole(member.roles).role"
                 :width="300"
-                :is-alive="member.isAlive"
+                :is-alive="true"
                 :lang="member.lang"
                 :female-title="member.femaleTitle"
               />
             </div>
 
             <article v-if="pageReferendar">
-              <ContentRendererMarkdown
+              <ContentRenderer
                 :value="pageReferendar.body"
                 class="nuxt-content"
               />
@@ -250,7 +188,7 @@ onMounted(() => {
                 :image="member.picture"
                 :with-image="true"
                 :infos="getInfo(member.infos)"
-                :job-title="member.role"
+                :job-title="getMostRecentRole(member.roles).role"
                 :width="300"
                 :is-alive="member.isAlive"
                 :lang="member.lang"
@@ -259,7 +197,7 @@ onMounted(() => {
             </div>
 
             <article v-if="pageClerk">
-              <ContentRendererMarkdown
+              <ContentRenderer
                 :value="pageClerk.body"
                 class="nuxt-content"
               />
@@ -278,7 +216,7 @@ onMounted(() => {
                 :image="member.picture"
                 :with-image="true"
                 :infos="getInfo(member.infos)"
-                :job-title="member.role"
+                :job-title="getMostRecentRole(member.roles).role"
                 :width="300"
                 :is-alive="member.isAlive"
                 :lang="member.lang"
@@ -287,7 +225,7 @@ onMounted(() => {
             </div>
 
             <article v-if="pageOfficeStaff">
-              <ContentRendererMarkdown
+              <ContentRenderer
                 :value="pageOfficeStaff.body"
                 class="nuxt-content"
               />
@@ -305,7 +243,7 @@ onMounted(() => {
 
             <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard
-                v-for="member of membersEmeritusPresidents"
+                v-for="member of aliveNonActivePresidentMembersHistoric"
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
@@ -326,7 +264,7 @@ onMounted(() => {
 
             <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard
-                v-for="member of membersEmeritusJudges"
+                v-for="member of aliveNonActiveJudgeMembersHistoric"
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
@@ -340,13 +278,14 @@ onMounted(() => {
                 :female-title="member.femaleTitle"
               />
             </div>
+
             <h4 class="heading-h3">
               {{ t('general.message.legal-secretaries') }}
             </h4>
 
             <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard
-                v-for="member of membersEmeritusOfficeStaffMembers"
+                v-for="member of aliveNonActiveOfficeStaffMembersHistoric"
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
@@ -367,7 +306,7 @@ onMounted(() => {
 
             <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard
-                v-for="member of membersEmeritusRegistrars"
+                v-for="member of aliveNonActiveRegistrarMembersHistoric"
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
@@ -392,9 +331,10 @@ onMounted(() => {
               {{ t('general.message.presidents') }}
             </h4>
 
+            <!-- de actieve leden moeten hier nog toegevoegd worden -->
             <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard
-                v-for="member of membersHistoricPresidents"
+                v-for="member of presidentMembersHistoric"
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
@@ -415,9 +355,10 @@ onMounted(() => {
               {{ t('general.message.judges') }}
             </h4>
 
+            <!-- de actieve leden moeten hier nog toegevoegd worden -->
             <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard
-                v-for="member of membersHistoricJudges"
+                v-for="member of judgeMembersHistoric"
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"

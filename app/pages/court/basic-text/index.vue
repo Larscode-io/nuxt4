@@ -4,27 +4,25 @@ import { ref, computed, onMounted, onUpdated } from 'vue'
 import { ContentKeys } from '../../../core/constants'
 import img from '~/assets/img/banner-text.png'
 
-const { t, locale } = useLanguage()
+const { locale } = useI18n()
+const { t, langCollection } = useLanguage()
+
 const route = useRoute()
 const hash = route.hash.substring(1)
 
-const currentActiveContentInToc = ref<string>('')
 const contentPath = ref(`${ContentKeys.presentationBasicTexts}`)
+const pad = computed(() => `/${locale.value}/${contentPath.value}`)
 
-const { data: page, pending, error } = await useLazyAsyncData('content', async () => {
-  try {
-    const doc = await queryContent(`${locale.value}/${contentPath.value}`).findOne()
+const { data: page, pending, error } = await useAsyncData(
+  () => `basic-text-${locale.value}`,
+  () => queryCollection(langCollection[locale.value])
+    .path(pad.value)
+    .first(),
+)
 
-    const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
-    currentActiveContentInToc.value
-      = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
-    return doc
-  }
-  catch (error) {
-    console.error('Error fetching content:', error)
-    throw error
-  }
-})
+const { hasContent, sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(page)
+const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActiveSectionObserver('h3', 0.9)
+
 const status = computed(() => {
   if (pending.value) {
     return 'loading'
@@ -35,49 +33,12 @@ const status = computed(() => {
   return 'success'
 })
 
-const sideBarLinks = computed(() => {
-  if (!page.value) {
-    return []
-  }
-  return extractSideBarLinks(page)
-})
-const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
-const ids = computed(() => sideBarLinks.value.map(link => link.id))
-
-const updateCurrentActiveContentInToc = (section) => {
-  currentActiveContentInToc.value = section
-}
-
-const startIntersectionObserver = () => {
-  const options = {
-    threshold: 0.9,
-    rootMargin: '0px 0px -80% 0px',
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const elem = entry.target
-
-        if (entry.intersectionRatio >= 0.75) {
-          updateCurrentActiveContentInToc(elem.id)
-        }
-      }
-    })
-  }, options)
-
-  document.querySelectorAll('h3').forEach((el) => {
-    if (ids.value.includes(el.id)) {
-      observer.observe(el)
-    }
-  })
-}
-
 onMounted(() => {
-  startIntersectionObserver()
-})
-onUpdated(() => {
-  startIntersectionObserver()
+  const sidebarLinks = extractSideBarLinks({ value: page.value })
+  // jump to the first link in the sidebar
+  if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
+    updateCurrentActiveContentInToc(sidebarLinks[0]?.id)
+  }
 })
 </script>
 
@@ -141,7 +102,7 @@ onUpdated(() => {
           md="8"
         >
           <article v-if="page">
-            <ContentRendererMarkdown
+            <ContentRenderer
               :value="page.body"
               class="nuxt-content"
             />

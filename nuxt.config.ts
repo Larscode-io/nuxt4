@@ -47,10 +47,12 @@ export default defineNuxtConfig({
     '@mdi/font/css/materialdesignicons.css',
   ],
   content: {
-    markdown: {
-      remarkPlugins: [],
-      rehypePlugins: [],
-      mdc: true,
+    build: {
+      markdown: {
+        toc: {
+          depth: 3, // include h3 headings
+        },
+      },
     },
   },
   runtimeConfig: {

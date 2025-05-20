@@ -33,9 +33,11 @@ export type Member = {
     nl?: string[]
     de?: string[]
   }
-  roles?: {
-    role: string
-    startDate: string | null
-    endDate: string | null
-  }[]
+  roles?: Role[] | Role
+  usStartDate?: Date | null
+}
+export type Role = {
+  role: string
+  startDate: string | null
+  endDate: string | null
 }

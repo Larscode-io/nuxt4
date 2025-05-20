@@ -193,11 +193,7 @@ import { ApiUrl, ContentKeys } from '../../core/constants'
 import { groupBy } from '../../core/utilities'
 import img from '~/assets/img/banner-text.png'
 
-// Setup composables
-const { t, locale } = useI18n()
-
 // Data refs
-const page = ref(null)
 const loading = ref(false)
 const loaded = ref(false)
 const searchError = ref(null)
@@ -222,15 +218,19 @@ const errors = reactive({
   searchByExactClauseNumber: undefined,
 })
 
-// Fetch page content
-const { data, pending } = await useAsyncData(
-  'standard-search-explanation',
-  () => queryContent(`/${locale.value}/${ContentKeys.standardSearchExplanation}`).findOne(),
+const { locale } = useI18n()
+const { t, langCollection } = useLanguage()
+
+const contentPath = ref(`${ContentKeys.standardSearchExplanation}`)
+const pad = computed(() => `/${locale.value}/${contentPath.value}`)
+
+const { data: page, pending } = await useAsyncData(
+  () => `stay-informed-${locale.value}`,
+  () => queryCollection(langCollection[locale.value])
+    .path(pad.value)
+    .first(),
 )
 
-page.value = data.value
-
-// Computed properties
 const types = computed(() => [
   {
     id: 'general.message.controlled',
@@ -304,8 +304,8 @@ async function submit() {
     }
 
     searchResults.value = data.value
-    console.log('searchResults.value: ', searchResults.value)
-    console.log('formattedSearchResults: ', formattedSearchResults.value)
+    // console.log('searchResults.value: ', searchResults.value)
+    // console.log('formattedSearchResults: ', formattedSearchResults.value)
     loaded.value = true
   }
   catch (err) {

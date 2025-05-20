@@ -1,4 +1,7 @@
 <template>
+  <!-- ################## -->
+  <!-- set v-show to true to see older content -->
+  <!-- ################## -->
   <p v-show="betweenDates">
     <a
       :href=" vacLink"
@@ -22,7 +25,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { parse, isValid, isAfter, formatDistanceToNow } from 'date-fns'
-import { useLanguage } from '@/composables/useLanguage'
 
 const { locale, activeLocale } = useLanguage()
 
@@ -30,8 +32,8 @@ const vacLink = computed(() => {
   return `https://www.const-court.be/public/common/${props.lang}/${props.pdf}`
 })
 const props = defineProps({
-  pdf: { type: String, required: true },
-  description: { type: String, required: true },
+  pdf: { type: String, required: false },
+  description: { type: String, required: false },
   startDate: { type: String, required: false },
   endData: { type: String, required: false },
   lang: { type: String, required: true },

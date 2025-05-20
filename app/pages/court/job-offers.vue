@@ -14,7 +14,7 @@
           md="8"
         >
           <article v-if="page">
-            <ContentRendererMarkdown
+            <ContentRenderer
               :value="page.body || {}"
               class="nuxt-content content-renderer"
             />
@@ -29,17 +29,21 @@
 import { ContentKeys } from '@core/constants'
 import img from '~/assets/img/newsletter-background-opt.png'
 
-const { t, locale } = useLanguage()
+const { locale } = useI18n()
+const { t, langCollection } = useLanguage()
 
-const { data: page } = await useAsyncData('content', async () => {
-  try {
-    const doc = await queryContent(`${locale.value}/${ContentKeys.presentationJobOffers}`)
-      .findOne()
-    return doc
-  }
-  catch (error) {
-    console.error('Error fetching content:', error)
-    return null
-  }
+const contentPath = ref(`${ContentKeys.presentationJobOffers}`)
+const pad = computed(() => `/${locale.value}/${contentPath.value}`)
+
+const { data: page, pending } = await useAsyncData(
+  () => `job-offers-${locale.value}-${contentPath.value}`,
+  () => queryCollection(langCollection[locale.value])
+    .path(pad.value)
+    .first(),
+)
+
+onMounted(() => {
+  console.log('Mounted')
+  console.log('page', page.value?.body.toc)
 })
 </script>

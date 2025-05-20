@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { onMounted } from 'vue'
 import fallbackImg from '~/assets/img/newsletter-background-opt.png'
 
 const { t, locale, langCollection } = useLanguage()
@@ -18,68 +18,21 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const img = props.img ?? fallbackImg
-const enableToc = props.enableToc ?? true
-
-const currentActiveContentInToc = ref<string>('')
-
-//   () => queryCollection('nl').path('/nl/presentation-situation').first(),
+const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActiveSectionObserver('h3', 0.75)
 
 const { data: page, pending } = useAsyncData(
   `content-${currentLocale}-${props.contentPath}`,
   () => queryCollection(langCollection[currentLocale]).path(`/${currentLocale}/${props.contentPath}`).first(),
 )
 
-const hasContent = computed(() => Array.isArray(page.value?.body?.value) && page.value.body.value.length > 0)
-const idsTo = computed(() => page.value?.body?.toc?.links?.map(toc => toc.id) || [])
-const sideBarLinks = computed(() => page.value ? extractSideBarLinks(page) : [])
-const hasSidebarLinks = computed(() => enableToc && sideBarLinks.value.length > 0)
-const ids = computed(() => sideBarLinks.value.map(link => link.id))
-
-const updateCurrentActiveContentInToc = (section: string) => {
-  currentActiveContentInToc.value = section
-}
-
-let observer: IntersectionObserver | null = null
-const handleIntersection = throttle((entries: IntersectionObserverEntry[]) => {
-  for (const entry of entries) {
-    if (entry.isIntersecting) {
-      updateCurrentActiveContentInToc(entry.target.id)
-      break
-    }
-  }
-}, 100)
-const startIntersectionObserver = () => {
-  // Disconnect old observer if it exists
-  if (observer) {
-    observer.disconnect()
-  }
-
-  observer = new IntersectionObserver(handleIntersection, {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.5,
-  })
-
-  const sections = document.querySelectorAll('h3')
-  sections.forEach((el) => {
-    if (ids.value.includes(el.id)) {
-      observer!.observe(el)
-    }
-  })
-}
+const { hasContent, sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(page)
 
 onMounted(() => {
-  const hash = window.location.hash.substring(1)
-  if (page.value) {
-    currentActiveContentInToc.value = (hash && idsTo.value.includes(hash))
-      ? hash
-      : idsTo.value[0] || ''
+  const sidebarLinks = extractSideBarLinks({ value: page.value })
+  // jump to the first link in the sidebar
+  if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
+    updateCurrentActiveContentInToc(sidebarLinks[0]?.id)
   }
-  startIntersectionObserver()
-})
-
-watch([ids, page], () => {
-  startIntersectionObserver()
 })
 </script>
 

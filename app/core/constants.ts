@@ -112,6 +112,7 @@ export enum ContentKeys {
   rulePleadingsProcedure = 'rule-pleadings-procedure',
   ruleOthersInfo = 'rule-others-info',
   fullTextSearchExplanation = 'full-text-search-explanation',
+  standardSearchExplanation = 'standard-search-explanation',
   informed = 'stay-informed',
   prize = 'prize',
   privacyPolicy = 'privacy-policy',

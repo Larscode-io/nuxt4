@@ -66,7 +66,7 @@
               class="col-12 col-md-12"
             >
               <ContentRenderer
-                :value="page"
+                :value="page || {}"
                 class="pt-8"
               />
             </section>
@@ -130,11 +130,6 @@ import { ApiUrl, ContentKeys } from '../../core/constants'
 import FullTextSearchJudgmentCard from '../../components/FullTextSearchJudgementCard.vue'
 import img from '~/assets/img/banner-text.png'
 
-// Setup composables
-const { t, locale } = useI18n()
-
-// Data refs
-const page = ref(null)
 const loading = ref(false)
 const loaded = ref(false)
 const searchError = ref(null)
@@ -145,15 +140,19 @@ const formErrors = ref({
   sort: '',
 })
 
-// Fetch page content
-const { data, pending } = await useAsyncData(
-  'full-text-search-explanation',
-  () => queryContent(`/${locale.value}/${ContentKeys.fullTextSearchExplanation}`).findOne(),
+const { locale } = useI18n()
+const { t, langCollection } = useLanguage()
+
+const contentPath = ref(`${ContentKeys.fullTextSearchExplanation}`)
+const pad = computed(() => `/${locale.value}/${contentPath.value}`)
+
+const { data: page, pending } = await useAsyncData(
+  () => `stay-informed-${locale.value}`,
+  () => queryCollection(langCollection[locale.value])
+    .path(pad.value)
+    .first(),
 )
 
-page.value = data.value
-
-// Computed properties
 const sorts = computed(() => [
   {
     id: 'general.message.sort-by-score',
@@ -185,16 +184,14 @@ const formattedSearchResult = computed(() => {
 })
 
 const hasContent = computed(() =>
-  page.value?.body?.children?.length > 0,
+  Array.isArray(page.value?.body?.value) && page.value.body.value.length > 0,
 )
 
 const hasResults = computed(() =>
   formattedSearchResult.value && formattedSearchResult.value.length > 0,
 )
 
-// Methods
 function validateForm() {
-  // Reset errors
   formErrors.value = {
     term: '',
     sort: '',

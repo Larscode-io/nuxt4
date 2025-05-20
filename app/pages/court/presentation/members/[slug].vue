@@ -1,9 +1,61 @@
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+import { Languages, OrganizationMemberRole } from '@core/constants'
+import type { Member, Role } from '@/types/members'
+
+const route = useRoute()
+const slug = route.params.slug as string
+const { locale } = useI18n()
+const { t } = useLanguage()
+const { judgeMembers, getMostRecentRole } = useMembers(locale)
+
+const member: ComputedRef<Member | null> = computed(() => judgeMembers.value.find(m => m?.slug === slug) ?? null)
+const role: ComputedRef<Role | null> = computed(() => {
+  if (member.value?.roles) {
+    return getMostRecentRole(member.value.roles) ?? null
+  }
+  return null
+})
+const isGerman = computed(() => locale.value === Languages.GERMAN)
+
+const getTitle = (key: string) => {
+  const base = t(key).trim()
+  const suffix = isGerman.value && member.value?.femaleTitle ? 'in' : ''
+  const lang = member.value?.lang?.toUpperCase()
+  return `${base}${suffix}${lang ? ` (${lang})` : ''}`
+}
+
+const roleTranslationKeys: Record<string, string> = {
+  [OrganizationMemberRole.president]: 'general.message.presidents',
+  [OrganizationMemberRole.judge]: 'general.message.judges',
+  [OrganizationMemberRole.legalSecretaries]: 'general.message.legalSecretaries',
+  [OrganizationMemberRole.registrars]: 'general.message.registrars',
+}
+
+const title = computed(() => {
+  const roleKey = role.value
+  const translationKey = roleKey ? roleTranslationKeys[roleKey.role] : null
+  if (translationKey) {
+    return getTitle(translationKey)
+  }
+
+  // fallback to alt field in member
+  const altFallback = member.value?.alt?.[locale.value]
+  if (altFallback) {
+    return altFallback
+  }
+
+  // fallback to raw role if defined, else empty string
+  return roleKey ? String(roleKey.role ?? '') : ''
+})
+</script>
+
 <template>
   <div>
     <BannerMember
-      :name="name"
+      :name="member?.name ?? ''"
       :jobtitle="title"
-      :image="picture"
+      :image="member?.picture ?? ''"
     />
 
     <v-container
@@ -12,17 +64,17 @@
     >
       <v-row
         class="d-flex-member"
-        align="start"
         justify="center"
       >
         <div class="col-12 col-md-12">
           <div class="nuxt-content">
-            <h3 v-if="infosLength">
-              {{ t('general.message.information', infosLength) }}
+            <!-- <h3 v-if="infosLength"> -->
+            <h3>
+              {{ t('general.message.information') }}
             </h3>
             <ul>
               <li
-                v-for="info in infos"
+                v-for="info in member?.infos?.[locale]"
                 :key="info"
               >
                 {{ info }}
@@ -34,80 +86,6 @@
     </v-container>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { ContentKeys, Languages, OrganizationMemberRole } from '@core/constants'
-
-const route = useRoute()
-const router = useRouter()
-const { t, locale } = useLanguage()
-
-const member = ref(null)
-const pending = ref(true)
-const error = ref(false)
-
-const fetchMemberData = async () => {
-  try {
-    const slug = route.params.slug
-
-    const members = await queryContent(ContentKeys.presentationOrganizationCurrentMembership).findOne()
-    const membersEmeritus = await queryContent(ContentKeys.presentationOrganizationCurrentMembershipEmeritus).findOne()
-    const membersHistoric = await queryContent(ContentKeys.presentationOrganizationCurrentMembershipHistoric).findOne()
-
-    const foundMember = members.data.find(m => m.slug === slug)
-      || membersEmeritus.data.find(m => m.slug === slug)
-      || membersHistoric.data.find(m => m.slug === slug)
-
-    if (!foundMember) {
-      error.value = true
-      router.push({ name: 'error', params: { statusCode: 404 } })
-    }
-    else {
-      member.value = foundMember
-    }
-
-    console.log({ member })
-  }
-  catch (err) {
-    error.value = true
-  }
-  finally {
-    pending.value = false
-  }
-}
-
-onMounted(fetchMemberData)
-
-const picture = computed(() => member.value?.picture)
-const infos = computed(() => member.value?.infos?.[locale.value])
-const infosLength = computed(() => infos.value?.length)
-const name = computed(() => member.value?.name)
-const isGerman = computed(() => locale.value === Languages.GERMAN)
-
-const getTitle = (key: string) => {
-  const title = t(key).trim()
-  const suffix = isGerman.value && member.value?.femaleTitle ? 'in' : ''
-  const lang = member.value?.lang?.toUpperCase()
-  return `${title}${suffix} (${lang})`
-}
-
-const title = computed(() => {
-  switch (member.value?.role ?? '') {
-    case OrganizationMemberRole.president:
-      return getTitle('general.message.presidents')
-    case OrganizationMemberRole.judge:
-      return getTitle('general.message.judges')
-    case OrganizationMemberRole.legalSecretaries:
-      return getTitle('general.message.legalSecretaries')
-    case OrganizationMemberRole.registrars:
-      return getTitle('general.message.registrars')
-    default:
-      return member.value?.role ?? ''
-  }
-})
-</script>
 
 <style scoped lang="scss">
 .container {
