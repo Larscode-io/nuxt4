@@ -1,4 +1,4 @@
-import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 export function useActiveSectionObserver(
   selector: string,
