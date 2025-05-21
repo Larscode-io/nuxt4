@@ -54,7 +54,7 @@
     "markdownlint-cli": "^0.45.0",
     "sass": "^1.89.0",
     "vite-plugin-vuetify": "^2.1.1",
-    "vitest": "^2.1.9",
+    "vitest": "^3.1.4",
     "vuetify": "^3.8.5"
   }
 }
