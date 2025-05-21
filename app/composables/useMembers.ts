@@ -20,7 +20,7 @@ export function useMembers(locale: Ref<string>) {
   // This ensures we can correctly detect when fields like `isAlive` are not present at all.
 
   function transformMember(entry: any): Member {
-    // we use the raw entry because isAlive is somethimes at top level while missing in the real .json and in meta
+    // we use the raw entry because isAlive is sometimes at top level while missing in the real .json and in meta
     const raw = entry?.meta?.body || entry // fallback if meta is missing
 
     const mostRecentRoleDate = getMostRecentRole(raw.roles ?? [])?.startDate ?? '01.01.1990'
