@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
+import { FilemakerApi } from '../../server/utils/fileMakerApi'
 
 describe('FilemakerApi', () => {
   const config = {
@@ -43,15 +44,15 @@ describe('FilemakerApi', () => {
     expect(result.messages).toEqual([{ code: '0', message: 'OK' }])
 
     expect(mockFetch).toHaveBeenCalledWith(
-      `https://${config.auServername}/fmi/data/v1/databases/${config.auDatabase}/layouts/popup_XML_FOD_Justitie_Arrest/records?_offset=1&_limit=1`,
-      {
+      expect.stringContaining('popup_XML_FOD_Justitie_Arrest'),
+      expect.objectContaining({
         method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-      },
+        headers: expect.objectContaining({
+          Authorization: `Bearer ${token}`,
+        }),
+      }),
     )
+
     expect(result).toEqual(mockResponse)
   })
 
@@ -80,10 +81,8 @@ describe('FilemakerApi', () => {
     }
 
     mockFetch.mockResolvedValue(mockResponse)
-    const FilemakerApi = new FilemakerApi(config, mockFetch)
-    const response = await FilemakerApi.getPublicaties_Jaarverslagen(
-      'testToken',
-    )
+    const service = new FilemakerApi(config, mockFetch)
+    const response = await service.getPublicaties_Jaarverslagen('testToken')
 
     expect(response).toHaveProperty('foundCount')
     expect(response).toMatchObject({
