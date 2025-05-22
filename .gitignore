@@ -7,6 +7,7 @@
 .vite
 node_modules/.cache
 dist
+tsconfig.paths.json
 
 # Node dependencies
 node_modules
