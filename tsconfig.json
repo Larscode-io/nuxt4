@@ -1,6 +1,5 @@
 // only used by the TypeScript compiler and VSCODE
 {
-      // https://nuxt.com/docs/guide/concepts/typescript
       "extends": "./.nuxt/tsconfig.json",
       "include": [
             ".nuxt/**/*",
