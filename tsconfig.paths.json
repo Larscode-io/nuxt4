@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "../app/*"
+      ],
+      "@core/*": [
+        "../app/core/*"
+      ],
+      "@utils/*": [
+        "../app/utils/*"
+      ],
+      "@assets/*": [
+        "../app/assets/*"
+      ],
+      "@types/*": [
+        "../types/*"
+      ]
+    },
+    "composite": true
+  }
+}

@@ -111,7 +111,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, defineProps, defineEmits } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { pdfFileExists } from '~/core/utilities'
+import { pdfFileExists } from '@core/utilities'
 
 // Define props
 interface Props {

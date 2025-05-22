@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import fallbackImg from '~/assets/img/newsletter-background-opt.png'
+import fallbackImg from '@assets/img/newsletter-background-opt.png'
 
 const { t, locale, langCollection } = useLanguage()
 const currentLocale = locale.value
