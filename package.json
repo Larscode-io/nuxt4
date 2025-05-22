@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare && node scripts/generate-tsconfig-paths.js",
+    "postinstall": "nuxt prepare",
     "lint": "eslint \"{app,server}/**/*.{js,ts,vue}\" --ignore-pattern .nuxt --ignore-pattern dist --ignore-pattern node_modules --ignore-pattern content",
     "format": "eslint \"{app,server}/**/*.{js,ts,vue}\" --fix --ignore-pattern .nuxt --ignore-pattern dist --ignore-pattern node_modules --ignore-pattern content",
     "lint:staged": "eslint $(git diff --cached --name-only --diff-filter=ACM | grep -E '\\.(vue|ts|js)$' || echo '')",
