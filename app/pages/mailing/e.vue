@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import img from '~/assets/img/banner-judgment.png'
+// import img from '@assets/img/banner-judgment.png'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { t } = useLanguage()

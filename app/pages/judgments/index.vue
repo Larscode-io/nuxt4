@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
 import type { ComponentPublicInstance } from 'vue'
-import img from '~/assets/img/banner-media.png'
-import { ApiUrl } from '~/core/constants'
+import { ApiUrl } from '@core/constants'
+import type { Judgment } from '@core/constants'
+import img from '@assets/img/banner-media.png'
 import { useLanguage } from '@/composables/useLanguage'
 
 import type { GeneralPressJudgment } from '@/core/constants'
-import type { Judgment } from '~/core/constants'
 
 const { t, locale } = useLanguage()
 const baseURL = useRuntimeConfig().public.apiBaseUrl

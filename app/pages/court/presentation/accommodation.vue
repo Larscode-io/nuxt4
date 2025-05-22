@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import img from '@assets/img/banner-job.png'
+import { ContentKeys } from '@core/constants'
+</script>
+
 <template>
   <ContentPage
     :content-path="`${ContentKeys.presentationAccommodation}`"
@@ -5,8 +10,3 @@
     :enable-toc="true"
   />
 </template>
-
-<script setup lang="ts">
-import { ContentKeys } from '../../../core/constants'
-import img from '~/assets/img/banner-job.png'
-</script>

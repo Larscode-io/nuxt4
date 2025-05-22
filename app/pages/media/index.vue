@@ -2,7 +2,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { ContentKeys } from '@core/constants'
-import img from '~/assets/img/banner-media.png'
+import img from '@assets/img/banner-media.png'
 
 const contactImgMartin = '/members/martin-vrancken.jpg'
 const contactImgThomas = '/members/thomas-leys.jpg'

@@ -188,6 +188,7 @@
 <script setup lang="ts">
 import { ref, reactive, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import img from '@assets/img/banner-text.png'
 import { ApiUrl } from '../../core/constants'
 import { to } from '../../core/utilities'
 import PendingCaseCard from '../../components/PendingCaseCard.vue'
@@ -196,12 +197,10 @@ import EmptyComponent from '../../components/EmptyComponent.vue'
 import BannerImage from '../../components/BannerImage.vue'
 import ErrorCard from '../../components/ErrorCard.vue'
 import SearchTabs from '../../components/SearchTabs.vue'
-import img from '~/assets/img/banner-text.png'
 
 const { t, locale } = useI18n()
 const route = useRoute()
 const router = useRouter()
-const localePath = useLocalePath()
 
 const payload = reactive({
   search: '',

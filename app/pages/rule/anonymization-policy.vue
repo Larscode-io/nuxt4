@@ -1,7 +1,7 @@
 <!-- Content based Page -->
 <script setup lang="ts">
 import { ContentKeys } from '@core/constants'
-import img from '~/assets/img/newsletter-background-opt.png'
+import img from '@assets/img/newsletter-background-opt.png'
 
 const { t, locale, langCollection } = useLanguage()
 const currentLocale = locale.value

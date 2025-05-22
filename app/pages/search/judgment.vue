@@ -289,6 +289,7 @@
 
 <script setup lang="ts">
 import { ref, reactive, computed, watch } from 'vue'
+import img from '@assets/img/banner-text.png'
 import { ApiUrl } from '../../core/constants'
 import { groupBy } from '../../core/utilities'
 import type {
@@ -304,7 +305,6 @@ import EmptyComponent from '../../components/EmptyComponent.vue'
 import BannerImage from '../../components/BannerImage.vue'
 import SearchTabs from '../../components/SearchTabs.vue'
 import { printContent } from '../../utils/searchUtils'
-import img from '~/assets/img/banner-text.png'
 
 const loading = ref(false)
 const loaded = ref(false)

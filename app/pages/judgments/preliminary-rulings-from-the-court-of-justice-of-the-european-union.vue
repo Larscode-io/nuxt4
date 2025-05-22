@@ -1,11 +1,10 @@
 <!-- API based page -->
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import img from '~/assets/img/banner-judgment.png'
+import { ApiUrl } from '@core/constants'
+import type { QuestionPreliminaryRuling as Question } from '@core/types'
+import img from '@assets/img/banner-judgment.png'
 import { useLanguage } from '@/composables/useLanguage'
-import BannerImage from '~/components/BannerImage.vue'
-import { ApiUrl } from '~/core/constants'
-import type { QuestionPreliminaryRuling as Question } from '~/core/types'
 
 const { t, locale } = useLanguage()
 

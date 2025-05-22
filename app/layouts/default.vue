@@ -9,7 +9,7 @@ import { ref, useTemplateRef, onMounted, computed, watch } from 'vue'
 import { useDisplay } from 'vuetify'
 import type { CourtItem } from '@core/constants'
 import { RoutePathKeys } from '@core/constants'
-import ogImageUrl from '~/assets/img/ogImage.jpg'
+import ogImageUrl from '@assets/img/ogImage.jpg'
 
 const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage } = useLanguage()
 const localePath = useLocalePath()

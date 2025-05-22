@@ -1,5 +1,3 @@
-import { RoutePathKeys } from '~/core/constants'
-
 export enum Languages {
   ENGLISH = 'en',
   FRENCH = 'fr',

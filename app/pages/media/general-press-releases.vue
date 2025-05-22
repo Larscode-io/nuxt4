@@ -39,8 +39,8 @@
 </template>
 
 <script setup lang="ts">
-import img from '~/assets/img/banner-media.png'
-import { ApiUrl, DISCOURS_WORDS_FOR_FILTERING } from '~/core/constants'
+import { ApiUrl, DISCOURS_WORDS_FOR_FILTERING } from '@core/constants'
+import img from '@assets/img/banner-media.png'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useLanguage()
@@ -56,14 +56,14 @@ if (error.value) {
 const releases = computed(() => {
   return data.value && Array.isArray(data.value)
     ? data.value.filter((release: { title: string }) => {
-      const title = release.title?.toLowerCase()
-      const hasDiscours
+        const title = release.title?.toLowerCase()
+        const hasDiscours
         = DISCOURS_WORDS_FOR_FILTERING.map(key =>
           title?.includes(key?.toLowerCase()),
         ).filter(Boolean)?.length > 0
 
-      return !hasDiscours
-    })
+        return !hasDiscours
+      })
     : []
 })
 

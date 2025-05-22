@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import img from '~/assets/img/banner-judgment.png'
-import { ApiUrl, PendingCaseType, EMPTY_VALUE } from '~/core/constants'
+import img from '@assets/img/banner-judgment.png'
+import { ApiUrl, PendingCaseType, EMPTY_VALUE } from '@core/constants'
+import type { Decision } from '@core/constants'
 import { useLanguage } from '@/composables/useLanguage'
-import type { Decision } from '~/core/constants'
 
 const { t, locale } = useLanguage()
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, nextTick } from 'vue'
-import img from '~/assets/img/banner-media.png'
-import { ApiUrl } from '~/core/constants'
+import { ApiUrl } from '@core/constants'
+import img from '@assets/img/banner-media.png'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { query } = useRoute()

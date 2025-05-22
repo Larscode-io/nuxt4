@@ -147,11 +147,11 @@
 <script setup lang="ts">
 import { ref, reactive, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import img from '@assets/img/banner-text.png'
 import BannerImage from '../../components/BannerImage.vue'
 import ErrorCard from '../../components/ErrorCard.vue'
 import EmptyComponent from '../../components/EmptyComponent.vue'
 import { ApiUrl } from '../../core/constants'
-import img from '~/assets/img/banner-text.png'
 
 const { t, locale } = useI18n()
 

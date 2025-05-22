@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
 import type { Member, Infos } from '@types/members'
+import img from '@assets/img/organisation-Y-0050.png'
 import { ContentKeys } from '../../../core/constants'
 import type { PageContent } from '@/types/content'
-import img from '~/assets/img/organisation-Y-0050.png'
-import '~/assets/css/content.css'
+import '@assets/css/content.css'
 
 const { t, locale, langCollection } = useLanguage()
 const {

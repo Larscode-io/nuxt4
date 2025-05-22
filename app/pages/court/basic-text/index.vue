@@ -1,14 +1,11 @@
 <!-- Content based Page -->
 <script setup lang="ts">
-import { ref, computed, onMounted, onUpdated } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import img from '@assets/img/banner-text.png'
 import { ContentKeys } from '../../../core/constants'
-import img from '~/assets/img/banner-text.png'
 
 const { locale } = useI18n()
 const { t, langCollection } = useLanguage()
-
-const route = useRoute()
-const hash = route.hash.substring(1)
 
 const contentPath = ref(`${ContentKeys.presentationBasicTexts}`)
 const pad = computed(() => `/${locale.value}/${contentPath.value}`)
@@ -20,7 +17,7 @@ const { data: page, pending, error } = await useAsyncData(
     .first(),
 )
 
-const { hasContent, sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(page)
+const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(page)
 const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActiveSectionObserver('h3', 0.9)
 
 const status = computed(() => {

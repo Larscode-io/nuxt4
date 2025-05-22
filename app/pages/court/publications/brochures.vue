@@ -4,7 +4,7 @@
 import { ApiUrl } from '@core/constants'
 
 import type { PubBrochuresData } from '@core/constants'
-import img from '~/assets/img/newsletter-background-opt.png'
+import img from '@assets/img/newsletter-background-opt.png'
 
 const { t, locale } = useLanguage()
 

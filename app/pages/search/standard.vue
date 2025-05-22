@@ -189,9 +189,9 @@
 <script setup lang="ts">
 import { ref, computed, reactive } from 'vue'
 import { useI18n } from 'vue-i18n'
+import img from '@assets/img/banner-text.png'
 import { ApiUrl, ContentKeys } from '../../core/constants'
 import { groupBy } from '../../core/utilities'
-import img from '~/assets/img/banner-text.png'
 
 // Data refs
 const loading = ref(false)

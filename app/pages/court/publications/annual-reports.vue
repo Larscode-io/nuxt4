@@ -1,12 +1,10 @@
 <!-- API based page -->
 <script setup lang="ts">
 import { computed } from 'vue'
-import BannerImage from '~/components/BannerImage.vue'
+import { ApiUrl } from '@core/constants'
+import type { PubAnnualReportData } from '@core/constants'
 import img from '~/assets/img/newsletter-background-opt.png'
-import { ApiUrl } from '~/core/constants'
 import { useFetch } from '#imports'
-
-import type { PubAnnualReportData } from '~/core/constants'
 
 const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
