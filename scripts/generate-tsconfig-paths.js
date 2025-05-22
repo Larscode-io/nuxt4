@@ -17,6 +17,7 @@ const tsconfig = {
   compilerOptions: {
     baseUrl: '.',
     paths: tsconfigPaths,
+    composite: true,
   },
 }
 

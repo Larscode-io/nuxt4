@@ -1,63 +1,63 @@
-// only by the TypeScript compiler and VSCODE
+// only used by the TypeScript compiler and VSCODE
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "include": [
-    ".nuxt/**/*",
-    "app/**/*",
-    "types/**/*",
-    "server/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "tests",
-    // we exclude the tests from the main tsconfig.json
-    // so typechecking must be run separately
-    // typically in a file called tsconfig.spec.json
-    // placed in the root of the project
-    // and use tsc --project tsconfig.test.json to run it
-    "**/*.spec.ts",
-    "**/*.test.ts",
-    "**/__tests__/**"
-  ],
-  "compilerOptions": {
-    "baseUrl": ".",
-    "strict": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "skipLibCheck": true,
-    "types": [
-      "node",
-      "nuxt"
-    ],
-    "paths": {
-      // paths enable this stuff:
-      // Auto-imports and jump-to-definition in VS Code
-      // nuxi typecheck to resolve aliases
-      // No red squiggly lines in IDE
-      // nuxt.config.ts is used for runtime build
-      "@/*": [
-        "app/*"
+      // https://nuxt.com/docs/guide/concepts/typescript
+      "extends": "./.nuxt/tsconfig.json",
+      "include": [
+            ".nuxt/**/*",
+            "app/**/*",
+            "types/**/*",
+            "server/**/*"
       ],
-      "@core/*": [
-        "app/core/*"
+      "exclude": [
+            "node_modules",
+            "dist",
+            "tests",
+            // we exclude the tests from the main tsconfig.json
+            // so typechecking must be run separately
+            // typically in a file called tsconfig.spec.json
+            // placed in the root of the project
+            // and use tsc --project tsconfig.test.json to run it
+            "**/*.spec.ts",
+            "**/*.test.ts",
+            "**/__tests__/**"
       ],
-      "@types/*": [
-        "types/*"
-      ],
-      "@utils/*": [
-        "app/utils/*"
-      ],
-      "#imports": [
-        "./.nuxt/imports.d.ts"
+      "compilerOptions": {
+            "baseUrl": ".",
+            "strict": true,
+            "noImplicitAny": true,
+            "noUnusedLocals": true,
+            "noUnusedParameters": true,
+            "skipLibCheck": true,
+            "types": [
+                  "node",
+                  "nuxt"
+            ],
+            "paths": {
+                  // paths enable this stuff:
+                  // Auto-imports and jump-to-definition in VS Code
+                  // nuxi typecheck to resolve aliases
+                  // No red squiggly lines in IDE
+                  // nuxt.config.ts is used for runtime build
+                  "@/*": [
+                        "app/*"
+                  ],
+                  "@core/*": [
+                        "app/core/*"
+                  ],
+                  "@types/*": [
+                        "types/*"
+                  ],
+                  "@utils/*": [
+                        "app/utils/*"
+                  ],
+                  "#imports": [
+                        "./.nuxt/imports.d.ts"
+                  ]
+            }
+      },
+      "references": [
+            {
+                  "path": "./tsconfig.paths.json"
+            }
       ]
-    }
-  },
-  "references": [
-    {
-      "path": "./tsconfig.paths.json"
-    }
-  ]
 }
