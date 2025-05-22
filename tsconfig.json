@@ -4,8 +4,9 @@
       "include": [
             ".nuxt/**/*",
             "app/**/*",
-            "types/**/*",
-            "server/**/*"
+            "models/**/*",
+            "server/**/*",
+            "i18n/**/*",
       ],
       "exclude": [
             "node_modules",
@@ -21,42 +22,35 @@
             "**/__tests__/**"
       ],
       "compilerOptions": {
+            "module": "esnext",
             "baseUrl": ".",
             "strict": true,
             "noImplicitAny": true,
             "noUnusedLocals": true,
             "noUnusedParameters": true,
             "skipLibCheck": true,
+            "resolveJsonModule": true,
+            "esModuleInterop": true,
             "types": [
                   "node",
                   "nuxt"
             ],
             "paths": {
-                  // paths enable this stuff:
-                  // Auto-imports and jump-to-definition in VS Code
-                  // nuxi typecheck to resolve aliases
-                  // No red squiggly lines in IDE
-                  // nuxt.config.ts is used for runtime build
                   "@/*": [
                         "app/*"
                   ],
                   "@core/*": [
                         "app/core/*"
                   ],
-                  "@types/*": [
-                        "types/*"
-                  ],
                   "@utils/*": [
                         "app/utils/*"
                   ],
-                  "#imports": [
-                        "./.nuxt/imports.d.ts"
+                  "@assets/*": [
+                        "app/assets/*"
+                  ],
+                  "@mymodels/*": [
+                        "models/*"
                   ]
             }
-      },
-      "references": [
-            {
-                  "path": "./tsconfig.paths.json"
-            }
-      ]
+      }
 }

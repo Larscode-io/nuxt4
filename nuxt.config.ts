@@ -1,9 +1,9 @@
 import { resolve } from 'path'
 import * as vuetifyModule from 'vite-plugin-vuetify'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
+
 const vuetify = vuetifyModule.default || vuetifyModule
 const { transformAssetUrls } = vuetifyModule
-import { aliases, mdi } from 'vuetify/iconsets/mdi'
-import { aliasMap } from './aliases'
 
 export default defineNuxtConfig({
   modules: [
@@ -104,7 +104,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   vite: {
     resolve: {
-      alias: aliasMap,
+      alias: { // don't forget to add the @alias to the tsconfig.json file as well
+        '@': resolve(__dirname, 'app'),
+        '@core': resolve(__dirname, 'app/core'),
+        '@utils': resolve(__dirname, 'app/utils'),
+        '@assets': resolve(__dirname, 'app/assets'),
+        '@mymodels': resolve(__dirname, 'models'),
+      },
     },
     server: {
       hmr: {

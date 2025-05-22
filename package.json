@@ -22,7 +22,7 @@
     "spell:update": "./scripts/update-cspell-words.sh",
     "spell:verify": "./scripts/spell-verify.sh",
     "spell:help": "./scripts/show-help.sh",
-    "types": "nuxi typecheck",
+    "ts": "nuxi typecheck",
     "check": "npm run lint && npm run type-check"
   },
   "dependencies": {

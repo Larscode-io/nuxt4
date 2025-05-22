@@ -1,7 +1,7 @@
-import { ref, computed, onMounted } from 'vue'
-import type { Member, Role } from '@types/members'
+import { computed, onMounted } from 'vue'
+import type { Member, Infos } from '@mymodels/members'
 
-type RawMember = Partial<Member> & { name: string } // alleen wat zeker is
+// type RawMember = Partial<Member> & { name: string } // alleen wat zeker is
 
 export function useMembers(locale: Ref<string>) {
   const parseDate = (d: string | null): Date | null => d ? new Date(d.split('.').reverse().join('-')) : null

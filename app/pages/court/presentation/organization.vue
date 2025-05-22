@@ -1,11 +1,21 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
-import type { Member, Infos } from '@types/members'
 import img from '@assets/img/organisation-Y-0050.png'
-import { ContentKeys } from '../../../core/constants'
-import type { PageContent } from '@/types/content'
+import type { Member, Infos } from '@mymodels/members'
+import type { PageContent } from '@mymodels/content'
+import { ContentKeys } from '@core/constants'
 import '@assets/css/content.css'
 
+const a: PageContent = {
+  title: 'Court Organization',
+  description: 'Description of the court organization',
+  body: {
+    toc: {
+      links: [],
+    },
+  },
+}
+console.log(a.title)
 const { t, locale, langCollection } = useLanguage()
 const {
   judgeMembers,

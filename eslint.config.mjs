@@ -10,6 +10,20 @@ export default createConfigForNuxt({
     '@typescript-eslint': ts,
   },
   rules: {
+    'no-restricted-imports': ['error', {
+      paths: [
+        {
+          name: '@types',
+          message: '🚫 Do not import from @types/. Use @models/ instead.',
+        },
+      ],
+      patterns: [
+        {
+          group: ['@/types/**'],
+          message: '🚫 Do not import from /types. Use /models instead.',
+        },
+      ],
+    }],
     // Algemene JS/TS regels
     'no-console': 'warn',
     'prefer-const': 'error',
