@@ -19,7 +19,7 @@ const { data: page, pending } = await useAsyncData(
     .path(pad.value)
     .first(),
 )
-const { hasContent, sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(page)
+const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(page)
 
 onMounted(() => {
   const sidebarLinks = extractSideBarLinks({ value: page.value })
@@ -46,7 +46,7 @@ onMounted(() => {
           cols="12"
           md="4"
         >
-          <Sidebar
+          <SideBar
             :active="currentActiveContentInToc"
             :toc="sideBarLinks"
             @click="updateCurrentActiveContentInToc"

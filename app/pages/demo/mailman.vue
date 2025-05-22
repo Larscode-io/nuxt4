@@ -179,7 +179,9 @@ const mailmanSubmitIsValid = computed(() => {
 })
 
 watch(() => form.userFeedbackMessage, () => {
-  setTimeout(() => { form.userFeedbackMessage = '' }, 3000)
+  setTimeout(() => {
+    form.userFeedbackMessage = ''
+  }, 3000)
 })
 
 type Locale = Languages.DUTCH | Languages.FRENCH | Languages.GERMAN | Languages.ENGLISH

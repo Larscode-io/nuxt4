@@ -1,6 +1,6 @@
 import { resolve } from 'path'
 import * as vuetifyModule from 'vite-plugin-vuetify'
-import { aliases, mdi } from 'vuetify/iconsets/mdi'
+// import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 const vuetify = vuetifyModule.default || vuetifyModule
 const { transformAssetUrls } = vuetifyModule
@@ -142,7 +142,8 @@ export default defineNuxtConfig({
       },
     },
     hooks: { // needed to extend the Vite config with Vuetify, needs to come after vue:
-      'vite:extendConfig': (config: any) => {
+      'vite:extendConfig': (config: import('vite').UserConfig) => {
+        config.plugins = config.plugins || []
         config.plugins.push(
           vuetify({
             autoImport: true,

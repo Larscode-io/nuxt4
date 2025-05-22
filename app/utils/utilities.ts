@@ -21,4 +21,3 @@ export const downloadPublicFile = (filePath: string) => {
   const url = `https://www.const-court.be${filePath}`
   window.open(url, '_blank')
 }
-

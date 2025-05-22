@@ -83,7 +83,7 @@ interface Props {
   belgianOfficialPage?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   rollNumbers: () => [],
   judgmentTypes: () => [],
   dateOfBeOfficialJournal: '',

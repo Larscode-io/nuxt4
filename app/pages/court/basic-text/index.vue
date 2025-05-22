@@ -87,7 +87,7 @@ onMounted(() => {
           cols="12"
           md="4"
         >
-          <Sidebar
+          <SideBar
             :active="currentActiveContentInToc"
             :toc="sideBarLinks"
             @click="updateCurrentActiveContentInToc"

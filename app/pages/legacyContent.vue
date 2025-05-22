@@ -23,10 +23,10 @@ const { data: content } = await useAsyncData(`content-${contentSlug}`, async () 
     }
     const fetchedContent = await response.json()
     return fetchedContent
-  } catch (error) {
+  }
+  catch (error) {
     console.error('Debug: Error fetching content:', error)
     return null
   }
 })
-
 </script>

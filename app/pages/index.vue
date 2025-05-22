@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { GeneralPressJudgment, GeneralPressRelease, Judgment, Pleading, Decision } from '@core/constants'
+// import type { GeneralPressJudgment, GeneralPressRelease, Judgment, Pleading, Decision } from '@core/constants'
+import type { Judgment, Pleading } from '@core/constants'
 import { RoutePathKeys, ApiUrl, MediaType } from '@core/constants'
 
 const localePath = useLocalePath()
@@ -17,7 +18,7 @@ const { t, locale } = useLanguage()
 const goToJudgmentPage = (id: number, year: string) => {
   navigateTo(localePath(RoutePathKeys.judgmentsHome) + `?year=${year}` + `&id=${id}`)
 }
-const goToMediaPage = (id: number, type: MediaType) => {
+const goToMediaPage = (id: number, _type: MediaType) => {
   navigateTo(localePath(RoutePathKeys.mediaPressReleasesConcerningTheJudgments) + '?with-archive=true' + `&id=${id}`)
 }
 // const goToMailings = ({ mailinfo }) => {

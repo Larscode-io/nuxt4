@@ -13,7 +13,8 @@ export function throttle<T extends (...args: any[]) => void>(func: T, limit: num
           lastArgs = null
         }
       }, limit)
-    } else {
+    }
+    else {
       lastArgs = args
     }
   }

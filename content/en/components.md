@@ -91,7 +91,7 @@ Here’s a detailed explanation of how and why we structured `app.vue`, `Content
           cols="12"
           md="4"
         >
-          <Sidebar
+          <SideBar
             :active="currentActiveContentInToc"
             :toc="sideBarLinks"
             @click="updateCurrentActiveContentInToc"

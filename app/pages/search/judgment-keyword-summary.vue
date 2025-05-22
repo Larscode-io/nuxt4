@@ -229,7 +229,7 @@ watch(() => payload.value, () => {
 }, { deep: true })
 
 // Methods
-function toNameKey(val = '') {
+function _toNameKey(val = '') {
   return val?.toLowerCase()
 }
 

@@ -106,8 +106,6 @@ h4 {
         }
     }
 
-
-
 .accordion {
         padding: 16px 24px;
         border-bottom: 0.5px solid #666;

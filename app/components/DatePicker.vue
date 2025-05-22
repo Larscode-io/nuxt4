@@ -6,49 +6,49 @@
       :locale="locale"
       readonly
       :aria-label="ariaLabel"
-      @update:model-value="handleChange"
       :title="'none'"
+      @update:model-value="handleChange"
     />
   </v-locale-provider>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, nextTick } from "vue";
+import { ref, computed, onMounted, nextTick } from 'vue'
 
-const { t, locale } = useLanguage();
+const { t, locale } = useLanguage()
 
-const picker = ref(new Date());
+const picker = ref(new Date())
 
 const ariaLabel = computed(() => {
-  const selectedDate = new Date(picker.value);
+  const selectedDate = new Date(picker.value)
   return (
-    t('aria.label.landing.agenda.date') +
-    " " +
-    selectedDate.toLocaleDateString(locale.value, {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
+    t('aria.label.landing.agenda.date')
+    + ' '
+    + selectedDate.toLocaleDateString(locale.value, {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
     })
-  );
-});
+  )
+})
 
 const handleChange = (value) => {
-  if (!value) return;
-  const dateObj = new Date(value);
-  emit("change", dateObj);
-};
+  if (!value) return
+  const dateObj = new Date(value)
+  emit('change', dateObj)
+}
 
 onMounted(() => {
   nextTick(() => {
-    document.querySelectorAll(".v-date-picker-header button").forEach((el) => {
-      el.setAttribute("tabindex", "-1");
-    });
-    document.querySelectorAll(".v-btn").forEach((el) => {
-      el.setAttribute("tabindex", "-1");
-    });
-  });
-});
+    document.querySelectorAll('.v-date-picker-header button').forEach((el) => {
+      el.setAttribute('tabindex', '-1')
+    })
+    document.querySelectorAll('.v-btn').forEach((el) => {
+      el.setAttribute('tabindex', '-1')
+    })
+  })
+})
 </script>
 
 <style lang="scss">

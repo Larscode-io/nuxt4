@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
 import img from '@assets/img/organisation-Y-0050.png'
-import type { Member, Infos } from '@mymodels/members'
+// import type { Member, Infos } from '@mymodels/members'
+import type { Infos } from '@mymodels/members'
 import type { PageContent } from '@mymodels/content'
 import { ContentKeys } from '@core/constants'
 import '@assets/css/content.css'
@@ -140,7 +141,7 @@ onMounted(() => {
           cols="12"
           md="4"
         >
-          <Sidebar
+          <SideBar
             :active="currentActiveContentInToc"
             :toc="sideBarLinks"
             @click="updateCurrentActiveContentInToc"

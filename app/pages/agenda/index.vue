@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import img from '@assets/img/banner-media.png'
 import { ApiUrl } from '@core/constants'
 import { useLanguage } from '@/composables/useLanguage'

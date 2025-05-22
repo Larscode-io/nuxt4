@@ -54,7 +54,7 @@ const isSubscribable = (id: number) => {
     return found.distance > 30
   }
 }
-const findDateLongInPressJudgments = (id: number) => {
+const _findDateLongInPressJudgments = (id: number) => {
   const found = pressJudgments.value?.find(j => j.id === id)
   return found?.dateLong
 }

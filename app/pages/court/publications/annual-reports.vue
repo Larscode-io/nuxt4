@@ -115,6 +115,8 @@ useHead({
               {{ filePath }}
               <br>
               {{ baseURL }}
+              <br>
+              {{ description }}
             </p>
             <a
               :href="`${baseURL}${filePath}`"
