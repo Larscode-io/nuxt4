@@ -7,6 +7,7 @@
       :title="t('menu.search.title')"
       :description="t('menu.search.title-description')"
       :image="img"
+      alt="Banner Image"
     />
 
     <v-row
