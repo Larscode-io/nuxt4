@@ -11,7 +11,7 @@ import contactPresidentOffice from '@assets/img/contact/president-office.png'
 import contactSeat from '@assets/img/contact/seat.jpg'
 import contactGreffe from '@assets/img/contact/greffe.png'
 import contactImgFrank from '@assets/img/members/frank-meersschaut.jpg'
-import img from '@assets/img/banner-job.png'
+// import img from '@assets/img/banner-job.png'
 
 const currentActiveContentInToc = ref('')
 

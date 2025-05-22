@@ -261,7 +261,8 @@ watch(
   { immediate: true },
 )
 
-function formatDate(date = ''): string {
+// check if needed in legacy code
+function _formatDate(date = ''): string {
   if (!date) return ''
   const [year, month, day] = date.split('-')
   return `${day}/${month}/${year}`
