@@ -23,7 +23,7 @@
         <span class="separator" />
       </div>
       <p :id="`memberJob${nameId}`">
-        {{ getJobTitle() }} ({{ lang.toUpperCase() }})
+        {{ jobTitle }} ({{ lang.toUpperCase() }})
       </p>
       <p
         v-if="startDate"
@@ -63,8 +63,8 @@
   </v-card>
 </template>
 
-<script setup>
-import { ref, computed } from 'vue'
+<script setup lang="ts">
+import { onMounted, ref, computed } from 'vue'
 
 let route, router
 
@@ -110,9 +110,8 @@ const props = defineProps({
     required: false,
   },
   jobTitle: {
-    type: String,
+    type: [Array, String],
     required: false,
-    default: '',
   },
   femaleTitle: {
     type: Boolean,
@@ -152,29 +151,30 @@ const { getImageUrl } = useImageMap()
 watchEffect(() => {
   resolvedSrc.value = props.image && props.image !== 'undefined' ? getImageUrl(`members/${props.image}`) : ''
 })
-
-const getJobTitle = () => {
-  const getTranslation = () => {
-    switch (props.jobTitle.toLowerCase()) {
-      case 'judge':
-        return t('general.message.judges')
-      case 'president':
-        return t('general.message.presidents')
-      case 'legalsecretaries':
-        return t('general.message.legal-secretaries')
-      default:
-        return props.jobTitle
-    }
-  }
-  return locale.value === Languages.GERMAN && props.femaleTitle ? getTranslation() + 'in' : getTranslation()
+const jobTitleMap = {
+  judge: 'general.message.judges',
+  president: 'general.message.presidents',
+  legalsecretaries: 'general.message.legal-secretaries',
 }
+type JobTitle = keyof typeof jobTitleMap
+
+const translatedJobTitle = computed(() => {
+  const jobTitle: JobTitle = String(props.jobTitle || '').toLowerCase()
+  const translationKey = jobTitleMap[jobTitle]
+  return translationKey ? t(translationKey) : props.jobTitle
+})
+
+const jobTitle = computed(() => {
+  return locale.value === Languages.GERMAN && props.femaleTitle
+    ? translatedJobTitle.value + 'in'
+    : translatedJobTitle.value
+})
 
 const nameId = computed(() => {
-  return (
-    props.name.split(' ').join('')
-    + props.jobTitle.split(' ').join('')
-    + (props.startDate ? props.startDate.split(' ').join('') : '')
-  )
+  const safeName = String(props.name || '').split(' ').join('')
+  const safeJobTitle = String(props.jobTitle || '').split(' ').join('')
+  const safeStartDate = props.startDate ? String(props.startDate || '').split(' ').join('') : ''
+  return safeName + safeJobTitle + safeStartDate
 })
 
 const showDetails = computed(() => {
@@ -190,6 +190,9 @@ const click = () => {
   const basePath = route.path.split('/').slice(0, -1).join('/')
   router.push(`${basePath}/members/${props.slug}`)
 }
+onMounted(() => {
+  console.log('infos', props.infos)
+})
 </script>
 
 <style lang="scss">

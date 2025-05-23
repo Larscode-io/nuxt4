@@ -1,6 +1,7 @@
 export const EMPTY_VALUE = '----'
 
 export type Locale = 'de' | 'en' | 'fr' | 'nl'
+
 export enum Languages {
   ENGLISH = 'en',
   FRENCH = 'fr',

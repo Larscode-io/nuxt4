@@ -33,7 +33,9 @@ export type Member = {
     nl?: string[]
     de?: string[]
   }
-  roles?: Role[] | Role
+  roles: Role[] | Role
+  // helper attribute to avoid recalculating the most recent role too often
+  mostRecentRole?: Role
   usStartDate?: Date | null
 }
 export type Role = {

@@ -1,6 +1,6 @@
 import { nlBE, fr, de, enGB } from 'date-fns/locale'
-import { DEFAULT_LANGUAGE } from '../constants'
-import { Languages } from '~/core/constants'
+// dit zijn server constants, niet uit @core/constants
+import { DEFAULT_LANGUAGE, Languages } from '../constants'
 
 // /public/stet/n/stet-2016-003n.pdf
 

@@ -1,5 +1,5 @@
 import { computed, onMounted } from 'vue'
-import type { Member, Infos } from '@mymodels/members'
+import type { Member, Role, Infos } from '@mymodels/members'
 
 // type RawMember = Partial<Member> & { name: string } // alleen wat zeker is
 
@@ -19,37 +19,35 @@ export function useMembers(locale: Ref<string>) {
   //
   // This ensures we can correctly detect when fields like `isAlive` are not present at all.
 
-  function transformMember(entry: any): Member {
-    // we use the raw entry because isAlive is sometimes at top level while missing in the real .json and in meta
-    const raw = entry?.meta?.body || entry // fallback if meta is missing
-
-    const mostRecentRoleDate = getMostRecentRole(raw.roles ?? [])?.startDate ?? '01.01.1990'
-
+  function transformMember(entry: any): Member & { mostRecentRole?: Role | null } {
+    const raw = entry?.meta?.body || entry
+    const mostRecentRole: Role | null | undefined = getMostRecentRole(raw.roles ?? [])
     return {
       ...raw,
-      usStartDate: parseDate(mostRecentRoleDate),
+      mostRecentRole,
+      // avoid transforming the whole object again for each memberCard
+      // todo: drop complete infos in 4 langs ?
+      // info: 'xxxxxxxxx',
+      infos: raw.infos ? raw.infos[locale.value as keyof Infos] : [],
+      //
+      usStartDate: parseDate(mostRecentRole?.startDate ?? '01.01.2999'),
+      // extra fields
       isAlive: raw.isAlive ?? true,
-      // inherit id/slug/etc. from enriched entry if needed
       slug: raw.slug || entry.slug,
       lang: raw.lang || entry.lang,
       name: raw.name || entry.name,
-    } as Member
+    }
   }
 
   const { data: membersResponse } = useAsyncData<Member[]>(
-    'judges_active',
+    () => `judges_active-${locale.value}`,
     () => queryCollection('collection_member_active')
       .all()
-      // for debugging: log the raw members
-      // .then((rawMembers: RawMember[]) => {
-      //   console.log('Raw members:', rawMembers[0])
-      //   return rawMembers
-      // })
       .then(members => members.map(member => transformMember(member))),
   )
 
   const { data: membersResponse_inactive } = useAsyncData<Member[]>(
-    'judges_inactive',
+    () => `judges_inactive-${locale.value}`,
     () => queryCollection('collection_member_inactive')
       .all()
       .then(members => members.map(member => transformMember(member))),
@@ -89,8 +87,7 @@ export function useMembers(locale: Ref<string>) {
       const mostRecentRole = getMostRecentRole(member.roles ?? [])
       const roles = [mostRecentRole?.role]
       if (mostRecentRole?.startDate === null && mostRecentRole?.endDate === null) {
-        // ENABLE IN PRODUCTION
-        // console.error(`Member ${member.name} has no startDate or endDate in roles:`, member.roles)
+        console.error(`Member ${member.name} does not seem to have a role with a startDate or endDate:`, member.roles)
       }
 
       roles.forEach((role: string | undefined) => {
@@ -116,16 +113,20 @@ export function useMembers(locale: Ref<string>) {
       ...(membersResponse.value || []),
     ]
     return allMembers.reduce((acc: Record<string, Member[]>, member: Member) => {
-      (member.roles ?? []).forEach((roleObj: Role) => {
+      // Ensure roles is always an array
+      const rolesArray: Role[] = Array.isArray(member.roles)
+        ? member.roles
+        : member.roles
+          ? [member.roles]
+          : []
+      rolesArray.forEach((roleObj: Role) => {
         if (roleObj && typeof roleObj === 'object' && roleObj.role) {
           const roleName = roleObj.role
           if (!acc[roleName]) acc[roleName] = []
+          // Create a new Member with only this role in the roles array
           acc[roleName].push({
-            name: member.name,
-            lang: member.lang,
-            isAlive: member.isAlive,
-            // isAlive: member.isAlive || true,
-            ...roleObj,
+            ...member,
+            roles: [roleObj],
           })
         }
       })
@@ -238,6 +239,7 @@ export function useMembers(locale: Ref<string>) {
   )
   onMounted(() => {
     // console.log('RAW:', membersResponse.value)
+    console.log('Judge Members:', judgeMembers.value)
     // console.log('Members Response grouped:', groupedMembers.value)
     // console.log('Members Response inactive:', membersResponse_inactive.value)
     // console.log('President Members historic:', presidentMembersHistoric.value)

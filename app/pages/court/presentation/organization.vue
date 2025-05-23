@@ -2,26 +2,15 @@
 import { ref, watch, computed } from 'vue'
 import img from '@assets/img/organisation-Y-0050.png'
 // import type { Member, Infos } from '@mymodels/members'
-import type { Infos } from '@mymodels/members'
+import type { Member, Infos } from '@mymodels/members'
 import type { PageContent } from '@mymodels/content'
 import { ContentKeys } from '@core/constants'
 import '@assets/css/content.css'
 
-const a: PageContent = {
-  title: 'Court Organization',
-  description: 'Description of the court organization',
-  body: {
-    toc: {
-      links: [],
-    },
-  },
-}
-console.log(a.title)
 const { t, locale, langCollection } = useLanguage()
 const {
   judgeMembers,
   registrarMembers,
-  getMostRecentRole,
   officeStaffMembers,
   judgeMembersHistoric,
   presidentMembersHistoric,
@@ -171,8 +160,8 @@ onMounted(() => {
                 :slug="member.slug"
                 :image="member.picture"
                 :with-image="true"
-                :infos="getInfo(member.infos)"
-                :job-title="getMostRecentRole(member.roles).role"
+                :infos="member.infos"
+                :job-title="member.mostRecentRole?.role"
                 :width="300"
                 :is-alive="true"
                 :lang="member.lang"
@@ -198,8 +187,8 @@ onMounted(() => {
                 :slug="member.slug"
                 :image="member.picture"
                 :with-image="true"
-                :infos="getInfo(member.infos)"
-                :job-title="getMostRecentRole(member.roles).role"
+                :infos="member.infos"
+                :job-title="member.mostRecentRole?.role"
                 :width="300"
                 :is-alive="member.isAlive"
                 :lang="member.lang"
@@ -226,8 +215,8 @@ onMounted(() => {
                 :slug="member.slug"
                 :image="member.picture"
                 :with-image="true"
-                :infos="getInfo(member.infos)"
-                :job-title="getMostRecentRole(member.roles).role"
+                :infos="member.infos"
+                :job-title="member.mostRecentRole?.role"
                 :width="300"
                 :is-alive="member.isAlive"
                 :lang="member.lang"
@@ -258,11 +247,11 @@ onMounted(() => {
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
-                :infos="getInfo(member.infos)"
+                :infos="member.infos"
                 :is-small="true"
                 :name="member.name"
                 :with-image="false"
-                :job-title="member.role"
+                :job-title="member.mostRecentRole?.role"
                 :lang="member.lang"
                 :is-alive="member.isAlive"
                 :female-title="member.femaleTitle"
@@ -279,11 +268,11 @@ onMounted(() => {
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
-                :infos="getInfo(member.infos)"
+                :infos="member.infos"
                 :is-small="true"
                 :name="member.name"
                 :with-image="false"
-                :job-title="member.role"
+                :job-title="member.mostRecentRole?.role"
                 :lang="member.lang"
                 :is-alive="member.isAlive"
                 :female-title="member.femaleTitle"
@@ -300,11 +289,11 @@ onMounted(() => {
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
-                :infos="getInfo(member.infos)"
+                :infos="member.infos"
                 :is-small="true"
                 :name="member.name"
                 :with-image="false"
-                :job-title="member.role"
+                :job-title="member.mostRecentRole?.role"
                 :lang="member.lang"
                 :is-alive="member.isAlive"
                 :female-title="member.femaleTitle"
@@ -321,11 +310,11 @@ onMounted(() => {
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
-                :infos="getInfo(member.infos)"
+                :infos="member.infos"
                 :is-small="true"
                 :name="member.name"
                 :with-image="false"
-                :job-title="member.role"
+                :job-title="member.mostRecentRole?.role"
                 :lang="member.lang"
                 :is-alive="member.isAlive"
                 :female-title="member.femaleTitle"
@@ -342,18 +331,17 @@ onMounted(() => {
               {{ t('general.message.presidents') }}
             </h4>
 
-            <!-- de actieve leden moeten hier nog toegevoegd worden -->
             <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard
                 v-for="member of presidentMembersHistoric"
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
-                :infos="getInfo(member.infos)"
+                :infos="member.infos"
                 :is-small="true"
                 :name="member.name"
                 :with-image="false"
-                :job-title="member.role"
+                :job-title="member.mostRecentRole?.role"
                 :lang="member.lang"
                 :start-date="member.startDate"
                 :end-date="member.endDate"
@@ -366,18 +354,17 @@ onMounted(() => {
               {{ t('general.message.judges') }}
             </h4>
 
-            <!-- de actieve leden moeten hier nog toegevoegd worden -->
             <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard
                 v-for="member of judgeMembersHistoric"
                 :key="member.slug"
                 :headline-level="5"
                 :slug="member.slug"
-                :infos="getInfo(member.infos)"
+                :infos="member.infos"
                 :is-small="true"
                 :name="member.name"
                 :with-image="false"
-                :job-title="member.role"
+                :job-title="member.mostRecentRole?.role"
                 :lang="member.lang"
                 :start-date="member.startDate"
                 :end-date="member.endDate"

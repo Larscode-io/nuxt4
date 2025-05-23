@@ -75,7 +75,7 @@ const title = computed(() => {
             </h3>
             <ul>
               <li
-                v-for="info in member?.infos?.[locale]"
+                v-for="info in member?.infos"
                 :key="info"
               >
                 {{ info }}

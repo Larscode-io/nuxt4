@@ -1,7 +1,8 @@
 import { nlBE, fr, de, enGB } from 'date-fns/locale'
 import { computed } from 'vue'
 import type { Ref } from 'vue'
-import type { MessageSchema } from '@/types/i18n' // ~~ is an alias for the src directory
+// import type { MessageSchema } from '@/types/i18n' // ~~ is an alias for the src directory
+import type { MessageSchema } from '../../models/i18n'
 
 type MaybeComputedRefOrFalsy<T> = T | false | null | undefined | Ref<T>
 
