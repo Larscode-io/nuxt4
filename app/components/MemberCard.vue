@@ -64,7 +64,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, computed } from 'vue'
+import { ref, computed } from 'vue'
 
 let route, router
 
@@ -190,9 +190,6 @@ const click = () => {
   const basePath = route.path.split('/').slice(0, -1).join('/')
   router.push(`${basePath}/members/${props.slug}`)
 }
-onMounted(() => {
-  console.log('infos', props.infos)
-})
 </script>
 
 <style lang="scss">
