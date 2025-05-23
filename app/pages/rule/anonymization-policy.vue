@@ -25,7 +25,7 @@ const hasContent = computed(() =>
       :description="t('menu.rule.anonymization-policy-description')"
       :image="img"
       :alt="t('alt.banner.judge')"
-    />{{ t('empty.no-content') }}
+    />
     <v-container class="flex-column align-start flex-nowrap">
       <v-col v-if="hasContent">
         <article>
