@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import type { ComputedRef } from 'vue'
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, onMounted } from 'vue'
 import img from '@assets/img/organisation-Y-0050.png'
 import type { Member, PageContent } from '@membermodels/members'
 import { ContentKeys } from '@core/constants'
 import '@assets/css/content.css'
 
-const { t, locale } = useLanguage()
+const { t, locale, langCollection } = useLanguage()
 const {
   judgeMembers,
   registrarMembers,
@@ -45,45 +45,43 @@ const dummyPage = ref<PageContent>({
 
 const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(dummyPage)
 
+const collection: string = langCollection[locale.value] ?? 'collection_dutch'
+
 const { data: results } = await useAsyncData(
-  `organisationPages-${locale.value}`,
+  () => `stay-informed-${locale.value}`,
   async () => {
-    const [pageJudge, pageReferendar, pageClerk, pageOfficeStaff] = await Promise.all([
-      $fetch(`/${locale.value}/${ContentKeys.presentationOrganizationJudge}`),
-      $fetch(`/${locale.value}/${ContentKeys.presentationOrganizationReferendar}`),
-      $fetch(`/${locale.value}/${ContentKeys.presentationOrganizationClerk}`),
-      $fetch(`/${locale.value}/${ContentKeys.presentationJobOffers}`),
+    const [pageJudge, pageOfficeStaff, pageReferendar, pageClerk] = await Promise.all([
+      queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationJudge}`).first(),
+      queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationReferendar}`).first(),
+      queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationClerk}`).first(),
+      queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationOfficeStaff}`).first(),
     ])
-    return { pageJudge, pageReferendar, pageClerk, pageOfficeStaff }
+    return { pageJudge, pageOfficeStaff, pageReferendar, pageClerk }
   },
 )
 
-// Helper to check if an object is a valid PageContent
-function isPageContent(val: unknown): val is PageContent {
-  return !!val && typeof val === 'object' && 'title' in val && 'body' in val
-}
+const pageJudge = computed(() => results.value?.pageJudge)
+const pageOfficeStaff = computed(() => results.value?.pageOfficeStaff)
+const pageReferendar = computed(() => results.value?.pageReferendar)
+const pageClerk = computed(() => results.value?.pageClerk)
 
-const pageJudge = computed<PageContent | null>(() => {
-  const val = results.value?.pageJudge
-  return isPageContent(val) ? val : null
-})
-const pageClerk = computed<PageContent | null>(() => {
-  const val = results.value?.pageClerk
-  return isPageContent(val) ? val : null
-})
-const pageReferendar = computed<PageContent | null>(() => {
-  const val = results.value?.pageReferendar
-  return isPageContent(val) ? val : null
-})
-const pageOfficeStaff = computed<PageContent | null>(() => {
-  const val = results.value?.pageOfficeStaff
-  return isPageContent(val) ? val : null
-})
+const judgeLinks = computed(() =>
+  pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [],
+)
+const referendarLinks = computed(() =>
+  pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [],
+)
+const clerkLinks = computed(() =>
+  pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [],
+)
+const officeStaffLinks = computed(() =>
+  pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [],
+)
 
-const judgeLinks = computed(() => pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [])
-const clerkLinks = computed(() => pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [])
-const referendarLinks = computed(() => pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [])
-const officeStaffLinks = computed(() => pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [])
+// const judgeLinks = computed(() => pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [])
+// const clerkLinks = computed(() => pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [])
+// const referendarLinks = computed(() => pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [])
+// const officeStaffLinks = computed(() => pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [])
 
 const mergedSidebarLinks = computed(() => [
   ...judgeLinks.value,
@@ -107,6 +105,8 @@ watch(mergedSidebarLinks, (newLinks) => {
 }, { immediate: true })
 
 onMounted(() => {
+  // log results.value
+  console.log('Results:', results.value)
   const sidebarLinks = extractSideBarLinks({ value: dummyPage.value })
   // jump to the first link in the sidebar
   if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
