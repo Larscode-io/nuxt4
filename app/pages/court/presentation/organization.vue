@@ -1,13 +1,12 @@
 <script setup lang="ts">
+import type { ComputedRef } from 'vue'
 import { ref, watch, computed } from 'vue'
 import img from '@assets/img/organisation-Y-0050.png'
-// import type { Member, Infos } from '@mymodels/members'
-import type { Member, Infos } from '@mymodels/members'
-import type { PageContent } from '@mymodels/content'
+import type { Member, PageContent } from '@membermodels/members'
 import { ContentKeys } from '@core/constants'
 import '@assets/css/content.css'
 
-const { t, locale, langCollection } = useLanguage()
+const { t, locale } = useLanguage()
 const {
   judgeMembers,
   registrarMembers,
@@ -18,69 +17,73 @@ const {
   aliveNonActivePresidentMembersHistoric,
   aliveNonActiveRegistrarMembersHistoric,
   aliveNonActiveOfficeStaffMembersHistoric,
-} = useMembers(locale)
-
+} = useMembers(locale) as {
+  judgeMembers: ComputedRef<Member[]>
+  registrarMembers: ComputedRef<Member[]>
+  officeStaffMembers: ComputedRef<Member[]>
+  judgeMembersHistoric: ComputedRef<Member[]>
+  presidentMembersHistoric: ComputedRef<Member[]>
+  aliveNonActiveJudgeMembersHistoric: ComputedRef<Member[]>
+  aliveNonActivePresidentMembersHistoric: ComputedRef<Member[]>
+  aliveNonActiveRegistrarMembersHistoric: ComputedRef<Member[]>
+  aliveNonActiveOfficeStaffMembersHistoric: ComputedRef<Member[]>
+}
 const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActiveSectionObserver('h3', 0.75)
 
 // Minimal dummy page with only the required structure
 // so we can use the sidebar component for more than 1 content page
-const dummyPage = ref({
+const dummyPage = ref<PageContent>({
+  title: 'No content available',
   body: {
     toc: {
-      links: [
-        {
-          id: 'dummyId',
-          text: 'No content available',
-        },
-      ],
+      id: 'dummyId',
+      depth: 3,
+      text: 'No content available',
     },
-  } })
+  },
+})
 
 const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(dummyPage)
 
-const getInfo = (infos: Infos) => {
-  if (!infos) {
-    return []
-  }
+const { data: results } = await useAsyncData(
+  `organisationPages-${locale.value}`,
+  async () => {
+    const [pageJudge, pageReferendar, pageClerk, pageOfficeStaff] = await Promise.all([
+      $fetch(`/${locale.value}/${ContentKeys.presentationOrganizationJudge}`),
+      $fetch(`/${locale.value}/${ContentKeys.presentationOrganizationReferendar}`),
+      $fetch(`/${locale.value}/${ContentKeys.presentationOrganizationClerk}`),
+      $fetch(`/${locale.value}/${ContentKeys.presentationJobOffers}`),
+    ])
+    return { pageJudge, pageReferendar, pageClerk, pageOfficeStaff }
+  },
+)
 
-  return infos[locale.value as keyof Infos]
+// Helper to check if an object is a valid PageContent
+function isPageContent(val: unknown): val is PageContent {
+  return !!val && typeof val === 'object' && 'title' in val && 'body' in val
 }
 
-const paths: string[] = [
-  `/${locale.value}/${ContentKeys.presentationOrganizationJudge}`,
-  `/${locale.value}/${ContentKeys.presentationOrganizationOfficeStaff}`,
-  `/${locale.value}/${ContentKeys.presentationOrganizationReferendar}`,
-  `/${locale.value}/${ContentKeys.presentationOrganizationClerk}`,
-]
-const collection: string = langCollection[locale.value] ?? 'collection_dutch'
+const pageJudge = computed<PageContent | null>(() => {
+  const val = results.value?.pageJudge
+  return isPageContent(val) ? val : null
+})
+const pageClerk = computed<PageContent | null>(() => {
+  const val = results.value?.pageClerk
+  return isPageContent(val) ? val : null
+})
+const pageReferendar = computed<PageContent | null>(() => {
+  const val = results.value?.pageReferendar
+  return isPageContent(val) ? val : null
+})
+const pageOfficeStaff = computed<PageContent | null>(() => {
+  const val = results.value?.pageOfficeStaff
+  return isPageContent(val) ? val : null
+})
 
-const { data: results } = await useAsyncData(
-  `organisationPages-${locale.value}-${paths.join('-')}`,
-  () =>
-    Promise.all(
-      paths.map(path => queryCollection(collection).path(path as string).first()),
-    ),
-)
-
-const [pageJudge, pageOfficeStaff, pageReferendar, pageClerk] = [
-  computed(() => results.value?.[0]),
-  computed(() => results.value?.[1]),
-  computed(() => results.value?.[2]),
-  computed(() => results.value?.[3]),
-]
-
-const judgeLinks = computed(() =>
-  pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [],
-)
-const referendarLinks = computed(() =>
-  pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [],
-)
-const clerkLinks = computed(() =>
-  pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [],
-)
-const officeStaffLinks = computed(() =>
-  pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [],
-)
+const judgeLinks = computed(() => pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [])
+const clerkLinks = computed(() => pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [])
+const referendarLinks = computed(() => pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [])
+const officeStaffLinks = computed(() => pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [])
 
 const mergedSidebarLinks = computed(() => [
   ...judgeLinks.value,
@@ -115,7 +118,7 @@ onMounted(() => {
 <template>
   <div class="content-wrapper">
     <BannerImage
-      :title="pageJudge?.title"
+      :title="pageJudge?.title || t('court.organization.title')"
       :description="pageJudge?.description"
       :image="img"
       :alt="t('alt.banner.flag')"

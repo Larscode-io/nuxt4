@@ -1,7 +1,5 @@
-import { computed, onMounted } from 'vue'
-import type { Member, Role, Infos } from '@mymodels/members'
-
-// type RawMember = Partial<Member> & { name: string } // alleen wat zeker is
+import { computed } from 'vue'
+import type { Member, Role, Infos } from '@membermodels/members'
 
 export function useMembers(locale: Ref<string>) {
   const parseDate = (d: string | null): Date | null => d ? new Date(d.split('.').reverse().join('-')) : null
@@ -25,11 +23,7 @@ export function useMembers(locale: Ref<string>) {
     return {
       ...raw,
       mostRecentRole,
-      // avoid transforming the whole object again for each memberCard
-      // todo: drop complete infos in 4 langs ?
-      // info: 'xxxxxxxxx',
-      infos: raw.infos ? raw.infos[locale.value as keyof Infos] : [],
-      //
+      infos: raw.infos ? raw.infos[locale.value as keyof Infos] : [], // only keep infos for current locale
       usStartDate: parseDate(mostRecentRole?.startDate ?? '01.01.2999'),
       // extra fields
       isAlive: raw.isAlive ?? true,
@@ -93,14 +87,7 @@ export function useMembers(locale: Ref<string>) {
       roles.forEach((role: string | undefined) => {
         if (role) {
           if (!acc[role]) acc[role] = []
-          // this is a debug line for the fact that the API returns the wrong isAlive value
-          // if (member.name === 'Ann-Sophie VANDAELE') {
-          //   console.info(`Member ${member.name} is ${member.isAlive ? 'alive' : 'not alive'} in groupedMembers`)
-          // }
-          acc[role].push(
-            { ...member,
-              _recentRoleStartDate: mostRecentRole?.startDate,
-            })
+          acc[role].push(member)
         }
       })
       return acc
@@ -237,19 +224,6 @@ export function useMembers(locale: Ref<string>) {
       )
     },
   )
-  onMounted(() => {
-    // console.log('RAW:', membersResponse.value)
-    console.log('Judge Members:', judgeMembers.value)
-    // console.log('Members Response grouped:', groupedMembers.value)
-    // console.log('Members Response inactive:', membersResponse_inactive.value)
-    // console.log('President Members historic:', presidentMembersHistoric.value)
-    // console.log('Judge Members historic:', judgeMembersHistoric.value)
-
-    // console.log('aliveNonActiveJudgeMembersHistoric:', aliveNonActiveJudgeMembersHistoric.value)
-    // console.log('aliveNonActivePresidentMembersHistoric:', aliveNonActivePresidentMembersHistoric.value)
-    // console.log('aliveNonActiveRegistrarMembersHistoric:', aliveNonActiveRegistrarMembersHistoric.value)
-    // console.log('aliveNonActiveOfficeStaffMembersHistoric:', aliveNonActiveOfficeStaffMembersHistoric.value)
-  })
 
   return {
     judgeMembers,

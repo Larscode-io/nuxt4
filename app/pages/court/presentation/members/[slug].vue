@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { Languages, OrganizationMemberRole } from '@core/constants'
-// import type { Member, Infos } from '../../../../../models/members'
-import type { Member } from '@mymodels/members'
+import type { Member, Role } from '@membermodels/members'
 
 const route = useRoute()
 const slug = route.params.slug as string

@@ -109,7 +109,7 @@ export default defineNuxtConfig({
         '@core': resolve(__dirname, 'app/core'),
         '@utils': resolve(__dirname, 'app/utils'),
         '@assets': resolve(__dirname, 'app/assets'),
-        '@mymodels': resolve(__dirname, 'models'),
+        '@membermodels': resolve(__dirname, 'models'),
       },
     },
     server: {

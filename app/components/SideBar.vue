@@ -1,26 +1,3 @@
-<template>
-  <aside
-    class="sticky-sidebar"
-    role="menu"
-    :aria-label="t('aria.label.sidebar')"
-  >
-    <ul>
-      <li
-        v-for="content in toc"
-        :key="content.id"
-      >
-        <a
-          :class="{ current: isActive(content.id) }"
-          :href="encode(content.id)"
-          @click.prevent="selectedId(content.id)"
-        >
-          {{ content.text }}
-        </a>
-      </li>
-    </ul>
-  </aside>
-</template>
-
 <script setup lang="ts">
 import { useLanguage } from '@/composables/useLanguage'
 
@@ -64,6 +41,29 @@ const encode = (link: string): string => {
 }
 </script>
 
+<template>
+  <aside
+    class="sticky-sidebar"
+    role="menu"
+    :aria-label="t('aria.label.sidebar')"
+  >
+    <ul>
+      <li
+        v-for="content in toc"
+        :key="content.id"
+      >
+        <a
+          :class="{ current: isActive(content.id) }"
+          :href="encode(content.id)"
+          @click.prevent="selectedId(content.id)"
+        >
+          {{ content.text }}
+        </a>
+      </li>
+    </ul>
+  </aside>
+</template>
+
 <style lang="scss">
 .sticky-sidebar {
   position: relative;
@@ -71,9 +71,8 @@ const encode = (link: string): string => {
   margin-top: 32px;
   ul {
     width: 100%;
-    top: 20px;
     position: sticky;
-    top: 1px;
+    top: 170px; // Adjust this value to match your header/menu height
     li {
       margin-bottom: 24px;
       list-style-type: none;

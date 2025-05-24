@@ -43,3 +43,20 @@ export type Role = {
   startDate: string | null
   endDate: string | null
 }
+
+export type PageContent = {
+  title: string
+  description?: string
+  locale?: string
+  posterUrl?: string
+  body: {
+    toc: TocLink
+  }
+}
+
+export type TocLink = {
+  id: string
+  depth: number
+  text: string
+  [key: string]: any
+}

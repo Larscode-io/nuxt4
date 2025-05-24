@@ -1,77 +1,9 @@
-<template>
-  <v-card
-    class="member-card"
-    :class="{ 'member-card-hoover': showDetails, 'small-card': isSmall }"
-    :width="width"
-    :aria-labelledby="`memberName${nameId} memberJob${nameId} memberPeriod${nameId} died${nameId} moreInfo${nameId}`"
-    :role="showDetails ? 'button' : 'presentation'"
-    @click="click"
-  >
-    <v-img
-      :src="resolvedSrc"
-      alt="Member image"
-    />
-    <div class="infos-container">
-      <component
-        :is="headline"
-        :id="`memberName${nameId}`"
-        class="header-name"
-      >
-        {{ name }}
-      </component>
-      <div class="separator-container">
-        <span class="separator" />
-      </div>
-      <p :id="`memberJob${nameId}`">
-        {{ jobTitle }} ({{ lang.toUpperCase() }})
-      </p>
-      <p
-        v-if="startDate"
-        :id="`memberPeriod${nameId}`"
-        aria-current="date"
-        :aria-label="`Start: ${startDate}, End: ${endDate}`"
-      >
-        {{ startDate }} - {{ endDate }}
-      </p>
-      <div
-        v-if="showDetails"
-        :id="`moreInfo${nameId}`"
-        class="arrow-hover"
-        aria-label="More details"
-      >
-        <v-icon aria-hidden="true">
-          mdi-arrow-right
-        </v-icon>
-      </div>
-      <p
-        v-if="!isAlive"
-        :id="`died${nameId}`"
-        aria-label="Died"
-      >
-        <svg
-          aria-hidden="true"
-          style="width: 24px; height: 24px"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="currentColor"
-            d="M10.5,2H13.5V8H19V11H13.5V22H10.5V11H5V8H10.5V2Z"
-          />
-        </svg>
-      </p>
-    </div>
-  </v-card>
-</template>
-
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
-let route, router
+const route = useRoute()
+const router = useRouter()
 
-onMounted(() => {
-  route = useRoute()
-  router = useRouter()
-})
 const { t, locale } = useLanguage()
 
 const props = defineProps({
@@ -105,7 +37,8 @@ const props = defineProps({
     required: false,
   },
   infos: {
-    type: Array,
+    type: [Object, Array],
+
     default: null,
     required: false,
   },
@@ -119,12 +52,12 @@ const props = defineProps({
     default: false,
   },
   startDate: {
-    type: String,
+    type: [String, Date, null],
     required: false,
     default: '',
   },
   endDate: {
-    type: String,
+    type: [String, Date, null],
     required: false,
     default: '',
   },
@@ -191,6 +124,71 @@ const click = () => {
   router.push(`${basePath}/members/${props.slug}`)
 }
 </script>
+
+<template>
+  <v-card
+    class="member-card"
+    :class="{ 'member-card-hoover': showDetails, 'small-card': isSmall }"
+    :width="width"
+    :aria-labelledby="`memberName${nameId} memberJob${nameId} memberPeriod${nameId} died${nameId} moreInfo${nameId}`"
+    :role="showDetails ? 'button' : 'presentation'"
+    @click="click"
+  >
+    <v-img
+      :src="resolvedSrc"
+      alt="Member image"
+    />
+    <div class="infos-container">
+      <component
+        :is="headline"
+        :id="`memberName${nameId}`"
+        class="header-name"
+      >
+        {{ name }}
+      </component>
+      <div class="separator-container">
+        <span class="separator" />
+      </div>
+      <p :id="`memberJob${nameId}`">
+        {{ jobTitle }} ({{ lang.toUpperCase() }})
+      </p>
+      <p
+        v-if="startDate"
+        :id="`memberPeriod${nameId}`"
+        aria-current="date"
+        :aria-label="`Start: ${startDate}, End: ${endDate}`"
+      >
+        {{ startDate }} - {{ endDate }}
+      </p>
+      <div
+        v-if="showDetails"
+        :id="`moreInfo${nameId}`"
+        class="arrow-hover"
+        aria-label="More details"
+      >
+        <v-icon aria-hidden="true">
+          mdi-arrow-right
+        </v-icon>
+      </div>
+      <p
+        v-if="!isAlive"
+        :id="`died${nameId}`"
+        aria-label="Died"
+      >
+        <svg
+          aria-hidden="true"
+          style="width: 24px; height: 24px"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M10.5,2H13.5V8H19V11H13.5V22H10.5V11H5V8H10.5V2Z"
+          />
+        </svg>
+      </p>
+    </div>
+  </v-card>
+</template>
 
 <style lang="scss">
 .member-card {
