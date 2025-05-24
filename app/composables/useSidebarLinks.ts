@@ -2,11 +2,11 @@
 
 import { computed } from 'vue'
 import type { TocLink } from '@membermodels/members'
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+import type { ParsedContentv2 } from '@nuxt/content'
 
-type PageContent = ParsedContent
+type PageContent = ParsedContentv2
 
-export function useSidebarLinks(page: Ref<any>) {
+export function useSidebarLinks(page: Ref<PageContent | null>) {
   const sideBarLinks = computed(() =>
     page.value ? extractSideBarLinks({ value: page.value }) : [],
   )
@@ -14,7 +14,7 @@ export function useSidebarLinks(page: Ref<any>) {
   const hasContent = computed(() => Array.isArray(page.value?.body?.value) && page.value.body.value.length > 0)
 
   function extractSideBarLinks(page: { value: PageContent }): TocLink[] {
-    const links = page?.value?.body?.toc?.links ?? []
+    const links = (page?.value?.body?.toc as { links?: TocLink[] })?.links ?? []
     interface Toc {
       id: string
       depth: number
