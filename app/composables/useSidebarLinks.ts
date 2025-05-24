@@ -1,7 +1,10 @@
 // const { sideBarLinks, hasSidebarLinks } = useSidebarLinks(page)
 
 import { computed } from 'vue'
-import type { TocLink, PageContent } from '@membermodels/members'
+import type { TocLink } from '@membermodels/members'
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+
+type PageContent = ParsedContent
 
 export function useSidebarLinks(page: Ref<any>) {
   const sideBarLinks = computed(() =>
@@ -12,8 +15,19 @@ export function useSidebarLinks(page: Ref<any>) {
 
   function extractSideBarLinks(page: { value: PageContent }): TocLink[] {
     const links = page?.value?.body?.toc?.links ?? []
-    const filtered = links.filter(toc => toc.depth === 3)
-      .map(toc => ({
+    interface Toc {
+      id: string
+      depth: number
+      text?: string
+      [key: string]: unknown
+    }
+
+    interface FilteredToc extends Toc {
+      text: string
+    }
+
+    const filtered: FilteredToc[] = links.filter((toc: Toc) => toc.depth === 3)
+      .map((toc: Toc) => ({
         ...toc,
         text: toc.text?.split('.').slice(1).join('.').trim() || toc.text?.trim() || '',
       }))

@@ -45,7 +45,7 @@ const dummyPage = ref<PageContent>({
 
 const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(dummyPage)
 
-const collection: string = langCollection[locale.value] ?? 'collection_dutch'
+const collection = langCollection[locale.value] ?? 'collection_dutch'
 
 const { data: results } = await useAsyncData(
   () => `stay-informed-${locale.value}`,
