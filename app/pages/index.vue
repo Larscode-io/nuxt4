@@ -291,10 +291,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                             v-html="shortDescription?.split(' ')[0]"
                           />
                           <span
-                            v-html="
-                              ' '
-                                + shortDescription?.split(' ').splice(1).join(' ')
-                            "
+                            v-html="' ' + shortDescription?.split(' ').splice(1).join(' ')"
                           />
                         </v-card-text>
                       </v-col>
