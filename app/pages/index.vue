@@ -165,7 +165,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                     :src="getImage(`media-${index}`)"
                     :alt="`Dynamic Image media-${index}`"
                     height="320px"
-                    class="mb-4 mx-auto"
+                    class="mb-4 mx-auto d-none d-md-block"
                     max-width="100%"
                     cover
                     style="transform: translateY(-80px)"
