@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref, watch, computed, onMounted } from 'vue'
 import img from '@assets/img/organisation-Y-0050.png'
-import type { Member, PageContent } from '@membermodels/members'
-import { ContentKeys } from '@core/constants'
 import '@assets/css/content.css'
+import type { Member } from '@membermodels/members'
 
-const { t, locale, langCollection } = useLanguage()
+void 0 as unknown as Member
+
+const { t } = useI18n()
+const { locale } = useLanguage()
 
 // Here we fetch the members data using the useMembers composable
-
 const {
   judgeMembers,
   registrarMembers,
@@ -21,46 +21,17 @@ const {
   aliveNonActiveOfficeStaffMembersHistoric,
 } = useMembers(locale)
 
-// const {
-//   pageJudge,
-//   pageOfficeStaff,
-//   pageReferendar,
-//   pageClerk,
-//   mergedSidebarLinks,
-// } = await useOrganisationPages(locale)
-
-const judgeLinks = computed(() => pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [])
-const clerkLinks = computed(() => pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [])
-const referendarLinks = computed(() => pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [])
-const officeStaffLinks = computed(() => pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [])
-
-const mergedSidebarLinks = computed(() => [
-  ...judgeLinks.value,
-  ...referendarLinks.value,
-  ...clerkLinks.value,
-  ...officeStaffLinks.value,
-  {
-    id: toSlug(t('court.organization.emeritus-and-honorary-members')),
-    depth: 3,
-    text: t('court.organization.emeritus-and-honorary-members'),
-  },
-  {
-    id: toSlug(t('court.organization.previous-incumbents')),
-    depth: 3,
-    text: t('court.organization.previous-incumbents'),
-  },
-])
-
-watch(mergedSidebarLinks, (newLinks) => {
-  dummyPage.value.body.toc.links = newLinks
-}, { immediate: true })
-
-onMounted(() => {
-  const sidebarLinks = extractSideBarLinks({ value: dummyPage.value })
-  if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
-    updateCurrentActiveContentInToc(sidebarLinks[0]?.id)
-  }
-})
+// Here we fetch the content for the organization pages using the useOrganisationPages composable
+const {
+  pageJudge,
+  pageOfficeStaff,
+  pageReferendar,
+  pageClerk,
+  sideBarLinks,
+  currentActiveContentInToc,
+  updateCurrentActiveContentInToc,
+  hasSidebarLinks,
+} = useOrganisationPages(locale)
 </script>
 
 <template>

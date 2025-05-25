@@ -51,7 +51,17 @@ export type PageContent = {
   posterUrl?: string
   body: {
     toc: TocLink
+    children: []
+    type: 'root' | 'section' | 'paragraph' | 'text' | 'image' | 'video' | 'list' | 'table'
   }
+  _id: string
+  _path: string
+  _locale: string
+  _type?: string
+  _updatedAt?: string
+  _createdAt?: string
+  _draft?: boolean
+  _draftOf?: string
 }
 
 export type TocLink = {
