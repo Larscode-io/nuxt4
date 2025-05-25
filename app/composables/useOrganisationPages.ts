@@ -82,12 +82,12 @@ export function useOrganisationPages(locale: Ref<string>) {
     dummyPage.value.body.toc.links = newLinks
   }, { immediate: true })
 
-  onMounted(() => {
-    const sidebarLinks = extractSideBarLinks({ value: dummyPage.value })
+  // Update current active content when sidebar links change or on mount
+  watch(sideBarLinks, (sidebarLinks) => {
     if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
       updateCurrentActiveContentInToc(sidebarLinks[0]?.id)
     }
-  })
+  }, { immediate: true })
   return {
     currentActiveContentInToc,
     updateCurrentActiveContentInToc,

@@ -45,6 +45,7 @@ const {
     />
     <v-container>
       <v-row
+        v-if="!loadingPageContent"
         class="d-flex"
         justify="center"
       >
@@ -54,7 +55,6 @@ const {
           md="4"
         >
           <SideBar
-            v-if="!loadingPageContent"
             :active="currentActiveContentInToc"
             :toc="sideBarLinks"
             @click="updateCurrentActiveContentInToc"
