@@ -58,5 +58,5 @@ export type TocLink = {
   id: string
   depth: number
   text: string
-  [key: string]: any
+  links?: TocLink[]
 }

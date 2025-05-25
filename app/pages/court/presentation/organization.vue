@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { ComputedRef } from 'vue'
 import { ref, watch, computed, onMounted } from 'vue'
 import img from '@assets/img/organisation-Y-0050.png'
 import type { Member, PageContent } from '@membermodels/members'
@@ -7,6 +6,9 @@ import { ContentKeys } from '@core/constants'
 import '@assets/css/content.css'
 
 const { t, locale, langCollection } = useLanguage()
+
+// Here we fetch the members data using the useMembers composable
+
 const {
   judgeMembers,
   registrarMembers,
@@ -17,71 +19,20 @@ const {
   aliveNonActivePresidentMembersHistoric,
   aliveNonActiveRegistrarMembersHistoric,
   aliveNonActiveOfficeStaffMembersHistoric,
-} = useMembers(locale) as {
-  judgeMembers: ComputedRef<Member[]>
-  registrarMembers: ComputedRef<Member[]>
-  officeStaffMembers: ComputedRef<Member[]>
-  judgeMembersHistoric: ComputedRef<Member[]>
-  presidentMembersHistoric: ComputedRef<Member[]>
-  aliveNonActiveJudgeMembersHistoric: ComputedRef<Member[]>
-  aliveNonActivePresidentMembersHistoric: ComputedRef<Member[]>
-  aliveNonActiveRegistrarMembersHistoric: ComputedRef<Member[]>
-  aliveNonActiveOfficeStaffMembersHistoric: ComputedRef<Member[]>
-}
-const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActiveSectionObserver('h3', 0.75)
+} = useMembers(locale)
 
-// Minimal dummy page with only the required structure
-// so we can use the sidebar component for more than 1 content page
-const dummyPage = ref<PageContent>({
-  title: 'No content available',
-  body: {
-    toc: {
-      id: 'dummyId',
-      depth: 3,
-      text: 'No content available',
-    },
-  },
-})
+// const {
+//   pageJudge,
+//   pageOfficeStaff,
+//   pageReferendar,
+//   pageClerk,
+//   mergedSidebarLinks,
+// } = await useOrganisationPages(locale)
 
-const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(dummyPage)
-
-const collection = langCollection[locale.value] ?? 'collection_dutch'
-
-const { data: results } = await useAsyncData(
-  () => `stay-informed-${locale.value}`,
-  async () => {
-    const [pageJudge, pageOfficeStaff, pageReferendar, pageClerk] = await Promise.all([
-      queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationJudge}`).first(),
-      queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationReferendar}`).first(),
-      queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationClerk}`).first(),
-      queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationOfficeStaff}`).first(),
-    ])
-    return { pageJudge, pageOfficeStaff, pageReferendar, pageClerk }
-  },
-)
-
-const pageJudge = computed(() => results.value?.pageJudge)
-const pageOfficeStaff = computed(() => results.value?.pageOfficeStaff)
-const pageReferendar = computed(() => results.value?.pageReferendar)
-const pageClerk = computed(() => results.value?.pageClerk)
-
-const judgeLinks = computed(() =>
-  pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [],
-)
-const referendarLinks = computed(() =>
-  pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [],
-)
-const clerkLinks = computed(() =>
-  pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [],
-)
-const officeStaffLinks = computed(() =>
-  pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [],
-)
-
-// const judgeLinks = computed(() => pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [])
-// const clerkLinks = computed(() => pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [])
-// const referendarLinks = computed(() => pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [])
-// const officeStaffLinks = computed(() => pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [])
+const judgeLinks = computed(() => pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [])
+const clerkLinks = computed(() => pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [])
+const referendarLinks = computed(() => pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [])
+const officeStaffLinks = computed(() => pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [])
 
 const mergedSidebarLinks = computed(() => [
   ...judgeLinks.value,
@@ -105,10 +56,7 @@ watch(mergedSidebarLinks, (newLinks) => {
 }, { immediate: true })
 
 onMounted(() => {
-  // log results.value
-  console.log('Results:', results.value)
   const sidebarLinks = extractSideBarLinks({ value: dummyPage.value })
-  // jump to the first link in the sidebar
   if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
     updateCurrentActiveContentInToc(sidebarLinks[0]?.id)
   }
