@@ -7,13 +7,17 @@ import img from '~/assets/img/prize/prize-banner.jpg'
 const { locale } = useI18n()
 const { langCollection } = useLanguage()
 
-const contentPath = ref(`${ContentKeys.prize}`)
-const pad = computed(() => `/${locale.value}/${contentPath.value}`)
-
+const pageName = import.meta.url.split('/').pop()?.split('?')[0]?.replace('.vue', '') ?? 'page'
+if (!pageName || pageName === 'page') {
+  console.error(
+    `No page name found: Detected missing pageKey in useAsyncData. This can cause cache overlap between pages. Use a unique key for each page/component.`,
+  )
+  throw new Error('Page name not found or is invalid.')
+}
 const { data: page, pending } = useAsyncData(
-  `prix-${locale.value}`,
+  () => `${pageName}-${locale.value}`,
   () => queryCollection(langCollection[locale.value])
-    .path(pad.value)
+    .path(`/${locale.value}/${ContentKeys.prize}`)
     .first(),
 )
 
