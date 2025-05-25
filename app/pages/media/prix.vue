@@ -11,7 +11,7 @@ const contentPath = ref(`${ContentKeys.prize}`)
 const pad = computed(() => `/${locale.value}/${contentPath.value}`)
 
 const { data: page, pending } = useAsyncData(
-  `stay-informed-${locale.value}`,
+  `prix-${locale.value}`,
   () => queryCollection(langCollection[locale.value])
     .path(pad.value)
     .first(),
