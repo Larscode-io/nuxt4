@@ -11,7 +11,11 @@ import type { CourtItem } from '@core/constants'
 import { RoutePathKeys } from '@core/constants'
 import ogImageUrl from '@assets/img/ogImage.jpg'
 
-const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage } = useLanguage()
+const { locales, locale } = useI18n()
+const allLocales = computed(() => locales.value)
+
+const route = useRoute()
+const { t, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage } = useLanguage()
 const localePath = useLocalePath()
 const description = computed(() => t('general.banner'))
 const ogTitle = computed(() => t('general.message.consts-court'))
@@ -27,11 +31,62 @@ useSeoMeta({
   ogUrl: 'https://www.const-court.be/',
   title: t('general.message.consts-court'),
 })
+
+// Alle benamingen in elke taal
+const namesByLocale = {
+  nl: 'Grondwettelijk Hof',
+  fr: 'Cour constitutionnelle',
+  de: 'Verfassungsgerichtshof',
+  en: 'Constitutional Court',
+}
+
+// Filter alles behalve de actieve taal
+const alternateNames = Object.entries(namesByLocale)
+  .filter(([code]) => code !== locale.value)
+  .map(([, name]) => name)
+
 useHead({
-  htmlAttrs: {
-    lang: locale.value,
-  },
+  title: t('general.message.consts-court'),
+  meta: [
+    { name: 'description', content: t('general.banner') },
+  ],
+  htmlAttrs: { lang: locale.value },
+  link: [
+    ...allLocales.value.map(l => ({
+      rel: 'alternate',
+      hreflang: l.code,
+      href: `https://www.const-court.be/${l.code}`,
+    })),
+    {
+      rel: 'alternate',
+      hreflang: 'x-default',
+      href: 'https://www.const-court.be/',
+    },
+    // canonical link (één per pagina!)
+    {
+      rel: 'canonical',
+      href: `https://www.const-court.be${route.fullPath}`,
+    },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'GovernmentOrganization',
+        'name': t('general.message.consts-court', { locale: locale.value }),
+        'alternateName': alternateNames, // andere talen
+        'url': `https://www.const-court.be${route.fullPath}`,
+        'address': {
+          '@type': 'PostalAddress',
+          'addressCountry': 'BE',
+        },
+        'inLanguage': locale.value,
+      }),
+    },
+  ],
 })
+
 const mobileDrawer = ref(false)
 
 const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu', {

@@ -69,10 +69,15 @@ export function useLanguage() {
     return `${locale.value}/${contentPath}`
   }
 
+  const alternateLocale = computed(() =>
+    locales.value
+      .filter(i => i.code !== locale.value)
+      .map (i => i.code),
+  )
+
   return {
     t,
     locale,
-    // switchLocalePath,
     switchLanguage,
     setLocale,
     availableLocales,
@@ -82,5 +87,6 @@ export function useLanguage() {
     activeLocale,
     getLocalizedPath,
     langCollection,
+    alternateLocale,
   }
 }
