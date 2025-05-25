@@ -1,5 +1,3 @@
-// const { sideBarLinks, hasSidebarLinks } = useSidebarLinks(page)
-
 import { computed } from 'vue'
 import type { TocLink } from '@membermodels/members'
 import type { ParsedContentv2 } from '@nuxt/content'

@@ -4,7 +4,6 @@ import { ContentKeys } from '@core/constants'
 import type { ParsedContentv2 } from '@nuxt/content'
 
 type PageContent = ParsedContentv2
-
 export function useOrganisationPages(locale: Ref<string>) {
   const { t, langCollection } = useLanguage()
 
@@ -34,13 +33,13 @@ export function useOrganisationPages(locale: Ref<string>) {
     `stay-informed-${locale.value}`,
     async () => {
       const collection = langCollection[locale.value as keyof typeof langCollection] ?? 'collection_dutch'
-      const [pageJudge, pageOfficeStaff, pageReferendar, pageClerk] = await Promise.all([
+      const [pageJudge, pageReferendar, pageClerk, pageOfficeStaff] = await Promise.all([
         queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationJudge}`).first(),
         queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationReferendar}`).first(),
         queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationClerk}`).first(),
         queryCollection(collection).path(`/${locale.value}/${ContentKeys.presentationOrganizationOfficeStaff}`).first(),
       ])
-      return { pageJudge, pageOfficeStaff, pageReferendar, pageClerk }
+      return { pageJudge, pageReferendar, pageClerk, pageOfficeStaff }
     },
   )
 
