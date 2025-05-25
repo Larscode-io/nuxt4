@@ -1,4 +1,4 @@
-﻿---
+---
 title: Basistexte
 description: Basistexte
 posterUrl: ~/assets/img/newsletter-background.png

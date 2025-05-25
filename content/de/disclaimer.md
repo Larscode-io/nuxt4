@@ -1,4 +1,4 @@
-﻿---
+---
 title: Haftungsausschluss
 description: Wichtige Mitteilung - Erklärung zum Haftungsausschluss  
 posterUrl: ~/assets/img/newsletter-background.png
