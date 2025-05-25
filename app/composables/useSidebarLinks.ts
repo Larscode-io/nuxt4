@@ -32,9 +32,9 @@ export function useSidebarLinks(page: Ref<PageContent | null>) {
     return filtered.length
       ? filtered
       : [{
-          id: '_1-gwh',
+          id: '_1-loading',
           depth: 3,
-          text: 'No links found in markdown doc, do you need a ContentPage ?',
+          text: 'Loading...',
         }]
   }
 

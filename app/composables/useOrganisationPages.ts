@@ -29,7 +29,7 @@ export function useOrganisationPages(locale: Ref<string>) {
   })
   const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(dummyPage)
 
-  const { data: results } = useAsyncData(
+  const { data: results, pending } = useAsyncData(
     `stay-informed-${locale.value}`,
     async () => {
       const collection = langCollection[locale.value as keyof typeof langCollection] ?? 'collection_dutch'
@@ -100,5 +100,6 @@ export function useOrganisationPages(locale: Ref<string>) {
     pageReferendar,
     pageClerk,
     locale,
+    loadingPageContent: pending,
   }
 }

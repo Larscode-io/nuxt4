@@ -31,6 +31,7 @@ const {
   currentActiveContentInToc,
   updateCurrentActiveContentInToc,
   hasSidebarLinks,
+  loadingPageContent,
 } = useOrganisationPages(locale)
 </script>
 
@@ -53,6 +54,7 @@ const {
           md="4"
         >
           <SideBar
+            v-if="!loadingPageContent"
             :active="currentActiveContentInToc"
             :toc="sideBarLinks"
             @click="updateCurrentActiveContentInToc"
