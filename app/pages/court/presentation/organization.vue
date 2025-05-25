@@ -38,8 +38,8 @@ const {
 <template>
   <div class="content-wrapper">
     <BannerImage
-      :title="pageJudge?.title || t('court.organization.title')"
-      :description="pageJudge?.description"
+      :title="t('menu.court.presentation.organization')"
+      :description="t('menu.court.presentation.organization-title-description')"
       :image="img"
       :alt="t('alt.banner.flag')"
     />
