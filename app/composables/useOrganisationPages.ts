@@ -53,22 +53,30 @@ export function useOrganisationPages(locale: Ref<string>) {
   const referendarLinks = computed(() => pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [])
   const officeStaffLinks = computed(() => pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [])
 
-  const mergedSidebarLinks = computed(() => [
-    ...judgeLinks.value,
-    ...referendarLinks.value,
-    ...clerkLinks.value,
-    ...officeStaffLinks.value,
-    {
-      id: toSlug(t('court.organization.emeritus-and-honorary-members')),
-      depth: 3,
-      text: t('court.organization.emeritus-and-honorary-members'),
-    },
-    {
-      id: toSlug(t('court.organization.previous-incumbents')),
-      depth: 3,
-      text: t('court.organization.previous-incumbents'),
-    },
-  ])
+  const mergedSidebarLinks = computed(() => {
+    if (
+      !pageJudge.value
+    ) {
+      return [] // wachten tot alles geladen is
+    }
+
+    return [
+      ...extractSideBarLinks({ value: pageJudge.value }),
+      ...extractSideBarLinks({ value: pageReferendar.value }),
+      ...extractSideBarLinks({ value: pageClerk.value }),
+      ...extractSideBarLinks({ value: pageOfficeStaff.value }),
+      {
+        id: toSlug(t('court.organization.emeritus-and-honorary-members')),
+        depth: 3,
+        text: t('court.organization.emeritus-and-honorary-members'),
+      },
+      {
+        id: toSlug(t('court.organization.previous-incumbents')),
+        depth: 3,
+        text: t('court.organization.previous-incumbents'),
+      },
+    ]
+  })
 
   watch(mergedSidebarLinks, (newLinks) => {
     dummyPage.value.body.toc.links = newLinks
