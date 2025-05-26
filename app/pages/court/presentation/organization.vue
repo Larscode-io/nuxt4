@@ -101,22 +101,22 @@ const {
             </article>
             <div
               v-for="(member, index) in officeStaffMembers"
-              :key="member.slug"
+              :key="member!.slug"
               class="gallery"
               :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }"
             >
               <MemberCard
                 :headline-level="2"
-                :name="member.name"
-                :slug="member.slug"
-                :image="member.picture"
+                :name="member!.name"
+                :slug="member!.slug"
+                :image="member!.picture"
                 :with-image="true"
-                :infos="member.infos"
-                :job-title="member.mostRecentRole?.role"
+                :infos="member!.infos"
+                :job-title="member!.mostRecentRole?.role"
                 :width="300"
-                :is-alive="member.isAlive"
-                :lang="member.lang"
-                :female-title="member.femaleTitle"
+                :is-alive="member!.isAlive"
+                :lang="member!.lang"
+                :female-title="member!.femaleTitle"
               />
             </div>
 
@@ -129,22 +129,22 @@ const {
 
             <div
               v-for="(member, index) in registrarMembers"
-              :key="member.slug"
+              :key="member!.slug"
               class="gallery"
               :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }"
             >
               <MemberCard
                 :headline-level="2"
-                :name="member.name"
-                :slug="member.slug"
-                :image="member.picture"
+                :name="member!.name"
+                :slug="member!.slug"
+                :image="member!.picture"
                 :with-image="true"
-                :infos="member.infos"
-                :job-title="member.mostRecentRole?.role"
+                :infos="member!.infos"
+                :job-title="member!.mostRecentRole?.role"
                 :width="300"
-                :is-alive="member.isAlive"
-                :lang="member.lang"
-                :female-title="member.femaleTitle"
+                :is-alive="member!.isAlive"
+                :lang="member!.lang"
+                :female-title="member!.femaleTitle"
               />
             </div>
 
