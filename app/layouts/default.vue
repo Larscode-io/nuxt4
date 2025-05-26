@@ -23,7 +23,7 @@ const baseUrl = config.public.apiBaseUrl
 const ogImage = `${baseUrl}/img/ogImage.jpg`
 // the full, canonical URL of the current page
 // todo: check if it works without baseUrl (and drop useRuntimeConfig)
-const ogUrl = `${route.fullPath}`.replace(/\/+$/, '')
+const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
 
 // todo: check when we don't need /nuxt/ redirect on nginx anymore
 // https://opengraph.dev/
