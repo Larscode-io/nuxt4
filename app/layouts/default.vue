@@ -31,6 +31,7 @@ console.log('OG image:', ogImage)
 useSeoMeta({
   ogUrl,
   ogTitle,
+  ogImage,
   ogLocale,
   description,
   ogType: 'website',

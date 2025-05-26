@@ -131,7 +131,7 @@
 import { ref, useTemplateRef, onMounted, computed } from 'vue'
 import { RoutePathKeys } from '@core/constants'
 import type { CourtItem } from '@core/constants'
-import ogImageUrl from '@assets/img/ogImage.jpg'
+// import ogImageUrl from '@assets/img/ogImage.jpg'
 
 const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage } = useLanguage()
 const localePath = useLocalePath()
