@@ -32,6 +32,11 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   <div>
     <span class="index-banner" />
     <v-container max-width="1260px">
+      <div class="mt-2 title-container pb-4">
+        <h2 class="title-h2">
+          {{ t('motd.title') }}
+        </h2>
+      </div>
       <MessageOfTheDay class="flex-wrap justify-center d-flex mt-2" />
       <div class="mt-2 title-container pb-4">
         <h2 class="title-h2">
