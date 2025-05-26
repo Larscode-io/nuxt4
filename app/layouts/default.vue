@@ -22,6 +22,11 @@ const config = useRuntimeConfig()
 const baseUrl = config.public.apiBaseUrl
 const ogImage = `${baseUrl}/img/ogImage.jpg`
 const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
+console.log('OG image:', ogImage)
+console.log('OG image:', ogImage)
+console.log('OG image:', ogImage)
+console.log('OG image:', ogImage)
+console.log('OG image:', ogImage)
 
 useSeoMeta({
   ogUrl,
