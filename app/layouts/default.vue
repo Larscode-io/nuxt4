@@ -18,14 +18,12 @@ const localePath = useLocalePath()
 const description = computed(() => t('general.banner'))
 const ogTitle = computed(() => t('general.message.consts-court'))
 
-// const config = useRuntimeConfig()
-// const baseUrl = config.public.apiBaseUrl
-// const ogImage = `${baseUrl}/img/ogImage.jpg`
-const ogImage = `/img/ogImage.jpg`
-// const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
-const ogUrl = `{route.fullPath}`.replace(/\/+$/, '')
+const config = useRuntimeConfig()
+const baseUrl = config.public.apiBaseUrl
+const ogImage = `${baseUrl}/img/ogImage.jpg`
+const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
 
-// todo:
+// todo: check when we don't need /nuxt/ redirect on nginx anymore
 // https://opengraph.dev/
 // https://metatags.io/
 useSeoMeta({
@@ -152,7 +150,7 @@ function toggleMenu() {
 
 function changeLanguage(lang: string) {
   if (lang !== locale.value) {
-    const x = switchLanguage(lang)
+    const x = switchLanguage(lang as Languages)
     navigateTo(x)
     mobileDrawer.value = false
   }
@@ -250,8 +248,7 @@ watch(smAndDown, (value) => {
                           >
                             <v-row class="flex flex-column">
                               <v-col
-                                class="font-weight-bold pa-1 pb-5"
-                                align="start"
+                                class="align-start font-weight-bold pa-1 pb-5"
                                 aria-label="level 2 menu title"
                               >
                                 {{ subItem.title }}
@@ -259,8 +256,7 @@ watch(smAndDown, (value) => {
                               <v-col
                                 v-for="(thirdLevelItem) in subItem.subMenu"
                                 :key="thirdLevelItem.title"
-                                align="start"
-                                class="pa-1"
+                                class="align-start pa-1"
                               >
                                 <nuxt-link
                                   :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
