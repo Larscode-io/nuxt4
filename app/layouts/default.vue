@@ -18,9 +18,10 @@ const localePath = useLocalePath()
 const description = computed(() => t('general.banner'))
 const ogTitle = computed(() => t('general.message.consts-court'))
 
-const config = useRuntimeConfig()
-const baseUrl = config.public.apiBaseUrl
-const ogImage = `${baseUrl}/img/ogImage.jpg`
+// const config = useRuntimeConfig()
+// const baseUrl = config.public.apiBaseUrl
+// const ogImage = `${baseUrl}/img/ogImage.jpg`
+const ogImage = `/img/ogImage.jpg`
 const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
 
 // todo:
