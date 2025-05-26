@@ -15,13 +15,12 @@ const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 const { t, locale } = useLanguage()
 
-const goToJudgmentPage = (id: number, year: string) => {
+const goToJudgmentPage = (id: number, year: number) => {
   navigateTo(localePath(RoutePathKeys.judgmentsHome) + `?year=${year}` + `&id=${id}`)
 }
 const goToMediaPage = (id: number, _type: MediaType) => {
   navigateTo(localePath(RoutePathKeys.mediaPressReleasesConcerningTheJudgments) + '?with-archive=true' + `&id=${id}`)
 }
-// const goToMailings = ({ mailinfo }) => {
 const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   const dest = localePath(RoutePathKeys.informed)
   navigateTo({ path: dest, query: { mailinfo: mailinfo } })
@@ -58,9 +57,9 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
               courtVerdict,
               description,
               availablePart,
-              title,
             },
           }: {
+            year: number,
             item: Judgment,
           }"
         >
@@ -93,12 +92,6 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
               <v-card-title class="judgment-verdict font-normal">
                 {{ courtVerdict }}
               </v-card-title>
-              <v-card-text
-                v-if="title"
-                class="judgment-title"
-              >
-                {{ title }}
-              </v-card-text>
               <v-card-text
                 class="judgment-description"
                 v-html="description"
@@ -585,6 +578,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
     text-overflow: ellipsis;
     white-space: pre-wrap;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     margin-bottom: 16px;
     font-size: 0.875rem;
     line-height: 22px;

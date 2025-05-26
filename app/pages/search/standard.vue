@@ -1,3 +1,150 @@
+<script setup lang="ts">
+import { ref, computed, reactive } from 'vue'
+import { useI18n } from 'vue-i18n'
+import img from '@assets/img/banner-text.png'
+import { ApiUrl, ContentKeys } from '../../core/constants'
+import { groupBy } from '../../core/utilities'
+
+// Data refs
+const loading = ref(false)
+const loaded = ref(false)
+const searchError = ref(null)
+const searchResults = ref(null)
+const list = ref(null)
+
+// Define payload with default radio selection
+const payload = reactive({
+  type: 'general.message.controlled',
+  searchTerm: '',
+  standardDate: '',
+  clauseNumber: '',
+  searchByExactClauseNumber: false,
+})
+
+// Define errors
+const errors = reactive({
+  type: undefined,
+  searchTerm: undefined,
+  standardDate: undefined,
+  clauseNumber: undefined,
+  searchByExactClauseNumber: undefined,
+})
+
+const { locale } = useI18n()
+const { t, langCollection } = useLanguage()
+
+const contentPath = ref(`${ContentKeys.standardSearchExplanation}`)
+const pad = computed(() => `/${locale.value}/${contentPath.value}`)
+
+const { data: page, pending } = await useAsyncData(
+  () => `stay-informed-${locale.value}`,
+  () => queryCollection(langCollection[locale.value])
+    .path(pad.value)
+    .first(),
+)
+
+const types = computed(() => [
+  {
+    id: 'general.message.controlled',
+    label: t('general.message.controlled', 2),
+  },
+  {
+    id: 'general.message.reference',
+    label: t('general.message.reference', 2),
+  },
+])
+
+const hasContent = computed(() =>
+  page.value?.body?.children?.length > 0,
+)
+
+const formattedSearchResults = computed(() => {
+  if (!searchResults.value) {
+    return {}
+  }
+
+  return groupBy(searchResults.value, 'groupById')
+})
+
+const hasResults = computed(() =>
+  formattedSearchResults.value && Object.keys(formattedSearchResults.value).length > 0,
+)
+
+const validateForm = () => {
+  // Reset errors
+  Object.keys(errors).forEach((key) => {
+    errors[key] = undefined
+  })
+
+  const isValid = true
+
+  return isValid
+}
+
+async function submit() {
+  if (!validateForm()) {
+    return
+  }
+
+  loading.value = true
+  loaded.value = false
+  searchError.value = null
+  searchResults.value = null
+
+  const { type, ...payloadData } = payload
+
+  // Format the date from DD/MM/YYYY to YYYY-MM-DD for API
+  const formattedPayload = {
+    ...payloadData,
+    standardDate: payload.standardDate
+      ? payload.standardDate.split('/').reverse().join('-')
+      : undefined,
+  }
+
+  try {
+    // Determine which API endpoint to use based on the selected type
+    const apiUrl = type === 'general.message.controlled'
+      ? ApiUrl.searchByControlledStandard
+      : ApiUrl.searchByReferenceStandard
+
+    const { data } = await cPost(`${apiUrl}?lang=${locale.value}`,
+      formattedPayload,
+    )
+
+    if (!data.value) {
+      throw new Error('No data received')
+    }
+
+    searchResults.value = data.value
+    loaded.value = true
+  }
+  catch (err) {
+    searchError.value = err || new Error('Error in standard search page')
+    console.error('Search error:', err)
+  }
+  finally {
+    loading.value = false
+  }
+}
+
+const print = () => {
+  printContent('.print-area')
+}
+
+// Meta
+useHead({
+  title: computed(() =>
+    t('menu.search.title') || t('general.message.consts-court'),
+  ),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => t('menu.search.title') || ''),
+    },
+  ],
+})
+</script>
+
 <template>
   <v-container
     fluid
@@ -185,155 +332,6 @@
     </v-row>
   </v-container>
 </template>
-
-<script setup lang="ts">
-import { ref, computed, reactive } from 'vue'
-import { useI18n } from 'vue-i18n'
-import img from '@assets/img/banner-text.png'
-import { ApiUrl, ContentKeys } from '../../core/constants'
-import { groupBy } from '../../core/utilities'
-
-// Data refs
-const loading = ref(false)
-const loaded = ref(false)
-const searchError = ref(null)
-const searchResults = ref(null)
-const list = ref(null)
-
-// Define payload with default radio selection
-const payload = reactive({
-  type: 'general.message.controlled',
-  searchTerm: '',
-  standardDate: '',
-  clauseNumber: '',
-  searchByExactClauseNumber: false,
-})
-
-// Define errors
-const errors = reactive({
-  type: undefined,
-  searchTerm: undefined,
-  standardDate: undefined,
-  clauseNumber: undefined,
-  searchByExactClauseNumber: undefined,
-})
-
-const { locale } = useI18n()
-const { t, langCollection } = useLanguage()
-
-const contentPath = ref(`${ContentKeys.standardSearchExplanation}`)
-const pad = computed(() => `/${locale.value}/${contentPath.value}`)
-
-const { data: page, pending } = await useAsyncData(
-  () => `stay-informed-${locale.value}`,
-  () => queryCollection(langCollection[locale.value])
-    .path(pad.value)
-    .first(),
-)
-
-const types = computed(() => [
-  {
-    id: 'general.message.controlled',
-    label: t('general.message.controlled', 2),
-  },
-  {
-    id: 'general.message.reference',
-    label: t('general.message.reference', 2),
-  },
-])
-
-const hasContent = computed(() =>
-  page.value?.body?.children?.length > 0,
-)
-
-const formattedSearchResults = computed(() => {
-  if (!searchResults.value) {
-    return {}
-  }
-
-  return groupBy(searchResults.value, 'groupById')
-})
-
-const hasResults = computed(() =>
-  formattedSearchResults.value && Object.keys(formattedSearchResults.value).length > 0,
-)
-
-const validateForm = () => {
-  // Reset errors
-  Object.keys(errors).forEach((key) => {
-    errors[key] = undefined
-  })
-
-  const isValid = true
-
-  return isValid
-}
-
-async function submit() {
-  if (!validateForm()) {
-    return
-  }
-
-  loading.value = true
-  loaded.value = false
-  searchError.value = null
-  searchResults.value = null
-
-  const { type, ...payloadData } = payload
-
-  // Format the date from DD/MM/YYYY to YYYY-MM-DD for API
-  const formattedPayload = {
-    ...payloadData,
-    standardDate: payload.standardDate
-      ? payload.standardDate.split('/').reverse().join('-')
-      : undefined,
-  }
-
-  try {
-    // Determine which API endpoint to use based on the selected type
-    const apiUrl = type === 'general.message.controlled'
-      ? ApiUrl.searchByControlledStandard
-      : ApiUrl.searchByReferenceStandard
-
-    const { data } = await cPost(`${apiUrl}?lang=${locale.value}`,
-      formattedPayload,
-    )
-
-    if (!data.value) {
-      throw new Error('No data received')
-    }
-
-    searchResults.value = data.value
-    // console.log('searchResults.value: ', searchResults.value)
-    // console.log('formattedSearchResults: ', formattedSearchResults.value)
-    loaded.value = true
-  }
-  catch (err) {
-    searchError.value = err || new Error('Error in standard search page')
-    console.error('Search error:', err)
-  }
-  finally {
-    loading.value = false
-  }
-}
-
-const print = () => {
-  printContent('.print-area')
-}
-
-// Meta
-useHead({
-  title: computed(() =>
-    t('menu.search.title') || t('general.message.consts-court'),
-  ),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => t('menu.search.title') || ''),
-    },
-  ],
-})
-</script>
 
 <style scoped lang="scss">
 .container {

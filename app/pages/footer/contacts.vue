@@ -100,10 +100,8 @@ interface SidebarLink {
   text: string
 }
 onMounted(() => {
-  console.log('onMounted')
   const idsTo: string[] = sideBarLinks.value?.map((toc: SidebarLink) => toc.id)
   hash = route.hash?.slice(1) || ''
-  console.log('hash', hash)
   currentActiveContentInToc.value = (hash && idsTo.includes(hash) ? hash : idsTo[0]) || ''
   startIntersectionObserver()
 })

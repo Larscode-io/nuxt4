@@ -115,8 +115,6 @@ const submitRequest = async () => {
 
   makeAllDirty()
   await fetchData()
-  console.log(`mailmanSubmitIsValid.value: ${mailmanSubmitIsValid.value}`)
-  console.log(`emailsSeemsInvalid.value: ${emailsSeemsInvalid.value}`)
   if (mailmanSubmitIsValid.value) {
     form.userFeedbackMessage = t('general.message.mailman.subscription-succes')
   }

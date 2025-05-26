@@ -41,9 +41,4 @@ const { data: page } = await useAsyncData(
     .path(pad.value)
     .first(),
 )
-
-onMounted(() => {
-  console.log('Mounted')
-  console.log('page', page.value?.body.toc)
-})
 </script>

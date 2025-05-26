@@ -1,3 +1,26 @@
+<script setup>
+import { ref } from 'vue'
+
+const props = defineProps({
+  ariaLabel: {
+    type: String,
+  },
+  isGroup: {
+    type: Boolean,
+    required: false,
+  },
+})
+
+const buttonId = useId()
+const isOpen = ref(false)
+
+function toggle() {
+  isOpen.value = !isOpen.value
+  const button = document.querySelector(`.accordion-trigger#${buttonId}`)
+  button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true')
+}
+</script>
+
 <template>
   <div class="accordionGroup">
     <div class="accordion">
@@ -23,31 +46,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-
-const props = defineProps({
-  ariaLabel: {
-    type: String,
-  },
-  isGroup: {
-    type: Boolean,
-    required: false,
-  },
-})
-
-console.log('PROPS: ', props)
-
-const buttonId = useId()
-const isOpen = ref(false)
-
-function toggle() {
-  isOpen.value = !isOpen.value
-  const button = document.querySelector(`.accordion-trigger#${buttonId}`)
-  button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true')
-}
-</script>
 
 <style lang="scss" scoped>
 h3,

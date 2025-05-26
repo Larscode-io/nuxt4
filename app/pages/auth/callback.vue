@@ -34,8 +34,6 @@ onMounted(async () => {
       const tokenResponse = await $fetch(`/auth/exchangeCodeForToken?code=${code}&state=${state}&scope=${scope}&iss=${iss}&client_id=${client_id}`)
       const { statusCode, body: { access_token, intendedDestination } } = tokenResponse
       //
-      console.log('access_token:', access_token)
-      console.log('intendedDestination:', intendedDestination)
       handleCallback(access_token, intendedDestination)
 
       if (statusCode === 200 && access_token) {

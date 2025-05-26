@@ -8,7 +8,7 @@ const x: Test = {
   // 'alt.banner.books2': 'Boeken2',
   'aria.label.dropdown.input': 'Dropdown invoerveld',
 }
-// console.log(x.alt.banner.books) // This will log 'Boeken' to the console
+// console log(x.alt.banner.books) // This will log 'Boeken' to the console
 const route = useRoute()
 const switchLocalePath = useSwitchLocalePath()
 const localePath = useLocalePath()
@@ -26,7 +26,7 @@ t('aria.label.dropdown.input')
 // const { messages } = useI18n();
 // // Access a specific locale's messages
 // const messageInFrench = messages.value.fr["alt.banner.books"];
-// console.log(messageInFrench);
+// console log(messageInFrench);
 </script>
 
 <template>

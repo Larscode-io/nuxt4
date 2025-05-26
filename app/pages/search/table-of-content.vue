@@ -210,8 +210,6 @@ async function submit() {
       payload,
     )
 
-    console.log('data: ', data)
-
     loaded.value = true
     searchResponse.value = data
   }

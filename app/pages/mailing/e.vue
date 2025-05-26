@@ -5,7 +5,6 @@ import { useLanguage } from '@/composables/useLanguage'
 const { t } = useLanguage()
 
 const { mail } = defineProps<{ mail: string }>()
-console.log('mail', mail)
 </script>
 
 <template>

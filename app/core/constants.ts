@@ -15,7 +15,7 @@ export const languageLabels: Record<Languages, string> = {
   [Languages.GERMAN]: 'Deutsch',
   [Languages.ENGLISH]: 'English',
 }
-// Usage: console.log(languageLabels[Languages.DUTCH]); // outputs: Nederlands
+// Usage: languageLabels[Languages.DUTCH] returns Nederlands
 
 export const REDIRECT_URI_WHEN_401 = 'auth/login'
 export const DEFAULT_PAGE_SIZE = 30
@@ -216,7 +216,6 @@ export interface Judgment {
   idsRole: number[]
   availablePart: string
   keywords: string
-  year?: string
 }
 
 export interface GeneralPressJudgment {
@@ -253,13 +252,13 @@ export interface Pleading {
 export interface Decision {
   distance: number
   id: number
-  joinedcases: any[]
+  joinedcases: number[]
   processingLanguage: string
   description: string
   day: string
   month: string
   nr: string
-  master: any
+  master: number
   kenmerk: string
   encinz: string
   type: string
@@ -376,7 +375,7 @@ export interface PubSpeechesData {
   title_n?: string
   type: string
   _k1_pbcp_id: number
-  [key: string]: any
+  [key: string]: string | number | undefined
 }
 
 export interface PubBrochures {

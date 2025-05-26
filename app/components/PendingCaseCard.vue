@@ -1,3 +1,129 @@
+<script setup>
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { MailmanUrl, RoutePathKeys } from '../core/constants'
+import { EMPTY_VALUE } from '../../server/constants'
+import { flatten } from '../../server/utils/utils'
+
+const { t } = useI18n()
+
+const props = defineProps({
+  id: {
+    type: Number,
+    required: true,
+  },
+  processingLanguage: {
+    type: String,
+    required: true,
+  },
+  receiptDate: {
+    type: String,
+    required: true,
+  },
+  dateOfHearing: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  dateOfJudgment: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  concerning: {
+    type: String,
+    required: true,
+  },
+  linkedCaseNumber: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  notificationArt74ToOfficialJournalDate: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  notificationArt74ToOfficialJournalLink: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  joinedCases: {
+    type: Array,
+    required: true,
+  },
+  keywords: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  isSubscribable: {
+    type: Boolean,
+    required: false,
+    default: true,
+  },
+})
+
+const emit = defineEmits(['subscribe'])
+
+const dialog = ref(false)
+const user = ref({
+  email: null,
+  checkedAllGroups: false,
+})
+const emptyValue = EMPTY_VALUE
+const routePathKeys = RoutePathKeys
+const lookupEncInz = ref('')
+const subscriptionResult = ref('')
+
+const splittedKeywords = computed(() => {
+  if (!props.keywords) {
+    return []
+  }
+  return flatten(props.keywords.split(' - ').map(key => key.split('– ')))
+})
+
+async function subscribe() {
+  const { email, checkedAllGroups } = user.value
+  try {
+    const url = checkedAllGroups
+      ? MailmanUrl.rolout
+      : `${MailmanUrl.subscribe}/${props.id}`
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        email,
+        'email-button': 'Subscribe',
+      }).toString(),
+    })
+    if (response.ok) {
+      const responseText = await response.text()
+      const doWeHaveResponse = !!responseText
+      if (doWeHaveResponse && responseText.includes('Your subscription request has been received, and will soon be acted upon')) {
+        subscriptionResult.value = t('general.message.mailman.subscriptionSucces')
+      }
+      else if (doWeHaveResponse && (responseText.includes('The email address you supplied is not valid') || responseText.includes('You must supply a valid email address'))) {
+        subscriptionResult.value = t('general.message.mailman.subscriptionInvalidEmail')
+      }
+      else {
+        subscriptionResult.value = t('general.message.mailman.subscriptionFailure')
+      }
+    }
+    else {
+      throw new Error('HTTP error, status = ' + response.status)
+    }
+  }
+  catch (error) {
+    console.error(error)
+    subscriptionResult.value = 'An error occurred while subscribing.'
+  }
+}
+</script>
+
 <template>
   <div>
     <v-card
@@ -175,134 +301,6 @@
     </v-dialog>
   </div>
 </template>
-
-<script setup>
-import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { MailmanUrl, RoutePathKeys } from '../core/constants'
-import { EMPTY_VALUE } from '../../server/constants'
-import { flatten } from '../../server/utils/utils'
-
-const { t } = useI18n()
-
-const props = defineProps({
-  id: {
-    type: Number,
-    required: true,
-  },
-  processingLanguage: {
-    type: String,
-    required: true,
-  },
-  receiptDate: {
-    type: String,
-    required: true,
-  },
-  dateOfHearing: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  dateOfJudgment: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  concerning: {
-    type: String,
-    required: true,
-  },
-  linkedCaseNumber: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  notificationArt74ToOfficialJournalDate: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  notificationArt74ToOfficialJournalLink: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  joinedCases: {
-    type: Array,
-    required: true,
-  },
-  keywords: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  isSubscribable: {
-    type: Boolean,
-    required: false,
-    default: true,
-  },
-})
-
-console.log('props', props)
-
-const emit = defineEmits(['subscribe'])
-
-const dialog = ref(false)
-const user = ref({
-  email: null,
-  checkedAllGroups: false,
-})
-const emptyValue = EMPTY_VALUE
-const routePathKeys = RoutePathKeys
-const lookupEncInz = ref('')
-const subscriptionResult = ref('')
-
-const splittedKeywords = computed(() => {
-  if (!props.keywords) {
-    return []
-  }
-  return flatten(props.keywords.split(' - ').map(key => key.split('– ')))
-})
-
-async function subscribe() {
-  const { email, checkedAllGroups } = user.value
-  try {
-    const url = checkedAllGroups
-      ? MailmanUrl.rolout
-      : `${MailmanUrl.subscribe}/${props.id}`
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        email,
-        'email-button': 'Subscribe',
-      }).toString(),
-    })
-    if (response.ok) {
-      const responseText = await response.text()
-      const doWeHaveResponse = !!responseText
-      if (doWeHaveResponse && responseText.includes('Your subscription request has been received, and will soon be acted upon')) {
-        subscriptionResult.value = t('general.message.mailman.subscriptionSucces')
-      }
-      else if (doWeHaveResponse && (responseText.includes('The email address you supplied is not valid') || responseText.includes('You must supply a valid email address'))) {
-        subscriptionResult.value = t('general.message.mailman.subscriptionInvalidEmail')
-      }
-      else {
-        subscriptionResult.value = t('general.message.mailman.subscriptionFailure')
-      }
-    }
-    else {
-      throw new Error('HTTP error, status = ' + response.status)
-    }
-  }
-  catch (error) {
-    console.error(error)
-    subscriptionResult.value = 'An error occurred while subscribing.'
-  }
-}
-</script>
 
 <style lang="scss">
 .headline {

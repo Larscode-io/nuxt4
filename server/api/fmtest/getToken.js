@@ -34,13 +34,6 @@ export default defineEventHandler(async (event) => {
         },
         timeout: 5000,
       })
-      // log if we are running server side or client side using nuxt 3 params
-      if (import.meta.server) {
-        console.log('Running server side')
-      }
-      if (import.meta.client) {
-        console.log('Running client side')
-      }
       return {
         status: 'success',
         code: 200,

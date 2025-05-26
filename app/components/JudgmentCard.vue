@@ -1,3 +1,59 @@
+<script setup lang="ts">
+import { ref, computed, onMounted, defineProps, defineEmits } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { pdfFileExists } from '@core/utilities'
+
+// Define props
+interface Props {
+  date: string
+  id: number
+  pdfUrl: string
+  summary?: string
+  title: string
+  description: string
+  state: string
+  reference: string
+  keywords?: string
+  idsRole: string[]
+  pressReleaseFilePath?: string
+}
+const props = defineProps<Props>()
+
+// Define emits (voor de 'click' event)
+const emit = defineEmits<{ (e: 'click', id: number): void }>()
+
+// i18n setup
+const { t, locale } = useI18n()
+
+// Lokale state
+const showSummary = ref(false)
+const pdf_exists = ref(false)
+
+// Computed property: Bepaal of de huidige taal Engels is
+const isEnglish = computed(() => locale.value === Languages.ENGLISH)
+
+// Controleer of het PDF-bestand bestaat bij mount
+onMounted(async () => {
+  try {
+    pdf_exists.value = await pdfFileExists(props.pdfUrl)
+  }
+  catch (error) {
+    console.error('Error checking PDF existence:', error)
+  }
+})
+
+// Methode om een string te voorzien van superscript (optioneel)
+function filter_sup(str: string): string {
+  const regex = /#\[(?<xxx>.*?)\]#/g
+  return str.replace(regex, `<sup>$<xxx></sup>`)
+}
+
+// Emit een 'click' event met het id (indien nodig)
+function navigate(id: number) {
+  emit('click', id)
+}
+</script>
+
 <template>
   <v-card
     :id="`judgment-card-${id}`"
@@ -107,62 +163,6 @@
     </v-dialog>
   </v-card>
 </template>
-
-<script setup lang="ts">
-import { ref, computed, onMounted, defineProps, defineEmits } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { pdfFileExists } from '@core/utilities'
-
-// Define props
-interface Props {
-  date: string
-  id: number
-  pdfUrl: string
-  summary?: string
-  title: string
-  description: string
-  state: string
-  reference: string
-  keywords?: string
-  idsRole: string[]
-  pressReleaseFilePath?: string
-}
-const props = defineProps<Props>()
-
-// Define emits (voor de 'click' event)
-const emit = defineEmits<{ (e: 'click', id: number): void }>()
-
-// i18n setup
-const { t, locale } = useI18n()
-
-// Lokale state
-const showSummary = ref(false)
-const pdf_exists = ref(false)
-
-// Computed property: Bepaal of de huidige taal Engels is
-const isEnglish = computed(() => locale.value === Languages.ENGLISH)
-
-// Controleer of het PDF-bestand bestaat bij mount
-onMounted(async () => {
-  try {
-    pdf_exists.value = await pdfFileExists(props.pdfUrl)
-  }
-  catch (error) {
-    console.log('Error checking PDF existence:', error)
-  }
-})
-
-// Methode om een string te voorzien van superscript (optioneel)
-function filter_sup(str: string): string {
-  const regex = /#\[(?<xxx>.*?)\]#/g
-  return str.replace(regex, `<sup>$<xxx></sup>`)
-}
-
-// Emit een 'click' event met het id (indien nodig)
-function navigate(id: number) {
-  emit('click', id)
-}
-</script>
 
 <style lang="scss">
 .judgement-card {

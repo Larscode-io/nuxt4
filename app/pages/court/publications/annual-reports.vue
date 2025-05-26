@@ -45,7 +45,7 @@ if (error.value) {
 // todo: check if this is needed
 // const url1 = `${ApiUrl.publicationsAnnualReports2}?lang=${locale.value}`
 // const { data: data1 } = await useFetch(url1)
-// console.log(data1.value)
+// console log(data1.value)
 
 const reports = computed(() => data.value)
 useHead({
