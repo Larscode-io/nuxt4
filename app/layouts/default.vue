@@ -22,7 +22,8 @@ const ogTitle = computed(() => t('general.message.consts-court'))
 // const baseUrl = config.public.apiBaseUrl
 // const ogImage = `${baseUrl}/img/ogImage.jpg`
 const ogImage = `/img/ogImage.jpg`
-const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
+// const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
+const ogUrl = `{route.fullPath}`.replace(/\/+$/, '')
 
 // todo:
 // https://opengraph.dev/
