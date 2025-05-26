@@ -261,13 +261,6 @@ watch(
   { immediate: true },
 )
 
-// check if needed in legacy code
-function _formatDate(date = ''): string {
-  if (!date) return ''
-  const [year, month, day] = date.split('-')
-  return `${day}/${month}/${year}`
-}
-
 async function submit() {
   if (!payload.search) return
 
