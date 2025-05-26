@@ -21,7 +21,9 @@ const ogTitle = computed(() => t('general.message.consts-court'))
 const config = useRuntimeConfig()
 const baseUrl = config.public.apiBaseUrl
 const ogImage = `${baseUrl}/img/ogImage.jpg`
-const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
+// the full, canonical URL of the current page
+// todo: check if it works without baseUrl (and drop useRuntimeConfig)
+const ogUrl = `${route.fullPath}`.replace(/\/+$/, '')
 
 // todo: check when we don't need /nuxt/ redirect on nginx anymore
 // https://opengraph.dev/
