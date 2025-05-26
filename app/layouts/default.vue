@@ -77,7 +77,7 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'GovernmentOrganization',
         'name': namesByLocale[locale.value],
@@ -475,7 +475,7 @@ watch(smAndDown, (value) => {
               target="_blank"
               rel="noopener noreferrer"
               :aria-label="t('aria.label.menu.footer.documentenserver')"
-              aria-describedby="tooltiptext"
+              aria-describedby="tooltip text"
               class="pa-2"
             >
               {{ t('menu.footer.documents-download') }}
