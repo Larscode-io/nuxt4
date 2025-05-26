@@ -10,8 +10,6 @@ import { useDisplay } from 'vuetify'
 import type { CourtItem } from '@core/constants'
 import { RoutePathKeys } from '@core/constants'
 
-const ogImage = '/img/ogImage.jpg'
-
 const { locales, locale } = useI18n()
 
 const route = useRoute()
@@ -21,6 +19,7 @@ const description = computed(() => t('general.banner'))
 const ogTitle = computed(() => t('general.message.consts-court'))
 
 const baseUrl = 'https://www.const-court.be'
+const ogImage = `${baseUrl}/img/ogImage.jpg`
 const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
 
 useSeoMeta({
