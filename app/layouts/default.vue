@@ -31,7 +31,6 @@ console.log('OG image:', ogImage)
 useSeoMeta({
   ogUrl,
   ogTitle,
-  ogImage,
   ogLocale,
   description,
   ogType: 'website',
@@ -51,6 +50,12 @@ const alternateNames = Object.entries(namesByLocale)
   .map(([, name]) => name)
 
 useHead({
+  meta: [
+    { property: 'og:image', content: ogImage },
+    { property: 'og:image:width', content: '1200' },
+    { property: 'og:image:height', content: '630' },
+    { property: 'og:image:type', content: 'image/jpeg' },
+  ],
   htmlAttrs: { lang: locale.value },
   link: [
     ...locales.value.map(l => ({
@@ -75,7 +80,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'GovernmentOrganization',
         'name': namesByLocale[locale.value],
-        'alternateName': alternateNames, // andere talen
+        'alternateName': alternateNames,
         'url': `https://www.const-court.be${route.fullPath}`,
         'address': {
           '@type': 'PostalAddress',
