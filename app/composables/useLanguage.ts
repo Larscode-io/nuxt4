@@ -43,7 +43,10 @@ export function useLanguage() {
     return locales.value.filter(i => i.code !== locale.value)
   })
 
-  const ogLocaleAlternate: (string | undefined)[] = locales.value.map(el => el.language)
+  const ogLocaleAlternate: MaybeComputedRefOrFalsy<string[]> = locales.value
+    .map(el => el.language)
+    .filter((lang): lang is string => typeof lang === 'string')
+
   const ogLocale: MaybeComputedRefOrFalsy<string | null | undefined> = locales.value
     .filter(i => i.code === locale.value)
     .map(el => el.language)[0] || null
@@ -88,5 +91,6 @@ export function useLanguage() {
     getLocalizedPath,
     langCollection,
     alternateLocale,
+    switchLocalePath,
   }
 }
