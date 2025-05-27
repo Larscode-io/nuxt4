@@ -72,7 +72,7 @@ const encode = (link: string): string => {
   ul {
     width: 100%;
     position: sticky;
-    top: 170px; // Adjust this value to match your header/menu height
+    top: 170px; // todo: uit variable halen
     li {
       margin-bottom: 24px;
       list-style-type: none;
