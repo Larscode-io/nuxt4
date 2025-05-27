@@ -124,7 +124,7 @@ onMounted(() => {
               {{ t('general.message.read-more') }}
               <v-icon
                 style="color: #043c72;"
-                :class="{ 'ml-2': hover, 'ml-1': !hover }"
+                :class="{ 'ml-2': isHovering, 'ml-1': !isHovering }"
               >mdi-arrow-right</v-icon>
             </div>
           </nuxt-link>
