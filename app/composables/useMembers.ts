@@ -228,6 +228,7 @@ export function useMembers(locale: Ref<string>) {
   return {
     judgeMembers,
     officeStaffMembers,
+    groupedMembersHistoric,
     getMostRecentRole,
     registrarMembers,
     judgeMembersHistoric,
