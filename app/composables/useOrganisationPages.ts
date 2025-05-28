@@ -48,11 +48,6 @@ export function useOrganisationPages(locale: Ref<string>) {
   const pageReferendar = computed(() => results.value?.pageReferendar)
   const pageClerk = computed(() => results.value?.pageClerk)
 
-  const judgeLinks = computed(() => pageJudge.value ? extractSideBarLinks({ value: pageJudge.value }) : [])
-  const clerkLinks = computed(() => pageClerk.value ? extractSideBarLinks({ value: pageClerk.value }) : [])
-  const referendarLinks = computed(() => pageReferendar.value ? extractSideBarLinks({ value: pageReferendar.value }) : [])
-  const officeStaffLinks = computed(() => pageOfficeStaff.value ? extractSideBarLinks({ value: pageOfficeStaff.value }) : [])
-
   const mergedSidebarLinks = computed(() => {
     if (
       !pageJudge.value
@@ -61,10 +56,10 @@ export function useOrganisationPages(locale: Ref<string>) {
     }
 
     return [
-      ...extractSideBarLinks({ value: pageJudge.value }),
-      ...extractSideBarLinks({ value: pageReferendar.value }),
-      ...extractSideBarLinks({ value: pageClerk.value }),
-      ...extractSideBarLinks({ value: pageOfficeStaff.value }),
+      ...extractSideBarLinks(pageJudge.value),
+      ...extractSideBarLinks(pageReferendar.value),
+      ...extractSideBarLinks(pageClerk.value),
+      ...extractSideBarLinks(pageOfficeStaff.value),
       {
         id: toSlug(t('court.organization.emeritus-and-honorary-members')),
         depth: 3,
@@ -78,23 +73,10 @@ export function useOrganisationPages(locale: Ref<string>) {
     ]
   })
 
-  // const sideBarDataAvailable = computed(() => {
-  //   return results.value && !pending.value && mergedSidebarLinks.value && mergedSidebarLinks.value.length > 2
-  // })
-
-  // const hasSidebarData = computed(() => {
-  //   // Exclude the two fixed entries at the end of the mergedSidebarLinks array
-  //   if (!pending.value && mergedSidebarLinks.value && mergedSidebarLinks.value.length > 2) {
-  //     return mergedSidebarLinks.value.length - 2 > 0
-  //   }
-  //   return false
-  // })
-
   watch(mergedSidebarLinks, (newLinks) => {
     dummyPage.value.body.toc.links = newLinks
   }, { immediate: true })
 
-  // Update current active content when sidebar links change or on mount
   watch(sideBarLinks, (sidebarLinks) => {
     if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
       updateCurrentActiveContentInToc(sidebarLinks[0]?.id)

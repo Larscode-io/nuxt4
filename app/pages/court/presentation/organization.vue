@@ -21,6 +21,8 @@ const {
   aliveNonActiveOfficeStaffMembersHistoric,
 } = useMembers(locale)
 
+// const { hasContent, sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(page)
+
 // Here we fetch the content for the organization pages using the useOrganisationPages composable
 const {
   pageJudge,
@@ -65,7 +67,7 @@ const {
           md="8"
         >
           <v-row>
-            <article v-if="pageJudge ">
+            <!-- <article v-if="pageJudge ">
               <ContentRenderer
                 :value="pageJudge.body"
                 class="nuxt-content content-renderer"
@@ -91,7 +93,7 @@ const {
                 :lang="member!.lang"
                 :female-title="member!.femaleTitle"
               />
-            </div>
+            </div> -->
 
             <article v-if="pageReferendar">
               <ContentRenderer
@@ -127,7 +129,7 @@ const {
               />
             </article>
 
-            <div
+            <!-- <div
               v-for="(member, index) in registrarMembers"
               :key="member!.slug"
               class="gallery"
@@ -257,8 +259,8 @@ const {
 
             <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard
-                v-for="member of presidentMembersHistoric"
-                :key="member.slug"
+                v-for="(member, i) of presidentMembersHistoric"
+                :key="`${member.slug}-${i}`"
                 :headline-level="5"
                 :slug="member.slug"
                 :infos="member.infos"
@@ -280,8 +282,8 @@ const {
 
             <div class="gallery d-flex justify-space-between flex-wrap">
               <MemberCard
-                v-for="member of judgeMembersHistoric"
-                :key="member.slug"
+                v-for="(member, i) of judgeMembersHistoric"
+                :key="`${member.slug}-${i}`"
                 :headline-level="5"
                 :slug="member.slug"
                 :infos="member.infos"
@@ -295,7 +297,7 @@ const {
                 :is-alive="member.isAlive"
                 :female-title="member.femaleTitle"
               />
-            </div>
+            </div> -->
           </v-row>
         </v-col>
       </v-row>

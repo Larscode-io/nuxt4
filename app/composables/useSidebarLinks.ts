@@ -5,15 +5,15 @@ import type { ParsedContentv2 } from '@nuxt/content'
 type PageContent = ParsedContentv2
 
 export function useSidebarLinks(page: Ref<PageContent | null>) {
-  const sideBarLinks = computed(() =>
-    page.value ? extractSideBarLinks({ value: page.value }) : [],
-  )
+  const hasContent = computed(() => Array.isArray(page.value?.body?.value) && page.value.body.value.length > 0)
+  const sideBarLinks = computed(() => page.value ? extractSideBarLinks(page.value) : [])
+  // const sideBarLinks = computed(() => page.value ? extractSideBarLinks({ value: page.value }) : [])
   const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
 
-  const hasContent = computed(() => Array.isArray(page.value?.body?.value) && page.value.body.value.length > 0)
-
-  function extractSideBarLinks(page: { value: PageContent }): TocLink[] {
-    const links = (page?.value?.body?.toc as { links?: TocLink[] })?.links ?? []
+  function extractSideBarLinks(page: PageContent): TocLink[] {
+    const links = (page?.body?.toc as { links?: TocLink[] })?.links ?? []
+    // function extractSideBarLinks(page: { value: PageContent }): TocLink[] {
+    //   const links = (page?.value?.body?.toc as { links?: TocLink[] })?.links ?? []
     interface Toc {
       id: string
       depth: number
