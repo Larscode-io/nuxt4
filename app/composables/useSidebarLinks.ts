@@ -9,6 +9,7 @@ export function useSidebarLinks(page: Ref<PageContent | null>) {
     page.value ? extractSideBarLinks({ value: page.value }) : [],
   )
   const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
+
   const hasContent = computed(() => Array.isArray(page.value?.body?.value) && page.value.body.value.length > 0)
 
   function extractSideBarLinks(page: { value: PageContent }): TocLink[] {
@@ -34,7 +35,7 @@ export function useSidebarLinks(page: Ref<PageContent | null>) {
       : [{
           id: '_1-loading',
           depth: 3,
-          text: 'Loading...',
+          text: 'Loading... sidebar links',
         }]
   }
 

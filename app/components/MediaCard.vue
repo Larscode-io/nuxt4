@@ -74,7 +74,7 @@ const items = computed(() =>
 <template>
   <div>
     <div v-if="statusJudge === 'pending' ">
-      Loading...
+      Loading...media card
     </div>
     <slot
       name="default"
