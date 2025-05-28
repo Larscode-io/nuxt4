@@ -1,14 +1,3 @@
-<!--
-App/pages/legacy-content-loader.vue
-http://localhost:3002/api/_content/query
--->
-
-<template>
-  <div v-if="content">
-    <ContentRendererMarkdown :value="content" />
-  </div>
-</template>
-
 <script setup>
 const route = useRoute()
 const { locale } = useI18n()
@@ -30,3 +19,9 @@ const { data: content } = useAsyncData(`content-${contentSlug}`, async () => {
   }
 })
 </script>
+
+<template>
+  <div v-if="content">
+    <ContentRendererMarkdown :value="content" />
+  </div>
+</template>

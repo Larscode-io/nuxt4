@@ -216,7 +216,7 @@ watch(smAndDown, (value) => {
                 <div
                   v-if="item.subMenu"
                   :id="`menu-${item.title}`"
-                  class="cursor-pointer position-relative text-center"
+                  class="cursor-pointer position-relative"
                   :aria-label="`level 1 menu title ${item.title}`"
                   role="link"
                   tabindex="0"
