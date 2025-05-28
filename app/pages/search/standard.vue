@@ -37,7 +37,7 @@ const contentPath = ref(`${ContentKeys.standardSearchExplanation}`)
 const pad = computed(() => `/${locale.value}/${contentPath.value}`)
 
 const { data: page, pending } = await useAsyncData(
-  () => `stay-informed-${locale.value}`,
+  () => `standard-search-page-${locale.value}`,
   () => queryCollection(langCollection[locale.value])
     .path(pad.value)
     .first(),
