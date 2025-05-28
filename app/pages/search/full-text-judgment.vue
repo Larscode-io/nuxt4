@@ -146,7 +146,7 @@ const { t, langCollection } = useLanguage()
 const contentPath = ref(`${ContentKeys.fullTextSearchExplanation}`)
 const pad = computed(() => `/${locale.value}/${contentPath.value}`)
 
-const { data: page, pending } = await useAsyncData(
+const { data: page, pending } = useAsyncData(
   () => `full-text-search-page-${locale.value}`,
   () => queryCollection(langCollection[locale.value])
     .path(pad.value)

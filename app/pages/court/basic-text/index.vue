@@ -10,7 +10,7 @@ const { t, langCollection } = useLanguage()
 const contentPath = ref(`${ContentKeys.presentationBasicTexts}`)
 const pad = computed(() => `/${locale.value}/${contentPath.value}`)
 
-const { data: page, pending, error } = await useAsyncData(
+const { data: page, pending, error } = useAsyncData(
   () => `basic-text-${locale.value}`,
   () => queryCollection(langCollection[locale.value])
     .path(pad.value)

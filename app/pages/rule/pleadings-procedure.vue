@@ -11,7 +11,7 @@ const contentPath = `/${currentLocale}/${ContentKeys.rulePleadingsProcedure}`
 // Use currentLocale instead of locale.value directly,
 // because locale.value may differ between SSR and CSR,
 // causing hydration mismatch or double-fetch in useAsyncData
-const { data: page } = await useAsyncData(
+const { data: page } = useAsyncData(
   `${currentLocale}-${ContentKeys.rulePleadingsProcedure}`,
   () => queryCollection(langCollection[currentLocale]).path(contentPath).first(),
 )

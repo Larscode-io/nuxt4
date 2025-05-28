@@ -35,7 +35,7 @@ const { t, langCollection } = useLanguage()
 const contentPath = ref(`${ContentKeys.presentationJobOffers}`)
 const pad = computed(() => `/${locale.value}/${contentPath.value}`)
 
-const { data: page } = await useAsyncData(
+const { data: page } = useAsyncData(
   () => `job-offers-${locale.value}-${contentPath.value}`,
   () => queryCollection(langCollection[locale.value])
     .path(pad.value)

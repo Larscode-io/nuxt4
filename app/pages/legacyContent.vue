@@ -15,7 +15,7 @@ const { locale } = useI18n()
 const params = route.params.slug || []
 const contentSlug = params.join('/')
 const url = `https://www.const-court.be/_content/${locale.value}/presentation-international-relations-of-the-court`
-const { data: content } = await useAsyncData(`content-${contentSlug}`, async () => {
+const { data: content } = useAsyncData(`content-${contentSlug}`, async () => {
   try {
     const response = await fetch(url)
     if (!response.ok) {
