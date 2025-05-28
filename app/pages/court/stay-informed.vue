@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watchEffect } from 'vue'
 import { ContentKeys } from '@core/constants'
 import img from 'assets/img/newsletter-background-opt.png'
 
@@ -7,25 +7,23 @@ const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActive
 
 // ⚠️ This may warn in dev due to useRoute() inside useI18n()
 // It's safe as we only use it after route has resolved
-const { locale } = useI18n()
-const { langCollection } = useLanguage()
+// const { locale } = useI18n()
+const { locale, langCollection } = useLanguage()
 
 const contentPath = ref(`${ContentKeys.informed}`)
 const pad = computed(() => `/${locale.value}/${contentPath.value}`)
 
 const { data: page, pending } = await useAsyncData(
-  () => `stay-informed-${locale.value}`,
+  () => `stay-informed-page-${locale.value}`,
   () => queryCollection(langCollection[locale.value])
     .path(pad.value)
     .first(),
 )
-const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(page)
+const { sideBarLinks, hasSidebarLinks } = useSidebarLinks(page)
 
-onMounted(() => {
-  const sidebarLinks = extractSideBarLinks({ value: page.value })
-  // jump to the first link in the sidebar
-  if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
-    updateCurrentActiveContentInToc(sidebarLinks[0]?.id)
+watchEffect(() => {
+  if (sideBarLinks.value.length > 0 && sideBarLinks.value[0]?.id) {
+    updateCurrentActiveContentInToc(sideBarLinks.value[0]?.id)
   }
 })
 </script>
@@ -68,7 +66,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 .container {
   padding: 0 !important;
 
@@ -112,4 +110,4 @@ onMounted(() => {
 .space {
   height: 60vh;
 }
-</style>
+</style> -->

@@ -30,7 +30,7 @@ export function useOrganisationPages(locale: Ref<string>) {
   const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(dummyPage)
 
   const { data: results, pending } = useAsyncData(
-    `stay-informed-${locale.value}`,
+    `organisation-page-${locale.value}`,
     async () => {
       const collection = langCollection[locale.value as keyof typeof langCollection] ?? 'collection_dutch'
       const [pageJudge, pageReferendar, pageClerk, pageOfficeStaff] = await Promise.all([
@@ -77,6 +77,18 @@ export function useOrganisationPages(locale: Ref<string>) {
       },
     ]
   })
+
+  // const sideBarDataAvailable = computed(() => {
+  //   return results.value && !pending.value && mergedSidebarLinks.value && mergedSidebarLinks.value.length > 2
+  // })
+
+  // const hasSidebarData = computed(() => {
+  //   // Exclude the two fixed entries at the end of the mergedSidebarLinks array
+  //   if (!pending.value && mergedSidebarLinks.value && mergedSidebarLinks.value.length > 2) {
+  //     return mergedSidebarLinks.value.length - 2 > 0
+  //   }
+  //   return false
+  // })
 
   watch(mergedSidebarLinks, (newLinks) => {
     dummyPage.value.body.toc.links = newLinks

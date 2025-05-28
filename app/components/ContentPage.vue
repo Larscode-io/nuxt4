@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { watchEffect } from 'vue'
 import fallbackImg from '@assets/img/newsletter-background-opt.png'
 
 const { t, locale, langCollection } = useLanguage()
@@ -25,19 +25,11 @@ const { data: page, pending } = useAsyncData(
   () => queryCollection(langCollection[currentLocale]).path(`/${currentLocale}/${props.contentPath}`).first(),
 )
 
-const { hasContent, sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(page)
+const { hasContent, sideBarLinks, hasSidebarLinks } = useSidebarLinks(page)
 
-onMounted(() => {
-  // todo: check if this can be moved to the useSidebarLinks composable
-  try {
-    if (!page.value) return
-    const sidebarLinks = extractSideBarLinks({ value: page.value })
-    if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
-      updateCurrentActiveContentInToc(sidebarLinks[0]?.id)
-    }
-  }
-  catch (e) {
-    console.error('Error in onMounted:', e)
+watchEffect(() => {
+  if (sideBarLinks.value.length > 0 && sideBarLinks.value[0]?.id) {
+    updateCurrentActiveContentInToc(sideBarLinks.value[0]?.id)
   }
 })
 </script>

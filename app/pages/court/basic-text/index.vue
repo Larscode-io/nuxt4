@@ -17,7 +17,7 @@ const { data: page, pending, error } = await useAsyncData(
     .first(),
 )
 
-const { sideBarLinks, hasSidebarLinks, extractSideBarLinks } = useSidebarLinks(page)
+const { sideBarLinks, hasSidebarLinks } = useSidebarLinks(page)
 const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActiveSectionObserver('h3', 0.9)
 
 const status = computed(() => {
@@ -30,11 +30,9 @@ const status = computed(() => {
   return 'success'
 })
 
-onMounted(() => {
-  const sidebarLinks = extractSideBarLinks({ value: page.value })
-  // jump to the first link in the sidebar
-  if (sidebarLinks.length > 0 && sidebarLinks[0]?.id) {
-    updateCurrentActiveContentInToc(sidebarLinks[0]?.id)
+watchEffect(() => {
+  if (sideBarLinks.value.length > 0 && sideBarLinks.value[0]?.id) {
+    updateCurrentActiveContentInToc(sideBarLinks.value[0]?.id)
   }
 })
 </script>
