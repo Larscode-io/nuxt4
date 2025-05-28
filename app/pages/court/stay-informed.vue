@@ -54,6 +54,9 @@ watchEffect(() => {
           cols="12"
           :md="hasSidebarLinks ? 8 : 12"
         >
+          <!-- ################################################################################ -->
+          <!-- todo: this page  stay-informed has an issue, after a few locale changes, the page blocks -->
+          <!-- ################################################################################ -->
           <article v-if="page">
             <ContentRenderer
               :value="page.body || {}"
