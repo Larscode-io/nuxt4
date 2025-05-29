@@ -103,6 +103,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const config = useRuntimeConfig()
+  // eslint-disable-next-line no-undef
   const FileMaker = new FilemakerApi(config, fetchWithFallback)
 
   try {

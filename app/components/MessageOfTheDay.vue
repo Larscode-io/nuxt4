@@ -9,6 +9,7 @@ const localePath = useLocalePath()
 
 const dismissedMessageIds = ref<string[]>([])
 const dismissedCookie = useCookie<string[]>('dismissedMessages', { default: () => [] })
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const messages = ref<any[]>([])
 
 function isInternalLink(link: string) {

@@ -17,6 +17,7 @@ export function useMembers(locale: Ref<string>) {
   //
   // This ensures we can correctly detect when fields like `isAlive` are not present at all.
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function transformMember(entry: any): Member & { mostRecentRole?: Role | null } {
     const raw = entry?.meta?.body || entry
     const mostRecentRole: Role | null | undefined = getMostRecentRole(raw.roles ?? [])

@@ -9,6 +9,7 @@ import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler } from '#imports'
 
 const config = useRuntimeConfig()
+// eslint-disable-next-line no-undef
 const FileMaker = new FilemakerApi(config, fetchWithFallback)
 
 const fieldNames = [

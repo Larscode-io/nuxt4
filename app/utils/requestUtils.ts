@@ -17,10 +17,12 @@ export const cGet = (url: string, options = {}) => {
   return cFetch(url, 'GET', options)
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const cPost = (url: string, body: any, options = {}) => {
   return cFetch(url, 'POST', { body, ...options })
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const cPut = (url: string, body: any, options = {}) => {
   return cFetch(url, 'PUT', { body, ...options })
 }

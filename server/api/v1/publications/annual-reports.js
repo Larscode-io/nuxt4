@@ -5,6 +5,7 @@ export default defineEventHandler(async (event) => {
     = event.context
 
   try {
+  // eslint-disable-next-line no-undef
     const { fetchPublications } = filemakerPublications(
       token,
       tokenExpiration,

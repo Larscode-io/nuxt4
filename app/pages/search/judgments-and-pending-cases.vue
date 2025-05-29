@@ -214,7 +214,9 @@ const loading = ref(false)
 const loaded = ref(false)
 const selectedTab = ref(null)
 const searchError = ref(null)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const searchPendingCasesResponse = ref<any[]>([])
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const searchJudgmentsResponse = ref<any[]>([])
 const searchPendingCasesData = computed(() => searchPendingCasesResponse.value?.value)
 const searchJudgmentsData = computed(() => searchJudgmentsResponse.value?.value)

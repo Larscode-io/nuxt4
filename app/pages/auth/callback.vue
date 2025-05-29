@@ -44,16 +44,22 @@ onMounted(async () => {
           response.value = body as _Response
         }
         else {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           response.value = { statusCode: userInfoStatusCode, body } as any
         }
       }
       else {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         response.value = { statusCode, body: tokenResponse.body } as any
       }
     }
     catch (error) {
       console.error('Fetch error:', error)
-      response.value = { statusCode: 500, body: error.message } as any
+      const errorMessage = typeof error === 'object' && error !== null && 'message' in error
+        ? (error as { message: string }).message
+        : String(error)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      response.value = { statusCode: 500, body: errorMessage } as any
     }
   }
 })
