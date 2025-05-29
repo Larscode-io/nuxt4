@@ -1,6 +1,7 @@
+import type { H3Event } from 'h3'
 import { defineEventHandler } from '#imports'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (event: H3Event) => {
   const config = useRuntimeConfig(event)
 
   interface authCodeResponse {
