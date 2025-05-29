@@ -152,14 +152,13 @@ onMounted(() => {
 watch(
   [locale, dynamicLinks],
   async () => {
-    // pas na client-hydratatie en na DOM-update de eerste ToC-entry kiezen
+    // pas na client-hydratatie
     if (!isHydrated.value) return
-    // wachten tot de wijzigingen in de browser-DOM zijn doorgevoerd
-    // omdat de ToC pas correct is opgebouwd na de DOM-update
+    // pas na DOM-update de eerste ToC-entry kiezen
     await nextTick()
     setFirstDynamicTocEntry()
   },
-  { immediate: true }, // direct ook voor de eerste rendering
+  { immediate: true },
 )
 </script>
 
