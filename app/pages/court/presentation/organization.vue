@@ -98,9 +98,6 @@ const mergedSidebarLinks = computed(() => {
   // ➤ Zet vertaalde strings pas in onMounted() of watch(locale)
 
   // Gebruik van watchEffect zorgt dat t(...) pas na hydration wordt uitgevoerd
-  watchEffect(() => {
-
-  })
 
   return [
     ...extractSideBarLinks(pageJudge.value),
@@ -111,23 +108,27 @@ const mergedSidebarLinks = computed(() => {
   ]
 })
 
+//  Kijk uit voor t() in setup-computed of watchEffect() indien die al tijdens SSR worden geëvalueerd
+// lijkt geen probleem te zijn, maar toch voorzichtig zijn
+watchEffect(() => {
+  extraLinks.value = [
+    {
+      id: toSlug(t('court.organization.emeritus-and-honorary-members')),
+      depth: 3,
+      text: t('court.organization.emeritus-and-honorary-members'),
+    },
+    {
+      id: toSlug(t('court.organization.previous-incumbents')),
+      depth: 3,
+      text: t('court.organization.previous-incumbents'),
+    },
+  ]
+})
+
 const isHydrated = ref(false)
 onMounted(() => {
   isHydrated.value = true
 })
-
-extraLinks.value = [
-  {
-    id: toSlug(t('court.organization.emeritus-and-honorary-members')),
-    depth: 3,
-    text: t('court.organization.emeritus-and-honorary-members'),
-  },
-  {
-    id: toSlug(t('court.organization.previous-incumbents')),
-    depth: 3,
-    text: t('court.organization.previous-incumbents'),
-  },
-]
 </script>
 
 <template>
