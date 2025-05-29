@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, defineProps, defineEmits } from 'vue'
+import { ref, computed, onMounted, defineProps } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { pdfFileExists } from '@core/utilities'
 
@@ -19,8 +19,8 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-// Define emits (voor de 'click' event)
-const emit = defineEmits<{ (e: 'click', id: number): void }>()
+// // Define emits (voor de 'click' event)
+// const emit = defineEmits<{ (e: 'click', id: number): void }>()
 
 // i18n setup
 const { t, locale } = useI18n()
@@ -42,16 +42,16 @@ onMounted(async () => {
   }
 })
 
-// Methode om een string te voorzien van superscript (optioneel)
-function _filter_sup(str: string): string {
-  const regex = /#\[(?<xxx>.*?)\]#/g
-  return str.replace(regex, `<sup>$<xxx></sup>`)
-}
+// // Methode om een string te voorzien van superscript (optioneel)
+// function _filter_sup(str: string): string {
+//   const regex = /#\[(?<xxx>.*?)\]#/g
+//   return str.replace(regex, `<sup>$<xxx></sup>`)
+// }
 
-// Emit een 'click' event met het id (indien nodig)
-function _navigate(id: number) {
-  emit('click', id)
-}
+// // Emit een 'click' event met het id (indien nodig)
+// function _navigate(id: number) {
+//   emit('click', id)
+// }
 </script>
 
 <template>
