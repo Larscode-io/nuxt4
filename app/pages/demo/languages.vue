@@ -21,6 +21,12 @@ t('aria.label.dropdown.input')
 // // Access a specific locale's messages
 // const messageInFrench = messages.value.fr["alt.banner.books"];
 // console log(messageInFrench);
+
+// console.log(
+//   import.meta.server ? '[SSR]' : '[Client]',
+//   'Translation:',
+//   t('court.organization.previous-incumbents'),
+// )
 </script>
 
 <template>
