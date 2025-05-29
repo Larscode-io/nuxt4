@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watchEffect } from 'vue'
+import { onMounted } from 'vue'
 import fallbackImg from '@assets/img/newsletter-background-opt.png'
 
 const { t, locale, langCollection } = useLanguage()
@@ -27,7 +27,12 @@ const { data: page, pending } = useAsyncData(
 
 const { hasContent, sideBarLinks, hasSidebarLinks } = useSidebarLinks(page)
 
-watchEffect(() => {
+onMounted(() => {
+  // useActiveSectionObserver gebruiken we op de client om de actieve sectie te observeren
+  // en de sidebar links te updaten
+  // echter, op de SSR werkt die code niet, dus we moeten de eerste link handmatig instellen
+  // maar alleen onMounted, omdat de links nog niet beschikbaar zijn tijdens SSR
+  // anders krijgen we hydration errors omdat de links niet overeenkomen tussen de server en de client
   if (sideBarLinks.value.length > 0 && sideBarLinks.value[0]?.id) {
     updateCurrentActiveContentInToc(sideBarLinks.value[0]?.id)
   }

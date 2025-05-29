@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, watchEffect } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { ContentKeys } from '@core/constants'
 import img from 'assets/img/newsletter-background-opt.png'
 
@@ -21,7 +21,7 @@ const { data: page, pending } = useAsyncData(
 )
 const { sideBarLinks, hasSidebarLinks } = useSidebarLinks(page)
 
-watchEffect(() => {
+onMounted(() => {
   if (sideBarLinks.value.length > 0 && sideBarLinks.value[0]?.id) {
     updateCurrentActiveContentInToc(sideBarLinks.value[0]?.id)
   }

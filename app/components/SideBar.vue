@@ -1,3 +1,10 @@
+<!--
+Wacht altijd met het instellen van de default tot na onMounted()
+in pagina's waar de sidebar gebruikt wordt (dus: client-only)
+zodat de component niet direct hydrateert met een verkeerde waarde
+en de server-rendered content overeenkomt met de client-rendered content
+-->
+
 <script setup lang="ts">
 import { useLanguage } from '@/composables/useLanguage'
 
@@ -39,6 +46,17 @@ const selectedId = (link: string): void => {
 const encode = (link: string): string => {
   return `#${link}`
 }
+
+const isHydrated = ref(false)
+onMounted(() => {
+  // Set isHydrated to true after the component has been mounted
+  // DOM-dependent code should be run after mounting to avoid hydration errors
+  // if watch() is fired on currentActiveContentInToc what can cause hydration errors
+  // because the initial value is not set yet on the server side
+  // and the client side will try to update the DOM before it is ready
+  // This ensures that the component is fully hydrated before we start using it
+  isHydrated.value = true
+})
 </script>
 
 <template>
@@ -53,7 +71,7 @@ const encode = (link: string): string => {
         :key="content.id"
       >
         <a
-          :class="{ current: isActive(content.id) }"
+          :class="{ current: isHydrated && isActive(content.id) }"
           :href="encode(content.id)"
           @click.prevent="selectedId(content.id)"
         >

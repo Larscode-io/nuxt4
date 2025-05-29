@@ -44,14 +44,14 @@ const getImagePath = (imageName: string) => {
     <article>
       <div class="col-12 col-md-9">
         <ContentRenderer
-          :value="page.body || {}"
+          :value="page?.body || {}"
           class="nuxt-content content-renderer"
         />
       </div>
     </article>
     <div class="carousel-container">
       <v-carousel
-        v-if="images.length > 0"
+        v-if="(images ?? []).length > 0"
         hide-delimiter-background
         show-arrows="hover"
         cycle

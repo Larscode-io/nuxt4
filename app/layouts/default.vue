@@ -152,9 +152,17 @@ function toggleMenu() {
 
 function changeLanguage(lang: string) {
   if (lang !== locale.value) {
-    const x = switchLanguage(lang as Languages)
-    navigateTo(x)
-    mobileDrawer.value = false
+    try {
+      const x = switchLanguage(lang as Languages)
+      // If switchLanguage or navigateTo are async, await them:
+      // const x = await switchLanguage(lang as Languages)
+      navigateTo(x)
+      mobileDrawer.value = false
+    }
+    catch (error) {
+      // Handle/log the error as needed
+      console.error('Error changing language:', error)
+    }
   }
 }
 const { lgAndUp, mdAndUp, smAndDown } = useDisplay()
