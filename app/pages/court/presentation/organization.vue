@@ -2,9 +2,16 @@
 import img from '@assets/img/organisation-Y-0050.png'
 import '@assets/css/content.css'
 import type { Member } from '@membermodels/members'
-import { onMounted, ref, computed } from 'vue'
+import { onMounted, ref, computed, watch, nextTick } from 'vue'
 import { ContentKeys } from '@core/constants'
 import type { ParsedContentv2 } from '@nuxt/content'
+
+function setFirstDynamicTocEntry() {
+  const first = dynamicLinks.value[0]?.id
+  if (first && currentActiveContentInToc.value !== first) {
+    updateCurrentActiveContentInToc(first)
+  }
+}
 
 type PageContent = ParsedContentv2
 void 0 as unknown as Member
@@ -53,42 +60,42 @@ type TocLink = {
   text: string
 }
 
-const extraLinks = ref<TocLink[]>([])
-const mergedSidebarLinks = computed(() => {
+function extractSideBarLinks(page: PageContent): TocLink[] {
+  if (!page?.body?.toc?.links) return []
+
+  const links = (page?.body?.toc as { links?: TocLink[] })?.links ?? []
+
+  interface Toc {
+    id: string
+    depth: number
+    text?: string
+    [key: string]: unknown
+  }
+
+  interface FilteredToc extends Toc {
+    text: string
+  }
+
+  const filtered: FilteredToc[] = links.filter((toc: Toc) => toc.depth === 3)
+    .map((toc: Toc) => ({
+      ...toc,
+      text: toc.text?.split('.').slice(1).join('.').trim() || toc.text?.trim() || '',
+    }))
+  return filtered.length
+    ? filtered
+    : [{
+        id: '_1-loading',
+        depth: 3,
+        text: 'Loading... sidebar links',
+      }]
+}
+
+const staticLinks = ref<TocLink[]>([])
+const dynamicLinks = computed(() => {
   if (
     !pageJudge.value
   ) {
     return [] // wachten tot alles geladen is
-  }
-
-  function extractSideBarLinks(page: PageContent): TocLink[] {
-    if (!page?.body?.toc?.links) return []
-
-    const links = (page?.body?.toc as { links?: TocLink[] })?.links ?? []
-
-    interface Toc {
-      id: string
-      depth: number
-      text?: string
-      [key: string]: unknown
-    }
-
-    interface FilteredToc extends Toc {
-      text: string
-    }
-
-    const filtered: FilteredToc[] = links.filter((toc: Toc) => toc.depth === 3)
-      .map((toc: Toc) => ({
-        ...toc,
-        text: toc.text?.split('.').slice(1).join('.').trim() || toc.text?.trim() || '',
-      }))
-    return filtered.length
-      ? filtered
-      : [{
-          id: '_1-loading',
-          depth: 3,
-          text: 'Loading... sidebar links',
-        }]
   }
 
   // t(...) pas gebruiken na hydration: anders krijg je class/text mismatches!
@@ -104,14 +111,18 @@ const mergedSidebarLinks = computed(() => {
     ...extractSideBarLinks(pageReferendar.value),
     ...extractSideBarLinks(pageClerk.value),
     ...extractSideBarLinks(pageOfficeStaff.value),
-    ...extraLinks.value,
   ]
 })
+
+const mergedSidebarLinks = computed(() => [
+  ...dynamicLinks.value,
+  ...staticLinks.value,
+])
 
 //  Kijk uit voor t() in setup-computed of watchEffect() indien die al tijdens SSR worden geëvalueerd
 // lijkt geen probleem te zijn, maar toch voorzichtig zijn
 watchEffect(() => {
-  extraLinks.value = [
+  staticLinks.value = [
     {
       id: toSlug(t('court.organization.emeritus-and-honorary-members')),
       depth: 3,
@@ -126,9 +137,30 @@ watchEffect(() => {
 })
 
 const isHydrated = ref(false)
+
 onMounted(() => {
   isHydrated.value = true
+  setFirstDynamicTocEntry()
+
+  console.log(
+    import.meta.server ? '[SSR]' : '[Client]',
+    'Translation:',
+    t('court.organization.previous-incumbents'),
+  )
 })
+
+watch(
+  [locale, dynamicLinks],
+  async () => {
+    // pas na client-hydratatie en na DOM-update de eerste ToC-entry kiezen
+    if (!isHydrated.value) return
+    // wachten tot de wijzigingen in de browser-DOM zijn doorgevoerd
+    // omdat de ToC pas correct is opgebouwd na de DOM-update
+    await nextTick()
+    setFirstDynamicTocEntry()
+  },
+  { immediate: true }, // direct ook voor de eerste rendering
+)
 </script>
 
 <template>
