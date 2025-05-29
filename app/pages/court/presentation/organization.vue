@@ -99,18 +99,7 @@ const mergedSidebarLinks = computed(() => {
 
   // Gebruik van watchEffect zorgt dat t(...) pas na hydration wordt uitgevoerd
   watchEffect(() => {
-    extraLinks.value = [
-      {
-        id: toSlug(t('court.organization.emeritus-and-honorary-members')),
-        depth: 3,
-        text: t('court.organization.emeritus-and-honorary-members'),
-      },
-      {
-        id: toSlug(t('court.organization.previous-incumbents')),
-        depth: 3,
-        text: t('court.organization.previous-incumbents'),
-      },
-    ]
+
   })
 
   return [
@@ -126,6 +115,19 @@ const isHydrated = ref(false)
 onMounted(() => {
   isHydrated.value = true
 })
+
+extraLinks.value = [
+  {
+    id: toSlug(t('court.organization.emeritus-and-honorary-members')),
+    depth: 3,
+    text: t('court.organization.emeritus-and-honorary-members'),
+  },
+  {
+    id: toSlug(t('court.organization.previous-incumbents')),
+    depth: 3,
+    text: t('court.organization.previous-incumbents'),
+  },
+]
 </script>
 
 <template>
@@ -157,7 +159,7 @@ onMounted(() => {
           md="8"
         >
           <v-row>
-            <article v-if="pageJudge">
+            <article v-if="isHydrated && pageJudge">
               <ContentRenderer
                 :value="pageJudge.body"
                 class="nuxt-content content-renderer"
