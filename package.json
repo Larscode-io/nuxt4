@@ -21,6 +21,7 @@
     "spell:staged": "npx cspell $(git diff --cached --name-only --diff-filter=ACM | grep -E '\\.(vue|ts|js|md)$' || echo '') --config ./cspell.config.json",
     "spell:update": "./scripts/update-cspell-words.sh",
     "spell:verify": "./scripts/spell-verify.sh",
+    "spell:words": "npx cspell \"**/*.{js,ts,vue,md}\" --words-only --unique",
     "spell:help": "./scripts/show-help.sh",
     "ts": "nuxi typecheck",
     "check": "npm run lint && npm run type-check"
