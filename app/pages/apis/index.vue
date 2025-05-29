@@ -1,12 +1,15 @@
 <template>
-  <div class="prose mx-auto p-4">
-    <!-- $route.path contains /nl/apis and is the default path for ContentDoc -->
-    <ContentDoc />
-  </div>
+  <ContentRenderer
+    v-if="content"
+    :value="content"
+  />
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useSeoMeta } from '#imports'
+
+const { locale, langCollection } = useLanguage()
 
 useSeoMeta({
   title: 'API-informatie | Grondwettelijk Hof',
@@ -16,4 +19,13 @@ useSeoMeta({
   ogType: 'website',
   ogUrl: 'https://www.const-court.be/apis',
 })
+const route = useRoute()
+// const contentPath = computed(() => `/${locale.value}/${ContentKeys.ruleAnonymizationPolicy}`)
+const l = computed(() => langCollection[locale.value])
+const { data: content } = await useAsyncData(
+  `content-${route.fullPath}`,
+  () => queryCollection(l.value)
+    .path(route.path)
+    .first(),
+)
 </script>
