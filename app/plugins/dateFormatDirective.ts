@@ -5,8 +5,8 @@ export default defineNuxtPlugin((nuxtApp) => {
       const input = el.tagName === 'INPUT' ? el : el.querySelector('input')
       if (!input) return
 
-      input.addEventListener('input', function (e) {
-        let value = e.target.value.replace(/\D/g, '') // Remove non-digits
+      input.addEventListener('input', function (e: Event) {
+        let value = (e.target as HTMLInputElement).value.replace(/\D/g, '') // Remove non-digits
 
         // Format as DD/MM/YYYY
         if (value.length > 0) {
