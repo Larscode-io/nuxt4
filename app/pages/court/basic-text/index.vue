@@ -1,8 +1,8 @@
 <!-- Content based Page -->
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 import img from '@assets/img/banner-text.png'
-import { ContentKeys } from '../../../core/constants'
+import { ContentKeys } from '@core/constants'
 
 const { locale } = useI18n()
 const { t, langCollection } = useLanguage()

@@ -24,6 +24,7 @@
 
       {{ title }}
     </h3>
+    <!-- eslint-disable vue/no-v-html -->
     <span
       class="subtitle my-2"
       v-html="description || t('error.noDataAvailable')"

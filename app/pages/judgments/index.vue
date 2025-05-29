@@ -171,12 +171,14 @@ watchEffect(() => {
                 </a>
                 {{ nr }}
               </h3>
+              <!-- eslint-disable vue/no-v-html -->
               <span
                 class="
                     subtitle
                     my-2"
                 v-html="description || t('error.no-data-available')"
               />
+              <!-- eslint-disable vue/no-v-html -->
               <span
                 class="subtitle my-2"
                 style="display: block; color: var(--pdf-red);"

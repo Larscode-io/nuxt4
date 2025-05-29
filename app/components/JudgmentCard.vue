@@ -43,13 +43,13 @@ onMounted(async () => {
 })
 
 // Methode om een string te voorzien van superscript (optioneel)
-function filter_sup(str: string): string {
+function _filter_sup(str: string): string {
   const regex = /#\[(?<xxx>.*?)\]#/g
   return str.replace(regex, `<sup>$<xxx></sup>`)
 }
 
 // Emit een 'click' event met het id (indien nodig)
-function navigate(id: number) {
+function _navigate(id: number) {
   emit('click', id)
 }
 </script>
@@ -97,10 +97,12 @@ function navigate(id: number) {
       </v-icon>
       {{ reference }}
     </p>
+    <!-- eslint-disable vue/no-v-html -->
     <span
       class="subtitle my-2"
       v-html="description || t('error.no-data-available')"
     />
+    <!-- eslint-disable vue/no-v-html -->
     <span
       class="state my-2"
       v-html="state || t('error.no-data-available')"
@@ -124,6 +126,7 @@ function navigate(id: number) {
       elevation="3"
       class="subtitle my-2"
     >
+      <!-- eslint-disable vue/no-v-html -->
       <span v-html="JSON.stringify(keywords).replaceAll(',', ', ').replace('[', '[ ').replace(']', ' ]') || t('error.no-data-available')" />
     </v-banner>
     <p class="subtitle my-2">

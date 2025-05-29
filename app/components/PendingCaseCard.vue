@@ -65,7 +65,7 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits(['subscribe'])
+const _emit = defineEmits(['subscribe'])
 
 const dialog = ref(false)
 const user = ref({
@@ -73,11 +73,11 @@ const user = ref({
   checkedAllGroups: false,
 })
 const emptyValue = EMPTY_VALUE
-const routePathKeys = RoutePathKeys
-const lookupEncInz = ref('')
+const _routePathKeys = RoutePathKeys
+const _lookupEncInz = ref('')
 const subscriptionResult = ref('')
 
-const splittedKeywords = computed(() => {
+const _splittedKeywords = computed(() => {
   if (!props.keywords) {
     return []
   }
@@ -190,6 +190,7 @@ async function subscribe() {
         v-if="notificationArt74ToOfficialJournalLink && notificationArt74ToOfficialJournalDate"
         class="row-to-column"
       >
+        <!-- eslint-disable vue/no-v-html -->
         <p
           class="h4"
           v-html="t('general.message.notification-art74-be-official-journal')

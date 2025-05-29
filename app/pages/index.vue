@@ -92,12 +92,15 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
               <v-card-title class="judgment-verdict font-normal">
                 {{ courtVerdict }}
               </v-card-title>
+              <!-- eslint-disable vue/no-v-text-v-html-on-component -->
+              <!-- eslint-disable vue/no-v-html -->
               <v-card-text
                 class="judgment-description"
                 v-html="description"
               />
             </div>
             <span class="justify-start">
+              <!-- eslint-disable vue/no-v-html -->
               <span v-if="availablePart">
                 <p
                   class="judgment-available-part"

@@ -262,6 +262,7 @@ const yearsInPendingCasesArray = computed(() => {
               </v-row>
               <v-row v-if="dateArt74">
                 <v-col cols="12">
+                  <!-- eslint-disable vue/no-v-html -->
                   <span
                     v-html="t('general.message.notification-art74-be-official-journal')
                       .replace('Moniteur belge', '<i>Moniteur belge</i>')

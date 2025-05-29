@@ -2,13 +2,6 @@
 import { useRoute } from 'vue-router'
 import type { MessageSchema } from '../../../models/i18n'
 
-type Test = MessageSchema
-const x: Test = {
-  'alt.banner.books': 'Boeken',
-  // 'alt.banner.books2': 'Boeken2',
-  'aria.label.dropdown.input': 'Dropdown invoerveld',
-}
-
 // console log(x.alt.banner.books) // This will log 'Boeken' to the console
 const route = useRoute()
 const switchLocalePath = useSwitchLocalePath()

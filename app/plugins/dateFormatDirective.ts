@@ -1,7 +1,7 @@
 // plugins/dateFormatDirective.ts
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive('date-format', {
-    mounted: (el, binding) => {
+    mounted: (el) => {
       const input = el.tagName === 'INPUT' ? el : el.querySelector('input')
       if (!input) return
 
