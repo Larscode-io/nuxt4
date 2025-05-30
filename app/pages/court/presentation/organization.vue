@@ -104,7 +104,7 @@ const dynamicLinks = computed(() => {
     ...extractSideBarLinks(pageOfficeStaff.value),
   ]
 })
-// force
+
 const mergedSidebarLinks = computed(() => [
   ...dynamicLinks.value,
   ...staticLinks.value,
@@ -126,7 +126,7 @@ watchEffect(() => {
 })
 
 watch(
-  locale,
+  [locale, dynamicLinks],
   () => setFirstDynamicTocEntry(),
   // changing toc works on the dom so we best wait for the next tick
   { immediate: true, flush: 'post' },
@@ -175,7 +175,7 @@ onMounted(() => {
                   class="my-skeleton-wrapper"
                 >
                   <v-skeleton-loader
-                    v-for="n in 5"
+                    v-for="n in 10"
                     :key="n"
                     type="list-item-two-line"
                   />
