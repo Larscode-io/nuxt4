@@ -69,11 +69,11 @@ const handleJudgmentHover = async (j: Judgment) => {
     class="flex-column align-start flex-nowrap"
     fluid
   >
-    <BannerImage
+    <!-- <BannerImage
       :title="t('general.message.article-const-referred-const-court')"
       :description="t('general.message.article-const-referred-const-court')"
       :image="img"
-      alt="picture of the court"
+      alt="picture of the court" -->
     />
     <v-row
       justify="center"
