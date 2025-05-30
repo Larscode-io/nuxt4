@@ -73,8 +73,8 @@ const handleJudgmentHover = async (j: Judgment) => {
       :title="t('general.message.article-const-referred-const-court')"
       :description="t('general.message.article-const-referred-const-court')"
       :image="img"
-      alt="picture of the court" -->
-    />
+      alt="picture of the court"
+    /> -->
     <v-row
       justify="center"
       class="my-4"
