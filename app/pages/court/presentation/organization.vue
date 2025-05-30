@@ -53,10 +53,20 @@ const pageOfficeStaff = computed(() => results.value?.pageOfficeStaff)
 const pageReferendar = computed(() => results.value?.pageReferendar)
 const pageClerk = computed(() => results.value?.pageClerk)
 
-// Define TocLink type if not already imported
 type TocLink = {
   id: string
   depth: number
+  text: string
+}
+
+interface Toc {
+  id: string
+  depth: number
+  text?: string
+  [key: string]: unknown
+}
+
+interface FilteredToc extends Toc {
   text: string
 }
 
@@ -64,17 +74,6 @@ function extractSideBarLinks(page: PageContent): TocLink[] {
   if (!page?.body?.toc?.links) return []
 
   const links = (page?.body?.toc as { links?: TocLink[] })?.links ?? []
-
-  interface Toc {
-    id: string
-    depth: number
-    text?: string
-    [key: string]: unknown
-  }
-
-  interface FilteredToc extends Toc {
-    text: string
-  }
 
   const filtered: FilteredToc[] = links.filter((toc: Toc) => toc.depth === 3)
     .map((toc: Toc) => ({
@@ -95,16 +94,8 @@ const dynamicLinks = computed(() => {
   if (
     !pageJudge.value
   ) {
-    return [] // wachten tot alles geladen is
+    return []
   }
-
-  // t(...) pas gebruiken na hydration: anders krijg je class/text mismatches!
-  // Doe dit in onMounted of watch(locale) i.p.v. direct in computed()
-  // ⚠️ Belangrijk: t(...) niet rechtstreeks in computed of setup gebruiken!
-  // Dit veroorzaakt hydration mismatches bij locale-wissels of SSR
-  // ➤ Zet vertaalde strings pas in onMounted() of watch(locale)
-
-  // Gebruik van watchEffect zorgt dat t(...) pas na hydration wordt uitgevoerd
 
   return [
     ...extractSideBarLinks(pageJudge.value),
@@ -119,8 +110,6 @@ const mergedSidebarLinks = computed(() => [
   ...staticLinks.value,
 ])
 
-//  Kijk uit voor t() in setup-computed of watchEffect() indien die al tijdens SSR worden geëvalueerd
-// lijkt geen probleem te zijn, maar toch voorzichtig zijn
 watchEffect(() => {
   staticLinks.value = [
     {
@@ -136,30 +125,17 @@ watchEffect(() => {
   ]
 })
 
-const isHydrated = ref(false)
+watch(
+  locale,
+  () => setFirstDynamicTocEntry(),
+  // changing toc works on the dom so we best wait for the next tick
+  { immediate: true, flush: 'post' },
+)
 
 onMounted(() => {
-  isHydrated.value = true
+  // here we set the first dynamic toc entry
   setFirstDynamicTocEntry()
-
-  console.log(
-    import.meta.server ? '[SSR]' : '[Client]',
-    'Translation:',
-    t('court.organization.previous-incumbents'),
-  )
 })
-
-watch(
-  [locale, dynamicLinks],
-  async () => {
-    // pas na client-hydratatie
-    if (!isHydrated.value) return
-    // pas na DOM-update de eerste ToC-entry kiezen
-    await nextTick()
-    setFirstDynamicTocEntry()
-  },
-  { immediate: true },
-)
 </script>
 
 <template>
@@ -180,7 +156,7 @@ watch(
           md="4"
         >
           <SideBar
-            v-if="!pending && isHydrated && mergedSidebarLinks.length"
+            v-if="!pending && mergedSidebarLinks.length"
             :active="currentActiveContentInToc"
             :toc="mergedSidebarLinks"
             @click="updateCurrentActiveContentInToc"
@@ -191,12 +167,30 @@ watch(
           md="8"
         >
           <v-row>
-            <article v-if="isHydrated && pageJudge">
-              <ContentRenderer
-                :value="pageJudge.body"
-                class="nuxt-content content-renderer"
-              />
-            </article>
+            <ClientOnly>
+              <!-- 1️⃣ Full-width placeholder -->
+              <template #placeholder>
+                <v-col
+                  cols="12"
+                  class="my-skeleton-wrapper"
+                >
+                  <v-skeleton-loader
+                    v-for="n in 5"
+                    :key="n"
+                    type="list-item-two-line"
+                  />
+                </v-col>
+              </template>
+
+              <!-- 2️⃣ Real content -->
+              <article v-if="pageJudge">
+                <ContentRenderer
+                  :value="pageJudge.body"
+                  class="nuxt-content"
+                />
+              </article>
+            </ClientOnly>
+
             <div
               v-for="(member, index) in judgeMembers"
               :key="member!.slug"
