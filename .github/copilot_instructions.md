@@ -25,6 +25,7 @@
 ### ⚙️ Framework & Libraries
 
 - Use **Nuxt 3 (compatibility mode 4)** and **Vue 3**.
+- Use Nuxt Content v3.
 - Use the **Composition API** for all components.
 - Leverage **Vue's reactivity** idiomatically.
 - Avoid adding new dependencies unless justified.
