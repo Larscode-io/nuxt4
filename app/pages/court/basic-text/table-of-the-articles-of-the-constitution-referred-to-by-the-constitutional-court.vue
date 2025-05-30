@@ -54,30 +54,14 @@ const updatePage = (newPage: number) => {
   page.value = newPage
 }
 
-// Function to check if a file exists via HTTP HEAD request
-const checkFileExists = async (url: string, nr: string) => {
+const logJudgment = async (j: Judgment) => {
   try {
-    const response = await fetch(url, { method: 'HEAD' })
-    if (response.ok) {
-      console.info(`File exists for judgment ${nr}: ${url}`)
-    }
-    else {
-      console.info(`File does NOT exist for judgment ${nr}: ${url}`)
-    }
+    const existFile = await checkFileExists(`${basePublicUrl}${j.filePath}`)
+    console.log(`Checked existence of file for judgment ${j.nr}: ${existFile}`)
   }
-  catch (e) {
-    console.info(`File does NOT exist for judgment ${nr}: ${url}`)
-  }
-}
-
-const logJudgment = (j: Judgment) => {
-  console.log('Hovered judgment:', j)
-  const existFile = checkFileExists(`${basePublicUrl}${j.filePath}`, j.nr)
-  existFile.then(() => {
-    console.log(`Checked existence of file for judgment ${j.nr}`)
-  }).catch((error) => {
+  catch (error: unknown) {
     console.error(`Error checking file for judgment ${j.nr}:`, error)
-  })
+  }
 }
 </script>
 
@@ -135,17 +119,11 @@ const logJudgment = (j: Judgment) => {
           <v-divider />
           <v-card-text>
             <template v-if="!pending && data">
-              <!-- <div class="mb-2">
-                <v-alert
-                  type="info"
-                  variant="tonal"
-                  border="start"
-                  color="primary"
-                  class="mb-4"
-                >
-                  {{ t('general.message.page-info', { page: page, totalPages: nrOfPages }) }}
-                </v-alert>
-              </div> -->
+              <button
+                @mouseenter="logJudgment({ nr: 'B', filePath: '/path/to/file' })"
+              >
+                B
+              </button>
               <v-expansion-panels accordion>
                 <v-expansion-panel
                   v-for="row in rows"
