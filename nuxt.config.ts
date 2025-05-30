@@ -91,6 +91,8 @@ export default defineNuxtConfig({
       endSession: import.meta.env.ENDSESSION,
       fakePublic: import.meta.env.FAKE_PUBLIC,
       mailmanProxyUrl: import.meta.env.MAILMAN_PROXY_URL,
+      basePublicUrl: 'https://www.const-court.be', // prepend for files like /public/n/2004/2004-159n.pdf
+      basePublicCommonUrl: 'https://www.const-court.be/public/common', // prepend for /public/common/nl/...
     },
   },
   build: { transpile: ['vuetify'] },

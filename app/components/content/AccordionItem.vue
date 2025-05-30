@@ -40,7 +40,7 @@ function toggle() {
           <v-icon>mdi-chevron-down</v-icon>
         </button>
         <div v-if="isOpen">
-          <ContentSlot />
+          <slot />
         </div>
       </div>
     </div>
