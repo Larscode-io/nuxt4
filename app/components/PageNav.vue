@@ -20,11 +20,9 @@ const cycleThePage = (newPage) => {
     return props.nrOfPages
   }
   else if (newPage > props.nrOfPages) {
-    console.log('PageNav want to go to: ', newPage, 'but we go to 1')
     return 1
   }
   else {
-    console.log('PageNav want to go to: ', newPage, 'and we go to that page')
     return newPage
   }
 }
@@ -34,13 +32,20 @@ const cycleThePage = (newPage) => {
   <div class="d-flex align-center ga-2">
     <button
       class="v-btn v-btn--outlined"
+      aria-label="First page"
+      @click="$emit('update:page', cycleThePage(1))"
+    >
+      <span class="mdi mdi-chevron-double-left" />
+    </button>
+    <button
+      class="v-btn v-btn--outlined"
       aria-label="Previous page"
       @click="$emit('update:page', cycleThePage(props.currentPage - 1))"
     >
       <span class="mdi mdi-chevron-left" />
     </button>
     <span class="text-body-1 font-weight-medium">
-      Page {{ props.currentPage }}
+      Page {{ props.currentPage }} of {{ props.nrOfPages }}
     </span>
     <button
       class="v-btn v-btn--outlined"
@@ -48,6 +53,13 @@ const cycleThePage = (newPage) => {
       @click="$emit('update:page', cycleThePage(props.currentPage + 1))"
     >
       <span class="mdi mdi-chevron-right" />
+    </button>
+    <button
+      class="v-btn v-btn--outlined"
+      aria-label="Last page"
+      @click="$emit('update:page', cycleThePage(props.nrOfPages))"
+    >
+      <span class="mdi mdi-chevron-double-right" />
     </button>
   </div>
 </template>

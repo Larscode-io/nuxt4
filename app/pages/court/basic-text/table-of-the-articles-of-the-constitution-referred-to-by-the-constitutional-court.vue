@@ -50,7 +50,6 @@ const nrOfPages = computed(() => Math.ceil(Number(total.value) / Number(perPage.
 const rows = computed(() => data.value?.rows ?? [])
 
 const updatePage = (newPage: number) => {
-  console.log('updatePage in Parent', newPage)
   page.value = newPage
 }
 
