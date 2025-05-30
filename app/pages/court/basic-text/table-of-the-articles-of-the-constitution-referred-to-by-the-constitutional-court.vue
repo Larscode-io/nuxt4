@@ -91,6 +91,24 @@ const handleJudgmentHover = async (j: Judgment) => {
             @update:page="updatePage"
           />
         </div>
+        <div class="text-center text-caption my-1">
+          <template v-if="!pending && data">
+            {{ t('Fetched') }}
+            <template v-if="rows.length !== perPage">
+              <b>{{ rows.length }}</b>
+            </template>
+            <template v-else>
+              {{ rows.length }}
+            </template>
+            {{ t('records') }}
+          </template>
+          <template v-else>
+            <v-progress-circular
+              indeterminate
+              color="primary"
+            />
+          </template>
+        </div>
       </v-col>
     </v-row>
 
