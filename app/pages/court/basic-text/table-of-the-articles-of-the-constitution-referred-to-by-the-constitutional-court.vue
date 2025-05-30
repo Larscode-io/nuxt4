@@ -54,10 +54,10 @@ const updatePage = (newPage: number) => {
   page.value = newPage
 }
 
-const logJudgment = async (j: Judgment) => {
+const handleJudgmentHover = async (j: Judgment) => {
   try {
     const existFile = await checkFileExists(`${basePublicUrl}${j.filePath}`)
-    console.log(`Checked existence of file for judgment ${j.nr}: ${existFile}`)
+    console.log(existFile ? `File exists for judgment ${j.nr}` : `File does not exist for judgment ${j.nr}`)
   }
   catch (error: unknown) {
     console.error(`Error checking file for judgment ${j.nr}:`, error)
@@ -85,18 +85,13 @@ const logJudgment = async (j: Judgment) => {
         md="10"
         lg="8"
       >
-        <v-alert
-          type="info"
-          variant="tonal"
-          border="start"
-          color="primary"
-        >
+        <div class="d-flex justify-center my-2">
           <PageNav
             :current-page="page"
             :nr-of-pages="nrOfPages"
             @update:page="updatePage"
           />
-        </v-alert>
+        </div>
       </v-col>
     </v-row>
 
@@ -119,11 +114,17 @@ const logJudgment = async (j: Judgment) => {
           <v-divider />
           <v-card-text>
             <template v-if="!pending && data">
-              <button
-                @mouseenter="logJudgment({ nr: 'B', filePath: '/path/to/file' })"
-              >
-                B
-              </button>
+              <!-- <div class="mb-2">
+                <v-alert
+                  type="info"
+                  variant="tonal"
+                  border="start"
+                  color="primary"
+                  class="mb-4"
+                >
+                  {{ t('general.message.page-info', { page: page, totalPages: nrOfPages }) }}
+                </v-alert>
+              </div> -->
               <v-expansion-panels accordion>
                 <v-expansion-panel
                   v-for="row in rows"
@@ -143,7 +144,7 @@ const logJudgment = async (j: Judgment) => {
                         class="ma-1"
                         :href="`${basePublicUrl}${j.filePath}`"
                         target="_blank"
-                        @mouseenter="logJudgment(j)"
+                        @mouseenter="handleJudgmentHover(j)"
                       >
                         {{ j.nr }}
                       </v-chip>

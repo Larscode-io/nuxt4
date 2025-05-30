@@ -29,7 +29,6 @@ export const checkFileExists = async (url: string) => {
       return true
     }
     else {
-      console.info(`File does NOT exist: ${url}`)
       return false
     }
   }

@@ -31,13 +31,23 @@ const cycleThePage = (newPage) => {
 </script>
 
 <template>
-  <div>
-    <button @click="$emit('update:page', cycleThePage(props.currentPage - 1))">
-      ﹤
+  <div class="d-flex align-center ga-2">
+    <button
+      class="v-btn v-btn--outlined"
+      aria-label="Previous page"
+      @click="$emit('update:page', cycleThePage(props.currentPage - 1))"
+    >
+      <span class="mdi mdi-chevron-left" />
     </button>
-    <button>Page {{ props.currentPage }}</button>
-    <button @click="$emit('update:page', cycleThePage(props.currentPage + 1))">
-      ﹥
+    <span class="text-body-1 font-weight-medium">
+      Page {{ props.currentPage }}
+    </span>
+    <button
+      class="v-btn v-btn--outlined"
+      aria-label="Next page"
+      @click="$emit('update:page', cycleThePage(props.currentPage + 1))"
+    >
+      <span class="mdi mdi-chevron-right" />
     </button>
   </div>
 </template>
