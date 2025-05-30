@@ -3,15 +3,55 @@
 import { ApiUrl } from '@core/constants'
 import img from '~/assets/img/newsletter-background-opt.png'
 
+interface Judgment {
+  nr: string
+  filePath: string
+}
+
+interface ArticleRow {
+  art: string
+  judgments: Judgment[]
+}
+
+interface DataResponse {
+  total: number
+  rows: ArticleRow[]
+}
+
 const { locale } = useI18n()
 const { t } = useLanguage()
 
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
-// `${ApiUrl.arcticlesConstReferredByConstCourt}?lang=${lang}&page=${page}&per-page=${perPage}`
-const url = `${baseURL}${ApiUrl.arcticlesConstReferredByConstCourt}?lang=${locale.value}`
-const { data } = await useFetch(url)
+const page = ref(1) // Current page number
+const perPage = ref(50) // Number of items per page
+
+const { data } = useAsyncData<DataResponse>(
+  `articles-const-referred-by-const-court`,
+  () => $fetch<DataResponse>(`${baseURL}${ApiUrl.arcticlesConstReferredByConstCourt}`, {
+    params: {
+      'lang': locale.value,
+      'page': page.value,
+      'per-page': perPage.value,
+    },
+  }), {
+    watch: [page, perPage],
+    default: () => ({
+      total: 0,
+      rows: [],
+    }),
+  },
+)
+
+const total = computed(() => data.value?.total ?? 0)
+const nrOfPages = computed(() => Math.ceil(Number(total.value) / Number(perPage.value)))
+const rows = computed(() => data.value?.rows ?? [])
+
+const updatePage = (newPage: number) => {
+  console.log('updatePage in Parent', newPage)
+  page.value = newPage
+}
 </script>
 
 <template>
@@ -34,8 +74,16 @@ const { data } = await useFetch(url)
       </v-icon>
       Deze pagina is in ontwikkeling
     </div>
+    <PageNav
+      :current-page="page"
+      :nr-of-pages
+      @update:page="updatePage"
+    />
     <template v-if="data">
-      <pre>{{ JSON.stringify(data, null, 2) }}</pre>
+      <p>
+        `We are on page {{ page }} of {{ nrOfPages }}`
+      </p>
+      <pre>{{ JSON.stringify(rows, null, 2) }}</pre>
     </template>
     <template v-else>
       <v-skeleton-loader
