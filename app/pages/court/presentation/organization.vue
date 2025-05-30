@@ -168,7 +168,12 @@ onMounted(() => {
         >
           <v-row>
             <ClientOnly>
-              <!-- 1️⃣ Full-width placeholder -->
+              <article v-if="pageJudge">
+                <ContentRenderer
+                  :value="pageJudge.body"
+                  class="nuxt-content"
+                />
+              </article>
               <template #placeholder>
                 <v-col
                   cols="12"
@@ -181,14 +186,6 @@ onMounted(() => {
                   />
                 </v-col>
               </template>
-
-              <!-- 2️⃣ Real content -->
-              <article v-if="pageJudge">
-                <ContentRenderer
-                  :value="pageJudge.body"
-                  class="nuxt-content"
-                />
-              </article>
             </ClientOnly>
 
             <div
