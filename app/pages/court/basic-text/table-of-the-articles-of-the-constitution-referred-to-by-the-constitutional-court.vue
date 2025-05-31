@@ -1,10 +1,9 @@
 <!-- API based page -->
 <script setup lang="ts">
 import { ApiUrl } from '@core/constants'
-import { ref, computed, watchEffect } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useDebouncedRef } from '@/composables/useDebouncedRef'
-import { useLanguage } from '@/composables/useLanguage'
 
 definePageMeta({
   ssr: false,
@@ -32,77 +31,74 @@ const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 const basePublicUrl = config.public.basePublicUrl
 
-// Huidige paginastatus
 const page = ref(1)
 const perPage = ref(50)
 
 // Debouncing: de API-call wordt pas uitgevoerd na 300 ms stilte
+// zodat iemand die snel klikt niet onnodig veel API-calls triggert.
 const debouncedPage = useDebouncedRef(page, 300)
 const debouncedPerPage = useDebouncedRef(perPage, 300)
 
 // In-memory cache: per unieke key slaan we DataResponse op
-// Key = `${locale.value}-articles-${debouncedPage.value}-${debouncedPerPage.value}`
 const pagesCache = ref<Record<string, DataResponse>>({})
+const cacheHit = ref(false)
 
-// Reactive holders voor de getoonde data en loading-state
 const dataResponse = ref<DataResponse>({
   total: 0,
   rows: [],
 })
 const pending = ref(false)
 
-// Computed key gebaseerd op locale, pagina, en perPage
 const cacheKey = computed(() => {
   return `${locale.value}-articles-${debouncedPage.value}-${debouncedPerPage.value}`
 })
 
-// Zodra cacheKey verandert, voert deze watcher uit:
-// 1) Als er al data in pagesCache zit, gebruik die direct.
-// 2) Anders: haal van de API, bewaar in pagesCache, en update dataResponse.
-watchEffect(async () => {
-  const key = cacheKey.value
+watch(
+  [cacheKey, locale, debouncedPage, debouncedPerPage],
+  async ([key, lang, page, perPage]) => {
+    // 1) Check op cache-hit
+    if (pagesCache.value[key]) {
+      dataResponse.value = pagesCache.value[key]!
+      cacheHit.value = true
+      setTimeout(() => {
+        cacheHit.value = false
+      }, 500)
+      return
+    }
 
-  // 1) Check op cache-hit
-  if (pagesCache.value[key]) {
-    dataResponse.value = pagesCache.value[key]!
-    return
-  }
-
-  // 2) Cache-miss: haal nieuwe data op
-  pending.value = true
-  try {
-    const fetched = await $fetch<DataResponse>(
-      `${baseURL}${ApiUrl.arcticlesConstReferredByConstCourt}`, {
-        params: {
-          'lang': locale.value,
-          'page': debouncedPage.value,
-          'per-page': debouncedPerPage.value,
+    // 2) Cache-miss: haal nieuwe data op
+    pending.value = true
+    try {
+      const fetched = await $fetch<DataResponse>(
+        `${baseURL}${ApiUrl.arcticlesConstReferredByConstCourt}`, {
+          params: {
+            'lang': lang,
+            'page': page,
+            'per-page': perPage,
+          },
         },
-      },
-    )
-    // Bewaar in cache en update de reactive data holder
-    pagesCache.value[key] = fetched
-    dataResponse.value = fetched
-  }
-  catch (error) {
-    console.error('Fout bij API-call:', error)
-  }
-  finally {
-    pending.value = false
-  }
-})
+      )
+      pagesCache.value[key] = fetched
+      dataResponse.value = fetched
+    }
+    catch (error) {
+      console.error('Fout bij API-call:', error)
+    }
+    finally {
+      pending.value = false
+    }
+  },
+  { immediate: true },
+)
 
-// Computed properties voor template gebruik
 const total = computed(() => dataResponse.value?.total ?? 0)
 const nrOfPages = computed(() => Math.ceil(Number(total.value) / Number(perPage.value)))
 const rows = computed(() => dataResponse.value?.rows ?? [])
 
-// Functie om pagina te updaten (gebruikt door de “>” en “<” buttons)
 const updatePage = (newPage: number) => {
   page.value = newPage
 }
 
-// Hover-handler voor judgments: controleert of het bestand bestaat
 const handleJudgmentHover = async (j: Judgment) => {
   try {
     const existFile = await checkFileExists(`${basePublicUrl}${j.filePath}`)
@@ -139,31 +135,35 @@ const handleJudgmentHover = async (j: Judgment) => {
             @update:page="updatePage"
           />
         </div>
+        <ClientOnly>
+          <v-snackbar
+            v-model="pending"
+            color="info"
+            timeout="-1"
+            location="top"
+          >
+            <v-icon start>
+              mdi-progress-clock
+            </v-icon>
+            Loading data from server...
+          </v-snackbar>
+        </ClientOnly>
         <div class="text-center text-caption my-1">
-          <!-- Toon record‐info als er data is én niet loading -->
           <template v-if="!pending && rows.length">
             <div class="text-caption mt-1">
               <span>
-                {{ t('Showing') }}
+                {{ t('general.message.table.showing') }}
                 <b>{{ ((page - 1) * perPage + 1) }}</b>
-                {{ t('to') }}
+                {{ t('general.message.table.to') }}
                 <b>{{ Math.min(page * perPage, total) }}</b>
-                {{ t('of') }}
+                {{ t('general.message.table.of') }}
                 <b>{{ total }}</b>
-                {{ t('records') }}
+                {{ t('general.message.table.records') }}
               </span>
             </div>
           </template>
-          <!-- Toon loader als loading -->
-          <template v-if="pending">
-            <div class="d-flex justify-center my-4">
-              <v-progress-circular
-                indeterminate
-                color="primary"
-                size="48"
-                width="5"
-              />
-            </div>
+          <template v-else>
+            <div style="height: 20px" />
           </template>
         </div>
       </v-col>
@@ -184,7 +184,6 @@ const handleJudgmentHover = async (j: Judgment) => {
           </v-card-title>
           <v-divider />
           <v-card-text>
-            <!-- Indien niet loading én er zijn rows, toon de panels -->
             <template v-if="!pending && rows.length">
               <v-expansion-panels accordion>
                 <v-expansion-panel
@@ -214,7 +213,6 @@ const handleJudgmentHover = async (j: Judgment) => {
                 </v-expansion-panel>
               </v-expansion-panels>
             </template>
-            <!-- Anders, als geen data of tijdens loading, toon skeleton -->
             <template v-else>
               <v-skeleton-loader
                 type="table"

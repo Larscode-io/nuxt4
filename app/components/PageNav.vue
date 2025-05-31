@@ -1,6 +1,7 @@
 <script setup>
 import { defineProps, defineEmits } from 'vue'
 
+const { t } = useLanguage()
 const props = defineProps({
   currentPage: {
     type: Number,
@@ -15,7 +16,6 @@ const props = defineProps({
 defineEmits(['update:page'])
 
 const cycleThePage = (newPage) => {
-  console.log('PageNav want to go to: ', newPage)
   if (newPage < 1) {
     return props.nrOfPages
   }
@@ -45,7 +45,7 @@ const cycleThePage = (newPage) => {
       <span class="mdi mdi-chevron-left" />
     </button>
     <span class="text-body-1 font-weight-medium">
-      Page {{ props.currentPage }} of {{ props.nrOfPages }}
+      {{ t('general.message.table.page') }} {{ props.currentPage }} {{ t('general.message.table.page-of') }} {{ props.nrOfPages }}
     </span>
     <button
       class="v-btn v-btn--outlined"
