@@ -93,10 +93,17 @@ const handleJudgmentHover = async (j: Judgment) => {
         </div>
         <div class="text-center text-caption my-1">
           <template v-if="!pending && data">
-            {{ t('Fetched') }}
-            <b>{{ rows.length }}</b>
-            {{ t('records of') }}
-            <b>{{ total }}</b>
+            <div class="text-caption mt-1">
+              <span>
+                {{ t('Showing') }}
+                <b>{{ ((page - 1) * perPage + 1) }}</b>
+                {{ t('to') }}
+                <b>{{ Math.min(page * perPage, total) }}</b>
+                {{ t('of') }}
+                <b>{{ total }}</b>
+                {{ t('records') }}
+              </span>
+            </div>
           </template>
           <template v-else>
             <v-progress-circular
@@ -145,7 +152,7 @@ const handleJudgmentHover = async (j: Judgment) => {
                 >
                   <v-expansion-panel-title>
                     {{ row.art }}
-                    <small class="text-caption">({{ row.judgments.length }} judgments)</small>
+                    <small class="text-caption">&nbsp;({{ row.judgments.length }} judgments)</small>
                   </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-chip-group column>
