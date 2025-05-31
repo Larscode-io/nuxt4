@@ -135,19 +135,6 @@ const handleJudgmentHover = async (j: Judgment) => {
             @update:page="updatePage"
           />
         </div>
-        <ClientOnly>
-          <v-snackbar
-            v-model="pending"
-            color="info"
-            timeout="-1"
-            location="top"
-          >
-            <v-icon start>
-              mdi-progress-clock
-            </v-icon>
-            Loading data from server...
-          </v-snackbar>
-        </ClientOnly>
         <div class="text-center text-caption my-1">
           <template v-if="!pending && rows.length">
             <div class="text-caption mt-1">
