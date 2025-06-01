@@ -23,11 +23,10 @@ const selectedType = ref(caseType[0]?.value)
 const selectedYear = ref(null)
 const selectedByDistance = ref(false)
 
-const { data: cases, error, status, refresh }
-  = useLazyFetch<Decision[]>(`${baseURL}${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`)
-if (error.value) {
-  console.error(error.value)
-}
+const { data: cases, pending, error, refresh } = useAsyncData<Decision[]>(
+  () => `pending-cases-${locale.value}`,
+  () => $fetch<Decision[]>(`${baseURL}${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`),
+)
 
 const { data: pressJudgmentsRaw, error: pressJudgmentsError, status: _pressJudgmentsStatus }
   = useFetch<Decision[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`)
@@ -99,6 +98,16 @@ const yearsInPendingCases = computed(() => {
 const yearsInPendingCasesArray = computed(() => {
   return Array.from(yearsInPendingCases.value.entries()).map(([year, count]) => ({ year, count })).sort((a, b) => Number(b.year) - Number(a.year))
 })
+
+const filterLoading = ref(false)
+const showSkeleton = computed(() => filterLoading.value || pending.value)
+
+watch([selectedType, selectedYear], () => {
+  filterLoading.value = true
+  setTimeout(() => {
+    filterLoading.value = false
+  }, 300)
+})
 </script>
 
 <template>
@@ -149,15 +158,17 @@ const yearsInPendingCasesArray = computed(() => {
           </v-row>
         </v-col>
         <v-col
-          v-if="status === 'pending'"
+          v-if="showSkeleton"
           cols="12"
           md="9"
         >
           <v-skeleton-loader type="list-item-two-line" />
-          <v-skeleton-loader type="list-item-two-line" />
-          <v-skeleton-loader type="list-item-two-line" />
         </v-col>
-        <div v-else-if="error">
+        <v-col
+          v-else-if="error"
+          cols="12"
+          md="9"
+        >
           <v-alert
             type="error"
             dismissible
@@ -176,14 +187,25 @@ const yearsInPendingCasesArray = computed(() => {
               </v-col>
             </v-row>
           </v-alert>
-        </div>
+        </v-col>
         <v-col
-          v-else-if="hasPendingCases"
+          v-else="hasPendingCases"
           cols="12"
           md="9"
         >
           <v-card
-            v-for="{ id, processingLanguage, dateReceived, dateOfHearing, dateDelivered, linkedCaseNumber, joinedCases, keywords, description, dateArt74 } in pendingCasesFilteredByTypeAndYear"
+            v-for="{
+              id,
+              processingLanguage,
+              dateReceived,
+              dateOfHearing,
+              dateDelivered,
+              description,
+              linkedCaseNumber,
+              dateArt74,
+              joinedCases,
+              keywords,
+            } in pendingCasesFilteredByTypeAndYear"
             :id="`pending-cases-card-${id}`"
             :key="id"
             outlined
@@ -243,8 +265,9 @@ const yearsInPendingCasesArray = computed(() => {
                 <v-col cols="4">
                   {{ t('general.message.concerning') }}
                 </v-col>
+                <!-- eslint-disable vue/no-v-html -->
                 <v-col cols="8">
-                  <p>{{ description || emptyValue }}</p>
+                  <p v-html="description || emptyValue" />
                 </v-col>
               </v-row>
               <v-row v-if="linkedCaseNumber">
@@ -305,18 +328,7 @@ const yearsInPendingCasesArray = computed(() => {
             </v-list-item>
           </v-card>
         </v-col>
-        <v-col v-else>
-          <v-alert
-            type="info"
-            dismissible
-          >
-            <p>{{ t('general.message.no-pending-cases') }}</p>
-          </v-alert>
-        </v-col>
       </v-row>
     </v-container>
   </div>
 </template>
-
-<style scoped lang="scss">
-</style>
