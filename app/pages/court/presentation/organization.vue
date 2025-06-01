@@ -135,6 +135,20 @@ watch(
 onMounted(() => {
   // here we set the first dynamic toc entry
   setFirstDynamicTocEntry()
+
+  // debugging code to compare SSR and CSR rendered content
+  // nextTick(() => {
+  //   console.group('🕵️‍♂️ SSR vs CSR')
+  //   // 1. Grab the SSR‐HTML string from the Nuxt payload:
+  //   const ssr = window.__NUXT__?.data?.[0]?.pageJudge?.body
+  //     ?? '[no SSR body found]'
+  //   console.log('SSR:', ssr)
+
+  //   // 2. Grab the “hydrated” DOM from the live page:
+  //   const csr = document.querySelector('.content-renderer')?.outerHTML
+  //   console.log('CSR:', csr)
+  //   console.groupEnd()
+  // })
 })
 </script>
 
@@ -167,26 +181,24 @@ onMounted(() => {
           md="8"
         >
           <v-row>
-            <ClientOnly>
-              <article v-if="pageJudge">
-                <ContentRenderer
-                  :value="pageJudge.body"
-                  class="nuxt-content"
+            <article v-if="pageJudge">
+              <ContentRenderer
+                :value="pageJudge.body"
+                class="nuxt-content"
+              />
+            </article>
+            <template #placeholder>
+              <v-col
+                cols="12"
+                class="my-skeleton-wrapper"
+              >
+                <v-skeleton-loader
+                  v-for="n in 10"
+                  :key="n"
+                  type="list-item-two-line"
                 />
-              </article>
-              <template #placeholder>
-                <v-col
-                  cols="12"
-                  class="my-skeleton-wrapper"
-                >
-                  <v-skeleton-loader
-                    v-for="n in 10"
-                    :key="n"
-                    type="list-item-two-line"
-                  />
-                </v-col>
-              </template>
-            </ClientOnly>
+              </v-col>
+            </template>
 
             <div
               v-for="(member, index) in judgeMembers"
