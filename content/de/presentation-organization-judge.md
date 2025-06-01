@@ -10,7 +10,7 @@ locale: de
 Der Gerichtshof setzt sich aus zwölf Richtern zusammen, die vom König auf Lebenszeit ernannt werden, und zwar aus einer Liste mit zwei Kandidaten, die turnusmäßig von der Abgeordnetenkammer und vom Senat mit einer Mehrheit von mindestens zwei Dritteln der Stimmen der anwesenden Mitglieder vorgeschlagen werden.
 <br>
 <br>
-<img src="/img/Y-0050.jpg" alt="Foto der Richter und Kanzler des Verfassungsgerichtshofes" width="80%" />
+<img src="/img/Y-0050.jpg" alt="Foto der Richter und Kanzler des Verfassungsgerichtshofes" width="3000" height="2000" style="width:80%;height:auto;" />
 <br>
 Sechs Richter gehören zur französischen, sechs zur niederländischen Sprachgruppe. Einer der Richter muss über ausreichende Kenntnisse der deutschen Sprache verfügen. Jede Sprachgruppe besteht ihrerseits jeweils aus drei Richtern, die aufgrund ihrer juristischen Erfahrung ernannt worden sind (Juraprofessor an einer belgischen Universität, Magistrat am Kassationshof oder am Staatsrat, Referent beim Verfassungsgerichtshof), und drei Richtern, die aufgrund einer mindestens fünfjährigen Erfahrung als ehemaliges Parlamentsmitglied ernannt worden sind. Der Gerichtshof setzt sich aus Richtern verschiedenen Geschlechts zusammen, wobei die zahlenschwächere Gruppe mindestens ein Drittel ausmacht und in den beiden vorerwähnten Berufskategorien vertreten sein muss.
 
