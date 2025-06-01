@@ -132,6 +132,19 @@ watch(
   { immediate: true, flush: 'post' },
 )
 
+const showSkeleton = ref(true)
+
+watch(pending, (isPending) => {
+  if (isPending) {
+    showSkeleton.value = true
+  }
+  else {
+    setTimeout(() => {
+      showSkeleton.value = false
+    }, 500)
+  }
+}, { immediate: true })
+
 onMounted(() => {
   // here we set the first dynamic toc entry
   setFirstDynamicTocEntry()
@@ -181,11 +194,12 @@ onMounted(() => {
           md="8"
         >
           <v-row>
-            <template v-if="pending">
+            <template
+              v-if="showSkeleton"
+            >
               <v-skeleton-loader
-                type="heading, text, text, text, text, text"
+                type="heading, text, text, image, text"
                 class="mb-4"
-                :loading="pending"
                 height="400"
                 width="100%"
                 style="width: 100%; min-width: 100%;"
