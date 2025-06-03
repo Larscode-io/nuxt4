@@ -189,7 +189,7 @@ watch([selectedType, selectedYear], () => {
           </v-alert>
         </v-col>
         <v-col
-          v-else="hasPendingCases"
+          v-else-if="hasPendingCases"
           cols="12"
           md="9"
         >
