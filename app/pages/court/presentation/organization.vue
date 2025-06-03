@@ -2,7 +2,7 @@
 import img from '@assets/img/organisation-Y-0050.png'
 import '@assets/css/content.css'
 import type { Member } from '@membermodels/members'
-import { onMounted, ref, computed, watch, nextTick } from 'vue'
+import { onMounted, ref, computed, watch } from 'vue'
 import { ContentKeys } from '@core/constants'
 import type { ParsedContentv2 } from '@nuxt/content'
 
