@@ -13,6 +13,8 @@
     "lint:staged": "eslint $(git diff --cached --name-only --diff-filter=ACM | grep -E '\\.(vue|ts|js)$' || echo '')",
     "lint:markdown": "markdownlint \"content/**/*.md\"",
     "lint:markdown:staged": "markdownlint $(git diff --cached --name-only --diff-filter=ACM | grep '\\.md$' || echo '')",
+    "check": "npm run lint && npm run ts",
+    "ts": "nuxi typecheck",
     "spell": "npx cspell \"**/*.{vue,ts,js,md}\" --config ./cspell.config.json",
     "spell:content:nl": "npx cspell \"content/nl/**/*.md\"",
     "spell:content:fr": "npx cspell \"content/fr/**/*.md\"",
@@ -22,9 +24,7 @@
     "spell:update": "./scripts/update-cspell-words.sh",
     "spell:verify": "./scripts/spell-verify.sh",
     "spell:words": "npx cspell \"**/*.{js,ts,vue,md}\" --words-only --unique",
-    "spell:help": "./scripts/show-help.sh",
-    "ts": "nuxi typecheck",
-    "check": "npm run lint && npm run type-check"
+    "spell:help": "./scripts/show-help.sh"
   },
   "dependencies": {
     "@faker-js/faker": "^9.8.0",
