@@ -130,6 +130,8 @@ const yearsInPendingCasesArray = computed(() => {
 const filterLoading = ref(false)
 const showSkeleton = computed(() => filterLoading.value || pending.value)
 
+// this loading time is just for the sake of UX:
+// to make it clear to the user that the filters are being applied
 watch([selectedType, selectedYear, selectedByDistance], () => {
   filterLoading.value = true
   setTimeout(() => {
@@ -207,7 +209,7 @@ function yearItemTitle(item: { year: string | null, count: number }) {
                   selectedByDistance = false
                 }"
               >
-                {{ t('general.message.reset-filters') }}
+                {{ t('menu.decisions.cases.reset-filters') }}
               </v-btn>
             </v-col>
           </v-row>
@@ -246,6 +248,8 @@ function yearItemTitle(item: { year: string | null, count: number }) {
             </v-row>
           </v-alert>
         </v-col>
+
+        <!-- LIST OF PENDING CASE CARDS -->
         <v-col
           v-else-if="hasPendingCases"
           cols="12"
@@ -258,6 +262,29 @@ function yearItemTitle(item: { year: string | null, count: number }) {
             :is-subscribable="isSubscribable"
           />
         </v-col>
+        <!-- test -->
+        <!-- <v-col
+          id="print-tab1"
+          cols="12"
+          class="print-content"
+        >
+          <PendingCaseCard
+            v-for="pendingCase in pendingCasesFiltered"
+            :id="pendingCase.id"
+            :key="pendingCase.id"
+            :processing-language="pendingCase.processingLanguage"
+            :receipt-date="pendingCase.dateReceived"
+            :date-of-hearing="pendingCase.dateOfHearing"
+            :date-of-judgment="pendingCase.dateDelivered"
+            :concerning="pendingCase.description"
+            :notice-from-const-court-path="pendingCase.noticeOfTheConstitutionalCourtLink"
+            :notification-art74-to-official-journal-link="pendingCase.art74Link"
+            :notification-art74-to-official-journal-date="pendingCase.dateArt74"
+            :joined-cases="pendingCase.joinedCases"
+            :keywords="pendingCase.keywords"
+            :linked-case-number="pendingCase.linkedCaseNumber"
+          />
+        </v-col> -->
       </v-row>
     </v-container>
   </div>
