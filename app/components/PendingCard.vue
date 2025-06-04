@@ -1,6 +1,10 @@
 <!-- src/components/PendingCaseCard.vue -->
 <template>
-  <v-card :id="`pending-cases-card-${caseItem.id}`" outlined class="mx-auto mb-3">
+  <v-card
+    :id="`pending-cases-card-${caseItem.id}`"
+    outlined
+    class="mx-auto mb-3"
+  >
     <v-list-item>
       <!-- ROW 1: Roll-number & subscribe button -->
       <v-row>
@@ -9,9 +13,15 @@
             {{ t('general.message.roll-number') }}: {{ caseItem.id }} ({{ caseItem.processingLanguage }})
           </h3>
         </v-col>
-        <v-col cols="3" class="d-flex justify-end">
+        <v-col
+          cols="3"
+          class="d-flex justify-end"
+        >
           <div v-if="!isSubscribable(caseItem.id)">
-            <v-chip color="var(--logo-color)" class="mr-2">
+            <v-chip
+              color="var(--logo-color)"
+              class="mr-2"
+            >
               {{ t('general.message.judgment-deliveries') }}
             </v-chip>
           </div>
@@ -23,25 +33,39 @@
 
       <!-- ROW 2: Receipt date -->
       <v-row>
-        <v-col cols="4">{{ t('general.message.receipt-date') }}</v-col>
-        <v-col cols="8">{{ caseItem.dateReceived || emptyValue }}</v-col>
+        <v-col cols="4">
+          {{ t('general.message.receipt-date') }}
+        </v-col>
+        <v-col cols="8">
+          {{ caseItem.dateReceived || emptyValue }}
+        </v-col>
       </v-row>
 
       <!-- ROW 3: Date of hearing -->
       <v-row>
-        <v-col cols="4">{{ t('general.message.date-of-hearing', 2) }}</v-col>
-        <v-col cols="8">{{ caseItem.dateOfHearing || emptyValue }}</v-col>
+        <v-col cols="4">
+          {{ t('general.message.date-of-hearing', 2) }}
+        </v-col>
+        <v-col cols="8">
+          {{ caseItem.dateOfHearing || emptyValue }}
+        </v-col>
       </v-row>
 
       <!-- ROW 4: Date of judgment -->
       <v-row>
-        <v-col cols="4">{{ t('general.message.date-of-judgment') }}</v-col>
-        <v-col cols="8">{{ caseItem.dateDelivered || emptyValue }}</v-col>
+        <v-col cols="4">
+          {{ t('general.message.date-of-judgment') }}
+        </v-col>
+        <v-col cols="8">
+          {{ caseItem.dateDelivered || emptyValue }}
+        </v-col>
       </v-row>
 
       <!-- ROW 5: Description (“subject matter”) -->
       <v-row>
-        <v-col cols="4">{{ t('general.message.concerning') }}</v-col>
+        <v-col cols="4">
+          {{ t('general.message.concerning') }}
+        </v-col>
         <!-- eslint-disable vue/no-v-html -->
         <v-col cols="8">
           <p v-html="caseItem.description || emptyValue" />
@@ -94,10 +118,17 @@
 
       <!-- ROW 9: Keywords -->
       <v-row>
-        <v-col cols="12" md="2" class="mt-2">
+        <v-col
+          cols="12"
+          md="2"
+          class="mt-2"
+        >
           {{ t('general.message.keywords', 2) }}
         </v-col>
-        <v-col cols="12" md="10">
+        <v-col
+          cols="12"
+          md="10"
+        >
           <div class="elevation-2 my-2 subtitle border pa-2">
             {{ caseItem.keywords || t('error.no-data-available') }}
           </div>
