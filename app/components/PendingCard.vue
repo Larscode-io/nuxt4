@@ -1,4 +1,23 @@
-<!-- src/components/PendingCaseCard.vue -->
+<!-- src/components/PendingCard.vue -->
+
+<script setup lang="ts">
+import type { Decision } from '@core/constants'
+import { EMPTY_VALUE } from '@core/constants'
+
+/**
+ * Props:
+ * - caseItem: the Decision object, plus our computed yearReceived
+ * - isSubscribable: function that tells if subscription button should show
+ */
+defineProps<{
+  caseItem: Decision & { yearReceived: string }
+  isSubscribable: (id: number) => boolean
+}>()
+
+const { t } = useLanguage()
+const emptyValue = EMPTY_VALUE
+</script>
+
 <template>
   <v-card
     :id="`pending-cases-card-${caseItem.id}`"
@@ -137,21 +156,3 @@
     </v-list-item>
   </v-card>
 </template>
-
-<script setup lang="ts">
-import type { Decision } from '@core/constants'
-import { EMPTY_VALUE } from '@core/constants'
-
-/**
- * Props:
- * - caseItem: the Decision object, plus our computed yearReceived
- * - isSubscribable: function that tells if subscription button should show
- */
-defineProps<{
-  caseItem: Decision & { yearReceived: string }
-  isSubscribable: (id: number) => boolean
-}>()
-
-const { t } = useLanguage()
-const emptyValue = EMPTY_VALUE
-</script>
