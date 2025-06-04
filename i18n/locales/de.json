@@ -280,7 +280,7 @@
 	"general.message.table.showing": "Anzeigen",
 	"general.message.table.to": "bis",
 	"general.message.type": "Typ | Typen",
-	"general.message.unknown-year": "Kein Jahr definiert",
+	"general.message.unknown-year": "Kein Eingangsdatum gefunden",
 	"general.message.word-of-abstract": "Wort (Wörter) der Zusammenfassung",
 	"general.message.year-selection": "Jahr",
 	"general.of": "vom",

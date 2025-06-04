@@ -45,11 +45,26 @@ const counts = computed(() => {
   return result
 })
 
-const caseTypeAndCounts = computed(() => [
-  { text: t('general.message.all-pending-cases') + ` (${counts.value.actionForCancellation + counts.value.questionsReferred})`, value: allPendingCase },
-  { text: t('general.message.questions-referred') + ` (${counts.value.questionsReferred})`, value: PendingCaseType.questionsReferred },
-  { text: t('general.message.action-for-cancellation') + ` (${counts.value.actionForCancellation})`, value: PendingCaseType.actionForCancellation },
-])
+const caseTypeAndCounts = computed(() => {
+  const total = counts.value.actionForCancellation + counts.value.questionsReferred
+  return [
+    {
+      text: t('general.message.all-pending-cases')
+        + (total > 0 ? ` (${total})` : ''),
+      value: allPendingCase,
+    },
+    {
+      text: t('general.message.questions-referred')
+        + (counts.value.questionsReferred > 0 ? ` (${counts.value.questionsReferred})` : ''),
+      value: PendingCaseType.questionsReferred,
+    },
+    {
+      text: t('general.message.action-for-cancellation')
+        + (counts.value.actionForCancellation > 0 ? ` (${counts.value.actionForCancellation})` : ''),
+      value: PendingCaseType.actionForCancellation,
+    },
+  ]
+})
 const selectedType = ref(caseTypeAndCounts.value[0]?.value)
 const { data: pressJudgmentsRaw, error: pressJudgmentsError, status: _pressJudgmentsStatus }
   = useFetch<Decision[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`)
