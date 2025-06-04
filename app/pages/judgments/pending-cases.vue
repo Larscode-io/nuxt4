@@ -104,7 +104,7 @@ const pendingCasesFiltered = computed(() => {
 })
 
 const hasPendingCases = computed(() => pendingCasesFiltered.value.length > 0)
-const emptyValue = EMPTY_VALUE
+const _emptyValue = EMPTY_VALUE
 
 const yearsInPendingCasesByType = computed(() => {
   // Only run when casesWithYear or selectedType changes
@@ -159,11 +159,13 @@ function yearItemTitle(item: { year: string | null, count: number }) {
 
     <v-container fluid>
       <v-row>
+        <!-- FILTER SIDEBAR -->
         <v-col
           cols="12"
           md="3"
         >
           <v-row>
+            <!-- TYPE SELECT -->
             <v-col cols="12">
               <v-select
                 v-model="selectedType"
@@ -176,6 +178,7 @@ function yearItemTitle(item: { year: string | null, count: number }) {
               />
             </v-col>
             <v-col cols="12">
+              <!-- YEAR SELECT -->
               <v-select
                 v-model="selectedYear"
                 :items="yearsInPendingCasesArray"
@@ -186,6 +189,7 @@ function yearItemTitle(item: { year: string | null, count: number }) {
                 @click="selectedByDistance = false"
               />
             </v-col>
+            <!-- UPCOMING JUDGMENT CHECKBOX -->
             <v-col cols="12">
               <v-checkbox
                 v-model="selectedByDistance"
@@ -194,6 +198,7 @@ function yearItemTitle(item: { year: string | null, count: number }) {
               />
             </v-col>
             <v-col>
+              <!-- RESET BUTTON -->
               <v-btn
                 color="secondary"
                 @click="() => {
@@ -207,6 +212,7 @@ function yearItemTitle(item: { year: string | null, count: number }) {
             </v-col>
           </v-row>
         </v-col>
+        <!-- SKELETON -->
         <v-col
           v-if="showSkeleton"
           cols="12"
@@ -214,6 +220,8 @@ function yearItemTitle(item: { year: string | null, count: number }) {
         >
           <v-skeleton-loader type="list-item-two-line" />
         </v-col>
+        <!-- ERROR -->
+
         <v-col
           v-else-if="error"
           cols="12"
@@ -243,140 +251,12 @@ function yearItemTitle(item: { year: string | null, count: number }) {
           cols="12"
           md="9"
         >
-          <v-card
-            v-for="{
-              id,
-              processingLanguage,
-              dateReceived,
-              dateOfHearing,
-              dateDelivered,
-              description,
-              linkedCaseNumber,
-              dateArt74,
-              joinedCases,
-              keywords,
-            } in pendingCasesFiltered"
-            :id="`pending-cases-card-${id}`"
-            :key="id"
-            outlined
-            class="mx-auto mb-3"
-          >
-            <v-list-item>
-              <v-row>
-                <v-col cols="9">
-                  <h3>
-                    {{ t('general.message.roll-number') }}: {{ id }} ({{
-                      processingLanguage
-                    }})
-                  </h3>
-                </v-col>
-                <v-col
-                  cols="3"
-                  class="d-flex justify-end"
-                >
-                  <div v-if="!isSubscribable(id)">
-                    <v-chip
-                      color="var(--logo-color)"
-                      class="mr-2"
-                    >
-                      {{ t('general.message.judgment-deliveries') }}
-                    </v-chip>
-                  </div>
-                  <v-btn v-else>
-                    {{ t('newsletter.rol.subscribe') }}
-                  </v-btn>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col cols="4">
-                  {{ t('general.message.receipt-date') }}
-                </v-col>
-                <v-col cols="8">
-                  {{ dateReceived || emptyValue }}
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col cols="4">
-                  {{ t('general.message.date-of-hearing', 2) }}
-                </v-col>
-                <v-col cols="8">
-                  {{ dateOfHearing || emptyValue }}
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col cols="4">
-                  {{ t('general.message.date-of-judgment') }}
-                </v-col>
-                <v-col cols="8">
-                  {{ dateDelivered || emptyValue }}
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col cols="4">
-                  {{ t('general.message.concerning') }}
-                </v-col>
-                <!-- eslint-disable vue/no-v-html -->
-                <v-col cols="8">
-                  <p v-html="description || emptyValue" />
-                </v-col>
-              </v-row>
-              <v-row v-if="linkedCaseNumber">
-                <v-col cols="12">
-                  <span>{{ t('general.message.case-joined-with-case-numbers') }}
-
-                    <a
-                      :href="`#pending-cases-card-${linkedCaseNumber}`"
-                      :aria-label="`Link to pending case card ${linkedCaseNumber}`"
-                    >
-                      <span class="link">{{ linkedCaseNumber }}</span>
-                    </a>
-                  </span>
-                </v-col>
-              </v-row>
-              <v-row v-if="dateArt74">
-                <v-col cols="12">
-                  <!-- eslint-disable vue/no-v-html -->
-                  <span
-                    v-html="t('general.message.notification-art74-be-official-journal')
-                      .replace('Moniteur belge', '<i>Moniteur belge</i>')
-                      .replace('Belgisch Staatsblad', '<i>Belgisch Staatsblad</i>') + ': '"
-                  />
-                  {{ dateArt74 || emptyValue }}
-                </v-col>
-              </v-row>
-              <v-row v-if="joinedCases && joinedCases.length > 0">
-                <v-col cols="12">
-                  <span>
-                    {{ t('general.message.joined-case', joinedCases.length) + ': ' }}
-                    <a
-                      v-for="caseNumber of joinedCases"
-                      :key="caseNumber"
-                      :href="`#pending-cases-card-${caseNumber}`"
-                      class="mr-3"
-                    >
-                      {{ caseNumber }}</a>
-                  </span>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col
-                  cols="12"
-                  md="2"
-                  class="mt-2"
-                >
-                  {{ t('general.message.keywords', 2) }}
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="10"
-                >
-                  <div class="elevation-2 my-2 subtitle border pa-2">
-                    {{ keywords || t('error.no-data-available') }}
-                  </div>
-                </v-col>
-              </v-row>
-            </v-list-item>
-          </v-card>
+          <PendingCard
+            v-for="caseItem in pendingCasesFiltered"
+            :key="caseItem.id"
+            :case-item="caseItem"
+            :is-subscribable="isSubscribable"
+          />
         </v-col>
       </v-row>
     </v-container>
