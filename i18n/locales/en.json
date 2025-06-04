@@ -339,6 +339,7 @@
 	"menu.court.publications.studies-title-description": "The judges and the legal secretaries regularly write studies for seminars, congresses and conferences that take place in Belgium or abroad. These studies give insight into the role, the composition, the competences, the functioning or the jurisprudence of the Court. They are available here in chronological order.",
 	"menu.court.publications.title": "Publications",
 	"menu.court.title": "The Court",
+	"menu.decisions.cases.show-only-upcoming-judgments": "Only cases with scheduled judgment",
 	"menu.decisions.judgment": "Judgment | Judgments",
 	"menu.decisions.pending-cases": "Pending case | Pending cases",
 	"menu.decisions.pending-cases-title-description": "Overview of pending cases: actions for annulment and preliminary questions",

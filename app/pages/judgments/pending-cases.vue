@@ -119,7 +119,6 @@ const yearsInPendingCasesByType = computed(() => {
 })
 
 const yearsInPendingCasesArray = computed(() => {
-  // Build the sorted array
   const arr = Array.from(yearsInPendingCasesByType.value.entries())
     .map(([year, count]) => ({ year, count }))
     .sort((a, b) => Number(b.year) - Number(a.year))
@@ -140,7 +139,6 @@ watch([selectedType, selectedYear, selectedByDistance], () => {
 
 function yearItemTitle(item: { year: string | null, count: number }) {
   if (item.year === null) {
-    // Show a clear label for "All years"
     return `${t('general.message.all-years')} `
   }
   if (item.year) {
@@ -191,7 +189,7 @@ function yearItemTitle(item: { year: string | null, count: number }) {
             <v-col cols="12">
               <v-checkbox
                 v-model="selectedByDistance"
-                label="Show only cases with upcoming judgment"
+                :label="`${t('menu.decisions.cases.show-only-upcoming-judgments')}`"
                 @click="selectedYear = null"
               />
             </v-col>

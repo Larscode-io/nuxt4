@@ -339,6 +339,7 @@
 	"menu.court.publications.studies-title-description": "Die Richter und Referenten verfassen regelmäßig Studien im Rahmen von Seminaren, Kongressen und Konferenzen, die in Belgien oder im Ausland stattfinden. Diese Studien vermitteln einen Einblick in die Rolle, Zusammensetzung, Zuständigkeit, Arbeitsweise oder Rechtsprechung des Gerichtshofes. Sie können hier in chronologischer Reihenfolge abgerufen werden.",
 	"menu.court.publications.title": "Veröffentlichungen",
 	"menu.court.title": "Der Gerichtshof",
+	"menu.decisions.cases.show-only-upcoming-judgments": "Rechtssachen mit vorläufigem Verkündungsdatum",
 	"menu.decisions.judgment": "Entscheide | Entscheide",
 	"menu.decisions.pending-cases": "Anhängige Rechtssache | Anhängige Rechtssachen",
 	"menu.decisions.pending-cases-title-description": "Überblick über die anhängigen Rechtssachen: Nichtigkeitsklagen und Vorabentscheidungsfragen",
