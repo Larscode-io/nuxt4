@@ -87,7 +87,7 @@ useHead({
               <span v-if="question.noticeInTheOfficialJournalId">
                 (
                 {{
-                  `${t('general.message.case', 2).toLowerCase()}${t('general.message.colon')}
+                  `${t('general.message.case.case', 2).toLowerCase()}${t('general.message.colon')}
                 ${question.noticeInTheOfficialJournalId} `
                 }})
               </span>
