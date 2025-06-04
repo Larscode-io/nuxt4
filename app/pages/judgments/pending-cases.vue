@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed, watch } from 'vue'
 import img from '@assets/img/banner-judgment.png'
 import { ApiUrl, PendingCaseType, EMPTY_VALUE } from '@core/constants'
 import type { Decision } from '@core/constants'
@@ -13,101 +13,141 @@ const baseURL = config.public.apiBaseUrl
 const withArchive = ref(true)
 
 const allPendingCase = 'all'
-const caseType = [
-  { text: t('general.message.all-pending-cases'), value: allPendingCase },
-  { text: t('general.message.questions-referred'), value: PendingCaseType.questionsReferred },
-  { text: t('general.message.action-for-cancellation'), value: PendingCaseType.actionForCancellation },
-]
-const selectedType = ref(caseType[0]?.value)
-// we start with no year selected so we can show all pending cases
+
 const selectedYear = ref(null)
 const selectedByDistance = ref(false)
 
-const { data: cases, pending, error, refresh } = useAsyncData<Decision[]>(
+const { data: casesRaw, pending, error, refresh } = useAsyncData<Decision[]>(
   () => `pending-cases-${locale.value}`,
   () => $fetch<Decision[]>(`${baseURL}${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`),
 )
 
+const casesWithYear = computed(() => {
+  return casesRaw.value?.map((c) => {
+    const year = c.dateReceived?.split('-')[2] || ''
+    return {
+      ...c,
+      yearReceived: year,
+    }
+  }) || []
+})
+
+const counts = computed(() => {
+  const result = { actionForCancellation: 0, questionsReferred: 0 }
+  for (const curr of casesWithYear.value) {
+    if (curr.type === PendingCaseType.actionForCancellation) {
+      result.actionForCancellation++
+    }
+    else if (curr.type === PendingCaseType.questionsReferred) {
+      result.questionsReferred++
+    }
+  }
+  return result
+})
+
+const caseTypeAndCounts = computed(() => [
+  { text: t('general.message.all-pending-cases') + ` (${counts.value.actionForCancellation + counts.value.questionsReferred})`, value: allPendingCase },
+  { text: t('general.message.questions-referred') + ` (${counts.value.questionsReferred})`, value: PendingCaseType.questionsReferred },
+  { text: t('general.message.action-for-cancellation') + ` (${counts.value.actionForCancellation})`, value: PendingCaseType.actionForCancellation },
+])
+const selectedType = ref(caseTypeAndCounts.value[0]?.value)
 const { data: pressJudgmentsRaw, error: pressJudgmentsError, status: _pressJudgmentsStatus }
   = useFetch<Decision[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`)
 
-const pressJudgments = computed(() => {
-  return pressJudgmentsRaw.value?.map(({ id, distance, dateLong }) => {
-    return {
-      id,
-      distance,
-      dateLong,
-    }
-  }) || []
+const pressJudgmentsMap = computed(() => {
+  const m = new Map<number, { distance: number, dateLong: string }>()
+  pressJudgmentsRaw.value?.forEach(({ id, distance, dateLong }) => {
+    m.set(id, { distance, dateLong })
+  })
+  return m
 })
 
 if (pressJudgmentsError.value) {
   console.error(pressJudgmentsError.value)
 }
 const isSubscribable = (id: number) => {
-  const found = pressJudgments.value?.find(j => j.id === id)
-  if (found === undefined) {
-    return true
-  }
-  if (found !== undefined) {
-    return found.distance > 30
-  }
+  const j = pressJudgmentsMap.value.get(id)
+  return j ? j.distance > 30 : true
 }
+
 const _findDateLongInPressJudgments = (id: number) => {
-  const found = pressJudgments.value?.find(j => j.id === id)
-  return found?.dateLong
+  return pressJudgmentsMap.value.get(id)?.dateLong
 }
 
 const hasUpcomingJudgment = (id: number) => {
-  return Array.isArray(pressJudgments.value) && pressJudgments.value.find(j => j.id === id) !== undefined
+  return pressJudgmentsMap.value.has(id)
 }
 
-const pendingCasesFilteredByType = computed(() => {
-  if (selectedType.value === allPendingCase) {
-    return cases.value
+const pendingCasesFiltered = computed(() => {
+  if (!Array.isArray(casesWithYear.value)) {
+    return []
   }
-  return cases.value?.filter(c => c.type === selectedType.value)
-})
-const pendingCasesFilteredByTypeAndYear = computed(() => {
-  if (selectedYear.value !== null) {
-    return pendingCasesFilteredByType.value?.filter(c => c.dateReceived?.split('-')[2] === selectedYear.value)
-  }
-  if (selectedByDistance.value) {
-    return pendingCasesFilteredByType.value?.filter(c => hasUpcomingJudgment(c.id))
-  }
-  return pendingCasesFilteredByType.value
+
+  return casesWithYear.value.filter((c) => {
+    // 1) filter by “type”
+    if (selectedType.value !== allPendingCase && c.type !== selectedType.value) {
+      return false
+    }
+
+    // 2) filter by “year”
+    if (selectedYear.value !== null && c.yearReceived !== selectedYear.value) {
+      return false
+    }
+
+    // 3) filter by “distance” toggle
+    if (selectedByDistance.value && !hasUpcomingJudgment(c.id)) {
+      return false
+    }
+
+    return true
+  })
 })
 
-const hasPendingCases = computed(() => (pendingCasesFilteredByType.value?.length ?? 0) > 0)
+const hasPendingCases = computed(() => pendingCasesFiltered.value.length > 0)
 const emptyValue = EMPTY_VALUE
 
-const yearsInPendingCases = computed(() => {
-  const casesPerYear = new Map<string, number>()
-  cases.value?.forEach((c) => {
-    const dateReceived = c.dateReceived
-    if (dateReceived) {
-      const year = dateReceived.split('-')[2] || ''
-      if (selectedType.value === allPendingCase || c.type === selectedType.value) {
-        casesPerYear.set(year, (casesPerYear.get(year) ?? 0) + 1)
-      }
+const yearsInPendingCasesByType = computed(() => {
+  // Only run when casesWithYear or selectedType changes
+  const counts = new Map<string, number>()
+  for (const c of casesWithYear.value) {
+    if (selectedType.value === allPendingCase || c.type === selectedType.value) {
+      const y = c.yearReceived || ''
+      counts.set(y, (counts.get(y) ?? 0) + 1)
     }
-  })
-  return casesPerYear
+  }
+  return counts
 })
 
 const yearsInPendingCasesArray = computed(() => {
-  return Array.from(yearsInPendingCases.value.entries()).map(([year, count]) => ({ year, count })).sort((a, b) => Number(b.year) - Number(a.year))
+  // Build the sorted array
+  const arr = Array.from(yearsInPendingCasesByType.value.entries())
+    .map(([year, count]) => ({ year, count }))
+    .sort((a, b) => Number(b.year) - Number(a.year))
+
+  const totalCount = arr.reduce((sum, obj) => sum + obj.count, 0)
+  return [{ year: null, count: totalCount }, ...arr]
 })
 
 const filterLoading = ref(false)
 const showSkeleton = computed(() => filterLoading.value || pending.value)
 
-watch([selectedType, selectedYear], () => {
+watch([selectedType, selectedYear, selectedByDistance], () => {
   filterLoading.value = true
   setTimeout(() => {
     filterLoading.value = false
   }, 300)
 })
+
+function yearItemTitle(item: { year: string | null, count: number }) {
+  if (item.year === null) {
+    // Show a clear label for "All years"
+    return `${t('general.message.all-years')} `
+  }
+  if (item.year) {
+    return `${item.year} (${item.count})`
+  }
+  return `${t('general.message.unknown-year')} (${item.count})`
+}
 </script>
 
 <template>
@@ -129,7 +169,7 @@ watch([selectedType, selectedYear], () => {
             <v-col cols="12">
               <v-select
                 v-model="selectedType"
-                :items="caseType"
+                :items="caseTypeAndCounts"
                 item-title="text"
                 item-value="value"
                 variant="outlined"
@@ -141,7 +181,7 @@ watch([selectedType, selectedYear], () => {
               <v-select
                 v-model="selectedYear"
                 :items="yearsInPendingCasesArray"
-                :item-title="item => item.year ? `${item.year} (${item.count})` : `${t('general.message.unknown-year')} (${item.count})`"
+                :item-title="yearItemTitle"
                 item-value="year"
                 variant="outlined"
                 :label="t('general.message.year-selection')"
@@ -154,6 +194,18 @@ watch([selectedType, selectedYear], () => {
                 label="Show only cases with upcoming judgment"
                 @click="selectedYear = null"
               />
+            </v-col>
+            <v-col>
+              <v-btn
+                color="secondary"
+                @click="() => {
+                  selectedType = caseTypeAndCounts[0]?.value;
+                  selectedYear = null;
+                  selectedByDistance = false
+                }"
+              >
+                {{ t('general.message.reset-filters') }}
+              </v-btn>
             </v-col>
           </v-row>
         </v-col>
@@ -205,7 +257,7 @@ watch([selectedType, selectedYear], () => {
               dateArt74,
               joinedCases,
               keywords,
-            } in pendingCasesFilteredByTypeAndYear"
+            } in pendingCasesFiltered"
             :id="`pending-cases-card-${id}`"
             :key="id"
             outlined
