@@ -1,25 +1,48 @@
-$logoColor: #043c72;
-$indigo: #0065ca;
-$indigoExtraLight: rgba(0, 101, 202, 0.14);
-$indigoLight: rgba(0, 101, 202, 0.8);
-$indigoMediumLight: rgba(0,101,202, 0.7);
-$skyBlue: #00aae7;
-$skyBlueExtraLight: rgba(0, 170, 231, 0.24);
-$rajahYellow: #fcbf60;
-$ivoryGrey: #d9dad9;
-$darkGrey: #777777;
-$linkBlue: #00709d;
-$errorRed: #c32a3a;
-$warningOrange: #d65c0e;
-$successGreen: #3aa82f;
-$rajahLight: rgba(254, 201, 118, 0.9);
-$rajahExtraLight: rgba(254, 201, 118, 0.2);
-$textOnRajah: #3d3a44;
-$pdfRed: #c90304;
+// We define SCSS variables (like $skyBlue) at the top:
+// Use only in SCSS (inside <style lang="scss"> in your Vue files).
+// example usage in Vue template:
+// <div :style="{ color: $skyBlue }">
+// example usage in Vue style section:
+// .my-class { color: $skyBlue; }
+
+// Variable type 	Where to use:       How to use/import:
+// $skyBlue	        SCSS only           Use in <style lang="scss">
+// --sky-blue	    CSS/HTML/Template	Use in template or inline styles
+
+// $logoColor: #043c72;
+// $indigo: #0065ca;
+// $indigoExtraLight: rgba(0, 101, 202, 0.14);
+// $indigoLight: rgba(0, 101, 202, 0.8);
+// $indigoMediumLight: rgba(0, 101, 202, 0.7);
+// $skyBlue: #00aae7;
+// $skyBlueExtraLight: rgba(0, 170, 231, 0.24);
+// $rajahYellow: #fcbf60;
+// $ivoryGrey: #d9dad9;
+// $darkGrey: #777777;
+// $linkBlue: #00709d;
+// $errorRed: #c32a3a;
+// $warningOrange: #d65c0e;
+// $successGreen: #3aa82f;
+// $rajahLight: rgba(254, 201, 118, 0.9);
+// $rajahExtraLight: rgba(254, 201, 118, 0.2);
+// $textOnRajah: #3d3a44;
+// $pdfRed: #c90304;
 
 // expose the preceding scss variables to the root element of the document as css variables
 // scss variables are preprocessed and not available in the browser
 // Using the modern Dart Sass syntax.
+
+// CSS variables (--sky-blue) are available at runtime in the browser,
+// but SCSS variables ($skyBlue) are only available at build time
+// to SCSS files that import or define them.
+
+// use these CSS variables in your Vue components or anywhere in your CSS
+// example usage in Vue template:
+// <div :style="{ color: 'var(--sky-blue)' }">
+// example usage in Vue style section:
+// .my-class { color: var(--sky-blue); }
+
+@use './_variables.scss' as *;
 
 :root {
     --logo-color: #{$logoColor};

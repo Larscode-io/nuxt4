@@ -44,6 +44,7 @@ export default defineNuxtConfig({
   },
   css: [
     // Global stylesheets to be included in every page of our application
+    '@/assets/scss/colors.scss',
     'vuetify/lib/styles/main.sass',
     '@/assets/scss/main.scss',
     '@/assets/scss/fonts.scss',
@@ -131,7 +132,7 @@ export default defineNuxtConfig({
         scss: {
           api: 'modern',
           additionalData: `
-            @use "@/assets/scss/colors.scss" as *;
+            @use "@/assets/scss/_variables.scss" as *;
             @use "@/assets/scss/media.scss" as *;
           `,
         },
@@ -162,6 +163,10 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    bundle: {
+      // https://github.com/nuxt-modules/i18n/issues/3238#issuecomment-2672492536
+      optimizeTranslationDirective: false,
+    },
     vueI18n: './i18n.config.ts',
     lazy: true,
     defaultLocale: 'nl',
