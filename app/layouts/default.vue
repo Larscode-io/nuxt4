@@ -5,7 +5,7 @@
 <!-- -------------------------------------------------------------------------------- -->
 
 <script setup lang="ts">
-import { ref, useTemplateRef, onMounted, computed, watch } from 'vue'
+import { ref, useTemplateRef, onMounted, computed, watch, watchEffect } from 'vue'
 import { useDisplay } from 'vuetify'
 import type { CourtItem } from '@core/constants'
 import { RoutePathKeys } from '@core/constants'
@@ -113,6 +113,15 @@ const translatedItems = computed(() => {
 })
 
 const isHydrated = ref(false)
+
+const { data: certInfo } = useAsyncData<{ daysLeft?: number }>('certInfo', () => $fetch('/api/cert'))
+
+watchEffect(() => {
+  const days = certInfo.value?.daysLeft ?? 0
+  if (days >= 1 && days <= 10) {
+    console.error('Certificate is only valid for', days, 'days')
+  }
+})
 
 onMounted(() => {
   if (h.value) {

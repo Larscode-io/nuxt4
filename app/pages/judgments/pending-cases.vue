@@ -201,7 +201,6 @@ function yearItemTitle(item: { year: string | null, count: number }) {
                 :items="yearsInPendingCasesArray"
                 :item-title="yearItemTitle"
                 item-value="year"
-                variant="outlined"
                 :label="t('general.message.year-selection')"
                 @click="selectedByDistance = false"
               />
@@ -304,3 +303,12 @@ function yearItemTitle(item: { year: string | null, count: number }) {
     </v-container>
   </div>
 </template>
+
+<style lang="scss">
+h1 {
+  font-family: 'Tiempos Headline', serif;
+  font-size: 2rem;
+  color: var(--v-theme-primary);
+  margin-bottom: 1rem;
+}
+</style>

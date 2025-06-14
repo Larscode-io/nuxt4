@@ -58,69 +58,60 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
               description,
               availablePart,
             },
-          }: {
-            year: number,
-            item: Judgment,
           }"
         >
+          <!-- todo: use colors from the design system -->
           <v-card
-            class="equal-height-card highlighted-card libra-image d-flex flex-column"
+            class="rounded-lg equal-height-card"
+            style="background-color: rgba(252,191,118,0.2); border-left: 4px solid #FCBF60;"
             @click="goToJudgmentPage(id, thisYearOrPreviousYear)"
           >
-            <div class="flex-grow-1">
-              <v-card-text>
-                <v-row class="top-infos">
-                  <v-col cols="5">
-                    <span class="judgment-date text-base">{{
-                      formatedJudmentDate
-                    }}</span>
-                  </v-col>
-                  <v-col
-                    cols="7"
-                    class="d-flex justify-end"
-                  >
-                    <span class="judgment-number text-base">
-                      <span>{{
-                        t("general.message.add-judgment-number-label")
-                      }}</span>
-                      {{ nr }}
-                      <div class="border-bottom" />
-                    </span>
-                  </v-col>
-                </v-row>
-              </v-card-text>
-              <v-card-title class="judgment-verdict font-normal">
-                {{ courtVerdict }}
-              </v-card-title>
-              <!-- eslint-disable vue/no-v-text-v-html-on-component -->
-              <!-- eslint-disable vue/no-v-html -->
-              <v-card-text
-                class="judgment-description"
-                v-html="description"
-              />
-            </div>
-            <span class="justify-start">
-              <!-- eslint-disable vue/no-v-html -->
-              <span v-if="availablePart">
-                <p
-                  class="judgment-available-part"
-                  v-html="availablePart"
-                />
+            <v-card-title class="d-flex justify-space-between align-start pa-4">
+              <span
+                class="text-subtitle-2"
+                style="color: #777777;"
+              >
+                {{ formatedJudmentDate }}
               </span>
               <span
-                v-else
-                class="judgment-available-part"
+                class="text-subtitle-2 font-medium"
+                style="color: var(--v-theme-secondary);"
               >
-                {{ t("general.message.not-available") }}
+                {{ t("general.message.add-judgment-number-label") }}
+                {{ nr }} →
               </span>
-            </span>
-            <v-card-actions class="justify-start">
-              <div class="m-4 mt-2 ml-2">
-                {{ t("general.message.read-more") }}
-                <v-icon class="arrow-hover">
-                  mdi-arrow-right
-                </v-icon>
+            </v-card-title>
+
+            <v-card-text
+              class=" pa-4"
+            >
+              <div
+                class="text-body-1 font-medium mb-2"
+                style="color: #3D3A44;"
+              >
+                {{ courtVerdict }}
               </div>
+              <div
+                class="text-subtitle-2 mb-2"
+                style="color: #333333; line-height: 1.4;"
+                v-html="description"
+              />
+              <div
+                v-if="availablePart"
+                class="text-subtitle-2 mb-2"
+                style="color: #333333; line-height: 1.4;"
+                v-html="availablePart"
+              />
+            </v-card-text>
+
+            <!-- read-more action -->
+            <v-card-actions class="pa-4">
+              <v-btn
+                text
+                color="secondary"
+              >
+                {{ t("general.message.read-more") }}
+              </v-btn>
             </v-card-actions>
           </v-card>
         </template>
@@ -489,9 +480,9 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 }
 
 .equal-height-card {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .date-box {

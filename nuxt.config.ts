@@ -39,6 +39,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/nuxt/',
     head: {
+      title: 'GwH',
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/img/favicon.ico' }],
     },
   },
@@ -96,7 +97,9 @@ export default defineNuxtConfig({
       basePublicCommonUrl: 'https://www.const-court.be/public/common', // prepend for /public/common/nl/...
     },
   },
-  build: { transpile: ['vuetify'] },
+  build: {
+    transpile: ['vuetify'],
+  },
   devServer: {
     host: 'localhost',
     port: 3000,
