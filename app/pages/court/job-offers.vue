@@ -1,4 +1,5 @@
 <!-- Content based Page -->
+<!-- app/pages/court/job-offers.vue -->
 
 <script setup lang="ts">
 import { ContentKeys } from '@core/constants'
@@ -32,9 +33,9 @@ const { data: page } = useAsyncData(
           cols="12"
           md="8"
         >
-          <article v-if="page">
+          <article v-if="page && page.body">
             <ContentRenderer
-              :value="page.body || {}"
+              :value="page.body"
               class="nuxt-content content-renderer"
             />
           </article>
