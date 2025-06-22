@@ -41,14 +41,8 @@ onMounted(async () => {
   }
   catch (err) {
     fileExists.value = false
-    // if the HEAD request fails, we still want to check the directory listing
-    console.error('HEAD request failed:', err)
-    // console.log to have a look at Fetch/XHR errors in devtools
-    console.error('Fetching directory listing for:', href.value)
-    console.error('Looking for files in:', `${config.public.basePublicCommonUrl}/${resolvedLang.value}/`)
-    console.error('Analyse in devtools Network tab for more details')
-    fetchFiles()
   }
+  fetchFiles()
 })
 </script>
 
