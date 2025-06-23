@@ -16,33 +16,36 @@ const href = computed(() =>
 )
 
 const fileExists = ref(true)
+const isVerified = ref(false)
 
-const files = ref<string[]>([])
-const error = ref<string | null>(null)
-
-async function fetchFiles() {
-  const url = `${config.public.basePublicCommonUrl}/${resolvedLang.value}/`
+const isProductionAndSameOrigin = computed(() => {
+  if (import.meta.server) return false
   try {
-    const response = await fetch(url)
-    if (!response.ok) {
-      throw new Error('Failed to fetch directory listing')
-    }
-    // This assumes the server returns a JSON array of filenames
-    files.value = await response.json()
+    const baseUrl = new URL(config.public.basePublicCommonUrl)
+    return window.location.hostname === baseUrl.hostname
   }
-  catch (err: any) {
-    error.value = err.message
+  catch {
+    return false
   }
-}
+})
+
 onMounted(async () => {
-  try {
-    const res = await fetch(href.value, { method: 'HEAD' })
-    fileExists.value = res.ok
+  if (isProductionAndSameOrigin.value) {
+    try {
+      const res = await fetch(href.value, { method: 'HEAD' })
+      fileExists.value = res.ok
+      isVerified.value = true
+    }
+    catch {
+      fileExists.value = false
+      isVerified.value = true
+    }
   }
-  catch (err) {
-    fileExists.value = false
+  else {
+    // in dev or cross-origin we skip the fileExists verification
+    fileExists.value = true
+    isVerified.value = false
   }
-  fetchFiles()
 })
 </script>
 
@@ -58,22 +61,36 @@ onMounted(async () => {
             class="mr-2"
             color="pdfRed"
           >mdi-file-pdf-box</v-icon>
-          <slot />
+          <slot>
+            No text available for the PDF link
+          </slot>
         </span>
       </a>
-    </template>
-    <template v-else>
-      <span class="text-disabled d-inline-flex">
-        <v-icon
-          class="mr-2"
-          color="grey"
-        >mdi-close-circle</v-icon>
-        PDF not available, please check the link (link check only works on production server):
-        <span class="ml-1 font-mono">( <a
-          :href="href"
-          target="_blank"
-        >{{ href }}</a> )</span>
+      <span
+        v-if="!isVerified"
+        class="text-caption ml-2 text-disabled"
+      >
+        Link cannot be verified in development mode because of cross-origin issues, on the production site it will be verified and this message will also dissapear.
+
       </span>
+    </template>
+
+    <template v-else>
+      <slot name="fallback">
+        <span class="text-disabled d-inline-flex">
+          <v-icon
+            class="mr-2"
+            color="grey"
+          >mdi-close-circle</v-icon>
+          PDF non disponible
+          <span class="ml-1 font-mono">
+            ( <a
+              :href="href"
+              target="_blank"
+            >{{ href }}</a> )
+          </span>
+        </span>
+      </slot>
     </template>
   </p>
 </template>
