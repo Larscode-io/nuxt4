@@ -24,13 +24,13 @@ interface Pleading {
 interface Judgment {
   distance: number
   id: number
-  joinedcases: any[]
+  joinedcases: []
   processingLanguage: string
   description: string
   day: string
   month: string
   nr: string
-  master: any
+  master: unknown
   kenmerk: string
   encinz: string
   type: string

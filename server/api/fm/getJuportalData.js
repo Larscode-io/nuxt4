@@ -2,7 +2,7 @@
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler, createError } from '#imports'
 
-const mapJuportalData = data =>
+const mapJuportalData = (data) =>
   data.map(({ recordId, fieldData: { Arrest_xml: xml } }) => ({
     recordId,
     xml,
@@ -24,7 +24,6 @@ export default defineEventHandler(async (event) => {
   }
 
   const config = useRuntimeConfig()
-  // eslint-disable-next-line no-undef
   const FileMaker = new FilemakerApi(config, fetchWithFallback)
 
   try {

@@ -1,0 +1,20 @@
+{
+    "extends": "./tsconfig.json",
+    "include": [
+        "app",
+        "server",
+        "models",
+        "i18n"
+    ],
+    "exclude": [
+        ".nuxt",
+        "node_modules",
+        "dist",
+        "coverage"
+    ],
+    "compilerOptions": {
+        "noEmit": true,
+        "allowJs": true,
+        "checkJs": false
+    }
+}

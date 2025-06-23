@@ -14,6 +14,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.mjs"
+  },
   "eslint.validate": [
     "vue",
     "javascript",
@@ -26,16 +29,16 @@
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "eslint.workingDirectories": [
-    {
-      "directory": "./app",
-      "changeProcessCWD": true
-    },
-    {
-      "directory": "./server",
-      "changeProcessCWD": true
-    }
-  ],
+  // "eslint.workingDirectories": [
+  //   {
+  //     "directory": "./app",
+  //     "changeProcessCWD": true
+  //   },
+  //   {
+  //     "directory": "./server",
+  //     "changeProcessCWD": true
+  //   }
+  // ],
   "cSpell.language": "en,nl,fr,de",
   "cSpell.dictionaries": [
     "custom-dict",

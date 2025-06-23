@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <script setup lang="ts">
 // import type { GeneralPressJudgment, GeneralPressRelease, Judgment, Pleading, Decision } from '@core/constants'
 import type { Pleading } from '@core/constants'

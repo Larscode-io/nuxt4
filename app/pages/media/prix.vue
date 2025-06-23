@@ -10,7 +10,7 @@ const { langCollection } = useLanguage()
 const pageName = import.meta.url.split('/').pop()?.split('?')[0]?.replace('.vue', '') ?? 'page'
 if (!pageName || pageName === 'page') {
   console.error(
-    `No page name found: Detected missing pageKey in useAsyncData. This can cause cache overlap between pages. Use a unique key for each page/component.`,
+    'No page name found: Detected missing pageKey in useAsyncData. This can cause cache overlap between pages. Use a unique key for each page/component.',
   )
   throw new Error('Page name not found or is invalid.')
 }
