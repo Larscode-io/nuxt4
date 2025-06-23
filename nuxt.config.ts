@@ -8,7 +8,6 @@ const { transformAssetUrls } = vuetifyModule
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
-    '@nuxt/eslint',
     '@nuxtjs/i18n',
   ],
   plugins: [
