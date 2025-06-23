@@ -2,6 +2,7 @@ import stylistic from '@stylistic/eslint-plugin'
 import vue from 'eslint-plugin-vue'
 import ts from '@typescript-eslint/eslint-plugin'
 import vueParser from 'vue-eslint-parser'
+import nuxt from 'eslint-plugin-nuxt'
 
 export default [
   {
@@ -9,6 +10,7 @@ export default [
       '@stylistic': stylistic,
       vue,
       '@typescript-eslint': ts,
+      nuxt,
     },
     languageOptions: {
       parser: vueParser,
@@ -68,7 +70,12 @@ export default [
         multiline: 'always',
       }],
       'vue/no-v-html': 'off',
-      'no-console': ['warn', { allow: ['warn', 'error', 'info'] }]
+      'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
+
+      // ✅ Nuxt-specific minimal rules
+      'nuxt/no-cjs-in-config': 'error',                // Block `require()` in Nuxt config
+      'nuxt/no-env-in-hooks': 'warn',                  // Block direct use of `process.env` in setup()
+      'nuxt/no-globals-in-created': 'warn',            // Don’t use globals (like window) in `created`
     },
   },
   {
