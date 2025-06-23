@@ -9,10 +9,10 @@ locale: de
 
 ::AccordionGroup
 
-::AccordionItem{aria-label="Die Verfassung Belgiens - März 2021"}
+::AccordionItem{aria-label="Die Verfassung Belgiens - Juni 2025"}
 
 <template v-slot:title>
-    <span class="titles">Die Verfassung Belgiens - März 2021</span>
+    <span class="titles">Die Verfassung Belgiens - Juni 2025</span>
 </template>
 
 ## <span class="titles">TITEL I</span> <br/> DAS FÖDERALE BELGIEN, SEINE ZUSAMMENSETZUNG UND SEIN STAATSGEBIET
@@ -168,7 +168,7 @@ Jeder Mensch mit einer Behinderung hat das Recht auf vollständige Inklusion in 
 3.	das Recht auf eine angemessene Wohnung; <br/>
 4.	das Recht auf den Schutz einer gesunden Umwelt; <br/>
 5.	das Recht auf kulturelle und soziale Entfaltung;<br/>
-6.	das Recht auf Familienleistungen. 
+6.	das Recht auf Familienleistungen.
 <br/>
 <br/>
 
@@ -1161,7 +1161,7 @@ Es gibt für ganz Belgien einen Verfassungsgerichtshof, dessen Zusammensetzung, 
 &emsp;Der Verfassungsgerichtshof kann angerufen werden von jeder durch Gesetz bezeichneten Behörde, von jedem, der ein Interesse nachweist, oder, zwecks Vorabentscheidung, von jedem Rechtsprechungsorgan. <br/>
 &emsp;Der Verfassungsgerichtshof befindet unter Bedingungen und gemäß Modalitäten, die das Gesetz festlegt, im Wege einer Entscheidung über jede in Artikel 39bis erwähnte Volksbefragung vor deren Organisation. <br/>
 &emsp;Das Gesetz kann in Fällen, unter Bedingungen und gemäß Modalitäten, die es bestimmt, dem Verfassungsgerichtshof die Zuständigkeit übertragen, im Wege eines Entscheids über Beschwerden zu befinden, die gegen die von gesetzgebenden Versammlungen oder ihren Organen gefassten Beschlüsse über die Kontrolle der Wahlausgaben für die Wahlen der Abgeordnetenkammer eingelegt werden. <br/>
-Die in Absatz 1, Absatz 2 unter Nr. 3 und in den Absätzen 3 bis 5 erwähnten Gesetze werden mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen. 
+Die in Absatz 1, Absatz 2 unter Nr. 3 und in den Absätzen 3 bis 5 erwähnten Gesetze werden mit der in Artikel 4 letzter Absatz bestimmten Mehrheit angenommen.
 
 
 ###### <span class="titles">ABSCHNITT III <br/> DIE VORBEUGUNG UND BEILEGUNG VON INTERESSENKONFLIKTEN</span><br/><br/>
@@ -1249,7 +1249,7 @@ Das Geschworenenkollegium wird für alle Kriminalsachen sowie für politische De
 &emsp;Der Präsident und die Abteilungspräsidenten des Kassationshofes, die Kammerpräsidenten der Gerichtshöfe und die Vizepräsidenten der Gerichte werden von den Höfen und den Gerichten aus deren Mitte unter den Bedingungen und in der Weise, die das Gesetz festlegt, für diese Ämter bestimmt. <br/>
 &emsp;Unbeschadet der Bestimmungen von Artikel 152 legt das Gesetz die Dauer der Bestimmungen für diese Ämter fest. <br/>
 
-§ 6 – In der vom Gesetz festgelegten Weise werden die Richter, die Inhaber der in § 5 Absatz 4 erwähnten Ämter und die Mitglieder der Staatsanwaltschaft einer Bewertung unterworfen. <br/>
+§ 6 In der vom Gesetz festgelegten Weise werden die Richter, die Inhaber der in § 5 erwähnten Ämter und die Mitglieder der Staatsanwaltschaft einer Bewertung unterworfen.<br/>
 
 <span class="code"> Übergangsbestimmung </span>
 
@@ -1495,7 +1495,7 @@ Die Mitglieder des Rechnungshofes werden von der Abgeordnetenkammer für die dur
 &emsp;§ 2 – Die Gehälter und Pensionen der Vertreter der durch Gesetz anerkannten Organisationen, die moralischen Beistand aufgrund einer nichtkonfessionellen Weltanschauung bieten, gehen zu Lasten des Staates; die dazu erforderlichen Beträge werden jährlich in den Haushaltsplan eingesetzt. <br/>
 
 
-###### <span class="titles">TITEL VI </span> <br/> DIE BEWAFFNETE MACHT 
+###### <span class="titles">TITEL VI </span> <br/> DIE BEWAFFNETE MACHT
 
 <span class="code"> Art. 182 </span>
 
@@ -1522,7 +1522,7 @@ Eine ausländische Truppe darf nur aufgrund eines Gesetzes in den Dienst des Sta
 Den Militärpersonen dürfen ihre Dienstgrade, Auszeichnungen und Pensionen nur in der durch Gesetz bestimmten Weise entzogen werden. <br/>
 
 
-###### <span class="titles">TITEL VII </span> <br/> ALLGEMEINE BESTIMMUNGEN 
+###### <span class="titles">TITEL VII </span> <br/> ALLGEMEINE BESTIMMUNGEN
 
 <span class="code"> Art. 187 </span>
 
@@ -1603,7 +1603,7 @@ Im Einvernehmen mit dem König können die verfassunggebenden Kammern die Numeri
 &emsp;In diesem Fall dürfen die Kammern nur beraten, wenn mindestens zwei Drittel der Mitglieder jeder Kammer anwesend sind; die Änderungen sind nur dann angenommen, wenn die Gesamtheit der Abänderungen mindestens zwei Drittel der abgegebenen Stimmen erhalten hat. <br/>
 
 
-###### <span class="titles">TITEL IX </span><br/> INKRAFTTRETEN UND ÜBERGANGSBESTIMMUNGEN 
+###### <span class="titles">TITEL IX </span><br/> INKRAFTTRETEN UND ÜBERGANGSBESTIMMUNGEN
 
 I.	Die Bestimmungen von Artikel 85 werden zum ersten Mal Anwendung finden auf die Nachkommenschaft S.K.H. Prinz Albert, Felix, Humbert, Theodor, Christian, Eugen, Maria, Prinz von Lüttich, Prinz von Belgien, wobei als vereinbart gilt, dass davon auszugehen ist, dass die Heirat I.K.H. Prinzessin Astrid, Josephine, Charlotte, Fabrizia, Elisabeth, Paola, Maria, Prinzessin von Belgien, mit Lorenz, Erzherzog von Österreich-Este die in Artikel 85 Absatz 2 erwähnte Zustimmung erhalten hat. <br/>
 &emsp;Bis zu diesem Zeitpunkt kommen folgende Bestimmungen weiterhin zur Anwendung: <br/>

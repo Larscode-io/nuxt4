@@ -1246,7 +1246,7 @@ De wet bepaalt in welke gevallen en op welke wijze de benoemings- en aanwijzings
 &emsp;De voorzitter en de afdelingsvoorzitters van het Hof van Cassatie, de kamervoorzitters van de hoven en de ondervoorzitters van de rechtbanken worden door de hoven en de rechtbanken in deze functies aangewezen uit hun leden onder de voorwaarden en op de wijze bij de wet bepaald.<br/>
 &emsp;Onverminderd de bepalingen van artikel 152, bepaalt de wet de duur van de aanwijzingen in deze functies.
 
-§ 6. Op de wijze bij de wet bepaald, worden de rechters, de titularissen van de functies bedoeld in § 5, vierde lid, en de ambtenaren van het openbaar ministerie onderworpen aan een evaluatie.
+§ 6. Op de wijze bij de wet bepaald, worden de rechters, de titularissen van de in paragraaf 5 bedoelde functies en de ambtenaren van het openbaar ministerie onderworpen aan een evaluatie.
 
 <span class="code"> Overgangsbepaling </span>
 

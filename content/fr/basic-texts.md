@@ -1254,7 +1254,7 @@ Dans les conditions et selon le mode déterminés par la loi, les compétences v
 &emsp;Le président et les présidents de section de la Cour de cassation, les présidents de chambre des cours et les vice-présidents des tribunaux sont désignés à ces fonctions par les cours et tribunaux en leur sein, dans les conditions et selon le mode déterminés par la loi.<br/>
 &emsp;Sans préjudice des dispositions de l’article 152, la loi détermine la durée des désignations à ces fonctions.
 
-§ 6. Selon le mode déterminé par la loi, les juges, les titulaires des fonctions visées au § 5, alinéa 4, et les officiers du ministère public sont soumis à une évaluation.
+§ 6. Selon le mode déterminé par la loi, les juges, les titulaires des fonctions visées au paragraphe 5 et les officiers du ministère public sont soumis à une évaluation.
 
 <span class="code">  Disposition transitoire  </span>
 

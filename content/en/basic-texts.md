@@ -8,10 +8,10 @@ locale: en
 
 ::AccordionGroup
 
-::AccordionItem{aria-label="The Belgian Constitution - May 2024, Click to open full text"}
+::AccordionItem{aria-label="The Belgian Constitution - June 2025, Click to open full text"}
 
 <template v-slot:title>
-    <span class="titles">The Belgian Constitution - May 2024</span>
+    <span class="titles">The Belgian Constitution - June 2025</span>
 </template>
 
 ##### <span class="titles"> TITLE I  </span> <br/> ON FEDERAL BELGIUM, ITS COMPONENTS AND ITS TERRITORY
@@ -1355,7 +1355,7 @@ Under the conditions and in the manner determined by the law, the competences re
 &emsp;The president of the Supreme Court, the presidents of the sections of this court, the presidents of the divisions of the appeal courts and the vice-presidents of the lower courts are appointed to their positions by the courts from their midst under the conditions and in the manner specified by the law. <br/>
 &emsp;Notwithstanding the provisions of Article 152, the law specifies the duration of the appointment to these positions.
 
-§ 6. In the manner specified by the law, the judges, the incumbents of the positions referred to in § 5, fourth sub-paragraph and the officers of the public prosecutor’s office are subject to an evaluation.
+§ 6. In the manner specified by the law, the judges, the incumbents of the positions referred to in § 5, and the officers of the public prosecutor’s office are subject to an evaluation.
 
 <span class="code"> Transitional provision </span>
 
@@ -1576,7 +1576,7 @@ A law establishes the system for financing the German-speaking Community. <br/>
 <span class="code"> Art. 177 </span>
 
 A law adopted by a majority as described in Article 4, last paragraph establishes the system for financing the Regions. <br/>
-&emsp;Regional Parliaments determine, each one for matters of its concern, the use of their revenues, by means of the rules referred to in Article 134.  
+&emsp;Regional Parliaments determine, each one for matters of its concern, the use of their revenues, by means of the rules referred to in Article 134.
 
 <span class="code"> Art. 178 </span>
 
