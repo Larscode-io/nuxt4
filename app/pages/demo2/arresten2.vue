@@ -6,7 +6,13 @@
         <span class="underline"></span>
       </h1>
       <v-row class="mt-6" dense>
-        <v-col v-for="caseItem in cases" :key="caseItem.number" cols="12" md="6" lg="4">
+        <v-col
+          v-for="caseItem in cases"
+          :key="caseItem.number"
+          cols="12"
+          md="6"
+          lg="4"
+        >
           <v-card class="case-card" elevation="2">
             <v-card-title class="d-flex justify-space-between align-start pa-4">
               <span class="case-date">{{ caseItem.date }}</span>

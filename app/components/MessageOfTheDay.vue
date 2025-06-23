@@ -55,7 +55,7 @@ onMounted(() => {
       icon: 'mdi-crane',
       expiresAt: '2026-08-30T23:59:59',
     },
-  ].filter(msg => !msg.expiresAt || new Date(msg.expiresAt) > now)
+  ].filter((msg) => !msg.expiresAt || new Date(msg.expiresAt) > now)
 
   dismissedMessageIds.value = Array.isArray(dismissedCookie.value) ? dismissedCookie.value : []
 })

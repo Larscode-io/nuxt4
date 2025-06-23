@@ -67,9 +67,7 @@ onMounted(() => {
           :md="hasSidebarLinks ? 8 : 12"
         >
           <article>
-            <ContentRenderer
-              :value="page || {}"
-            />
+            <ContentRenderer :value="page || {}"/>
           </article>
         </v-col>
         <v-col v-else>

@@ -43,7 +43,7 @@ const searchTabs = [
 ]
 
 const tabs = computed(() =>
-  searchTabs.map(tab => ({
+  searchTabs.map((tab) => ({
     id: tab.id,
     to: localePath(tab.to),
     label: t(tab.id, 2),

@@ -56,9 +56,7 @@ const toggleChevron = (e: Event) => {
             @click="toggleChevron"
           >
             {{ item.title || 'Untitled' }}
-            <div
-              v-if="item.subMenu"
-            >
+            <div v-if="item.subMenu">
               <v-icon>
                 mdi-chevron-down
               </v-icon>

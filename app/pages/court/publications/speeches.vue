@@ -23,13 +23,13 @@ if (error.value) {
 const reports = computed(() => {
   return data.value
     ? data.value.filter((report: { title: string }) => {
-        const title = report.title?.toLowerCase()
-        return (
-          DISCOURS_WORDS_FOR_FILTERING.map(key =>
-            title?.includes(key?.toLowerCase()),
-          ).filter(Boolean)?.length > 0
-        )
-      })
+      const title = report.title?.toLowerCase()
+      return (
+        DISCOURS_WORDS_FOR_FILTERING.map((key) =>
+          title?.includes(key?.toLowerCase()),
+        ).filter(Boolean)?.length > 0
+      )
+    })
     : []
 })
 

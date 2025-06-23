@@ -9,7 +9,7 @@ const localePath = useLocalePath()
 const route = useRoute()
 const { handleCallback } = useAuth()
 const { code = '', state = '', scope = '', iss = '', client_id = '' } = route.query
-const missingParams = [code, state, scope, iss, client_id].some(param => !param)
+const missingParams = [code, state, scope, iss, client_id].some((param) => !param)
 
 interface _Response {
   aud: string

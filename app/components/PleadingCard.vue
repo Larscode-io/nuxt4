@@ -13,7 +13,7 @@ const props = defineProps({
 })
 
 const transform = (items: Pleading[]): Pleading[] => {
-  const parsedDates = (items ?? []).map(item => new Date(item.date))
+  const parsedDates = (items ?? []).map((item) => new Date(item.date))
   const nearestDate = parsedDates.sort((a, b) => a - b)[0]
 
   const filteredItems = items.filter((item) => {
@@ -24,7 +24,7 @@ const transform = (items: Pleading[]): Pleading[] => {
 
   const limitedItems = props.maxItems ? filteredItems.slice(0, props.maxItems) : filteredItems
 
-  const itemsWithShortDescription = limitedItems.map(item => ({
+  const itemsWithShortDescription = limitedItems.map((item) => ({
     ...item,
     shortDescription: item.description?.substring(0, 90).concat('...'),
   }))

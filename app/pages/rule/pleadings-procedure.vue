@@ -33,9 +33,7 @@ const hasContent = computed(() =>
       <v-row>
         <v-col v-if="hasContent">
           <article>
-            <ContentRenderer
-              :value="page || {}"
-            />
+            <ContentRenderer :value="page || {}"/>
           </article>
         </v-col>
         <v-col v-else>

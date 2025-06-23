@@ -9,7 +9,7 @@ const { locale } = useI18n()
 const { t } = useLanguage()
 const { judgeMembers, getMostRecentRole } = useMembers(locale)
 
-const member: ComputedRef<Member | null> = computed(() => judgeMembers.value.find(m => m?.slug === slug) ?? null)
+const member: ComputedRef<Member | null> = computed(() => judgeMembers.value.find((m) => m?.slug === slug) ?? null)
 const role: ComputedRef<Role | null> = computed(() => {
   if (member.value?.roles) {
     return getMostRecentRole(member.value.roles) ?? null

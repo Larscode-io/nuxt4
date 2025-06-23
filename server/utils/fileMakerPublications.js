@@ -57,7 +57,7 @@ const fieldMappings = {
 const mapFields = (data, type) =>
   data.map(({ fieldData }) =>
     Object.fromEntries(
-      fieldMappings[type].map(field => [field, fieldData[field]]),
+      fieldMappings[type].map((field) => [field, fieldData[field]]),
     ),
   )
 

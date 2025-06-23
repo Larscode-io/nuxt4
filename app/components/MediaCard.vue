@@ -24,18 +24,18 @@ const addMediaTypeToItem = (item, mediaType) => {
     type: mediaType,
   }
 }
-const addJudgmentType = item => addMediaTypeToItem(item, MediaType.pressReleaseForJudgments)
-const addPressReleaseType = item => addMediaTypeToItem(item, MediaType.generalPressRelease)
+const addJudgmentType = (item) => addMediaTypeToItem(item, MediaType.pressReleaseForJudgments)
+const addPressReleaseType = (item) => addMediaTypeToItem(item, MediaType.generalPressRelease)
 
 const { data: dataJudge, status: statusJudge } = await useFetch(props.apiUrlJudgments, {
-  transform: items => items.map(addJudgmentType),
+  transform: (items) => items.map(addJudgmentType),
 })
 
 const { data: dataPress, execute: fetchDataPress } = await useFetch(
   props.apiUrlPress,
   {
     immediate: false,
-    transform: items => items.map(addPressReleaseType),
+    transform: (items) => items.map(addPressReleaseType),
   },
 )
 

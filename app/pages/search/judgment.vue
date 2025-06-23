@@ -405,7 +405,7 @@ const judgmentTypesFiltered = computed(() => {
     return judgmentTypesData.value.slice(0, 7)
   }
   if (isSearchJudgmentsTypeJurisdiction.value) {
-    return judgmentTypesData.value.filter(type => !(type.id === 1 || type.id === 2 || type.id === 4))
+    return judgmentTypesData.value.filter((type) => !(type.id === 1 || type.id === 2 || type.id === 4))
   }
   return judgmentTypesData.value
 })
@@ -434,7 +434,7 @@ async function submit() {
   searchResponse.value = null
 
   try {
-    const formatDates = (dates: string[]) => dates.map(d => d ? d.split('/').reverse().join('-') : '')
+    const formatDates = (dates: string[]) => dates.map((d) => d ? d.split('/').reverse().join('-') : '')
 
     const { data: response, error } = await cPost(
       `${ApiUrl.searchJudgmentByRollNumberApplicantJurisdiction}?lang=${locale.value}`,

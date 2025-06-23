@@ -28,9 +28,7 @@ const { data: page } = useAsyncData(
     <v-container class="flex-column align-start flex-nowrap">
       <v-col>
         <article>
-          <ContentRenderer
-            :value="page || {}"
-          />
+          <ContentRenderer :value="page || {}"/>
         </article>
       </v-col>
       <!-- <EmptyComponent

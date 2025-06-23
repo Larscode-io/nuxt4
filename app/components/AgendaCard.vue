@@ -12,7 +12,7 @@ const props = defineProps({
   },
 })
 const transform = (items: Decision[]): Decision[] => {
-  const parsedDates = (items ?? []).map(item => new Date(item.date))
+  const parsedDates = (items ?? []).map((item) => new Date(item.date))
   const nearestDate = parsedDates.sort((a, b) => a - b)[0]
 
   // we may not show items that are older than 21 days
@@ -31,7 +31,7 @@ const transform = (items: Decision[]): Decision[] => {
     ? filteredItems.slice(0, props.maxItems)
     : filteredItems
 
-  const itemsWithShortDescription = limitedItems.map(item => ({
+  const itemsWithShortDescription = limitedItems.map((item) => ({
     ...item,
     shortDescription: item.encinz?.substring(0, 90).concat('...'),
   }))

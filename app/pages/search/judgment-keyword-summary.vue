@@ -262,7 +262,7 @@ async function submit() {
       `${ApiUrl.searchByJudgmentKeywordsSummary}?lang=${locale.value}`,
       {
         ...payload.value,
-        judgmentDates: payload.value.judgmentDates?.map(date =>
+        judgmentDates: payload.value.judgmentDates?.map((date) =>
           date?.split('/')?.reverse()?.join('-'),
         ),
       },

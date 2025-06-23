@@ -83,9 +83,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
               </span>
             </v-card-title>
 
-            <v-card-text
-              class=" pa-4"
-            >
+            <v-card-text class=" pa-4">
               <div
                 class="text-body-1 font-medium mb-2"
                 style="color: #3D3A44;"
@@ -251,9 +249,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
               :max-items="4"
               class="flex-wrap justify-space-between agenda-container"
             >
-              <template
-                #item="{ item: { id, type, day, month, shortDescription } }"
-              >
+              <template #item="{ item: { id, type, day, month, shortDescription } }">
                 <v-card
                   class="agenda-card hammer-image equal-height-agenda-card ml-8"
                   @click="goToMediaPage(id, type)"
@@ -283,9 +279,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                             class="text-capitalize"
                             v-html="shortDescription?.split(' ')[0]"
                           />
-                          <span
-                            v-html="' ' + shortDescription?.split(' ').splice(1).join(' ')"
-                          />
+                          <span v-html="' ' + shortDescription?.split(' ').splice(1).join(' ')"/>
                         </v-card-text>
                       </v-col>
                     </v-row>

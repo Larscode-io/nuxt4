@@ -83,10 +83,10 @@ function extractSideBarLinks(page: PageContent): TocLink[] {
   return filtered.length
     ? filtered
     : [{
-        id: '_1-loading',
-        depth: 3,
-        text: 'Loading... sidebar links',
-      }]
+      id: '_1-loading',
+      depth: 3,
+      text: 'Loading... sidebar links',
+    }]
 }
 
 const staticLinks = ref<TocLink[]>([])
@@ -194,9 +194,7 @@ onMounted(() => {
           md="8"
         >
           <v-row>
-            <template
-              v-if="showSkeleton"
-            >
+            <template v-if="showSkeleton">
               <v-skeleton-loader
                 type="heading, text, text, image, text"
                 class="mb-4"

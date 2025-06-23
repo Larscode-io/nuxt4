@@ -50,7 +50,7 @@ const sideBarLinks = computed(() => [
 ])
 
 const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
-const ids = computed(() => sideBarLinks.value.map(link => link.id))
+const ids = computed(() => sideBarLinks.value.map((link) => link.id))
 
 const currentLocale = computed(() => locale.value)
 const isEnglish = computed(() => currentLocale.value === 'en')
@@ -355,9 +355,7 @@ onUpdated(() => {
               {{ t('general.email') }}
             </p>
             <p>
-              <a
-                :href="'mailto:toegankelijkheid-accessibilite@const-court.be'"
-              >toegankelijkheid-accessibilite@const-court.be</a>
+              <a :href="'mailto:toegankelijkheid-accessibilite@const-court.be'">toegankelijkheid-accessibilite@const-court.be</a>
             </p>
           </div>
         </div>

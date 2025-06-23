@@ -59,7 +59,7 @@ useHead({
   ],
   htmlAttrs: { lang: locale.value },
   link: [
-    ...locales.value.map(l => ({
+    ...locales.value.map((l) => ({
       rel: 'alternate',
       hreflang: l.language,
       href: `https://www.const-court.be${switchLocalePath(l.code)}`,
@@ -469,9 +469,7 @@ watch(smAndDown, (value) => {
     </v-main>
     <footer>
       <v-container fluid>
-        <v-row
-          class="align-center justify-space-between pa-6"
-        >
+        <v-row class="align-center justify-space-between pa-6">
           <v-col cols="auto">
             <nuxt-link
               class="pr-10 pl-10"

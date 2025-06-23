@@ -12,7 +12,7 @@ const props = defineProps({
   },
 })
 const transform = (items: Judgment[]): Judgment[] => {
-  return items.map(item => ({
+  return items.map((item) => ({
     ...item,
     shortDescription: item.description?.substring(0, 90).concat('...'),
   })).slice(0, props.maxItems ?? items.length)

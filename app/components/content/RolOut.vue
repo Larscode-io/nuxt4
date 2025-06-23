@@ -128,7 +128,7 @@ watch(() => form.userFeedbackMessage, () => {
 const fetchData = async () => {
   try {
     const response = await fetch(
-      `https://mailman.const-court.be/mailman/subscribe/rolout`,
+      'https://mailman.const-court.be/mailman/subscribe/rolout',
       {
         method: 'POST',
         headers: {

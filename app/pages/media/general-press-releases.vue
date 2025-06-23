@@ -56,14 +56,14 @@ if (error.value) {
 const releases = computed(() => {
   return data.value && Array.isArray(data.value)
     ? data.value.filter((release: { title: string }) => {
-        const title = release.title?.toLowerCase()
-        const hasDiscours
-        = DISCOURS_WORDS_FOR_FILTERING.map(key =>
+      const title = release.title?.toLowerCase()
+      const hasDiscours
+        = DISCOURS_WORDS_FOR_FILTERING.map((key) =>
           title?.includes(key?.toLowerCase()),
         ).filter(Boolean)?.length > 0
 
-        return !hasDiscours
-      })
+      return !hasDiscours
+    })
     : []
 })
 

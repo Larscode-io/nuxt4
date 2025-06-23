@@ -81,7 +81,7 @@ const _splittedKeywords = computed(() => {
   if (!props.keywords) {
     return []
   }
-  return flatten(props.keywords.split(' - ').map(key => key.split('– ')))
+  return flatten(props.keywords.split(' - ').map((key) => key.split('– ')))
 })
 
 async function subscribe() {

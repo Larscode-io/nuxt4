@@ -92,9 +92,7 @@ watch(() => releases.value, (newReleases) => {
               <v-list-item>
                 <div class=" mb-3">
                   <div class="d-flex justify-space-between">
-                    <v-icon
-                      :color="'var(--pdf-red)'"
-                    >mdi-file-pdf-box</v-icon>
+                    <v-icon :color="'var(--pdf-red)'">mdi-file-pdf-box</v-icon>
 
                     <h3>
                       {{ t('general.message.add-judgment-number-label') }}

@@ -9,7 +9,7 @@ import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler } from '#imports'
 
 const config = useRuntimeConfig()
-// eslint-disable-next-line no-undef
+
 const FileMaker = new FilemakerApi(config, fetchWithFallback)
 
 const fieldNames = [
@@ -23,9 +23,9 @@ const fieldNames = [
   'offline',
 ]
 
-const mapFields = data =>
+const mapFields = (data) =>
   data.map(({ fieldData }) =>
-    Object.fromEntries(fieldNames.map(field => [field, fieldData[field]])),
+    Object.fromEntries(fieldNames.map((field) => [field, fieldData[field]])),
   )
 
 export default defineEventHandler(async (event) => {
