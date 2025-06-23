@@ -43,6 +43,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
           {{ t('menu.decisions.title') }}
         </h2>
       </div>
+
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
@@ -115,6 +116,19 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
           </v-card>
         </template>
       </DecisionBox>
+
+      <v-row justify="center" class="mb-6">
+        <v-col
+          cols="12"
+          md="8"
+          lg="8"
+          class="d-flex justify-center"
+        >
+          <Balloon color="logo-color" class="w-100" style="text-align: center;">
+            "Het Grondwettelijk Hof is het rechtscollege dat waakt over de inachtneming van de in de Grondwet verankerde grondrechten en de bevoegdheidsverdelende regels door de verschillende wetgevers in België"
+          </Balloon>
+        </v-col>
+      </v-row>
 
       <div class="mt-9 title-container">
         <h2 class="title-h2">
