@@ -12,9 +12,9 @@ posterUrl: ~/assets/img/newsletter-background.png
 
 ::AccordionGroup
 
-::AccordionItem{aria-label="De Belgische Grondwet - mei 2024, klik om de volledige tekst te openen."}
+::AccordionItem{aria-label="De Belgische Grondwet - Juni 2025, klik om de volledige tekst te openen."}
 <template v-slot:title>
-<span class="titles">De Belgische Grondwet - Mei 2024</span>
+<span class="titles">De Belgische Grondwet - Juni 2025</span>
 </template>
 
 ##### <span class="titles"> TITEL I </span> <br/> HET FEDERALE BELGIË, ZIJN SAMENSTELLING EN ZIJN GRONDGEBIED

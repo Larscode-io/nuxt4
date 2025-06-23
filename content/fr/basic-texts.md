@@ -13,10 +13,10 @@ locale: fr
 
 ::AccordionGroup
 
-::AccordionItem{aria-label="La Constitution belge - Mai 2024, Cliquez pour ouvrir le texte intégral"}
+::AccordionItem{aria-label="La Constitution belge - Juin 2025, Cliquez pour ouvrir le texte intégral"}
 
 <template v-slot:title>
-    <span class="titles">La Constitution belge - Mai 2024</span>
+    <span class="titles">La Constitution belge - Juin 2025</span>
 </template>
 
 ##### <span class="titles"> TITRE Ier </span> <br/> DE LA BELGIQUE FÉDÉRALE, DE SES COMPOSANTES ET DE SON TERRITOIRE
