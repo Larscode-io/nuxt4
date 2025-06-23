@@ -102,7 +102,7 @@ const updatePage = (newPage: number) => {
 const handleJudgmentHover = async (j: Judgment) => {
   try {
     const existFile = await checkFileExists(`${basePublicUrl}${j.filePath}`)
-    console.log(
+    console.info(
       existFile
         ? `File exists for judgment ${j.nr}`
         : `File does not exist for judgment ${j.nr}`,
