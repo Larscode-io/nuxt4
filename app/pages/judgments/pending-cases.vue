@@ -67,7 +67,7 @@ const caseTypeAndCounts = computed(() => {
 })
 const selectedType = ref(caseTypeAndCounts.value[0]?.value)
 const { data: pressJudgmentsRaw, error: pressJudgmentsError, status: _pressJudgmentsStatus }
-  = useFetch<Decision[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`)
+  = useFetch<Decision[]>(`${ApiUrl.pressJudgment}?lang=${locale.value}`)
 
 const pressJudgmentsMap = computed(() => {
   const m = new Map<number, { distance: number, dateLong: string }>()

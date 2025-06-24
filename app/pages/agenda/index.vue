@@ -42,8 +42,8 @@ interface Judgment {
 
 const { data, error, status, refresh } = useAsyncData<[Pleading[], Judgment[]]>(() => {
   return Promise.all([
-    $fetch<Pleading[]>(`${baseURL}${ApiUrl.pressPleadings}?lang=${locale.value}`),
-    $fetch<Judgment[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`),
+    $fetch<Pleading[]>(`${ApiUrl.pressPleadings}?lang=${locale.value}`),
+    $fetch<Judgment[]>(`${ApiUrl.pressJudgment}?lang=${locale.value}`),
   ])
 })
 

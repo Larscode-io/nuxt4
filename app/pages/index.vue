@@ -45,7 +45,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
       </div>
 
       <DecisionBox
-        :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
+        :api-url="`${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
         class="mb-10"
       >
@@ -259,7 +259,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
             offset-md="2"
           >
             <AgendaCard
-              :api-url="`${baseURL}${ApiUrl.pressJudgment}?lang=${locale}`"
+              :api-url="`${ApiUrl.pressJudgment}?lang=${locale}`"
               :max-items="4"
               class="flex-wrap justify-space-between agenda-container"
             >
@@ -306,7 +306,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
       </v-container>
 
       <PleadingCard
-        :api-url="`${baseURL}${ApiUrl.pressPleadings}?lang=${locale}`"
+        :api-url="`${ApiUrl.pressPleadings}?lang=${locale}`"
         :max-items="0"
       >
         <template
