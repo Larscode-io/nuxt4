@@ -1,5 +1,9 @@
+// Nuxt 4.0.0-alpha.2 — tested in dev and SSR, CORS-safe, Vuetify compatibility  ✅
+
 import { resolve } from 'path'
 import * as vuetifyModule from 'vite-plugin-vuetify'
+import { defineNuxtConfig } from 'nuxt/config'
+
 // import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 const vuetify = vuetifyModule.default || vuetifyModule
