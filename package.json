@@ -33,7 +33,6 @@
     "@nuxt/kit": "4.0.0-alpha.2",
     "@nuxtjs/i18n": "^9.5.5",
     "@sindresorhus/slugify": "^2.2.1",
-    "better-sqlite3": "^12.1.0",
     "date-fns": "^4.1.0",
     "jwt-decode": "^4.0.0",
     "knex": "^3.1.0",
@@ -60,6 +59,6 @@
     "vite-plugin-vuetify": "^2.1.1",
     "vitest": "^3.2.4",
     "vue-eslint-parser": "^10.1.4",
-    "vuetify": "^3.8.10"
+    "vuetify": "^3.8.11"
   }
 }
