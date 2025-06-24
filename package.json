@@ -30,6 +30,7 @@
     "@faker-js/faker": "^9.8.0",
     "@mdi/font": "^7.4.47",
     "@nuxt/content": "^3.6.1",
+    "@nuxt/kit": "^4.0.0-alpha.2",
     "@nuxtjs/i18n": "^9.5.5",
     "@sindresorhus/slugify": "^2.2.1",
     "better-sqlite3": "^11.10.0",
@@ -37,7 +38,7 @@
     "jwt-decode": "^4.0.0",
     "knex": "^3.1.0",
     "mysql2": "^3.14.1",
-    "nuxt": "^3.17.5",
+    "nuxt": "^4.0.0-alpha.2",
     "undici": "^7.10.0",
     "vue": "latest"
   },
