@@ -70,7 +70,7 @@ watch(
     pending.value = true
     try {
       const fetched = await $fetch<DataResponse>(
-        `${baseURL}${ApiUrl.arcticlesConstReferredByConstCourt}`, {
+        `${ApiUrl.arcticlesConstReferredByConstCourt}`, {
           params: {
             'lang': lang,
             'page': page,

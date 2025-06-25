@@ -6,5 +6,5 @@ export default defineEventHandler((event) => {
   console.log(`Fetching pleadings from ${ApiUrl.pressPleadings} with language ${getQuery(event).lang }`)
 
   const lang = getQuery(event).lang || 'nl'
-  return $fetch(`${baseURL}${ApiUrl.pressPleadings}?lang=${lang}`)
+  return $fetch(`${ApiUrl.pressPleadings}?lang=${lang}`)
 })

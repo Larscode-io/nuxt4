@@ -19,7 +19,7 @@ const selectedByDistance = ref(false)
 
 const { data: casesRaw, pending, error, refresh } = useAsyncData<Decision[]>(
   () => `pending-cases-${locale.value}`,
-  () => $fetch<Decision[]>(`${baseURL}${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`),
+  () => $fetch<Decision[]>(`${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`),
 )
 
 const casesWithYear = computed(() => {

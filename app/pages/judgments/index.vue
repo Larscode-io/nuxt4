@@ -21,7 +21,7 @@ const years = ref(range(OLDEST_YEAR, currentYear).reverse())
 const selected = ref(year.value)
 
 const { data: judgments, error, status, refresh }
-  = useFetch<Judgment[]>(() => `${baseURL}${ApiUrl.judgments}`,
+  = useFetch<Judgment[]>(() => `${ApiUrl.judgments}`,
     {
       query: {
         lang: locale.value,
@@ -38,7 +38,7 @@ const transform = (data: GeneralPressJudgment[]) => {
 }
 
 const { data }
-  = useLazyFetch<GeneralPressJudgment[]>(() => `${baseURL}${ApiUrl.pressReleasesConcerningJudgments}`,
+  = useLazyFetch<GeneralPressJudgment[]>(() => `${ApiUrl.pressReleasesConcerningJudgments}`,
     {
       query: {
         lang: locale.value,

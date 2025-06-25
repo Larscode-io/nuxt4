@@ -136,8 +136,8 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
         </h2>
       </div>
       <MediaCard
-        :api-url-press="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
-        :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
+        :api-url-press="`${ApiUrl.pressGeneralRelease}?lang=${locale}`"
+        :api-url-judgments="`${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
         :max-items="3"
         class="mb-10 mt-10"
         style="padding-top: 62px"

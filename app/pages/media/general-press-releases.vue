@@ -48,7 +48,7 @@ const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
-const { data, error } = useLazyFetch(`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale.value}`)
+const { data, error } = useLazyFetch(`${ApiUrl.pressGeneralRelease}?lang=${locale.value}`)
 if (error.value) {
   console.error(error.value)
 }
