@@ -1,6 +1,6 @@
 // https://github.com/unjs/ofetch?tab=readme-ov-file : Allow self-signed certificates
 import { ofetch } from 'ofetch'
-import { Agent } from 'undici'
+import { Agent } from 'undici' // To allow insecure HTTPS requests
 import { useRuntimeConfig, defineEventHandler, createError, getQuery } from '#imports'
 
 const unsecureAgent = new Agent({ connect: { rejectUnauthorized: false } })

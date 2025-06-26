@@ -1,4 +1,4 @@
-import { Agent } from 'undici'
+import { Agent } from 'undici' // To allow insecure HTTPS requests
 
 export async function fetchWithFallback(url, options) {
   try {

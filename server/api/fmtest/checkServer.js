@@ -1,4 +1,4 @@
-import { Agent } from 'undici'
+import { Agent } from 'undici' // To allow insecure HTTPS requests
 import { useRuntimeConfig, defineEventHandler, createError } from '#imports'
 
 // https://github.com/unjs/ofetch?tab=readme-ov-file : Allow self-signed certificates
