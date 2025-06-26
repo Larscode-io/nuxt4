@@ -10,8 +10,11 @@ export function useApiFetch(apiUrl: string): EventHandler {
     // Prevent duplicate ?lang=... if apiUrl already has query parameters
     const separator = apiUrl.includes('?') ? '&' : '?'
     try {
+    //
     // todo: enable when ready to find all legacy API calls
     // to be sure all legacy API calls are converted to real API calls
+    // for now, we want these loggings out of the way because they are too noisy
+    //
     // const pageName = event.node.req.url?.split('?')[0] || 'unknown'
     // console.info(`Fetching legacy API: \x1b[32m${event.node.req.url}\x1b[0m for: \x1b[34m${pageName}\x1b[0m`)
     return await $fetch(`${baseURL}${apiUrl}${separator}lang=${lang}`)
