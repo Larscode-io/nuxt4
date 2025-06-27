@@ -11,7 +11,9 @@ const dismissedMessageIds = ref<string[]>([])
 const dismissedCookie = useCookie<string[]>('dismissedMessages', { default: () => [] })
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const messages = ref<any[]>([])
-
+const messagesToShow = computed(() => {
+  return messages.value.filter((msg) => !isDismissed(msg.id))
+})
 function isInternalLink(link: string) {
   return typeof link === 'string' && link.startsWith('/')
 }
@@ -62,84 +64,102 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    class="pa-4"
-    aria-live="polite"
-  >
+  <div class="pa-4" aria-live="polite">
     <div
-      v-for="msg in messages"
+      v-for="msg in messagesToShow"
+      :id="`message-${msg.id}`"
       :key="msg.id"
-      class="ma-2 pa-4 rounded-lg elevation-1 bg-blue-100 text-blue-700 d-flex flex-column position-relative"
+      class="ma-2 pa-4 rounded-lg elevation-1 text-blue-700"
+      style="min-width: 280px; flex: 1 1 300px; background-color: #f5f8fb; display: flex; flex-direction: column; justify-content: space-between; position: relative;"
     >
+      <!-- Dismiss button -->
       <button
-        class="btn btn-icon position-absolute top-0 right-0 mt-2 mr-2"
         aria-label="Close"
+        class="btn btn-close"
+        style="position: absolute; top: 5px; right: 5px; font-size: 16px; cursor: pointer; background: none; border: none;"
         @click="dismissMessage(msg.id)"
       >
         <v-icon>mdi-close</v-icon>
       </button>
 
+      <!-- Top: image/icon and title -->
       <div class="d-flex align-start mb-2">
-        <v-icon
-          v-if="msg.icon && !msg.image"
-          color="#043c72"
-          size="40"
-          class="mt-1 mr-3"
-        >
-          {{ msg.icon }}
-        </v-icon>
-        <img
-          v-else-if="msg.image"
-          :src="msg.image"
-          alt=""
-          class="rounded-lg mr-3"
-          height="40"
-        >
+        <div class="mr-3">
+          <v-icon
+            v-if="msg.icon && !msg.image"
+            color="#043c72"
+            large
+            class="mt-1"
+          >
+            {{ msg.icon }}
+          </v-icon>
+          <img
+            v-else-if="msg.image"
+            :src="msg.image"
+            alt="image icon"
+            style="width: 40px; height: 40px; object-fit: contain;"
+          >
+        </div>
         <div>
-          <h3 class="text-h6 font-weight-semibold mb-1">
+          <h3 class="mb-1" style="color: #043c72; font-size: 1.5rem; font-weight: 500;">
             {{ msg.title }}
           </h3>
-          <p class="text-body-1 mb-0">
-            {{ msg.content }}
-          </p>
         </div>
       </div>
 
-      <div
-        v-if="msg.link"
-        class="mt-2"
-      >
-        <v-hover
-          v-if="msg.link"
-          v-slot="{ isHovering }"
-        >
-          <nuxt-link
-            v-if="isInternalLink(msg.link)"
-            :to="msg.link"
-            class="text-primary font-weight-medium"
-          >
-            <div
-              class="arrow-hover d-inline-flex align-center "
+      <!-- Middle: content -->
+      <p class="mb-4" style="color: #043c72; font-size: 1.2rem;">
+        {{ msg.content }}
+      </p>
+
+      <!-- Bottom: link or PDF -->
+      <div>
+        <div v-if="msg.link">
+          <v-hover v-slot="{ hover }">
+            <nuxt-link
+              v-if="isInternalLink(msg.link)"
+              :to="msg.link"
+              class="text-decoration-none font-weight-medium"
               style="color: #043c72;"
             >
-              {{ t('general.message.read-more') }}
-              <v-icon
-                style="color: #043c72;"
-                :class="{ 'ml-2': isHovering, 'ml-1': !isHovering }"
-              >mdi-arrow-right</v-icon>
-            </div>
-          </nuxt-link>
-          <a
-            v-else
-            :href="msg.link"
-            target="_blank"
-            rel="noopener"
-            class="text-primary font-weight-medium d-inline-flex align-center"
-          >
-            {{ t('general.message.read-more') }}
-            <v-icon :class="isHovering ? 'ml-2' : 'ml-1'">mdi-arrow-right</v-icon>
-          </a>
-        </v-hover>
+              <div class="d-inline-flex align-center">
+                {{ $t(i18nKeys.general.message.readMore) }}
+                <v-icon :class="hover ? 'ml-2' : 'ml-1'" style="color: #043c72;">mdi-arrow-right</v-icon>
+              </div>
+            </nuxt-link>
+
+            <a
+              v-else
+              :href="msg.link"
+              target="_blank"
+              rel="noopener"
+              class="text-decoration-none font-weight-medium"
+              style="color: #043c72;"
+            >
+              <div class="d-inline-flex align-center">
+                {{ $t(i18nKeys.general.message.readMore) }}
+                <v-icon :class="hover ? 'ml-2' : 'ml-1'" style="color: #043c72;">mdi-arrow-right</v-icon>
+              </div>
+            </a>
+          </v-hover>
+        </div>
+
+        <div v-else-if="msg.pdf" class="mt-2">
+          <v-hover v-slot="{ hover }">
+            <a
+              :href="msg.pdf"
+              target="_blank"
+              rel="noopener"
+              class="text-decoration-none font-weight-medium"
+              style="color: #043c72;"
+            >
+              <div class="d-inline-flex align-center">
+                {{ $t(i18nKeys.general.message.readMore) }}
+                <v-icon :class="hover ? 'ml-2' : 'ml-1'" style="color: #043c72;">mdi-arrow-right</v-icon>
+              </div>
+            </a>
+          </v-hover>
+        </div>
       </div>
     </div>
   </div>
