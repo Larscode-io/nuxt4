@@ -40,7 +40,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
       <MessageOfTheDay class="flex-wrap justify-center d-flex mt-2" />
       <div class="-2 title-container">
         <h2 class="title-h2">
-          {{ t('menu.decisions.title') }}
+          {{ t('menu.decisions.title-recent') }}
         </h2>
       </div>
 

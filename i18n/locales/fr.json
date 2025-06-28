@@ -349,6 +349,7 @@
 	"menu.decisions.search-case-law": "Recherche dans la jurisprudence",
 	"menu.decisions.title": "Jurisprudence",
 	"menu.decisions.title-description": "Les arrêts de la Cour sont rendus en français, en néerlandais et - dans les cas prévus par la loi spéciale du 6 janvier 1989 sur la Cour constitutionnelle - également en allemand. Lorsqu'ils ne sont pas rendus en allemand, les arrêts sont traduits par extraits en allemand. En outre, certains arrêts sont traduits intégralement ou par résumé en anglais. Vous pouvez les trouver ici.",
+	"menu.decisions.title-recent": "Jurisprudence Récente",
 	"menu.decisions.title2": "Décision",
 	"menu.footer.contact": "Contact",
 	"menu.footer.disclaimer": "Mentions légales",

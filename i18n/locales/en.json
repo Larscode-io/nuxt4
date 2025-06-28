@@ -349,6 +349,7 @@
 	"menu.decisions.search-case-law": "Search case law",
 	"menu.decisions.title": "Jurisprudence",
 	"menu.decisions.title-description": "The judgments of the Court are given in Dutch, French and – in the cases provided for by the Special Act of 6 January 1989 on the Constitutional Court – also in German. If the judgments are not given in German, they are translated in extracts in German. Moreover, some judgments are translated, in full or in summary, in English. Summaries and keywords are provided by the Venice Commission. You can find those here.",
+	"menu.decisions.title-recent": "Recent Jurisprudence",
 	"menu.decisions.title2": "Judgment",
 	"menu.footer.contact": "Contact",
 	"menu.footer.disclaimer": "Disclaimer",
