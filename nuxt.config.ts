@@ -10,10 +10,7 @@ const vuetify = vuetifyModule.default || vuetifyModule
 const { transformAssetUrls } = vuetifyModule
 
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/content',
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@nuxt/content', '@nuxtjs/i18n', '@nuxt/image'],
   plugins: [
     '~/plugins/vuetify',
   ],
