@@ -32,13 +32,13 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   <div>
     <span class="index-banner" />
     <v-container max-width="1260px">
-      <div class="mt-2 title-container pb-4">
+      <div class="title-container">
         <h2 class="title-h2">
           {{ t('motd.title') }}
         </h2>
       </div>
       <MessageOfTheDay class="flex-wrap justify-center d-flex mt-2" />
-      <div class="mt-2 title-container pb-4">
+      <div class="-2 title-container">
         <h2 class="title-h2">
           {{ t('menu.decisions.title') }}
         </h2>
@@ -47,7 +47,6 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
       <DecisionBox
         :api-url="`${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
-        class="mb-10"
       >
         <template
           #item="{
@@ -139,8 +138,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
         :api-url-press="`${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
         :max-items="3"
-        class="mb-10 mt-10"
-        style="padding-top: 62px"
+        style="padding-top: 32px"
       >
         <template #default="{ items }">
           <v-container
@@ -416,22 +414,75 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
   // General tablet settings because fixed background-attachment often is not supported
   @media (max-width: 1366px) {
     background-attachment: scroll;
-  }
-
-  // Specific settings for normal iPad in landscape mode
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    background-position: 50% 50%; // Center the image vertically
-  }
-
-  // Specific settings for iPad Pro in landscape mode
-  @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    height: 40vh;
     background-position: 50% 70%;
+    outline: 2px solid orange !important;
+    &::after {
+      content: "Tablet (≤1366px)";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: orange;
+      color: white;
+      padding: 2px 8px;
+      font-size: 12px;
+      z-index: 9999;
+    }
   }
 
-  // Specific settings for smartphones
+  // Normal iPad in landscape mode
+  @media (min-width: 768px) and (max-width: 1023.98px) and (orientation: landscape) {
+    background-position: 50% 50%;
+    height: 35vh;
+    outline: 2px solid blue !important;
+    &::after {
+      content: "iPad Landscape (768-1024px)";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: blue;
+      color: white;
+      padding: 2px 8px;
+      font-size: 12px;
+      z-index: 9999;
+    }
+  }
+
+  // iPad Pro in landscape mode
+  @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    background-position: 50% 60%;
+    height: 38vh;
+    outline: 2px solid green !important;
+    &::after {
+      content: "iPad Pro Landscape (1024-1366px)";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: green;
+      color: white;
+      padding: 2px 8px;
+      font-size: 12px;
+      z-index: 9999;
+    }
+  }
+
+  // Smartphones
   @media (max-width: 768px) {
     background-image: url("~~/app/assets/img/banner-index-small.jpg");
-    background-position: 30% 90%;
+    background-position: 50% 80%;
+    height: 30vh;
+    outline: 2px solid red !important;
+    &::after {
+      content: "Smartphone (≤768px)";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: red;
+      color: white;
+      padding: 2px 8px;
+      font-size: 12px;
+      z-index: 9999;
+    }
   }
 }
 
