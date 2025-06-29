@@ -107,7 +107,11 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  compatibilityDate: '2024-04-03',
+  devServer : {
+   port: 3003,
+    host: 'localhost',
+  },
+  compatibilityDate: '2025-06-29',
   vite: {
     resolve: {
       alias: { // don't forget to add the @alias to the tsconfig.json file as well
