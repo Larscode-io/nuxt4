@@ -206,12 +206,12 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                   >
                     {{ item.title }}
                   </h3>
-                  <v-list-item-subtitle
+                  <p
                     class="text-truncate-4 mb-4"
                     style="color: #09368e"
                   >
                     {{ item.shortDescription }}
-                  </v-list-item-subtitle>
+                  </p>
                   <div
                     class="d-flex align-center justify-start"
                     @click="goToMediaPage(item.id, item.type)"

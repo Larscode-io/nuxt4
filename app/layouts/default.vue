@@ -4,6 +4,11 @@
 <!-- The menu items will be automatically generated from that file. -->
 <!-- -------------------------------------------------------------------------------- -->
 
+<!--
+todo:
+aria-labelledby="v-list-group--id-Symbol(nested item)" showing in page
+-->
+
 <script setup lang="ts">
 import { ref, useTemplateRef, onMounted, computed, watch, watchEffect } from 'vue'
 import { useDisplay } from 'vuetify'
@@ -57,7 +62,11 @@ useHead({
     { property: 'og:image:height', content: '630' },
     { property: 'og:image:type', content: 'image/jpeg' },
   ],
-  htmlAttrs: { lang: locale.value },
+  // todo: fix type
+  htmlAttrs: computed(() => ({
+    lang: locale.value,
+    'xml:lang': locale.value
+  })),
   link: [
     ...locales.value.map((l) => ({
       rel: 'alternate',
@@ -232,7 +241,7 @@ watch(smAndDown, (value) => {
               >
                 <div
                   v-if="item.subMenu"
-                  :id="`menu-${item.title}`"
+                  :id="`idmenu-${item.title}-level1`"
                   class="cursor-pointer position-relative"
                   :aria-label="`level 1 menu title ${item.title}`"
                   role="link"
@@ -245,14 +254,14 @@ watch(smAndDown, (value) => {
                   {{ item.title }}
                   <div
                     v-if="hoveredMenu === index && item.subMenu"
-                    :id="`submenu-${index}`"
+                    :id="`menux-${item.title}-${index}`"
                     class="position-fixed left-0 right-0 bg-white elevation-2 pa-2"
                     :style="{ top: `${menuHeight}px` }"
                     @mouseleave="hoverMainMenu(null)"
                   >
                     <v-container fluid>
                       <v-row
-                        :aria-labelledby="`menu-${item.title}`"
+                        :aria-labelledby="`menux-${item.title}-${index}`"
                         class="d-flex flex-row justify-space-evenly"
                       >
                         <v-col
@@ -402,10 +411,12 @@ watch(smAndDown, (value) => {
         >
           <v-list-group
             v-if="item.subMenu && item.subMenu.length"
+            :id="`menu1-${String(item.title)}-level2-${index}`"
+            :key="`level2group-${index}-x`"
             ripple
           >
             <template #activator="{ props }">
-              <v-list-item v-bind="props">
+              <v-list-item v-bind="props" :id="`menu-activator1-${index}`">
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
             </template>
@@ -416,21 +427,24 @@ watch(smAndDown, (value) => {
             >
               <v-list-group
                 v-if="subItem.subMenu && subItem.subMenu.length"
+                :id="`menu2-${String(item.title)}-${String(subItem.title)}-level3-${index}`"
+                :key="`level3group-${index}-${subIndex}`"
                 ripple
               >
                 <template #activator="{ props }">
-                  <v-list-item v-bind="props">
+                  <v-list-item v-bind="props" :id="`menu-activator2-${subIndex}`">
                     <v-list-item-title>{{ subItem.title }}</v-list-item-title>
                   </v-list-item>
                 </template>
 
                 <v-list-item
                   v-for="(subSubItem, subSubIndex) in subItem.subMenu"
+                  :id="`menu3-${String(item.title)}-${String(subItem.title)}-${String(subSubItem.title)}-level4-${index}-${subIndex}`"
                   :key="`subSubItem-${index}-${subIndex}-${subSubIndex}`"
                 >
                   <nuxt-link
                     :to="subSubItem.to ? localePath(subSubItem.to) : '#'"
-                    aria-label="subSubItem.title"
+                    :aria-label="subSubItem.title"
                   >
                     <v-list-item-title color="white">
                       {{ subSubItem.title }}
