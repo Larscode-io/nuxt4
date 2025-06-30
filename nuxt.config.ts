@@ -100,13 +100,6 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-  devServer: {
-    host: 'localhost',
-    port: 3000,
-  },
-  future: {
-    compatibilityVersion: 4,
-  },
   devServer : {
    port: 3003,
     host: 'localhost',
