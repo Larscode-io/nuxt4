@@ -5,8 +5,16 @@
 <!-- -------------------------------------------------------------------------------- -->
 
 <!--
-todo:
-aria-labelledby="v-list-group--id-Symbol(nested item)" showing in page
+aria-labelledby="v-list-group--id-...
+✔ aria-labelledby="v-list-group--id-menu1-La Cour-level2-0" → "La Cour"
+✔ aria-labelledby="v-list-group--id-menu2-La Cour-Présentation-level3-0" → "Présentation"
+✔ aria-labelledby="v-list-group--id-menu2-La Cour-Textes officiels-level3-0" → "Textes officiels"
+✔ aria-labelledby="v-list-group--id-menu2-La Cour-Publications-level3-0" → "Publications"
+✔ aria-labelledby="v-list-group--id-menu2-La Cour-Offres d'emplois-level3-0" → "Offres d'emplois"
+✔ aria-labelledby="v-list-group--id-menu1-Jurisprudence-level2-1" → "Jurisprudence"
+✔ aria-labelledby="v-list-group--id-menu1-Agenda-level2-2" → "Agenda"
+✔ aria-labelledby="v-list-group--id-menu1-Médias-level2-3" → "Médias"
+✔ aria-labelledby="v-list-group--id-menu1-Directives-level2-4" → "Directives"
 -->
 
 <script setup lang="ts">
@@ -411,12 +419,15 @@ watch(smAndDown, (value) => {
         >
           <v-list-group
             v-if="item.subMenu && item.subMenu.length"
-            :id="`menu1-${String(item.title)}-level2-${index}`"
             :key="`level2group-${index}-x`"
+            :raw-id="`menu1-${String(item.title)}-level2-${index}`"
             ripple
           >
             <template #activator="{ props }">
-              <v-list-item v-bind="props" :id="`menu-activator1-${index}`">
+              <v-list-item
+                v-bind="props"
+                :id="`v-list-group--id-menu1-${String(item.title)}-level2-${index}`"
+              >
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
             </template>
@@ -427,12 +438,15 @@ watch(smAndDown, (value) => {
             >
               <v-list-group
                 v-if="subItem.subMenu && subItem.subMenu.length"
-                :id="`menu2-${String(item.title)}-${String(subItem.title)}-level3-${index}`"
                 :key="`level3group-${index}-${subIndex}`"
+                :raw-id="`menu2-${String(item.title)}-${String(subItem.title)}-level3-${index}`"
                 ripple
               >
                 <template #activator="{ props }">
-                  <v-list-item v-bind="props" :id="`menu-activator2-${subIndex}`">
+                  <v-list-item
+                    v-bind="props"
+                    :id="`v-list-group--id-menu2-${String(item.title)}-${String(subItem.title)}-level3-${index}`"
+                  >
                     <v-list-item-title>{{ subItem.title }}</v-list-item-title>
                   </v-list-item>
                 </template>
