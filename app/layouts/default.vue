@@ -206,7 +206,6 @@ watch(smAndDown, (value) => {
       ref="appBarRef"
       class="elevation-3"
       :height="130"
-      role="navigation"
       aria-label="Main Navigation"
     >
       <nuxt-link :to="localePath('/')">
@@ -405,10 +404,11 @@ watch(smAndDown, (value) => {
       mobile
     >
       <v-list
-        nav
         dense
+        aria-label="Main menu"
+        role="list"
       >
-        <v-list-item to="/">
+        <v-list-item to="/" role="listitem">
           <v-icon>mdi-home</v-icon>
           <v-list-item-title>Home</v-list-item-title>
         </v-list-item>
@@ -427,6 +427,7 @@ watch(smAndDown, (value) => {
               <v-list-item
                 v-bind="props"
                 :id="`v-list-group--id-menu1-${String(item.title)}-level2-${index}`"
+                role="listitem"
               >
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
@@ -446,6 +447,7 @@ watch(smAndDown, (value) => {
                   <v-list-item
                     v-bind="props"
                     :id="`v-list-group--id-menu2-${String(item.title)}-${String(subItem.title)}-level3-${index}`"
+                    role="listitem"
                   >
                     <v-list-item-title>{{ subItem.title }}</v-list-item-title>
                   </v-list-item>
@@ -455,6 +457,7 @@ watch(smAndDown, (value) => {
                   v-for="(subSubItem, subSubIndex) in subItem.subMenu"
                   :id="`menu3-${String(item.title)}-${String(subItem.title)}-${String(subSubItem.title)}-level4-${index}-${subIndex}`"
                   :key="`subSubItem-${index}-${subIndex}-${subSubIndex}`"
+                  role="listitem"
                 >
                   <nuxt-link
                     :to="subSubItem.to ? localePath(subSubItem.to) : '#'"
@@ -470,7 +473,8 @@ watch(smAndDown, (value) => {
               <nuxt-link
                 v-else
                 :to="subItem.to ? localePath(subItem.to) : '#'"
-                aria-label="subItem.title"
+                :aria-label="subItem.title"
+                role="listitem"
               >
                 <v-list-item>
                   <v-list-item-title>{{ subItem.title }}</v-list-item-title>
@@ -482,7 +486,8 @@ watch(smAndDown, (value) => {
           <nuxt-link
             v-else
             :to="item.to ? localePath(item.to) : '#'"
-            aria-label="item.title"
+            :aria-label="item.title"
+            role="listitem"
           >
             <v-list-item>
               <v-list-item-title>{{ item.title }}</v-list-item-title>
@@ -492,6 +497,8 @@ watch(smAndDown, (value) => {
       </v-list>
     </v-navigation-drawer>
 
+    <!-- todo: v-main here or main in app.vue? -->
+    <!-- probably v-main here, because this is the default layout -->
     <v-main class="main-content">
       <slot />
     </v-main>

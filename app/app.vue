@@ -2,11 +2,12 @@
 <template>
   <NuxtLayout>
     <header />
-    <main>
-      <v-app>
-        <NuxtPage />
-      </v-app>
-    </main>
+    <!-- todo: main removed here and v-main in layouts/default.vue -->
+    <!-- <main> -->
+    <v-app>
+      <NuxtPage />
+    </v-app>
+    <!-- </main> -->
     <footer />
   </NuxtLayout>
 </template>
