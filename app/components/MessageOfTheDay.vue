@@ -2,7 +2,6 @@
 import { useI18n } from 'vue-i18n'
 import { ref, onMounted } from 'vue'
 import { RoutePathKeys } from '@core/constants'
-import { useCookie } from '#app'
 
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
@@ -64,7 +63,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="pa-4" aria-live="polite">
+  <div aria-live="polite">
     <div
       v-for="msg in messagesToShow"
       :id="`message-${msg.id}`"
@@ -160,6 +159,7 @@ onMounted(() => {
             </a>
           </v-hover>
         </div>
+      <!-- bottom link -->
       </div>
     </div>
   </div>
