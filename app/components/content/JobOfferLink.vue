@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
-import { useRuntimeConfig, useI18n } from '#imports'
 
 const props = defineProps<{
   lang?: string
