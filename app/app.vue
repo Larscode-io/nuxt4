@@ -1,15 +1,12 @@
 // app.vue is the top-level component that wraps everything.
 <template>
-  <NuxtLayout>
-    <header />
-    <!-- todo: main removed here and v-main in layouts/default.vue -->
-    <!-- <main> -->
-    <v-app>
+  <v-app>
+    <NuxtLayout>
+      <header />
       <NuxtPage />
-    </v-app>
-    <!-- </main> -->
-    <footer />
-  </NuxtLayout>
+      <footer />
+    </NuxtLayout>
+  </v-app>
 </template>
 
 <script setup>
