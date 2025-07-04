@@ -202,16 +202,18 @@ watch(smAndDown, (value) => {
 
 <template>
   <v-app app>
-    <v-app-bar
-      ref="appBarRef"
-      class="elevation-3"
-      :height="130"
-      aria-label="Main Navigation"
-    >
-      <nuxt-link :to="localePath('/')">
-        <button
+    <nav aria-label="Main Navigation">
+
+      <v-app-bar
+        ref="appBarRef"
+        class="elevation-3"
+        :height="130"
+        aria-label="Main Navigation"
+      >
+        <nuxt-link
           class="mx-2 p-0 border-0 bg-transparent"
           aria-label="Home"
+          :to="localePath('/')"
         >
           <v-img
             src="~/assets/icons/fed.svg"
@@ -223,171 +225,165 @@ watch(smAndDown, (value) => {
             @click="hoverMainMenu(null)"
             @mouseenter="hoverMainMenu(null)"
           />
-        </button>
-      </nuxt-link>
-      <h1 :aria-label="t('aria.label.menu.homelink')">
-        {{ t('general.message.consts-court') }}
-      </h1>
+        </nuxt-link>
+        <h1 :aria-label="t('aria.label.menu.homelink')">
+          {{ t('general.message.consts-court') }}
+        </h1>
 
-      <ClientOnly>
-        <template v-if="isHydrated && mdAndUp">
-          <v-container
-            style="width: auto; max-width: 100%;"
-            class="auto-width"
-          >
-            <v-row
-              class="justify-center align-center"
-              role="menu"
+        <ClientOnly>
+          <template v-if="isHydrated && mdAndUp">
+            <v-container
+              style="width: auto; max-width: 100%;"
+              class="auto-width"
             >
-              <v-col
-                v-for="(item, index) in translatedItems"
-                :key="item.title"
-                class="position-relative"
-                cols="auto"
-                role="menuitem"
-              >
-                <div
-                  v-if="item.subMenu"
-                  :id="`idmenu-${item.title}-level1`"
-                  class="cursor-pointer position-relative"
-                  :aria-label="`level 1 menu title ${item.title}`"
-                  role="link"
-                  tabindex="0"
-                  :aria-expanded="hoveredMenu === index"
-                  :aria-controls="`submenu-${index}`"
-                  @mouseenter="hoverMainMenu(index)"
-                  @click="toggleMenu"
-                >
-                  {{ item.title }}
-                  <div
-                    v-if="hoveredMenu === index && item.subMenu"
-                    :id="`menux-${item.title}-${index}`"
-                    class="position-fixed left-0 right-0 bg-white elevation-2 pa-2"
-                    :style="{ top: `${menuHeight}px` }"
-                    @mouseleave="hoverMainMenu(null)"
+              <!-- we need other containers here, like ul and li ? -->
+              <ul class="d-flex pa-0 ma-0 list-none" style="list-style: none;">
+                <li v-for="(item, index) in translatedItems" :key="item.title" class="px-2">
+                  <button
+                    v-if="item.subMenu"
+                    :id="`idmenu-${item.title}-level1`"
+                    aria-haspopup="menu"
+                    class="cursor-pointer position-relative"
+                    :aria-label="`level 1 menu title ${item.title}`"
+                    tabindex="0"
+                    :aria-expanded="hoveredMenu === index"
+                    :aria-controls="`menux-${item.title}-${index}`"
+                    @mouseenter="hoverMainMenu(index)"
+                    @click="toggleMenu"
+                    @keydown.enter.prevent="toggleMenu"
+                    @keydown.space.prevent="toggleMenu"
                   >
-                    <v-container fluid>
-                      <v-row
-                        :aria-labelledby="`menux-${item.title}-${index}`"
-                        class="d-flex flex-row justify-space-evenly"
-                      >
-                        <v-col
-                          v-for="(subItem) in item.subMenu"
-                          :key="subItem.title"
-                          cols="auto toEnableJustifyInRow"
-                          role="menuitem"
+                    {{ item.title }}
+                    <!-- rendering a top-level navigation item that has a submenu and can open a submenu on hover -->
+                    <div
+                      v-if="hoveredMenu === index && item.subMenu"
+                      :id="`menux-${item.title}-${index}`"
+                      class="position-fixed left-0 right-0 bg-white elevation-2 pa-2"
+                      :style="{ top: `${menuHeight}px` }"
+                      @mouseleave="hoverMainMenu(null)"
+                    >
+                      <v-container fluid>
+                        <v-row
+                          :aria-labelledby="`menux-${item.title}-${index}`"
+                          class="d-flex flex-row justify-space-evenly"
                         >
-                          <div
-                            v-if="subItem.subMenu"
-                            class="_mega-menu"
+                          <v-col
+                            v-for="(subItem) in item.subMenu"
+                            :key="subItem.title"
+                            cols="auto toEnableJustifyInRow"
                           >
-                            <v-row class="flex flex-column">
-                              <v-col
-                                class="align-start font-weight-bold pa-1 pb-5"
-                                aria-label="level 2 menu title"
-                              >
-                                {{ subItem.title }}
-                              </v-col>
-                              <v-col
-                                v-for="(thirdLevelItem) in subItem.subMenu"
-                                :key="thirdLevelItem.title"
-                                class="align-start pa-1"
-                              >
+                            <div
+                              v-if="subItem.subMenu"
+                              class="_mega-menu"
+                            >
+                              <v-row class="flex flex-column">
+                                <v-col
+                                  class="align-start font-weight-bold pa-1 pb-5"
+                                  aria-label="level 2 menu title"
+                                >
+                                  {{ subItem.title }}
+                                </v-col>
+                                <v-col
+                                  v-for="(thirdLevelItem) in subItem.subMenu"
+                                  :key="thirdLevelItem.title"
+                                  class="align-start pa-1"
+                                >
+                                  <nuxt-link
+                                    :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
+                                    aria-label="`level 3 menu item ${thirdLevelItem.title}`"
+                                    @click="handleMenuClick"
+                                  >
+                                    {{ thirdLevelItem.title }}
+                                  </nuxt-link>
+                                </v-col>
+                              </v-row>
+                            </div>
+                            <v-row v-else>
+                              <v-col>
                                 <nuxt-link
-                                  :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
-                                  aria-label="`level 3 menu item ${thirdLevelItem.title}"
+                                  :to="subItem.to ? localePath(subItem.to) : '#'"
+                                  :aria-label="`level 2 menu item ${subItem.title}`"
+                                  tabindex="0"
                                   @click="handleMenuClick"
                                 >
-                                  {{ thirdLevelItem.title }}
+                                  {{ subItem.title }}
                                 </nuxt-link>
                               </v-col>
                             </v-row>
-                          </div>
-                          <v-row v-else>
-                            <v-col>
-                              <nuxt-link
-                                :to="subItem.to ? localePath(subItem.to) : '#'"
-                                :aria-label="`level 2 menu item ${subItem.title}`"
-                                role="link"
-                                tabindex="0"
-                                @click="handleMenuClick"
-                              >
-                                {{ subItem.title }}
-                              </nuxt-link>
-                            </v-col>
-                          </v-row>
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                  </div>
-                </div>
-                <nuxt-link
-                  v-else
-                  :to="item.to ? localePath(item.to) : '#'"
-                  :aria-label="`top menu item ${item.title}`"
-                  role="link"
-                  tabindex="0"
-                  @mouseenter="hoverMainMenu(index)"
-                >
-                  {{ item.title || 'Untitled' }}
-                </nuxt-link>
-              </v-col>
-            </v-row>
-          </v-container>
-        </template>
-      </ClientOnly>
-      <div style="margin-left: auto">
-        <ClientOnly>
-          <nuxt-link
-            v-if="isHydrated && lgAndUp"
-            :to="localePath(RoutePathKeys.informed) || '#'"
-          >
-            <v-btn
-              :style="{ textTransform: 'none' }"
-              :aria-label="t('aria.label.landing.informed')"
-              @mouseenter="hoverMainMenu(null)"
-            >
-              {{ t('menu.informed') }}
-              <v-icon style="margin-left: 8px;">
-                mdi-bank
-              </v-icon>
-            </v-btn>
-          </nuxt-link>
-          <v-app-bar-nav-icon
-            v-if="isHydrated && !mdAndUp"
-            aria-label="Toggle Navigation Drawer"
-            @click.stop="mobileDrawer= !mobileDrawer"
-          />
-        </ClientOnly>
-
-        <v-menu>
-          <template #activator="{ props }">
-            <v-btn
-              v-bind="props"
-              icon="mdi-translate"
-              variant="text"
-              :aria-label="t('aria.label.language')"
-              @mouseenter="hoverMainMenu(null)"
-            >
-              {{ locale }}
-            </v-btn>
+                          </v-col>
+                        </v-row>
+                      </v-container>
+                    </div>
+                  </button>
+                  <!-- rendering a top-level navigation item that has no submenu and navigates to another page -->
+                  <nuxt-link
+                    v-else
+                    :to="item.to ? localePath(item.to) : '#'"
+                    :aria-label="`top menu item ${item.title}`"
+                    @mouseenter="hoverMainMenu(index)"
+                    @focus="hoverMainMenu(index)"
+                  >
+                    {{ item.title || 'Untitled' }}
+                  </nuxt-link>
+                </li>
+              <!-- xxxx -->
+              </ul>
+            </v-container>
           </template>
-          <v-list role="menu">
-            <v-list-item
-              v-for="(lang) in availableLocales"
-              :key="lang.code"
-              role="menuitem"
-              :aria-label="lang.name"
-              @click="changeLanguage(lang.code)"
+        </ClientOnly>
+        <div style="margin-left: auto">
+          <ClientOnly>
+            <nuxt-link
+              v-if="isHydrated && lgAndUp"
+              :to="localePath(RoutePathKeys.informed) || '#'"
             >
-              <v-list-item-title>
-                {{ lang.name }}
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-      </div>
-    </v-app-bar>
+              <v-btn
+                :style="{ textTransform: 'none' }"
+                :aria-label="t('aria.label.landing.informed')"
+                @mouseenter="hoverMainMenu(null)"
+              >
+                {{ t('menu.informed') }}
+                <v-icon style="margin-left: 8px;">
+                  mdi-bank
+                </v-icon>
+              </v-btn>
+            </nuxt-link>
+            <v-app-bar-nav-icon
+              v-if="isHydrated && !mdAndUp"
+              aria-label="Toggle Navigation Drawer"
+              @click.stop="mobileDrawer= !mobileDrawer"
+            />
+          </ClientOnly>
+
+          <v-menu>
+            <template #activator="{ props }">
+              <v-btn
+                v-bind="props"
+                icon="mdi-translate"
+                variant="text"
+                :aria-label="t('aria.label.language')"
+                @mouseenter="hoverMainMenu(null)"
+              >
+                {{ locale }}
+              </v-btn>
+            </template>
+            <v-list role="menu">
+              <v-list-item
+                v-for="(lang) in availableLocales"
+                :key="lang.code"
+                role="menuitem"
+                :aria-label="lang.name"
+                @click="changeLanguage(lang.code)"
+              >
+                <v-list-item-title>
+                  {{ lang.name }}
+                </v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </div>
+      </v-app-bar>
+    </nav>
 
     <!-- -------------------------------------------------------------------------------- -->
     <!-- DON'T ADD MENU ITEMS IN THIS FILE. -->
@@ -405,10 +401,10 @@ watch(smAndDown, (value) => {
     >
       <v-list
         dense
-        aria-label="Main menu"
+        aria-label="Main MOBILE menu"
         role="list"
       >
-        <v-list-item to="/" role="listitem">
+        <v-list-item to="/">
           <v-icon>mdi-home</v-icon>
           <v-list-item-title>Home</v-list-item-title>
         </v-list-item>
@@ -458,53 +454,42 @@ watch(smAndDown, (value) => {
                   :id="`menu3-${String(item.title)}-${String(subItem.title)}-${String(subSubItem.title)}-level4-${index}-${subIndex}`"
                   :key="`subSubItem-${index}-${subIndex}-${subSubIndex}`"
                   role="listitem"
+                  :to="subSubItem.to ? localePath(subSubItem.to) : '#'"
+                  :aria-label="subSubItem.title"
                 >
-                  <nuxt-link
-                    :to="subSubItem.to ? localePath(subSubItem.to) : '#'"
-                    :aria-label="subSubItem.title"
-                  >
-                    <v-list-item-title color="white">
-                      {{ subSubItem.title }}
-                    </v-list-item-title>
-                  </nuxt-link>
+                  <v-list-item-title color="white">
+                    {{ subSubItem.title }}
+                  </v-list-item-title>
                 </v-list-item>
               </v-list-group>
 
-              <nuxt-link
+              <v-list-item
                 v-else
                 :to="subItem.to ? localePath(subItem.to) : '#'"
                 :aria-label="subItem.title"
-                role="listitem"
               >
-                <v-list-item>
-                  <v-list-item-title>{{ subItem.title }}</v-list-item-title>
-                </v-list-item>
-              </nuxt-link>
+                <v-list-item-title>{{ subItem.title }}</v-list-item-title>
+              </v-list-item>
             </template>
           </v-list-group>
 
-          <nuxt-link
+          <v-list-item
             v-else
             :to="item.to ? localePath(item.to) : '#'"
             :aria-label="item.title"
-            role="listitem"
           >
-            <v-list-item>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </nuxt-link>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
         </template>
       </v-list>
     </v-navigation-drawer>
 
-    <!-- todo: v-main here or main in app.vue? -->
-    <!-- probably v-main here, because this is the default layout -->
     <v-main class="main-content">
       <slot />
     </v-main>
     <footer>
       <v-container fluid>
-        <v-row class="align-center justify-space-between pa-6">
+        <v-row  class="align-center justify-space-between pa-6">
           <v-col cols="auto">
             <nuxt-link
               class="pr-10 pl-10"
@@ -579,5 +564,11 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+ul.list-none {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
 }
 </style>
