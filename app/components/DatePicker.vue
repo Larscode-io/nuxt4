@@ -10,7 +10,6 @@
       class="datePicker"
       :locale="locale"
       readonly
-      aria-hidden="true"
       :title="'none'"
       @update:model-value="handleChange"
     />
@@ -38,48 +37,44 @@ const handleChange = (value) => {
 }
 
 onMounted(() => {
-  // dit is een workaround om aria-labels toe te voegen aan de knoppen in de Vuetify date-picker
-  // dit dat standaard niet heeft
-  // een andere optie is aria-hidden="true" toevoegen aan de date-picker
-  // en de datum te tonen in een sr-only element
-  // const labelButtons = () => {
-  //   // Set aria-label for mode button (year/month toggle)
-  //   document.querySelectorAll('.v-date-picker-controls__mode-btn').forEach((btn) => {
-  //     if (!btn.hasAttribute('aria-label') || !btn.getAttribute('aria-label')?.trim()) {
-  //       const testId = btn.getAttribute('data-testid')
-  //       if (testId === 'year-btn') {
-  //         btn.setAttribute('aria-label', 'Switch between year and month view')
-  //       } else {
-  //         btn.setAttribute('aria-label', 'Toggle calendar mode') // fallback
-  //       }
-  //     }
-  //   })
-  //   // Set aria-label for month button
-  //   document.querySelectorAll('.v-date-picker-controls__month-btn').forEach((btn) => {
-  //     if (!btn.hasAttribute('aria-label') || !btn.getAttribute('aria-label')?.trim()) {
-  //       btn.setAttribute('aria-label', 'Show month selection')
-  //     }
-  //   })
-  //   // Set aria-label for prev-month button
-  //   document.querySelectorAll('button[data-testid="prev-month"]').forEach((btn) => {
-  //     if (!btn.hasAttribute('aria-label') || !btn.getAttribute('aria-label')?.trim()) {
-  //       btn.setAttribute('aria-label', 'Previous month')
-  //     }
-  //   })
-  //   // Set aria-label for next-month button
-  //   document.querySelectorAll('button[data-testid="next-month"]').forEach((btn) => {
-  //     if (!btn.hasAttribute('aria-label') || !btn.getAttribute('aria-label')?.trim()) {
-  //       btn.setAttribute('aria-label', 'Next month')
-  //     }
-  //   })
-  // }
+  const labelButtons = () => {
+    // Set aria-label for mode button (year/month toggle)
+    document.querySelectorAll('.v-date-picker-controls__mode-btn').forEach((btn) => {
+      if (!btn.hasAttribute('aria-label') || !btn.getAttribute('aria-label')?.trim()) {
+        const testId = btn.getAttribute('data-testid')
+        if (testId === 'year-btn') {
+          btn.setAttribute('aria-label', 'Switch between year and month view')
+        } else {
+          btn.setAttribute('aria-label', 'Toggle calendar mode') // fallback
+        }
+      }
+    })
+    // Set aria-label for month button
+    document.querySelectorAll('.v-date-picker-controls__month-btn').forEach((btn) => {
+      if (!btn.hasAttribute('aria-label') || !btn.getAttribute('aria-label')?.trim()) {
+        btn.setAttribute('aria-label', 'Show month selection')
+      }
+    })
+    // Set aria-label for prev-month button
+    document.querySelectorAll('button[data-testid="prev-month"]').forEach((btn) => {
+      if (!btn.hasAttribute('aria-label') || !btn.getAttribute('aria-label')?.trim()) {
+        btn.setAttribute('aria-label', 'Previous month')
+      }
+    })
+    // Set aria-label for next-month button
+    document.querySelectorAll('button[data-testid="next-month"]').forEach((btn) => {
+      if (!btn.hasAttribute('aria-label') || !btn.getAttribute('aria-label')?.trim()) {
+        btn.setAttribute('aria-label', 'Next month')
+      }
+    })
+  }
 
-  // labelButtons() // run immediately in case it's already rendered
+  labelButtons() // run immediately in case it's already rendered
 
-  // const observer = new MutationObserver(() => labelButtons())
-  // observer.observe(document.body, { childList: true, subtree: true })
+  const observer = new MutationObserver(() => labelButtons())
+  observer.observe(document.body, { childList: true, subtree: true })
 
-  // onBeforeUnmount(() => observer.disconnect())
+  onBeforeUnmount(() => observer.disconnect())
   nextTick(() => {
     document.querySelectorAll('.v-date-picker-header button').forEach((el) => {
       el.setAttribute('tabindex', '-1')
