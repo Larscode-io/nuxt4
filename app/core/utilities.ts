@@ -55,15 +55,3 @@ export function to<T, U = Error>(
       return [err, undefined]
     })
 }
-
-export async function pdfFileExists(pdfUrl: string) {
-  const url = `https://www.const-court.be${pdfUrl}`
-
-  try {
-    const fetchResult = await fetch(url, { method: 'HEAD' })
-    return fetchResult.ok && fetchResult.headers.get('content-type') === 'application/pdf'
-  }
-  catch {
-    return false
-  }
-}
