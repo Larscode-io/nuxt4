@@ -22,6 +22,8 @@ export const downloadPublicFile = (filePath: string) => {
   window.open(url, '_blank')
 }
 
+// todo: move to a shared location
+// also see server/api/check-file.ts
 export const checkFileExists = async (url: string) => {
   try {
     const response = await fetch(url, { method: 'HEAD' })
