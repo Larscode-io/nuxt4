@@ -1,5 +1,8 @@
 import { RoutePathKeys } from '~/core/constants'
 
+// to: fields must be unique because of the way the menu is rendered
+// else we will have issue with id generation in the template
+
 export default defineEventHandler(async () => {
   return [
     {
@@ -179,43 +182,42 @@ export default defineEventHandler(async () => {
       to: RoutePathKeys.prize,
       title: 'menu.prize.title',
     },
-    // {
-    //   title: 'DEV',
-    //   subMenu: [
-    //     {
-    //       to: RoutePathKeys.demoMailman,
-    //       title: 'Mailman subscription demo',
-    //     },
-    //     {
-    //       to: RoutePathKeys.demoLanguages,
-    //       title: 'i18n and languages demo',
-    //     },
-    //     {
-    //       to: RoutePathKeys.authLogin,
-    //       title: 'EID authentication demo',
-    //     },
-    //     {
-    //       to: RoutePathKeys.legacyContent,
-    //       title: 'LegacyContent demo',
-    //     },
-    //     {
-    //       to: '/demo/sql',
-    //       title: 'SQL demo',
-    //     },
-    //     {
-    //       to: '/demo/fm',
-    //       title: 'FileMaker demo',
-    //     },
-    //     {
-    //       to: '/demo/Juportal',
-    //       title: 'Juportal demo',
-    //     },
-    //     {
-    //       to: '/colorDemo',
-    //       title: 'setting Colors',
-    //     },
-    //   ],
-    // },
-
+    {
+      title: 'DEV',
+      subMenu: [
+        {
+          to: RoutePathKeys.demoMailman,
+          title: 'Mailman subscription demo',
+        },
+        {
+          to: RoutePathKeys.demoLanguages,
+          title: 'i18n and languages demo',
+        },
+        {
+          to: RoutePathKeys.authLogin,
+          title: 'EID authentication demo',
+        },
+        {
+          to: RoutePathKeys.legacyContent,
+          title: 'LegacyContent demo',
+        },
+        {
+          to: '/demo/sql',
+          title: 'SQL demo',
+        },
+        {
+          to: '/demo/fm',
+          title: 'FileMaker demo',
+        },
+        {
+          to: '/demo/Juportal',
+          title: 'Juportal demo',
+        },
+        {
+          to: '/colorDemo',
+          title: 'setting Colors',
+        },
+      ],
+    },
   ]
 })
