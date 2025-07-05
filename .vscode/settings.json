@@ -1,6 +1,6 @@
 {
   "files.encoding": "utf8",
-  "editor.defaultFormatter": null,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "[vue]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
