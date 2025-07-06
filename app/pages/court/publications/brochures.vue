@@ -27,9 +27,8 @@ function desc(record: PubBrochuresData): string {
   }
 }
 
-// const { data: brochures, error } = useLazyFetch(`${baseURL}${ApiUrl.publicationsBrochures}?lang=${locale.value}`)
-
 const url = `${ApiUrl.publicationsBrochures}?lang=${locale.value}`
+// todo: remove the await before useFetch
 const { data, error, status, refresh } = await useFetch(url, {
   transform: (data: PubBrochuresData[]): Record[] => {
     return data.map((item: PubBrochuresData) => {

@@ -19,7 +19,7 @@ const selectedByDistance = ref(false)
 
 const { data: casesRaw, pending, error, refresh } = useAsyncData<Decision[]>(
   () => `pending-cases-${locale.value}`,
-  () => $fetch<Decision[]>(`${baseURL}${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`),
+  () => $fetch<Decision[]>(`${ApiUrl.pendingCases}?lang=${locale.value}&withArchive=${withArchive.value}`),
 )
 
 const casesWithYear = computed(() => {
@@ -67,7 +67,7 @@ const caseTypeAndCounts = computed(() => {
 })
 const selectedType = ref(caseTypeAndCounts.value[0]?.value)
 const { data: pressJudgmentsRaw, error: pressJudgmentsError, status: _pressJudgmentsStatus }
-  = useFetch<Decision[]>(`${baseURL}${ApiUrl.pressJudgment}?lang=${locale.value}`)
+  = useFetch<Decision[]>(`${ApiUrl.pressJudgment}?lang=${locale.value}`)
 
 const pressJudgmentsMap = computed(() => {
   const m = new Map<number, { distance: number, dateLong: string }>()

@@ -1,15 +1,16 @@
+// Nuxt 4.0.0-alpha.2 — tested in dev and SSR, CORS-safe, Vuetify compatibility  ✅
+
 import { resolve } from 'path'
 import * as vuetifyModule from 'vite-plugin-vuetify'
+import { defineNuxtConfig } from 'nuxt/config'
+
 // import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 const vuetify = vuetifyModule.default || vuetifyModule
 const { transformAssetUrls } = vuetifyModule
 
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/content',
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@nuxt/content', '@nuxtjs/i18n'],
   plugins: [
     '~/plugins/vuetify',
   ],
@@ -34,7 +35,10 @@ export default defineNuxtConfig({
     },
   },
   ssr: true,
-  devtools: { enabled: process.env.NODE_ENV !== 'production' },
+  devtools: {
+    enabled: process.env.NODE_ENV !== 'production',
+    devtools: { enabled: true } // todo: must disable in production
+  },
   app: {
     baseURL: '/nuxt/',
     head: {
@@ -99,14 +103,11 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-  devServer: {
+  devServer : {
+   port: 3003,
     host: 'localhost',
-    port: 3000,
   },
-  future: {
-    compatibilityVersion: 4,
-  },
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2025-06-29',
   vite: {
     resolve: {
       alias: { // don't forget to add the @alias to the tsconfig.json file as well

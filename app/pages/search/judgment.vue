@@ -369,11 +369,11 @@ const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 const { data: asyncData, error: asyncError } = useAsyncData(() =>
   Promise.all([
-    $fetch<JudgmentType[]>(`${baseURL}${ApiUrl.judgmentTypes}?lang=${locale.value}`),
-    $fetch<ApplicantTable[]>(`${baseURL}${ApiUrl.applicantList}?lang=${locale.value}`),
-    $fetch<ApplicantCategoryTable[]>(`${baseURL}${ApiUrl.applicantTypes}?lang=${locale.value}`),
-    $fetch<Juridisction[]>(`${baseURL}${ApiUrl.jurisdictionList}?lang=${locale.value}`),
-    $fetch<JuridisctionArea[]>(`${baseURL}${ApiUrl.jurisdictionAreaList}?lang=${locale.value}`),
+    $fetch<JudgmentType[]>(`${ApiUrl.judgmentTypes}?lang=${locale.value}`),
+    $fetch<ApplicantTable[]>(`${ApiUrl.applicantList}?lang=${locale.value}`),
+    $fetch<ApplicantCategoryTable[]>(`${ApiUrl.applicantTypes}?lang=${locale.value}`),
+    $fetch<Juridisction[]>(`${ApiUrl.jurisdictionList}?lang=${locale.value}`),
+    $fetch<JuridisctionArea[]>(`${ApiUrl.jurisdictionAreaList}?lang=${locale.value}`),
   ]).then(([a, b, c, d, e]) => ({
     judgmentTypes: a,
     applicantList: b,

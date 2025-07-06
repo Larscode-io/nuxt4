@@ -4,7 +4,6 @@ import { computed } from 'vue'
 import { ApiUrl } from '@core/constants'
 import type { PubAnnualReportData } from '@core/constants'
 import img from '~/assets/img/newsletter-background-opt.png'
-import { useFetch } from '#imports'
 
 const { t, locale } = useLanguage()
 const config = useRuntimeConfig()

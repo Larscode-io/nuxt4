@@ -1,5 +1,9 @@
 import { RoutePathKeys } from '~/core/constants'
 
+// `to` values must be unique—even if the route is the same—
+// as Vuetify uses them to generate internal keys and IDs.
+// Add a unique hash (e.g., #x) or query (?q=x) to avoid rendering conflicts.
+
 export default defineEventHandler(async () => {
   return [
     {
@@ -55,7 +59,7 @@ export default defineEventHandler(async () => {
               title: 'menu.court.official-text.constitution',
             },
             {
-              to: `${RoutePathKeys.presentationBasicTexts}`,
+              to: `${RoutePathKeys.presentationBasicTexts}#2`,
               title: 'menu.court.official-text.organic-legislation',
             },
             {
@@ -216,6 +220,5 @@ export default defineEventHandler(async () => {
     //     },
     //   ],
     // },
-
   ]
 })

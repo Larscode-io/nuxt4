@@ -4,32 +4,39 @@
 
 ### 🧩 Style & Formatting
 
-1. Use **Vuetify Utility Classes (VUC)** for layout, spacing, alignment, and text styling.
-   **Examples:** `py-15`, `d-flex`, `text-white`, `px-6`, `text-h4`, `font-weight-semibold`.
-
-2. Use **scoped SCSS** only for custom visual effects:
-   - Background images (e.g. grayscale, `background-position`)
-   - Z-index layering (e.g. overlays, absolute banners)
-   - Decorative elements (e.g. underlines, custom fonts, transitions)
-
-3. **Avoid duplication**: If a Vuetify class exists for a style (e.g. margin, padding, text color), prefer it over custom CSS.
-
-4. Keep SCSS **clean and purposeful**. Extract reusable styles into global utility classes only if used across multiple components.
-
-5. Mixing is allowed — but give each tool a clear role:
-   - **VUC** = structural layout
-   - **SCSS** = custom visual polish
-
-6. Follow **Vue.js and Nuxt conventions**: kebab-case for filenames, PascalCase for components, 2-space indentation, and clear structure.
+- Create and update a progress.md with the overall progress of the project
+- Accessibility and WCAG should always be a consideration
+- Use **Vuetify Utility Classes (VUC)** for layout, spacing, alignment, and text styling.
+- Use **scoped SCSS** only for custom visual effects if it cannot be done with VUC
+- **Avoid duplication**: If a Vuetify class exists for a style (e.g. margin, padding, text color), prefer it over custom CSS.
+- Keep SCSS **clean and purposeful**. Extract reusable styles into global utility classes only if used across multiple components.
+- Mixing is allowed: **VUC** for structural layout and **SCSS** for custom visual polish
+- Follow **Vue.js and Nuxt conventions**: kebab-case for filenames, PascalCase for components, 2-space indentation, and clear structure.
 
 ### ⚙️ Framework & Libraries
 
-- Use **Nuxt 3 (compatibility mode 4)** and **Vue 3**.
-- Use Nuxt Content v3.
-- Use the **Composition API** for all components.
-- Leverage **Vue's reactivity** idiomatically.
-- Avoid adding new dependencies unless justified.
-- Use `<NuxtLink>` for client-side routing.
+- Use **Nuxt 4** has a new Directory Structure: source code goes in the app folder for cleaner organization
+- Use **Nuxt 4** has improved Data Fetching with useAsyncData and useFetch
+- Use **Nuxt 4** has improved Enhanced Head Management: useHead() to declare head meta in components or pages
+- Use **Nuxt 4** has improved Data Fetching with useAsyncData and useFetch
+- extract pages and components functions in 'app/utils' where relevant
+- extract api functions in 'server/utils'
+- Use Nuxt Content v3
+- Use the **Composition API** for all components
+- Leverage **Vue's reactivity** idiomatically
+- Avoid adding new dependencies unless justified
+- Use `<NuxtLink>` for client-side routing
+- In Nuxt Content (@nuxt/content), the queryCollection function is used to query content files stored in the content directory. It provides chainable methods to filter, sort, and manipulate the data before retrieving it. Below are the most commonly used chainable methods:
+.where()
+.sort()
+.limit()
+.skip()
+.find()
+.first()
+.only()
+.without()
+.surround()
+.fetch()
 
 ### 🧼 Readability & Maintainability
 

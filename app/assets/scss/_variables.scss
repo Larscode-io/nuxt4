@@ -1,15 +1,3 @@
-// _variables.scss: This file contains SCSS variables used as design tokens at compile time.
-
-// This file defines SCSS variables (e.g., $skyBlue) for values that never change.
-// SCSS variables exist only at build time and are available in <style lang="scss"> blocks.
-
-// Example usage in a Vue component's <style> block:
-// .my-class { color: $skyBlue; }
-
-// Note: SCSS variables do not exist at runtime in the browser.
-// For runtime usage (e.g., in Vue templates or inline styles), use CSS variables (--sky-blue).
-// Example: var(--sky-blue) in Vue templates and inline styles.
-
 @use "sass:color";
 $logoColor: #043c72;
 $indigo: #0065ca;

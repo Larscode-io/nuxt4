@@ -35,6 +35,10 @@ const memberSchema = z.object({
 
 export default defineContentConfig({
   collections: {
+    collection_design: defineCollection({
+      source: 'design/**/*.md',
+      type: 'page',
+    }),
     collection_dutch: defineCollection({
       source: 'nl/**/*.md',
       type: 'page',

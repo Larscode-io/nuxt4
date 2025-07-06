@@ -12,7 +12,7 @@ const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 
 const { data: questions = ref<Question[]>([]), error }
-  = useLazyFetch<Question[]>(`${baseURL}${ApiUrl.questionsReferred}?lang=${locale.value}`)
+  = useLazyFetch<Question[]>(`${ApiUrl.questionsReferred}?lang=${locale.value}`)
 if (error.value) {
   console.error(error.value)
 }

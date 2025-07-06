@@ -1,5 +1,5 @@
 // plugins/vuetify.ts
-import 'vuetify/styles' // ← ensures theme CSS-vars & component styles are injected
+import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
@@ -16,16 +16,10 @@ export default defineNuxtPlugin((nuxtApp) => {
     },
 
     theme: {
-      defaultTheme: 'light', // use “light” by default; you can add a “dark” block later
-      // Vuetify takes whatever you put under theme.themes.light.colors
-      // and generates CSS variables like --v-theme-<key>
+      defaultTheme: 'constCourt',
       themes: {
-        light: {
+        constCourt: {
           colors: {
-            // These are semantic colors,
-            // which will be used by Vuetify components when you set `color="primary"` etc.
-            // or `color="primary lighten-2"` etc.
-            // or without the `color` prop, e.g. `v-btn` will use some of these colors
             primary: '#043c72', // logoColor
             secondary: '#0065ca', // indigo
             accent: '#fcbf60', // rajahYellow
@@ -34,7 +28,6 @@ export default defineNuxtPlugin((nuxtApp) => {
             success: '#3aa82f', // successGreen
             warning: '#d65c0e', // warningOrange
 
-            // Custom keys (use camelCase !!)
             logoColor: '#043c72',
             indigo: '#0065ca',
             indigoExtraLight: 'rgba(0, 101, 202, 0.14)',
@@ -64,7 +57,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     // ──────────────────────────────────────────────────────────────────────────────
     // OPTIONAL: You can set “defaults” for Vuetify components so you don’t
     // have to write `color="primary"` or `variant="elevated"` everywhere.
-    //
+    // ──────────────────────────────────────────────────────────────────────────────
     defaults: {
       VBtn: {
         color: 'primary',
@@ -72,10 +65,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       },
       VSelect: {
         variant: 'outlined',
-        color: 'indigo', // override if you want selects to default to indigo
+        color: 'indigo',
       },
       VCheckbox: {
-        color: 'primary', // checked‐box color
+        color: 'primary',
       },
       VTextField: {
         variant: 'outlined',

@@ -1,6 +1,6 @@
 // api/getToken.js
 
-import { Agent } from 'undici'
+import { Agent } from 'undici' // To allow insecure HTTPS requests
 import { useRuntimeConfig, defineEventHandler, createError } from '#imports'
 
 const unsecureFetch = $fetch.create({

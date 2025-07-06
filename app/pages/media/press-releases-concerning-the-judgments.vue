@@ -14,7 +14,7 @@ const baseURL = config.public.apiBaseUrl
 const withArchive = ref(true)
 
 const { data: releases, error }
-  = useFetch(`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale.value}&withArchive=${withArchive.value}`,
+  = useFetch(`${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale.value}&withArchive=${withArchive.value}`,
   )
 
 if (error.value) {
