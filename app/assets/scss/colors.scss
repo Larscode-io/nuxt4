@@ -15,3 +15,32 @@ $successGreen: #3aa82f;
 $rajahLight: rgba(254, 201, 118, 0.9);
 $rajahExtraLight: rgba(254, 201, 118, 0.2);
 $textOnRajah: #3d3a44;
+$pdfRed: #c90304;
+
+// expose the preceding scss variables to the root element of the document as css variables
+// scss variables are preprocessed and not available in the browser
+// Using the modern Dart Sass syntax.
+
+:root {
+    --logo-color: #{$logoColor};
+    --indigo: #{$indigo};
+    --indigo-extra-light: #{$indigoExtraLight};
+    --indigo-light: #{$indigoLight};
+    --indigo-medium-light: #{$indigoMediumLight};
+    --sky-blue: #{$skyBlue};
+    --sky-blue-extra-light: #{$skyBlueExtraLight};
+    --rajah-yellow: #{$rajahYellow};
+    --ivory-grey: #{$ivoryGrey};
+    --dark-grey: #{$darkGrey};
+    --link-blue: #{$linkBlue};
+    --error-red: #{$errorRed};
+    --warning-orange: #{$warningOrange};
+    --success-green: #{$successGreen};
+    --rajah-light: #{$rajahLight};
+    --rajah-extra-light: #{$rajahExtraLight};
+    --text-on-rajah: #{$textOnRajah};
+    --pdf-red: #{$pdfRed};
+}
+
+// inside vue template section:
+// <div :style="{ color: 'var(--indigo)' }">

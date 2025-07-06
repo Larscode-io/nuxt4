@@ -1,9 +1,9 @@
-<script lang="ts" setup>
+<script setup lang="js">
+import { computed } from 'vue'
 import { MediaType } from '@/core/constants'
-import type { GeneralPressJudgment, GeneralPressRelease } from '@/core/constants'
 
 const props = defineProps({
-  apiUrlRelease: {
+  apiUrlPress: {
     type: String,
     required: true,
   },
@@ -14,67 +14,71 @@ const props = defineProps({
   maxItems: {
     type: Number,
     required: false,
-  },
-  displayModes: {
-    type: Array,
-    required: true,
+    default: 3,
   },
 })
 
-interface ExtendedGeneralPressRelease extends GeneralPressRelease {
-  shortDescription: string
-  type: MediaType
+const addMediaTypeToItem = (item, mediaType) => {
+  return {
+    ...item,
+    type: mediaType,
+  }
 }
-interface ExtendedGeneralPressJudgment extends GeneralPressJudgment {
-  shortDescription: string
-  type: MediaType
-}
+const addJudgmentType = item => addMediaTypeToItem(item, MediaType.pressReleaseForJudgments)
+const addPressReleaseType = item => addMediaTypeToItem(item, MediaType.generalPressRelease)
 
-const transform_GeneralPressJudgment = (items: GeneralPressJudgment[]): GeneralPressJudgment[] => {
-  return props.maxItems ? items.slice(0, props.maxItems) : items
-}
-const transform_GeneralPressRelease = (items: GeneralPressRelease[]): GeneralPressRelease[] => {
-  return props.maxItems ? items.slice(0, props.maxItems) : items
-}
-
-const { data: generalPressRelease, error: generalPressReleaseError } = await useFetch<GeneralPressRelease[]>(props.apiUrlRelease, { transform: transform_GeneralPressRelease }) as { data: Ref<GeneralPressRelease[]>, error: Ref<Error> }
-const { data: generalPressJudgments, error: generalPressJudgmentsError } = await useFetch<GeneralPressJudgment[]>(props.apiUrlJudgments, { transform: transform_GeneralPressJudgment }) as { data: Ref<GeneralPressJudgment[]>, error: Ref<Error> }
-
-if (generalPressReleaseError.value || generalPressJudgmentsError.value) {
-  throw createError({ statusCode: 404, statusMessage: 'We have a issue with fetching data in MediaCard' })
-}
-
-const medias = computed<ExtendedGeneralPressRelease[] | ExtendedGeneralPressJudgment[]>(() => {
-  const combinedMedias = [
-    ...generalPressJudgments.value?.map(media => ({
-      ...media,
-      shortDescription: media.description?.substring(0, 90).concat('...'),
-      type: MediaType.pressReleaseForJudgments,
-    })) || [],
-    ...generalPressRelease.value?.map(media => ({
-      ...media,
-      shortDescription: media.description?.substring(0, 90).concat('...'),
-      type: MediaType.generalPressRelease,
-    })) || [],
-  ]
-  return props.maxItems ? combinedMedias.slice(0, props.maxItems) : combinedMedias
+const { data: dataJudge, status: statusJudge } = await useFetch(props.apiUrlJudgments, {
+  transform: items => items.map(addJudgmentType),
 })
+
+const { data: dataPress, execute: fetchDataPress } = await useFetch(
+  props.apiUrlPress,
+  {
+    immediate: false,
+    transform: items => items.map(addPressReleaseType),
+  },
+)
+
+watchEffect(() => {
+  if (statusJudge.value === 'success' && dataJudge.value.length < props.maxItems) {
+    fetchDataPress()
+  }
+})
+
+// here we are combining the data from the two sources if the number of items from the first source is less than the maxItems
+const combinedData = computed(() => {
+  if (dataJudge.value.length < props.maxItems && dataPress.value) {
+    const numberOfMissingItems = props.maxItems - dataJudge.value.length
+    const itemsToAdd = dataPress.value.slice(0, numberOfMissingItems)
+    return [
+      ...dataJudge.value,
+      ...itemsToAdd,
+    ]
+  }
+  else {
+    return [
+      ...dataJudge.value.slice(0, props.maxItems),
+    ]
+  }
+})
+
+// here we are adding a short description to the items
+const items = computed(() =>
+  combinedData.value.map(({ description, ...rest }) => ({
+    shortDescription: description?.substring(0, 180).concat('...'),
+    ...rest,
+  })),
+)
 </script>
 
 <template>
-  <v-row>
-    <v-col
-      v-for="(item, index) in medias ?? []"
-      :key="index"
-      cols="12"
-      sm="12"
-      md="4"
-      xl="2"
-    >
-      <slot
-        v-bind="{ ...item, displayMode: props.displayModes[index], index }"
-        name="item"
-      />
-    </v-col>
-  </v-row>
+  <div>
+    <div v-if="statusJudge === 'pending' ">
+      Loading...
+    </div>
+    <slot
+      name="default"
+      :items
+    />
+  </div>
 </template>

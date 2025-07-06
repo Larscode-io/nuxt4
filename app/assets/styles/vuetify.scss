@@ -1,0 +1,14 @@
+// assets/styles/vuetify.scss
+
+// Define custom font families because Vuetify uses Roboto by default.
+$body-font-family: 'Proxima Nova', sans-serif;
+$heading-font-family: 'Roboto', serif;
+$btn-font-family: $body-font-family;
+
+// Passing our custom SCSS variables to Vuetify's styles
+// to ensure that Vuetify components use our specified fonts.
+@use 'vuetify' with ($body-font-family: $body-font-family,
+    $heading-font-family: $heading-font-family);
+
+    // can vuetify pickup css colors and use them in the theme?
+    // https://vuetifyjs.com/en/features/theme/#css-variables

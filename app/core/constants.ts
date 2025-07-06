@@ -1,3 +1,5 @@
+export const EMPTY_VALUE = '----'
+
 export enum Languages {
   ENGLISH = 'en',
   FRENCH = 'fr',
@@ -36,6 +38,7 @@ export enum CSAMLocalStorageKeys {
 export enum ApiUrl {
 
   publicationsAnnualReports = '/api/v1/publications/annual-reports',
+  publicationsAnnualReports2 = '/api/v1/publications/persberichten',
   publicationsBrochures = '/api/v1/publications/brochures',
   publicationsStudies = '/api/v1/publications/studies',
 
@@ -97,8 +100,8 @@ export enum ContentKeys {
   presentationInternationalRelationsOfTheCourt = 'presentation-international-relations-of-the-court',
   presentationEproc = 'presentation-eproc',
   presentationBasicTexts = 'basic-texts',
-  presentationBasicTextsReferenceArbitration = 'basic-texts-reference-arbitration',
-  presentationBasicTextsOrganicLawSpecialLawOf6January1989OnTheConstitutionalCourt = 'basic-texts-organic-law-special-law-of-6-january-1989-on-the-constitutional-court',
+  presentationBasicTextsReferenceArbitration = 'basic-reference-arbitration',
+  presentationBasicTextsOrganicLawSpecialLawOf6January1989OnTheConstitutionalCourt = 'basic-organic-law-special-law-of-6-january-1989-on-the-constitutional-court',
   presentationJobOffers = 'job-offers',
   mediaMediaUnit = 'media-media-unit',
   mediaPictures = 'media-pictures',
@@ -108,7 +111,9 @@ export enum ContentKeys {
   ruleOthersInfo = 'rule-others-info',
   fullTextSearchExplanation = 'full-text-search-explanation',
   informed = 'stay-informed',
-
+  prize = 'prize',
+  privacyPolicy = 'privacy-policy',
+  legalDisclaimer = 'disclaimer',
 }
 
 export enum RoutePathKeys {
@@ -132,8 +137,9 @@ export enum RoutePathKeys {
   publicationSpeeches = 'court-publications-speeches',
   contact = 'contacts',
   agenda = 'agenda',
-  legalDisclaimer = 'disclaimer',
-  privacyPolicy = 'privacy-policy',
+  legalDisclaimer = 'footer-disclaimer',
+  privacyPolicy = 'footer-privacy-policy',
+  courtContacts = 'footer-contacts',
   judgmentsHome = 'judgments',
   judgmentsPendingCases = 'judgments-pending-cases',
   judgmentsPreliminaryRulingsFromCourtJusticeEU = 'judgments-preliminary-rulings-from-the-court-of-justice-of-the-european-union',
@@ -147,17 +153,14 @@ export enum RoutePathKeys {
   searchJudgmentKeywordSummary = 'search-judgment-keyword-summary',
   mediaGeneralPressReleases = 'media-general-press-releases',
   mediaPressReleasesConcerningTheJudgments = 'media-press-releases-concerning-the-judgments',
-  courtBasicTextTableOfTheArticlesOfTheConstitutionReferredToByTheConstitutionalCourt = 'court-basic-text-table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court',
+  courtBasicTextTableOfTheArticlesOfTheConstitutionReferredToByTheConstitutionalCourt = 'court-basic-table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court',
   ruleRecommendationsToTheJudgesAQuoAndTheParties = 'rule-recommendations-to-the-judges-a-quo-and-the-parties',
   ruleAnonymizationPolicy = 'rule-anonymization-policy',
   rulePleadingsProcedure = 'rule-pleadings-procedure',
   ruleOthersInfo = 'rule-others-info',
-  informed = 'stay-informed',
+  informed = 'court-stay-informed',
   // PRIZE - Page : To delete - START
-  prizeEN = 'prize',
-  prizeFR = 'prix',
-  prizeNL = 'prijs',
-  prizeDE = 'preis',
+  prize = 'media-prix',
   // PRIZE - Page : To delete - END
   demoMailman = 'demo-mailman',
   demoLanguages = 'demo-languages',
@@ -208,6 +211,7 @@ export interface Judgment {
   idsRole: number[]
   availablePart: string
   keywords: string
+  year?: string
 }
 
 export interface GeneralPressJudgment {
@@ -259,6 +263,7 @@ export interface Decision {
   formatedJudmentDate: string
   dateLong: string
   shortDescription: string
+  dateReceived: string
 }
 
 export interface GeneralPressRelease {
@@ -282,4 +287,133 @@ export interface GeneralPressJudgment {
   filePath: string
   archived: boolean
   picId: null
+}
+
+export interface CourtItem {
+  title: string
+  to?: string
+  subMenu?: CourtItem[]
+  count?: number
+}
+
+export interface QuestionPreliminaryRuling {
+  id: number
+  judgmentId: number
+  sortId: number
+  title: string
+  referringJudgmentNumberOfTheConstitutionalCourt: string
+  referringJudgmentDateOfTheConstitutionalCourt: string
+  formatedReferringJudgmentDateOfTheConstitutionalCourt: string
+  referringJudgmentOfTheConstitutionalCourtIds: number[]
+  referringJudgmentOfTheConstitutionalCourtLink: string
+  noticeInTheOfficialJournalLink: string | null
+  noticeInTheOfficialJournalId: string
+  noticeDateInTheOfficialJournal: string | null
+  formatedNoticeDateInTheOfficialJournal: string
+  opinionDateOfTheAdvocateGeneral: string | null
+  formatedOpinionDateOfTheAdvocateGeneral: string
+  opinionOfTheAdvocateGeneralLink: string | null
+  judgmentNumberOfTheCourtOfJustice: string
+  judgmentDateOfTheCourtOfJustice: string | null
+  formatedJudgmentDateOfTheCourtOfJustice: string
+  judgmentOfTheCourtOfJusticeLink: string | null
+  judgmentNumberOfTheConstitutionalCourt: string
+  judgmentDateOfTheConstitutionalCourt: string
+  formatedjudgmentDateOfTheConstitutionalCourt: string
+  judgmentOfTheConstitutionalCourtPath: string
+  judgmentOfTheConstitutionalCourtSummaryEnglish: string
+}
+
+export interface PubAnnualReport {
+  expires: string
+  database: string
+  layout: string
+  table: string
+  totalRecordCount: number
+  foundCount: number
+  returnedCount: number
+  fmdata: PubAnnualReportData[]
+}
+
+export interface PubAnnualReportData {
+  filename: string
+  new_filename_cu: string
+  _k1_Jaarverslag_id: number
+  title_n: string
+  title_f: string
+  title_d?: string
+  title_e?: string
+  offline?: string
+}
+
+export interface PubSpeeches {
+  expires: string
+  database: string
+  layout: string
+  table: string
+  totalRecordCount: number
+  foundCount: number
+  returnedCount: number
+  fmdata: PubSpeechesData[]
+}
+
+export interface PubSpeechesData {
+  archive: string
+  filename: string
+  intro_d?: string
+  intro_e?: string
+  intro_f?: string
+  intro_n?: string
+  offline?: string
+  title_d?: string
+  title_e?: string
+  title_f?: string
+  title_n?: string
+  type: string
+  _k1_pbcp_id: number
+  [key: string]: any
+}
+
+export interface PubBrochures {
+  expires: string
+  database: string
+  layout: string
+  table: string
+  totalRecordCount: number
+  foundCount: number
+  returnedCount: number
+  fmdata: PubBrochuresData[]
+}
+
+export interface PubBrochuresData {
+  filename: string
+  new_filename_cu: string
+  _k1_Brochure_id: number
+  title_n: string
+  title_f: string
+  title_d?: string
+  title_e?: string
+  offline?: string
+}
+
+export interface PubStudies {
+  expires: string
+  database: string
+  layout: string
+  table: string
+  totalRecordCount: number
+  foundCount: number
+  returnedCount: number
+  fmdata: PubStudiesData[]
+}
+
+export interface PubStudiesData {
+  filename: string
+  new_filename_cu: string
+  _k1_Studie_id: number
+  title_n: string
+  title_f: string
+  title_d?: string
+  title_e?: string
+  offline?: string
 }

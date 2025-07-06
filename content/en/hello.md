@@ -1,6 +1,7 @@
 ---
 title: Catch-All Page for Markdown Content
 year: 2024
+locale: en
 ---
 
 ### Catch-All Page for Markdown Content

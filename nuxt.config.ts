@@ -1,72 +1,90 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
     '@nuxtjs/i18n',
-    (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }))
-      })
-    }],
+  ],
+  plugins: [
+    '~/plugins/vuetify',
+  ],
   $development: {
     runtimeConfig: {
       public: {
-        redirectUri: process.env.REDIRECT_URI_DEV,
-        apiBaseUrl: process.env.API_URL_DEV || 'https://node04.const-court.be:443',
+        redirectUri: import.meta.env.REDIRECT_URI_DEV,
+        // Falling back to legacy server URL as long as the .env variable is not set.
+        // This is to develop pages without the need to have api's ready (next step).
+        // to run with another server, set the API_URL_DEV variable in the .env file or in the command line like this:
+        // API_URL_DEV=http://localhost:3000 nuxt dev --port 3001
+        apiBaseUrl: import.meta.env.API_URL_DEV || 'https://node04.const-court.be:443',
       },
     },
   },
   $production: {
     runtimeConfig: {
       public: {
-        redirectUri: process.env.REDIRECT_URI_PROD,
-        apiBaseUrl: process.env.API_URL_PROD || 'https://node04.const-court.be:443',
+        redirectUri: import.meta.env.REDIRECT_URI_PROD,
+        apiBaseUrl: import.meta.env.API_URL_PROD || 'https://node04.const-court.be:443',
       },
     },
   },
-  ssr: false,
+  ssr: true,
   devtools: { enabled: true },
   app: {
     baseURL: '/nuxt/',
+    head: {
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    },
   },
-  content: { locales: ['en', 'fr', 'nl', 'de'] },
+  css: [
+    // Global stylesheets to be included in every page of our application
+    'vuetify/lib/styles/main.sass',
+    '@/assets/scss/main.scss',
+    '@/assets/scss/fonts.scss',
+    '@mdi/font/css/materialdesignicons.css',
+  ],
+  content: {
+    markdown: {
+      remarkPlugins: [],
+      rehypePlugins: [],
+      mdc: true,
+    },
+  },
   runtimeConfig: {
-    xapiBaseUrl: process.env.SERVER_API_BASE_URL || 'http://' + process.env.SERVERIP + ':' + process.env.SERVERPORT,
-    authSecret: process.env.AUTH_SECRET,
-    csamPass: process.env.CSAM_PASS,
-    dbHost: process.env.DB_HOST,
-    dbUser: process.env.DB_USER,
-    dbPassword: process.env.DB_PASSWORD,
-    dbName: process.env.DB_NAME,
-    solrLogin: process.env.SOLR_LOGIN,
-    solrPassword: process.env.SOLR_PASSWORD,
-    auDatabase: process.env.AU_DATABASE,
-    auPassword: process.env.AU_PASSWORD,
-    auServername: process.env.AU_SERVERNAME,
-    auUsername: process.env.AU_USERNAME,
-    fakeSecret: process.env.FAKE_SECRET,
-    solrHost: process.env.SOLR_HOST,
-    solrPort: process.env.SOLR_PORT,
-    baseUrl: process.env.BASE_URL,
-    fm1ProxyUrl: process.env.FM1_PROXY_URL,
-    fm2ProxyUrl: process.env.FM2_PROXY_URL,
+    xapiBaseUrl: import.meta.env.SERVER_API_BASE_URL || 'http://' + import.meta.env.SERVERIP + ':' + import.meta.env.SERVERPORT,
+    authSecret: import.meta.env.AUTH_SECRET,
+    csamPass: import.meta.env.CSAM_PASS,
+    dbHost: import.meta.env.DB_HOST,
+    dbUser: import.meta.env.DB_USER,
+    dbPassword: import.meta.env.DB_PASSWORD,
+    dbName: import.meta.env.DB_NAME,
+    solrLogin: import.meta.env.SOLR_LOGIN,
+    solrPassword: import.meta.env.SOLR_PASSWORD,
+    auDatabase: import.meta.env.AU_DATABASE,
+    auPassword: import.meta.env.AU_PASSWORD,
+    auServername: import.meta.env.AU_SERVERNAME,
+    auUsername: import.meta.env.AU_USERNAME,
+    fakeSecret: import.meta.env.FAKE_SECRET,
+    solrHost: import.meta.env.SOLR_HOST,
+    solrPort: import.meta.env.SOLR_PORT,
+    baseUrl: import.meta.env.BASE_URL,
+    fm1ProxyUrl: import.meta.env.FM1_PROXY_URL,
+    fm2ProxyUrl: import.meta.env.FM2_PROXY_URL,
     public: {
-      clientId: process.env.CLIENT_ID,
-      csamUser: process.env.CSAM_USER,
-      logoutRedirectUri: process.env.LOGOUT_REDIRECT_URI,
-      csamBaseUrl: process.env.CSAM_BASE_URL,
-      accessTokenUri: process.env.ACCESSTOKEN_URI,
-      userinfoUri: process.env.USERINFO_URI,
-      authorizeUri: process.env.AUTHORIZE_URI,
-      tokeninfoUri: process.env.TOKENINFO_URI,
-      introspectUri: process.env.INTROSPECT_URI,
-      endSession: process.env.ENDSESSION,
-      fakePublic: process.env.FAKE_PUBLIC,
-      mailmanProxyUrl: process.env.MAILMAN_PROXY_URL,
+      clientId: import.meta.env.CLIENT_ID,
+      csamUser: import.meta.env.CSAM_USER,
+      logoutRedirectUri: import.meta.env.LOGOUT_REDIRECT_URI,
+      csamBaseUrl: import.meta.env.CSAM_BASE_URL,
+      accessTokenUri: import.meta.env.ACCESSTOKEN_URI,
+      userinfoUri: import.meta.env.USERINFO_URI,
+      authorizeUri: import.meta.env.AUTHORIZE_URI,
+      tokeninfoUri: import.meta.env.TOKENINFO_URI,
+      introspectUri: import.meta.env.INTROSPECT_URI,
+      endSession: import.meta.env.ENDSESSION,
+      fakePublic: import.meta.env.FAKE_PUBLIC,
+      mailmanProxyUrl: import.meta.env.MAILMAN_PROXY_URL,
     },
   },
   build: { transpile: ['vuetify'] },
@@ -79,21 +97,52 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   vite: {
+    server: {
+      hmr: {
+        overlay: false,
+      },
+      define: {
+        'process.env.DEBUG': false,
+      },
+    },
     css: {
+      // inject shared variables and mixins into all style files
+      // only variables, mixins, and functions, and not for CSS rules
+      // this is to avoid the need to import them in every style file
+      // and only used at build time
       preprocessorOptions: {
         scss: {
           api: 'modern',
-          additionalData: `@use "@/assets/scss/colors.scss" as *;`,
+          additionalData: `
+            @use "@/assets/scss/colors.scss" as *;
+            @use "@/assets/scss/media.scss" as *;
+          `,
         },
       },
     },
     vue: {
       template: {
+        // To resolve relative asset URLs that are passed to Vuetify components
         transformAssetUrls,
       },
     },
+    hooks: { // needed to extend the Vite config with Vuetify, needs to come after vue:
+      'vite:extendConfig': (config: any) => {
+        config.plugins.push(
+          vuetify({
+            autoImport: true,
+            styles: {
+              // override Vuetify's default SASS variables, enabling customization of Vuetify's component styles:
+              configFile: 'assets/styles/vuetify.scss',
+            },
+          }),
+        )
+      },
+    },
+    ssr: {
+      noExternal: ['vuetify'],
+    },
   },
-  // css: [ '~/assets/colors.scss', ],
   i18n: {
     vueI18n: './i18n.config.ts',
     lazy: true,

@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('/nuxt/fonts/TiemposHeadline/TiemposHeadline-Semibold.woff') format('woff'),
+        url('https://www.const-court.be/public/fonts/TiemposHeadline/TiemposHeadline-Semibold.woff') format('woff');
+    font-weight: 600;
+    /* Semibold corresponds to 600 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('/nuxt/fonts/TiemposHeadline/TiemposHeadline-SemiboldItalic.woff') format('woff'),
+        url('https://www.const-court.be/public/fonts/TiemposHeadline/TiemposHeadline-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    /* Semibold corresponds to 600 */
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/nuxt/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
+        url('/nuxt/fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2')
+        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2'),
+        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff');
+    font-weight: 400;
+    /* Regular corresponds to 400 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/nuxt/fonts/ProximaNova/ProximaNova-SemiBold.woff') format('woff'),
+        url('/nuxt/fonts/ProximaNova/ProximaNova-SemiBold.woff2') format('woff2'),
+        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-SemiBold.woff') format('woff'),
+        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    /* Semibold corresponds to 600 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/nuxt/fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
+        url('/nuxt/fonts/ProximaNova/ProximaNova-Bold.woff2') format('woff2'),
+        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
+        url('https://www.const-court.be/public/fonts/ProximaNova/ProximaNova-Bold.woff2') format('woff2');
+    font-weight: 700;
+    /* Bold corresponds to 700 */
+    font-style: normal;
+    font-display: swap;
+}
+
+// // This rule ensures that non-Vuetify parts of your app (e.g., custom HTML or non-Vuetify components)
+// // use Proxima Nova  because it uses Roboto by default.
+body {
+    font-family: 'Proxima Nova', sans-serif;
+}

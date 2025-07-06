@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { useLanguage } from '@/composables/useLanguage'
-import { ApiUrl } from '@/core/constants'
+import { RoutePathKeys, ApiUrl, MediaType,
+} from '@/core/constants'
 import type { GeneralPressJudgment, GeneralPressRelease, Judgment, Pleading, Decision } from '@/core/constants'
+
+const { localePath } = useLanguage()
+
+const { getImage } = useImageLoader()
 
 definePageMeta({
   layout: 'default',
@@ -11,24 +16,16 @@ const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
 const { t, locale } = useLanguage()
 
-const goToAgendaPageJudgments = (id: number) => {
-  console.log(`Navigating to agenda page for judgment with id: ${id}`)
-  // Add your navigation logic here
+const goToJudgmentPage = (id: number, year: string) => {
+  navigateTo(localePath(RoutePathKeys.judgmentsHome) + `?year=${year}` + `&id=${id}`)
 }
-const gotoMediaPage = (id: number) => {
-  console.log(`Navigating to media page for media with id: ${id}`)
-  // Add your navigation logic here
+const goToMediaPage = (id: number, type: MediaType) => {
+  navigateTo(localePath(RoutePathKeys.mediaPressReleasesConcerningTheJudgments) + '?with-archive=true' + `&id=${id}`)
 }
-
-const handleMediaCardClick = (id: number, description: string) => {
-  if (!description) {
-    gotoMediaPage(id)
-  }
-}
-
-const mediaDisplayMode = ref<('full' | 'short')[]>(Array(20).fill('short'))
-const toggleDisplayMediaDisplayMode = (index: number) => {
-  mediaDisplayMode.value[index] = mediaDisplayMode.value[index] === 'short' ? 'full' : 'short'
+// const goToMailings = ({ mailinfo }) => {
+const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
+  const dest = localePath(RoutePathKeys.informed)
+  navigateTo({ path: dest, query: { mailinfo: mailinfo } })
 }
 </script>
 
@@ -36,13 +33,17 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
   <div>
     <span class="index-banner" />
     <v-container>
-      <h2>Recent judgments:</h2>
+      <div class="mt-2 title-container">
+        <h2 class="title-h2">
+          {{ t('menu.decisions.title') }}
+        </h2>
+      </div>
       <DecisionBox
         :api-url="`${baseURL}${ApiUrl.judgments}?lang=${locale}`"
         :max-items="6"
       >
         <template
-          #item="{ item: { id, formatedJudmentDate, nr, courtVerdict, description, availablePart } }: { item: Judgment }"
+          #item="{ year: thisYearOrPreviousYear, item: { id, formatedJudmentDate, nr, courtVerdict, description, availablePart } }: { item: Judgment }"
         >
           <v-card class="equal-height-card highlighted-card libra-image d-flex flex-column">
             <div class="flex-grow-1">
@@ -64,7 +65,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
             </div>
             <v-card-title>{{ availablePart }}</v-card-title>
             <v-card-actions>
-              <v-btn @click="goToAgendaPageJudgments(id)">
+              <v-btn @click="goToJudgmentPage(id, thisYearOrPreviousYear)">
                 {{ t('general.message.read-more') }}
               </v-btn>
             </v-card-actions>
@@ -72,71 +73,90 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </template>
       </DecisionBox>
 
-      <h2>Press releases:</h2>
+      <div class="mt-9 title-container ">
+        <h2 class="title-h2">
+          {{ t('general.message.latest-press-release') }}
+        </h2>
+      </div>
       <MediaCard
-        :api-url-release="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
+        :api-url-press="`${baseURL}${ApiUrl.pressGeneralRelease}?lang=${locale}`"
         :api-url-judgments="`${baseURL}${ApiUrl.pressReleasesConcerningJudgments}?lang=${locale}&withArchive=false`"
         :max-items="3"
-        :display-modes="mediaDisplayMode"
+        class="mediaCard"
       >
-        <template #item="{ title, shortDescription, description, id, displayMode, index } ">
-          <v-card class="equal-height-card">
-            <v-card-title
-              class="media-card-title"
-              :style="{ position: 'relative', cursor: !description ? 'pointer' : 'default' }"
-              @click="!description && gotoMediaPage(id)"
-            >
-              {{ title }}
-            </v-card-title>
-
-            <v-card-text>
-              <div :style="{ position: 'relative' }">
-                <v-expand-transition>
-                  <div>
-                    <div v-if="displayMode === 'short'">
-                      <div>
-                        {{ shortDescription }}
-                      </div>
-                    </div>
-                    <div v-else>
-                      <div>
-                        {{ description }}
-                      </div>
-                      <div>
-                        <v-btn @click="gotoMediaPage(id)">
-                          {{ t('general.message.read-more') }}
-                        </v-btn>
-                      </div>
-                    </div>
-                  </div>
-                </v-expand-transition>
-                <div
-                  v-if="description"
-                  :style="{ position: 'absolute', top: 0, right: 0 }"
+        <template #default="{ items }">
+          <v-container class="pa-0 ma-0">
+            <v-row>
+              <v-col
+                v-for="(item, index) in items"
+                :key="item.id"
+                cols="12"
+                md="4"
+                class="pa-0 ma-0"
+              >
+                <v-card
+                  class="pa-4 ma-4 elevation-2 hover-effect"
+                  max-width="388"
+                  :aria-labelledby="`artDate${item.id} arrestNr${item.id} publicationTitle${item.id}`"
+                  :style="{ position: 'relative', overflow: 'visible' }"
                 >
-                  <v-btn
-                    color="transparent"
-                    elevation="0"
-                    @click="toggleDisplayMediaDisplayMode(index)"
+                  <v-img
+                    :src="getImage(`media-${index}`)"
+                    :alt="`Dynamic Image media-${index}`"
+                    height="320px"
+                    class="mb-4 mx-auto"
+                    max-width="100%"
+                    cover
+                    style="transform: translateY(-40px);"
+                  />
+                  <div class="d-flex justify-space-between mb-4">
+                    <p :id="`artDate${item.id}`">
+                      {{ item.formatedJudmentDate }}
+                    </p>
+                    <p
+                      v-if="item.type === MediaType.pressReleaseForJudgments"
+                      :id="`arrestNr${item.id}`"
+                      :aria-label="item.ariaLabelReference"
+                    >
+                      {{ t('general.message.add-judgment-number-label') }}
+                      {{ item.nr }}
+                    </p>
+                    <p v-else>
+                      {{ t('general.message.general-press-releases') }}
+                    </p>
+                  </div>
+                  <h3
+                    :id="`publicationTitle${item.id}`"
+                    :aria-label="item.title + ' ' + t('aria.label.description.continueReading')"
+                    class="text-h6 mb-4"
                   >
-                    <v-icon>{{ true ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-                  </v-btn>
-                </div>
-                <div v-else>
-                  <v-btn
-                    v-if="description"
-                    @click="gotoMediaPage(id)"
+                    {{ item.title }}
+                  </h3>
+                  <v-list-item-subtitle class="text-truncate-4 mb-4">
+                    {{ item.shortDescription }}
+                  </v-list-item-subtitle>
+                  <div
+                    class="d-flex align-center"
+                    @click="goToMediaPage(item.id, item.type)"
                   >
                     {{ t('general.message.read-more') }}
-                  </v-btn>
-                </div>
-              </div>
-            </v-card-text>
-          </v-card>
+                    <v-icon class="ml-2">
+                      mdi-arrow-right
+                    </v-icon>
+                  </div>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
         </template>
       </MediaCard>
 
-      <h2>Decisions:</h2>
+      <div class="mt-2 title-container">
+        <h2 class="title-h2">
+          {{ t('menu.agenda.title') }}
+        </h2>
+      </div>
+
       <AgendaCard
         :api-url="`${baseURL}${ApiUrl.pressJudgment}?lang=${locale}`"
         :max-items="0"
@@ -167,10 +187,7 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
                   </v-row>
                   <v-row>
                     <v-card-text>
-                      <v-icon
-                        class="mr-1"
-                        color="#F4A261"
-                      >
+                      <v-icon class="mr-1 ray">
                         mdi-file-document-outline
                       </v-icon> {{ id }}
                     </v-card-text>
@@ -194,7 +211,6 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
         </template>
       </AgendaCard>
 
-      <h2>Public hearings:</h2>
       <PleadingCard
         :api-url="`${baseURL}${ApiUrl.pressPleadings}?lang=${locale}`"
         :max-items="0"
@@ -223,31 +239,22 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
                 <!-- Time and Location -->
                 <v-col
                   cols="6"
-                  class="d-flex flex-column"
+                  class="d-flex flex-column indi"
                 >
                   <div class="d-flex align-center mb-2">
-                    <v-icon
-                      class="mr-1"
-                      color="primary"
-                    >
+                    <v-icon class="mr-1">
                       mdi-clock-time-four-outline
                     </v-icon>
                     <span>{{ hora || '14-17h' }}</span>
                   </div>
                   <div class="d-flex align-center mb-2">
-                    <v-icon
-                      class="mr-1"
-                      color="primary"
-                    >
+                    <v-icon class="mr-1">
                       mdi-map-marker
                     </v-icon>
                     {{ t('general.brussels') }}
                   </div>
                   <div class="d-flex align-center">
-                    <v-icon
-                      class="mr-1"
-                      color="primary"
-                    >
+                    <v-icon class="mr-1">
                       mdi-file-document-outline
                     </v-icon>
                     {{ id }} ({{ processingLanguage }})
@@ -263,17 +270,17 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
             </v-card-text>
           </v-card>
         </template>
-      </pleadingCard>
+      </PleadingCard>
     </v-container>
+    <NewsletterSection
+      fluid
+      class="ma-0 pa-0"
+      @mail-submitted="goToMailings"
+    />
   </div>
 </template>
 
 <style scoped lang="scss">
-.full-width-image {
-  width: 100%;
-  height: auto;
-}
-
 .index-banner {
   display: block;
   height: 60vh;
@@ -403,29 +410,28 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
 .day1 {
   font-size: 32px;
   font-weight: bold;
-  color: $rajahYellow;
 }
 
 .month1 {
   font-size: 16px;
   text-transform: uppercase;
+}
+.ray {
   color: $rajahYellow;
 }
-
 .day {
   font-size: 32px;
   font-weight: bold;
-  color: #00529b;
-  /* Darker blue color */
 }
 
 .month {
   font-size: 16px;
   text-transform: uppercase;
-  color: #00529b;
-  /* Darker blue color */
 }
 
+.indi {
+  color: $indigo;
+}
 .v-card-title {
   font-weight: bold;
 }
@@ -444,5 +450,16 @@ const toggleDisplayMediaDisplayMode = (index: number) => {
 .v-card-actions {
   display: flex;
   justify-content: flex-end;
+}
+
+.hover-effect {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.hover-effect:hover,
+.hover-effect:focus {
+  background-color: #3f51b5 !important;
+  color: white !important;
 }
 </style>

@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import type { Judgment } from '@/core/constants'
 
 const props = defineProps({
@@ -18,7 +18,22 @@ const transform = (items: Judgment[]): Judgment[] => {
   })).slice(0, props.maxItems ?? items.length)
 }
 
-const { data: items, error } = await useFetch<Judgment[]>(props.apiUrl, { transform })
+let apiUrl = props.apiUrl
+const currentYear = new Date().getFullYear()
+if (!apiUrl.includes('year=')) {
+  apiUrl += `&year=${currentYear}`
+}
+const fallbackYear = currentYear - 1
+let theYearWeUse = currentYear
+
+let { data: items, error } = await useFetch<Judgment[]>(apiUrl, { transform })
+if (error.value || (items.value?.length ?? 0) === 0) {
+  // If there is no data for the current year, we fetch the data for the previous year
+  theYearWeUse = fallbackYear
+  apiUrl = apiUrl.replace(`year=${currentYear}`, `year=${fallbackYear}`);
+  ({ data: items, error } = await useFetch<Judgment[]>(apiUrl, { transform }))
+}
+
 if (error.value) {
   throw createError({ statusCode: 404, statusMessage: 'We have a issue with fetching data in DecisionBox' })
 }
@@ -37,6 +52,7 @@ if (error.value) {
       <slot
         name="item"
         :item="item"
+        :year="theYearWeUse"
       />
     </v-col>
   </v-row>

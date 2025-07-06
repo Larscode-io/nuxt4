@@ -1,9 +1,6 @@
 import { RoutePathKeys } from '~/core/constants'
 
-// server/api/menu/index.ts
-// use this api as folows: const { data: courtItems } = await useFetch('/api/menu')
-
-export default defineEventHandler(async (_event) => {
+export default defineEventHandler(async () => {
   return [
     {
       title: 'menu.court.title',
@@ -15,10 +12,10 @@ export default defineEventHandler(async (_event) => {
               to: RoutePathKeys.presentationSituation,
               title: 'menu.court.presentation.history-of-court',
             },
-            {
-              to: RoutePathKeys.presentationOrganization,
-              title: 'menu.court.presentation.organization',
-            },
+            // {
+            //   to: RoutePathKeys.presentationOrganization,
+            //   title: 'menu.court.presentation.organization',
+            // },
             {
               to: RoutePathKeys.presentationJurisdiction,
               title: 'menu.court.presentation.jurisdiction',
@@ -51,13 +48,14 @@ export default defineEventHandler(async (_event) => {
         },
         {
           title: 'menu.court.official-text.title',
+          count: 2,
           subMenu: [
             {
-              to: `${RoutePathKeys.presentationBasicTexts}#1-la-constitution-de-la-belgique-federale`,
+              to: `${RoutePathKeys.presentationBasicTexts}`,
               title: 'menu.court.official-text.constitution',
             },
             {
-              to: `${RoutePathKeys.presentationBasicTexts}#2-legislation-organique`,
+              to: `${RoutePathKeys.presentationBasicTexts}`,
               title: 'menu.court.official-text.organic-legislation',
             },
             {
@@ -93,6 +91,7 @@ export default defineEventHandler(async (_event) => {
         },
         {
           title: 'menu.court.job-offers.title',
+          count: 2,
           subMenu: [
             {
               to: RoutePathKeys.presentationJobOffers,
@@ -108,6 +107,7 @@ export default defineEventHandler(async (_event) => {
         {
           to: RoutePathKeys.judgmentsPendingCases,
           title: 'menu.decisions.pending-cases',
+          count: 2,
         },
         {
           to: RoutePathKeys.searchJudgment,
@@ -116,6 +116,7 @@ export default defineEventHandler(async (_event) => {
         {
           to: RoutePathKeys.judgmentsHome,
           title: 'menu.decisions.judgment',
+          count: 2,
         },
         {
           to: RoutePathKeys.judgmentsPreliminaryRulingsFromCourtJusticeEU,
@@ -127,11 +128,10 @@ export default defineEventHandler(async (_event) => {
       title: 'menu.agenda.title',
       subMenu: [
         {
-          to: `${RoutePathKeys.agenda}#menu.decisions.title`,
           title: 'menu.agenda.upcoming-decisions',
         },
         {
-          to: `${RoutePathKeys.agenda}#general.message.public-hearing`,
+          to: `${RoutePathKeys.agenda}`,
           title: 'menu.agenda.scheduled-public-hearings',
         },
       ],
@@ -151,6 +151,11 @@ export default defineEventHandler(async (_event) => {
           to: RoutePathKeys.media,
           title: 'menu.press-and-media.media-unit',
         },
+        {
+          to: RoutePathKeys.informed,
+          title: 'menu.informed',
+        },
+
       ],
     },
     {
@@ -171,49 +176,46 @@ export default defineEventHandler(async (_event) => {
       ],
     },
     {
-      to: RoutePathKeys.informed,
-      title: 'menu.informed',
-    },
-    {
+      to: RoutePathKeys.prize,
       title: 'menu.prize.title',
-      subMenu: [
-        {
-          to: RoutePathKeys.prizeFR,
-          title: 'menu.prize.title',
-          condition: 'is-french',
-        },
-        {
-          to: RoutePathKeys.prizeNL,
-          title: 'menu.prize.title',
-          condition: 'is-dutch',
-        },
-        {
-          to: RoutePathKeys.prizeDE,
-          title: 'menu.prize.title',
-          condition: 'is-german',
-        },
-      ],
     },
-    {
-      title: 'DEV',
-      subMenu: [
-        {
-          to: RoutePathKeys.demoMailman,
-          title: 'menu.demo-mailman',
-        },
-        {
-          to: RoutePathKeys.demoLanguages,
-          title: 'menu.demo-languages',
-        },
-        {
-          to: RoutePathKeys.authLogin,
-          title: 'menu.auth-login',
-        },
-        {
-          to: RoutePathKeys.legacyContent,
-          title: 'menu.legacy-content',
-        },
-      ],
-    },
+    // {
+    //   title: 'DEV',
+    //   subMenu: [
+    //     {
+    //       to: RoutePathKeys.demoMailman,
+    //       title: 'Mailman subscription demo',
+    //     },
+    //     {
+    //       to: RoutePathKeys.demoLanguages,
+    //       title: 'i18n and languages demo',
+    //     },
+    //     {
+    //       to: RoutePathKeys.authLogin,
+    //       title: 'EID authentication demo',
+    //     },
+    //     {
+    //       to: RoutePathKeys.legacyContent,
+    //       title: 'LegacyContent demo',
+    //     },
+    //     {
+    //       to: '/demo/sql',
+    //       title: 'SQL demo',
+    //     },
+    //     {
+    //       to: '/demo/fm',
+    //       title: 'FileMaker demo',
+    //     },
+    //     {
+    //       to: '/demo/Juportal',
+    //       title: 'Juportal demo',
+    //     },
+    //     {
+    //       to: '/colorDemo',
+    //       title: 'setting Colors',
+    //     },
+    //   ],
+    // },
+
   ]
 })
