@@ -1,13 +1,18 @@
+---
+title: Design System – Audit
+description: Audit strategy from Legacy site to Nuxt 4 + Vuetify 3 site
+---
+
 # 📋 Visuele Audit – Nuxt 4 Site
 
 ## 🔍 1. Pagina-overzicht
 
-| Pagina         | Headings gebruikt | Marges (top/bottom) | Fontgrootte | Line-height | Kleurgebruik     | Opmerkingen                      |
-|----------------|-------------------|----------------------|-------------|--------------|------------------|----------------------------------|
-| /              | h1, h2            | h1: mt-8 mb-2        | h1: 32px     | 1.2          | #003366, zwart   | h2 zonder marge, inconsistent   |
-| /nieuws        | h2, h3            | h2: mt-6 mb-0        | h3: 20px     | 1.5          | #003366, blauw   | weinig witruimte                |
-| /agenda        | h2, h4            | h4: mt-4 mb-2        | h4: 16px     | 1.4          | zwart, grijs     | headings voelen generiek        |
-| /uitspraak     | h2, p             | p: mb-2              | p: 16px      | 1.5          | zwart            | leesbaar, maar visueel vlak     |
+| Pagina         | Headings gebruikt | Marges (top/bottom) | Fontgrootte  | Line-height  | Kleurgebruik     | Opmerkingen                     |
+|----------------|-------------------|----------------------|-------------|--------------|------------------|---------------------------------|
+| /              | h1, h2            | h1: mt-8 mb-2        | h1: 32px    | 1.2          | #003366, zwart | h2 zonder marge, inconsistent   |
+| /nieuws        | h2, h3            | h2: mt-6 mb-0        | h3: 20px    | 1.5          | #003366, blauw | weinig witruimte                |
+| /agenda        | h2, h4            | h4: mt-4 mb-2        | h4: 16px    | 1.4          | zwart, grijs     | headings voelen generiek        |
+| /uitspraak     | h2, p             | p: mb-2              | p: 16px     | 1.5          | zwart            | leesbaar, maar visueel vlak     |
 
 > Tip: analyseer 5–10 sleutelpagina’s. Noteer inconsistenties in marges, kleur en structuur.
 
@@ -63,4 +68,3 @@
 3. Maak CSS-variabelen met kleurdefinities uit legacy
 4. Bouw startercomponenten voor: headings, tekst, knoppen, cards
 5. Hergebruik deze op sleutelpagina’s
-
