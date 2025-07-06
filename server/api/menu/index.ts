@@ -1,7 +1,8 @@
 import { RoutePathKeys } from '~/core/constants'
 
-// to: fields must be unique because of the way the menu is rendered
-// else we will have issue with id generation in the template
+// `to` values must be unique—even if the route is the same—
+// as Vuetify uses them to generate internal keys and IDs.
+// Add a unique hash (e.g., #x) or query (?q=x) to avoid rendering conflicts.
 
 export default defineEventHandler(async () => {
   return [
@@ -58,7 +59,7 @@ export default defineEventHandler(async () => {
               title: 'menu.court.official-text.constitution',
             },
             {
-              to: `${RoutePathKeys.presentationBasicTexts}`,
+              to: `${RoutePathKeys.presentationBasicTexts}#2`,
               title: 'menu.court.official-text.organic-legislation',
             },
             {
@@ -182,42 +183,42 @@ export default defineEventHandler(async () => {
       to: RoutePathKeys.prize,
       title: 'menu.prize.title',
     },
-    {
-      title: 'DEV',
-      subMenu: [
-        {
-          to: RoutePathKeys.demoMailman,
-          title: 'Mailman subscription demo',
-        },
-        {
-          to: RoutePathKeys.demoLanguages,
-          title: 'i18n and languages demo',
-        },
-        {
-          to: RoutePathKeys.authLogin,
-          title: 'EID authentication demo',
-        },
-        {
-          to: RoutePathKeys.legacyContent,
-          title: 'LegacyContent demo',
-        },
-        {
-          to: '/demo/sql',
-          title: 'SQL demo',
-        },
-        {
-          to: '/demo/fm',
-          title: 'FileMaker demo',
-        },
-        {
-          to: '/demo/Juportal',
-          title: 'Juportal demo',
-        },
-        {
-          to: '/colorDemo',
-          title: 'setting Colors',
-        },
-      ],
-    },
+    // {
+    //   title: 'DEV',
+    //   subMenu: [
+    //     {
+    //       to: RoutePathKeys.demoMailman,
+    //       title: 'Mailman subscription demo',
+    //     },
+    //     {
+    //       to: RoutePathKeys.demoLanguages,
+    //       title: 'i18n and languages demo',
+    //     },
+    //     {
+    //       to: RoutePathKeys.authLogin,
+    //       title: 'EID authentication demo',
+    //     },
+    //     {
+    //       to: RoutePathKeys.legacyContent,
+    //       title: 'LegacyContent demo',
+    //     },
+    //     {
+    //       to: '/demo/sql',
+    //       title: 'SQL demo',
+    //     },
+    //     {
+    //       to: '/demo/fm',
+    //       title: 'FileMaker demo',
+    //     },
+    //     {
+    //       to: '/demo/Juportal',
+    //       title: 'Juportal demo',
+    //     },
+    //     {
+    //       to: '/colorDemo',
+    //       title: 'setting Colors',
+    //     },
+    //   ],
+    // },
   ]
 })

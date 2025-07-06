@@ -201,7 +201,7 @@ watch(smAndDown, (value) => {
 
 <template>
   <v-app app>
-    <nav aria-label="Main Navigation">
+    <nav aria-label="Main Navigation non-mobile">
 
       <v-app-bar
         ref="appBarRef"
