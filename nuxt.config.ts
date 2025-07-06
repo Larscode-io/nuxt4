@@ -146,7 +146,6 @@ export default defineNuxtConfig({
   i18n: {
     vueI18n: './i18n.config.ts',
     lazy: true,
-    langDir: 'lang/json',
     defaultLocale: 'nl',
     strategy: 'prefix',
     locales: [
