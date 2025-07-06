@@ -202,6 +202,11 @@ export const DISCOURS_WORDS_FOR_FILTERING = [
   'Toespraken',
 ]
 
+// judment.formatedJudmentDate is in BE format "DD/MM/YYYY" like "26/06/2025"
+// judment.judmentDate is a string in the format "YYYY-MM-DDTHH:mm:ss.sssZ" like "2025-06-25T22:00:00.000Z"
+// The "Z" at the end means the date is in UTC. To get BE local time, you may need to convert it accordingly.
+// BE (Belgium) time is UTC+2 during daylight saving time (summer), and UTC+1 during standard time (winter).
+// we we use the Date constructor to parse the date string the date will be in UTC time.
 export interface Judgment {
   id: number
   description: string
@@ -209,7 +214,7 @@ export interface Judgment {
   nr: string
   fileName: string
   path: string
-  judmentDate: string
+  judmentDate: string // e.g. "2025-06-25T22:00:00.000Z" (Zulu/UTC time, which is 26 June in CET/CEST)
   formatedJudmentDate: string
   filePath: string
   summary: string
