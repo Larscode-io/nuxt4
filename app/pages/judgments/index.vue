@@ -9,7 +9,7 @@ import { useLanguage } from '@/composables/useLanguage'
 import type { GeneralPressJudgment } from '@/core/constants'
 
 const { t, locale } = useLanguage()
-const baseURL = useRuntimeConfig().public.apiBaseUrl
+const basePublicUrl = useRuntimeConfig().public.basePublicUrl
 
 const { query } = useRoute()
 
@@ -64,6 +64,20 @@ const scrollToJudgment = (id: number) => {
       top: el.getBoundingClientRect().top + window.scrollY - menuHeight.value - 10,
       behavior: 'smooth',
     })
+  }
+}
+
+const handleJudgmentHover = async (nr: String) => {
+  try {
+    console.log(`Checking file for judgment ${nr}...`)
+    // nr is not enough, we need the full path to the file
+    const { exists: existFile, status } = await $fetch('/api/check-file', {
+      query: { url: `${basePublicUrl}${nr}` },
+    })
+    console.log(status === 200 && existFile ? `File exists for judgment ${nr}` : `File does not exist for judgment ${nr}`)
+  }
+  catch (error: unknown) {
+    console.error(`Error checking file for judgment ${nr}:`, error)
   }
 }
 
@@ -140,7 +154,7 @@ watchEffect(() => {
             </v-card-text>
           </v-card>
           <v-card
-            v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id: idx } in judgments"
+            v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id: idx, filePath } in judgments"
             v-else
             :id="`judgment-card-${idx}`"
             :key="idx"
@@ -161,6 +175,7 @@ watchEffect(() => {
                   rel="noopener noreferrer"
                   target="_blank"
                   :aria-label="t('aria.label.download-pdf')"
+                  @mouseenter="handleJudgmentHover( filePath )"
                 >
                   <v-icon
                     color="var(--pdf-red)"

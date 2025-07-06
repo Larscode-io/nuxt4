@@ -56,6 +56,7 @@ const updatePage = (newPage: number) => {
 
 const handleJudgmentHover = async (j: Judgment) => {
   try {
+    console.info(`Judgment Number: ${j.nr}, File Path: ${j.filePath}`)
     const { exists: existFile, status } = await $fetch('/api/check-file', {
       query: { url: `${basePublicUrl}${j.filePath}` },
     })
