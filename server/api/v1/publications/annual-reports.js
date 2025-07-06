@@ -5,6 +5,7 @@ export default defineEventHandler(async (event) => {
     = event.context
 
   try {
+
     const { fetchPublications } = filemakerPublications(
       token,
       tokenExpiration,

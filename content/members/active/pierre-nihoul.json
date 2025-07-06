@@ -1,0 +1,57 @@
+{
+  "name": "Pierre Nihoul",
+  "slug": "pierre-nihoul",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "pierre-nihoul.jpg",
+  "alt": {
+    "en": "Picture of Pierre NIHOUL",
+    "fr": "Photographie de Pierre NIHOUL",
+    "nl": "Foto van Pierre NIHOUL",
+    "de": "Foto von Pierre NIHOUL"
+  },
+  "infos": {
+    "en": [
+      "Born in Brussels on 31 December 1961",
+      "Master’s degree in law (Université catholique de Louvain, UCL, 1984)",
+      "Lawyer at the Bar of Brussels (1986-1991); first finalist of the open competition for recruitment to the prosecution office of the Council of State (1991); Assistant Auditor at the Council of State (1991- 1993); Auditor at the Council of State (1993-2002); Councillor at the Council of State (2002-2010)",
+      "Parliamentary assistant at the House of Representatives (1988-1991); Deputy Head of Cabinet, then Head of Cabinet of the Vice-Minister-President of the Walloon Region (1995-1999)",
+      "Teaching assistant in public law (1984-1988 and 1991-1995); substitute lecturer (1995-1997); lecturer (1997-2010); senior lecturer (since 2011) at the UCL; member of the Groupe européen de droit public since 1991",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 18 April 2010 and elected (Frenchspeaking) President with effect from 15 September 2021"
+    ],
+    "de": [
+      "Geboren in Brüssel am 31. Dezember 1961",
+      "Lizentiat der Rechte (UCL 1984)",
+      "In Brüssel zugelassener Rechtsanwalt (1986- 1991); erfolgreichster Prüfungsteilnehmer bei der Anwerbungsprüfung im Wettbewerbsverfahren beim Auditorat des Staatsrates (1991); beigeordneter Auditor beim Staatsrat (1991-1993); Auditor beim Staatsrat (1993-2002); Staatsrat (2002-2010)",
+      "Parlamentarischer Mitarbeiter bei der Abgeordnetenkammer (1988-1991); beigeordneter Kabinettschef, anschließend Kabinettschef des Vizeministerpräsidenten der Wallonischen Region (1995-1999)",
+      "Assistent für Öffentliches Recht (1984-1988 und 1991- 1995); Stellvertreter (1995-1997); Lektor (1997-2010); Dozent (seit 2011) an der UCL; Mitglied der Groupe européen de droit public seit 1991",
+      "Durch königlichen Erlass vom 18. April 2010 zum Richter am Verfassungsgerichtshof ernannt und mit Wirkung vom 15. September 2021 zum (französischsprachigen) Präsidenten gewählt"
+    ],
+    "nl": [
+      "Geboren te Brussel op 31 december 1961",
+      "Licentiaat in de rechten (UCL 1984)",
+      "Advocaat bij de balie te Brussel (1986-1991); eerste laureaat van het vergelijkend examen voor aanwerving bij het auditoraat van de Raad van State (1991); adjunct-auditeur bij de Raad van State (1991-1993); auditeur bij de Raad van State (1993 2002); staatsraad (2002-2010); parlementair medewerker bij de Kamer van volksvertegenwoordigers (1988-1991); adjunct-kabinetschef, en vervolgens kabinetschef van de Vice-Minister-President van het Waalse Gewest (1995-1999)",
+      "Assistent publiek recht (1984-1988 en 1991-1995); plaatsvervanger (1995-1997); lector (1997-2010), docent (sinds 2011) aan de UCL; lid van de « Groupe européen de droit public » sinds 1991",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 18 april 2010 en verkozen tot (Franstalig) voorzitter met ingang van 15 september 2021"
+    ],
+    "fr": [
+      "Né à Bruxelles le 31 décembre 1961",
+      "Licencié en droit (UCL 1984)",
+      "Avocat au barreau de Bruxelles (1986-1991); premier lauréat au concours de recrutement à l’auditorat du Conseil d’Etat (1991); auditeur adjoint au Conseil d’Etat (1991-1993); auditeur au Conseil d’Etat (1993 2002); conseiller d’Etat (2002-2010); collaborateur parlementaire à la Chambre des représentants (1988-1991); chef de cabinet adjoint, puis chef de cabinet du Vice-Ministre-Président de la Région wallonne (1995-1999)",
+      "Assistant en droit public (1984-1988 et 1991-1995); suppléant (1995-1997); maître de conférences (1997-2010), chargé de cours (depuis 2011) à l’UCL; membre du Groupe européen de droit public depuis 1991",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 18 avril 2010 et élu président (francophone) à partir du 15 septembre 2021"
+    ]
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "18.04.2010",
+      "endDate": "14.09.2021"
+    },
+    {
+      "role": "president",
+      "startDate": "15.09.2021",
+      "endDate": null
+    }
+  ]
+}

@@ -1,11 +1,10 @@
 <!-- API based page -->
 <script setup lang="ts">
 // todo: error card ?
-import BannerImage from '~/components/BannerImage.vue'
-import img from '~/assets/img/newsletter-background-opt.png'
-import { ApiUrl } from '~/core/constants'
+import { ApiUrl } from '@core/constants'
 
-import type { PubBrochuresData } from '~/core/constants'
+import type { PubBrochuresData } from '@core/constants'
+import img from '@assets/img/newsletter-background-opt.png'
 
 const { t, locale } = useLanguage()
 

@@ -21,3 +21,20 @@ export const downloadPublicFile = (filePath: string) => {
   const url = `https://www.const-court.be${filePath}`
   window.open(url, '_blank')
 }
+
+export const checkFileExists = async (url: string) => {
+  try {
+    const response = await fetch(url, { method: 'HEAD' })
+    if (response.ok) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+  catch (e) {
+    console.info(`%cWe tried to check existence with a HTTP HEAD request: ${url}`, 'color: red')
+    console.error('%c' + e, 'color: red')
+    return false
+  }
+}

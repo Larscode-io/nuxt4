@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { watch, ref, reactive, computed } from 'vue'
 
-import type { Languages } from '@/composables/useLanguage'
-import { useLanguage, defaultListLang } from '@/composables/useLanguage'
-import { useFaker } from '@/composables/useFaker'
-
 const { t, locale } = useLanguage()
 const faker = await useFaker(locale.value)
 
@@ -119,8 +115,6 @@ const submitRequest = async () => {
 
   makeAllDirty()
   await fetchData()
-  console.log(`mailmanSubmitIsValid.value: ${mailmanSubmitIsValid.value}`)
-  console.log(`emailsSeemsInvalid.value: ${emailsSeemsInvalid.value}`)
   if (mailmanSubmitIsValid.value) {
     form.userFeedbackMessage = t('general.message.mailman.subscription-succes')
   }
@@ -197,13 +191,12 @@ watch(() => form.userFeedbackMessage, () => {
 </script>
 
 <template>
-  <slot
+  <!-- <slot
     v-if="props.email"
     name="email"
     :email="props.email"
-  />
+  /> -->
   <slot
-    v-else
     name="default"
     email=""
   />

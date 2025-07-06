@@ -1,5 +1,8 @@
 import { nlBE, fr, de, enGB } from 'date-fns/locale'
 
+// dit zijn server constants, niet uit @core/constants
+import { DEFAULT_LANGUAGE, Languages } from '../constants'
+
 // /public/stet/n/stet-2016-003n.pdf
 
 export function getPublicPathPDFFilePublicationsAnnualReport(
@@ -69,7 +72,14 @@ export function unique(array = []) {
 }
 
 // gebruikt in server/api/newsletter/newsletter-get-upcoming-pleadings.ts
-export const sortUpcomingPleadings = (aViews: any[]) => {
+// todo: check if this is still used and move to core/constants if so
+type PleadingView = {
+  date: number
+  hora: string
+  [key: string]: unknown
+}
+
+export const sortUpcomingPleadings = (aViews: PleadingView[]) => {
   return aViews.sort(
     (a, b) => a.date - b.date || a.hora.toString().localeCompare(b.hora),
   )

@@ -1,4 +1,24 @@
 <!-- Content based Page -->
+<!-- app/pages/court/job-offers.vue -->
+
+<script setup lang="ts">
+import { ContentKeys } from '@core/constants'
+import img from '@assets/img/newsletter-background-opt.png'
+
+const { locale } = useI18n()
+const { t, langCollection } = useLanguage()
+
+const contentPath = ref(`${ContentKeys.presentationJobOffers}`)
+const pad = computed(() => `/${locale.value}/${contentPath.value}`)
+
+const { data: page } = useAsyncData(
+  () => `job-offers-${locale.value}-${contentPath.value}`,
+  () => queryCollection(langCollection[locale.value])
+    .path(pad.value)
+    .first(),
+)
+</script>
+
 <template>
   <div>
     <BannerImage
@@ -13,9 +33,9 @@
           cols="12"
           md="8"
         >
-          <article v-if="page">
-            <ContentRendererMarkdown
-              :value="page.body || {}"
+          <article v-if="page && page.body">
+            <ContentRenderer
+              :value="page.body"
               class="nuxt-content content-renderer"
             />
           </article>
@@ -24,23 +44,3 @@
     </v-container>
   </div>
 </template>
-
-<script setup lang="ts">
-import img from '~/assets/img/newsletter-background-opt.png'
-import { useLanguage } from '@/composables/useLanguage'
-import { ContentKeys } from '~/core/constants'
-
-const { t, locale } = useLanguage()
-
-const { data: page } = await useAsyncData('content', async () => {
-  try {
-    const doc = await queryContent(`${locale.value}/${ContentKeys.presentationJobOffers}`)
-      .findOne()
-    return doc
-  }
-  catch (error) {
-    console.error('Error fetching content:', error)
-    return null
-  }
-})
-</script>

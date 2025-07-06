@@ -4,11 +4,12 @@ import { ref, onMounted } from 'vue'
 // import { useAuth } from '~/composables/useAuth'
 
 const { locale } = useI18n()
+const localePath = useLocalePath()
 
 const route = useRoute()
 const { handleCallback } = useAuth()
 const { code = '', state = '', scope = '', iss = '', client_id = '' } = route.query
-const missingParams = [code, state, scope, iss, client_id].some(param => !param)
+const missingParams = [code, state, scope, iss, client_id].some((param) => !param)
 
 interface _Response {
   aud: string
@@ -33,8 +34,6 @@ onMounted(async () => {
       const tokenResponse = await $fetch(`/auth/exchangeCodeForToken?code=${code}&state=${state}&scope=${scope}&iss=${iss}&client_id=${client_id}`)
       const { statusCode, body: { access_token, intendedDestination } } = tokenResponse
       //
-      console.log('access_token:', access_token)
-      console.log('intendedDestination:', intendedDestination)
       handleCallback(access_token, intendedDestination)
 
       if (statusCode === 200 && access_token) {
@@ -45,16 +44,22 @@ onMounted(async () => {
           response.value = body as _Response
         }
         else {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           response.value = { statusCode: userInfoStatusCode, body } as any
         }
       }
       else {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         response.value = { statusCode, body: tokenResponse.body } as any
       }
     }
     catch (error) {
       console.error('Fetch error:', error)
-      response.value = { statusCode: 500, body: error.message } as any
+      const errorMessage = typeof error === 'object' && error !== null && 'message' in error
+        ? (error as { message: string }).message
+        : String(error)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      response.value = { statusCode: 500, body: errorMessage } as any
     }
   }
 })

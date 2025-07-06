@@ -1,0 +1,13 @@
+{
+    "name": "Jacques Wathelet",
+    "role": "president",
+    "isAlive": false,
+    "lang": "fr",
+    "roles": [
+        {
+            "role": "president",
+            "startDate": "10.09.1984",
+            "endDate": "18.11.1992"
+        }
+    ]
+}

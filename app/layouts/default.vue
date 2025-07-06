@@ -5,33 +5,94 @@
 <!-- -------------------------------------------------------------------------------- -->
 
 <script setup lang="ts">
-import { ref, useTemplateRef, onMounted, computed, watch } from 'vue'
+import { ref, useTemplateRef, onMounted, computed, watch, watchEffect } from 'vue'
 import { useDisplay } from 'vuetify'
-import { useLanguage } from '@/composables/useLanguage'
-import type { CourtItem } from '@/core/constants'
-import ogImageUrl from '~/assets/img/ogImage.jpg'
-import { RoutePathKeys } from '~/core/constants'
+import type { CourtItem } from '@core/constants'
+import { RoutePathKeys } from '@core/constants'
 
-const { t, locale, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage, localePath } = useLanguage()
+const { locales, locale } = useI18n()
+
+const route = useRoute()
+const { t, ogLocaleAlternate, ogLocale, availableLocales, switchLanguage, switchLocalePath } = useLanguage()
+const localePath = useLocalePath()
 const description = computed(() => t('general.banner'))
 const ogTitle = computed(() => t('general.message.consts-court'))
 
+const config = useRuntimeConfig()
+const baseUrl = config.public.apiBaseUrl
+const ogImage = `${baseUrl}/img/ogImage.jpg`
+// the full, canonical URL of the current page
+// todo: check if it works without baseUrl (and drop useRuntimeConfig)
+const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
+
+// todo: check when we don't need /nuxt/ redirect on nginx anymore
+// https://opengraph.dev/
+// https://metatags.io/
 useSeoMeta({
+  ogUrl,
   ogTitle,
+  ogImage,
   ogLocale,
   description,
   ogType: 'website',
   ogLocaleAlternate,
-  ogImage: ogImageUrl,
   ogDescription: description,
-  ogUrl: 'https://www.const-court.be/',
-  title: t('general.message.consts-court'),
 })
+
+const namesByLocale = {
+  nl: 'Grondwettelijk Hof',
+  fr: 'Cour constitutionnelle',
+  de: 'Verfassungsgerichtshof',
+  en: 'Constitutional Court',
+}
+
+const alternateNames = Object.entries(namesByLocale)
+  .filter(([code]) => code !== locale.value)
+  .map(([, name]) => name)
+
 useHead({
-  htmlAttrs: {
-    lang: locale.value,
-  },
+  meta: [
+    { property: 'og:image', content: ogImage },
+    { property: 'og:image:width', content: '1200' },
+    { property: 'og:image:height', content: '630' },
+    { property: 'og:image:type', content: 'image/jpeg' },
+  ],
+  htmlAttrs: { lang: locale.value },
+  link: [
+    ...locales.value.map((l) => ({
+      rel: 'alternate',
+      hreflang: l.language,
+      href: `https://www.const-court.be${switchLocalePath(l.code)}`,
+    })),
+    {
+      rel: 'alternate',
+      hreflang: 'x-default',
+      href: 'https://www.const-court.be/',
+    },
+    {
+      rel: 'canonical',
+      href: `https://www.const-court.be${route.fullPath}`,
+    },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'GovernmentOrganization',
+        'name': namesByLocale[locale.value],
+        'alternateName': alternateNames,
+        'url': `https://www.const-court.be${route.fullPath}`,
+        'address': {
+          '@type': 'PostalAddress',
+          'addressCountry': 'BE',
+        },
+        'inLanguage': locale.value,
+      }),
+    },
+  ],
 })
+
 const mobileDrawer = ref(false)
 
 const { data: courtItems } = await useFetch<CourtItem[]>('/api/menu', {
@@ -52,6 +113,15 @@ const translatedItems = computed(() => {
 })
 
 const isHydrated = ref(false)
+
+const { data: certInfo } = useAsyncData<{ daysLeft?: number }>('certInfo', () => $fetch('/api/cert'))
+
+watchEffect(() => {
+  const days = certInfo.value?.daysLeft ?? 0
+  if (days >= 1 && days <= 10) {
+    console.error('Certificate is only valid for', days, 'days')
+  }
+})
 
 onMounted(() => {
   if (h.value) {
@@ -89,6 +159,21 @@ function toggleMenu() {
   hoveredMenu.value = hoveredMenu.value === null ? 0 : null
 }
 
+function changeLanguage(lang: string) {
+  if (lang !== locale.value) {
+    try {
+      const x = switchLanguage(lang as Languages)
+      // If switchLanguage or navigateTo are async, await them:
+      // const x = await switchLanguage(lang as Languages)
+      navigateTo(x)
+      mobileDrawer.value = false
+    }
+    catch (error) {
+      // Handle/log the error as needed
+      console.error('Error changing language:', error)
+    }
+  }
+}
 const { lgAndUp, mdAndUp, smAndDown } = useDisplay()
 
 watch(smAndDown, (value) => {
@@ -148,7 +233,7 @@ watch(smAndDown, (value) => {
                 <div
                   v-if="item.subMenu"
                   :id="`menu-${item.title}`"
-                  class="cursor-pointer position-relative text-center"
+                  class="cursor-pointer position-relative"
                   :aria-label="`level 1 menu title ${item.title}`"
                   role="link"
                   tabindex="0"
@@ -182,8 +267,7 @@ watch(smAndDown, (value) => {
                           >
                             <v-row class="flex flex-column">
                               <v-col
-                                class="font-weight-bold pa-1 pb-5"
-                                align="start"
+                                class="align-start font-weight-bold pa-1 pb-5"
                                 aria-label="level 2 menu title"
                               >
                                 {{ subItem.title }}
@@ -191,8 +275,7 @@ watch(smAndDown, (value) => {
                               <v-col
                                 v-for="(thirdLevelItem) in subItem.subMenu"
                                 :key="thirdLevelItem.title"
-                                align="start"
-                                class="pa-1"
+                                class="align-start pa-1"
                               >
                                 <nuxt-link
                                   :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
@@ -279,7 +362,7 @@ watch(smAndDown, (value) => {
               :key="lang.code"
               role="menuitem"
               :aria-label="lang.name"
-              @click="switchLanguage(lang.code)"
+              @click="changeLanguage(lang.code)"
             >
               <v-list-item-title>
                 {{ lang.name }}
@@ -386,17 +469,17 @@ watch(smAndDown, (value) => {
     </v-main>
     <footer>
       <v-container fluid>
-        <v-row class="d-flex justify-space-between">
+        <v-row class="align-center justify-space-between pa-6">
           <v-col cols="auto">
             <nuxt-link
-              class="pa-2"
+              class="pr-10 pl-10"
               :to="localePath(RoutePathKeys.courtContacts) || '#'"
               aria-label="Contact"
             >
               {{ t('menu.footer.contact') }}
             </nuxt-link>
             <nuxt-link
-              class="pa-2"
+              class="pr-10"
               :to="localePath(RoutePathKeys.legalDisclaimer) || '#'"
               aria-label="Legal Disclaimer"
             >
@@ -407,14 +490,13 @@ watch(smAndDown, (value) => {
               target="_blank"
               rel="noopener noreferrer"
               :aria-label="t('aria.label.menu.footer.documentenserver')"
-              aria-describedby="tooltiptext"
+              aria-describedby="tooltip text"
               class="pa-2"
             >
               {{ t('menu.footer.documents-download') }}
             </a>
-
             <nuxt-link
-              class="pa-2"
+              class="pl-10"
               :to="localePath(RoutePathKeys.privacyPolicy) || '#'"
               aria-label="Privacy Policy"
             >
@@ -422,7 +504,7 @@ watch(smAndDown, (value) => {
             </nuxt-link>
           </v-col>
           <v-col cols="auto">
-            <div class="d-flex align-center">
+            <div class="d-flex align-center pr-10">
               <span class="mr-2">{{ t('menu.footer.twitter') }}</span>
               <nuxt-link
                 to="https://www.linkedin.com/company/const-court-be"
@@ -433,6 +515,7 @@ watch(smAndDown, (value) => {
                 <img
                   src="~/assets/img/linkedin.svg"
                   :style="{ width: '32px', height: '32px' }"
+                  class="ml-2"
                   alt="LinkedIn"
                 >
               </nuxt-link>

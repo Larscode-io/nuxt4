@@ -1,0 +1,21 @@
+{
+  "name": "Katrien Audenaert",
+  "slug": "katrien-audenaert",
+  "femaleTitle": true,
+  "isAlive": true,
+  "lang": "nl",
+  "picture": [],
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

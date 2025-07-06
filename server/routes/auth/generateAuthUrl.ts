@@ -1,4 +1,4 @@
-import { defineEventHandler, getQuery } from '#imports'
+// import { defineEventHandler, getQuery } from '#imports'
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)

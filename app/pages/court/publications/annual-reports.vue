@@ -1,12 +1,10 @@
 <!-- API based page -->
 <script setup lang="ts">
 import { computed } from 'vue'
-import BannerImage from '~/components/BannerImage.vue'
+import { ApiUrl } from '@core/constants'
+import type { PubAnnualReportData } from '@core/constants'
 import img from '~/assets/img/newsletter-background-opt.png'
-import { ApiUrl } from '~/core/constants'
 import { useFetch } from '#imports'
-
-import type { PubAnnualReportData } from '~/core/constants'
 
 const { t, locale } = useLanguage()
 const config = useRuntimeConfig()
@@ -47,7 +45,7 @@ if (error.value) {
 // todo: check if this is needed
 // const url1 = `${ApiUrl.publicationsAnnualReports2}?lang=${locale.value}`
 // const { data: data1 } = await useFetch(url1)
-// console.log(data1.value)
+// console log(data1.value)
 
 const reports = computed(() => data.value)
 useHead({
@@ -112,6 +110,14 @@ useHead({
             cols="12"
             md="6"
           >
+            // add baseurl and filepath for debugging
+            <p>
+              {{ filePath }}
+              <br>
+              {{ baseURL }}
+              <br>
+              {{ description }}
+            </p>
             <a
               :href="`${baseURL}${filePath}`"
               target="_blank"

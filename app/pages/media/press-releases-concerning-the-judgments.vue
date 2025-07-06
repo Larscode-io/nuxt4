@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, nextTick } from 'vue'
-import img from '~/assets/img/banner-media.png'
-import { ApiUrl } from '~/core/constants'
+import { ApiUrl } from '@core/constants'
+import img from '@assets/img/banner-media.png'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { query } = useRoute()
@@ -92,9 +92,7 @@ watch(() => releases.value, (newReleases) => {
               <v-list-item>
                 <div class=" mb-3">
                   <div class="d-flex justify-space-between">
-                    <v-icon
-                      :color="'var(--pdf-red)'"
-                    >mdi-file-pdf-box</v-icon>
+                    <v-icon :color="'var(--pdf-red)'">mdi-file-pdf-box</v-icon>
 
                     <h3>
                       {{ t('general.message.add-judgment-number-label') }}

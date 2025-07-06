@@ -27,7 +27,7 @@ locale: nl
 
 **Art. 2.**
 De advocaten en de personen die wensen te pleiten, dienen de griffie daarvan op de hoogte te
-brengen, via mail op het adres griffie@const-court.be, uiterlijk daags voor de terechtzitting vóór
+brengen, via mail op het adres <griffie@const-court.be>, uiterlijk daags voor de terechtzitting vóór
 13 uur, teneinde het zittingsblad en het proces-verbaal van de terechtzitting voor te bereiden.
 
 **Art. 3.**
@@ -55,7 +55,6 @@ bestemd zijn voor het publiek, op voorwaarde dat zij de griffie op de hoogte heb
 van hun wens om de terechtzitting bij te wonen, en dit via mail op het adres griffie@const-
 court.be, uiterlijk daags voor de terechtzitting vóór 13 uur, en dat zij aanwezig zijn op het Hof
 vóór de aanvang van de terechtzitting.
-
 
 <br/>
 

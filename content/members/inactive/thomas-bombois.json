@@ -1,0 +1,20 @@
+{
+  "name": "Thomas Bombois",
+  "slug": "thomas-bombois",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "",
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

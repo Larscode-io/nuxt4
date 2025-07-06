@@ -1,0 +1,27 @@
+{
+  "name": "Bernadette Renauld",
+  "slug": "bernadette-renauld",
+  "femaleTitle": true,
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "bernadette-renauld.jpg",
+  "alt": {
+    "en": "Picture of Bernadette RENAULD",
+    "fr": "Photographie de Bernadette RENAULD",
+    "nl": "Foto van Bernadette RENAULD",
+    "de": "Foto von Bernadette RENAULD"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "01.01.1999",
+      "endDate": null
+    }
+  ]
+}

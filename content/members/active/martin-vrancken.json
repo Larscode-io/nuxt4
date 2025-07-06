@@ -1,0 +1,26 @@
+{
+  "name": "Martin Vrancken",
+  "slug": "martin-vrancken",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "martin-vranken.jpg",
+  "alt": {
+    "en": "Picture of Martin VRANCKEN",
+    "fr": "Photographie de Martin VRANCKEN",
+    "nl": "Foto van Martin VRANCKEN",
+    "de": "Foto von Martin VRANCKEN"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "01.11.2018",
+      "endDate": null
+    }
+  ]
+}

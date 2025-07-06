@@ -1,0 +1,27 @@
+{
+  "name": "Tim Souverijns",
+  "femaleTitle": false,
+  "slug": "tim-souverijns",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "tim-souverijns.jpg",
+  "alt": {
+    "en": "Picture of Tim SOUVERIJNS",
+    "fr": "Photographie de Tim SOUVERIJNS",
+    "nl": "Foto van Tim SOUVERIJNS",
+    "de": "Foto von Tim SOUVERIJNS"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "01.01.2021",
+      "endDate": null
+    }
+  ]
+}

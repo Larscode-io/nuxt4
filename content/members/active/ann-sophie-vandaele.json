@@ -1,0 +1,27 @@
+{
+  "name": "Ann-Sophie Vandaele",
+  "femaleTitle": true,
+  "slug": "ann-sophie-vandaele",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "ann-sophie-vandaele.jpg",
+  "alt": {
+    "en": "Picture of Ann-Sophie VANDAELE",
+    "fr": "Photographie de Ann-Sophie VANDAELE",
+    "nl": "Foto van Ann-Sophie VANDAELE",
+    "de": "Foto von Ann-Sophie VANDAELE"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "01.04.2017",
+      "endDate": null
+    }
+  ]
+}

@@ -1,95 +1,37 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import BannerImage from '~/components/BannerImage.vue'
-// import ErrorCard from '~/components/ErrorCard.vue'
-// import EmptyComponent from '~/components/EmptyComponent.vue'
-import img from '~/assets/img/newsletter-background-opt.png'
-import { ContentKeys } from '~/core/constants'
-import { useLanguage } from '@/composables/useLanguage'
+import { ContentKeys } from '@core/constants'
+import img from 'assets/img/newsletter-background-opt.png'
 
-const { locale } = useLanguage()
-const route = useRoute()
-const { query } = route
-const mdcVars = ref({ mailinfo: query.mailinfo || '' })
+const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActiveSectionObserver('h3', 0.75)
 
-const currentActiveContentInToc = ref<string>('')
+// ⚠️ This may warn in dev due to useRoute() inside useI18n()
+// It's safe as we only use it after route has resolved
+// const { locale } = useI18n()
+const { locale, langCollection } = useLanguage()
+
 const contentPath = ref(`${ContentKeys.informed}`)
-const { data: page } = await useAsyncData('content', async () => {
-  try {
-    const doc = await queryContent(`${locale.value}/${contentPath.value}`)
-      .findOne()
-    const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
-    const hash = route.hash.substring(1)
+const pad = computed(() => `/${locale.value}/${contentPath.value}`)
 
-    currentActiveContentInToc.value
-      = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
-    return doc
-  }
-  catch (error) {
-    console.error('Error fetching content:', error)
-    return null
-  }
-})
-
-const sideBarLinks = computed(() => {
-  if (!page.value) {
-    return []
-  }
-  return page.value?.body?.toc?.links
-    ?.filter(toc => toc.depth === 3)
-    ?.map((toc) => {
-      return {
-        ...toc,
-        id: toc.id,
-        text: toc.text ? toc.text.split('.')[1]?.trim() || 'Untitled' : 'Untitled',
-      }
-    }) || []
-})
-const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
-const ids = computed(() => sideBarLinks.value.map(link => link.id))
-
-const updateCurrentActiveContentInToc = (section: string) => {
-  currentActiveContentInToc.value = section
-}
-
-const startIntersectionObserver = () => {
-  const options = {
-    threshold: 0.9,
-    rootMargin: '0px 0px -60% 0px',
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const elem = entry.target
-
-        if (entry.intersectionRatio >= 0) {
-          updateCurrentActiveContentInToc(elem.id)
-        }
-      }
-    })
-  }, options)
-
-  document.querySelectorAll('h3').forEach((el) => {
-    if (ids.value.includes(el.id)) {
-      observer.observe(el)
-    }
-  })
-}
+const { data: page, pending } = useAsyncData(
+  `stay-informed-page-${locale.value}`,
+  () => queryCollection(langCollection[locale.value])
+    .path(pad.value)
+    .first(),
+)
+const { sideBarLinks, hasSidebarLinks } = useSidebarLinks(page)
 
 onMounted(() => {
-  startIntersectionObserver()
-})
-onUpdated(() => {
-  startIntersectionObserver()
+  if (sideBarLinks.value.length > 0 && sideBarLinks.value[0]?.id) {
+    updateCurrentActiveContentInToc(sideBarLinks.value[0]?.id)
+  }
 })
 </script>
 
 <template>
   <div>
     <BannerImage
-      v-if="page"
+      v-if="!pending && page"
       :title="page?.title || ''"
       :description="page?.description"
       :image="img"
@@ -102,28 +44,22 @@ onUpdated(() => {
           cols="12"
           md="4"
         >
-          <Sidebar
+          <SideBar
             :active="currentActiveContentInToc"
-            :toc="sideBarLinks || []"
+            :toc="sideBarLinks"
             @click="updateCurrentActiveContentInToc"
           />
         </v-col>
         <v-col
-          v-else
           cols="12"
-          md="4"
+          :md="hasSidebarLinks ? 8 : 12"
         >
-          Geen sidebar ?
-          {{ sideBarLinks }}
-        </v-col>
-        <v-col
-          cols="12"
-          md="8"
-        >
+          <!-- ################################################################################ -->
+          <!-- todo: this page  stay-informed has an issue, after a few locale changes, the page blocks -->
+          <!-- ################################################################################ -->
           <article v-if="page">
-            <ContentRendererMarkdown
+            <ContentRenderer
               :value="page.body || {}"
-              :data="mdcVars"
               class="nuxt-content content-renderer"
             />
           </article>
@@ -133,24 +69,24 @@ onUpdated(() => {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 .container {
-    padding: 0 !important;
+  padding: 0 !important;
 
-    @include mobile {
-        padding: 32px;
-    }
+  @include mobile {
+    padding: 32px;
+  }
 }
 
 .d-flex {
-    max-width: 1260px !important;
-    margin: auto;
-    margin-bottom: 80px;
+  max-width: 1260px !important;
+  margin: auto;
+  margin-bottom: 80px;
 
-    @include mobile {
-        margin-bottom: 40px;
-        width: 100%;
-    }
+  @include mobile {
+    margin-bottom: 40px;
+    width: 100%;
+  }
 }
 
 ::v-deep(.nuxt-content h3) {
@@ -175,6 +111,6 @@ onUpdated(() => {
 }
 
 .space {
-    height: 60vh;
+  height: 60vh;
 }
-</style>
+</style> -->

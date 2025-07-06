@@ -1,0 +1,32 @@
+{
+  "name": "Lucien François",
+  "slug": "lucien-francois",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "francois.jpg",
+  "infos": {
+    "en": [],
+    "fr": [
+      "Né à Chênée le 26 mars 1934.",
+      "Docteur en droit (Université de Liège, 1956) - Doc­teur en sciences sociales (Université de Liège, 1963)",
+      "Assistant (1958-1963), chef de travaux (1963-1967), chargé de cours associé (1967-1970), professeur ordinaire (1970-1985) puis extraordinaire (1985-1999) à l'Université de Liège (philosophie du droit, droit du travail); membre de la Division des Normes internationales du travail du Bureau International du Travail (1964-1965, 1965-1966); ­chef de cabinet-adjoint du mi­nistre de la Justice (1982-1985); conseiller d'état (1985-1989).",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 22 novembre 1989.",
+      "Juge émérite depuis le 26 mars 2004."
+    ],
+    "nl": [
+      "Geboren te Chênée op 26 maart 1934.",
+      "Doctor in de rechten (Universiteit Luik, 1956) - Doc­tor in de socia­le wetenschappen (Universiteit Luik, 1963)",
+      "Assistent (1958-1963), werkleider (1963-1967), geassocieerd docent (1967-1970), gewoon (1970-1985), vervolgens buitengewoon (1985-1999) hoogleraar aan de Universiteit Luik (rechtsfilosofie, arbeidsrecht); lid van de Afdeling Internationale Arbeidsnormen van het Internationaal Arbeidsbureau (1964-1965, 1965-1966); adjunct-kabinets­chef van de mi­nister van Justitie (1982-1985); staatsraad (1985-1989).",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij K.B. van 22 november 1989.",
+      "Emeritus rechter sedert 26 maart 2004."
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "22.11.1989",
+      "endDate": "26.03.2004"
+    }
+  ]
+}

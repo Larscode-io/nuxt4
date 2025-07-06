@@ -1,0 +1,14 @@
+{
+    "name": "Yves de Wasseige",
+    "slug": "yves-de-wasseige",
+    "role": "judge",
+    "isAlive": false,
+    "lang": "fr",
+    "roles": [
+        {
+            "role": "judge",
+            "startDate": "26.07.1992",
+            "endDate": "14.12.1994"
+        }
+    ]
+}

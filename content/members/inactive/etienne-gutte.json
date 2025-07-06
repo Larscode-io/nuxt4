@@ -1,0 +1,13 @@
+{
+    "name": "Etienne Gutt",
+    "role": "president",
+    "isAlive": false,
+    "lang": "fr",
+    "roles": [
+        {
+            "role": "president",
+            "startDate": "03.10.1984",
+            "endDate": "30.09.1989"
+        }
+    ]
+}

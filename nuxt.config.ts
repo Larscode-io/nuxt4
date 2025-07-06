@@ -1,10 +1,13 @@
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-import { aliases, mdi } from 'vuetify/iconsets/mdi'
+import { resolve } from 'path'
+import * as vuetifyModule from 'vite-plugin-vuetify'
+// import { aliases, mdi } from 'vuetify/iconsets/mdi'
+
+const vuetify = vuetifyModule.default || vuetifyModule
+const { transformAssetUrls } = vuetifyModule
 
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
-    '@nuxt/eslint',
     '@nuxtjs/i18n',
   ],
   plugins: [
@@ -31,25 +34,29 @@ export default defineNuxtConfig({
     },
   },
   ssr: true,
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV !== 'production' },
   app: {
     baseURL: '/nuxt/',
     head: {
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      title: 'GwH',
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/img/favicon.ico' }],
     },
   },
   css: [
     // Global stylesheets to be included in every page of our application
+    '@/assets/scss/colors.scss',
     'vuetify/lib/styles/main.sass',
     '@/assets/scss/main.scss',
     '@/assets/scss/fonts.scss',
     '@mdi/font/css/materialdesignicons.css',
   ],
   content: {
-    markdown: {
-      remarkPlugins: [],
-      rehypePlugins: [],
-      mdc: true,
+    build: {
+      markdown: {
+        toc: {
+          depth: 3, // include h3 headings
+        },
+      },
     },
   },
   runtimeConfig: {
@@ -85,9 +92,13 @@ export default defineNuxtConfig({
       endSession: import.meta.env.ENDSESSION,
       fakePublic: import.meta.env.FAKE_PUBLIC,
       mailmanProxyUrl: import.meta.env.MAILMAN_PROXY_URL,
+      basePublicUrl: 'https://www.const-court.be', // prepend for files like /public/n/2004/2004-159n.pdf
+      basePublicCommonUrl: 'https://www.const-court.be/public/common', // prepend for /public/common/nl/...
     },
   },
-  build: { transpile: ['vuetify'] },
+  build: {
+    transpile: ['vuetify'],
+  },
   devServer: {
     host: 'localhost',
     port: 3000,
@@ -97,13 +108,22 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   vite: {
+    resolve: {
+      alias: { // don't forget to add the @alias to the tsconfig.json file as well
+        '@': resolve(__dirname, 'app'),
+        '@core': resolve(__dirname, 'app/core'),
+        '@utils': resolve(__dirname, 'app/utils'),
+        '@assets': resolve(__dirname, 'app/assets'),
+        '@membermodels': resolve(__dirname, 'models'),
+      },
+    },
     server: {
       hmr: {
         overlay: false,
       },
-      define: {
-        'process.env.DEBUG': false,
-      },
+    },
+    define: {
+      'process.env.DEBUG': false,
     },
     css: {
       // inject shared variables and mixins into all style files
@@ -114,7 +134,7 @@ export default defineNuxtConfig({
         scss: {
           api: 'modern',
           additionalData: `
-            @use "@/assets/scss/colors.scss" as *;
+            @use "@/assets/scss/_variables.scss" as *;
             @use "@/assets/scss/media.scss" as *;
           `,
         },
@@ -127,7 +147,8 @@ export default defineNuxtConfig({
       },
     },
     hooks: { // needed to extend the Vite config with Vuetify, needs to come after vue:
-      'vite:extendConfig': (config: any) => {
+      'vite:extendConfig': (config: import('vite').UserConfig) => {
+        config.plugins = config.plugins || []
         config.plugins.push(
           vuetify({
             autoImport: true,
@@ -144,6 +165,10 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    bundle: {
+      // https://github.com/nuxt-modules/i18n/issues/3238#issuecomment-2672492536
+      optimizeTranslationDirective: false,
+    },
     vueI18n: './i18n.config.ts',
     lazy: true,
     defaultLocale: 'nl',

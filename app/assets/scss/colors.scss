@@ -1,35 +1,40 @@
-$logoColor: #043c72;
-$indigo: #0065ca;
-$indigoExtraLight: rgba(0, 101, 202, 0.14);
-$indigoLight: rgba(0, 101, 202, 0.8);
-$indigoMediumLight: rgba(0,101,202, 0.7);
-$skyBlue: #00aae7;
-$skyBlueExtraLight: rgba(0, 170, 231, 0.24);
-$rajahYellow: #fcbf60;
-$ivoryGrey: #d9dad9;
-$darkGrey: #777777;
-$linkBlue: #00709d;
-$errorRed: #c32a3a;
-$warningOrange: #d65c0e;
-$successGreen: #3aa82f;
-$rajahLight: rgba(254, 201, 118, 0.9);
-$rajahExtraLight: rgba(254, 201, 118, 0.2);
-$textOnRajah: #3d3a44;
-$pdfRed: #c90304;
+// This file injects CSS variables that correspond to the SCSS variables defined in _variables.scss.
+// This allows the variables to be accessed as CSS custom properties in our Vue components.
 
-// expose the preceding scss variables to the root element of the document as css variables
-// scss variables are preprocessed and not available in the browser
-// Using the modern Dart Sass syntax.
+// Note: SCSS variables (e.g., $logoColor) are only available during the build (preprocessing) stage
+// and cannot be accessed at runtime in the browser, unlike CSS variables.
+
+// CSS variables are part of the runtime environment, the browser
+// These are available at runtime in templates and inline styles.
+// globally accessible because they are defined in the :root selector
+// also visible in the browser dev tools
+
+// Inside templates and inline styles
+// <div :style="{ color: 'var(--sky-blue)' }">
+
+// Inside the <style> block of a Vue component:
+// <style scoped lang="scss">
+// .my-class { color: var(--sky-blue); }
+
+// The following exposes all SCSS color variables from _variables.scss as CSS variables for use at runtime
+@use './_variables.scss' as *;
+
+// SCSS color variables (e.g., $logoColor) are imported from _variables.scss and injected here as CSS variables.
+// All CSS variables with --… names are defined in this file: assets/scss/colors.scss.
+// This file is included globally via css: ['@/assets/scss/colors.scss'] in nuxt.config.ts.
+// The :root selector ensures these CSS variables are available throughout the application at runtime.
 
 :root {
     --logo-color: #{$logoColor};
     --indigo: #{$indigo};
+    --indigo-dark: #{$indigo-dark};
     --indigo-extra-light: #{$indigoExtraLight};
     --indigo-light: #{$indigoLight};
     --indigo-medium-light: #{$indigoMediumLight};
     --sky-blue: #{$skyBlue};
     --sky-blue-extra-light: #{$skyBlueExtraLight};
     --rajah-yellow: #{$rajahYellow};
+    --rajah-gold: #{$rajahGold};
     --ivory-grey: #{$ivoryGrey};
     --dark-grey: #{$darkGrey};
     --link-blue: #{$linkBlue};
@@ -42,5 +47,7 @@ $pdfRed: #c90304;
     --pdf-red: #{$pdfRed};
 }
 
-// inside vue template section:
-// <div :style="{ color: 'var(--indigo)' }">
+//
+// A copilot prompt to check if all my SCSS variables have corresponding CSS variables
+//
+// check if we have a CSS variable for each SCSS color defined in _variables.scss

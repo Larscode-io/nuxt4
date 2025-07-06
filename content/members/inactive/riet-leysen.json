@@ -1,0 +1,56 @@
+{
+  "name": "Riet Leysen",
+  "slug": "riet-leysen",
+  "femaleTitle": true,
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "riet-leysen.jpg",
+  "alt": {
+    "en": "Picture of Riet LEYSEN",
+    "fr": "Photographie de Riet LEYSEN",
+    "nl": "Foto van Riet LEYSEN",
+    "de": "Foto von Riet LEYSEN"
+  },
+  "infos": {
+    "en": [
+      "Born in Herentals on 14 March 1952 ",
+      "School of Economics (1972); master’s degree in law (KU Leuven, 1982) ",
+      "Administrative management assistant (1972-1977); legal adviser to the Flemish Minister of Finance and Budget (1982-1985); first finalist of the open competition for legal secretary at the Constitutional Court (1985); legal secretary at the Constitutional Court (1985-2014)",
+      "Part-time teaching assistant at KU Leuven (1985- 1993); practical lecturer at KU Leuven (1993-1998); senior lecturer at EHSAL (1988-1990)",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 23 January 2014"
+    ],
+    "de": [
+      "Geboren in Herentals am 14. März 1952",
+      "Wirtschaftshochschule (1972); Lizentiatin der Rechte (KU Löwen, 1982)",
+      "Administrative Direktionsmitarbeiterin (1972-1977); Rechtsberaterin des flämischen Ministers der Finanzen und des Haushalts (1982-1985); erfolgreichste Prüfungsteilnehmerin bei der Prüfung im Wettbewerbsverfahren zur Einstellung als Referent beim Verfassungsgerichtshof (1985); Referentin beim Verfassungsgerichtshof (1985-2014)",
+      "Teilzeitige Assistentin bei der KU Löwen (1985-1993); Praxislektorin bei der KU Löwen (1993-1998); Dozentin bei der EHSAL (1988-1990)",
+      "Durch königlichen Erlass vom 23. Januar 2014 zur Richterin am Verfassungsgerichtshof ernannt"
+    ],
+    "nl": [
+      "Geboren te Herentals op 14 maart 1952",
+      "Economische Hogeschool (1972); licentiaat in de rechten (KULeuven, 1982)",
+      "Administratief directiemedewerker (1972-1977); juridisch adviseur van de Vlaamse Minister van Financiën en Begroting (1982-1985); eerste laureaat van het vergelijkend examen voor referendaris bij het Grondwettelijk Hof (1985); referendaris bij het Grondwettelijk Hof (1985-2014);",
+      "Deeltijds assistent KU Leuven (1985-1993); praktijklector KU Leuven (1993-1998); docent EHSAL (1988-1990)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 23 januari 2014"
+    ],
+    "fr": [
+      "Née à Herentals le 14 mars 1952",
+      "École supérieure d'études économiques (1972); licenciée en droit (KULeuven, 1982)",
+      "Collaboratrice administrative de direction (1972-1977); conseillère juridique du Ministre flamand des Finances et du Budget (1982-1985); première lauréate du concours de référendaire à la Cour constitutionnelle (1985); référendaire à la Cour constitutionnelle (1985-2014);",
+      "Assistante à temps partiel à la KU Leuven (1985-1993); maître de conférences à la KU Leuven (1993-1998); chargée de cours à l'EHSAL (1988-1990)",
+      "Nommée juge à la Cour constitutionnelle par arrêté royal du 23 janvier 2014"
+    ]
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "role": "judge",
+      "startDate": "23.01.2014",
+      "endDate": "14.03.2022"
+    }
+  ]
+}

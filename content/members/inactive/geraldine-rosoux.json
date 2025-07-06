@@ -1,0 +1,27 @@
+{
+  "name": "Géraldine Rosoux",
+  "slug": "geraldine-rosoux",
+  "femaleTitle": true,
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "geraldine-rosoux.jpg",
+  "alt": {
+    "en": "Picture of Géraldine ROSOUX",
+    "fr": "Photographie de Géraldine ROSOUX",
+    "nl": "Foto van Géraldine ROSOUX",
+    "de": "Foto von Géraldine ROSOUX"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

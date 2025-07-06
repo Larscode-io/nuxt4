@@ -1,0 +1,39 @@
+{
+  "name": "Marc Bossuyt (Baron)",
+  "slug": "marc-bossuyt",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "bossuyt2.jpg",
+  "infos": {
+    "en": [],
+    "fr": [
+      "Né à Gand le 9 janvier 1944; nommé baron par arrêté royal du 10 juillet 2009",
+      "Docteur en droit (Université de Gand, 1968); Certificate of international relations (John Hopkins University Bologna, 1969); diplômé de droit international et de droit comparé des droits de l’homme (Strasbourg, 1971); docteur ès sciences politiques (Université de Genève, 1975); docteur honoris causa de l'Université de Hasselt (2011)",
+      "Aspirant au Fonds national de la recherche scientifique (1970-1973); assistant (1973-1975), premier assistant (1975-1979), chef de travaux (1979-1984), chargé de cours (à temps partiel, 1977-1984; à temps plein 1984‑1985), professeur (à temps plein 1985-1987; à temps partiel 1987-1999) et professeur extraordinaire (1999-2007) à l’Université d’Anvers",
+      "Fonctionnaire des droits de l’homme aux Nations Unies (1975-1977); membre (1981-1985; 1992-1999; 2004‑2006) et président (2006) de la Sous-Commission des Nations Unies de la promotion et de la protection des droits de l’homme; représentant de la Belgique (1986-1991) et président (1989) de la Commission des droits de l’homme des Nations Unies; membre du Comité des Nations Unies sur l’élimination de la discrimination raciale (2000-2003;2014-); commissaire général aux réfugiés et aux apatrides (1987-1997); membre de la Cour permanente d’arbitrage à La Haye (depuis 2004)",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 28 janvier 1997 et élu président (néerlandophone) à partir du 9 octobre 2007",
+      "Président émérite depuis le 9 janvier 2014."
+    ],
+    "nl": [
+      "Geboren te Gent op 9 januari 1944; benoemd tot baron bij Koninklijk Besluit van 10 juli 2009",
+      "Doctor in de rechten (Rijksuniversiteit Gent, 1968); Certificate of international relations (John Hopkins University Bologna, 1969); diplômé de droit international et de droit comparé des droits de l’homme (Straatsburg, 1971); docteur ès sciences politiques (Universiteit Genève, 1975); doctor honoris causa van de Universiteit Hasselt (2011)",
+      "Aspirant Nationaal Fonds voor Wetenschappelijk Onderzoek (1970-1973); doctorsassistent (1973-1975), eerstaanwezend assistent (1975-1979), werkleider (1979-1984), docent (deeltijds, 1977-1984; voltijds 1984-1985), hoogleraar (voltijds 1985-1987; deeltijds 1987-1999) en buitengewoon hoogleraar (1999-2007) aan de Universiteit Antwerpen",
+      "UN human rights officer (1975-1977); lid (1981-1985; 1992-1999; 2004-2006) en voorzitter (2006) van de VN Subcommissie ter bevordering en bescherming van de mensenrechten; vertegenwoordiger van België in (1986-1991) en voorzitter (1989) van de VN Commissie mensenrechten; lid van het VN Comité ter uitbanning van rassendiscriminatie (2000-2003;2014-); commissaris-generaal voor de vluchtelingen en de staatlozen (1987-1997); lid van het Permanent Hof van Arbitrage te Den Haag (sedert 2004)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 28 januari 1997 en verkozen tot (Nederlandstalig) voorzitter met ingang van 9 oktober 2007",
+      "Emeritus voorzitter sedert 9 januari 2014."
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "28.01.1997",
+      "endDate": "08.10.2007"
+    },
+    {
+      "role": "president",
+      "startDate": "09.10.2007",
+      "endDate": "08.01.2014"
+    }
+  ]
+}

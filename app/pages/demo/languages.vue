@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import type { MessageSchema } from '~~/types/i18n'
+import type { MessageSchema } from '../../../models/i18n'
 
+// console log(x.alt.banner.books) // This will log 'Boeken' to the console
 const route = useRoute()
 const switchLocalePath = useSwitchLocalePath()
 const localePath = useLocalePath()
@@ -19,7 +20,13 @@ t('aria.label.dropdown.input')
 // const { messages } = useI18n();
 // // Access a specific locale's messages
 // const messageInFrench = messages.value.fr["alt.banner.books"];
-// console.log(messageInFrench);
+// console log(messageInFrench);
+
+// console.log(
+//   import.meta.server ? '[SSR]' : '[Client]',
+//   'Translation:',
+//   t('court.organization.previous-incumbents'),
+// )
 </script>
 
 <template>

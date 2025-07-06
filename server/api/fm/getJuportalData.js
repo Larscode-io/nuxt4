@@ -2,7 +2,7 @@
 import { useRuntimeConfig } from '#nitro'
 import { fetchWithFallback, defineEventHandler, createError } from '#imports'
 
-const mapJuportalData = data =>
+const mapJuportalData = (data) =>
   data.map(({ recordId, fieldData: { Arrest_xml: xml } }) => ({
     recordId,
     xml,

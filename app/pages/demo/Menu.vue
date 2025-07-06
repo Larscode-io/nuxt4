@@ -18,7 +18,7 @@ definePageMeta({
   layout: 'leeg',
 })
 
-const { data: courtItems } = await useFetch < CourtItem[] > ('/api/menu', {
+const { data: courtItems } = await useFetch <CourtItem[]> ('/api/menu', {
 })
 
 function applyTranslationToTitles(menu: CourtItem[]) {

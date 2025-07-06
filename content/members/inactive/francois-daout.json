@@ -1,0 +1,63 @@
+{
+  "name": "François Daoût",
+  "slug": "francois-daout",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "francois-daout.jpg",
+  "alt": {
+    "en": "Picture of François DAOÛT",
+    "fr": "Photographie de François DAOÛT",
+    "nl": "Foto van François DAOÛT",
+    "de": "Foto von François DAOÛT"
+  },
+  "infos": {
+    "en": [
+      "Born in Jemappes on 15 September 1951",
+      "Master’s degree in law (Université catholique de Louvain, UCL, 1974)",
+      "Lawyer at the Bar of Mons (1974-2001); Judge substitute in the Court of Appeal in Mons (1998- 2001)",
+      "Councillor at the Council of State (2001-2011)",
+      "Teaching assistant at the Faculty of Law of the UCL (1974-1978)",
+      "Senior lecturer at the University of Mons- Hainaut (1990-1999)",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 6 January 2011 and elected (Frenchspeaking) President with effect from 1 September 2018"
+    ],
+    "fr": [
+      "Né à Jemappes le 15 septembre 1951",
+      "Licencié en droit (UCL 1974)",
+      "Avocat au barreau de Mons (1974-2001)",
+      "Conseiller suppléant à la Cour d'appel de Mons (1998-2001) Conseiller d'Etat (2001) ",
+      "Assistant à la faculté de droit de l'UCL (1974-1978)",
+      "Chargé d'enseignement à l'université de Mons-Hainaut (1990-1999) ",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 6 janvier 2011 et élu président (francophone) à partir du 1er septembre 2018"
+    ],
+    "nl": [
+      "Geboren in Jemappes op 15 september 1951",
+      "Licentiaat in de rechten (UCL 1974)",
+      "Advocaat bij de balie te Bergen (1974-2001)",
+      "Plaatsvervangend raadsheer in het Hof van Beroep te Bergen (1998-2001) Staatsraad (2001) ",
+      "Assistent aan de rechtsfaculteit van de UCL (1974-1978)",
+      "Docent aan de « Université de Mons-Hainaut » (1990-1999) ",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 6 januari 2011 en verkozen tot (Franstalig) voorzitter met ingang van 1 september 2018"
+    ],
+    "de": [
+      "Geboren in Jemappes am 15. September 1951",
+      "Lizentiat der Rechte (UCL 1974)",
+      "In Mons zugelassener Rechtsanwalt (1974-2001)",
+      "Stellvertretender Gerichtsrat am Appellationshof Mons (1998-2001); Staatsrat (2001-2011)",
+      "Assistent an der Rechtsfakultät der UCL (1974-1978)",
+      "Dozent an der Université de Mons-Hainaut (1990-1999)",
+      "Durch königlichen Erlass vom 6. Januar 2011 zum Richter am Verfassungsgerichtshof ernannt und mit Wirkung vom 1. September 2018 zum (französischsprachigen) Präsidenten gewählt"
+    ]
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "10.01.2011",
+      "endDate": "31.08.2018"
+    },
+    {
+      "role": "president",
+      "startDate": "01.09.2018",
+      "endDate": "14.09.2021"
+    }
+  ]
+}

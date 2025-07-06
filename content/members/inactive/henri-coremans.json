@@ -1,0 +1,37 @@
+{
+  "name": "Henri Coremans",
+  "slug": "henri-coremans",
+  "isAlive": false,
+  "lang": "nl",
+  "infos": {
+    "en": [
+      "Born in Keerbergen on 8 October 1931.",
+      "Doctor of Law (KU Leuven, 1954); Master’s degree in Notarial Law (KU Leuven, 1954).",
+      "Lawyer at the Bar of Mechelen (1954-1957); Deputy Head and later Head of Office at the Ministry of Foreign Affairs (1957-1961); Secretary at the Ministry of Home Affairs (1962); Deputy Member of the Coordination Office at the Council of State (1962-1970); Legal Adviser within the cabinet of the Minister of National Education (1965); Adviser within the cabinet of the Minister of Justice (1968-1970); Councillor at the Brussels Labour Tribunal (1970-1972); Councillor (1972-1984) and Chamber President (1984-1993) at the Council of State.",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 10 December 1993.",
+      "since 1 November 2000."
+    ],
+    "fr": [
+      "Né à Keerbergen le 8 octobre 1931.",
+      "Docteur en droit (KU Leuven, 1954); licencié en notariat (KU Leuven, 1954).",
+      "Avocat au barreau de Malines (1954-1957); sous-chef de bureau, puis chef de bureau au ministère des Affaires étrangères (1957-1961); secrétaire au ministère de l’Intérieur (1962); membre adjoint du Bureau de coordination du Conseil d’État (1962-1970); conseiller juridique au sein du cabinet du ministre de l’Éducation nationale (1965); conseiller au sein du cabinet du ministre de la Justice (1968-1970); conseiller à la Cour du travail de Bruxelles (1970-1972); conseiller d’État (1972-1984) et président de chambre (1984-1993) au Conseil d’État.",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 10 décembre 1993.",
+      "Admis à la retraite depuis le 1er novembre 2000."
+    ],
+    "nl": [
+      "Geboren te Keerbergen op 8 oktober 1931.",
+      "Doctor in de rechten (Katholieke Universiteit Leuven, 1954); licentiaat in het notariaat (Katholieke Universiteit Leuven, 1954).",
+      "Advocaat aan de balie te Mechelen (1954-1957); onderbureauchef, nadien bureauchef bij het ministerie van Buitenlandse Zaken (1957-1961); secretaris bij het ministerie van Binnenlandse Zaken (1962); adjunct-lid van het Coördinatiebureau bij de Raad van State (1962-1970); juridisch adviseur in het kabinet van de minister van Nationale Opvoeding (1965); adviseur in het kabinet van de minister van Justitie (1968-1970); raadsheer bij het Arbeidshof te Brussel (1970-1972); staatsraad (1972-1984) en kamervoorzitter (1984-1993) bij de Raad van State.",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 10 december 1993.",
+      "In ruste gesteld met ingang van 1 november 2000."
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "10.12.1993",
+      "endDate": "31.10.2000"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Lien De Geyter",
+  "femaleTitle": true,
+  "slug": "lien-de-geyter",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "lien-de-geyter.jpg",
+  "alt": {
+    "en": "Picture of Lien DE GEYTER",
+    "fr": "Photographie de Lien DE GEYTER",
+    "nl": "Foto van Lien DE GEYTER",
+    "de": "Foto von Lien DE GEYTER"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "01.10.2000",
+      "endDate": null
+    }
+  ]
+}

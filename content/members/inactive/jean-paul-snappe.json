@@ -1,0 +1,34 @@
+{
+  "name": "Jean-Paul Snappe",
+  "slug": "jean-paul-snappe",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "snappe2.jpg",
+  "infos": {
+    "en": [],
+    "fr": [
+      "Né à Frameries le 11 novembre 1951",
+      "Agrégé de l’enseignement secondaire inférieur (1973)",
+      "Professeur (1973-1974); permanent à la Jeunesse étudiante chrétienne (1974-1978); permanent au Conseil de la Jeunesse Catholique (1978-1980); secrétaire du Conseil interdiocésain des laïcs (1980- 1987); formateur à l’O.N.G. Entraide et fraternité (1987-1991);",
+      "Conseiller de l’aide sociale à Tournai (1988-1991); sénateur (1991-1995); député wallon (1995-1999); chef de cabinet du ministre des Affaires sociales et de la Santé en Région wallonne (1999-2001)",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 16 mai 2001",
+      "Juge honoraire à partir du 1er novembre 2019"
+    ],
+    "nl": [
+      "Geboren te Frameries op 11 november 1951",
+      "Geaggregeerde voor het lager secundair onderwijs (1973)",
+      "Leraar (1973-1974); vast medewerker bij Jeunesse étudiante chrétienne (1974-1978); vast medewerker bij de Conseil de la Jeunesse catholique (1978-1980); secretaris van de Conseil interdiocésain des laïcs (1980-1987); vormingswerker bij de nietgouvernementele organisatie Entraide et fraternité (1987-1991)",
+      "Lid van de raad voor maatschappelijk welzijn te Doornik (1988-1991); senator (1991-1995); Waals volksvertegenwoordiger (1995-1999); kabinetschef van de Waalse Minister van Sociale Zaken en Volksgezondheid (1999-2001)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 16 mei 2001",
+      "Ererechter sedert 1 november 2019"
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "16.05.2001",
+      "endDate": "31.10.2019"
+    }
+  ]
+}

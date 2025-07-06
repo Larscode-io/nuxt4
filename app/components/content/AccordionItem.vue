@@ -1,3 +1,26 @@
+<script setup>
+import { ref } from 'vue'
+
+const props = defineProps({
+  ariaLabel: {
+    type: String,
+  },
+  isGroup: {
+    type: Boolean,
+    required: false,
+  },
+})
+
+const buttonId = useId()
+const isOpen = ref(false)
+
+function toggle() {
+  isOpen.value = !isOpen.value
+  const button = document.querySelector(`.accordion-trigger#${buttonId}`)
+  button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true')
+}
+</script>
+
 <template>
   <div class="accordionGroup">
     <div class="accordion">
@@ -17,31 +40,12 @@
           <v-icon>mdi-chevron-down</v-icon>
         </button>
         <div v-if="isOpen">
-          <ContentSlot />
+          <slot />
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-
-const props = defineProps({
-  ariaLabel: {
-    type: String,
-  },
-})
-
-const buttonId = useId()
-const isOpen = ref(false)
-
-function toggle() {
-  isOpen.value = !isOpen.value
-  const button = document.querySelector(`.accordion-trigger#${buttonId}`)
-  button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true')
-}
-</script>
 
 <style lang="scss" scoped>
 h3,
@@ -98,12 +102,6 @@ h4 {
                 font-size: 1.5rem;
             }
         }
-    }
-
-.accordionGroup {
-        box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
-            0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-        border-radius: 4px;
     }
 
 .accordion {

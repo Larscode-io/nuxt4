@@ -1,0 +1,27 @@
+{
+  "name": "Thomas Leys",
+  "femaleTitle": false,
+  "slug": "thomas-leys",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "thomas-leys.jpg",
+  "alt": {
+    "en": "Picture of Thomas LEYS",
+    "fr": "Photographie de Thomas LEYS",
+    "nl": "Foto van Thomas LEYS",
+    "de": "Foto von Thomas LEYS"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "19.04.2022",
+      "endDate": null
+    }
+  ]
+}

@@ -1,8 +1,10 @@
-import { useRouter } from 'vue-router'
 import { nlBE, fr, de, enGB } from 'date-fns/locale'
 import { computed } from 'vue'
-import { useI18n, useSwitchLocalePath } from '#imports'
-import type { MessageSchema } from '~~/types/i18n' // ~~ is an alias for the src directory
+import type { Ref } from 'vue'
+// import type { MessageSchema } from '@/types/i18n' // ~~ is an alias for the src directory
+import type { MessageSchema } from '../../models/i18n'
+
+type MaybeComputedRefOrFalsy<T> = T | false | null | undefined | Ref<T>
 
 export enum Languages {
   ENGLISH = 'en',
@@ -24,50 +26,71 @@ export const defaultListLang: Record<string, string> = {
   [Languages.GERMAN]: 'pdf_de',
 }
 
+const langCollection = {
+  [Languages.DUTCH]: 'collection_dutch',
+  [Languages.FRENCH]: 'collection_french',
+  [Languages.GERMAN]: 'collection_german',
+  [Languages.ENGLISH]: 'collection_english',
+} as const satisfies Record<Languages, string>
+
 export function useLanguage() {
-  const router = useRouter()
   const { t, locales, locale, setLocale, defaultLocale } = useI18n<
     [MessageSchema],
     Languages.DUTCH | Languages.FRENCH | Languages.ENGLISH | Languages.GERMAN
   >()
   const switchLocalePath = useSwitchLocalePath()
-  const localePath = useLocalePath()
   const availableLocales = computed(() => {
     return locales.value.filter(i => i.code !== locale.value)
   })
 
-  const ogLocaleAlternate: 'MaybeComputedRefOrFalsy<Arrayable<string> | null | undefined>' = locales.value.map(el => el.language)
+  const ogLocaleAlternate: MaybeComputedRefOrFalsy<string[]> = locales.value
+    .map(el => el.language)
+    .filter((lang): lang is string => typeof lang === 'string')
+
   const ogLocale: MaybeComputedRefOrFalsy<string | null | undefined> = locales.value
     .filter(i => i.code === locale.value)
-    .map(el => el.language)
+    .map(el => el.language)[0] || null
 
-  const switchLanguage = (lang: any) => {
-    router.push({ path: `${switchLocalePath(lang)}` })
+  const switchLanguage = (lang: Languages): string => {
+    return switchLocalePath(lang)
   }
 
-  const activeLocale = (locale: any) => {
+  const activeLocale = (locale: Languages) => {
     switch (locale) {
-      case 'nl':
+      case Languages.DUTCH:
         return nlBE
-      case 'fr':
+      case Languages.FRENCH:
         return fr
-      case 'de':
+      case Languages.GERMAN:
         return de
       default:
         return enGB
     }
   }
+
+  function getLocalizedPath(contentPath: string): string {
+    return `${locale.value}/${contentPath}`
+  }
+
+  const alternateLocale = computed(() =>
+    locales.value
+      .filter(i => i.code !== locale.value)
+      .map (i => i.code),
+  )
+
   return {
     t,
     locale,
-    switchLocalePath,
-    localePath,
+    switchLanguage,
     setLocale,
     availableLocales,
     ogLocale,
     ogLocaleAlternate,
-    switchLanguage,
     defaultLocale,
     activeLocale,
+    getLocalizedPath,
+    langCollection,
+    alternateLocale,
+    switchLocalePath,
   }
 }

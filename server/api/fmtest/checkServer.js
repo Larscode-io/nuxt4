@@ -1,84 +1,86 @@
-import { useRuntimeConfig, defineEventHandler, createError } from "#imports";
+import { Agent } from 'undici'
+import { useRuntimeConfig, defineEventHandler, createError } from '#imports'
 
 // https://github.com/unjs/ofetch?tab=readme-ov-file : Allow self-signed certificates
-import { Agent } from "undici";
 
 const unsecureFetch = $fetch.create({
   dispatcher: new Agent({
     connect: { rejectUnauthorized: false },
   }),
-});
+})
 
 export default defineEventHandler(async () => {
-  const { auServername } = useRuntimeConfig();
+  const { auServername } = useRuntimeConfig()
 
   if (!auServername) {
-    console.error("auServername is not defined in the runtime configuration.");
+    console.error('auServername is not defined in the runtime configuration.')
     throw createError({
       statusCode: 500,
-      message: "Server configuration error.",
-    });
+      message: 'Server configuration error.',
+    })
   }
 
-  const url = `https://${auServername}/fmi/data/vLatest/productInfo`;
+  const url = `https://${auServername}/fmi/data/vLatest/productInfo`
 
   // Helper function to handle fetch and return consistent format
   async function fetchData(fetchFn) {
     try {
       await fetchFn(url, {
-        method: "GET",
+        method: 'GET',
         timeout: 5000,
-      });
+      })
 
       return {
-        status: "success",
+        status: 'success',
         code: 200,
-        message: "Data fetched successfully",
+        message: 'Data fetched successfully',
         // data: response,
-      };
-    } catch (error) {
-      if (error.name === "FetchError") {
+      }
+    }
+    catch (error) {
+      if (error.name === 'FetchError') {
         if (
-          error.cause?.message === "This operation was aborted" &&
-          error.cause?.code === 20
+          error.cause?.message === 'This operation was aborted'
+          && error.cause?.code === 20
         ) {
           return {
-            status: "error",
+            status: 'error',
             code: 500,
-            message: "Our request timed out",
+            message: 'Our request timed out',
             data: null,
-          };
-        } else if (
-          error.cause?.cause?.code === "CERT_HAS_EXPIRED" &&
-          error.cause?.cause?.message === "certificate has expired"
+          }
+        }
+        else if (
+          error.cause?.cause?.code === 'CERT_HAS_EXPIRED'
+          && error.cause?.cause?.message === 'certificate has expired'
         ) {
           return {
-            status: "error",
+            status: 'error',
             code: 500,
-            message: "The certificate has expired",
+            message: 'The certificate has expired',
             data: null,
-          };
+          }
         }
       }
       // Log the detailed error
-      console.error("Detailed error:", error);
+      console.error('Detailed error:', error)
       return {
-        status: "error",
+        status: 'error',
         code: 500,
-        message: "Failed to connect to FileMaker database",
+        message: 'Failed to connect to FileMaker database',
         data: null,
         error,
-      };
+      }
     }
   }
 
   // First try using $fetch
-  let result = await fetchData($fetch);
+  let result = await fetchData($fetch)
   // If $fetch fails due to a certificate issue, fallback to unsecureFetch
-  if (result.status === "error" && result.message.includes("certificate")) {
-    console.error("Fallback to unsecureFetch due to SSL error");
-    result = await fetchData(unsecureFetch);
+  if (result.status === 'error' && result.message.includes('certificate')) {
+    console.error('Fallback to unsecureFetch due to SSL error')
+    result = await fetchData(unsecureFetch)
   }
 
-  return result;
-});
+  return result
+})

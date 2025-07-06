@@ -1,11 +1,13 @@
 <script setup lang="ts">
 // import { useAuth } from '~/composables/useAuth'
 
+const localePath = useLocalePath()
 const { token, destination } = useAuth()
 const info = ref(null)
 const f = async () => {
   const userInfoResponse = await $fetch(`/auth/getUserInfo?access_token=${token.value}`)
-  const { statusCode, body } = userInfoResponse
+  // const { statusCode, body } = userInfoResponse
+  const { body } = userInfoResponse
   info.value = body
 }
 </script>

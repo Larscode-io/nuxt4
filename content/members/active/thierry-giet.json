@@ -1,0 +1,50 @@
+{
+  "name": "Thierry Giet",
+  "slug": "thierry-giet",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "thierry-giet.png",
+  "alt": {
+    "en": "Picture of Thierry GIET",
+    "fr": "Photographie de Thierry GIET",
+    "nl": "Foto van Thierry GIET",
+    "de": "Foto von Thierry GIET"
+  },
+  "infos": {
+    "en": [
+      "Born in Ougrée on 21 July 1958",
+      "Master’s degree in law (Université de Liège, ULg, 1981)",
+      "Lawyer at the Bar of Liège (1981-2013)",
+      "Municipal councillor (1983-2013) and first alderman (2012-2013) in Sprimont, Federal Member of Parliament (1995-2013), secretary (2003) and first Vice-President (2003-2004) of the House of Representatives, leader of the PS group in the House of Representatives (2004-2013), acting President of the PS (2011-2013)",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 21 June 2013"
+    ],
+    "de": [
+      "Geboren in Ougrée am 21. Juli 1958",
+      "Lizentiat der Rechte (ULg, 1981)",
+      "In Lüttich zugelassener Rechtsanwalt (1981-2013)",
+      "Gemeinderatsmitglied (1983-2013) und Erster Schöffe (2012-2013) in Sprimont; föderaler Abgeordneter (1995-2013), Sekretär (2003) und Erster Vizepräsident (2003-2004) der Abgeordnetenkammer; PSFraktionsvorsitzender in der Abgeordnetenkammer (2004-2013), PS-Parteivorsitzender ad interim (2011-2013)",
+      "Durch königlichen Erlass vom 21. Juni 2013 zum Richter am Verfassungsgerichtshof ernannt"
+    ],
+    "nl": [
+      "Geboren te Ougrée op 21 juli 1958",
+      "Licentiaat in de rechten (ULg 1981)",
+      "Advocaat aan de balie te Luik (1981-2013)",
+      "Gemeenteraadslid (1983-2013) en eerste schepen (2012-2013) te Sprimont, federaal volksvertegenwoordiger (1995-2013), secretaris (2003) en eerste ondervoorzitter (2003-2004) van de Kamer van volksvertegenwoordigers, fractieleider van de PS in de Kamer van volksvertegenwoordigers (2004-2013), waarnemend voorzitter van de PS (2011-2013)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 21 juni 2013"
+    ],
+    "fr": [
+      "Né à Ougrée le 21 juillet 1958",
+      "Licencié en droit (ULg 1981)",
+      "Avocat au barreau de Liège (1981-2013)",
+      "Conseiller communal (1983-2013) et premier échevin (2012-2013) à Sprimont, député fédéral (1995-2013), secrétaire (2003) et premier vice-président (2003-2004) de la Chambre des représentants; chef du groupe PS à la Chambre des représentants (2004-2013), président a.i. du PS (2011-2013)",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 21 juin 2013"
+    ]
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "21.06.2013",
+      "endDate": null
+    }
+  ]
+}

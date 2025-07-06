@@ -1,0 +1,20 @@
+{
+  "name": "Henri Vander Zwalmen",
+  "slug": "henri-vander-zwalmen",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": [],
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "registrars",
+      "startDate": null,
+      "endDate": null
+    }
+  ]
+}

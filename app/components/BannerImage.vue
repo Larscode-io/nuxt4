@@ -1,6 +1,6 @@
 <template>
   <div
-    class="banner-image-container"
+    class="banner-image-container w-100 position-relative"
     :alt="alt"
   >
     <div
@@ -28,7 +28,7 @@ export default {
     description: {
       type: [String, null],
       required: false,
-      default: '',
+      default: 'A Banner Description',
     },
     image: {
       type: String,
@@ -123,9 +123,5 @@ export default {
     bottom: 0px;
     z-index: -1;
   }
-}
-
-.banner-image-container>* {
-  z-index: 10;
 }
 </style>

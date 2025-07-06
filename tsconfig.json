@@ -1,4 +1,56 @@
+// only used by the TypeScript compiler and VSCODE
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+      "extends": "./.nuxt/tsconfig.json",
+      "include": [
+            ".nuxt/**/*",
+            "app/**/*",
+            "models/**/*",
+            "server/**/*",
+            "i18n/**/*",
+      ],
+      "exclude": [
+            "node_modules",
+            "dist",
+            "tests",
+            // we exclude the tests from the main tsconfig.json
+            // so typechecking must be run separately
+            // typically in a file called tsconfig.spec.json
+            // placed in the root of the project
+            // and use tsc --project tsconfig.test.json to run it
+            "**/*.spec.ts",
+            "**/*.test.ts",
+            "**/__tests__/**"
+      ],
+      "compilerOptions": {
+            "module": "esnext",
+            "baseUrl": ".",
+            "strict": true,
+            "noImplicitAny": true,
+            "noUnusedLocals": true,
+            "noUnusedParameters": true,
+            "skipLibCheck": true,
+            "resolveJsonModule": true,
+            "esModuleInterop": true,
+            "types": [
+                  "node",
+                  "nuxt"
+            ],
+            "paths": {
+                  "@/*": [
+                        "app/*"
+                  ],
+                  "@core/*": [
+                        "app/core/*"
+                  ],
+                  "@utils/*": [
+                        "app/utils/*"
+                  ],
+                  "@assets/*": [
+                        "app/assets/*"
+                  ],
+                  "@membermodels/*": [
+                        "models/*"
+                  ]
+            }
+      }
 }

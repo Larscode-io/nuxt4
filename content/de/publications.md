@@ -1,4 +1,4 @@
-﻿---
+---
 title: Veröffentlichungen
 description: Veröffentlichungen
 posterUrl: ~/assets/img/newsletter-background.png

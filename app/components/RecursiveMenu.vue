@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { useLanguage } from '@/composables/useLanguage'
+const localePath = useLocalePath()
 
-const { localePath } = useLanguage()
 interface MenuItem {
   title?: string
   to?: string
@@ -57,9 +56,7 @@ const toggleChevron = (e: Event) => {
             @click="toggleChevron"
           >
             {{ item.title || 'Untitled' }}
-            <div
-              v-if="item.subMenu"
-            >
+            <div v-if="item.subMenu">
               <v-icon>
                 mdi-chevron-down
               </v-icon>

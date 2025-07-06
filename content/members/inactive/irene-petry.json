@@ -1,0 +1,15 @@
+{
+    "name": "Irène Pétry",
+    "slug": "irene-petry",
+    "femaleTitle": true,
+    "role": "president",
+    "isAlive": false,
+    "lang": "fr",
+    "roles": [
+        {
+            "role": "president",
+            "startDate": "14.01.1991",
+            "endDate": "19.06.1992"
+        }
+    ]
+}

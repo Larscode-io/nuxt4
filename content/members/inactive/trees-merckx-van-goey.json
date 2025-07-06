@@ -1,0 +1,51 @@
+{
+  "name": "Trees Merckx-van Goey",
+  "slug": "trees-merckx-van-goey",
+  "femaleTitle": true,
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "trees-merckx-van-goey.jpg",
+  "alt": {
+    "en": "Picture of Trees MERCKX-VAN GOEY",
+    "fr": "Photographie de Trees MERCKX-VAN GOEY",
+    "nl": "Foto van Trees MERCKX-VAN GOEY",
+    "de": "Foto von Trees MERCKX-VAN GOEY"
+  },
+  "infos": {
+    "en": [
+      "Born in Antwerp on 17 June 1951",
+      "Master’s degree in law (UFSIA/KU Leuven 1975); certificate in criminology (KU Leuven, 1976)",
+      "Lawyer (1975-1981); civil servant at the Ministry of Justice, Directorate of Criminal Law and International Legal Assistance (1981-1985) ",
+      "Municipal councillor and first alderman in Tienen (1994-2000); Federal (1985-1995) and Flemish (1995-2007) Member of Parliament; member of the Inter-Parliamentary Union; secretary and member of the Extended Bureau of the Flemish Parliament (1995-2004); Vice-President of the Flemish Institute for Scientific Aspect Research (2000-2007); alternate member of the National Committee for the Rights of the Child (2007)",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 13 December 2007"
+    ],
+    "de": [
+      "Geboren in Antwerpen am 17. Juni 1951",
+      "Lizentiatin der Rechte (UFSIA/KU Löwen, 1975). Zeugnis in Kriminologie (KU Löwen, 1976)",
+      "Rechtsanwältin (1975-1981); Beamtin beim Ministerium der Justiz, Verwaltung der Strafgesetzgebung und der internationalen Rechtshilfe (1981-1985)",
+      "Gemeinderatsmitglied und Erste Schöffin in Tienen (1994-2000); föderale Abgeordnete (1985-1995) und Mitglied des Flämischen Parlaments (1995-2007); Mitglied der Interparlamentarischen Union; Sekretärin und Mitglied des erweiterten Präsidiums des Flämischen Parlaments (1995-2004); Vizevorsitzende des Vlaams Instituut voor Wetenschappelijk Aspectenonderzoek (2000-2007); stellvertretendes Mitglied der Nationalen Kommission für die Rechte des Kindes (2007)",
+      "Durch königlichen Erlass vom 13. Dezember 2007 zur Richterin am Verfassungsgerichtshof ernannt"
+    ],
+    "nl": [
+      "Geboren te Antwerpen op 17 juni 1951",
+      "Licentiaat in de rechten UFSIA/KU Leuven 1975; Getuigschrift Criminologie KU Leuven 1976",
+      "Advocate (1975-1981); ambtenaar bij het ministerie van Justitie, Bestuur Strafwetgeving en Internationale Rechtshulp (1981-1985)",
+      "Gemeenteraadslid en Eerste Schepen te Tienen (1994-2000); federaal volksvertegenwoordiger (1985-1995); lid van de Interparlementaire Unie; Vlaams volksvertegenwoordiger (1995‑2007); secretaris van dat Bureau en lid van het Uitgebreid Bureau van het Vlaams Parlement (1995‑2004); ondervoorzitter Vlaams Instituut voor Wetenschappelijk Aspectenonderzoek (2000-2007); waarnemend lid van de Nationale Commissie voor de rechten van het kind (2007)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 13 december 2007"
+    ],
+    "fr": [
+      "Née à Anvers le 17 juin 1951",
+      "Licenciée en droit (Facultés universitaires Saint-Ignace d’Anvers/Université catholique de Leuven, 1975). Certificat en Criminologie (Université catholique de Leuven, 1976)",
+      "Avocate (1975-1981); fonctionnaire au ministère de la Justice, Direction Législation pénale et Aide juridique internationale (1981-1985)",
+      "Conseillère communale et Première Echevine de Tirlemont (1994-2000); Députée fédérale (1985-1995); Membre de l’Union interparlementaire; Députée au Parlement flamand (1995-2007); Secrétaire du Bureau et membre du Bureau élargi du Parlement flamand (1995-2004); Vice-présidente du Vlaams Instituut voor Wetenschappelijk Aspectenonderzoek (2000-2007); Membre suppléant de la Commission nationale pour les droits de l’enfant (2007)",
+      "Nommée Juge à la Cour constitutionnelle par arrêté royal du 13 décembre 2007"
+    ]
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "17.12.2007",
+      "endDate": "17.06.2021"
+    }
+  ]
+}

@@ -1,9 +1,47 @@
 <!-- Content based Page -->
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+import img from '@assets/img/banner-text.png'
+import { ContentKeys } from '@core/constants'
+
+const { locale } = useI18n()
+const { t, langCollection } = useLanguage()
+
+const contentPath = ref(`${ContentKeys.presentationBasicTexts}`)
+const pad = computed(() => `/${locale.value}/${contentPath.value}`)
+
+const { data: page, pending, error } = useAsyncData(
+  () => `basic-text-${locale.value}`,
+  () => queryCollection(langCollection[locale.value])
+    .path(pad.value)
+    .first(),
+)
+
+const { sideBarLinks, hasSidebarLinks } = useSidebarLinks(page)
+const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActiveSectionObserver('h3', 0.9)
+
+const status = computed(() => {
+  if (pending.value) {
+    return 'loading'
+  }
+  if (error.value) {
+    return 'error'
+  }
+  return 'success'
+})
+
+watchEffect(() => {
+  if (sideBarLinks.value.length > 0 && sideBarLinks.value[0]?.id) {
+    updateCurrentActiveContentInToc(sideBarLinks.value[0]?.id)
+  }
+})
+</script>
+
 <template>
-  <div>
+  <div class="basicTextWrapper">
     <BannerImage
       v-if="page"
-      :title="page.title"
+      :title="page.title || ''"
       :description="page.description"
       :image="img"
       alt=""
@@ -15,7 +53,6 @@
       <v-row
         v-if="status === 'loading'"
         class="d-flex"
-        align="flex-start"
         justify="center"
       >
         <div class="col-12 col-md-12">
@@ -29,7 +66,6 @@
       <v-row
         v-else-if="status === 'error'"
         class="d-flex"
-        align="flex-start"
         justify="center"
       >
         <div class="col-12 col-md-12">
@@ -42,15 +78,14 @@
       <v-row
         v-else
         class="d-flex"
-        align="flex-start"
         justify="center"
       >
         <v-col
           v-if="hasSidebarLinks"
           cols="12"
-          md="3"
+          md="4"
         >
-          <Sidebar
+          <SideBar
             :active="currentActiveContentInToc"
             :toc="sideBarLinks"
             @click="updateCurrentActiveContentInToc"
@@ -59,10 +94,10 @@
         <v-col
           v-if="hasSidebarLinks"
           cols="12"
-          md="9"
+          md="8"
         >
           <article v-if="page">
-            <ContentRendererMarkdown
+            <ContentRenderer
               :value="page.body"
               class="nuxt-content"
             />
@@ -72,99 +107,6 @@
     </v-container>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref, computed, onMounted, onUpdated } from 'vue'
-
-import BannerImage from '~/components/BannerImage.vue'
-import img from '~/assets/img/banner-text.png'
-import { ContentKeys } from '~/core/constants'
-import { useLanguage } from '@/composables/useLanguage'
-
-const { t, locale } = useLanguage()
-const route = useRoute()
-const hash = route.hash.substring(1)
-
-const currentActiveContentInToc = ref<string>('')
-const contentPath = ref(`${ContentKeys.presentationBasicTexts}`)
-
-const { data: page, pending, error } = await useLazyAsyncData('content', async () => {
-  try {
-    const doc = await queryContent(`${locale.value}/${contentPath.value}`).findOne()
-
-    const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
-    currentActiveContentInToc.value
-      = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
-    return doc
-  }
-  catch (error) {
-    console.error('Error fetching content:', error)
-    throw error
-  }
-})
-const status = computed(() => {
-  if (pending.value) {
-    return 'loading'
-  }
-  if (error.value) {
-    return 'error'
-  }
-  return 'success'
-})
-
-const sideBarLinks = computed(() => {
-  if (!page.value) {
-    return []
-  }
-  return page.value?.body?.toc?.links
-    ?.filter(toc => toc.depth === 3)
-    ?.map((toc) => {
-      return {
-        ...toc,
-        id: toc.id,
-        text: toc.text ? toc.text.split('.')[1]?.trim() : 'Untitled',
-      }
-    }) || []
-})
-const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
-const ids = computed(() => sideBarLinks.value.map(link => link.id))
-
-const updateCurrentActiveContentInToc = (section) => {
-  currentActiveContentInToc.value = section
-}
-
-const startIntersectionObserver = () => {
-  const options = {
-    threshold: 0.9,
-    rootMargin: '0px 0px -80% 0px',
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const elem = entry.target
-
-        if (entry.intersectionRatio >= 0.75) {
-          updateCurrentActiveContentInToc(elem.id)
-        }
-      }
-    })
-  }, options)
-
-  document.querySelectorAll('h3').forEach((el) => {
-    if (ids.value.includes(el.id)) {
-      observer.observe(el)
-    }
-  })
-}
-
-onMounted(() => {
-  startIntersectionObserver()
-})
-onUpdated(() => {
-  startIntersectionObserver()
-})
-</script>
 
 <style lang="scss" scoped>
 .d-flex {
@@ -187,6 +129,7 @@ onUpdated(() => {
   }
   h4 {
     text-align: left;
+    font-weight: 400;
   }
 
   .accordion-trigger {
@@ -204,6 +147,7 @@ onUpdated(() => {
     transition: transform 0.2s linear;
   }
   h4 {
+    font-size: 14px;
     transition: font-size 0.2s linear, font-weight 0.2s linear;
   }
 
@@ -213,9 +157,7 @@ onUpdated(() => {
     }
 
     h4 {
-      // padding-top: 1rem;
-      // padding-bottom: 24px;
-      font-size: 2rem;
+      font-size: 24px;
       font-weight: 600;
       @include tablet-portrait {
         padding-top: 24px;
@@ -314,5 +256,10 @@ onUpdated(() => {
 }
 .space {
   height: 40vh;
+}
+
+.nuxt-content p {
+  text-indent: 1rem;
+  margin-bottom: 16px;
 }
 </style>

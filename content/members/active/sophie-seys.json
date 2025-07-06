@@ -1,0 +1,27 @@
+{
+  "name": "Sophie Seys",
+  "femaleTitle": true,
+  "slug": "sophie-seys",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "sophie-seys.jpg",
+  "alt": {
+    "en": "Picture of Sophie SEYS",
+    "fr": "Photographie de Sophie SEYS",
+    "nl": "Foto van Sophie SEYS",
+    "de": "Foto von Sophie SEYS"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "10.10.2016",
+      "endDate": null
+    }
+  ]
+}

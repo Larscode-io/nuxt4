@@ -1,0 +1,39 @@
+{
+  "name": "Paul Martens",
+  "slug": "paul-martens",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "paul-martens.jpg",
+  "infos": {
+    "en": [],
+    "fr": [
+      "Né à Liège le 29 mars 1940",
+      "Docteur en droit de l’Université de Liège (1963)",
+      "Avocat au barreau de Liège (1963-1981); Juge au Tribunal de commerce de Liège (1981-1985); Conseiller d’Etat (1985-1990)",
+      "Chargé de cours à l’Université libre de Bruxelles: sociologie juridique (1997-2005); Chargé de cours à l’Université de Liège: théories du droit et pensée juridique contemporaine (1999-2005); Professeur invité à l’Université de Paris XII (2003-2005); Docteur honoris causa de la Faculté de droit de Limoges (2006)",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 24 décembre 1990 et président (francophone) du 18 août 2009 au 28 mars 2010",
+      "Président émérite depuis le 29 mars 2010."
+    ],
+    "nl": [
+      "Geboren te Luik op 29 maart 1940",
+      "Doctor in de rechten, Universiteit van Luik (1963)",
+      "Advocaat aan de balie te Luik (1963-1981); rechter in de Rechtbank van Koophandel te Luik (1981-1985); staatsraad (1985-1990)",
+      "Docent aan de Université Libre de Bruxelles: rechtssociologie (1997-2005); docent aan de Université de Liège : rechtstheorie en hedendaags juridisch denken (1999-2005); gastdocent aan de Université de Paris XII (2003-2005); doctor honoris causa van de Faculté de droit te Limoges (2006)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 24 december 1990 en (Franstalig) voorzitter van 18 augustus 2009 tot 28 maart 2010",
+      "Emeritus voorzitter sedert 29 maart 2010."
+    ],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "24.12.1990",
+      "endDate": "19.08.2009"
+    },
+    {
+      "role": "president",
+      "startDate": "18.08.2009",
+      "endDate": "28.03.2010"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
+<!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import img from '~/assets/img/banner-media.png'
-import { ApiUrl } from '~/core/constants'
+import { computed } from 'vue'
+import img from '@assets/img/banner-media.png'
+import { ApiUrl } from '@core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useLanguage()
@@ -23,13 +24,13 @@ interface Pleading {
 interface Judgment {
   distance: number
   id: number
-  joinedcases: any[]
+  joinedcases: []
   processingLanguage: string
   description: string
   day: string
   month: string
   nr: string
-  master: any
+  master: unknown
   kenmerk: string
   encinz: string
   type: string

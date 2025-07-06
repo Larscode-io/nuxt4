@@ -1,0 +1,59 @@
+{
+  "name": "Magali Plovie",
+  "slug": "magali-plovie",
+  "femaleTitle": true,
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "magali-plovie.jpg",
+  "alt": {
+    "en": "Picture of Magali PLOVIE",
+    "fr": "Photographie de Magali PLOVIE",
+    "nl": "Foto van Magali PLOVIE",
+    "de": "Foto von Magali PLOVIE"
+  },
+  "infos": {
+    "en": [
+      "Appointed judge to the Constitutional Court by Royal Decree of 30 August 2023"
+    ],
+    "de": [
+      "Geboren in Ixelles am 4. August 1976",
+      "Lizentiatin der Rechte (Université Libre de Bruxelles, 2000)",
+      "Juristin im Privatsektor, danach beim Netzwerk der Brüsseler öffentlichen Krankenhäuser (IRIS) (2001-2004)",
+      "Mitglied des Kabinetts der Ministerin Évelyne Huytebroeck (2004-2012): für die personenbezogenen Angelegenheiten und für die Sechste Staatsreform bei der Gemeinsamen Gemeinschaftskommission und bei der Französischen Gemeinschaftskommission; für die Angelegenheit der Hilfe für Inhaftierte bei der Französischen Gemeinschaft",
+      "Mitglied des Sozialhilferates des ÖSHZ von Forest (2007-2012) und Gemeinderatsmitglied in Forest (2012-2023)",
+      "Brüsseler Abgeordnete (2012-2014 und 2017-2023): Mitglied des Ausschusses Soziales und Gesundheit für die Gemeinsame Gemeinschaftskommission und die Französische Gemeinschaftskommission,  Mitglied des Ausschusses Wirtschaft und Beschäftigung, Mitglied des Ausschusses Inneres (2012-2014); Mitglied des Ausschusses Soziales und Gesundheit für die Gemeinsame Gemeinschaftskommission und die Französische Gemeinschaftskommission,  Mitglied des Ausschusses Wirtschaft und Beschäftigung, Vorsitzende des Beratungsausschusses für die Gleichheit von Frauen und Männern, Vizevorsitzende des Sonderausschusses Covid-19, Vorsitzende des Ausschusses Allgemeine Angelegenheiten (2017-2023)",
+      "Politische Beraterin beim Interföderalen Dienst zur Bekämpfung von Armut, prekären Lebensumständen und sozialer Ausgrenzung (2015-2017)",
+      "Vorsitzende der Versammlung der Französischen Gemeinschaftskommission (2019-2023); Initiatorin der „Commissions délibératives“ in den Parlamenten der Region Brüssel-Hauptstadt",
+      "Durch königlichen Erlass vom 30. August 2023 zur Richterin am Verfassungsgerichtshof ernannt"
+    ],
+    "nl": [
+      "Geboren in Elsene op 4 augustus 1976",
+      "Licentiate in de rechten (Université Libre de Bruxelles, 2000)",
+      "Juriste in de privésector en vervolgens bij het Netwerk van de Brusselse openbare ziekenhuizen (IRIS) (2001-2004)",
+      "Lid van het kabinet van minister Évelyne Huytebroeck (2004-2012) : voor de persoonsgebonden aangelegenheden en voor de Zesde Staatshervorming bij de Gemeenschappelijke Gemeenschapscommissie en de Franse Gemeenschapscommissie; voor de aangelegenheden betreffende hulp aan gedetineerden bij de Franse Gemeenschap",
+      "Adviseur bij het OCMW van Vorst (2007-2012) en gemeenteraadslid in Vorst (2012-2023)",
+      "Brussels volksvertegenwoordigster (2012-2014 en 2017-2023) : lid van de commissie Welzijn-Gezondheid voor de Gemeenschappelijke Gemeenschapscommissie en de Franse Gemeenschapscommissie, lid van de commissie Economie-Werkgelegenheid, lid van de commissie Binnenlandse Zaken (2012-2014); lid van de commissie Welzijn-Gezondheid voor de Gemeenschappelijke Gemeenschapscommissie en de Franse Gemeenschapscommissie, lid van de commissie Economie-Werkgelegenheid, voorzitster van het Adviescomité voor gelijke kansen voor vrouwen en mannen, vicevoorzitster van de bijzondere commissie Covid-19, voorzitster van de commissie Algemene Zaken (2017-2023)",
+      "Politiek adviseur bij het Interfederaal Steunpunt tot bestrijding van armoede, bestaansonzekerheid en sociale uitsluiting (2015-2017)",
+      "Voorzitster van de Vergadering van de Franse Gemeenschapscommissie (2019-2023); initiatiefneemster van de overlegcommissies in de parlementen van het Brussels Hoofdstedelijk Gewest",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 30 augustus 2023"
+    ],
+    "fr": [
+      "Née à Ixelles le 4 août 1976",
+      "Licenciée en droit (Université Libre de Bruxelles, 2000)",
+      "Juriste dans le secteur privé, puis dans le Réseau des Hôpitaux publics bruxellois (IRIS) (2001-2004)",
+      "Membre du cabinet de la Ministre Évelyne Huytebroeck (2004-2012) : pour les matières personnalisables et pour la Sixième réforme de l’État à la Commission communautaire commune et à la Commission communautaire française ; pour la matière de l’aide aux détenus à la Communauté française",
+      "Conseillère au CPAS de Forest (2007-2012) et conseillère communale à Forest (2012-2023)",
+      "Députée bruxelloise (2012-2014 et 2017-2023) : membre de la commission Social-Santé pour la Commission communautaire commune et la Commission communautaire française, membre de la commission Économie-Emploi, membre de la commission des Affaires intérieures (2012-2014) ; membre de la commission Social-Santé pour la Commission communautaire commune et la Commission communautaire française, membre de la commission Économie-Emploi, présidente du comité pour l’égalité entre les femmes et les hommes, vice-présidente de la commission spéciale Covid-19, présidente de la commission des Affaires générales (2017-2023)",
+      "Conseillère politique au Service interfédéral de lutte contre la pauvreté, la précarité et l’exclusion sociale (2015-2017)",
+      "Présidente de l’Assemblée de la Commission communautaire française (2019-2023) ; initiatrice des Commissions délibératives dans les parlements de la Région de Bruxelles-Capitale",
+      "Nommée juge à la Cour constitutionnelle par arrêté royal du 30 août 2023"
+    ]
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "30.08.2023",
+      "endDate": null
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Jean-Paul Moerman",
+  "slug": "jean-paul-moerman",
+  "isAlive": true,
+  "lang": "fr",
+  "picture": "jean-paul-moerman.jpg",
+  "alt": {
+    "en": "Picture of Jean-Paul MOERMAN",
+    "fr": "Photographie de Jean-Paul MOERMAN",
+    "nl": "Foto van Jean-Paul MOERMAN",
+    "de": "Foto von Jean-Paul MOERMAN"
+  },
+  "infos": {
+    "en": [
+      "Born in Tournai on 14 August 1952",
+      "Master’s degree in law (Université libre de Bruxelles, ULB, 1975)",
+      "Lawyer at the Bar of Mons (1975-2000); teacher at the Cours provinciaux d’administration of the Province of Hainaut (1979-1988); public sector director at the University of Mons-Hainaut (1997-2001) (1997-2001) ",
+      "Municipal councillor in Mons (1995-2000; leader of the PRL group); Federal Member of Parliament (1995-2001; President of the Defence Procurement Committee; Vice-President of the Naturalizations Committee and of the Defence Committee; member of the Infrastructure Committee)",
+      "Appointed Judge to the Constitutional Court by Royal Decree of 16 May 2001"
+    ],
+    "de": [
+      "Geboren in Tournai am 14. August 1952",
+      "Lizentiat der Rechte (ULB, 1975)",
+      "In Mons zugelassener Rechtsanwalt (1975-2000); Lehrer an den Cours provinciaux d’administration der Provinz Hennegau (1979-1988); öffentlicher Verwalter der Université de Mons-Hainaut (1997-2001)",
+      "Gemeinderatsmitglied in Mons (1995-2000; PRLFraktionschef); föderaler Abgeordneter (1995- 2001; Vorsitzender des Ausschusses für das militärische Beschaffungswesen; Vizevorsitzender des Ausschusses für Einbürgerungen und des Ausschusses für Landesverteidigung; Mitglied des Ausschusses für Infrastruktur)",
+      "Durch königlichen Erlass vom 16. Mai 2001 zum Richter am Verfassungsgerichtshof ernannt"
+    ],
+    "nl": [
+      "Geboren te Doornik op 14 augustus 1952",
+      "Licentiaat in de rechten (ULB, 1975)",
+      "Advocaat bij de balie te Bergen (1975-2000); leraar aan de Cours provinciaux d’administration van de provincie Henegouwen (1979-1988); beheerder voor de publieke sector bij de Universiteit van Bergen- Henegouwen (1997-2001)",
+      "Gemeenteraadslid te Bergen (1995-2000; fractieleider PRL); federaal volksvertegenwoordiger (1995-2001); voorzitter van de commissie Legeraankopen; ondervoorzitter van de commissie voor de Naturalisaties en van de commissie voor de Landsverdediging; lid van de commissie voor de Infrastructuur)",
+      "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 16 mei 2001"
+    ],
+    "fr": [
+      "Né à Tournai le 14 août 1952",
+      "Licencié en droit (Université libre de Bruxelles, 1975)",
+      "Avocat au barreau de Mons (1975-2000); enseignant aux Cours provinciaux d’administration de la province du Hainaut (1979-1988); administrateur public de l’Université de Mons-Hainaut (1997-2001)",
+      "Conseiller communal à Mons (1995-2000; chef du groupe PRL); député fédéral (1995-2001; président de la commission Achats militaires; vice-président de la commission des Naturalisations et de la commission de la Défense nationale; membre de la commission de l’Infrastructure)",
+      "Nommé juge à la Cour constitutionnelle par arrêté royal du 16 mai 2001"
+    ]
+  },
+  "roles": [
+    {
+      "role": "judge",
+      "startDate": "16.05.2001",
+      "endDate": "13.08.2022"
+    }
+  ]
+}

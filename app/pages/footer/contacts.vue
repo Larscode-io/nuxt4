@@ -1,3 +1,116 @@
+<script setup lang="ts">
+import { ref, computed, onMounted, onUpdated } from 'vue'
+import contactImgMartin from '@assets/img/members/martin-vranken.jpg'
+import contactImgThomas from '@assets/img/members/thomas-leys.jpg'
+import contactImgTim from '@assets/img/members/tim-souverijns.jpg'
+import contactImgRom from '@assets/img/members/romain-vanderbeck.jpg'
+import contactImgAnnSophie from '@assets/img/members/ann-sophie-vandaele.jpg'
+import contactIct from '@assets/img/contact/ict.png'
+import contactLibrary from '@assets/img/contact/library.jpg'
+import contactPresidentOffice from '@assets/img/contact/president-office.png'
+import contactSeat from '@assets/img/contact/seat.jpg'
+import contactGreffe from '@assets/img/contact/greffe.png'
+import contactImgFrank from '@assets/img/members/frank-meersschaut.jpg'
+// import img from '@assets/img/banner-job.png'
+
+const currentActiveContentInToc = ref('')
+
+const { t, locale } = useLanguage()
+const route = useRoute()
+
+const sideBarLinks = computed(() => [
+  {
+    id: toSlug(t('contact.seat')),
+    text: t('contact.seat'),
+  },
+  {
+    id: toSlug(t('contact.president-office')),
+    text: t('contact.president-office'),
+  },
+  {
+    id: toSlug(t('contact.registry')),
+    text: t('contact.registry'),
+  },
+  {
+    id: toSlug(t('contact.ict')),
+    text: t('contact.ict'),
+  },
+  {
+    id: toSlug(t('contact.library')),
+    text: t('contact.library'),
+  },
+  {
+    id: toSlug(t('contact.media')),
+    text: t('contact.media'),
+  },
+  {
+    id: toSlug(t('contact.accessibility')),
+    text: t('contact.accessibility'),
+  },
+])
+
+const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
+const ids = computed(() => sideBarLinks.value.map((link) => link.id))
+
+const currentLocale = computed(() => locale.value)
+const isEnglish = computed(() => currentLocale.value === 'en')
+const isFrench = computed(() => currentLocale.value === 'fr')
+const isDutch = computed(() => currentLocale.value === 'nl')
+const isGerman = computed(() => currentLocale.value === 'de')
+
+function toSlug(value: string) {
+  // Implement your slugification logic here
+  return value.toLowerCase().replace(/\s+/g, '-')
+}
+
+function updateCurrentActiveContentInToc(section: string) {
+  currentActiveContentInToc.value = section
+}
+
+const startIntersectionObserver = () => {
+  const options = {
+    root: null,
+    rootMargin: '0px', // margin around the root (top, right, bottom, left)
+    threshold: 0.5, // 0.5 means when 50% of the element is visible
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const elem = entry.target
+
+        if (entry.intersectionRatio >= 0) {
+          updateCurrentActiveContentInToc(elem.id)
+        }
+      }
+    })
+  }, options)
+
+  const sections = document.querySelectorAll('h2')
+  sections.forEach((el) => {
+    if (ids.value.includes(el.id)) {
+      observer.observe(el)
+    }
+  })
+}
+
+let hash: string
+interface SidebarLink {
+  id: string
+  text: string
+}
+onMounted(() => {
+  const idsTo: string[] = sideBarLinks.value?.map((toc: SidebarLink) => toc.id)
+  hash = route.hash?.slice(1) || ''
+  currentActiveContentInToc.value = (hash && idsTo.includes(hash) ? hash : idsTo[0]) || ''
+  startIntersectionObserver()
+})
+
+onUpdated(() => {
+  startIntersectionObserver()
+})
+</script>
+
 <template>
   <v-container class="flex-column align-start flex-nowrap">
     <v-row>
@@ -5,7 +118,7 @@
         v-if="hasSidebarLinks"
         class="col-12 col-md-3"
       >
-        <Sidebar
+        <SideBar
           :active="currentActiveContentInToc"
           :toc="sideBarLinks"
           @click="updateCurrentActiveContentInToc"
@@ -242,9 +355,7 @@
               {{ t('general.email') }}
             </p>
             <p>
-              <a
-                :href="'mailto:toegankelijkheid-accessibilite@const-court.be'"
-              >toegankelijkheid-accessibilite@const-court.be</a>
+              <a :href="'mailto:toegankelijkheid-accessibilite@const-court.be'">toegankelijkheid-accessibilite@const-court.be</a>
             </p>
           </div>
         </div>
@@ -252,120 +363,3 @@
     </v-row>
   </v-container>
 </template>
-
-<script setup lang="ts">
-import { ref, computed, onMounted, onUpdated } from 'vue'
-import img from '~/assets/img/banner-job.png'
-import contactImgMartin from '~/assets/img/members/martin-vranken.jpg'
-import contactImgSarah from '~/assets/img/members/sarah-lambrecht.jpg'
-import contactImgThomas from '~/assets/img/members/thomas-leys.jpg'
-import contactImgFrank from '~/assets/img/members/frank-meersschaut.jpg'
-import contactImgTim from '~/assets/img/members/tim-souverijns.jpg'
-import contactImgRom from '~/assets/img/members/romain-vanderbeck.jpg'
-import contactImgAnnSophie from '~/assets/img/members/ann-sophie-vandaele.jpg'
-import contactGreffe from '~/assets/img/contact/greffe.png'
-import contactIct from '~/assets/img/contact/ict.png'
-import contactLibrary from '~/assets/img/contact/library.jpg'
-import contactPresidentOffice from '~/assets/img/contact/president-office.png'
-import contactSeat from '~/assets/img/contact/seat.jpg'
-
-const imgRef = ref(img)
-const currentActiveContentInToc = ref('')
-
-const { t, locale } = useLanguage()
-const route = useRoute()
-
-const sideBarLinks = computed(() => [
-  {
-    id: toSlug(t('contact.seat')),
-    text: t('contact.seat'),
-  },
-  {
-    id: toSlug(t('contact.president-office')),
-    text: t('contact.president-office'),
-  },
-  {
-    id: toSlug(t('contact.registry')),
-    text: t('contact.registry'),
-  },
-  {
-    id: toSlug(t('contact.ict')),
-    text: t('contact.ict'),
-  },
-  {
-    id: toSlug(t('contact.library')),
-    text: t('contact.library'),
-  },
-  {
-    id: toSlug(t('contact.media')),
-    text: t('contact.media'),
-  },
-  {
-    id: toSlug(t('contact.accessibility')),
-    text: t('contact.accessibility'),
-  },
-])
-
-const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
-const ids = computed(() => sideBarLinks.value.map(link => link.id))
-
-const currentLocale = computed(() => locale.value)
-const isEnglish = computed(() => currentLocale.value === 'en')
-const isFrench = computed(() => currentLocale.value === 'fr')
-const isDutch = computed(() => currentLocale.value === 'nl')
-const isGerman = computed(() => currentLocale.value === 'de')
-
-function toSlug(value: string) {
-  // Implement your slugification logic here
-  return value.toLowerCase().replace(/\s+/g, '-')
-}
-
-function updateCurrentActiveContentInToc(section: string) {
-  currentActiveContentInToc.value = section
-}
-
-const startIntersectionObserver = () => {
-  const options = {
-    root: null,
-    rootMargin: '0px', // margin around the root (top, right, bottom, left)
-    threshold: 0.5, // 0.5 means when 50% of the element is visible
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const elem = entry.target
-
-        if (entry.intersectionRatio >= 0) {
-          updateCurrentActiveContentInToc(elem.id)
-        }
-      }
-    })
-  }, options)
-
-  const sections = document.querySelectorAll('h2')
-  sections.forEach((el) => {
-    if (ids.value.includes(el.id)) {
-      observer.observe(el)
-    }
-  })
-}
-
-let hash: string
-interface SidebarLink {
-  id: string
-  text: string
-}
-onMounted(() => {
-  console.log('onMounted')
-  const idsTo: string[] = sideBarLinks.value?.map((toc: SidebarLink) => toc.id)
-  hash = route.hash?.slice(1) || ''
-  console.log('hash', hash)
-  currentActiveContentInToc.value = (hash && idsTo.includes(hash) ? hash : idsTo[0]) || ''
-  startIntersectionObserver()
-})
-
-onUpdated(() => {
-  startIntersectionObserver()
-})
-</script>

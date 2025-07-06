@@ -1,0 +1,27 @@
+{
+  "name": "Sarah Lambrecht",
+  "femaleTitle": true,
+  "slug": "sarah-lambrecht",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "sarah-lambrecht.jpg",
+  "alt": {
+    "en": "Picture of Sarah LAMBRECHT",
+    "fr": "Photographie de Sarah LAMBRECHT",
+    "nl": "Foto van Sarah LAMBRECHT",
+    "de": "Foto von Sarah LAMBRECHT"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "01.10.2004",
+      "endDate": null
+    }
+  ]
+}

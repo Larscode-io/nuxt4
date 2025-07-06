@@ -1,92 +1,48 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUpdated } from 'vue'
-import img from '~/assets/img/newsletter-background-opt.png'
-import { useLanguage } from '@/composables/useLanguage'
+import { onMounted } from 'vue'
+import fallbackImg from '@assets/img/newsletter-background-opt.png'
 
-const props = defineProps<{ contentPath: string }>()
+const { t, locale, langCollection } = useLanguage()
+const currentLocale = locale.value
 
-const route = useRoute()
-const hash = route.hash.substring(1)
-const { locale } = useLanguage()
-
-const currentActiveContentInToc = ref<string>('')
-
-const { data: page } = await useAsyncData('content', async () => {
-  try {
-    const doc = await queryContent(`${locale.value}/${props.contentPath}`)
-      .findOne()
-    const idsTo = doc.body?.toc?.links?.map(toc => toc.id) || []
-    currentActiveContentInToc.value
-      = hash && idsTo.includes(hash) ? hash : idsTo[0] || ''
-    return doc
-  }
-  catch (error) {
-    console.error('Error fetching content:', error)
-    return null
-  }
-})
-
-const sideBarLinks = computed(() => {
-  if (!page.value) {
-    return []
-  }
-  const r = page.value?.body?.toc?.links
-    ?.filter(toc => toc.depth === 3)
-    ?.map((toc) => {
-      return {
-        ...toc,
-        id: toc.id,
-        text: toc.text ? toc.text.split('.')[1]?.trim() || '' : '',
-      }
-    }) || []
-  return r
-})
-const hasSidebarLinks = computed(() => sideBarLinks.value.length > 0)
-const ids = computed(() => sideBarLinks.value.map(link => link.id))
-
-const updateCurrentActiveContentInToc = (section: string) => {
-  currentActiveContentInToc.value = section
+interface Props {
+  contentPath: string
+  img?: string
+  hideImage?: boolean
+  enableToc?: boolean
 }
 
-const startIntersectionObserver = () => {
-  const options = {
-    root: null,
-    rootMargin: '0px', // margin around the root (top, right, bottom, left)
-    threshold: 0.5, // 0.5 means when 50% of the element is visible
-  }
+const props = withDefaults(defineProps<Props>(), {
+  hideImage: false,
+  enableToc: true,
+})
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const elem = entry.target
+const img = props.img ?? fallbackImg
+const { currentActiveContentInToc, updateCurrentActiveContentInToc } = useActiveSectionObserver('h3', 0.75)
 
-        if (entry.intersectionRatio >= 0) {
-          updateCurrentActiveContentInToc(elem.id)
-        }
-      }
-    })
-  }, options)
+const { data: page, pending } = useAsyncData(
+  `content-${currentLocale}-${props.contentPath}`,
+  () => queryCollection(langCollection[currentLocale]).path(`/${currentLocale}/${props.contentPath}`).first(),
+)
 
-  const sections = document.querySelectorAll('h3')
-  sections.forEach((el) => {
-    if (ids.value.includes(el.id)) {
-      observer.observe(el)
-    }
-  })
-}
+const { hasContent, sideBarLinks, hasSidebarLinks } = useSidebarLinks(page)
 
 onMounted(() => {
-  startIntersectionObserver()
-})
-onUpdated(() => {
-  startIntersectionObserver()
+  // useActiveSectionObserver gebruiken we op de client om de actieve sectie te observeren
+  // en de sidebar links te updaten
+  // echter, op de SSR werkt die code niet, dus we moeten de eerste link handmatig instellen
+  // maar alleen onMounted, omdat de links nog niet beschikbaar zijn tijdens SSR
+  // anders krijgen we hydration errors omdat de links niet overeenkomen tussen de server en de client
+  if (sideBarLinks.value.length > 0 && sideBarLinks.value[0]?.id) {
+    updateCurrentActiveContentInToc(sideBarLinks.value[0]?.id)
+  }
 })
 </script>
 
 <template>
   <div>
     <BannerImage
-      v-if="page"
+      v-if="!hideImage && !pending && page"
       :title="page?.title || ''"
       :description="page?.description"
       :image="img"
@@ -99,23 +55,43 @@ onUpdated(() => {
           cols="12"
           md="4"
         >
-          <Sidebar
+          <SideBar
             :active="currentActiveContentInToc"
             :toc="sideBarLinks"
             @click="updateCurrentActiveContentInToc"
           />
         </v-col>
         <v-col
+          v-if="hasContent"
           cols="12"
-          md="8"
+          :md="hasSidebarLinks ? 8 : 12"
         >
-          <article v-if="page">
-            <ContentRendererMarkdown
-              :value="page.body || {}"
-              class="nuxt-content content-renderer"
-            />
+          <article>
+            <ContentRenderer :value="page || {}"/>
           </article>
         </v-col>
+        <v-col v-else>
+          <EmptyComponent
+            :message="t('empty.no-content')"
+            :show-icon="false"
+          />
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col
+          cols="1"
+          md="2"
+        />
+        <v-col
+          cols="10"
+          md="8"
+        >
+          <slot name="extra-content" />
+        </v-col>
+        <v-col
+          cols="1"
+          md="2"
+        />
       </v-row>
     </v-container>
   </div>

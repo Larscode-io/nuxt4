@@ -12,10 +12,10 @@ export default defineEventHandler(async () => {
               to: RoutePathKeys.presentationSituation,
               title: 'menu.court.presentation.history-of-court',
             },
-            // {
-            //   to: RoutePathKeys.presentationOrganization,
-            //   title: 'menu.court.presentation.organization',
-            // },
+            {
+              to: RoutePathKeys.presentationOrganization,
+              title: 'menu.court.presentation.organization',
+            },
             {
               to: RoutePathKeys.presentationJurisdiction,
               title: 'menu.court.presentation.jurisdiction',
@@ -29,7 +29,7 @@ export default defineEventHandler(async () => {
               title: 'menu.court.presentation.how-the-court-works',
             },
             {
-              to: RoutePathKeys.presentationAccomodation,
+              to: RoutePathKeys.presentationAccommodation,
               title: 'menu.court.presentation.building',
             },
             {

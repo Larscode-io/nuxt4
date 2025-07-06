@@ -36,8 +36,6 @@ const submitForm = async () => {
   form.isSubmitting = true
   await fetchData()
   form.isSubmitting = false
-  console.log(`mailmanSubmitIsValid.value: ${mailmanSubmitIsValid.value}`)
-  console.log(`emailsSeemsInvalid.value: ${emailsSeemsInvalid.value}`)
   if (mailmanSubmitIsValid.value) {
     form.userFeedbackMessage = t('general.message.mailman.subscription-succes')
   }
@@ -130,7 +128,7 @@ watch(() => form.userFeedbackMessage, () => {
 const fetchData = async () => {
   try {
     const response = await fetch(
-      `https://mailman.const-court.be/mailman/subscribe/rolout`,
+      'https://mailman.const-court.be/mailman/subscribe/rolout',
       {
         method: 'POST',
         headers: {

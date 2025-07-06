@@ -1,0 +1,26 @@
+{
+  "name": "David Keyaerts",
+  "slug": "david-keyaerts",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "david-keyaerts.jpg",
+  "alt": {
+    "en": "Picture of David KEYAERTS",
+    "fr": "Photographie de David KEYAERTS",
+    "nl": "Foto van David KEYAERTS",
+    "de": "Foto von David KEYAERTS"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "01.06.2015",
+      "endDate": null
+    }
+  ]
+}

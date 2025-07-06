@@ -1,0 +1,26 @@
+{
+  "name": "Jan Theunis",
+  "slug": "jan-theunis",
+  "isAlive": true,
+  "lang": "nl",
+  "picture": "jan-theunis.jpg",
+  "alt": {
+    "en": "Picture of Jan THEUNIS",
+    "fr": "Photographie de Jan THEUNIS",
+    "nl": "Foto van Jan THEUNIS",
+    "de": "Foto von Jan THEUNIS"
+  },
+  "infos": {
+    "en": [],
+    "fr": [],
+    "nl": [],
+    "de": []
+  },
+  "roles": [
+    {
+      "role": "legalSecretaries",
+      "startDate": "01.01.1998",
+      "endDate": null
+    }
+  ]
+}

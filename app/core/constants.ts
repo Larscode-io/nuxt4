@@ -1,5 +1,7 @@
 export const EMPTY_VALUE = '----'
 
+export type Locale = 'de' | 'en' | 'fr' | 'nl'
+
 export enum Languages {
   ENGLISH = 'en',
   FRENCH = 'fr',
@@ -13,7 +15,7 @@ export const languageLabels: Record<Languages, string> = {
   [Languages.GERMAN]: 'Deutsch',
   [Languages.ENGLISH]: 'English',
 }
-// Usage: console.log(languageLabels[Languages.DUTCH]); // outputs: Nederlands
+// Usage: languageLabels[Languages.DUTCH] returns Nederlands
 
 export const REDIRECT_URI_WHEN_401 = 'auth/login'
 export const DEFAULT_PAGE_SIZE = 30
@@ -86,6 +88,7 @@ export enum MailmanUrl {
 export enum ContentKeys {
   presentationSituation = 'presentation-situation',
   presentationJurisdiction = 'presentation-jurisdiction',
+  presentationOrganization = 'presentation-organization',
   presentationOrganizationJudge = 'presentation-organization-judge',
   presentationOrganizationOfficeStaff = 'presentation-organization-office-staff',
   presentationOrganizationReferendar = 'presentation-organization-referendar',
@@ -95,7 +98,7 @@ export enum ContentKeys {
   presentationOrganizationCurrentMembershipHistoric = 'current-membership-historic',
   presentationHowTheCourtOperates = 'presentation-how-the-court-operates',
   presentationProcedure = 'presentation-procedure',
-  presentationAccomodation = 'presentation-accomodation',
+  presentationAccommodation = 'presentation-accommodation',
   presentationPublicationsOnTheCourt = 'presentation-publications-on-the-court',
   presentationInternationalRelationsOfTheCourt = 'presentation-international-relations-of-the-court',
   presentationEproc = 'presentation-eproc',
@@ -110,6 +113,7 @@ export enum ContentKeys {
   rulePleadingsProcedure = 'rule-pleadings-procedure',
   ruleOthersInfo = 'rule-others-info',
   fullTextSearchExplanation = 'full-text-search-explanation',
+  standardSearchExplanation = 'standard-search-explanation',
   informed = 'stay-informed',
   prize = 'prize',
   privacyPolicy = 'privacy-policy',
@@ -125,7 +129,7 @@ export enum RoutePathKeys {
   presentationOrganizationMember = 'court-presentation-members-id',
   presentationHowTheCourtOperates = 'court-presentation-how-the-court-operates',
   presentationProcedure = 'court-presentation-procedure',
-  presentationAccomodation = 'court-presentation-accomodation',
+  presentationAccommodation = 'court-presentation-accommodation',
   presentationPublicationsOnTheCourt = 'court-presentation-publications-on-the-court',
   presentationInternationalRelationsOfTheCourt = 'court-presentation-international-relations-of-the-court',
   presentationEproc = 'court-presentation-eproc',
@@ -151,6 +155,7 @@ export enum RoutePathKeys {
   searchStandard = 'search-standard',
   searchTableOfContent = 'search-table-of-content',
   searchJudgmentKeywordSummary = 'search-judgment-keyword-summary',
+  mediaVideopresentaties = 'media-video',
   mediaGeneralPressReleases = 'media-general-press-releases',
   mediaPressReleasesConcerningTheJudgments = 'media-press-releases-concerning-the-judgments',
   courtBasicTextTableOfTheArticlesOfTheConstitutionReferredToByTheConstitutionalCourt = 'court-basic-table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court',
@@ -211,7 +216,6 @@ export interface Judgment {
   idsRole: number[]
   availablePart: string
   keywords: string
-  year?: string
 }
 
 export interface GeneralPressJudgment {
@@ -248,13 +252,13 @@ export interface Pleading {
 export interface Decision {
   distance: number
   id: number
-  joinedcases: any[]
+  joinedcases: number[]
   processingLanguage: string
   description: string
   day: string
   month: string
   nr: string
-  master: any
+  master: number
   kenmerk: string
   encinz: string
   type: string
@@ -371,7 +375,7 @@ export interface PubSpeechesData {
   title_n?: string
   type: string
   _k1_pbcp_id: number
-  [key: string]: any
+  [key: string]: string | number | undefined
 }
 
 export interface PubBrochures {
@@ -416,4 +420,35 @@ export interface PubStudiesData {
   title_d?: string
   title_e?: string
   offline?: string
+}
+
+export interface JudgmentType {
+  id: number
+  label: string
+}
+
+export interface ApplicantTable {
+  _k1_Verzoeker_ID: number
+  _k2_Verzoekerscategorie_ID: number
+  Verzoeker_NL_cu: string
+  Verzoeker_FR_cu: string
+}
+
+export interface ApplicantCategoryTable {
+  _k1_Verzoekerscategorie_ID: number
+  VerzoekersCategorie_NL_cu: string
+  VerzoekersCategorie_FR_cu: string
+}
+
+export interface Juridisction {
+  _k1_Rechtscollege_ID: number
+  Rechtscollege_NL_cu: string
+  Rechtscollege_FR_cu: string
+}
+
+export interface JuridisctionArea {
+  _k1_RechtsgebiedVolgnummer_ID: number
+  _k1_Rechtsgebied_ID: number
+  Plaats_NL_cu: string
+  Plaats_FR_cu: string
 }

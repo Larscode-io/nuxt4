@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import BannerImage from '~/components/BannerImage.vue'
-import img from '~/assets/img/newsletter-background-opt.png'
-import type { PubStudiesData } from '~/core/constants'
-import { ApiUrl } from '~/core/constants'
+import type { PubStudiesData } from '@core/constants'
+import { ApiUrl } from '@core/constants'
+import img from '@assets/img/newsletter-background-opt.png'
+import BannerImage from '@/components/BannerImage.vue'
 
 const { t, locale } = useLanguage()
 const config = useRuntimeConfig()

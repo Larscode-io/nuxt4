@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
     const x = await $fetch(
       'https://node04.const-court.be/api/v1/juris/judgments?lang=nl&year=2024&limit=1',
     )
-    const dates = x.map(record => record.judmentDate)
+    const dates = x.map((record) => record.judmentDate)
     const uniqueDates = [...new Set(dates)]
     uniqueDates.sort((a, b) => new Date(b) - new Date(a))
     const mostRecentDate = new Date(uniqueDates[0])
@@ -103,6 +103,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const config = useRuntimeConfig()
+
   const FileMaker = new FilemakerApi(config, fetchWithFallback)
 
   try {

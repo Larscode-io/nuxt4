@@ -39,9 +39,8 @@
 </template>
 
 <script setup lang="ts">
-// import AnnualReportCard from '../../components/AnnualReportCard.vue'
-import img from '~/assets/img/banner-media.png'
-import { ApiUrl, DISCOURS_WORDS_FOR_FILTERING } from '~/core/constants'
+import { ApiUrl, DISCOURS_WORDS_FOR_FILTERING } from '@core/constants'
+import img from '@assets/img/banner-media.png'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useLanguage()
@@ -59,7 +58,7 @@ const releases = computed(() => {
     ? data.value.filter((release: { title: string }) => {
       const title = release.title?.toLowerCase()
       const hasDiscours
-        = DISCOURS_WORDS_FOR_FILTERING.map(key =>
+        = DISCOURS_WORDS_FOR_FILTERING.map((key) =>
           title?.includes(key?.toLowerCase()),
         ).filter(Boolean)?.length > 0
 
