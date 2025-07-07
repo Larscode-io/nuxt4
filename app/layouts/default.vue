@@ -290,7 +290,7 @@ watch(smAndDown, (value) => {
                                 >
                                   <nuxt-link
                                     :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
-                                    aria-label="`level 3 menu item ${thirdLevelItem.title}`"
+                                    :aria-label="`level 3 menu item ${thirdLevelItem.title}`"
                                     @click="handleMenuClick"
                                   >
                                     {{ thirdLevelItem.title }}
