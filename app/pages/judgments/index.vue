@@ -193,7 +193,6 @@ watchEffect(() => {
             <v-select
               v-model="selected_year"
               :items="years"
-              item-value="value"
               variant="outlined"
               :label="`${t('general.message.year-selection')}${t('general.message.colon')}`"
             />
