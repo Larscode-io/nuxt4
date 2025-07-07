@@ -243,7 +243,7 @@ watch(smAndDown, (value) => {
                     :id="`idmenu-${item.title}-level1`"
                     aria-haspopup="menu"
                     class="cursor-pointer position-relative"
-                    :aria-label="`level 1 menu title ${item.title}`"
+                    :aria-label="toSlug(`level 1 menu title ${item.title}`)"
                     tabindex="0"
                     :aria-expanded="hoveredMenu === index"
                     :aria-controls="`menux-${item.title}-${index}`"
@@ -256,7 +256,6 @@ watch(smAndDown, (value) => {
                     <!-- rendering a top-level navigation item that has a submenu and can open a submenu on hover -->
                     <div
                       v-if="hoveredMenu === index && item.subMenu"
-                      :id="`mainMenu1-${item.title}-${index}`"
                       class="position-fixed left-0 right-0 bg-white elevation-2 pa-2"
                       :style="{ top: `${menuHeight}px` }"
                       @mouseleave="hoverMainMenu(null)"
@@ -264,7 +263,7 @@ watch(smAndDown, (value) => {
                       <v-container fluid>
                         <!-- aria-labelledby on the next v-row only shows when the submenu is open -->
                         <v-row
-                          :aria-labelledby="`mainMenu1-${item.title}-${index}`"
+                          :aria-label="toSlug(`level2-menu-${item.title}`)"
                           class="d-flex flex-row justify-space-evenly"
                         >
                           <v-col
@@ -279,7 +278,7 @@ watch(smAndDown, (value) => {
                               <v-row class="flex flex-column">
                                 <v-col
                                   class="align-start font-weight-bold pa-1 pb-5"
-                                  aria-label="level 2 menu title"
+                                  :aria-label="toSlug(`level3-menu-${subItem.title}`)"
                                 >
                                   {{ subItem.title }}
                                 </v-col>
@@ -290,7 +289,7 @@ watch(smAndDown, (value) => {
                                 >
                                   <nuxt-link
                                     :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
-                                    :aria-label="`level 3 menu item ${thirdLevelItem.title}`"
+                                    :aria-label="toSlug(`level 3 item ${thirdLevelItem.title}`)"
                                     @click="handleMenuClick"
                                   >
                                     {{ thirdLevelItem.title }}
@@ -302,7 +301,7 @@ watch(smAndDown, (value) => {
                               <v-col>
                                 <nuxt-link
                                   :to="subItem.to ? localePath(subItem.to) : '#'"
-                                  :aria-label="`level 2 menu item ${subItem.title}`"
+                                  :aria-label="toSlug(`level 2 item ${subItem.title}`)"
                                   tabindex="0"
                                   @click="handleMenuClick"
                                 >
@@ -319,7 +318,7 @@ watch(smAndDown, (value) => {
                   <nuxt-link
                     v-else
                     :to="item.to ? localePath(item.to) : '#'"
-                    :aria-label="`top menu item ${item.title}`"
+                    :aria-label="toSlug(`top menu item ${item.title}`)"
                     @mouseenter="hoverMainMenu(index)"
                     @focus="hoverMainMenu(index)"
                   >
