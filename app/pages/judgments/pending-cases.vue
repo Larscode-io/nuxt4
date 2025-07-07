@@ -7,9 +7,6 @@ import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useLanguage()
 
-const config = useRuntimeConfig()
-const baseURL = config.public.apiBaseUrl
-
 const withArchive = ref(true)
 
 const allPendingCase = 'all'
@@ -70,11 +67,11 @@ const { data: pressJudgmentsRaw, error: pressJudgmentsError, status: _pressJudgm
   = useFetch<Decision[]>(`${ApiUrl.pressJudgment}?lang=${locale.value}`)
 
 const pressJudgmentsMap = computed(() => {
-  const m = new Map<number, { distance: number, dateLong: string }>()
+  const pressJudgmentsMapInternal = new Map<number, { distance: number, dateLong: string }>()
   pressJudgmentsRaw.value?.forEach(({ id, distance, dateLong }) => {
-    m.set(id, { distance, dateLong })
+    pressJudgmentsMapInternal.set(id, { distance, dateLong })
   })
-  return m
+  return pressJudgmentsMapInternal
 })
 
 if (pressJudgmentsError.value) {
@@ -98,18 +95,17 @@ const pendingCasesFiltered = computed(() => {
     return []
   }
 
+  // this will filter out cases on different criteria
+  // 1) by “type” (all, questions referred, action for cancellation)
+  // 2) by “year” (all years, or a specific year)
+  // 3) by “distance” toggle (show only cases with upcoming judgments)
   return casesWithYear.value.filter((c) => {
-    // 1) filter by “type”
     if (selectedType.value !== allPendingCase && c.type !== selectedType.value) {
       return false
     }
-
-    // 2) filter by “year”
     if (selectedYear.value !== null && c.yearReceived !== selectedYear.value) {
       return false
     }
-
-    // 3) filter by “distance” toggle
     if (selectedByDistance.value && !hasUpcomingJudgment(c.id)) {
       return false
     }
@@ -176,7 +172,6 @@ function yearItemTitle(item: { year: string | null, count: number }) {
 
     <v-container fluid>
       <v-row>
-        <!-- FILTER SIDEBAR -->
         <v-col
           cols="12"
           md="3"
@@ -194,8 +189,8 @@ function yearItemTitle(item: { year: string | null, count: number }) {
                 @update:model-value="selectedYear = null"
               />
             </v-col>
+            <!-- YEAR SELECT -->
             <v-col cols="12">
-              <!-- YEAR SELECT -->
               <v-select
                 v-model="selectedYear"
                 :items="yearsInPendingCasesArray"
@@ -213,8 +208,8 @@ function yearItemTitle(item: { year: string | null, count: number }) {
                 @click="selectedYear = null"
               />
             </v-col>
+            <!-- RESET BUTTON -->
             <v-col>
-              <!-- RESET BUTTON -->
               <v-btn
                 color="secondary"
                 @click="() => {
@@ -237,7 +232,6 @@ function yearItemTitle(item: { year: string | null, count: number }) {
           <v-skeleton-loader type="list-item-two-line" />
         </v-col>
         <!-- ERROR -->
-
         <v-col
           v-else-if="error"
           cols="12"
@@ -276,29 +270,6 @@ function yearItemTitle(item: { year: string | null, count: number }) {
             :is-subscribable="isSubscribable"
           />
         </v-col>
-        <!-- test -->
-        <!-- <v-col
-          id="print-tab1"
-          cols="12"
-          class="print-content"
-        >
-          <PendingCaseCard
-            v-for="pendingCase in pendingCasesFiltered"
-            :id="pendingCase.id"
-            :key="pendingCase.id"
-            :processing-language="pendingCase.processingLanguage"
-            :receipt-date="pendingCase.dateReceived"
-            :date-of-hearing="pendingCase.dateOfHearing"
-            :date-of-judgment="pendingCase.dateDelivered"
-            :concerning="pendingCase.description"
-            :notice-from-const-court-path="pendingCase.noticeOfTheConstitutionalCourtLink"
-            :notification-art74-to-official-journal-link="pendingCase.art74Link"
-            :notification-art74-to-official-journal-date="pendingCase.dateArt74"
-            :joined-cases="pendingCase.joinedCases"
-            :keywords="pendingCase.keywords"
-            :linked-case-number="pendingCase.linkedCaseNumber"
-          />
-        </v-col> -->
       </v-row>
     </v-container>
   </div>
