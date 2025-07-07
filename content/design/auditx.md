@@ -9,7 +9,13 @@ description: Audit strategy from Legacy site to Nuxt 4 + Vuetify 3 site
 
 | Pagina         | Headings gebruikt | Marges (top/bottom) | Fontgrootte  | Line-height  | Kleurgebruik     | Opmerkingen                     |
 |----------------|-------------------|----------------------|-------------|--------------|------------------|---------------------------------|
-| /              | h1, h2            | h1: mt-8 mb-2        | h1: 32px    | 1.2          | #003366, zwart | h2 zonder marge, inconsistent   |
+| /              | h1                | h1: mt-8 mb-2        | h1: 24px    | 36px         | #043c72, logo  | Tiempos Headline                |
+| /              | h2                | h1: mt-8 mb-2        | h1: 32px    | 40px         | #043c72, logo  | Tiempos Headline                |
+| /              | h3                | h1: mt-8 mb-2        | h3: 24px    | 36px         | #000000, zwart | Tiempos Headline                |
+| /              | menu              | h1: mt-8 mb-2        |     32px    | 24px         | #000000, zwart | Tiempos Headline                |
+| /              | menu on hover     | h1: mt-8 mb-2        |     32px    | 24px         | #0065ca, indigo| Tiempos Headline                |
+
+
 | /nieuws        | h2, h3            | h2: mt-6 mb-0        | h3: 20px    | 1.5          | #003366, blauw | weinig witruimte                |
 | /agenda        | h2, h4            | h4: mt-4 mb-2        | h4: 16px    | 1.4          | zwart, grijs     | headings voelen generiek        |
 | /uitspraak     | h2, p             | p: mb-2              | p: 16px     | 1.5          | zwart            | leesbaar, maar visueel vlak     |
@@ -34,19 +40,19 @@ description: Audit strategy from Legacy site to Nuxt 4 + Vuetify 3 site
 | Type               | Huidig (geschat) | Gewenst (8px grid) | Opmerkingen                      |
 |--------------------|------------------|--------------------|----------------------------------|
 | Margin onder `<h2>`| wisselend        | 16px (`spacing-md`) | vaak te krap op paragrafen      |
-| Padding in cards   | 12–20px          | 16px               | wisselend per component         |
-| Tussen knoppen     | 4–16px           | 8px–16px           | inconsistente afstand           |
+| Padding in cards   | 12–20px          | 16px               | wisselend per component          |
+| Tussen knoppen     | 4–16px           | 8px–16px           | inconsistente afstand            |
 
 ---
 
 ## 🌈 4. Kleurgebruik
 
-| Element       | Kleur gebruikt     | Overgenomen uit legacy? | Richtlijngebruik               |
+| Element       | Kleur gebruikt     | Overgenomen uit legacy? | Richtlijngebruik                |
 |---------------|--------------------|--------------------------|--------------------------------|
-| Primair       | #003366            | Ja                       | CTA-knoppen, hoofdlinks        |
-| Secundair     | #006699            | Ja                       | iconen, accenten               |
-| Accent        | #6699CC            | Ja                       | hovereffecten                  |
-| Tekstkleur    | #333333 of zwart   | Gedeeltelijk             | basis tekstkleur               |
+| Primair       | #003366          | Ja                       | CTA-knoppen, hoofdlinks        |
+| Secundair     | #006699          | Ja                       | iconen, accenten               |
+| Accent        | #6699CC          | Ja                       | hovereffecten                  |
+| Tekstkleur    | #333333 of zwart | Gedeeltelijk             | basis tekstkleur               |
 | Achtergrond   | wit / grijs        | Ja                       | pagina, cards                  |
 
 ---
