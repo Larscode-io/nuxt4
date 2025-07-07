@@ -59,14 +59,15 @@ const alternateNames = Object.entries(namesByLocale)
   .filter(([code]) => code !== locale.value)
   .map(([, name]) => name)
 
+const i18nHead = useLocaleHead()
+
 watchEffect(() => {
   useHead({
     htmlAttrs: {
-      lang: locale.value,
+      lang: i18nHead.value.htmlAttrs!.lang,
     },
   })
 })
-
 useHead({
   meta: [
     { property: 'og:image', content: ogImage },
@@ -325,7 +326,6 @@ watch(smAndDown, (value) => {
                     {{ item.title || 'Untitled' }}
                   </nuxt-link>
                 </li>
-              <!-- xxxx -->
               </ul>
             </v-container>
           </template>
