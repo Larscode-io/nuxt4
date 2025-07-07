@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
+import { ref, watchEffect, watch } from 'vue'
 import type { ComponentPublicInstance } from 'vue'
 import { ApiUrl } from '@core/constants'
 import type { Judgment } from '@core/constants'
@@ -18,20 +18,73 @@ const currentYear = new Date().getFullYear()
 const year = computed(() => Number(query.year) || new Date().getFullYear())
 const years = ref(range(OLDEST_YEAR, currentYear).reverse())
 
-const selected = ref(year.value)
+const selected_year = ref(year.value)
+const selected_month = ref<number>(0)
 
-const { data: judgments, error, status, refresh }
+const { data: judgments, error, pending, status, refresh }
   = useFetch<Judgment[]>(() => `${ApiUrl.judgments}`,
     {
       query: {
         lang: locale.value,
-        year: selected,
+        year: selected_year,
       },
-      watch: [selected],
+      watch: [selected_year],
     })
 if (error.value) {
   console.error(error.value)
 }
+
+const judgmentsWithMonth = computed(() => {
+  return judgments.value?.map( (j) => {
+    const realDate = new Date(j.judmentDate)
+    const monthNumber = realDate.getMonth() // 0 for January, 11 for December
+    return {
+      ...j,
+      // convert to 1-based month (1 for January, 12 for December)
+      // month 0 will serve as "all months" in a filter
+      month: monthNumber + 1,
+    }
+  }) || []
+})
+
+const judgmentsFilteredByMonth = computed(() => {
+  if(! judgmentsWithMonth.value) {
+    return []
+  }
+  return judgmentsWithMonth.value.filter((j) => {
+    if (
+      selected_month.value !== 0 && j.month !== selected_month.value ) {
+      return false
+    }
+    // other filters can be applied here, e.g. by court or verdict
+    return true
+  })
+})
+
+const monthsInNumbers = ref(new Set<number>())
+const monthsInNames = ref<{ value: number, title: string }[]>([])
+const allMonths = t('general.message.all-months')
+
+watchEffect(() => {
+  monthsInNumbers.value.clear()
+  const monthMap = new Map<number, string>()
+  if (judgments.value) {
+    judgments.value.forEach((judgment: Judgment) => {
+      const realDate = new Date(judgment.judmentDate)
+      const monthNumber = realDate.getMonth() + 1 // 1 for January, 12 for December
+      monthsInNumbers.value.add(monthNumber)
+      if (!monthMap.has(monthNumber)) {
+        monthMap.set(monthNumber, realDate.toLocaleString(locale.value, { month: 'long' }))
+      }
+    })
+    // t('general.message.all-months')
+    monthsInNames.value = [
+      { value: 0, title: allMonths },
+      ...Array.from(monthMap, ([value, title]) => ({ value, title }))
+    ]  } else {
+    monthsInNames.value = []
+  }
+})
 
 const transform = (data: GeneralPressJudgment[]) => {
   return data.filter((release: { nr: string }) => release.nr.split('/')[1] === String(year.value))
@@ -81,11 +134,24 @@ const handleJudgmentHover = async (nr: String) => {
   }
 }
 
+const filterLoading = ref(false)
+const showSkeleton = computed(() => filterLoading.value || pending.value)
+
+// this loading time is just for the sake of UX:
+// to make it clear to the user that the filters are being applied
+watch([ selected_year, selected_month ], () => {
+  filterLoading.value = true
+  setTimeout(() => {
+    filterLoading.value = false
+  }, 300)
+})
+
 watchEffect(() => {
   if (query.id) {
     scrollToJudgment(Number(query.id))
   }
 })
+
 </script>
 
 <template>
@@ -125,16 +191,26 @@ watchEffect(() => {
         >
           <div class="pa-4">
             <v-select
-              v-model="selected"
+              v-model="selected_year"
               :items="years"
               item-value="value"
               variant="outlined"
               :label="`${t('general.message.year-selection')}${t('general.message.colon')}`"
             />
           </div>
+          <div class="pa-4">
+            <ClientOnly>
+              <v-select
+                v-model="selected_month"
+                :items="monthsInNames"
+                variant="outlined"
+                :label="`${t('general.message.month-selection')}${t('general.message.colon')}`"
+                :disabled="monthsInNames.length === 0"
+              />
+            </ClientOnly>
+          </div>
         </v-col>
-
-        <v-col v-if="status === 'pending'">
+        <v-col v-if="showSkeleton">
           <v-skeleton-loader type="list-item-two-line" />
           <v-skeleton-loader type="list-item-two-line" />
           <v-skeleton-loader type="list-item-two-line" />
@@ -154,7 +230,7 @@ watchEffect(() => {
             </v-card-text>
           </v-card>
           <v-card
-            v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id: idx, filePath } in judgments"
+            v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id: idx, filePath } in judgmentsFilteredByMonth"
             v-else
             :id="`judgment-card-${idx}`"
             :key="idx"
@@ -216,6 +292,17 @@ watchEffect(() => {
               </div>
             </v-list-item>
           </v-card>
+        </v-col>
+        <v-col
+          v-else
+          cols="12"
+          md="9"
+        >
+          <v-alert
+            type="error"
+            dismissible
+          > fout bij laden van gegevens
+          </v-alert>
         </v-col>
       </v-row>
     </v-container>
