@@ -107,6 +107,7 @@ const title = computed(() => {
   }
 }
 
+// todo: ::v-deep usage as a combinator has been deprecated. Use :deep(<inner-selector>) instead of ::v-deep <inner-selector>.
 ::v-deep .nuxt-content {
   h3 {
     font-family: 'Tiempos';
