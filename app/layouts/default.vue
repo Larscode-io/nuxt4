@@ -68,6 +68,7 @@ watchEffect(() => {
     },
   })
 })
+
 useHead({
   meta: [
     { property: 'og:image', content: ogImage },
@@ -86,9 +87,16 @@ useHead({
       hreflang: 'x-default',
       href: 'https://www.const-court.be/',
     },
+    // added canonical link to prevent duplicate content issues
+    // https://www.const-court.be/nuxt/ is the canonical URL for the site
+    // this is needed because the site is served from /nuxt/ on nginx
+    // todo:
+    // when the site is served from the root, this can be removed❕❕❕❕❕❕
+    // see https://opengraph.dev/ for testing
+    // and https://metatags.io/ for testing
     {
       rel: 'canonical',
-      href: `https://www.const-court.be${route.fullPath}`,
+      href: `https://www.const-court.be/nuxt${route.fullPath}`,
     },
   ],
   script: [
