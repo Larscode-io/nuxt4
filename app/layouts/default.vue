@@ -80,12 +80,12 @@ useHead({
     ...locales.value.map((l) => ({
       rel: 'alternate',
       hreflang: l.language,
-      href: `https://www.const-court.be${switchLocalePath(l.code)}`,
+      href: `https://www.const-court.be/nuxt${switchLocalePath(l.code)}`,
     })),
     {
       rel: 'alternate',
       hreflang: 'x-default',
-      href: 'https://www.const-court.be/',
+      href: 'https://www.const-court.be/nuxt/',
     },
     // added canonical link to prevent duplicate content issues
     // https://www.const-court.be/nuxt/ is the canonical URL for the site
@@ -107,10 +107,13 @@ useHead({
         '@type': 'GovernmentOrganization',
         'name': namesByLocale[locale.value],
         'alternateName': alternateNames,
-        'url': `https://www.const-court.be${route.fullPath}`,
+        'url': `https://www.const-court.be/nuxt${route.fullPath}`,
         'address': {
           '@type': 'PostalAddress',
           'addressCountry': 'BE',
+          'postalCode': '1000',
+          'streetAddress': t('contact.address-title'),
+          'addressLocality': t('contact.address-locality')
         },
         'inLanguage': locale.value,
       }),
