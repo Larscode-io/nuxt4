@@ -15,6 +15,11 @@ export default defineNuxtConfig({
     '~/plugins/vuetify',
   ],
   $development: {
+        app: {
+      head: {
+        title: 'We are in development! DO NOT PANIC!'
+      }
+    },
     runtimeConfig: {
       public: {
         redirectUri: import.meta.env.REDIRECT_URI_DEV,
