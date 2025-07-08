@@ -9,16 +9,16 @@ description: Audit strategy from Legacy site to Nuxt 4 + Vuetify 3 site
 
 | Pagina         | Headings gebruikt | Marges (top/bottom) | Fontgrootte  | Line-height  | Kleurgebruik     | Opmerkingen                     |
 |----------------|-------------------|----------------------|-------------|--------------|------------------|---------------------------------|
+| /              | GwH               | h1: mt-8 mb-2        |     32px    | 24px         | #000000, zwart | Tiempos Headline                |
+| /              | menu              | h1: mt-8 mb-2        |     32px    | 24px         | #000000, zwart | Proxima Nova                    |
+| /              | menu on hover     | h1: mt-8 mb-2        |     32px    | 24px         | #0065ca, indigo| Proxima Nova                    |
 | /              | h1                | h1: mt-8 mb-2        | h1: 24px    | 36px         | #043c72, logo  | Tiempos Headline                |
-| /              | h2                | h1: mt-8 mb-2        | h1: 32px    | 40px         | #043c72, logo  | Tiempos Headline                |
-| /              | h3                | h1: mt-8 mb-2        | h3: 24px    | 36px         | #000000, zwart | Tiempos Headline                |
-| /              | menu              | h1: mt-8 mb-2        |     32px    | 24px         | #000000, zwart | Tiempos Headline                |
-| /              | menu on hover     | h1: mt-8 mb-2        |     32px    | 24px         | #0065ca, indigo| Tiempos Headline                |
-
-
-| /nieuws        | h2, h3            | h2: mt-6 mb-0        | h3: 20px    | 1.5          | #003366, blauw | weinig witruimte                |
-| /agenda        | h2, h4            | h4: mt-4 mb-2        | h4: 16px    | 1.4          | zwart, grijs     | headings voelen generiek        |
-| /uitspraak     | h2, p             | p: mb-2              | p: 16px     | 1.5          | zwart            | leesbaar, maar visueel vlak     |
+| /              | h2                | h1: mt-8 mb-2        | h1: 32px    | 40px         | #000000, zwart | Tiempos Headline                |
+| /              | h3                | h1: mt-8 mb-2        | h3: 18px    | 20px         | #000000, zwart | Tiempos Headline                |
+| /organization  | h2, h3            | h2: mt-6 mb-0        | h3: 20px    | 1.5          | #003366, blauw | weinig witruimte                |
+| /organization  | h2, h3            | h2: mt-6 mb-0        | h3: 20px    | 1.5          | #003366, blauw | weinig witruimte                |
+| /cases         | h2, h4            | h4: mt-4 mb-2        | h4: 16px    | 1.4          | zwart, grijs     | headings voelen generiek        |
+| /arresten      | h2, p             | p: mb-2              | p: 16px     | 1.5          | zwart            | leesbaar, maar visueel vlak     |
 
 > Tip: analyseer 5–10 sleutelpagina’s. Noteer inconsistenties in marges, kleur en structuur.
 
