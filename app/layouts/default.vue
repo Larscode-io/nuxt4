@@ -389,7 +389,8 @@ watch(smAndDown, (value) => {
                 :aria-label="lang.name"
                 @click="changeLanguage(lang.code)"
               >
-                <v-list-item-title>
+                <!-- WCAG understandable principle: lang.name is not in the page lang so we use lang.language to make it understandable -->
+                <v-list-item-title :lang="lang.language">
                   {{ lang.name }}
                 </v-list-item-title>
               </v-list-item>
