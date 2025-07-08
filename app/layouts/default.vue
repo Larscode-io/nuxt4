@@ -36,10 +36,12 @@ const ogImage = 'https://www.const-court.be/nuxt/img/ogImage.jpg'
 // todo: check if it works without baseUrl (and drop useRuntimeConfig)
 const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
 
-// todo: check when we don't need /nuxt/ redirect on nginx anymore
-// https://opengraph.dev/
-// https://metatags.io/
-// https://search.google.com/test/rich-results
+// todo: checks to do when we don't need /nuxt/ redirect on nginx anymore
+// https://opengraph.dev/panel?url=https%3A%2F%2Fwww.const-court.be%2Fnuxt%2F
+// https://metatags.io/?url=https%3A%2F%2Fwww.const-court.be%2Fnuxt%2F
+// https://search.google.com/test/rich-results?url=https%3A%2F%2Fwww.const-court.be%2Fnuxt%2F
+// https://www.linkedin.com/post-inspector/inspect/https:%2F%2Fwww.const-court.be%2Fnuxt%2F
+
 useSeoMeta({
   ogUrl,
   ogTitle,
