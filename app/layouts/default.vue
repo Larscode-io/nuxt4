@@ -195,14 +195,11 @@ function toggleMenu() {
 function changeLanguage(lang: string) {
   if (lang !== locale.value) {
     try {
-      const x = switchLanguage(lang as Languages)
-      // If switchLanguage or navigateTo are async, await them:
-      // const x = await switchLanguage(lang as Languages)
-      navigateTo(x)
+      const newLocalePath = switchLanguage(lang as Languages)
+      navigateTo(newLocalePath)
       mobileDrawer.value = false
     }
     catch (error) {
-      // Handle/log the error as needed
       console.error('Error changing language:', error)
     }
   }
@@ -259,17 +256,16 @@ watch(smAndDown, (value) => {
                     :id="`idmenu-${item.title}-level1`"
                     aria-haspopup="menu"
                     class="cursor-pointer position-relative"
-                    :aria-label="toSlug(`level 1 menu title ${item.title}`)"
+                    :aria-label="toSlug(`${item.title}`)"
                     tabindex="0"
                     :aria-expanded="hoveredMenu === index"
-                    :aria-controls="`menux-${item.title}-${index}`"
+                    :aria-controls="`menu-${item.title}-${index}`"
                     @mouseenter="hoverMainMenu(index)"
                     @click="toggleMenu"
                     @keydown.enter.prevent="toggleMenu"
                     @keydown.space.prevent="toggleMenu"
                   >
                     {{ item.title }}
-                    <!-- rendering a top-level navigation item that has a submenu and can open a submenu on hover -->
                     <div
                       v-if="hoveredMenu === index && item.subMenu"
                       class="position-fixed left-0 right-0 bg-white elevation-2 pa-2"
@@ -277,9 +273,8 @@ watch(smAndDown, (value) => {
                       @mouseleave="hoverMainMenu(null)"
                     >
                       <v-container fluid>
-                        <!-- aria-labelledby on the next v-row only shows when the submenu is open -->
                         <v-row
-                          :aria-label="toSlug(`level2-menu-${item.title}`)"
+                          :aria-label="toSlug(`${item.title}`)"
                           class="d-flex flex-row justify-space-evenly"
                         >
                           <v-col
@@ -292,10 +287,7 @@ watch(smAndDown, (value) => {
                               class="_mega-menu"
                             >
                               <v-row class="flex flex-column">
-                                <v-col
-                                  class="align-start font-weight-bold pa-1 pb-5"
-                                  :aria-label="toSlug(`level3-menu-${subItem.title}`)"
-                                >
+                                <v-col class="align-start font-weight-bold pa-1 pb-5">
                                   {{ subItem.title }}
                                 </v-col>
                                 <v-col
@@ -305,7 +297,6 @@ watch(smAndDown, (value) => {
                                 >
                                   <nuxt-link
                                     :to="thirdLevelItem.to ? localePath(thirdLevelItem.to) : '#'"
-                                    :aria-label="toSlug(`level 3 item ${thirdLevelItem.title}`)"
                                     @click="handleMenuClick"
                                   >
                                     {{ thirdLevelItem.title }}
@@ -317,7 +308,7 @@ watch(smAndDown, (value) => {
                               <v-col>
                                 <nuxt-link
                                   :to="subItem.to ? localePath(subItem.to) : '#'"
-                                  :aria-label="toSlug(`level 2 item ${subItem.title}`)"
+                                  :aria-label="subItem.title"
                                   tabindex="0"
                                   @click="handleMenuClick"
                                 >
@@ -330,11 +321,10 @@ watch(smAndDown, (value) => {
                       </v-container>
                     </div>
                   </button>
-                  <!-- rendering a top-level navigation item that has no submenu and navigates to another page -->
                   <nuxt-link
                     v-else
                     :to="item.to ? localePath(item.to) : '#'"
-                    :aria-label="toSlug(`top menu item ${item.title}`)"
+                    :aria-label="toSlug(`${item.title}`)"
                     @mouseenter="hoverMainMenu(index)"
                     @focus="hoverMainMenu(index)"
                   >
