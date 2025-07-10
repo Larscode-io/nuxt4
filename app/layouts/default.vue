@@ -147,15 +147,6 @@ const translatedItems = computed(() => {
 
 const isHydrated = ref(false)
 
-const { data: certInfo } = useAsyncData<{ daysLeft?: number }>('certInfo', () => $fetch('/api/cert'))
-
-watchEffect(() => {
-  const days = certInfo.value?.daysLeft ?? 0
-  if (days >= 1 && days <= 10) {
-    console.error('Certificate is only valid for', days, 'days')
-  }
-})
-
 onMounted(() => {
   if (h.value) {
     menuHeight.value = Number(h.value.height) || 40
