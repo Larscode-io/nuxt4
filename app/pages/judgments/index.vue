@@ -21,6 +21,10 @@ const years = ref(range(OLDEST_YEAR, currentYear).reverse())
 const selected_year = ref(year.value)
 const selected_month = ref<number>(0)
 
+watch(selected_year, () => {
+  selected_month.value = 0
+})
+
 const { data: judgments, error, pending, status, refresh }
   = useFetch<Judgment[]>(() => `${ApiUrl.judgments}`,
     {
@@ -28,7 +32,6 @@ const { data: judgments, error, pending, status, refresh }
         lang: locale.value,
         year: selected_year,
       },
-      watch: [selected_year],
     })
 if (error.value) {
   console.error(error.value)
@@ -37,10 +40,11 @@ if (error.value) {
 const judgmentsWithMonth = computed(() => {
   return judgments.value?.map( (j) => {
     const realDate = new Date(j.judmentDate)
-    const monthNumber = realDate.getMonth() // 0 for January, 11 for December
+    const monthNumber = realDate.getMonth() // here 0 represents for January, 11 for December
     return {
       ...j,
-      // convert to 1-based month (1 for January, 12 for December)
+      // convert to 1-based month
+      // so that 1 represents January,... and 12 represents December
       // month 0 will serve as "all months" in a filter
       month: monthNumber + 1,
     }
@@ -229,7 +233,8 @@ watchEffect(() => {
             </v-card-text>
           </v-card>
           <v-card
-            v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id: idx, filePath } in judgmentsFilteredByMonth"
+            v-for="{ formatedJudmentDate, courtVerdict, nr, description, availablePart, idsRole, keywords, id: idx, filePath }
+              in judgmentsFilteredByMonth"
             v-else
             :id="`judgment-card-${idx}`"
             :key="idx"

@@ -8,26 +8,14 @@
 // ❌ Never use useAppConfig() or useNuxtApp() in these files
 // ✅ Move anything shared but not client-bound to server/utils/ or shared/
 
-import { H3Event, getQuery } from 'h3'
-import type { EventHandler } from 'h3'
 
-export function useApiFetch(apiUrl: string): EventHandler {
+export function useApiFetch(apiUrl: string){
 
-  return eventHandler(async (event: H3Event) => {
+  return eventHandler(async () => {
     const config = useRuntimeConfig()
     const baseURL = config.public.apiBaseUrl
-    const lang = getQuery(event).lang || 'nl'
-    // Prevent duplicate ?lang=... if apiUrl already has query parameters
-    const separator = apiUrl.includes('?') ? '&' : '?'
     try {
-    //
-    // todo: enable when ready to find all legacy API calls
-    // to be sure all legacy API calls are converted to real API calls
-    // for now, we want these loggings out of the way because they are too noisy
-    //
-    // const pageName = event.node.req.url?.split('?')[0] || 'unknown'
-    // console.info(`Fetching legacy API: \x1b[32m${event.node.req.url}\x1b[0m for: \x1b[34m${pageName}\x1b[0m`)
-    return await $fetch(`${baseURL}${apiUrl}${separator}lang=${lang}`)
+    return await $fetch(`${baseURL}${apiUrl}`)
   } catch (err) {
     throw createError({ statusCode: 502, statusMessage: 'Legacy API error', cause: err })
   }
