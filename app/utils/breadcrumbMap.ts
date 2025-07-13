@@ -1,4 +1,4 @@
-// src/utils/breadcrumbMap.ts
+// app/utils/breadcrumbMap.ts
 
 export const baseBreadcrumbMap: Record<string, { key: string; nameByLang: Record<string, string> }[]> = {
   '/judgments': [

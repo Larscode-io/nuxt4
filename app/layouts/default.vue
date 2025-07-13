@@ -66,8 +66,6 @@ const alternateNames = Object.entries(namesByLocale)
 
 const i18nHead = useLocaleHead()
 
-import { baseBreadcrumbMap } from '@/utils/breadcrumbMap'
-
 const breadcrumbList = computed(() => {
   const pathWithoutLocale = route.fullPath.replace(/^\/(nl|fr|de|en)/, '')
   const entries = baseBreadcrumbMap[pathWithoutLocale]
@@ -106,6 +104,7 @@ watchEffect(() => {
   })
 })
 
+// todo: technische SEO & AI-readiness checklist
 useHead({
   meta: [
     { property: 'og:image', content: ogImage },
@@ -145,7 +144,7 @@ useHead({
         '@id': 'https://www.const-court.be/#website',
         'url': 'https://www.const-court.be/',
         'name': namesByLocale[locale.value],
-        'inLanguage': locale.value
+        'inLanguage': i18nHead.value.htmlAttrs!.lang
       }),
     },
     {
@@ -159,7 +158,7 @@ useHead({
         'isPartOf': {
           '@id': 'https://www.const-court.be/#website'
         },
-        'inLanguage': locale.value,
+        'inLanguage': i18nHead.value.htmlAttrs!.lang,
         'dateModified': new Date().toISOString().split('T')[0]
       }),
     },
@@ -171,6 +170,7 @@ useHead({
         'name': namesByLocale[locale.value],
         'alternateName': alternateNames,
         'url': `https://www.const-court.be/nuxt${route.fullPath}`,
+        'logo': 'https://www.const-court.be/nuxt/img/logo.svg',
         'address': {
           '@type': 'PostalAddress',
           'addressCountry': 'BE',
@@ -178,7 +178,7 @@ useHead({
           'streetAddress': t('contact.address-title'),
           'addressLocality': t('contact.address-locality')
         },
-        'inLanguage': locale.value,
+        'inLanguage': i18nHead.value.htmlAttrs!.lang,
         'areaServed': {
           '@type': 'Country',
           'name': 'Belgium'
@@ -314,7 +314,7 @@ watch(smAndDown, (value) => {
           :to="localePath('/')"
         >
           <v-img
-            src="~/assets/icons/fed.svg"
+            src="/img/fed.svg"
             aspect-ratio="1"
             class="ml-2"
             width="64"
