@@ -109,7 +109,7 @@ useHead({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'GovernmentOrganization',
+        '@type': ['GovernmentOrganization', 'Courthouse', 'LegalService'],
         'name': namesByLocale[locale.value],
         'alternateName': alternateNames,
         'url': `https://www.const-court.be/nuxt${route.fullPath}`,
@@ -121,6 +121,42 @@ useHead({
           'addressLocality': t('contact.address-locality')
         },
         'inLanguage': locale.value,
+        'areaServed': {
+          '@type': 'Country',
+          'name': 'Belgium'
+        },
+        'contactPoint': [
+          {
+            '@type': 'ContactPoint',
+            'contactType': 'Informatie',
+            'telephone': '+32-2-500-12-32',
+            'email': 'griffie@const-court.be',
+            'availableLanguage': [
+              { '@type': 'Language', 'name': 'Dutch' }
+            ]
+          },
+          {
+            '@type': 'ContactPoint',
+            'contactType': 'Information',
+            'telephone': '+32-2-500-12-33',
+            'email': 'greffe@const-court.be',
+            'availableLanguage': [
+              { '@type': 'Language', 'name': 'French' }
+            ]
+          }
+        ],
+        'openingHoursSpecification': {
+          '@type': 'OpeningHoursSpecification',
+          'dayOfWeek': [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday'
+          ],
+          'opens': '09:00',
+          'closes': '13:00'
+        }
       }),
     },
   ],
