@@ -66,6 +66,38 @@ const alternateNames = Object.entries(namesByLocale)
 
 const i18nHead = useLocaleHead()
 
+import { baseBreadcrumbMap } from '@/utils/breadcrumbMap'
+
+const breadcrumbList = computed(() => {
+  const pathWithoutLocale = route.fullPath.replace(/^\/(nl|fr|de|en)/, '')
+  const entries = baseBreadcrumbMap[pathWithoutLocale]
+  if (!entries) return null
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: entries.map((entry, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: entry.nameByLang[locale.value],
+      item: `https://www.const-court.be/${locale.value}/${[...entries.slice(0, index + 1).map((e) => e.key)].filter(Boolean).join('/')}`
+    }))
+  }
+})
+
+watchEffect(() => {
+  if (breadcrumbList.value) {
+    useHead({
+      script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify(breadcrumbList.value)
+        }
+      ]
+    })
+  }
+})
+
 watchEffect(() => {
   useHead({
     htmlAttrs: {
