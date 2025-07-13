@@ -99,23 +99,23 @@ watchEffect(() => {
 const sameAsLinksByLocale = {
   nl: [
     'https://nl.wikipedia.org/wiki/Grondwettelijk_Hof_(Belgi%C3%AB)',
-    'https://www.linkedin.com/company/grondwettelijkhof',
-    'https://www.ejustice.just.fgov.be/cgi_loi/loi_a1.pl?cn=1993050932&caller=list&F&sql=(text+contains+%27grondwettelijk%27)',
+    'https://www.linkedin.com/company/constitutional-court-of-belgium/',
+    'https://www.ejustice.just.fgov.be/cgi/rech.pl?language=nl&bron=Grondwettelijk+Hof&text1=arrest'
   ],
   fr: [
     'https://fr.wikipedia.org/wiki/Cour_constitutionnelle_(Belgique)',
-    'https://www.linkedin.com/company/grondwettelijkhof',
-    'https://www.ejustice.just.fgov.be/cgi_loi/loi_a1.pl?cn=1993050932&caller=list&N&sql=(text+contains+%27constitutionnelle%27)',
+    'https://www.linkedin.com/company/constitutional-court-of-belgium/',
+    'https://www.ejustice.just.fgov.be/cgi/rech.pl?language=fr&bron=Cour+Constitutionnelle&text1=arret',
   ],
   de: [
     'https://de.wikipedia.org/wiki/Belgischer_Verfassungsgerichtshof',
-    'https://www.linkedin.com/company/grondwettelijkhof',
-    'https://www.ejustice.just.fgov.be/cgi_loi/loi_a1.pl?cn=1993050932&caller=list&F&sql=(text+contains+%27grondwettelijk%27)',
+    'https://www.linkedin.com/company/constitutional-court-of-belgium/',
+    'https://www.ejustice.just.fgov.be/cgi/rech.pl?language=de&bron=Verfassungsgerichtshof&text1=Entscheide',
   ],
   en: [
     'https://en.wikipedia.org/wiki/Constitutional_Court_(Belgium)',
-    'https://www.linkedin.com/company/grondwettelijkhof',
-    'https://www.ejustice.just.fgov.be/cgi_loi/loi_a1.pl?cn=1993050932&caller=list&F&sql=(text+contains+%27grondwettelijk%27)',
+    'https://www.linkedin.com/company/constitutional-court-of-belgium/',
+    'https://www.ejustice.just.fgov.be/cgi/rech.pl?language=fr&bron=Cour+Constitutionnelle&text1=arret',
   ],
 }
 
