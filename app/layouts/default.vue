@@ -96,6 +96,29 @@ watchEffect(() => {
   }
 })
 
+const sameAsLinksByLocale = {
+  nl: [
+    'https://nl.wikipedia.org/wiki/Grondwettelijk_Hof_(Belgi%C3%AB)',
+    'https://www.linkedin.com/company/grondwettelijkhof',
+    'https://www.ejustice.just.fgov.be/cgi_loi/loi_a1.pl?cn=1993050932&caller=list&F&sql=(text+contains+%27grondwettelijk%27)',
+  ],
+  fr: [
+    'https://fr.wikipedia.org/wiki/Cour_constitutionnelle_(Belgique)',
+    'https://www.linkedin.com/company/grondwettelijkhof',
+    'https://www.ejustice.just.fgov.be/cgi_loi/loi_a1.pl?cn=1993050932&caller=list&N&sql=(text+contains+%27constitutionnelle%27)',
+  ],
+  de: [
+    'https://de.wikipedia.org/wiki/Belgischer_Verfassungsgerichtshof',
+    'https://www.linkedin.com/company/grondwettelijkhof',
+    'https://www.ejustice.just.fgov.be/cgi_loi/loi_a1.pl?cn=1993050932&caller=list&F&sql=(text+contains+%27grondwettelijk%27)',
+  ],
+  en: [
+    'https://en.wikipedia.org/wiki/Constitutional_Court_(Belgium)',
+    'https://www.linkedin.com/company/grondwettelijkhof',
+    'https://www.ejustice.just.fgov.be/cgi_loi/loi_a1.pl?cn=1993050932&caller=list&F&sql=(text+contains+%27grondwettelijk%27)',
+  ],
+}
+
 watchEffect(() => {
   useHead({
     htmlAttrs: {
@@ -170,6 +193,7 @@ useHead({
         'name': namesByLocale[locale.value],
         'alternateName': alternateNames,
         'url': `https://www.const-court.be/nuxt${route.fullPath}`,
+        sameAs: [sameAsLinksByLocale[locale.value] || 'https://nl.wikipedia.org/wiki/Grondwettelijk_Hof_(Belgi%C3%AB)'],
         'logo': 'https://www.const-court.be/nuxt/img/logo.svg',
         'address': {
           '@type': 'PostalAddress',
@@ -190,7 +214,7 @@ useHead({
             'telephone': '+32-2-500-12-32',
             'email': 'griffie@const-court.be',
             'availableLanguage': [
-              { '@type': 'Language', 'name': 'Dutch' }
+              { '@type': 'Language', 'name': 'Dutch', 'alternateName': ['nl', 'Nederlands'] }
             ]
           },
           {
@@ -199,7 +223,7 @@ useHead({
             'telephone': '+32-2-500-12-33',
             'email': 'greffe@const-court.be',
             'availableLanguage': [
-              { '@type': 'Language', 'name': 'French' }
+              { '@type': 'Language', 'name': 'French', 'alternateName': ['fr', 'Français'] }
             ]
           }
         ],
@@ -218,6 +242,7 @@ useHead({
       }),
     },
   ],
+  dangerouslyDisableSanitizers: ['script'],
 })
 
 const mobileDrawer = ref(false)
