@@ -109,6 +109,32 @@ useHead({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        '@id': 'https://www.const-court.be/#website',
+        'url': 'https://www.const-court.be/',
+        'name': namesByLocale[locale.value],
+        'inLanguage': locale.value
+      }),
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': `${ogUrl}#webpage`,
+        'url': ogUrl,
+        'name': ogTitle.value,
+        'isPartOf': {
+          '@id': 'https://www.const-court.be/#website'
+        },
+        'inLanguage': locale.value,
+        'dateModified': new Date().toISOString().split('T')[0]
+      }),
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
         '@type': ['GovernmentOrganization', 'Courthouse', 'LegalService'],
         'name': namesByLocale[locale.value],
         'alternateName': alternateNames,
