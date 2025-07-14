@@ -46,8 +46,8 @@
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^5.1.0",
-    "@typescript-eslint/eslint-plugin": "^8.36.0",
-    "@typescript-eslint/parser": "^8.36.0",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
     "@vitest/ui": "^3.2.4",
     "cspell-dict-de-de": "^1.2.3",
     "cspell-dict-en-gb": "^1.2.6",
