@@ -26,20 +26,12 @@ if (!apiUrl.includes('year=')) {
 const fallbackYear = currentYear - 1
 let theYearWeUse = currentYear
 
-// a unique key to ensure de-duplicated across requests.
-const { data: items, error } = await useAsyncData<Judgment[]>(
-  apiUrl,
-  () => $fetch<Judgment[]>(apiUrl).then(transform)
-)
+let { data: items, error } = await useFetch<Judgment[]>(apiUrl, { transform })
 if (error.value || (items.value?.length ?? 0) === 0) {
   // If there is no data for the current year, we fetch the data for the previous year
   theYearWeUse = fallbackYear
-  apiUrl = apiUrl.replace(`year=${currentYear}`, `year=${fallbackYear}`)
-  const result = await useAsyncData<Judgment[]>('judgments-fallback', () =>
-    $fetch<Judgment[]>(apiUrl).then(transform)
-  )
-  items.value = result.data.value
-  error.value = result.error.value
+  apiUrl = apiUrl.replace(`year=${currentYear}`, `year=${fallbackYear}`);
+  ({ data: items, error } = await useFetch<Judgment[]>(apiUrl, { transform }))
 }
 
 if (error.value) {

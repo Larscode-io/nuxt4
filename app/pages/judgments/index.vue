@@ -25,12 +25,14 @@ watch(selected_year, () => {
   selected_month.value = 0
 })
 
-// a unique key to ensure de-duplicated across requests.
 const { data: judgments, error, pending, status, refresh }
-  = useAsyncData<Judgment[]>(
-    () => `${ApiUrl.judgments}?lang=${locale.value}&year=${selected_year.value}`,
-    () => $fetch(`${ApiUrl.judgments}?lang=${locale.value}&year=${selected_year.value}`)
-  )
+  = useFetch<Judgment[]>(() => `${ApiUrl.judgments}`,
+    {
+      query: {
+        lang: locale.value,
+        year: selected_year,
+      },
+    })
 if (error.value) {
   console.error(error.value)
 }
