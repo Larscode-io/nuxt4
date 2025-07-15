@@ -45,7 +45,7 @@ export default defineNuxtConfig({
     devtools: { enabled: true } // todo: must disable in production
   },
   app: {
-    baseURL: '/nuxt/',
+    baseURL: '/',
     head: {
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/img/favicon.ico' }],
     },
@@ -100,7 +100,7 @@ export default defineNuxtConfig({
       endSession: import.meta.env.ENDSESSION,
       fakePublic: import.meta.env.FAKE_PUBLIC,
       mailmanProxyUrl: import.meta.env.MAILMAN_PROXY_URL,
-      basePublicUrl: 'https://www.const-court.be', // prepend for files like /public/n/2004/2004-159n.pdf
+      basePublicUrl: 'https://nuxt.const-court.be', // prepend for files like /public/n/2004/2004-159n.pdf
       basePublicCommonUrl: 'https://www.const-court.be/public/common', // prepend for /public/common/nl/...
     },
   },
@@ -170,6 +170,7 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    baseUrl: 'https://www.const-court.be',
     bundle: {
       // https://github.com/nuxt-modules/i18n/issues/3238#issuecomment-2672492536
       optimizeTranslationDirective: false,

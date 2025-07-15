@@ -28,9 +28,8 @@ const description = computed(() => t('general.banner'))
 const ogTitle = computed(() => t('general.message.consts-court'))
 
 const config = useRuntimeConfig()
-const baseUrl = config.public.apiBaseUrl
-// const ogImage = `${baseUrl}/img/ogImage.jpg`
-const ogImage = 'https://www.const-court.be/nuxt/img/ogImage.jpg'
+const baseUrl = config.public.basePublicUrl
+const ogImage = `${baseUrl}/img/ogImage.jpg`
 
 // the full, canonical URL of the current page
 // todo: check if it works without baseUrl (and drop useRuntimeConfig)
@@ -78,7 +77,7 @@ const breadcrumbList = computed(() => {
       '@type': 'ListItem',
       position: index + 1,
       name: entry.nameByLang[locale.value],
-      item: `https://www.const-court.be/${locale.value}/${[...entries.slice(0, index + 1).map((e) => e.key)].filter(Boolean).join('/')}`
+      item: `${baseUrl}/${locale.value}/${[...entries.slice(0, index + 1).map((e) => e.key)].filter(Boolean).join('/')}`
     }))
   }
 })
@@ -139,12 +138,12 @@ useHead({
     ...locales.value.map((l) => ({
       rel: 'alternate',
       hreflang: l.language,
-      href: `https://www.const-court.be/nuxt${switchLocalePath(l.code)}`,
+      href: `${baseUrl}${switchLocalePath(l.code)}`,
     })),
     {
       rel: 'alternate',
       hreflang: 'x-default',
-      href: 'https://www.const-court.be/nuxt/',
+      href: `${baseUrl}`
     },
     // added canonical link to prevent duplicate content issues
     // https://www.const-court.be/nuxt/ is the canonical URL for the site
@@ -155,7 +154,7 @@ useHead({
     // and https://metatags.io/ for testing
     {
       rel: 'canonical',
-      href: `https://www.const-court.be/nuxt${route.fullPath}`,
+      href: `${baseUrl}${route.fullPath}`,
     },
   ],
   script: [
@@ -164,8 +163,8 @@ useHead({
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        '@id': 'https://www.const-court.be/#website',
-        'url': 'https://www.const-court.be/',
+        '@id': `${baseUrl}#website`,
+        'url': `${baseUrl}`,
         'name': namesByLocale[locale.value],
         'inLanguage': i18nHead.value.htmlAttrs!.lang
       }),
@@ -179,7 +178,7 @@ useHead({
         'url': ogUrl,
         'name': ogTitle.value,
         'isPartOf': {
-          '@id': 'https://www.const-court.be/#website'
+          '@id': `${baseUrl}#website`,
         },
         'inLanguage': i18nHead.value.htmlAttrs!.lang,
         'dateModified': new Date().toISOString().split('T')[0]
@@ -192,9 +191,9 @@ useHead({
         '@type': ['GovernmentOrganization', 'Courthouse', 'LegalService'],
         'name': namesByLocale[locale.value],
         'alternateName': alternateNames,
-        'url': `https://www.const-court.be/nuxt${route.fullPath}`,
+        'url': `${baseUrl}${route.fullPath}`,
         sameAs: [sameAsLinksByLocale[locale.value] || 'https://nl.wikipedia.org/wiki/Grondwettelijk_Hof_(Belgi%C3%AB)'],
-        'logo': 'https://www.const-court.be/nuxt/img/logo.svg',
+        'logo': `${baseUrl}/img/logo.svg`,
         'address': {
           '@type': 'PostalAddress',
           'addressCountry': 'BE',
