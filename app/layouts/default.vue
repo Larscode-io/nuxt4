@@ -36,10 +36,10 @@ const ogImage = `${baseUrl}/img/ogImage.jpg`
 const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
 
 // todo: checks to do when we don't need /nuxt/ redirect on nginx anymore
-// https://opengraph.dev/panel?url=https%3A%2F%2Fwww.const-court.be%2Fnuxt%2F
-// https://metatags.io/?url=https%3A%2F%2Fwww.const-court.be%2Fnuxt%2F
-// https://search.google.com/test/rich-results?url=https%3A%2F%2Fwww.const-court.be%2Fnuxt%2F
-// https://www.linkedin.com/post-inspector/inspect/https:%2F%2Fwww.const-court.be%2Fnuxt%2F
+// https://opengraph.dev/panel?url=https%3A%2F%2Fnuxt.const-court.be%2F
+// https://metatags.io/?url=https%3A%2F%2Fnuxt.const-court.be%2F
+// https://search.google.com/test/rich-results?url=https%3A%2F%2Fnuxt.const-court.be%2F
+// https://www.linkedin.com/post-inspector/inspect/https:%2F%2Fnuxt.const-court.be%2F
 
 useSeoMeta({
   ogUrl,
