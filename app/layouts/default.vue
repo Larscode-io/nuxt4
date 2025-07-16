@@ -135,6 +135,8 @@ useHead({
     { property: 'og:image:height', content: '630' },
     { property: 'og:image:type', content: 'image/jpeg' },
   ],
+  // hreflang:  “dit zijn dezelfde pagina’s in andere talen”
+  // canonical: “deze URL is correct voor deze taal versie.”
   link: [
     ...locales.value.map((l) => ({
       rel: 'alternate',
