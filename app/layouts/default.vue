@@ -242,7 +242,6 @@ useHead({
       }),
     },
   ],
-  dangerouslyDisableSanitizers: ['script'],
 })
 
 const mobileDrawer = ref(false)
