@@ -76,26 +76,6 @@ const labelMonthSelection = computed(() =>
 const labelYearSelection = computed(() =>
   `${t('general.message.year-selection')}${t('general.message.colon')}`
 )
-// watchEffect(() => {
-//   monthsInNumbers.value.clear()
-//   const monthMap = new Map<number, string>()
-//   if (judgments.value) {
-//     judgments.value.forEach((judgment: Judgment) => {
-//       const realDate = new Date(judgment.judmentDate)
-//       const monthNumber = realDate.getMonth() + 1 // 1 for January, 12 for December
-//       monthsInNumbers.value.add(monthNumber)
-//       if (!monthMap.has(monthNumber)) {
-//         monthMap.set(monthNumber, realDate.toLocaleString(locale.value, { month: 'long' }))
-//       }
-//     })
-//     // t('general.message.all-months')
-//     monthsInNames.value = [
-//       { value: 0, title: allMonths.value },
-//       ...Array.from(monthMap, ([value, title]) => ({ value, title }))
-//     ]  } else {
-//     monthsInNames.value = []
-//   }
-// })
 
 const transform = (data: GeneralPressJudgment[]) => {
   return data.filter((release: { nr: string }) => release.nr.split('/')[1] === String(year.value))
