@@ -232,213 +232,211 @@ onMounted(() => {
                 />
               </div>
 
-              <ClientOnly>
-                <article v-if="pageReferendar">
-                  <ContentRenderer
-                    :value="pageReferendar.body"
-                    class="nuxt-content"
-                  />
-                </article>
-                <div
-                  v-for="(member, index) in officeStaffMembers"
-                  :key="member!.slug"
-                  class="gallery"
-                  :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }"
-                >
-                  <MemberCard
-                    :headline-level="2"
-                    :name="member!.name"
-                    :slug="member!.slug"
-                    :image="member!.picture"
-                    :with-image="true"
-                    :infos="member!.infos"
-                    :job-title="member!.mostRecentRole?.role"
-                    :width="300"
-                    :is-alive="member!.isAlive"
-                    :lang="member!.lang"
-                    :female-title="member!.femaleTitle"
-                  />
-                </div>
+              <article v-if="pageReferendar">
+                <ContentRenderer
+                  :value="pageReferendar.body"
+                  class="nuxt-content"
+                />
+              </article>
+              <div
+                v-for="(member, index) in officeStaffMembers"
+                :key="member!.slug"
+                class="gallery"
+                :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }"
+              >
+                <MemberCard
+                  :headline-level="2"
+                  :name="member!.name"
+                  :slug="member!.slug"
+                  :image="member!.picture"
+                  :with-image="true"
+                  :infos="member!.infos"
+                  :job-title="member!.mostRecentRole?.role"
+                  :width="300"
+                  :is-alive="member!.isAlive"
+                  :lang="member!.lang"
+                  :female-title="member!.femaleTitle"
+                />
+              </div>
 
-                <article v-if="pageClerk">
-                  <ContentRenderer
-                    :value="pageClerk.body"
-                    class="nuxt-content"
-                  />
-                </article>
+              <article v-if="pageClerk">
+                <ContentRenderer
+                  :value="pageClerk.body"
+                  class="nuxt-content"
+                />
+              </article>
 
-                <div
-                  v-for="(member, index) in registrarMembers"
-                  :key="member!.slug"
-                  class="gallery"
-                  :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }"
-                >
-                  <MemberCard
-                    :headline-level="2"
-                    :name="member!.name"
-                    :slug="member!.slug"
-                    :image="member!.picture"
-                    :with-image="true"
-                    :infos="member!.infos"
-                    :job-title="member!.mostRecentRole?.role"
-                    :width="300"
-                    :is-alive="member!.isAlive"
-                    :lang="member!.lang"
-                    :female-title="member!.femaleTitle"
-                  />
-                </div>
+              <div
+                v-for="(member, index) in registrarMembers"
+                :key="member!.slug"
+                class="gallery"
+                :class="{ 'left-column': index % 2 === 0, 'right-column': index % 2 !== 0 }"
+              >
+                <MemberCard
+                  :headline-level="2"
+                  :name="member!.name"
+                  :slug="member!.slug"
+                  :image="member!.picture"
+                  :with-image="true"
+                  :infos="member!.infos"
+                  :job-title="member!.mostRecentRole?.role"
+                  :width="300"
+                  :is-alive="member!.isAlive"
+                  :lang="member!.lang"
+                  :female-title="member!.femaleTitle"
+                />
+              </div>
 
-                <article v-if="pageOfficeStaff">
-                  <ContentRenderer
-                    :value="pageOfficeStaff.body"
-                    class="nuxt-content"
-                  />
-                </article>
+              <article v-if="pageOfficeStaff">
+                <ContentRenderer
+                  :value="pageOfficeStaff.body"
+                  class="nuxt-content"
+                />
+              </article>
 
-                <div class="section-content nuxt-content">
-                  <h3 :id="toSlug(t('court.organization.emeritus-and-honorary-members'))">
-                    {{ t('court.organization.emeritus-and-honorary-members') }}
-                  </h3>
-                </div>
+              <div class="section-content nuxt-content">
+                <h3 :id="toSlug(t('court.organization.emeritus-and-honorary-members'))">
+                  {{ t('court.organization.emeritus-and-honorary-members') }}
+                </h3>
+              </div>
 
-                <h4 class="heading-h3">
-                  {{ t('general.message.presidents') }}
-                </h4>
+              <h4 class="heading-h3">
+                {{ t('general.message.presidents') }}
+              </h4>
 
-                <div class="gallery d-flex justify-space-between flex-wrap">
-                  <MemberCard
-                    v-for="member of aliveNonActivePresidentMembersHistoric"
-                    :key="member.slug"
-                    :headline-level="5"
-                    :slug="member.slug"
-                    :infos="member.infos"
-                    :is-small="true"
-                    :name="member.name"
-                    :with-image="false"
-                    :job-title="member.mostRecentRole?.role"
-                    :lang="member.lang"
-                    :is-alive="member.isAlive"
-                    :female-title="member.femaleTitle"
-                  />
-                </div>
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="member of aliveNonActivePresidentMembersHistoric"
+                  :key="member.slug"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="member.mostRecentRole?.role"
+                  :lang="member.lang"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
 
-                <h4 class="heading-h3">
-                  {{ t('general.message.judges') }}
-                </h4>
+              <h4 class="heading-h3">
+                {{ t('general.message.judges') }}
+              </h4>
 
-                <div class="gallery d-flex justify-space-between flex-wrap">
-                  <MemberCard
-                    v-for="member of aliveNonActiveJudgeMembersHistoric"
-                    :key="member.slug"
-                    :headline-level="5"
-                    :slug="member.slug"
-                    :infos="member.infos"
-                    :is-small="true"
-                    :name="member.name"
-                    :with-image="false"
-                    :job-title="member.mostRecentRole?.role"
-                    :lang="member.lang"
-                    :is-alive="member.isAlive"
-                    :female-title="member.femaleTitle"
-                  />
-                </div>
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="member of aliveNonActiveJudgeMembersHistoric"
+                  :key="member.slug"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="member.mostRecentRole?.role"
+                  :lang="member.lang"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
 
-                <h4 class="heading-h3">
-                  {{ t('general.message.legal-secretaries') }}
-                </h4>
+              <h4 class="heading-h3">
+                {{ t('general.message.legal-secretaries') }}
+              </h4>
 
-                <div class="gallery d-flex justify-space-between flex-wrap">
-                  <MemberCard
-                    v-for="member of aliveNonActiveOfficeStaffMembersHistoric"
-                    :key="member.slug"
-                    :headline-level="5"
-                    :slug="member.slug"
-                    :infos="member.infos"
-                    :is-small="true"
-                    :name="member.name"
-                    :with-image="false"
-                    :job-title="member.mostRecentRole?.role"
-                    :lang="member.lang"
-                    :is-alive="member.isAlive"
-                    :female-title="member.femaleTitle"
-                  />
-                </div>
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="member of aliveNonActiveOfficeStaffMembersHistoric"
+                  :key="member.slug"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="member.mostRecentRole?.role"
+                  :lang="member.lang"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
 
-                <h4 class="heading-h3">
-                  {{ t('general.message.registrars') }}
-                </h4>
+              <h4 class="heading-h3">
+                {{ t('general.message.registrars') }}
+              </h4>
 
-                <div class="gallery d-flex justify-space-between flex-wrap">
-                  <MemberCard
-                    v-for="member of aliveNonActiveRegistrarMembersHistoric"
-                    :key="member.slug"
-                    :headline-level="5"
-                    :slug="member.slug"
-                    :infos="member.infos"
-                    :is-small="true"
-                    :name="member.name"
-                    :with-image="false"
-                    :job-title="member.roles[0]?.role"
-                    :lang="member.lang"
-                    :start-date="member.roles[0]?.startDate"
-                    :end-date="member.roles[0]?.endDate"
-                    :is-alive="member.isAlive"
-                    :female-title="member.femaleTitle"
-                  />
-                </div>
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="member of aliveNonActiveRegistrarMembersHistoric"
+                  :key="member.slug"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="member.roles[0]?.role"
+                  :lang="member.lang"
+                  :start-date="member.roles[0]?.startDate"
+                  :end-date="member.roles[0]?.endDate"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
 
-                <div class="section-content nuxt-content">
-                  <h3 :id="toSlug(t('court.organization.previous-incumbents'))">
-                    {{ t('court.organization.previous-incumbents') }}
-                  </h3>
-                </div>
+              <div class="section-content nuxt-content">
+                <h3 :id="toSlug(t('court.organization.previous-incumbents'))">
+                  {{ t('court.organization.previous-incumbents') }}
+                </h3>
+              </div>
 
-                <h4 class="heading-h3">
-                  {{ t('general.message.presidents') }}
-                </h4>
+              <h4 class="heading-h3">
+                {{ t('general.message.presidents') }}
+              </h4>
 
-                <div class="gallery d-flex justify-space-between flex-wrap">
-                  <MemberCard
-                    v-for="(member, i) of presidentMembersHistoric"
-                    :key="`${member.slug}-${i}`"
-                    :headline-level="5"
-                    :slug="member.slug"
-                    :infos="member.infos"
-                    :is-small="true"
-                    :name="member.name"
-                    :with-image="false"
-                    :job-title="member.roles[0]?.role"
-                    :lang="member.lang"
-                    :start-date="member.roles[0]?.startDate"
-                    :end-date="member.roles[0]?.endDate"
-                    :is-alive="member.isAlive"
-                    :female-title="member.femaleTitle"
-                  />
-                </div>
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="(member, i) of presidentMembersHistoric"
+                  :key="`${member.slug}-${i}`"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="member.roles[0]?.role"
+                  :lang="member.lang"
+                  :start-date="member.roles[0]?.startDate"
+                  :end-date="member.roles[0]?.endDate"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
 
-                <h4 class="heading-h3">
-                  {{ t('general.message.judges') }}
-                </h4>
+              <h4 class="heading-h3">
+                {{ t('general.message.judges') }}
+              </h4>
 
-                <div class="gallery d-flex justify-space-between flex-wrap">
-                  <MemberCard
-                    v-for="(member, i) of judgeMembersHistoric"
-                    :key="`${member.slug}-${i}`"
-                    :headline-level="5"
-                    :slug="member.slug"
-                    :infos="member.infos"
-                    :is-small="true"
-                    :name="member.name"
-                    :with-image="false"
-                    :job-title="member.roles[0]?.role"
-                    :lang="member.lang"
-                    :start-date="member.roles[0]?.startDate"
-                    :end-date="member.roles[0]?.endDate"
-                    :is-alive="member.isAlive"
-                    :female-title="member.femaleTitle"
-                  />
-                </div>
-              </ClientOnly>
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="(member, i) of judgeMembersHistoric"
+                  :key="`${member.slug}-${i}`"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="member.roles[0]?.role"
+                  :lang="member.lang"
+                  :start-date="member.roles[0]?.startDate"
+                  :end-date="member.roles[0]?.endDate"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
             </template>
           </v-row>
         </v-col>
