@@ -10,9 +10,9 @@ Disallow: /search/
 Sitemap: https://www.const-court.be/sitemap.xml
   `.trim()
 
+// Disallow: /
   const staging = `
 User-agent: *
-Disallow: /
   `.trim()
 
   setHeader(event, 'Content-Type', 'text/plain')

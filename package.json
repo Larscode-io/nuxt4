@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
+    "dev:ssr": "nuxt dev --ssr",
     "tunnel": "nuxt dev --tunnel",
     "qr": "nuxt dev --qr",
     "build": "nuxt build",
