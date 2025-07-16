@@ -66,29 +66,36 @@ const judgmentsFilteredByMonth = computed(() => {
 })
 
 const monthsInNumbers = ref(new Set<number>())
-const monthsInNames = ref<{ value: number, title: string }[]>([])
-const allMonths = t('general.message.all-months')
-
-watchEffect(() => {
-  monthsInNumbers.value.clear()
-  const monthMap = new Map<number, string>()
-  if (judgments.value) {
-    judgments.value.forEach((judgment: Judgment) => {
-      const realDate = new Date(judgment.judmentDate)
-      const monthNumber = realDate.getMonth() + 1 // 1 for January, 12 for December
-      monthsInNumbers.value.add(monthNumber)
-      if (!monthMap.has(monthNumber)) {
-        monthMap.set(monthNumber, realDate.toLocaleString(locale.value, { month: 'long' }))
-      }
-    })
-    // t('general.message.all-months')
-    monthsInNames.value = [
-      { value: 0, title: allMonths },
-      ...Array.from(monthMap, ([value, title]) => ({ value, title }))
-    ]  } else {
-    monthsInNames.value = []
-  }
-})
+const allMonths = computed(() => t('general.message.all-months'))
+const monthsInNames = ref([
+  { value: 0, title: allMonths.value }
+])
+const labelMonthSelection = computed(() =>
+  `${t('general.message.month-selection')}${t('general.message.colon')}`
+)
+const labelYearSelection = computed(() =>
+  `${t('general.message.year-selection')}${t('general.message.colon')}`
+)
+// watchEffect(() => {
+//   monthsInNumbers.value.clear()
+//   const monthMap = new Map<number, string>()
+//   if (judgments.value) {
+//     judgments.value.forEach((judgment: Judgment) => {
+//       const realDate = new Date(judgment.judmentDate)
+//       const monthNumber = realDate.getMonth() + 1 // 1 for January, 12 for December
+//       monthsInNumbers.value.add(monthNumber)
+//       if (!monthMap.has(monthNumber)) {
+//         monthMap.set(monthNumber, realDate.toLocaleString(locale.value, { month: 'long' }))
+//       }
+//     })
+//     // t('general.message.all-months')
+//     monthsInNames.value = [
+//       { value: 0, title: allMonths.value },
+//       ...Array.from(monthMap, ([value, title]) => ({ value, title }))
+//     ]  } else {
+//     monthsInNames.value = []
+//   }
+// })
 
 const transform = (data: GeneralPressJudgment[]) => {
   return data.filter((release: { nr: string }) => release.nr.split('/')[1] === String(year.value))
@@ -156,6 +163,27 @@ watchEffect(() => {
   }
 })
 
+onMounted(() => {
+  if (judgments.value) {
+    const monthMap = new Map<number, string>()
+    const monthSet = new Set<number>()
+
+    judgments.value.forEach((judgment: Judgment) => {
+      const realDate = new Date(judgment.judmentDate)
+      const monthNumber = realDate.getMonth() + 1
+      monthSet.add(monthNumber)
+      if (!monthMap.has(monthNumber)) {
+        monthMap.set(monthNumber, realDate.toLocaleString(locale.value, { month: 'long' }))
+      }
+    })
+
+    monthsInNames.value = [
+      { value: 0, title: allMonths.value },
+      ...Array.from(monthMap, ([value, title]) => ({ value, title }))
+    ]
+  }
+})
+
 </script>
 
 <template>
@@ -198,19 +226,18 @@ watchEffect(() => {
               v-model="selected_year"
               :items="years"
               variant="outlined"
-              :label="`${t('general.message.year-selection')}${t('general.message.colon')}`"
+              :label="labelYearSelection"
+              :disabled="years.length === 0"
             />
           </div>
           <div class="pa-4">
-            <ClientOnly>
-              <v-select
-                v-model="selected_month"
-                :items="monthsInNames"
-                variant="outlined"
-                :label="`${t('general.message.month-selection')}${t('general.message.colon')}`"
-                :disabled="monthsInNames.length === 0"
-              />
-            </ClientOnly>
+            <v-select
+              v-model="selected_month"
+              :items="monthsInNames"
+              variant="outlined"
+              :label="labelMonthSelection"
+              :disabled="monthsInNames.length === 0"
+            />
           </div>
         </v-col>
         <v-col v-if="showSkeleton">
