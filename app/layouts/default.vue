@@ -129,6 +129,7 @@ watchEffect(() => {
 // todo: technische SEO & AI-readiness checklist
 useHead({
   meta: [
+    { name: 'robots', content: 'noindex, nofollow' },
     { property: 'og:image', content: ogImage },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },

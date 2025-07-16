@@ -1,23 +1,20 @@
 // server/routes/robots.txt.ts
 
 export default defineEventHandler((event) => {
-  const url = getRequestURL(event)
-  const host = url.host
+  const host = getRequestURL(event).host
+  const isStaging = host.includes('nuxt.const-court.be')
 
-  const isStaging = host === 'nuxt.const-court.be'
-
-  const productionRobots = `
+  const production = `
 User-agent: *
-Disallow:
-
+Disallow: /search/
 Sitemap: https://www.const-court.be/sitemap.xml
   `.trim()
 
-  const stagingRobots = `
+  const staging = `
 User-agent: *
 Disallow: /
   `.trim()
 
   setHeader(event, 'Content-Type', 'text/plain')
-  return isStaging ? stagingRobots : productionRobots
+  return isStaging ? staging : production
 })
