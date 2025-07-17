@@ -1,4 +1,5 @@
 <script setup>
+const { t } = useLanguage()
 const props = defineProps({
   currentPage: {
     type: Number,

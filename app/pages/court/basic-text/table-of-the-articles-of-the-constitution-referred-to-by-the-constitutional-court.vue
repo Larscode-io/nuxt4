@@ -79,13 +79,13 @@ const handleJudgmentHover = async (j: Judgment) => {
           <template v-if="!pending && data">
             <div class="text-caption mt-1">
               <span>
-                {{ t('Showing') }}
+                {{ t('general.message.table.showing') }}
                 <b>{{ ((page - 1) * perPage + 1) }}</b>
-                {{ t('to') }}
+                {{ t('general.message.table.to') }}
                 <b>{{ Math.min(page * perPage, total) }}</b>
-                {{ t('of') }}
+                {{ t('general.message.table.of') }}
                 <b>{{ total }}</b>
-                {{ t('records') }}
+                {{ t('general.message.table.records') }}
               </span>
             </div>
           </template>
