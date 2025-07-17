@@ -64,6 +64,6 @@
     "vite-plugin-vuetify": "^2.1.1",
     "vitest": "^3.2.4",
     "vue-eslint-parser": "^10.2.0",
-    "vuetify": "^3.9.0"
+    "vuetify": "^3.9.1"
   }
 }
