@@ -166,6 +166,10 @@ useHead({
     // and https://metatags.io/ for testing
     {
       rel: 'canonical',
+      // todo:
+      // locale inside fullPath does not seem to be reactive
+      // <link rel="canonical" href="https://nuxt.const-court.be/nl"> doesn't update with locale changes
+      // maybe it doesnt need to be reactive?
       href: `${baseUrl}${route.fullPath}`,
     },
   ],
