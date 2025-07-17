@@ -501,7 +501,7 @@ watch(smAndDown, (value) => {
               >
                 <!-- WCAG: lang.name is not in the page locale, so we use lang.language for the HTML lang attribute -->
                 <v-list-item-title :lang="lang.language">
-                  {{ lang.name }}
+                  {{ lang.code.toLocaleUpperCase() }} {{ lang.name }}
                 </v-list-item-title>
               </v-list-item>
             </v-list>
