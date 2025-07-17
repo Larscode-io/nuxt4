@@ -186,13 +186,11 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    // todo: multidomain setup to enable https://fr.const-court.be
+    // improves SEO and user experience especially with google
+    // dont forget to configure Nginx for this including the SSL certificates
     baseUrl: 'https://www.const-court.be',
-    bundle: {
-      // https://github.com/nuxt-modules/i18n/issues/3238#issuecomment-2672492536
-      optimizeTranslationDirective: false,
-    },
     vueI18n: './i18n.config.ts',
-    lazy: true,
     defaultLocale: 'nl',
     strategy: 'prefix',
     locales: [

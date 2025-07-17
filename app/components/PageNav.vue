@@ -1,7 +1,4 @@
 <script setup>
-import { defineProps, defineEmits } from 'vue'
-
-const { t } = useLanguage()
 const props = defineProps({
   currentPage: {
     type: Number,
