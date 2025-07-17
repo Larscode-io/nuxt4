@@ -47,5 +47,6 @@
     "de",
     "en"
   ],
-  "cSpell.enabled": true
+  "cSpell.enabled": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
 }

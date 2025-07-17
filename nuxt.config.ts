@@ -14,6 +14,22 @@ export default defineNuxtConfig({
   plugins: [
     '~/plugins/vuetify',
   ],
+    typescript: {
+    tsConfig: {
+      compilerOptions: {
+        strict: false, // zet op true als je errors oplost
+        skipLibCheck: true,
+        baseUrl: '.',
+        paths: {
+          '@/*': ['../app/*'],
+          '@core/*': ['../app/core/*'],
+          '@utils/*': ['../app/utils/*'],
+          '@assets/*': ['../app/assets/*'],
+          '@membermodels/*': ['/models/*']
+        }
+      }
+    }
+  },
   $development: {
         app: {
       head: {

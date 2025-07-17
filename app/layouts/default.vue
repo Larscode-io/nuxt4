@@ -129,7 +129,16 @@ watchEffect(() => {
 // todo: technische SEO & AI-readiness checklist
 useHead({
   meta: [
+    // we have server/routes/robots.txt.ts so that will expose the
+    // robots.txt file at /robots.txt we can remove the next line
     // { name: 'robots', content: 'noindex, nofollow' },
+    { name: 'description', content: description.value },
+    { property: 'og:title', content: ogTitle.value },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: ogUrl },
+    { property: 'og:locale', content: ogLocale.value },
+    { property: 'og:locale:alternate', content: ogLocaleAlternate.value },
+    { property: 'og:description', content: description.value },
     { property: 'og:image', content: ogImage },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },

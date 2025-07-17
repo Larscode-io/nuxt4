@@ -18,6 +18,7 @@
     "lint:markdown:staged": "markdownlint $(git diff --cached --name-only --diff-filter=ACM | grep '\\.md$' || echo '')",
     "check": "npm run lint && npm run ts",
     "ts": "nuxi typecheck",
+    "ts2": "vue-tsc --noEmit",
     "spell": "npx cspell \"**/*.{vue,ts,js,md}\" --config ./cspell.config.json",
     "spell:content:nl": "npx cspell \"content/nl/**/*.md\"",
     "spell:content:fr": "npx cspell \"content/fr/**/*.md\"",
@@ -27,7 +28,8 @@
     "spell:update": "./scripts/update-cspell-words.sh",
     "spell:verify": "./scripts/spell-verify.sh",
     "spell:words": "npx cspell \"**/*.{js,ts,vue,md}\" --words-only --unique",
-    "spell:help": "./scripts/show-help.sh"
+    "spell:help": "./scripts/show-help.sh",
+    "prepare:types": "nuxi prepare && vue-tsc --noEmit"
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
@@ -61,9 +63,11 @@
     "happy-dom": "^18.0.1",
     "markdownlint-cli": "^0.45.0",
     "sass": "^1.89.2",
+    "typescript": "^5.8.3",
     "vite-plugin-vuetify": "^2.1.1",
     "vitest": "^3.2.4",
     "vue-eslint-parser": "^10.2.0",
+    "vue-tsc": "^3.0.1",
     "vuetify": "^3.9.1"
   }
 }
