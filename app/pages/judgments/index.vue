@@ -65,11 +65,23 @@ const judgmentsFilteredByMonth = computed(() => {
   })
 })
 
-const monthsInNumbers = ref(new Set<number>())
 const allMonths = computed(() => t('general.message.all-months'))
-const monthsInNames = ref([
-  { value: 0, title: allMonths.value }
-])
+const monthsInNames = computed(() => {
+  if (!judgments.value) {
+    return [{ value: 0, title: allMonths.value }]
+  }
+  const seen = new Set<number>()
+  const months = judgments.value.reduce<{ value: number, title: string }[]>((acc, judgment: Judgment) => {
+    const realDate = new Date(judgment.judmentDate)
+    const monthNumber = realDate.getMonth() + 1
+    if (!seen.has(monthNumber)) {
+      seen.add(monthNumber)
+      acc.push({ value: monthNumber, title: realDate.toLocaleString(locale.value, { month: 'long' }) })
+    }
+    return acc
+  }, [])
+  return [{ value: 0, title: allMonths.value }, ...months]
+})
 const labelMonthSelection = computed(() =>
   `${t('general.message.month-selection')}${t('general.message.colon')}`
 )
@@ -142,28 +154,6 @@ watchEffect(() => {
     scrollToJudgment(Number(query.id))
   }
 })
-
-onMounted(() => {
-  if (judgments.value) {
-    const monthMap = new Map<number, string>()
-    const monthSet = new Set<number>()
-
-    judgments.value.forEach((judgment: Judgment) => {
-      const realDate = new Date(judgment.judmentDate)
-      const monthNumber = realDate.getMonth() + 1
-      monthSet.add(monthNumber)
-      if (!monthMap.has(monthNumber)) {
-        monthMap.set(monthNumber, realDate.toLocaleString(locale.value, { month: 'long' }))
-      }
-    })
-
-    monthsInNames.value = [
-      { value: 0, title: allMonths.value },
-      ...Array.from(monthMap, ([value, title]) => ({ value, title }))
-    ]
-  }
-})
-
 </script>
 
 <template>
