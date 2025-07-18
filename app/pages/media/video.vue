@@ -1,50 +1,50 @@
+<!-- Content based Page -->
 <template>
-  <v-container class="flex-column align-start flex-nowrap " fluid >
-    <BannerImage
-      v-if="page"
-      :title="page.title"
-      :description="page.description"
-      :image="img"
-      :alt="t('alt.banner.flag')"
-    />
-    <!-- <VideoWithSubtitles video-id="FILM1" /> -->
-    <v-row
-      v-if="pending"
-      class="d-flex"
-      justify="center"
+  <BannerImage
+    v-if="page"
+    :title="page.title"
+    :description="page.description"
+    :image="img"
+    :alt="t('alt.banner.flag')"
+  />
+  <v-row
+    v-if="pending"
+    class="d-flex justify-center"
+  >
+    <div class="col-12 col-md-12">
+      <v-skeleton-loader
+        class="mx-auto"
+        max-width="300"
+        type="article"
+      />
+    </div>
+  </v-row>
+  <v-row
+    v-else-if="error"
+    class="d-flex justify-center"
+  >
+    <div class="col-12 col-md-12">
+      <ErrorCard
+        :message="t('error.fetchingData')"
+        :show-go-home="false"
+      />
+    </div>
+  </v-row>
+  <v-row
+    v-else
+    class="d-flex justify-center"
+  >
+    <v-col
+      cols="12"
+      md="8"
+      lg="10"
+      class="mt-10"
     >
-      <div class="col-12 col-md-12">
-        <v-skeleton-loader
-          class="mx-auto"
-          max-width="300"
-          type="article"
-        />
-      </div>
-    </v-row>
-    <v-row
-      v-else-if="error"
-      class="d-flex"
-      justify="center"
-    >
-      <div class="col-12 col-md-12">
-        <ErrorCard
-          :message="t('error.fetchingData')"
-          :show-go-home="false"
-        />
-      </div>
-    </v-row>
-    <v-row
-      v-else
-      class="d-flex"
-      justify="center"
-    >
-      <div class="mt-10 col-12 col-md-14">
-        <section>
-          <ContentRenderer :value="page.body" class="section-content" />
-        </section>
-      </div>
-    </v-row>
-  </v-container>
+      <section>
+        <ContentRenderer :value="page.body" class="pa-4" />
+      </section>
+    </v-col>
+  </v-row>
 </template>
 
 <script setup lang="ts">
@@ -56,11 +56,9 @@ import ErrorCard from '~/components/ErrorCard.vue'
 
 const { t, locale, langCollection } = useLanguage()
 
-// Define the content path and locale-based path
 const contentPath = ref(`${ContentKeys.mediaVideo}`)
 const pad = computed(() => `/${locale.value}/${contentPath.value}`)
 
-// Fetch the page content
 const { data: page, pending, error } = useAsyncData(
   `content-${locale.value}-${contentPath.value}`,
   async () => {
