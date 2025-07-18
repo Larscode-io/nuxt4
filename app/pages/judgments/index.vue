@@ -125,10 +125,10 @@ const scrollToJudgment = (id: number) => {
 
 const handleJudgmentHover = async (nr: String) => {
   try {
-    const { exists: existFile, status } = await $fetch('/api/check-file', {
+    const { exists: existFile} = await $fetch('/api/check-file', {
       query: { url: `${basePublicUrl}${nr}` },
     })
-    console.log(status === 200 && existFile ? `File exists for judgment ${nr}` : `File does not exist for judgment ${nr}`)
+    console.log(existFile ? `File exists for judgment ${nr}` : `File does not exist for judgment ${nr}`)
   }
   catch (error: unknown) {
     console.error(`Error checking file for judgment ${nr}:`, error)
