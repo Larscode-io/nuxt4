@@ -122,7 +122,7 @@ onMounted(() => {
               style="color: #043c72;"
             >
               <div class="d-inline-flex align-center">
-                {{ $t(i18nKeys.general.message.readMore) }}
+                {{ t('general.message.readMore') }}
                 <v-icon :class="hover ? 'ml-2' : 'ml-1'" style="color: #043c72;">mdi-arrow-right</v-icon>
               </div>
             </nuxt-link>
@@ -136,7 +136,7 @@ onMounted(() => {
               style="color: #043c72;"
             >
               <div class="d-inline-flex align-center">
-                {{ $t(i18nKeys.general.message.readMore) }}
+                {{ t('general.message.readMore') }}
                 <v-icon :class="hover ? 'ml-2' : 'ml-1'" style="color: #043c72;">mdi-arrow-right</v-icon>
               </div>
             </a>
@@ -153,7 +153,7 @@ onMounted(() => {
               style="color: #043c72;"
             >
               <div class="d-inline-flex align-center">
-                {{ $t(i18nKeys.general.message.readMore) }}
+                {{ t('general.message.readMore') }}
                 <v-icon :class="hover ? 'ml-2' : 'ml-1'" style="color: #043c72;">mdi-arrow-right</v-icon>
               </div>
             </a>
