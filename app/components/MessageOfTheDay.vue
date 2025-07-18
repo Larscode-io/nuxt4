@@ -22,8 +22,8 @@ function isDismissed(id: string) {
 }
 
 function accessLinkUrl(x) {
-  const label = typeof x === 'string' ? x : x[locale]
-  return label ? x[locale] : ''
+  const label = typeof x === 'string' ? x : x[locale.value]
+  return label ? x[locale.value] : ''
 }
 
 function dismissMessage(id: string) {
@@ -36,6 +36,38 @@ function dismissMessage(id: string) {
 onMounted(() => {
   const now = new Date()
   messages.value = [
+    // {
+    //   id: 'motd-5',
+    //   title: this.$t(this.i18nKeys.motd.ronde.title),
+    //   content: this.$t(this.i18nKeys.motd.ronde.description),
+    //   link: this.accessLinkUrl({
+    //     [Languages.DUTCH]: 'https://www.const-court.be/public/common/nl/Ronde%20van%20de%20rechtstaat.pdf',
+    //     [Languages.FRENCH]: 'https://www.const-court.be/public/common/nl/Ronde%20van%20de%20rechtstaat.pdf',
+    //     [Languages.GERMAN]: 'https://www.const-court.be/public/common/nl/Ronde%20van%20de%20rechtstaat.pdf',
+    //   }),
+    //   icon: 'mdi-scale-balance',
+    //   onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.GERMAN],
+    // },
+    {
+      id: 'motd-4',
+      title: t('motd.ronde.title'),
+      content: t('motd.ronde.description'),
+      link: localePath(RoutePathKeys?.mediaRonde),
+      icon: 'mdi-scale-balance',
+      onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.GERMAN],
+    },
+    {
+      id: 'motd-3',
+      title: t('motd.annual-report.title'),
+      content: t('motd.annual-report.description'),
+      link: accessLinkUrl({
+        [Languages.DUTCH]: 'https://www.const-court.be/public/jvra/n/jvra-2024n.pdf',
+        [Languages.FRENCH]: 'https://www.const-court.be/public/jvra/f/jvra-2024f.pdf',
+      }),
+      icon: 'mdi-file-document',
+      onlyShowLocale: [Languages.DUTCH, Languages.FRENCH],
+      expiresAt: '2025-07-29T21:59:59', // optional
+    },
     { id: 'motd-2',
       title: t('motd.video.title'),
       content: t('motd.video.description'),
@@ -122,7 +154,7 @@ onMounted(() => {
               style="color: #043c72;"
             >
               <div class="d-inline-flex align-center">
-                {{ t('general.message.readMore') }}
+                {{ t('general.message.read-more') }}
                 <v-icon :class="hover ? 'ml-2' : 'ml-1'" style="color: #043c72;">mdi-arrow-right</v-icon>
               </div>
             </nuxt-link>
@@ -136,7 +168,7 @@ onMounted(() => {
               style="color: #043c72;"
             >
               <div class="d-inline-flex align-center">
-                {{ t('general.message.readMore') }}
+                {{ t('general.message.read-more') }}
                 <v-icon :class="hover ? 'ml-2' : 'ml-1'" style="color: #043c72;">mdi-arrow-right</v-icon>
               </div>
             </a>
@@ -153,11 +185,15 @@ onMounted(() => {
               style="color: #043c72;"
             >
               <div class="d-inline-flex align-center">
-                {{ t('general.message.readMore') }}
+                {{ t('general.message.read-more') }}
                 <v-icon :class="hover ? 'ml-2' : 'ml-1'" style="color: #043c72;">mdi-arrow-right</v-icon>
               </div>
             </a>
           </v-hover>
+        </div>
+        <div v-else class="mt-2">
+          {{  msg.link || msg }}
+          <span class="text-muted">{{ t('general.message.no-link') }}</span>
         </div>
       <!-- bottom link -->
       </div>
