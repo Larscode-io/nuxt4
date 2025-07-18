@@ -83,7 +83,7 @@ const monthsInNames = computed(() => {
   return [{ value: 0, title: allMonths.value }, ...months]
 })
 const labelMonthSelection = computed(() =>
-  `${t('general.message.month-selection')}${t('general.message.colon')}`
+  `${t('general.message.month-selection')}${t('general.message.colon')}` || 'Select Month'
 )
 const labelYearSelection = computed(() =>
   `${t('general.message.year-selection')}${t('general.message.colon')}`
