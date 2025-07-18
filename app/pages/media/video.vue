@@ -7,7 +7,7 @@
       :image="img"
       :alt="t('alt.banner.flag')"
     />
-    <VideoWithSubtitles video-id="FILM1" />
+    <!-- <VideoWithSubtitles video-id="FILM1" /> -->
     <v-row
       v-if="pending"
       class="d-flex"
