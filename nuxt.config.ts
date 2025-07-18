@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     typescript: {
     tsConfig: {
       compilerOptions: {
-        strict: false, // zet op true als je errors oplost
+        strict: false,
         skipLibCheck: true,
         baseUrl: '.',
         paths: {
@@ -186,7 +186,7 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    // todo: multidomain setup to enable https://fr.const-court.be
+    // todo: multi domain setup to enable https://fr.const-court.be
     // improves SEO and user experience especially with google
     // dont forget to configure Nginx for this including the SSL certificates
     baseUrl: 'https://www.const-court.be',

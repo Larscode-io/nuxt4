@@ -1,8 +1,8 @@
 // tsconfig.json
 
-// Deze configuratie gebruikt géén TypeScript "project references".
-// We vertrouwen op de door Nuxt gegenereerde .nuxt/tsconfig.app.json,
-// en breiden deze enkel uit met extra include/exclude-richtlijnen voor tooling en IDE.
+// Deze config gebruikt geen TypeScript "project references".
+// We vertrouwen op .nuxt/tsconfig.app.json en breiden deze
+// enkel uit met extra include/exclude-richtlijnen voor tooling en IDE.
 
 {
   "extends": "./.nuxt/tsconfig.app.json",

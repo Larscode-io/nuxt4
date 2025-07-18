@@ -169,7 +169,7 @@ useHead({
       // todo:
       // locale inside fullPath does not seem to be reactive
       // <link rel="canonical" href="https://nuxt.const-court.be/nl"> doesn't update with locale changes
-      // maybe it doesnt need to be reactive?
+      // maybe it doesn't need to be reactive?
       href: `${baseUrl}${route.fullPath}`,
     },
   ],
@@ -281,13 +281,13 @@ const translatedItems = computed(() => {
 const isHydrated = ref(false)
 
 onMounted(() => {
-  if (h.value) {
-    menuHeight.value = Number(h.value.height) || 40
+  if (appBarRef.value && appBarRef.value.$el) {
+    menuHeight.value = Number(appBarRef.value.$el.offsetHeight) || 40
   }
   isHydrated.value = true
 })
 const menuHeight = ref(0)
-const h = useTemplateRef('appBarRef')
+const appBarRef = ref()
 provide('menuHeight', menuHeight)
 
 const hoveredMenu = ref<number | null>(null)
@@ -376,7 +376,7 @@ watch(smAndDown, (value) => {
               <li v-for="(item, index) in translatedItems" :key="item.title" class="px-2">
                 <button
                   v-if="item.subMenu"
-                  :id="`idmenu-${item.title}-level1`"
+                  :id="`menu-${item.title}-level1`"
                   aria-haspopup="menu"
                   class="cursor-pointer position-relative"
                   :aria-label="toSlug(`${item.title}`)"

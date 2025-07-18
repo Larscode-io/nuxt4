@@ -125,8 +125,6 @@ const scrollToJudgment = (id: number) => {
 
 const handleJudgmentHover = async (nr: String) => {
   try {
-    console.log(`Checking file for judgment ${nr}...`)
-    // nr is not enough, we need the full path to the file
     const { exists: existFile, status } = await $fetch('/api/check-file', {
       query: { url: `${basePublicUrl}${nr}` },
     })
