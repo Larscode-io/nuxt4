@@ -58,7 +58,6 @@ export default defineNuxtConfig({
   ssr: true,
   devtools: {
     enabled: process.env.NODE_ENV !== 'production',
-    devtools: { enabled: true } // todo: must disable in production
   },
   app: {
     baseURL: '/',

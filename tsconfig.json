@@ -6,7 +6,12 @@
 
 {
   "extends": "./.nuxt/tsconfig.app.json",
+    "compilerOptions": {
+    "types": ["vite/client"]
+  },
   "include": [
+    "nuxt.config.ts",
+    "models/**/*.d.ts",
     "app/**/*",
     "models/**/*",
     "i18n/**/*",
