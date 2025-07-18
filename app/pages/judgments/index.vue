@@ -128,7 +128,7 @@ const handleJudgmentHover = async (nr: String) => {
     const { exists: existFile} = await $fetch('/api/check-file', {
       query: { url: `${basePublicUrl}${nr}` },
     })
-    console.log(existFile ? `File exists for judgment ${nr}` : `File does not exist for judgment ${nr}`)
+    console.info(existFile ? `File exists for judgment ${nr}` : `File does not exist for judgment ${nr}`)
   }
   catch (error: unknown) {
     console.error(`Error checking file for judgment ${nr}:`, error)
