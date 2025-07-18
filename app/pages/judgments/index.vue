@@ -65,7 +65,7 @@ const judgmentsFilteredByMonth = computed(() => {
   })
 })
 
-const allMonths = computed(() => t('general.message.all-months'))
+const allMonths = computed(() => t('general.message.all-months') || 'All Months')
 const monthsInNames = computed(() => {
   if (!judgments.value) {
     return [{ value: 0, title: allMonths.value }]
