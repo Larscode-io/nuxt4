@@ -31,10 +31,25 @@ const config = useRuntimeConfig()
 const baseUrl = config.public.basePublicUrl
 const ogImage = `${baseUrl}/img/ogImage.jpg`
 
-// the full, canonical URL of the current page
-// todo: check if it works without baseUrl (and drop useRuntimeConfig)
+// todo: check if it works without baseUrl (and drop useRuntimeConfig) ?
+// todo: route.fullPath is sometimes not reactive in useHead() ?
 const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
+const streetAddress = computed(() => t('contact.address-title'))
+const addressLocality = computed(() => t('contact.address-locality'))
+const canonicalUrl = computed(() => `${baseUrl}${route.fullPath}`.replace(/\/+$/, ''))
 
+const hreflangs = computed(() =>
+  locales.value.map((l) => ({
+    rel: 'alternate',
+    hreflang: l.language,
+    href: `${baseUrl}${switchLocalePath(l.code)}`
+  }))
+)
+// watch hreflangs and console.log them
+watchEffect(() => {
+  console.log('Locales:', locales.value)
+  console.log('Hreflangs:', hreflangs.value)
+})
 // todo: checks to do when we don't need /nuxt/ redirect on nginx anymore
 // https://opengraph.dev/panel?url=https%3A%2F%2Fnuxt.const-court.be%2F
 // https://metatags.io/?url=https%3A%2F%2Fnuxt.const-court.be%2F
@@ -147,11 +162,7 @@ useHead({
   // hreflang:  “dit zijn dezelfde pagina’s in andere talen”
   // canonical: “deze URL is correct voor deze taal versie.”
   link: [
-    ...locales.value.map((l) => ({
-      rel: 'alternate',
-      hreflang: l.language,
-      href: `${baseUrl}${switchLocalePath(l.code)}`,
-    })),
+    ...hreflangs.value,
     {
       rel: 'alternate',
       hreflang: 'x-default',
@@ -170,7 +181,7 @@ useHead({
       // locale inside fullPath does not seem to be reactive
       // <link rel="canonical" href="https://nuxt.const-court.be/nl"> doesn't update with locale changes
       // maybe it doesn't need to be reactive?
-      href: `${baseUrl}${route.fullPath}`,
+      href: canonicalUrl.value,
     },
   ],
   script: [
@@ -214,8 +225,8 @@ useHead({
           '@type': 'PostalAddress',
           'addressCountry': 'BE',
           'postalCode': '1000',
-          'streetAddress': t('contact.address-title'),
-          'addressLocality': t('contact.address-locality')
+          'streetAddress': streetAddress.value,
+          'addressLocality': addressLocality.value,
         },
         'inLanguage': i18nHead.value.htmlAttrs!.lang,
         'areaServed': {
