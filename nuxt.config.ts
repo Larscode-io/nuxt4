@@ -190,7 +190,7 @@ export default defineNuxtConfig({
     // improve SEO and user experience especially with google
     baseUrl: 'https://www.const-court.be',
     vueI18n: './i18n.config.ts',
-    defaultLocale: 'de',
+    defaultLocale: 'nl',
     strategy: 'prefix',
     locales: [
       { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
