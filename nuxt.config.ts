@@ -1,4 +1,4 @@
-// Nuxt 4.0.0-alpha.2 — tested in dev and SSR, CORS-safe, Vuetify compatibility  ✅
+// Nuxt 4.0.0 configuration file nuxt.config.ts
 
 import { resolve } from 'path'
 import * as vuetifyModule from 'vite-plugin-vuetify'
@@ -185,9 +185,9 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    // todo: multi domain setup to enable https://fr.const-court.be
-    // improves SEO and user experience especially with google
-    // dont forget to configure Nginx for this including the SSL certificates
+    // Nginx has already the SSL certificates
+    // todo: multi domain setup to enable https://fr.const-court.be, https://nl.const-court.be, https://en.const-court.be, https://de.const-court.be
+    // improve SEO and user experience especially with google
     baseUrl: 'https://www.const-court.be',
     vueI18n: './i18n.config.ts',
     defaultLocale: 'nl',

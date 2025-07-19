@@ -1,3 +1,5 @@
+<!-- default.vue Nuxt template -->
+
 <!-- -------------------------------------------------------------------------------- -->
     <!-- DON'T ADD MENU ITEMS IN THIS FILE. -->
 <!-- Instead add the title and to properties in the server/api/menu/index.ts file.  -->
