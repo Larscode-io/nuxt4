@@ -1,9 +1,8 @@
 <!-- default.vue Nuxt template -->
 
 <!-- -------------------------------------------------------------------------------- -->
-    <!-- DON'T ADD MENU ITEMS IN THIS FILE. -->
-<!-- Instead add the title and to properties in the server/api/menu/index.ts file.  -->
-<!-- The menu items will be automatically generated from that file. -->
+<!-- DON'T ADD MENU ITEMS IN THIS FILE. -->
+<!-- Instead use server/api/menu/index.ts file.  -->
 <!-- -------------------------------------------------------------------------------- -->
 
  <!--
@@ -16,7 +15,7 @@ and operable content, even if some automated tools report minor formal issues.
  -->
 
 <script setup lang="ts">
-import { ref, useTemplateRef, onMounted, computed, watch, watchEffect } from 'vue'
+import {  ref, onMounted, computed, watch, watchEffect } from 'vue'
 import { useDisplay } from 'vuetify'
 import type { CourtItem } from '@core/constants'
 import { RoutePathKeys } from '@core/constants'
@@ -29,30 +28,22 @@ const localePath = useLocalePath()
 const description = computed(() => t('general.banner'))
 const ogTitle = computed(() => t('general.message.consts-court'))
 
-const config = useRuntimeConfig()
-const baseUrl = config.public.basePublicUrl
+// we use domain to get the base URL dynamically, not from config
+const { host } = useRequestURL()
+const baseUrl = `https://${host}`
 const ogImage = `${baseUrl}/img/ogImage.jpg`
 
-// todo: check if it works without baseUrl (and drop useRuntimeConfig) ?
-// todo: route.fullPath is sometimes not reactive in useHead() ?
 const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
 const streetAddress = computed(() => t('contact.address-title'))
 const addressLocality = computed(() => t('contact.address-locality'))
-const canonicalUrl = computed(() => `${baseUrl}${route.fullPath}`.replace(/\/+$/, ''))
-
-const hreflangs = computed(() =>
-  locales.value.map((l) => ({
-    rel: 'alternate',
-    hreflang: l.language,
-    href: `${baseUrl}${switchLocalePath(l.code)}`
-  }))
+const canonicalUrl = computed(() =>
+  `${baseUrl}${route.path}`.replace(/\/+$/, '') || '/'
 )
-// watch hreflangs and console.log them
 watchEffect(() => {
-  console.log('Locales:', locales.value)
-  console.log('Hreflangs:', hreflangs.value)
+  console.log('Canonical URL:', canonicalUrl.value)
 })
-// todo: checks to do when we don't need /nuxt/ redirect on nginx anymore
+
+// todo: checks
 // https://opengraph.dev/panel?url=https%3A%2F%2Fnuxt.const-court.be%2F
 // https://metatags.io/?url=https%3A%2F%2Fnuxt.const-court.be%2F
 // https://search.google.com/test/rich-results?url=https%3A%2F%2Fnuxt.const-court.be%2F
@@ -135,19 +126,14 @@ const sameAsLinksByLocale = {
   ],
 }
 
-watchEffect(() => {
-  useHead({
-    htmlAttrs: {
-      lang: i18nHead.value.htmlAttrs!.lang,
-    },
-  })
-})
-
 // todo: technische SEO & AI-readiness checklist
 useHead({
+  htmlAttrs: { lang: i18nHead.value.htmlAttrs!.lang, },
   meta: [
-    // we have server/routes/robots.txt.ts so that will expose the
-    // robots.txt file at /robots.txt we can remove the next line
+    // add author
+    { name: 'author', content: 'Lars Devocht' },
+    { 'http-equiv': 'Content-Language', content: i18nHead.value.htmlAttrs.lang },
+    // we have server/routes/robots.txt.ts to replace the next line
     // { name: 'robots', content: 'noindex, nofollow' },
     { name: 'description', content: description.value ?? '' },
     { property: 'og:title', content: ogTitle.value ?? '' },
@@ -160,31 +146,6 @@ useHead({
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
     { property: 'og:image:type', content: 'image/jpeg' },
-  ],
-  // hreflang:  “dit zijn dezelfde pagina’s in andere talen”
-  // canonical: “deze URL is correct voor deze taal versie.”
-  link: [
-    ...hreflangs.value,
-    {
-      rel: 'alternate',
-      hreflang: 'x-default',
-      href: `${baseUrl}`
-    },
-    // added canonical link to prevent duplicate content issues
-    // https://www.const-court.be/nuxt/ is the canonical URL for the site
-    // this is needed because the site is served from /nuxt/ on nginx
-    // todo:
-    // when the site is served from the root, this can be removed❕❕❕❕❕❕
-    // see https://opengraph.dev/ for testing
-    // and https://metatags.io/ for testing
-    {
-      rel: 'canonical',
-      // todo:
-      // locale inside fullPath does not seem to be reactive
-      // <link rel="canonical" href="https://nuxt.const-court.be/nl"> doesn't update with locale changes
-      // maybe it doesn't need to be reactive?
-      href: canonicalUrl.value,
-    },
   ],
   script: [
     {
@@ -272,6 +233,36 @@ useHead({
   ],
 })
 
+const hreflangs = computed(() =>
+  // we need to add a key,
+  // else useHead will not reactively update the links
+  locales.value.flatMap((l) => [
+    {
+      key: `alt-1st-${l.code}`,
+      rel: 'alternate',
+      hreflang: l.language,
+      href: `https://${l.domain}${route.path}`
+    },
+    {
+      key: `alt-2nd-${l.code}`,
+      rel: 'alternate',
+      hreflang: l.code,
+      href: `https://${l.domain}${route.path}`
+    }
+  ])
+)
+
+watchEffect(() => {
+  useHead({
+    link: [
+      ...hreflangs.value,
+      { rel: 'canonical', href: canonicalUrl.value },
+      // todo: Missing return link
+      { rel: 'alternate', hreflang: 'x-default', href: 'https://nuxt.const-court.be/' }
+    ]
+  })
+})
+
 const mobileDrawer = ref(false)
 
 const { data: courtItems } = useFetch<CourtItem[]>('/api/menu', {
@@ -332,15 +323,19 @@ function toggleMenu() {
 function changeLanguage(lang: string) {
   if (lang !== locale.value) {
     try {
-      const newLocalePath = switchLanguage(lang as Languages)
-      navigateTo(newLocalePath)
-      mobileDrawer.value = false
-    }
-    catch (error) {
-      console.error('Error changing language:', error)
+      const path = switchLocalePath(lang)
+      if (path) {
+        navigateTo(path, { external: true })
+        mobileDrawer.value = false
+      } else {
+        console.warn('No switchLocalePath found for', lang)
+      }
+    } catch (err) {
+      console.error('Language switch failed:', err)
     }
   }
 }
+
 const { lgAndUp, mdAndUp, smAndDown } = useDisplay()
 
 watch(smAndDown, (value) => {

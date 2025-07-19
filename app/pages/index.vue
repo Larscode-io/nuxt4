@@ -8,8 +8,10 @@ const localePath = useLocalePath()
 
 const { getImage } = useImageLoader()
 
+// todo: check if redirect is still needed
 definePageMeta({
   layout: 'default',
+  middleware: ['redirect-root-todo']
 })
 
 const config = useRuntimeConfig()

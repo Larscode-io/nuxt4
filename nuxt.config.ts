@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   plugins: [
     '~/plugins/vuetify',
   ],
-    typescript: {
+  typescript: {
     tsConfig: {
       compilerOptions: {
         strict: false,
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     }
   },
   $development: {
-        app: {
+    app: {
       head: {
         title: 'We are in development! DO NOT PANIC!'
       }
@@ -122,8 +122,8 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-  devServer : {
-   port: 3003,
+  devServer: {
+    port: 3003,
     host: 'localhost',
   },
   compatibilityDate: '2025-06-29',
@@ -185,25 +185,18 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    // Nginx has already the SSL certificates
-    // todo: multi domain setup to enable https://fr.const-court.be, https://nl.const-court.be, https://en.const-court.be, https://de.const-court.be
-    // improve SEO and user experience especially with google
-    baseUrl: 'https://www.const-court.be',
-    vueI18n: './i18n.config.ts',
+    differentDomains: true,
+    baseUrl: 'https://www.const-court.be', // fallback only
+    strategy: 'no_prefix',
     defaultLocale: 'nl',
-    strategy: 'prefix',
+    vueI18n: './i18n.config.ts',
     locales: [
-      { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
-      { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français' },
-      { code: 'nl', language: 'nl-BE', file: 'nl.json', name: 'Nederlands' },
-      { code: 'de', language: 'de-DE', file: 'de.json', name: 'Deutsch' },
+      { code: 'en', domain: 'en.const-court.be', language: 'en-US', file: 'en.json', name: 'English' },
+      { code: 'fr', domain: 'fr.const-court.be', language: 'fr-FR', file: 'fr.json', name: 'Français' },
+      { code: 'nl', domain: 'nl.const-court.be', language: 'nl-BE', file: 'nl.json', name: 'Nederlands' },
+      { code: 'de', domain: 'de.const-court.be', language: 'de-DE', file: 'de.json', name: 'Deutsch' }
     ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      fallbackLocale: 'nl',
-      redirectOn: 'root',
-    },
+    detectBrowserLanguage: false
   },
   server: {
     host: '0.0.0.0',
