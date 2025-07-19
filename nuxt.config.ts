@@ -198,12 +198,7 @@ export default defineNuxtConfig({
       { code: 'nl', language: 'nl-BE', file: 'nl.json', name: 'Nederlands' },
       { code: 'de', language: 'de-DE', file: 'de.json', name: 'Deutsch' },
     ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      fallbackLocale: 'de',
-      redirectOn: 'root',
-    },
+    detectBrowserLanguage: false,
   },
   server: {
     host: '0.0.0.0',
