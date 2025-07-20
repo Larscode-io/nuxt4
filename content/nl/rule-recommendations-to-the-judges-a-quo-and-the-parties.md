@@ -107,6 +107,6 @@ Het Hof verzoekt de partijen om :
 
 - het Hof in kennis te stellen van de eventuele gebeurtenissen die de situatie van de partijen wijzigen en die een weerslag kunnen hebben op hun belang, het nut en/of de pertinentie van het antwoord van het Hof (bijv. het overlijden van een partij, het verkrijgen van een verblijfstitel, enz.);
 
-- in het verzoekschrift tot vernietiging of in de memorie, in voorkomend geval, het verzoek tot anonimisering dat door de partij of door de belanghebbende derde is geformuleerd op grond van artikel 30*quater* van de bijzondere wet van 6 januari 1989, te motiveren (zie het [anonimiseringsbeleid](/nl/rule/anonymization-policy) van het Hof);
+- in het verzoekschrift tot vernietiging of in de memorie, in voorkomend geval, het verzoek tot anonimisering dat door de partij of door de belanghebbende derde is geformuleerd op grond van artikel 30*quater* van de bijzondere wet van 6 januari 1989, te motiveren (zie het [anonimiseringsbeleid](/rule/anonymization-policy) van het Hof);
 
 - in voorkomend geval, in een memorie de redenen toe te lichten waarom de partij van mening is dat het Hof de gevolgen van de vernietigde of ongrondwettig verklaarde bepaling al dan niet zou moeten handhaven overeenkomstig de artikelen 8, derde lid, en 28, tweede lid, van de bijzondere wet van 6 januari 1989.

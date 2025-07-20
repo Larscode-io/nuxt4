@@ -93,4 +93,4 @@ _General studies on public law and Belgian constitutional law_
 
 - Velaers, Jan, _De Grondwet. Een artikelsgewijze commentaar_, 3 delen, die Keure, 2019, 2247 p.
 
-For further information, you can also find journal articles relating to the Court and, in particular, case-law columns, in Belgian law journals. A number of studies can be consulted on the [Court's website](/en/court/publications/studies).
+For further information, you can also find journal articles relating to the Court and, in particular, case-law columns, in Belgian law journals. A number of studies can be consulted on the [Court's website](/court/publications/studies).

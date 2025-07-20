@@ -37,4 +37,4 @@ Lors de la révision constitutionnelle du 6 janvier 2014, la compétence de la 
 
 Enfin, plusieurs arrêtés royaux, règlements d’ordre et directives concernent divers aspects de la compétence et du fonctionnement de la Cour.
 
-Tous ces textes sont disponibles sur le site internet de la Cour constitutionnelle sous la rubrique <a aria-label="Cliquez pour aller à la page des textes de base" href="/fr/court/basic-text" >«&nbsp;Textes&nbsp;de&nbsp;base&nbsp;»</a>.
+Tous ces textes sont disponibles sur le site internet de la Cour constitutionnelle sous la rubrique <a aria-label="Cliquez pour aller à la page des textes de base" href="/court/basic-text" >«&nbsp;Textes&nbsp;de&nbsp;base&nbsp;»</a>.

@@ -78,7 +78,7 @@ _Allgemeine Werke über öffentliches Recht und belgisches Verfassungsrecht_
 - Pâques, Michel, _Droit public élémentaire en quinze leçons_, Larcier, 2005, 425 p.
 
 - Popelier, Patricia & Lemmens, Koen, _The Constitution of Belgium. A Contextual Analysis_, Hart Publishing, 2015, 280 p.
- 
+
 - Rimanque, Karel, _De grondwet toegelicht, gewikt en gewogen. 2004-2005_, Intersentia, 2005, 444 p.
 
 - Sottiaux, Stefan, _Grondwettelijk recht_, 2de ed., Intersentia, 2021, 516 p.
@@ -93,5 +93,5 @@ _Allgemeine Werke über öffentliches Recht und belgisches Verfassungsrecht_
 
 - Velaers, Jan, _De Grondwet. Een artikelsgewijze commentaar_, 3 delen, die Keure, 2019, 2247 p.
 
-Der interessierte Leser findet auch rechtslehrige Beiträge über den Gerichtshof und insbesondere Überblicke über die Rechtsprechung in juristischen Fachzeitschriften. Er kann auch online verschiedene Studien auf [der Website des Gerichtshofes](/de/court/publications/studies) zu Rate ziehen.
+Der interessierte Leser findet auch rechtslehrige Beiträge über den Gerichtshof und insbesondere Überblicke über die Rechtsprechung in juristischen Fachzeitschriften. Er kann auch online verschiedene Studien auf [der Website des Gerichtshofes](/court/publications/studies) zu Rate ziehen.
 

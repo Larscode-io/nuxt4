@@ -103,6 +103,6 @@ Der Gerichtshof fordert die Parteien dazu auf,
 
 - den Gerichtshof über eventuelle Ereignisse zu informieren, die eine Änderung der Situation der Parteien zur Folge haben und sich auf ihr Interesse bzw. auf die Zweckdienlichkeit und/oder Relevanz der vom Gerichtshof zu erteilenden Antwort auswirken können (z.B. Tod einer Partei, Erlangung eines Aufenthaltstitels, usw.);
 
-- in der Nichtigkeitsklageschrift oder im Schriftsatz – je nach dem Fall – den von der Partei oder dem Interesse habenden Dritten aufgrund von Artikel 30*quater* des Sondergesetzes vom 6. Januar 1989 gestellten Antrag auf Anonymisierung zu begründen (siehe [Anonymisierungsrichtlinien](/de/rule/anonymization-policy) des Gerichtshofes);
+- in der Nichtigkeitsklageschrift oder im Schriftsatz – je nach dem Fall – den von der Partei oder dem Interesse habenden Dritten aufgrund von Artikel 30*quater* des Sondergesetzes vom 6. Januar 1989 gestellten Antrag auf Anonymisierung zu begründen (siehe [Anonymisierungsrichtlinien](/rule/anonymization-policy) des Gerichtshofes);
 
 - gegebenenfalls in einem Schriftsatz die Gründe anzugeben, weshalb die Partei der Ansicht ist, dass der Gerichtshof die Folgen der für nichtig bzw. für verfassungswidrig erklärten Bestimmung gemäß den Artikeln 8 Absatz 3 und 28 Absatz 2 des Sondergesetzes vom 6. Januar 1989 aufrechterhalten oder nicht aufrechterhalten sollte.

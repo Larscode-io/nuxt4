@@ -35,4 +35,4 @@ The constitutional amendment of 6 January 2014 extended the jurisdiction of the 
 
 Finally, there are several Royal Decrees, regulations and guidelines relating to various aspects of the competence and operation of the Court.
 
-All these texts can be found on the website of the Constitutional Court under the heading <a aria-label="Click to go to the basic texts page" href="/en/court/basic-text">“Basic Texts”</a>.
+All these texts can be found on the website of the Constitutional Court under the heading <a aria-label="Click to go to the basic texts page" href="/court/basic-text">“Basic Texts”</a>.

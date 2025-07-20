@@ -103,6 +103,6 @@ La Cour invite les parties à :
 
 - tenir la Cour informée des éventuels événements qui modifient la situation des parties, susceptibles d’avoir une incidence sur leur intérêt, l’utilité et/ou la pertinence de la réponse de la Cour (p. ex. décès d’une partie, obtention d’un titre de séjour, etc.);
 
-- motiver dans la requête en annulation ou dans le mémoire, le cas échéant, la demande d’anonymisation formulée par la partie ou par le tiers intéressé sur la base de l’article 30*quater* de la loi spéciale du 6 janvier 1989 (voy. la politique d’[anonymisation](/fr/rule/anonymization-policy) de la Cour);
+- motiver dans la requête en annulation ou dans le mémoire, le cas échéant, la demande d’anonymisation formulée par la partie ou par le tiers intéressé sur la base de l’article 30*quater* de la loi spéciale du 6 janvier 1989 (voy. la politique d’[anonymisation](/rule/anonymization-policy) de la Cour);
 
 - le cas échéant, motiver dans un mémoire les raisons pour lesquelles la partie estime que la Cour devrait maintenir ou non les effets de la disposition annulée ou déclarée inconstitutionnelle, conformément aux articles 8, alinéa 3, et 28, alinéa 2, de la loi spéciale du 6 janvier 1989.

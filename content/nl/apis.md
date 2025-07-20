@@ -67,7 +67,7 @@ Zo kunnen we een efficiënte en duurzame toegang tot de informatie waarborgen vo
 > Dit is **niet** het geval voor de arresten van het Hof.
 >
 > **Massaal downloaden van gegevens is verboden.**
-- de toepasselijke regelgeving inzake gegevensbescherming (zie onze [privacyverklaring](/privacy));
+- de toepasselijke regelgeving inzake gegevensbescherming (zie onze [privacyverklaring](/footer/privacy-policiy));
 - andere relevante wettelijke bepalingen.
 
 > **Opgelet:**

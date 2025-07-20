@@ -8,7 +8,7 @@ locale: fr
 ### 1\. La Constitution de la Belgique fédérale
 
 <div class="no-text-indent">
-    <p><a aria-label="Cliquez pour aller à la page répertoriant tous les communiqués de presse" target="blank" href="/fr/court/basic-text/table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court?page=1&per-page=50">Les articles de la Constitution auxquels la Cour constitutionnelle a renvoyé.</a></p>
+    <p><a aria-label="Cliquez pour aller à la page répertoriant tous les communiqués de presse" target="_blank" href="/court/basic-text/table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court?page=1&per-page=50">Les articles de la Constitution auxquels la Cour constitutionnelle a renvoyé.</a></p>
 </div>
 
 ::AccordionGroup
@@ -3312,7 +3312,7 @@ Adopté par la Cour d'arbitrage sur la base de l'article 105 de la loi du 28 jui
 
 <br/>
 
-La Cour confirme, sur la base de [l'article 122](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.122) de la loi spéciale du 6 janvier 1989 sur la Cour d'arbitrage, [son réglement d'ordre intérieur adopté le 15 décembre 1987](#reglements-art-151287) sur la base de l'article 105 de la loi du 28 juin 1983 portant l'organisation, la compétence et le fonctionnement de la Cour d'arbitrage, et publié au *Moniteur belge* du 29 décembre 1987.
+La Cour confirme, sur la base de [l'article 122](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.122) de la loi spéciale du 6 janvier 1989 sur la Cour d'arbitrage, [son réglement d'ordre intérieur adopté le 15 décembre 1987](#reglements-art-151287) sur la base de l'article 105 de la loi du 28 juin 1983 portant l'organisation, la compétence et le fonctionnement de la Cour d'arbitrage, et publié au *Moniteur belge* du 29 décembre 1987.
 
 ::
 
@@ -3328,11 +3328,11 @@ La Cour confirme, sur la base de [l'article 122](/fr/court/basic-text/special-la
 
 <span class="code">  Article 1er  </span>
 
-La directive du 15 décembre 1987, intitulée "Dépôt et communication des conclusions" et publiée au *Moniteur belge* du 29 décembre 1987, reste applicable aux affaires inscrites au rôle de la Cour jusqu'au n° 82 inclusivement, s'agissant d'affaires pendantes au moment de l'entrée en vigueur de la loi spéciale du 6 janvier 1989 dont [l'article 124](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.124) dispose qu'elles restent régies par les dispositions de la loi organique du 28 juin 1983. La directive du 15 décembre 1987 ne s'appliquera plus aux affaires inscrites au rôle de la Cour à partir de l'entrée en vigueur de la loi spéciale du 6 janvier 1989, soit sous les nos 83 et suivants.
+La directive du 15 décembre 1987, intitulée "Dépôt et communication des conclusions" et publiée au *Moniteur belge* du 29 décembre 1987, reste applicable aux affaires inscrites au rôle de la Cour jusqu'au n° 82 inclusivement, s'agissant d'affaires pendantes au moment de l'entrée en vigueur de la loi spéciale du 6 janvier 1989 dont [l'article 124](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.124) dispose qu'elles restent régies par les dispositions de la loi organique du 28 juin 1983. La directive du 15 décembre 1987 ne s'appliquera plus aux affaires inscrites au rôle de la Cour à partir de l'entrée en vigueur de la loi spéciale du 6 janvier 1989, soit sous les nos 83 et suivants.
 
 <span class="code">  Art. 2  </span>
 
-En ce qui concerne les affaires inscrites au rôle de la Cour à dater de l'entrée en vigueur de la loi spéciale du 6 janvier 1989, lorsqu'il s'agit d'une demande de suspension, et sans préjudice des [articles 70 à 73](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.70) de ladite loi spéciale, l'ordonnance de fixation est portée à la connaissance de la ou des parties requérantes et des autorités mentionnées à [l'article 76](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76) de la loi, et précise, s'il y a lieu, le délai dont chacune de ces autorités dispose pour faire parvenir des observations écrites au greffe. Passé ce délai, aucun autre écrit n'est admis aux débats sur la demande de suspension.
+En ce qui concerne les affaires inscrites au rôle de la Cour à dater de l'entrée en vigueur de la loi spéciale du 6 janvier 1989, lorsqu'il s'agit d'une demande de suspension, et sans préjudice des [articles 70 à 73](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.70) de ladite loi spéciale, l'ordonnance de fixation est portée à la connaissance de la ou des parties requérantes et des autorités mentionnées à [l'article 76](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76) de la loi, et précise, s'il y a lieu, le délai dont chacune de ces autorités dispose pour faire parvenir des observations écrites au greffe. Passé ce délai, aucun autre écrit n'est admis aux débats sur la demande de suspension.
 
 ::
 
@@ -3362,11 +3362,11 @@ La présente décision est insérée au règlement d'ordre de la Cour.
 
 <br/>
 
-Lorsqu'il résulte des dates des cachets de la poste qu'un mémoire a été introduit après l'expiration du délai fixé respectivement par les [articles 85 et 87](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.85) de la loi spéciale du 6 janvier 1989 sur la Cour d'arbitrage, le président le constate dans une ordonnance.
+Lorsqu'il résulte des dates des cachets de la poste qu'un mémoire a été introduit après l'expiration du délai fixé respectivement par les [articles 85 et 87](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.85) de la loi spéciale du 6 janvier 1989 sur la Cour d'arbitrage, le président le constate dans une ordonnance.
 
-Cette ordonnance, qui mentionne également la date de la notification faite conformément aux [articles 76, 77 ou 78](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76) de la loi organique ou de la publication au *Moniteur belge* de l'avis prescrit par [l'article 74](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.74) de la même loi, selon le cas, ainsi que la date d'introduction du mémoire, est notifiée par le greffier à l'auteur du mémoire, lequel dispose de huit jours pour introduire des observations par écrit.
+Cette ordonnance, qui mentionne également la date de la notification faite conformément aux [articles 76, 77 ou 78](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76) de la loi organique ou de la publication au *Moniteur belge* de l'avis prescrit par [l'article 74](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.74) de la même loi, selon le cas, ainsi que la date d'introduction du mémoire, est notifiée par le greffier à l'auteur du mémoire, lequel dispose de huit jours pour introduire des observations par écrit.
 
-Après l'expiration de ce délai, la Cour, conformément aux dispositions de [l'article 86](/fr/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.86) de la loi spéciale, peut immédiatement écarter le mémoire des débats si les observations écrites sont non fondées ou s'il n'est pas introduit d'observations écrites.
+Après l'expiration de ce délai, la Cour, conformément aux dispositions de [l'article 86](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.86) de la loi spéciale, peut immédiatement écarter le mémoire des débats si les observations écrites sont non fondées ou s'il n'est pas introduit d'observations écrites.
 
 Ceux qui ont introduit tardivement un mémoire ne peuvent pas tirer argument du fait que les règles précitées ne leur auraient pas été appliquées pour soutenir que ce mémoire serait recevable.
 

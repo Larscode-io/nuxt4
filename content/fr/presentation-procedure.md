@@ -9,7 +9,7 @@ locale: fr
 
 La procédure devant la Cour constitutionnelle a un caractère essentiellement écrit et contradictoire. Les procédures appliquées en cas de recours en annulation et de questions préjudicielles sont en grande partie semblables, sauf, bien entendu, en ce qui concerne la manière dont les affaires sont introduites et les effets des arrêts.
 
-La procédure devant la Cour est réglée par la loi spéciale du 6 janvier 1989 ainsi que par les directives de la Cour relatives à la procédure. Ces textes se trouvent sur le site internet de la Cour sous la rubrique  <a href="/fr/court/basic-text">«&nbsp;Textes&nbsp;de&nbsp;base&nbsp;»</a>.
+La procédure devant la Cour est réglée par la loi spéciale du 6 janvier 1989 ainsi que par les directives de la Cour relatives à la procédure. Ces textes se trouvent sur le site internet de la Cour sous la rubrique  <a href="/court/basic-text">«&nbsp;Textes&nbsp;de&nbsp;base&nbsp;»</a>.
 
 Les affaires peuvent être introduites auprès de la Cour, selon le cas, en français, en néerlandais ou en allemand, mais l’examen se fait en français ou en néerlandais, selon les règles fixées par la loi spéciale du 6 janvier 1989.
 

@@ -10,7 +10,7 @@ locale: nl
 
 De rechtspleging voor het Grondwettelijk Hof heeft een hoofdzakelijk schriftelijk en contradictoir karakter. De procedures voor de beroepen tot vernietiging en de prejudiciële vragen zijn grotendeels gelijkaardig, behalve uiteraard wat betreft de wijze waarop de zaken worden ingediend en de gevolgen van de arresten.
 
-De rechtspleging wordt geregeld in de bijzondere wet van 6 januari 1989 en in de richtlijnen van het Hof betreffende de rechtspleging. Die teksten zijn te vinden op de webstek van het Hof onder de rubriek <a href="/nl/court/basic-text">«Basisteksten»</a>.
+De rechtspleging wordt geregeld in de bijzondere wet van 6 januari 1989 en in de richtlijnen van het Hof betreffende de rechtspleging. Die teksten zijn te vinden op de webstek van het Hof onder de rubriek <a href="/court/basic-text">«Basisteksten»</a>.
 
 Zaken kunnen bij het Hof worden ingeleid naar gelang van het geval in het Nederlands, het Frans of het Duits, maar het onderzoek gebeurt in het Nederlands of het Frans, volgens de regels bepaald in de bijzondere wet van 6 januari 1989.
 

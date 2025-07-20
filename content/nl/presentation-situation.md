@@ -37,4 +37,4 @@ Bij de grondwetsherziening van 6 januari 2014 is de bevoegdheid van het Grondwet
 
 Ten slotte zijn er verschillende koninklijke besluiten, reglementen van orde en richtlijnen die betrekking hebben op verschillende aspecten van de bevoegdheid en de werking van het Hof.
 
-Al die teksten zijn beschikbaar op de webstek van het Grondwettelijk Hof onder de rubriek <a aria-label="Klik om naar de basistekstenpagina te gaan" href="/nl/court/basic-text">«Basisteksten»</a>.
+Al die teksten zijn beschikbaar op de webstek van het Grondwettelijk Hof onder de rubriek <a aria-label="Klik om naar de basistekstenpagina te gaan" href="/court/basic-text">«Basisteksten»</a>.

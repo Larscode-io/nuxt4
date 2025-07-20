@@ -7,7 +7,7 @@ posterUrl: ~/assets/img/newsletter-background.png
 ### 1\. De Grondwet van het federale België
 
 <div class="no-text-indent">
-    <p><a className="link" href="/nl/court/basic-text/table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court?page=1&per-page=50">De grondwetsartikelen waarnaar het Grondwettelijk Hof heeft verwezen.</a></p>
+    <p><a className="link" href="/court/basic-text/table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court?page=1&per-page=50">De grondwetsartikelen waarnaar het Grondwettelijk Hof heeft verwezen.</a></p>
 </div>
 
 ::AccordionGroup
@@ -3348,7 +3348,7 @@ Goedgekeurd door het Arbitragehof conform artikel 105 van de wet van 28 juni 198
 
 <br/>
 
-Het Hof bevestigt, met toepassing van [artikel 122](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.122) van de bijzondere wet van 6 januari 1989 op het Arbitragehof, zijn [reglement van orde dat op 15 december 1987](basisteksten_reglementen_art_151287.html) is goedgekeurd conform artikel 105 van de wet van 28 juni 1983 houdende de inrichting, de bevoegdheid en de werking van het Arbitragehof en bekendgemaakt in het _Belgisch Staatsblad_ van 29 december 1987.
+Het Hof bevestigt, met toepassing van [artikel 122](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.122) van de bijzondere wet van 6 januari 1989 op het Arbitragehof, zijn [reglement van orde dat op 15 december 1987](basisteksten_reglementen_art_151287.html) is goedgekeurd conform artikel 105 van de wet van 28 juni 1983 houdende de inrichting, de bevoegdheid en de werking van het Arbitragehof en bekendgemaakt in het _Belgisch Staatsblad_ van 29 december 1987.
 
 </div>
 </div>
@@ -3370,11 +3370,11 @@ Het Hof bevestigt, met toepassing van [artikel 122](/nl/court/basic-text/special
 
 <span class="code"> Artikel 1 </span>
 
-De richtlijn van 15 december 1987, met opschrift "Neerlegging en mededeling van conclusies", bekendgemaakt in het _Belgisch Staatsblad_ van 29 december 1987, blijft toepasselijk op de zaken die zijn ingeschreven op de rol van het Hof tot en met het nr. 82; het gaat immers om zaken die aanhangig waren op het ogenblik van de inwerkingtreding van de bijzondere wet van 6 januari 1989 en die luidens [artikel 124](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.124) van die wet door de bepalingen van de organieke wet van 28 juni 1983 beheerst blijven. De richtlijn van 15 december 1987 zal niet langer van toepassing zijn op de zaken die zijn ingeschreven op de rol van het Hof vanaf de inwerkingtreding van de bijzondere wet van 6 januari 1989, en wel onder de nrs. 83 en volgende.
+De richtlijn van 15 december 1987, met opschrift "Neerlegging en mededeling van conclusies", bekendgemaakt in het _Belgisch Staatsblad_ van 29 december 1987, blijft toepasselijk op de zaken die zijn ingeschreven op de rol van het Hof tot en met het nr. 82; het gaat immers om zaken die aanhangig waren op het ogenblik van de inwerkingtreding van de bijzondere wet van 6 januari 1989 en die luidens [artikel 124](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.124) van die wet door de bepalingen van de organieke wet van 28 juni 1983 beheerst blijven. De richtlijn van 15 december 1987 zal niet langer van toepassing zijn op de zaken die zijn ingeschreven op de rol van het Hof vanaf de inwerkingtreding van de bijzondere wet van 6 januari 1989, en wel onder de nrs. 83 en volgende.
 
 <span class="code"> Art. 2 </span>
 
-Wat de zaken betreft die zijn ingeschreven op de rol van het Hof vanaf de inwerkingtreding van de bijzondere wet van 6 januari 1989 en waarbij een vordering tot schorsing is ingesteld, wordt, onverminderd de [artikelen 70 tot 73](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.70) van voormelde bijzondere wet, de beschikking tot dagstelling ter kennis gebracht van de partij of de partijen en van de overheden die zijn vermeld in [artikel 76](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76) van de wet, in voorkomend geval met opgave van de termijn waarover elk van die overheden beschikt om schriftelijke opmerkingen ter griffie te doen toekomen. Eenmaal die termijn verstreken, wordt geen enkel ander geschrift op de mondelinge behandeling ter terechtzitting van de vordering tot schorsing toegelaten.
+Wat de zaken betreft die zijn ingeschreven op de rol van het Hof vanaf de inwerkingtreding van de bijzondere wet van 6 januari 1989 en waarbij een vordering tot schorsing is ingesteld, wordt, onverminderd de [artikelen 70 tot 73](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.70) van voormelde bijzondere wet, de beschikking tot dagstelling ter kennis gebracht van de partij of de partijen en van de overheden die zijn vermeld in [artikel 76](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76) van de wet, in voorkomend geval met opgave van de termijn waarover elk van die overheden beschikt om schriftelijke opmerkingen ter griffie te doen toekomen. Eenmaal die termijn verstreken, wordt geen enkel ander geschrift op de mondelinge behandeling ter terechtzitting van de vordering tot schorsing toegelaten.
 
 </div>
 
@@ -3412,11 +3412,11 @@ Onderhavige beslissing wordt ingevoegd in het reglement van orde van het Hof.
 
 <br/>
 
-Wanneer uit de data der poststempels blijkt dat een memorie is ingediend na het verstrijken van de respectievelijk bij de [artikelen 85](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.85) en [87](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.87) van de bijzondere wet van 6 januari 1989 op het Arbitragehof bepaalde termijn, wordt dat door de voorzitter vastgesteld in een beschikking.
+Wanneer uit de data der poststempels blijkt dat een memorie is ingediend na het verstrijken van de respectievelijk bij de [artikelen 85](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.85) en [87](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.87) van de bijzondere wet van 6 januari 1989 op het Arbitragehof bepaalde termijn, wordt dat door de voorzitter vastgesteld in een beschikking.
 
-Van die beschikking, die tevens de datum vermeldt van de overeenkomstig [artikel 76](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76), [77](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.77) of [78](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.78) van de organieke wet gedane kennisgeving of van de bekendmaking in het _Belgisch Staatsblad_ van het bij [artikel 74](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.74) van dezelfde wet voorgeschreven bericht, naar gelang van het geval, alsmede de datum van indiening van de memorie, wordt door de griffier kennisgegeven aan de indiener van de memorie, die over acht dagen beschikt om schriftelijke opmerkingen in te dienen.
+Van die beschikking, die tevens de datum vermeldt van de overeenkomstig [artikel 76](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.76), [77](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.77) of [78](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.78) van de organieke wet gedane kennisgeving of van de bekendmaking in het _Belgisch Staatsblad_ van het bij [artikel 74](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.74) van dezelfde wet voorgeschreven bericht, naar gelang van het geval, alsmede de datum van indiening van de memorie, wordt door de griffier kennisgegeven aan de indiener van de memorie, die over acht dagen beschikt om schriftelijke opmerkingen in te dienen.
 
-Na het verstrijken van die termijn kan het Hof, overeenkomstig [artikel 86](/nl/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.86) van de bijzondere wet, de memorie onmiddellijk uit de debatten weren wanneer de schriftelijke opmerkingen ongegrond zijn of bij ontstentenis van schriftelijke opmerkingen.
+Na het verstrijken van die termijn kan het Hof, overeenkomstig [artikel 86](/court/basic-text/special-law-of-6-january-1989-on-the-constitutional-court#Art.86) van de bijzondere wet, de memorie onmiddellijk uit de debatten weren wanneer de schriftelijke opmerkingen ongegrond zijn of bij ontstentenis van schriftelijke opmerkingen.
 
 Diegenen welke een memorie laattijdig hebben ingediend kunnen het feit dat voormelde regels op hen niet zouden zijn toegepast, niet als argument gebruiken om te beweren dat die memorie ontvankelijk zou zijn.
 

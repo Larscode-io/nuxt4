@@ -6,7 +6,7 @@ posterUrl: ~/assets/img/newsletter-background.png
 
 In zijn arresten houdt het Grondwettelijk Hof rekening met de rechtspraak van de internationale hoge rechtscolleges, zoals het Hof van Justitie van de Europese Unie en het Europees Hof voor de Rechten van de Mens, die het vaak citeert.
 
-Sinds zijn oprichting heeft het Grondwettelijk Hof talrijke prejudiciële vragen gesteld aan het Hof van Justitie. Een rubriek van de webstek van het Hof wordt overigens gewijd aan de aan  <a href="/nl/judgments/preliminary-rulings-from-the-court-of-justice-of-the-european-union">het Hof van Justitie gestelde prejudiciële vragen</a>. Bij wijze van voorbeeld heeft het Grondwettelijk Hof in 2019 17 prejudiciële vragen gesteld aan het Hof van Justitie, in vier verschillende zaken.
+Sinds zijn oprichting heeft het Grondwettelijk Hof talrijke prejudiciële vragen gesteld aan het Hof van Justitie. Een rubriek van de webstek van het Hof wordt overigens gewijd aan de aan  <a href="/judgments/preliminary-rulings-from-the-court-of-justice-of-the-european-union">het Hof van Justitie gestelde prejudiciële vragen</a>. Bij wijze van voorbeeld heeft het Grondwettelijk Hof in 2019 17 prejudiciële vragen gesteld aan het Hof van Justitie, in vier verschillende zaken.
 
 Daarnaast is het Grondwettelijk Hof lid van verscheidene netwerken of verenigingen die buitenlandse –  Europese of internationale – hoogste rechtscolleges verenigen.
 

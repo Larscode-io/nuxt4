@@ -10,7 +10,7 @@ locale: en
 
 This privacy statement (the “Privacy Statement”) covers the protection of your personal data, i.e. any information that enables to identify you, whether directly or indirectly (the “Personal Data”).
 
-The Constitutional Court (the “Court”) processes your Personal Data in order to perform its tasks carried out in the public interest, in particular: 
+The Constitutional Court (the “Court”) processes your Personal Data in order to perform its tasks carried out in the public interest, in particular:
 * \- during court proceedings (actions for annulment or preliminary rulings);
 * \- when you communicate with the Registry;
 * \- when you contact the Court for information purposes;
@@ -21,10 +21,10 @@ The Constitutional Court (the “Court”) processes your Personal Data in order
 * \- etc.
 <br>
 
-Personal Data may also be processed after you have given your consent, for example by accepting cookies when you browse the Court’s Website (the “Website”) or by completing an online form in order to be notified of a judgment or to receive the Court's newsletter. 
+Personal Data may also be processed after you have given your consent, for example by accepting cookies when you browse the Court’s Website (the “Website”) or by completing an online form in order to be notified of a judgment or to receive the Court's newsletter.
 The General Data Protection Regulation 2016/679 (the “GDPR”) of 27 April 2016, Directive 2016/680 of the European Parliament and of the Council of 27 April 2016 and the Data Protection Act of 30 July 2018 on the protection of natural persons with regard to the processing of Personal Data may, depending on the circumstances, apply to the processing of your data by the Court.
 
-The [website](/en/footer/privacy-policy) always includes the most recent version of this Privacy Statement. The Court may amend this Privacy Statement due to updated security measures. This Privacy Statement was adopted on 18 August 2021.
+The [website](/footer/privacy-policy) always includes the most recent version of this Privacy Statement. The Court may amend this Privacy Statement due to updated security measures. This Privacy Statement was adopted on 18 August 2021.
 <br><br>
 
 ### **I. General Principles**
@@ -54,7 +54,7 @@ In accordance with the provisions of the GDPR, your Personal Data are processed 
 
 In the course of court proceedings (actions for annulment or preliminary rulings), the Constitutional Court shares certain Personal Data with the parties to the case and certain public authorities that play a role in the proceedings.
 
-The Constitution and the Special Majority Act oblige the Court to publish its decisions as well as certain opinions necessary for the course of the proceedings. The purpose of this obligation is to ensure that constitutional justice is open and accessible to the citizens and the media. When these documents are published, your Personal Data may be processed. At your request or on its own initiative, the Court may, in accordance with article 30quater of the Special Majority Act, anonymise these texts. More information about the Court's anonymization policy is available on [this page](/en/rule/anonymization-policy).
+The Constitution and the Special Majority Act oblige the Court to publish its decisions as well as certain opinions necessary for the course of the proceedings. The purpose of this obligation is to ensure that constitutional justice is open and accessible to the citizens and the media. When these documents are published, your Personal Data may be processed. At your request or on its own initiative, the Court may, in accordance with article 30quater of the Special Majority Act, anonymise these texts. More information about the Court's anonymization policy is available on [this page](/rule/anonymization-policy).
 
 Apart from judicial proceedings, the Constitutional Court does not share your Personal Data with third parties. It never uses your data for purposes other than those for which they were collected, such as commercial purposes.
 <br><br>
@@ -66,10 +66,10 @@ Your Personal Data shall not be kept for a longer time than is necessary for the
 
 Here are some examples of how long the Court keeps your Personal Data:
 * \- IP address: we do not store IP addresses;
-* \- cookies: we use two cookies: i18n_redirected and GPDR:accepted . The first cookie automatically records your language preference based on your browser's language settings. When you choose another language via the Website menu, the new language is recorded in the cookie. This cookie is necessary for the proper functioning of the Website and cannot be refused. The second cookie records your approval (or refusal) of the use of additional functional cookies. Your refusal is also recorded in a cookie in order to avoid asking you this same question every time you visit the Website. 
-* \- filling out the online form for being informed of a judgment: we record an e-mail address and possibly a name per docket number. Only the e-mail address is required in order to receive notification of the requested judgment. When the judgment is issued, the corresponding docket number is deleted, as are the e-mail addresses registered for this same docket number. If you register for more than one docket number, your e-mail address will be registered several times and will not be deleted until the judgment regarding the last pending case has been issued. 
+* \- cookies: we use two cookies: i18n_redirected and GPDR:accepted . The first cookie automatically records your language preference based on your browser's language settings. When you choose another language via the Website menu, the new language is recorded in the cookie. This cookie is necessary for the proper functioning of the Website and cannot be refused. The second cookie records your approval (or refusal) of the use of additional functional cookies. Your refusal is also recorded in a cookie in order to avoid asking you this same question every time you visit the Website.
+* \- filling out the online form for being informed of a judgment: we record an e-mail address and possibly a name per docket number. Only the e-mail address is required in order to receive notification of the requested judgment. When the judgment is issued, the corresponding docket number is deleted, as are the e-mail addresses registered for this same docket number. If you register for more than one docket number, your e-mail address will be registered several times and will not be deleted until the judgment regarding the last pending case has been issued.
 * \- registration to the online newsletter: we record the e-mail address and, if necessary, a name. Only the e-mail address is required to receive the newsletter. You can unsubscribe via a link in the newsletter. We use an “e-mail probing” technique to detect non-existent mailboxes and to delete the corresponding e-mail addresses. This probing is carried out once a year.
-* \- The Special Majority Act does not provide for a legal retention period regarding the Court's judgments and procedural documents. In order for the Court to exercise its judicial capacity, this retention period cannot be limited in time on a general basis. In any case, however, the Court shall ensure that such retention does not extend beyond what is necessary and complies with the applicable rules on archiving. 
+* \- The Special Majority Act does not provide for a legal retention period regarding the Court's judgments and procedural documents. In order for the Court to exercise its judicial capacity, this retention period cannot be limited in time on a general basis. In any case, however, the Court shall ensure that such retention does not extend beyond what is necessary and complies with the applicable rules on archiving.
 <br>
 
 If you believe that the Court holds Personal Data that are no longer relevant, feel free to contact us in order to request their deletion.
@@ -99,10 +99,10 @@ The Constitutional Court guarantees the security (integrity and confidentiality)
 ### **VI. Contact and Complaints**
 <br>
 
-The Constitutional Court has appointed a Data Protection Officer (“DPO”). This independent internal controller ensures that the Court processes your Personal Data in accordance with the applicable legislation. 
+The Constitutional Court has appointed a Data Protection Officer (“DPO”). This independent internal controller ensures that the Court processes your Personal Data in accordance with the applicable legislation.
 
 <u>You can contact the DPO: </u>
-* \- at [dpo@const-court.be](mailto:dpo%40const-court.be) 
+* \- at [dpo@const-court.be](mailto:dpo%40const-court.be)
 * \- or by post at the following address:
 <p style="text-align: center;">Constitutional Court</p>
 <p style="text-align: center;">For the attention of the Data Protection Officer</p>

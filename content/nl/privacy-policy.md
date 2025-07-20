@@ -21,10 +21,10 @@ Het Grondwettelijk Hof verwerkt uw persoonsgegevens om zijn opdrachten van algem
 * \- enz.
 <br>
 
-Persoonsgegevens kunnen eveneens worden verwerkt wanneer u daarvoor de toestemming heeft gegeven, bijvoorbeeld door het aanvaarden van cookies bij het surfen op de website of het invullen van een onlineformulier om te worden geïnformeerd over de uitspraak van een arrest of de nieuwsbrief van het Hof te ontvangen. 
+Persoonsgegevens kunnen eveneens worden verwerkt wanneer u daarvoor de toestemming heeft gegeven, bijvoorbeeld door het aanvaarden van cookies bij het surfen op de website of het invullen van een onlineformulier om te worden geïnformeerd over de uitspraak van een arrest of de nieuwsbrief van het Hof te ontvangen.
 De algemene verordening gegevensbescherming 2016/679 (« AVG ») van 27 april 2016, de richtlijn 2016/680 van het Europees Parlement en de Raad van 27 april 2016 en de wet van 30 juli 2018 betreffende de bescherming van natuurlijke personen met betrekking tot de verwerking van persoonsgegevens kunnen, naar gelang van de omstandigheden, van toepassing zijn op de verwerking van uw gegevens door het Grondwettelijk Hof.
 
-De [website](/nl/footer/privacy-policy) van het Grondwettelijk Hof bevat steeds de meest recente versie van deze verklaring. Het Hof kan deze verklaring wijzigen wanneer de veiligheidsmaatregelen worden bijgewerkt. Deze verklaring is aangenomen op 18 augustus 2021.
+De [website](/footer/privacy-policy) van het Grondwettelijk Hof bevat steeds de meest recente versie van deze verklaring. Het Hof kan deze verklaring wijzigen wanneer de veiligheidsmaatregelen worden bijgewerkt. Deze verklaring is aangenomen op 18 augustus 2021.
 <br><br>
 
 ### **I. Algemene beginselen**
@@ -54,7 +54,7 @@ Overeenkomstig de AVG worden uw persoonsgegevens verwerkt voor een of meerdere v
 
 In een procedure in rechte (beroep tot vernietiging of prejudiciële vraag) wisselt het Grondwettelijk Hof bepaalde persoonsgegevens uit met de partijen bij het geschil en sommige overheden die een rol spelen in het kader van de rechtspleging.
 
-De Grondwet en de bijzondere wet verplichten het Grondwettelijk Hof ertoe zijn beslissingen, alsook sommige berichten die noodzakelijk zijn voor het verloop van de rechtspleging, bekend te maken. Die verplichting strekt ertoe een open grondwettelijke rechtspraak te waarborgen die toegankelijk is voor de burger en de pers. Bij de bekendmaking van die documenten kunnen uw persoonsgegevens het voorwerp uitmaken van een verwerking. Op uw verzoek of op eigen initiatief kan het Grondwettelijk Hof, met toepassing van artikel 30quater van de bijzondere wet van 6 januari 1989, die teksten depersonaliseren. Meer informatie in verband met het anonimiseringsbeleid van het Hof vindt u op [deze pagina](/nl/rule/anonymization-policy).
+De Grondwet en de bijzondere wet verplichten het Grondwettelijk Hof ertoe zijn beslissingen, alsook sommige berichten die noodzakelijk zijn voor het verloop van de rechtspleging, bekend te maken. Die verplichting strekt ertoe een open grondwettelijke rechtspraak te waarborgen die toegankelijk is voor de burger en de pers. Bij de bekendmaking van die documenten kunnen uw persoonsgegevens het voorwerp uitmaken van een verwerking. Op uw verzoek of op eigen initiatief kan het Grondwettelijk Hof, met toepassing van artikel 30quater van de bijzondere wet van 6 januari 1989, die teksten depersonaliseren. Meer informatie in verband met het anonimiseringsbeleid van het Hof vindt u op [deze pagina](/rule/anonymization-policy).
 
 Buiten die procedures in rechte wisselt het Grondwettelijk Hof uw persoonsgegevens niet uit met derden. Het gebruikt uw gegevens nooit voor andere doeleinden dan die waarvoor ze zijn verzameld, bijvoorbeeld commerciële doeleinden.
 <br><br>
@@ -66,10 +66,10 @@ Uw persoonsgegevens worden niet langer bewaard dan noodzakelijk is voor het doel
 
 Hieronder volgen enkele voorbeelden van een bewaartermijn voor uw persoonsgegevens :
 * \- IP-adres : wij bewaren geen IP-adressen;
-* \- cookies : wij gebruiken twee cookies: i18n_redirected en GPDR:accepted. De eerste cookie registreert automatisch uw taalvoorkeur op basis van de taalinstelling van uw browser. Zodra u een andere taal kiest via het menu van de site zal de nieuwe taal worden bewaard in de cookie. Deze cookie is noodzakelijk voor de goede werking van de site en kan niet worden geweigerd. De tweede cookie registreert uw goedkeuring (of weigering) om bijkomende functionele cookies te gebruiken. Ook de weigering wordt bewaard in een cookie zodat deze vraag niet bij elk bezoek moet worden herhaald. 
-* \- het invullen van het onlineformulier om te worden geïnformeerd over de uitspraak van een arrest : wij registreren een e-mail adres en eventueel een naam per rolnummer. Alleen het e-mail adres is vereist opdat u zou worden geïnformeerd bij de uitspraak.  Bij de definitieve uitspraak vervalt het bijhorend rolnummer en worden alle e-mailadressen verwijderd die bij dat rolnummer werden geregistreerd. Wie zich inschrijft voor meerdere rolnummers zal meerdere malen worden geregistreerd en pas definitief worden verwijderd wanneer het laatste rolnummer een uitspraak krijgt. 
+* \- cookies : wij gebruiken twee cookies: i18n_redirected en GPDR:accepted. De eerste cookie registreert automatisch uw taalvoorkeur op basis van de taalinstelling van uw browser. Zodra u een andere taal kiest via het menu van de site zal de nieuwe taal worden bewaard in de cookie. Deze cookie is noodzakelijk voor de goede werking van de site en kan niet worden geweigerd. De tweede cookie registreert uw goedkeuring (of weigering) om bijkomende functionele cookies te gebruiken. Ook de weigering wordt bewaard in een cookie zodat deze vraag niet bij elk bezoek moet worden herhaald.
+* \- het invullen van het onlineformulier om te worden geïnformeerd over de uitspraak van een arrest : wij registreren een e-mail adres en eventueel een naam per rolnummer. Alleen het e-mail adres is vereist opdat u zou worden geïnformeerd bij de uitspraak.  Bij de definitieve uitspraak vervalt het bijhorend rolnummer en worden alle e-mailadressen verwijderd die bij dat rolnummer werden geregistreerd. Wie zich inschrijft voor meerdere rolnummers zal meerdere malen worden geregistreerd en pas definitief worden verwijderd wanneer het laatste rolnummer een uitspraak krijgt.
 * \- het abonneren op de online nieuwsbrief: wij registreren het e-mail adres en eventueel een naam. Alleen het e-mailadres is vereist opdat u de nieuwsbrief zou ontvangen.. Uitschrijven gebeurt via een link in de nieuwsbrief. We gebruiken een techniek van “e-mail probing” om niet-bestaande mailboxen te detecteren en het bijhorende e-mail adres te verwijderen. Deze probing gebeurt eenmaal per jaar.
-* \- De bijzondere wet voorziet niet in een wettelijke bewaartermijn voor de beslissingen van het Hof en de rechtsplegingsdossiers. Met het oog op het vervullen van de rechtsprekende functie van het Grondwettelijk Hof kan die bewaartermijn niet op veralgemeende wijze worden beperkt in de tijd. Het Grondwettelijk Hof ziet er echter op toe dat die bewaring in elk geval niet langer duurt dan noodzakelijk, en plaatsvindt in overeenstemming met de toepasselijke regels inzake archivering. 
+* \- De bijzondere wet voorziet niet in een wettelijke bewaartermijn voor de beslissingen van het Hof en de rechtsplegingsdossiers. Met het oog op het vervullen van de rechtsprekende functie van het Grondwettelijk Hof kan die bewaartermijn niet op veralgemeende wijze worden beperkt in de tijd. Het Grondwettelijk Hof ziet er echter op toe dat die bewaring in elk geval niet langer duurt dan noodzakelijk, en plaatsvindt in overeenstemming met de toepasselijke regels inzake archivering.
 <br>
 
 Indien u van mening bent dat het Hof persoonsgegevens bezit die niet langer relevant zijn, kan u met ons contact opnemen om de schrapping ervan te vragen.
@@ -98,10 +98,10 @@ Het Grondwettelijk Hof waarborgt de veiligheid (integriteit en vertrouwelijkheid
 ### **VI. Contact en bezwaar**
 <br>
 
-Het Grondwettelijk Hof heeft een functionaris voor gegevensbescherming aangesteld. Die onafhankelijke interne toezichthouder waakt erover dat het Hof uw persoonsgegevens verwerkt overeenkomstig de geldende wetgeving. 
+Het Grondwettelijk Hof heeft een functionaris voor gegevensbescherming aangesteld. Die onafhankelijke interne toezichthouder waakt erover dat het Hof uw persoonsgegevens verwerkt overeenkomstig de geldende wetgeving.
 
 <u>U kan met de functionaris voor gegevensbescherming contact opnemen: </u>
-* \- op het [mailadres dpo@const-court.be](mailto:dpo%40const-court.be) 
+* \- op het [mailadres dpo@const-court.be](mailto:dpo%40const-court.be)
 * \- of via de post op het volgende adres :
 <p style="text-align: center;">Grondwettelijk Hof</p>
 <p style="text-align: center;">Ter attentie van de functionaris voor gegevensbescherming</p>

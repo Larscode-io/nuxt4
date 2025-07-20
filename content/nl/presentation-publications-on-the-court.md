@@ -93,4 +93,4 @@ _Algemene studies over publiek recht en Belgisch grondwettelijk recht_
 
 - Velaers, Jan, _De Grondwet. Een artikelsgewijze commentaar_, 3 delen, die Keure, 2019, 2247 p.
 
-In juridische tijdschriften zal de geïnteresseerde lezer ook vele artikels met betrekking tot het Hof en zijn rechtspraak kunnen vinden. Enkele studies kunnen ook worden geraadpleegd [op de webstek van het Hof](/nl/court/publications/studies).
+In juridische tijdschriften zal de geïnteresseerde lezer ook vele artikels met betrekking tot het Hof en zijn rechtspraak kunnen vinden. Enkele studies kunnen ook worden geraadpleegd [op de webstek van het Hof](/court/publications/studies).

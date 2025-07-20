@@ -39,10 +39,6 @@ const addressLocality = computed(() => t('contact.address-locality'))
 const canonicalUrl = computed(() =>
   `${baseUrl}${route.path}`.replace(/\/+$/, '') || '/'
 )
-watchEffect(() => {
-  console.log('Canonical URL:', canonicalUrl.value)
-})
-
 // todo: checks
 // https://opengraph.dev/panel?url=https%3A%2F%2Fnuxt.const-court.be%2F
 // https://metatags.io/?url=https%3A%2F%2Fnuxt.const-court.be%2F

@@ -103,6 +103,6 @@ The Court invites the parties:
 
 - to keep the Court informed of possible events that change the situation of the parties, which may affect their interest, the usefulness and/or the relevance of the Court's response (e.g. death of a party, obtaining a residence permit, etc.);
 
-- to give reasons in the application for annulment or in the pleading, if any, for the request for anonymization made by the party or interested third party on the basis of article 30*quater* of the Special Act of 6 January 1989 (see the Court's [anonymization](/en/rule/anonymization-policy) policy);
+- to give reasons in the application for annulment or in the pleading, if any, for the request for anonymization made by the party or interested third party on the basis of article 30*quater* of the Special Act of 6 January 1989 (see the Court's [anonymization](/rule/anonymization-policy) policy);
 
 - to explain in a pleading, where appropriate, why the party considers that the Court should maintain or not maintain the effects of the provision annulled or declared unconstitutional, in accordance with articles 8, paragraph 3, and 28, paragraph 2, of the Special Act of 6 January 1989.

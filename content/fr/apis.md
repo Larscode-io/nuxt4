@@ -62,7 +62,7 @@ Ainsi, nous pouvons garantir un accès efficace et durable aux informations pour
 > Cela **ne s'applique pas** aux arrêts de la Cour.
 >
 > **Le téléchargement massif de données est interdit.**
-- conformément à la législation applicable en matière de protection des données (voir notre [déclaration de confidentialité](/fr/privacy)) ;
+- conformément à la législation applicable en matière de protection des données (voir notre [déclaration de confidentialité](/footer/privacy-policy)) ;
 - ainsi qu’à d'autres dispositions légales pertinentes.
 
 > **Attention :**

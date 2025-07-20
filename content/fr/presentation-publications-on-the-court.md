@@ -93,4 +93,4 @@ _Ouvrages généraux sur le droit public et le droit constitutionnel belge_
 
 - Velaers, Jan, _De Grondwet. Een artikelsgewijze commentaar_, 3 delen, die Keure, 2019, 2247 p.
 
-Le lecteur intéressé pourra également trouver des articles de doctrine relatifs à la Cour et, notamment, des chroniques de jurisprudence, dans les revues juridiques spécialisées. Il peut également consulter plusieurs études en ligne sur le [site Internet de la Cour](/fr/court/publications/studies).
+Le lecteur intéressé pourra également trouver des articles de doctrine relatifs à la Cour et, notamment, des chroniques de jurisprudence, dans les revues juridiques spécialisées. Il peut également consulter plusieurs études en ligne sur le [site Internet de la Cour](/court/publications/studies).

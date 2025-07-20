@@ -35,4 +35,4 @@ Bei der Verfassungsrevision vom 6. Januar 2014 wurde die Zuständigkeit des Verf
 
 Schließlich gibt es mehrere königliche Erlasse, Geschäftsordnungen und Richtlinien, die sich auf verschiedene Aspekte der Zuständigkeit und Arbeitsweise des Gerichtshofes beziehen.
 
-All diese Texte befinden sich unter der Rubrik <a aria-label="Klicken Sie hier, um zur Seite mit den grundlegenden Texten zu gelangen" href="/de/court/basic-text">»Grundtexte«</a> (in niederländischer und französischer Sprache, zum Teil auch in deutscher Sprache).
+All diese Texte befinden sich unter der Rubrik <a aria-label="Klicken Sie hier, um zur Seite mit den grundlegenden Texten zu gelangen" href="/court/basic-text">»Grundtexte«</a> (in niederländischer und französischer Sprache, zum Teil auch in deutscher Sprache).
