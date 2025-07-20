@@ -126,7 +126,6 @@ const sameAsLinksByLocale = {
 useHead({
   htmlAttrs: { lang: i18nHead.value.htmlAttrs!.lang, },
   meta: [
-    // add author
     { name: 'author', content: 'Lars Devocht' },
     { 'http-equiv': 'Content-Language', content: i18nHead.value.htmlAttrs.lang },
     // we have server/routes/robots.txt.ts to replace the next line
