@@ -1,5 +1,6 @@
 // server/routes/robots.txt.ts
 // this will expose the robots.txt file at /robots.txt
+// todo: make sure this file is served correctly in production
 
 export default defineEventHandler((event) => {
   const host = getRequestURL(event).host
