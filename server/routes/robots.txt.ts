@@ -5,13 +5,13 @@ export default defineEventHandler((event) => {
   const host = getRequestURL(event).host
   const isStaging = host.includes('nuxt.const-court.be')
 
+  // Disallow: /search/
+  // Sitemap: https://www.const-court.be/sitemap.xml
   const production = `
 User-agent: *
-Disallow: /search/
-Sitemap: https://www.const-court.be/sitemap.xml
   `.trim()
 
-// Disallow: /
+  // Disallow: /
   const staging = `
 User-agent: *
   `.trim()
