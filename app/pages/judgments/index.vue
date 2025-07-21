@@ -102,6 +102,10 @@ const { data }
       },
       transform,
     })
+// watch data and log it to console
+watch(data, (newData) => {
+  console.info('Press releases data:', newData)
+}, { immediate: true })
 
 const findRelease = (rid: number): GeneralPressJudgment | undefined => data.value?.find((release: GeneralPressJudgment) => Number(release.id) === rid)
 
@@ -146,6 +150,11 @@ watch([ selected_year, selected_month ], () => {
     filterLoading.value = false
   }, 300)
 })
+
+const findReleaseFilePath = (idx: number) => {
+  const release = findRelease(idx)
+  return release ? release.filePath : ''
+}
 
 watchEffect(() => {
   if (query.id) {
@@ -244,13 +253,13 @@ watchEffect(() => {
                   <p>{{ courtVerdict }}</p>
                 </div>
               </div>
+              <!-- @mouseenter="handleJudgmentHover( filePath )" -->
               <h3 class="py-4">
                 <a
-                  :href="findRelease(idx)?.filePath"
+                  :href="filePath"
                   rel="noopener noreferrer"
                   target="_blank"
                   :aria-label="t('aria.label.download-pdf')"
-                  @mouseenter="handleJudgmentHover( filePath )"
                 >
                   <v-icon
                     color="var(--pdf-red)"
@@ -289,6 +298,19 @@ watchEffect(() => {
               <div class="elevation-2 my-2 subtitle border pa-2">
                 {{ keywords || t('error.no-data-available') }}
               </div>
+              <span v-if="findReleaseFilePath(idx)">
+                <a
+                  :href="findReleaseFilePath(idx)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  :aria-label="t('general.message.press-releases')"
+                  style="display: block; text-decoration: none;"
+                >
+                  <h4 style="margin: 0;">
+                    {{ t('general.message.press-releases') }}
+                  </h4>
+                </a>
+              </span>
             </v-list-item>
           </v-card>
         </v-col>
