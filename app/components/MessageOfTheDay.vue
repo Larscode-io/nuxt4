@@ -36,6 +36,18 @@ function dismissMessage(id: string) {
 onMounted(() => {
   const now = new Date()
   messages.value = [
+    {
+      id: 'motd-6',
+      title: t('motd.wccj.title'),
+      content: t('motd.wccj.description'),
+      link: accessLinkUrl({
+        [Languages.DUTCH]: 'https://wccj6.tribunalconstitucional.es/en',
+        [Languages.FRENCH]: 'https://wccj6.tribunalconstitucional.es/fr',
+        [Languages.ENGLISH]: 'https://wccj6.tribunalconstitucional.es/en',
+      }),
+      image: 'https://wccj6.tribunalconstitucional.es/main/tree.svg',
+      onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.ENGLISH],
+    },
     // {
     //   id: 'motd-5',
     //   title: this.$t(this.i18nKeys.motd.ronde.title),
