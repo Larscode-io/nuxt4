@@ -104,6 +104,7 @@ const { data }
     })
 // watch data and log it to console
 watch(data, (newData) => {
+  console.info(`Press releases data fetched from: ${ApiUrl.pressReleasesConcerningJudgments}`)
   console.info('Press releases data:', newData)
 }, { immediate: true })
 
