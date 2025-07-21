@@ -44,8 +44,10 @@ onMounted(() => {
         [Languages.DUTCH]: 'https://wccj6.tribunalconstitucional.es/en',
         [Languages.FRENCH]: 'https://wccj6.tribunalconstitucional.es/fr',
         [Languages.ENGLISH]: 'https://wccj6.tribunalconstitucional.es/en',
+        [Languages.GERMAN]: 'https://wccj6.tribunalconstitucional.es/en',
       }),
       image: 'https://wccj6.tribunalconstitucional.es/main/tree.svg',
+      // todo: this dont seem to work anymore, need to check
       onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.ENGLISH],
     },
     // {
