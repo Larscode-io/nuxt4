@@ -29,9 +29,6 @@ const pleadings = computed(() =>
 )
 
 import { onMounted, nextTick } from 'vue'
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
 
 function scrollToHash(retries = 10) {
   const hash = window.location.hash
