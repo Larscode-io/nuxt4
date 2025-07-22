@@ -91,7 +91,9 @@ onMounted(async () => {
         </v-alert>
       </div>
       <div v-else>
-        <h2 id="decisions">Pleadings</h2>
+        <h2 id="decisions">
+          {{ t('general.message.judgment-deliveries') }}
+        </h2>
         <SessionCardDetail
           v-for="pleading of pleadings"
           :id="pleading.id"
@@ -107,7 +109,9 @@ onMounted(async () => {
           :description="pleading.description"
         />
 
-        <h2 id="hearings">Judgments</h2>
+        <h2 id="hearings">
+          {{ t('general.message.public-hearing') }}
+        </h2>
         <AgendaCardDetail
           v-for="judgment in judgments"
           :id="judgment.id"
