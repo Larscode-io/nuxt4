@@ -32,7 +32,10 @@ const transform = (items: Pleading[]): Pleading[] => {
   return itemsWithShortDescription
 }
 
-const { data, error } = await useFetch<Pleading[]>(props.apiUrl, { transform })
+const { data, error } = await useAsyncData<Pleading[]>(
+  'upcoming-pleadings',
+  () => $fetch<Pleading[]>(props.apiUrl).then(transform)
+)
 
 if (error.value) {
   throw createError({ statusCode: 404, statusMessage: 'We have a issue with fetching data in SessionCard' })

@@ -62,26 +62,26 @@ onMounted(() => {
     //   icon: 'mdi-scale-balance',
     //   onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.GERMAN],
     // },
-    {
-      id: 'motd-4',
-      title: t('motd.ronde.title'),
-      content: t('motd.ronde.description'),
-      link: localePath(RoutePathKeys?.mediaRonde),
-      icon: 'mdi-scale-balance',
-      onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.GERMAN],
-    },
-    {
-      id: 'motd-3',
-      title: t('motd.annual-report.title'),
-      content: t('motd.annual-report.description'),
-      link: accessLinkUrl({
-        [Languages.DUTCH]: 'https://www.const-court.be/public/jvra/n/jvra-2024n.pdf',
-        [Languages.FRENCH]: 'https://www.const-court.be/public/jvra/f/jvra-2024f.pdf',
-      }),
-      icon: 'mdi-file-document',
-      onlyShowLocale: [Languages.DUTCH, Languages.FRENCH],
-      expiresAt: '2025-07-29T21:59:59', // optional
-    },
+    // {
+    //   id: 'motd-4',
+    //   title: t('motd.ronde.title'),
+    //   content: t('motd.ronde.description'),
+    //   link: localePath(RoutePathKeys?.mediaRonde),
+    //   icon: 'mdi-scale-balance',
+    //   onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.GERMAN],
+    // },
+    // {
+    //   id: 'motd-3',
+    //   title: t('motd.annual-report.title'),
+    //   content: t('motd.annual-report.description'),
+    //   link: accessLinkUrl({
+    //     [Languages.DUTCH]: 'https://www.const-court.be/public/jvra/n/jvra-2024n.pdf',
+    //     [Languages.FRENCH]: 'https://www.const-court.be/public/jvra/f/jvra-2024f.pdf',
+    //   }),
+    //   icon: 'mdi-file-document',
+    //   onlyShowLocale: [Languages.DUTCH, Languages.FRENCH],
+    //   expiresAt: '2025-07-29T21:59:59', // optional
+    // },
     { id: 'motd-2',
       title: t('motd.video.title'),
       content: t('motd.video.description'),
@@ -89,19 +89,19 @@ onMounted(() => {
       image: new URL('~/assets/img/prize/40.png', import.meta.url).href,
       expiresAt: '2025-08-30T23:59:59',
     },
-    {
-      id: 'motd-1',
-      title: t('motd.accessibility.title'),
-      content: t('motd.accessibility.description1'),
-      link: accessLinkUrl({
-        [Languages.DUTCH]: 'https://www.beliris.be/nl/projecten/koningsplein.html',
-        [Languages.FRENCH]: 'https://www.beliris.be/fr/projets/place-royale.html',
-        [Languages.GERMAN]: 'https://www.beliris.be/nl/projecten/koningsplein.html',
-        [Languages.ENGLISH]: 'https://www.beliris.be/fr/projets/place-royale.html',
-      }),
-      icon: 'mdi-crane',
-      expiresAt: '2026-08-30T23:59:59',
-    },
+    // {
+    //   id: 'motd-1',
+    //   title: t('motd.accessibility.title'),
+    //   content: t('motd.accessibility.description1'),
+    //   link: accessLinkUrl({
+    //     [Languages.DUTCH]: 'https://www.beliris.be/nl/projecten/koningsplein.html',
+    //     [Languages.FRENCH]: 'https://www.beliris.be/fr/projets/place-royale.html',
+    //     [Languages.GERMAN]: 'https://www.beliris.be/nl/projecten/koningsplein.html',
+    //     [Languages.ENGLISH]: 'https://www.beliris.be/fr/projets/place-royale.html',
+    //   }),
+    //   icon: 'mdi-crane',
+    //   expiresAt: '2026-08-30T23:59:59',
+    // },
   ].filter((msg) => !msg.expiresAt || new Date(msg.expiresAt) > now)
 
   dismissedMessageIds.value = Array.isArray(dismissedCookie.value) ? dismissedCookie.value : []

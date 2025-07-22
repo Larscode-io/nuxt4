@@ -1,3 +1,4 @@
+import path from 'node:path'
 import { RoutePathKeys } from '~/core/constants'
 
 // `to` values must be unique—even if the route is the same—
@@ -132,10 +133,11 @@ export default defineEventHandler(async () => {
       title: 'menu.agenda.title',
       subMenu: [
         {
+          to: { path: RoutePathKeys.agenda, hash: '#decisions' },
           title: 'menu.agenda.upcoming-decisions',
         },
         {
-          to: `${RoutePathKeys.agenda}`,
+          to: { path: RoutePathKeys.agenda, hash: '#hearings' },
           title: 'menu.agenda.scheduled-public-hearings',
         },
       ],

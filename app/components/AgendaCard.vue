@@ -39,9 +39,11 @@ const transform = (items: Decision[]): Decision[] => {
   return itemsWithShortDescription
 }
 
-const { data: items, error } = await useFetch<Decision[]>(props.apiUrl, {
-  transform: transform,
-})
+const { data: items, error } = await useAsyncData(
+  'upcoming-judgments',
+  () => $fetch<Decision[]>(props.apiUrl),
+  { transform }
+)
 
 if (error.value) {
   throw createError({

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Judgment } from '@/core/constants'
+import type { PressJudgment } from '@/core/constants'
 
 const props = defineProps({
   apiUrl: {
@@ -11,7 +11,7 @@ const props = defineProps({
     required: false,
   },
 })
-const transform = (items: Judgment[]): Judgment[] => {
+const transform = (items: PressJudgment[]): PressJudgment[] => {
   return items.map((item) => ({
     ...item,
     shortDescription: item.description?.substring(0, 90).concat('...'),
@@ -26,12 +26,12 @@ if (!apiUrl.includes('year=')) {
 const fallbackYear = currentYear - 1
 let theYearWeUse = currentYear
 
-let { data: items, error } = await useFetch<Judgment[]>(apiUrl, { transform })
+let { data: items, error } = await useFetch<PressJudgment[]>(apiUrl, { transform })
 if (error.value || (items.value?.length ?? 0) === 0) {
   // If there is no data for the current year, we fetch the data for the previous year
   theYearWeUse = fallbackYear
   apiUrl = apiUrl.replace(`year=${currentYear}`, `year=${fallbackYear}`);
-  ({ data: items, error } = await useFetch<Judgment[]>(apiUrl, { transform }))
+  ({ data: items, error } = await useFetch<PressJudgment[]>(apiUrl, { transform }))
 }
 
 if (error.value) {

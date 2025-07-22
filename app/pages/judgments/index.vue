@@ -2,7 +2,7 @@
 import { ref, watchEffect, watch } from 'vue'
 import type { ComponentPublicInstance } from 'vue'
 import { ApiUrl } from '@core/constants'
-import type { Judgment } from '@core/constants'
+import type { JurisJudgment } from '@core/constants'
 import img from '@assets/img/banner-media.png'
 import { useLanguage } from '@/composables/useLanguage'
 
@@ -26,7 +26,7 @@ watch(selected_year, () => {
 })
 
 const { data: judgments, error, pending, status, refresh }
-  = useFetch<Judgment[]>(() => `${ApiUrl.judgments}`,
+  = useFetch<JurisJudgment[]>(() => `${ApiUrl.judgments}`,
     {
       query: {
         lang: locale.value,

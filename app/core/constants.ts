@@ -160,7 +160,7 @@ export enum RoutePathKeys {
   mediaGeneralPressReleases = 'media-general-press-releases',
   mediaPressReleasesConcerningTheJudgments = 'media-press-releases-concerning-the-judgments',
   mediaVideopresentaties = 'media-video',
-  mediaRonde='media-ronde',
+  mediaRonde = 'media-ronde',
   courtBasicTextTableOfTheArticlesOfTheConstitutionReferredToByTheConstitutionalCourt = 'court-basic-table-of-the-articles-of-the-constitution-referred-to-by-the-constitutional-court',
   ruleRecommendationsToTheJudgesAQuoAndTheParties = 'rule-recommendations-to-the-judges-a-quo-and-the-parties',
   ruleAnonymizationPolicy = 'rule-anonymization-policy',
@@ -208,7 +208,7 @@ export const DISCOURS_WORDS_FOR_FILTERING = [
 // The "Z" at the end means the date is in UTC. To get BE local time, you may need to convert it accordingly.
 // BE (Belgium) time is UTC+2 during daylight saving time (summer), and UTC+1 during standard time (winter).
 // we we use the Date constructor to parse the date string the date will be in UTC time.
-export interface Judgment {
+export interface JurisJudgment {
   id: number
   description: string
   courtVerdict: string
@@ -224,6 +224,24 @@ export interface Judgment {
   keywords: string
 }
 
+export interface PressJudgment {
+  distance: number
+  id: number
+  joinedcases: []
+  processingLanguage: string
+  description: string
+  day: string
+  month: string
+  nr: string
+  master: unknown
+  kenmerk: string
+  encinz: string
+  type: string
+  norm: string
+  date: string
+  formatedJudmentDate: string
+  dateLong: string
+}
 export interface GeneralPressJudgment {
   id: number
   title: string
@@ -254,7 +272,6 @@ export interface Pleading {
   maxOfDates: string
   shortDescription: string
 }
-
 export interface Decision {
   distance: number
   id: number
@@ -457,4 +474,23 @@ export interface JuridisctionArea {
   _k1_Rechtsgebied_ID: number
   Plaats_NL_cu: string
   Plaats_FR_cu: string
+}
+
+interface Judgment {
+  distance: number
+  id: number
+  joinedcases: []
+  processingLanguage: string
+  description: string
+  day: string
+  month: string
+  nr: string
+  master: unknown
+  kenmerk: string
+  encinz: string
+  type: string
+  norm: string
+  date: string
+  formatedJudmentDate: string
+  dateLong: string
 }

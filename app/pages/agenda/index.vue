@@ -1,64 +1,56 @@
-<!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import img from '@assets/img/banner-media.png'
 import { ApiUrl } from '@core/constants'
 import { useLanguage } from '@/composables/useLanguage'
 
 const { t, locale } = useLanguage()
 
-const config = useRuntimeConfig()
-const baseURL = config.public.apiBaseUrl
+import type { Pleading, PressJudgment } from '@core/constants'
 
-interface Pleading {
-  id: number
-  zuluDate: string
-  date: string
-  processingLanguage: string
-  description: string
-  day: string
-  month: string
-  hora: string
-  maxOfDates: string
-}
-interface Judgment {
-  distance: number
-  id: number
-  joinedcases: []
-  processingLanguage: string
-  description: string
-  day: string
-  month: string
-  nr: string
-  master: unknown
-  kenmerk: string
-  encinz: string
-  type: string
-  norm: string
-  date: string
-  formatedJudmentDate: string
-  dateLong: string
-}
+const fetchData = () => Promise.all([
+  $fetch<Pleading[]>(`${ApiUrl.pressPleadings}?lang=${locale.value}`),
+  $fetch<PressJudgment[]>(`${ApiUrl.pressJudgment}?lang=${locale.value}`),
+])
 
-const { data, error, status, refresh } = useAsyncData<[Pleading[], Judgment[]]>(() => {
-  return Promise.all([
-    $fetch<Pleading[]>(`${ApiUrl.pressPleadings}?lang=${locale.value}`),
-    $fetch<Judgment[]>(`${ApiUrl.pressJudgment}?lang=${locale.value}`),
-  ])
-})
+const { data, error, status, refresh } = useAsyncData<[Pleading[], PressJudgment[]]>(fetchData, { watch: [locale] })
 
-const judgments = computed<Judgment[]>(() => {
-  if (data.value && Array.isArray(data.value) && data.value.length > 1) {
-    return data.value[1]
+const JUDGMENT_DISTANCE_LIMIT = 52
+const judgments = computed(() =>
+  Array.isArray(data.value?.[1])
+    ? data.value[1].filter((i) => i.distance < JUDGMENT_DISTANCE_LIMIT)
+    : []
+)
+
+const pleadings = computed(() =>
+  Array.isArray(data.value?.[0])
+    ? data.value[0]
+    : []
+)
+
+import { onMounted, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+function scrollToHash(retries = 10) {
+  const hash = window.location.hash
+  if (hash) {
+    const el = document.querySelector(hash)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    } else if (retries > 0) {
+      setTimeout(() => scrollToHash(retries - 1), 100)
+    }
   }
-  return []
+}
+
+onMounted(async () => {
+  await nextTick()
+  scrollToHash()
+
 })
-const pleadings = computed<Pleading[]>(() => {
-  if (data.value && Array.isArray(data.value) && data.value.length > 0) {
-    return data.value[0]
-  }
-  return []
-})
+
 </script>
 
 <template>
@@ -102,78 +94,38 @@ const pleadings = computed<Pleading[]>(() => {
         </v-alert>
       </div>
       <div v-else>
-        <h2>Pleadings</h2>
-        <v-row
-          v-for="{ id, availablePart, nr, description } in pleadings"
-          :key="id"
-          class="justify-center"
-        >
-          <v-col
-            cols="12"
-            md="6"
-          >
-            <v-card
-              :id="id"
-              class="mx-auto mb-3"
-              outlined
-            >
-              <v-list-item>
-                <v-list-item-content>
-                  <div class=" mb-3">
-                    <h3> {{ nr }} </h3>
-                    <h3> {{ availablePart }} </h3>
-                  </div>
-                  <v-list-item-title class="headline mb-1">
-                    {{
-                      description
-                    }}
-                  </v-list-item-title>
-                  <v-list-item-subtitle>
-                    {{
-                      description
-                    }}
-                  </v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-            </v-card>
-          </v-col>
-        </v-row>
-        <h2>Judgments</h2>
-        <v-row
-          v-for="{ id, availablePart, nr, description } in judgments"
-          :key="id"
-          class="justify-center"
-        >
-          <v-col
-            cols="12"
-            md="6"
-          >
-            <v-card
-              :id="id"
-              class="mx-auto mb-3"
-              outlined
-            >
-              <v-list-item>
-                <v-list-item-content>
-                  <div class=" mb-3">
-                    <h3> {{ nr }} </h3>
-                    <h3> {{ availablePart }} </h3>
-                  </div>
-                  <v-list-item-title class="headline mb-1">
-                    {{
-                      description
-                    }}
-                  </v-list-item-title>
-                  <v-list-item-subtitle>
-                    {{
-                      description
-                    }}
-                  </v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-            </v-card>
-          </v-col>
-        </v-row>
+        <h2 id="decisions">Pleadings</h2>
+        <SessionCardDetail
+          v-for="pleading of pleadings"
+          :id="pleading.id"
+          :key="pleading.id"
+          :title="t('general.message.public-hearing')"
+          :lang="pleading.processingLanguage"
+          :day="pleading.day"
+          :month="pleading.month"
+          :time="pleading.hora || '14-17h'"
+          :location="t('general.brussels')"
+          :concerning="t('general.message.concerning')"
+          :colon="t('general.message.colon')"
+          :description="pleading.description"
+        />
+
+        <h2 id="hearings">Judgments</h2>
+        <AgendaCardDetail
+          v-for="judgment in judgments"
+          :id="judgment.id"
+          :key="judgment.id"
+          :nr="judgment.nr"
+          :childCaseNumbers="judgment.joinedcases"
+          :title="
+            t('menu.agenda.upcoming-decisions-nr', { count: judgment.joinedcases.length >= 1 ? 2 : 1 })
+          "
+          :day="judgment.day"
+          :month="judgment.month"
+          :concerning="t('general.message.concerning')"
+          :description="judgment.encinz"
+          :colon="t('general.message.colon')"
+        />
       </div>
     </v-container>
   </div>
