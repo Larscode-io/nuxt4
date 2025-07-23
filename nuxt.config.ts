@@ -160,9 +160,6 @@ export default defineNuxtConfig({
         },
       },
     },
-    build: {
-      cssCodeSplit: true, // ✅ splits CSS per pagina/component
-    },
     vue: {
       template: {
         // To resolve relative asset URLs that are passed to Vuetify components
