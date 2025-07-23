@@ -252,8 +252,21 @@ watchEffect(() => {
     link: [
       ...hreflangs.value,
       { rel: 'canonical', href: canonicalUrl.value },
-      // todo: Missing return link
-      { rel: 'alternate', hreflang: 'x-default', href: 'https://nuxt.const-court.be/' }
+      { rel: 'alternate', hreflang: 'x-default', href: 'https://nuxt.const-court.be/' },
+      {
+        rel: 'preload',
+        href: '/fonts/ProximaNova/ProximaNova-Regular.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous'
+      },
+      {
+        rel: 'preload',
+        href: '/fonts/TiemposHeadline/TiemposHeadline-Semibold.woff',
+        as: 'font',
+        type: 'font/woff',
+        crossorigin: 'anonymous'
+      }
     ]
   })
 })
