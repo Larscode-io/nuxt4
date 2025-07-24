@@ -31,7 +31,7 @@ const ogTitle = computed(() => t('general.message.consts-court'))
 // we use domain to get the base URL dynamically, not from config
 const { host } = useRequestURL()
 const baseUrl = `https://${host}`
-const ogImage = `${baseUrl}/img/ogImage.jpg`
+const ogImage = `${baseUrl}/img/ogImageFront.jpg`
 
 const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
 const streetAddress = computed(() => t('contact.address-title'))
@@ -263,13 +263,6 @@ watchEffect(() => {
       {
         rel: 'preload',
         href: '/fonts/ProximaNova/ProximaNova-Regular.woff',
-        as: 'font',
-        type: 'font/woff2',
-        crossorigin: 'anonymous'
-      },
-      {
-        rel: 'preload',
-        href: '/fonts/ProximaNova/ProximaNova-Regular.woff2',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous'
