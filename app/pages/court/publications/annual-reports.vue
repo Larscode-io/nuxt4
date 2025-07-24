@@ -109,7 +109,6 @@ useHead({
             cols="12"
             md="6"
           >
-            // add baseurl and filepath for debugging
             <p>
               {{ filePath }}
               <br>
