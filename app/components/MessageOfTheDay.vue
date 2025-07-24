@@ -47,7 +47,6 @@ onMounted(() => {
         [Languages.GERMAN]: 'https://wccj6.tribunalconstitucional.es/en',
       }),
       image: 'https://wccj6.tribunalconstitucional.es/main/tree.svg',
-      // todo: this dont seem to work anymore, need to check
       onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.ENGLISH],
     },
     // {
@@ -62,14 +61,14 @@ onMounted(() => {
     //   icon: 'mdi-scale-balance',
     //   onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.GERMAN],
     // },
-    // {
-    //   id: 'motd-4',
-    //   title: t('motd.ronde.title'),
-    //   content: t('motd.ronde.description'),
-    //   link: localePath(RoutePathKeys?.mediaRonde),
-    //   icon: 'mdi-scale-balance',
-    //   onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.GERMAN],
-    // },
+    {
+      id: 'motd-4',
+      title: t('motd.ronde.title'),
+      content: t('motd.ronde.description'),
+      link: localePath(RoutePathKeys?.mediaRonde),
+      icon: 'mdi-scale-balance',
+      onlyShowLocale: [Languages.DUTCH, Languages.FRENCH, Languages.GERMAN],
+    },
     // {
     //   id: 'motd-3',
     //   title: t('motd.annual-report.title'),
@@ -82,13 +81,13 @@ onMounted(() => {
     //   onlyShowLocale: [Languages.DUTCH, Languages.FRENCH],
     //   expiresAt: '2025-07-29T21:59:59', // optional
     // },
-    { id: 'motd-2',
-      title: t('motd.video.title'),
-      content: t('motd.video.description'),
-      link: localePath(RoutePathKeys?.mediaVideopresentaties),
-      image: new URL('~/assets/img/prize/40.png', import.meta.url).href,
-      expiresAt: '2025-08-30T23:59:59',
-    },
+    // { id: 'motd-2',
+    //   title: t('motd.video.title'),
+    //   content: t('motd.video.description'),
+    //   link: localePath(RoutePathKeys?.mediaVideopresentaties),
+    //   image: '/prize/40.png',
+    //   expiresAt: '2025-08-30T23:59:59',
+    // },
     // {
     //   id: 'motd-1',
     //   title: t('motd.accessibility.title'),
