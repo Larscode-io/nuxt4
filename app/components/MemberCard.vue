@@ -88,6 +88,7 @@ const jobTitleMap = {
   judge: 'general.message.judges',
   president: 'general.message.presidents',
   legalsecretaries: 'general.message.legal-secretaries',
+  registrars: 'general.message.registrars',
 }
 type JobTitle = keyof typeof jobTitleMap
 

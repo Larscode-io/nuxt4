@@ -44,8 +44,8 @@
   "roles": [
     {
       "role": "legalSecretaries",
-      "startDate": null,
-      "endDate": null
+      "startDate": "01.01.1985",
+      "endDate": "22.01.2014"
     },
     {
       "role": "judge",
