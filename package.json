@@ -36,7 +36,7 @@
     "@mdi/font": "^7.4.47",
     "@nuxt/content": "^3.6.3",
     "@nuxt/kit": "^4.0.1",
-    "@nuxtjs/i18n": "^10.0.2",
+    "@nuxtjs/i18n": "^10.0.3",
     "@sindresorhus/slugify": "^2.2.1",
     "better-sqlite3": "^12.2.0",
     "date-fns": "^4.1.0",
@@ -68,7 +68,7 @@
     "vite-plugin-vuetify": "^2.1.1",
     "vitest": "^3.2.4",
     "vue-eslint-parser": "^10.2.0",
-    "vue-tsc": "^3.0.3",
+    "vue-tsc": "^3.0.4",
     "vuetify": "^3.9.2"
   }
 }
