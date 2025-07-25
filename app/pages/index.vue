@@ -123,7 +123,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
           class="d-flex justify-center"
         >
           <Balloon color="logo-color" class="w-100" style="text-align: center;">
-            "Het Grondwettelijk Hof is het rechtscollege dat waakt over de inachtneming van de in de Grondwet verankerde grondrechten en de bevoegdheidsverdelende regels door de verschillende wetgevers in België"
+            {{  t('general.banner') }}
           </Balloon>
         </v-col>
       </v-row>

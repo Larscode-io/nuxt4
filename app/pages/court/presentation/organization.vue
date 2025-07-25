@@ -34,6 +34,11 @@ const {
   aliveNonActiveOfficeStaffMembersHistoric,
 } = useMembers(locale)
 
+const mergedAliveNonActivePresidentJudgeMembersHistoric = computed(() => [
+  ...aliveNonActiveJudgeMembersHistoric.value,
+  ...aliveNonActivePresidentMembersHistoric.value,
+])
+
 const { data: results, pending } = useAsyncData(
   `organisation-page-${locale.value}`,
   async () => {
@@ -314,7 +319,7 @@ onMounted(() => {
                   :is-small="true"
                   :name="member.name"
                   :with-image="false"
-                  :job-title="member.mostRecentRole?.role"
+                  :job-title="t('general.message.presidents')"
                   :lang="member.lang"
                   :is-alive="member.isAlive"
                   :female-title="member.femaleTitle"
@@ -327,7 +332,7 @@ onMounted(() => {
 
               <div class="gallery d-flex justify-space-between flex-wrap">
                 <MemberCard
-                  v-for="member of aliveNonActiveJudgeMembersHistoric"
+                  v-for="member of mergedAliveNonActivePresidentJudgeMembersHistoric"
                   :key="member.slug"
                   :headline-level="5"
                   :slug="member.slug"
@@ -335,7 +340,7 @@ onMounted(() => {
                   :is-small="true"
                   :name="member.name"
                   :with-image="false"
-                  :job-title="member.mostRecentRole?.role"
+                  :job-title="t('general.message.judges')"
                   :lang="member.lang"
                   :is-alive="member.isAlive"
                   :female-title="member.femaleTitle"
@@ -356,7 +361,7 @@ onMounted(() => {
                   :is-small="true"
                   :name="member.name"
                   :with-image="false"
-                  :job-title="member.mostRecentRole?.role"
+                  :job-title="t('general.message.legal-secretaries')"
                   :lang="member.lang"
                   :is-alive="member.isAlive"
                   :female-title="member.femaleTitle"
