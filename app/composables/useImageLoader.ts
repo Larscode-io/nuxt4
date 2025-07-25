@@ -1,6 +1,6 @@
 // composables/useImageLoader.js
 export const useImageLoader = () => {
-  const images = import.meta.glob('~/assets/img/media/*.png', { eager: true, import: 'default' })
+  const images = import.meta.glob('~/assets/img/media/*.jpg', { eager: true, import: 'default' })
 
   interface ImageLoader {
     getImage: (imageName: string) => string | undefined

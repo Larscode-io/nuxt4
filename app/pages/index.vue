@@ -6,13 +6,10 @@ import { RoutePathKeys, ApiUrl, MediaType } from '@core/constants'
 
 const localePath = useLocalePath()
 
-const { getImage } = useImageLoader()
-
-// todo: check if redirect is still needed
-definePageMeta({
-  layout: 'default',
-  middleware: ['redirect-root-todo']
-})
+// definePageMeta({
+//   layout: 'default',
+//   middleware: ['redirect-root-todo']
+// })
 
 const config = useRuntimeConfig()
 const baseURL = config.public.apiBaseUrl
@@ -167,7 +164,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
                   :aria-labelledby="`artDate${item.id} arrestNr${item.id} publicationTitle${item.id}`"
                 >
                   <v-img
-                    :src="getImage(`media-${index}`)"
+                    :src="`/img/media/media-${index}.jpg`"
                     :alt="`Dynamic Image media-${index}`"
                     height="320px"
                     class="mb-4 mx-auto d-none d-md-block"
