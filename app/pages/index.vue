@@ -403,7 +403,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 .index-banner {
   display: block;
   height: 60vh;
-  background-image: url("~~/app/assets/img/banner-index.jpeg");
+  background-image: url("/img/banner-index.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 90%;
@@ -467,7 +467,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 
   // Smartphones
   @media (max-width: 768px) {
-    background-image: url("~~/app/assets/img/banner-index-small.jpg");
+    background-image: url("/img/banner-index-small.jpg");
     background-position: 50% 80%;
     height: 30vh;
     outline: 2px solid red !important;
