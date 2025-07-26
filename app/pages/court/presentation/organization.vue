@@ -323,7 +323,24 @@ const secondaryLang = computed(() => (primaryLang.value === 'nl' ? 'fr' : 'nl'))
 
               <div class="gallery d-flex justify-space-between flex-wrap">
                 <MemberCard
-                  v-for="member of aliveNonActivePresidentMembersHistoric"
+                  v-for="member of aliveNonActivePresidentMembersHistoric.filter(member => member.lang === primaryLang)"
+                  :key="member.slug"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="t('general.message.presidents')"
+                  :lang="member.lang"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
+
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="member of aliveNonActivePresidentMembersHistoric.filter(member => member.lang === secondaryLang)"
                   :key="member.slug"
                   :headline-level="5"
                   :slug="member.slug"
