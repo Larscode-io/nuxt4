@@ -1,3 +1,6 @@
+ <!-- todo: chronologie wordt gerespecteerd op basis van de datum van benoeming -->
+<!-- Idealiter is er voor de rechters een tijdspad (zoals in het Supreme Court van de VS) -->
+
 <script setup lang="ts">
 import img from '@assets/img/organisation-Y-0050.png'
 import '@assets/css/content.css'
@@ -5,6 +8,7 @@ import type { Member } from '@membermodels/members'
 import { onMounted, ref, computed, watch } from 'vue'
 import { ContentKeys } from '@core/constants'
 import type { ParsedContentv2 } from '@nuxt/content'
+import { se } from 'date-fns/locale'
 
 function setFirstDynamicTocEntry() {
   const first = dynamicLinks.value[0]?.id
@@ -168,6 +172,14 @@ onMounted(() => {
   //   console.groupEnd()
   // })
 })
+
+const primaryLang = computed(() => {
+  if (locale.value === 'fr' || locale.value === 'en') return 'fr'
+  return 'nl'
+})
+
+const secondaryLang = computed(() => (primaryLang.value === 'nl' ? 'fr' : 'nl'))
+
 </script>
 
 <template>
@@ -332,7 +344,23 @@ onMounted(() => {
 
               <div class="gallery d-flex justify-space-between flex-wrap">
                 <MemberCard
-                  v-for="member of mergedAliveNonActivePresidentJudgeMembersHistoric"
+                  v-for="member in mergedAliveNonActivePresidentJudgeMembersHistoric.filter(member => member.lang === primaryLang)"
+                  :key="member.slug"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="t('general.message.judges')"
+                  :lang="member.lang"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="member in mergedAliveNonActivePresidentJudgeMembersHistoric.filter(member => member.lang === secondaryLang)"
                   :key="member.slug"
                   :headline-level="5"
                   :slug="member.slug"
@@ -353,7 +381,23 @@ onMounted(() => {
 
               <div class="gallery d-flex justify-space-between flex-wrap">
                 <MemberCard
-                  v-for="member of aliveNonActiveOfficeStaffMembersHistoric"
+                  v-for="member in aliveNonActiveOfficeStaffMembersHistoric.filter(member => member.lang === primaryLang)"
+                  :key="member.slug"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="t('general.message.legal-secretaries')"
+                  :lang="member.lang"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="member in aliveNonActiveOfficeStaffMembersHistoric.filter(member => member.lang === secondaryLang)"
                   :key="member.slug"
                   :headline-level="5"
                   :slug="member.slug"
@@ -374,7 +418,7 @@ onMounted(() => {
 
               <div class="gallery d-flex justify-space-between flex-wrap">
                 <MemberCard
-                  v-for="member of aliveNonActiveRegistrarMembersHistoric"
+                  v-for="member of aliveNonActiveRegistrarMembersHistoric.filter(member => member.lang === primaryLang)"
                   :key="member.slug"
                   :headline-level="5"
                   :slug="member.slug"
@@ -391,6 +435,24 @@ onMounted(() => {
                 />
               </div>
 
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="member of aliveNonActiveRegistrarMembersHistoric.filter(member => member.lang === secondaryLang)"
+                  :key="member.slug"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="member.roles[0]?.role"
+                  :lang="member.lang"
+                  :start-date="member.roles[0]?.startDate"
+                  :end-date="member.roles[0]?.endDate"
+                  :is-alive="member.isAlive"
+                />
+              </div>
+
               <div class="section-content nuxt-content">
                 <h3 :id="toSlug(t('court.organization.previous-incumbents'))">
                   {{ t('court.organization.previous-incumbents') }}
@@ -403,7 +465,7 @@ onMounted(() => {
 
               <div class="gallery d-flex justify-space-between flex-wrap">
                 <MemberCard
-                  v-for="(member, i) of presidentMembersHistoric"
+                  v-for="(member, i) of presidentMembersHistoric.filter(member => member.lang === primaryLang)"
                   :key="`${member.slug}-${i}`"
                   :headline-level="5"
                   :slug="member.slug"
@@ -420,13 +482,49 @@ onMounted(() => {
                 />
               </div>
 
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="(member, i) of presidentMembersHistoric.filter(member => member.lang === secondaryLang)"
+                  :key="`${member.slug}-${i}`"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="member.roles[0]?.role"
+                  :lang="member.lang"
+                  :start-date="member.roles[0]?.startDate"
+                  :end-date="member.roles[0]?.endDate"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
               <h4 class="heading-h3">
                 {{ t('general.message.judges') }}
               </h4>
 
               <div class="gallery d-flex justify-space-between flex-wrap">
                 <MemberCard
-                  v-for="(member, i) of judgeMembersHistoric"
+                  v-for="(member, i) of judgeMembersHistoric.filter(member => member.lang === primaryLang)"
+                  :key="`${member.slug}-${i}`"
+                  :headline-level="5"
+                  :slug="member.slug"
+                  :infos="member.infos"
+                  :is-small="true"
+                  :name="member.name"
+                  :with-image="false"
+                  :job-title="member.roles[0]?.role"
+                  :lang="member.lang"
+                  :start-date="member.roles[0]?.startDate"
+                  :end-date="member.roles[0]?.endDate"
+                  :is-alive="member.isAlive"
+                  :female-title="member.femaleTitle"
+                />
+              </div>
+              <div class="gallery d-flex justify-space-between flex-wrap">
+                <MemberCard
+                  v-for="(member, i) of judgeMembersHistoric.filter(member => member.lang === secondaryLang)"
                   :key="`${member.slug}-${i}`"
                   :headline-level="5"
                   :slug="member.slug"
