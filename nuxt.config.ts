@@ -25,7 +25,7 @@ export default defineNuxtConfig({
           '@core/*': ['../app/core/*'],
           '@utils/*': ['../app/utils/*'],
           '@assets/*': ['../app/assets/*'],
-          '@membermodels/*': ['/models/*']
+          '@membermodels/*': ['../models/*']
         }
       }
     }
