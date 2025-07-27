@@ -3,6 +3,8 @@
   <v-app>
     <NuxtLayout>
       <header />
+      <CookieDebugger />
+
       <NuxtPage />
       <footer />
     </NuxtLayout>
