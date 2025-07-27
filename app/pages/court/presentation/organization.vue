@@ -38,11 +38,6 @@ const {
   aliveNonActiveOfficeStaffMembersHistoric,
 } = useMembers(locale)
 
-const mergedAliveNonActivePresidentJudgeMembersHistoric = computed(() => [
-  ...aliveNonActiveJudgeMembersHistoric.value,
-  ...aliveNonActivePresidentMembersHistoric.value,
-])
-
 const { data: results, pending } = useAsyncData(
   `organisation-page-${locale.value}`,
   async () => {
@@ -361,7 +356,7 @@ const secondaryLang = computed(() => (primaryLang.value === 'nl' ? 'fr' : 'nl'))
 
               <div class="gallery d-flex justify-space-between flex-wrap">
                 <MemberCard
-                  v-for="member in mergedAliveNonActivePresidentJudgeMembersHistoric.filter(member => member.lang === primaryLang)"
+                  v-for="member in aliveNonActiveJudgeMembersHistoric.filter(member => member.lang === primaryLang)"
                   :key="member.slug"
                   :headline-level="5"
                   :slug="member.slug"
@@ -375,9 +370,10 @@ const secondaryLang = computed(() => (primaryLang.value === 'nl' ? 'fr' : 'nl'))
                   :female-title="member.femaleTitle"
                 />
               </div>
+
               <div class="gallery d-flex justify-space-between flex-wrap">
                 <MemberCard
-                  v-for="member in mergedAliveNonActivePresidentJudgeMembersHistoric.filter(member => member.lang === secondaryLang)"
+                  v-for="member in aliveNonActiveJudgeMembersHistoric.filter(member => member.lang === secondaryLang)"
                   :key="member.slug"
                   :headline-level="5"
                   :slug="member.slug"
