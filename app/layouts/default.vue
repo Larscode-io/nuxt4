@@ -124,6 +124,7 @@ const sameAsLinksByLocale = {
 
 // todo: technische SEO & AI-readiness checklist
 useHead({
+  title: ogTitle.value,
   htmlAttrs: { lang: i18nHead.value.htmlAttrs!.lang, },
   meta: [
     { name: 'author', content: 'Lars Devocht' },

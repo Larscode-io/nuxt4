@@ -1,10 +1,7 @@
-// app.vue is the top-level component that wraps everything.
 <template>
   <v-app>
     <NuxtLayout>
       <header />
-      <CookieDebugger />
-
       <NuxtPage />
       <footer />
     </NuxtLayout>
