@@ -403,7 +403,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 .index-banner {
   display: block;
   height: 60vh;
-  background-image: url("/img/banner-index.jpeg");
+  background-image: url("/img/banner-index.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 90%;
