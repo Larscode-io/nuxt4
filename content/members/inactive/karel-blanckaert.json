@@ -1,0 +1,37 @@
+{
+    "name": "Karel Blanckaert",
+    "femaleTitle": false,
+    "isAlive": false,
+    "lang": "nl",
+    "infos": {
+        "en": [
+            "Born in Schoten on 23 October 1931.",
+            "Laureate in Philosophy (1957); Master’s degree in Social Sciences (1958).",
+            "Member of Parliament (1961-1984).",
+            "Appointed Judge to the Constitutional Court by Royal Decree of 10 September 1984.",
+            "Judge since 1 November 1994."
+        ],
+        "fr": [
+            "Né à Schoten le 23 octobre 1931.",
+            "Lauréat en philosophie (1957); licencié en sciences sociales (1958).",
+            "Membre de la Chambre des représentants (1961-1984).",
+            "Nommé juge à la Cour constitutionnelle par arrêté royal du 10 septembre 1984.",
+            "Juge émérite depuis le 1er novembre 1994."
+        ],
+        "nl": [
+            "Geboren te Schoten op 23 oktober 1931.",
+            "Laureaat in de wijsbegeerte (1957); licentiaat in de sociale wetenschappen (1958).",
+            "Volksvertegenwoordiger (1961-1984).",
+            "Benoemd tot rechter in het Grondwettelijk Hof bij koninklijk besluit van 10 september 1984.",
+            "Emeritus rechter sedert 1 november 1994."
+        ],
+        "de": []
+    },
+    "roles": [
+        {
+            "role": "judge",
+            "startDate": "10.09.1984",
+            "endDate": "31.08.1994"
+        }
+    ]
+}

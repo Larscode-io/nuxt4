@@ -1,9 +1,13 @@
 {
     "name": "Etienne Gutt",
-    "role": "president",
     "isAlive": false,
     "lang": "fr",
     "roles": [
+        {
+            "role": "judge",
+            "startDate": "03.10.1984",
+            "endDate": "03.10.1984"
+        },
         {
             "role": "president",
             "startDate": "03.10.1984",

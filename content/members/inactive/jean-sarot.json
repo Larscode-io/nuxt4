@@ -8,6 +8,11 @@
         {
             "role": "president",
             "startDate": "28.11.1989",
+            "endDate": "28.11.1989"
+        },
+        {
+            "role": "president",
+            "startDate": "28.11.1989",
             "endDate": "31.12.1990"
         }
     ]

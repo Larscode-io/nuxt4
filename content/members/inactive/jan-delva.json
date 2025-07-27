@@ -46,6 +46,11 @@
   },
   "roles": [
     {
+      "role": "judge",
+      "startDate": "10.09.1984",
+      "endDate": "10.09.1984"
+    },
+    {
       "role": "president",
       "startDate": "10.09.1984",
       "endDate": "27.01.1993"
