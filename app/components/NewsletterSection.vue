@@ -179,7 +179,7 @@ function onSubmit() {
 }
 .newsletter-container::before {
   content: '';
-  background-image: url('/img/newsletter-background.jpg');
+  background-image: url('/img/newsletter-background.webp');
   filter: grayscale(100%);
   background-size: cover;
   background-position: center 60%;
