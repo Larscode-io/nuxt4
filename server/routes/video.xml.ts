@@ -2,7 +2,7 @@
 import { defineEventHandler, setResponseHeader } from 'h3'
 
 export default defineEventHandler(async (event) => {
-  const baseUrl = 'https://www.const-court.be/public/media'
+  const baseUrl = `https://${locale}.const-court.be/public/media`
   const today = new Date().toISOString().split('T')[0]
 
   // Determine locale from query or default to 'nl'

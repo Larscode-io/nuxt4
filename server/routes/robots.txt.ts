@@ -8,6 +8,7 @@ export default defineEventHandler((event) => {
   const host = url.host
 
   const sitemap = `Sitemap: https://${host}/sitemap.xml`
+  const videoSitemap = `Sitemap: https://${host}/video.xml`
 
   const subdomain = host.split('.')[0] // nl, fr, de, en, www, etc.
 
@@ -27,6 +28,7 @@ Allow: /public/${subdomain.charAt(0)}/
 User-agent: *
 ${disallowRules}
 ${sitemap}
+${videoSitemap}
 `.trim()
 
   setHeader(event, 'Content-Type', 'text/plain')
