@@ -24,12 +24,12 @@ export default defineEventHandler(async (event) => {
   const description = descriptions[locale]
 
   const videoFiles = [
-    `FILM1-${langCode}-DEF31032025-SUBTITLES-XX.mp4`,
-    `FILM1-${langCode}-DEF31032025-TRANSCRIPT-XX.mp4`,
-    `FILM2-${langCode}-DEF31032025-SUBTITLES-XX.mp4`,
-    `FILM2-${langCode}-DEF31032025-TRANSCRIPT-XX.mp4`,
-    `FILM3-${langCode}-DEF31032025-SUBTITLES-XX.mp4`,
-    `FILM3-${langCode}-DEF31032025-TRANSCRIPT-XX.mp4`
+    `FILM1-${langCode}-DEF31032025-SUBTI-XX.mp4`,
+    `FILM1-${langCode}-DEF31032025-TRANS-XX.mp4`,
+    `FILM2-${langCode}-DEF31032025-SUBTI-XX.mp4`,
+    `FILM2-${langCode}-DEF31032025-TRANS-XX.mp4`,
+    `FILM3-${langCode}-DEF31032025-SUBTI-XX.mp4`,
+    `FILM3-${langCode}-DEF31032025-TRANS-XX.mp4`
   ]
 
   // todo: loc moet verwijzen naar de pagina waar de video wordt afgespeeld, niet direct naar het bestand
