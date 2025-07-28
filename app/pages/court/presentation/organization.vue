@@ -2,7 +2,7 @@
 <!-- Idealiter is er voor de rechters een tijdspad (zoals in het Supreme Court van de VS) -->
 
 <script setup lang="ts">
-import img from '@assets/img/organisation-Y-0050.png'
+const img = '/img/Y-0050.jpg'
 import '@assets/css/content.css'
 import type { Member } from '@membermodels/members'
 import { onMounted, ref, computed, watch } from 'vue'
