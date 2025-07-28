@@ -32,12 +32,14 @@ export default defineEventHandler(async (event) => {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 ${videoFiles.map(file => `  <url>
-    <loc>${baseUrl}/${file}</loc>
+    <loc>${baseUrl}/video/${file.replace('.mp4', '')}</loc>
     <video:video>
       <video:thumbnail_loc>${baseUrl}/thumbnails/${file.replace('.mp4', '.jpg')}</video:thumbnail_loc>
       <video:title>${file}</video:title>
       <video:description>${description} (${file})</video:description>
       <video:content_loc>${baseUrl}/${file}</video:content_loc>
+      <!-- Optioneel, alleen als je een SWF-player gebruikt -->
+      <!-- <video:player_loc allow_embed="yes" autoplay="ap=1">${baseUrl}/player.swf?video=${file}</video:player_loc> -->
       <video:publication_date>${today}</video:publication_date>
     </video:video>
   </url>`).join('\n')}
