@@ -23,6 +23,7 @@ export default defineEventHandler((event) => {
     '/court/presentation/how-the-court-operates',
     '/court/presentation/publications-on-the-court',
     '/media/press-releases-concerning-the-judgments',
+    `/public/${locale.charAt(0)}`
   ]
 
   const today = new Date().toISOString().split('T')[0]
