@@ -1,15 +1,28 @@
-// server/routes/video-sitemap.nl.xml.ts
-import { defineEventHandler, setResponseHeader } from 'h3'
+import { defineEventHandler, setResponseHeader, getRequestHeader } from 'h3'
 
 export default defineEventHandler(async (event) => {
   const today = new Date().toISOString().split('T')[0]
 
-  // Determine locale from query or default to 'nl'
-  const locale = event.context.params?.locale || 'nl'
-  const baseUrl = `https://${locale}.const-court.be/public/media`
-  const langCode = ['nl', 'fr', 'de', 'en'].includes(locale) ? locale.toUpperCase() : 'NL'
+  // Extract subdomain from the Host header
+  const host = getRequestHeader(event, 'host') || ''
+  const subdomain = host.split('.')[0] // e.g., 'fr' from 'fr.const-court.be'
 
-  // Video files with dynamic language code
+  // Fallback locale if subdomain is not a valid one
+  const locale = ['nl', 'fr', 'de', 'en'].includes(subdomain) ? subdomain : 'nl'
+  const langCode = locale.toUpperCase()
+
+  const publicBase = `https://${locale}.const-court.be/public/media`
+  const pageBase = `https://${locale}.const-court.be/media/video`
+
+  const descriptions: Record<string, string> = {
+    nl: 'Video van het Grondwettelijk Hof',
+    fr: 'Vidéo de la Cour constitutionnelle',
+    de: 'Video des Verfassungsgerichtshofs',
+    en: 'Video of the Constitutional Court'
+  }
+
+  const description = descriptions[locale]
+
   const videoFiles = [
     `FILM1-${langCode}-DEF31032025-SUBTITLES-XX.mp4`,
     `FILM1-${langCode}-DEF31032025-TRANSCRIPT-XX.mp4`,
@@ -19,30 +32,22 @@ export default defineEventHandler(async (event) => {
     `FILM3-${langCode}-DEF31032025-TRANSCRIPT-XX.mp4`
   ]
 
-  // Descriptions per language
-  const descriptions: Record<string, string> = {
-    nl: 'Video van het Grondwettelijk Hof',
-    fr: 'Vidéo de la Cour constitutionnelle',
-    de: 'Video des Verfassungsgerichtshofs',
-    en: 'Video of the Constitutional Court'
-  }
-  const description = descriptions[locale] || descriptions['nl']
-
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-${videoFiles.map(file => `  <url>
-    <loc>${baseUrl}/video/${file.replace('.mp4', '')}</loc>
+${videoFiles.map(file => {
+    const slug = file.replace('.mp4', '')
+    return `  <url>
+    <loc>${pageBase}/${slug}</loc>
     <video:video>
-      <video:thumbnail_loc>${baseUrl}/thumbnails/${file.replace('.mp4', '.jpg')}</video:thumbnail_loc>
+      <video:thumbnail_loc>${publicBase}/thumbnails/${slug}.jpg</video:thumbnail_loc>
       <video:title>${file}</video:title>
       <video:description>${description} (${file})</video:description>
-      <video:content_loc>${baseUrl}/${file}</video:content_loc>
-      <!-- Optioneel, alleen als je een SWF-player gebruikt -->
-      <!-- <video:player_loc allow_embed="yes" autoplay="ap=1">${baseUrl}/player.swf?video=${file}</video:player_loc> -->
+      <video:content_loc>${publicBase}/${file}</video:content_loc>
       <video:publication_date>${today}</video:publication_date>
     </video:video>
-  </url>`).join('\n')}
+  </url>`
+  }).join('\n')}
 </urlset>`
 
   setResponseHeader(event, 'Content-Type', 'application/xml')
