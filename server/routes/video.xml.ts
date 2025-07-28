@@ -42,6 +42,10 @@ export default defineEventHandler(async (event) => {
   //       of door de video player te integreren in de pagina
   //       voor nu is dit een tijdelijke oplossing om de sitemap te genereren
   //       en de video bestanden te indexeren
+
+  // todo: thumbnail_loc is currently commented out, as we don't have thumbnails yet
+  // <video:thumbnail_loc>${publicBase}/thumbnails/${slug}.jpg</video:thumbnail_loc>
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
@@ -50,7 +54,6 @@ ${videoFiles.map(file => {
     return `  <url>
     <loc>${pageBase}/${slug}</loc>
     <video:video>
-      <video:thumbnail_loc>${publicBase}/thumbnails/${slug}.jpg</video:thumbnail_loc>
       <video:title>${file}</video:title>
       <video:description>${description} (${file})</video:description>
       <video:content_loc>${publicBase}/${locale === 'nl' ? 'n' : locale === 'fr' ? 'f' : locale === 'de' ? 'd' : 'e'}/${file}</video:content_loc>
