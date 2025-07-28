@@ -2,11 +2,11 @@
 import { defineEventHandler, setResponseHeader } from 'h3'
 
 export default defineEventHandler(async (event) => {
-  const baseUrl = `https://${locale}.const-court.be/public/media`
   const today = new Date().toISOString().split('T')[0]
 
   // Determine locale from query or default to 'nl'
   const locale = event.context.params?.locale || 'nl'
+  const baseUrl = `https://${locale}.const-court.be/public/media`
   const langCode = ['nl', 'fr', 'de', 'en'].includes(locale) ? locale.toUpperCase() : 'NL'
 
   // Video files with dynamic language code
