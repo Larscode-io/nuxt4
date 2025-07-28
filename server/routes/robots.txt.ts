@@ -1,21 +1,30 @@
 // server/routes/robots.txt.ts
 export default defineEventHandler((event) => {
-  const host = getRequestURL(event).host
-  const isStaging = host.includes('nuxt.const-court.be')
+  const url = getRequestURL(event)
+  const host = url.host
 
   const sitemap = `Sitemap: https://${host}/sitemap.xml`
 
-  const production = `
-User-agent: *
-Disallow: /public/
-${sitemap}
-  `.trim()
+  const subdomain = host.split('.')[0] // nl, fr, de, en, www, ...
 
-  const staging = `
+  let disallowRules = 'Disallow: /public/'
+
+  // Enkel toegang geven tot /public/{taal}/ als de subdomein een geldige taalcode is
+  const allowedLangs = ['nl', 'fr', 'de', 'en']
+  if (allowedLangs.includes(subdomain)) {
+    disallowRules = `
+Disallow: /public/
+Allow: /public/${subdomain}/
+`.trim()
+  }
+
+  const content = `
 User-agent: *
-Disallow: /
-  `.trim()
+${disallowRules}
+${sitemap}
+`.trim()
 
   setHeader(event, 'Content-Type', 'text/plain')
-  return isStaging ? staging : production
+  return content
 })
+
