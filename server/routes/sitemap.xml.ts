@@ -1,19 +1,16 @@
 export default defineEventHandler((event) => {
   const host = getRequestHeader(event, 'host') || ''
   const supportedLocales = ['nl', 'fr', 'en', 'de']
-
-  // Herken lokale omgeving
   const isLocal = host.includes('localhost') || host.includes('127.0.0.1')
 
   const domainPrefix = isLocal
-    ? 'nl' // kies een default voor lokale test
+    ? 'nl' // standaard locale bij lokale test
     : host.split('.')[0]
 
   const locale = supportedLocales.includes(domainPrefix) ? domainPrefix : 'nl'
   const baseUrl = isLocal
-    ? `http://${host}` // laat baseUrl in dev gewoon localhost:3003 zijn
-    : `https://${domainPrefix}.const-court.be`
-
+    ? `http://${host}`
+    : `https://${locale}.const-court.be`
 
   const pathList = [
     '/judgments',
@@ -36,16 +33,15 @@ export default defineEventHandler((event) => {
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${pathList.map(path => {
     const alternates = supportedLocales.map(lang => {
-      return `<xhtml:link rel="alternate" hreflang="${lang}" href="https://${lang}.const-court.be${path}" />`
-    }).join('\n    ')
+      return `    <xhtml:link rel="alternate" hreflang="${lang}" href="https://${lang}.const-court.be${path}" />`
+    }).join('\n')
 
-    return `
-  <url>
+    return `  <url>
     <loc>${baseUrl}${path}</loc>
-    ${alternates}
+${alternates}
     <lastmod>${today}</lastmod>
   </url>`
-  }).join('')}
+  }).join('\n')}
 </urlset>`
 
   setResponseHeader(event, 'Content-Type', 'application/xml')
