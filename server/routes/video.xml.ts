@@ -32,6 +32,16 @@ export default defineEventHandler(async (event) => {
     `FILM3-${langCode}-DEF31032025-TRANSCRIPT-XX.mp4`
   ]
 
+  // todo: loc moet verwijzen naar de pagina waar de video wordt afgespeeld, niet direct naar het bestand
+  //       dit kan later worden aangepast als we de video player hebben geïmplementeerd
+  //       nu is het een directe link naar het bestand, wat niet ideaal is voor SEO
+  //       de pagina zou ook metadata moeten bevatten zoals titel, beschrijving, etc.
+  //       voor nu gebruiken we de bestandsnaam als titel en beschrijving, maar dit
+  //       is niet optimaal voor SEO en gebruikerservaring
+  //       we kunnen dit later verbeteren door een aparte metadata structuur te gebruiken
+  //       of door de video player te integreren in de pagina
+  //       voor nu is dit een tijdelijke oplossing om de sitemap te genereren
+  //       en de video bestanden te indexeren
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
@@ -43,7 +53,7 @@ ${videoFiles.map(file => {
       <video:thumbnail_loc>${publicBase}/thumbnails/${slug}.jpg</video:thumbnail_loc>
       <video:title>${file}</video:title>
       <video:description>${description} (${file})</video:description>
-      <video:content_loc>${publicBase}/${file}</video:content_loc>
+      <video:content_loc>${publicBase}/${locale === 'nl' ? 'n' : locale === 'fr' ? 'f' : locale === 'de' ? 'd' : 'e'}/${file}</video:content_loc>
       <video:publication_date>${today}</video:publication_date>
     </video:video>
   </url>`
