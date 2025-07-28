@@ -14,7 +14,7 @@ export default defineEventHandler((event) => {
 
   const pathList = [
     '/judgments',
-    'media/video',
+    '/media/video',
     '/search/judgment',
     '/court/basic-text',
     '/judgments/pending-cases',
