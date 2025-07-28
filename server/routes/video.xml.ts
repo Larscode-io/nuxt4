@@ -56,7 +56,7 @@ ${videoFiles.map(file => {
     <video:video>
       <video:title>${file}</video:title>
       <video:description>${description} (${file})</video:description>
-      <video:content_loc>${publicBase}/${locale === 'nl' ? 'n' : locale === 'fr' ? 'f' : locale === 'de' ? 'd' : 'e'}/${file}</video:content_loc>
+      <video:content_loc>${publicBase}/${file}</video:content_loc>
       <video:publication_date>${today}</video:publication_date>
     </video:video>
   </url>`
