@@ -14,7 +14,7 @@ export default defineEventHandler((event) => {
   if (allowedLangs.includes(subdomain)) {
     disallowRules = `
 Disallow: /public/
-Allow: /public/${subdomain}/
+Allow: /public/${subdomain.charAt(0)}/
 `.trim()
   }
 
