@@ -10,6 +10,7 @@ export default defineEventHandler((event) => {
   // Sitemap: https://www.const-court.be/sitemap.xml
   const production = `
 User-agent: *
+Disallow: /public/
   `.trim()
 
   // Disallow: /
