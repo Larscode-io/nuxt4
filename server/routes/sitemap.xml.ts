@@ -14,16 +14,17 @@ export default defineEventHandler((event) => {
 
   const pathList = [
     '/judgments',
-    '/court/presentation/jurisdiction',
-    '/court/presentation/organization',
+    'media/video',
     '/search/judgment',
     '/court/basic-text',
-    '/court/presentation/history-of-the-court',
     '/judgments/pending-cases',
+    `/public/${locale.charAt(0)}`,
+    '/court/presentation/jurisdiction',
+    '/court/presentation/organization',
+    '/court/presentation/history-of-the-court',
     '/court/presentation/how-the-court-operates',
     '/court/presentation/publications-on-the-court',
-    '/media/press-releases-concerning-the-judgments',
-    `/public/${locale.charAt(0)}`
+    '/media/press-releases-concerning-the-judgments'
   ]
 
   const today = new Date().toISOString().split('T')[0]
