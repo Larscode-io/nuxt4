@@ -36,6 +36,8 @@ Disallow: /
 
     content = `
 User-agent: *
+Disallow: /search/
+Disallow: *?term=*
 Disallow: /public/
 Allow: /public/${subdomain.charAt(0)}/
 ${sitemap}
