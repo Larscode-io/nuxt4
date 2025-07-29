@@ -11,6 +11,7 @@ export default defineEventHandler((event) => {
     const isFallbackHost =
         host.startsWith('www.') ||
         host.startsWith('yyy.') ||
+        host.startsWith('staging.') ||
         host.startsWith('localhost') ||
         host.startsWith('127.0.0.1')
 
