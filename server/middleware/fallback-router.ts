@@ -8,11 +8,12 @@ export default defineEventHandler((event) => {
     const locale = localeMatch?.[1]
 
     const supported = ['nl', 'fr', 'de', 'en']
-    const isFallbackHost =
+    let isFallbackHost = false;
+    isFallbackHost =
         host.startsWith('www.') ||
         host.startsWith('staging.') ||
-        host.startsWith('localhost') ||
-        host.startsWith('127.0.0.1')
+        ((host.startsWith('localhost') || host.startsWith('127.0.0.1')) && url.pathname === '/lang')
+
 
     // i18n_redirected cookie bestaat én een geldige taal bevat:
     if (isFallbackHost && locale && supported.includes(locale) && url.pathname !== '/lang') {
