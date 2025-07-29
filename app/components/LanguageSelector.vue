@@ -59,7 +59,6 @@ function chooseLanguage(langCode: string) {
 
 <template>
   <div class="grid gap-6 text-center px-4">
-    {{  localeCookie }}
     <div
       v-for="lang in languages"
       :key="lang.code"
@@ -71,7 +70,7 @@ function chooseLanguage(langCode: string) {
         {{ lang.description }}
       </p>
       <button
-        class="px-4 py-2 bg-yellow-400 text-black rounded"
+        class="px-4 py-2 bg-[#FFD600] text-[#222] font-bold rounded shadow hover:bg-[#FFC300] transition-colors"
         @click="chooseLanguage(lang.code)"
       >
         {{ lang.buttonText }}
