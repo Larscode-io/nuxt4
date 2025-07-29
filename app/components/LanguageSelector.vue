@@ -15,8 +15,7 @@ const localeCookie = useCookie('i18n_redirected', {
   sameSite: 'lax',
   secure: true
 })
-
-const languages: Language[] = [
+const languagesRaw: Language[] = [
   {
     code: 'nl',
     name: 'Nederlands',
@@ -50,6 +49,13 @@ const languages: Language[] = [
     cookieText: 'Your language choice will be remembered using a cookie.'
   }
 ]
+const languages= languagesRaw.sort(() => Math.random() - 0.5)
+
+const chipsRaw = [
+  'Cour constitutionnel',
+  'Grondwettelijk Hof'
+]
+const chips = chipsRaw.sort(() => Math.random() - 0.5)
 
 function chooseLanguage(langCode: string) {
   localeCookie.value = langCode
@@ -59,7 +65,23 @@ function chooseLanguage(langCode: string) {
 
 <template>
   <v-container class="d-flex justify-center align-center min-height-screen">
+
     <v-row justify="center" class="w-100">
+      <v-col
+        cols="12"
+        md="10"
+        lg="8"
+        color="surface"
+      >
+        <v-img
+          src="/img/fed.svg"
+          width="64"
+          height="64"
+          aspect-ratio="1"
+          class="mx-auto"
+          alt="Grondwettelijk Hof"
+        />
+      </v-col>
       <v-col cols="12" md="10" lg="8">
         <v-card class="elevation-4 pa-8" color="surface">
           <!-- <v-card-title class="text-center text-h4 mb-6" style="color: var(--v-theme-primary)">
@@ -114,12 +136,14 @@ function chooseLanguage(langCode: string) {
 
           <div class="text-center">
             <v-chip
+              v-for="chip in chips"
+              :key="chip"
               color="skyBlue"
               variant="outlined"
               class="ma-1"
               small
             >
-              Constitutional Court of Belgium
+              {{ chip }}
             </v-chip>
           </div>
         </v-card>

@@ -2,9 +2,10 @@
 definePageMeta({
   layout: 'fallback'
 })
+const labels = [ 'Language Selection', 'Taalkeuze', 'Choix de langue', 'Sprachauswahl' ]
 
 useSeoMeta({
-  title: 'Taalkeuze',
+  title: labels.sort(() => Math.random() - 0.5).join(' | '),
   robots: 'noindex, nofollow'
 })
 </script>
