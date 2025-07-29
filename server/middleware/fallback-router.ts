@@ -13,16 +13,12 @@ export default defineEventHandler((event) => {
         host.startsWith('localhost') ||
         host.startsWith('127.0.0.1')
 
-    console.log('Locale:', locale)
-    console.log('Host:', host)
-    console.log('URL:', url.pathname)
-    console.log('Cookie:', cookie)
-    console.log('Supported locales:', supported)
-
+    // i18n_redirected cookie bestaat én een geldige taal bevat:
     if (isFallbackHost && locale && supported.includes(locale)) {
         return sendRedirect(event, `https://${locale}.const-court.be${url.pathname}`, 302)
     }
 
+    // Je op een fallback host zit en geen i18n_redirected
     if (isFallbackHost && url.pathname === '/') {
         return sendRedirect(event, '/lang', 302)
     }

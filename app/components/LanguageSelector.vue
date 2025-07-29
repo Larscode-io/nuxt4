@@ -8,7 +8,12 @@ interface Language {
   cookieText: string
 }
 
-const localeCookie = useCookie('i18n_redirected')
+const localeCookie = useCookie('i18n_redirected', {
+  path: '/',
+  maxAge: 60 * 60 * 24 * 365, // 1 jaar
+  sameSite: 'lax',
+  secure: true
+})
 
 const languages: Language[] = [
   {
