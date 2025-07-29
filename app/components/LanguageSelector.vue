@@ -52,7 +52,7 @@ const languagesRaw: Language[] = [
 const languages= languagesRaw.sort(() => Math.random() - 0.5)
 
 const chipsRaw = [
-  'Cour constitutionnel',
+  'Cour constitutionnelle',
   'Grondwettelijk Hof'
 ]
 const chips = chipsRaw.sort(() => Math.random() - 0.5)
