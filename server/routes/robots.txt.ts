@@ -44,7 +44,10 @@ ${videoSitemap}
   }
 
   setHeader(event, 'Content-Type', 'text/plain')
+  setHeader(event, 'Cache-Control', 'public, max-age=3600') // cache 1u
+
   return content
+
 })
 
 
