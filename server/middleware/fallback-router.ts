@@ -7,16 +7,24 @@ export default defineEventHandler((event) => {
     const locale = localeMatch?.[1]
 
     const supported = ['nl', 'fr', 'de', 'en']
-    const isFallbackHost = host.startsWith('www.') || host.startsWith('yyy.')
+    const isFallbackHost =
+        host.startsWith('www.') ||
+        host.startsWith('yyy.') ||
+        host.startsWith('localhost') ||
+        host.startsWith('127.0.0.1')
 
-    if (isFallbackHost && supported.includes(locale)) {
+    console.log('Locale:', locale)
+    console.log('Host:', host)
+    console.log('URL:', url.pathname)
+    console.log('Cookie:', cookie)
+    console.log('Supported locales:', supported)
+
+    if (isFallbackHost && locale && supported.includes(locale)) {
         return sendRedirect(event, `https://${locale}.const-court.be${url.pathname}`, 302)
     }
 
-    // Als user geen cookie heeft en nog op '/' zit, redirect naar /lang
     if (isFallbackHost && url.pathname === '/') {
         return sendRedirect(event, '/lang', 302)
     }
 
-    // Anders: niks doen, pagina wordt getoond
 })
