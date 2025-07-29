@@ -14,7 +14,7 @@ export default defineEventHandler((event) => {
         host.startsWith('127.0.0.1')
 
     // i18n_redirected cookie bestaat én een geldige taal bevat:
-    if (isFallbackHost && locale && supported.includes(locale)) {
+    if (isFallbackHost && locale && supported.includes(locale) && url.pathname !== '/lang') {
         return sendRedirect(event, `https://${locale}.const-court.be${url.pathname}`, 302)
     }
 
