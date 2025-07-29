@@ -336,9 +336,18 @@ function toggleMenu() {
   hoveredMenu.value = hoveredMenu.value === null ? 0 : null
 }
 
+const redirectedCookie = useCookie('i18n_redirected', {
+  path: '/',
+  maxAge: 60 * 60 * 24 * 365, // 1 year
+  sameSite: 'lax',
+  secure: true
+})
+
 function changeLanguage(lang: string) {
   if (lang !== locale.value) {
     try {
+      redirectedCookie.value = lang
+
       const path = switchLocalePath(lang)
       if (path) {
         navigateTo(path, { external: true })
