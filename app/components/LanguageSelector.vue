@@ -10,6 +10,7 @@ interface Language {
 
 const localeCookie = useCookie('i18n_redirected', {
   path: '/',
+  domain: '.const-court.be', // ✅ ensures all subdomains can read it
   maxAge: 60 * 60 * 24 * 365, // 1 jaar
   sameSite: 'lax',
   secure: true

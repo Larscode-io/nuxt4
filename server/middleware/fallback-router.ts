@@ -1,3 +1,4 @@
+// server/middleware/fallback-router.ts
 export default defineEventHandler((event) => {
     const host = getRequestHeader(event, 'host') || ''
     const cookie = getRequestHeader(event, 'cookie') || ''
