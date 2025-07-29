@@ -70,7 +70,7 @@ function chooseLanguage(langCode: string) {
         {{ lang.description }}
       </p>
       <button
-        class="px-4 py-2 bg-[#FFD600] text-[#222] font-bold rounded shadow hover:bg-[#FFC300] transition-colors"
+        class="px-4 py-2 bg-yellow-400 text-black rounded"
         @click="chooseLanguage(lang.code)"
       >
         {{ lang.buttonText }}
