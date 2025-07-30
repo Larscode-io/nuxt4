@@ -5,7 +5,6 @@ import { defineEventHandler, setResponseHeader, getRequestHeader } from 'h3'
 export default defineEventHandler(async (event) => {
   const today = new Date().toISOString().split('T')[0]
 
-  // Bepaal de subdomein/locale uit de hostheader
   const host = getRequestHeader(event, 'host') || ''
   const subdomain = host.split('.')[0]
   const locale = ['nl', 'fr', 'de', 'en'].includes(subdomain) ? subdomain : 'nl'
@@ -13,24 +12,6 @@ export default defineEventHandler(async (event) => {
 
   const publicBase = `https://${locale}.const-court.be/public/media`
   const pageBase = `https://${locale}.const-court.be/video`
-
-  const descriptions: Record<string, string> = {
-    nl: 'Video van het Grondwettelijk Hof',
-    fr: 'Vidéo de la Cour constitutionnelle',
-    de: 'Video des Verfassungsgerichtshofs',
-    en: 'Video of the Constitutional Court'
-  }
-
-  const description = descriptions[locale]
-
-  const videoFiles = [
-    `FILM1-${langCode}-DEF31032025-SUBTI-XX.mp4`,
-    `FILM1-${langCode}-DEF31032025-TRANS-XX.mp4`,
-    `FILM2-${langCode}-DEF31032025-SUBTI-XX.mp4`,
-    `FILM2-${langCode}-DEF31032025-TRANS-XX.mp4`,
-    `FILM3-${langCode}-DEF31032025-SUBTI-XX.mp4`,
-    `FILM3-${langCode}-DEF31032025-TRANS-XX.mp4`
-  ]
 
   const videoMeta = {
     film1: {
@@ -46,7 +27,7 @@ export default defineEventHandler(async (event) => {
         de: 'Dieses Video erläutert die Rolle und Zuständigkeiten des Verfassungsgerichtshofs.',
         en: 'This video explains the role and powers of the Constitutional Court.'
       },
-      duration: 'PT2M45S'
+      durationSeconds: 329
     },
     film2: {
       title: {
@@ -61,7 +42,7 @@ export default defineEventHandler(async (event) => {
         de: 'Ein Überblick, wie ein Verfahren vor dem Gerichtshof eingeleitet wird.',
         en: 'Learn how a case is brought before the Constitutional Court.'
       },
-      duration: 'PT2M30S'
+      durationSeconds: 334
     },
     film3: {
       title: {
@@ -76,9 +57,18 @@ export default defineEventHandler(async (event) => {
         de: 'Ein Überblick über die praktische Arbeitsweise des Gerichts.',
         en: 'An overview of the practical operation of the Court.'
       },
-      duration: 'PT2M20S'
+      durationSeconds: 348
     }
   }
+
+  const videoFiles = [
+    `FILM1-${langCode}-DEF31032025-SUBTI-XX.mp4`,
+    `FILM1-${langCode}-DEF31032025-TRANS-XX.mp4`,
+    `FILM2-${langCode}-DEF31032025-SUBTI-XX.mp4`,
+    `FILM2-${langCode}-DEF31032025-TRANS-XX.mp4`,
+    `FILM3-${langCode}-DEF31032025-SUBTI-XX.mp4`,
+    `FILM3-${langCode}-DEF31032025-TRANS-XX.mp4`
+  ]
 
   const lines = [
     '<?xml version="1.0" encoding="UTF-8"?>',
@@ -100,7 +90,7 @@ export default defineEventHandler(async (event) => {
     lines.push(`      <video:content_loc>${publicBase}/${file}</video:content_loc>`)
     lines.push(`      <video:thumbnail_loc>${publicBase}/thumbnails/${base.toUpperCase()}.jpg</video:thumbnail_loc>`)
     lines.push(`      <video:publication_date>${today}</video:publication_date>`)
-    lines.push(`      <video:duration>${meta.duration}</video:duration>`)
+    lines.push(`      <video:duration>${meta.durationSeconds}</video:duration>`)
     lines.push('    </video:video>')
     lines.push('  </url>')
   }
@@ -108,8 +98,6 @@ export default defineEventHandler(async (event) => {
   lines.push('</urlset>')
 
   const xml = lines.join('\n')
-
-
   setResponseHeader(event, 'Content-Type', 'application/xml')
   return xml
 })
