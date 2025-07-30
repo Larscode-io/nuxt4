@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
   const locale = ['nl', 'fr', 'de', 'en'].includes(subdomain) ? subdomain : 'nl'
   const langCode = locale.toUpperCase()
 
-  const publicBase = `https://${locale}.const-court.be/public/media`
+  const publicBase = `https://${locale}.const-court.be/public/media${locale}`
   const pageBase = `https://${locale}.const-court.be/video`
 
   const videoMeta = {

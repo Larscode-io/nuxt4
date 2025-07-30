@@ -48,8 +48,8 @@ const version = computed(() => isTrans.value ? 'TRANS' : 'SUBTI')
 const langCode = computed(() => locale.value.toUpperCase())
 const filename = computed(() => `${baseSlug.value.toUpperCase()}-${langCode.value}-DEF31032025-${version.value}-XX.mp4`)
 
-const videoSrc = computed(() => `https://${locale.value}.const-court.be/public/media/${filename.value}`)
-const thumbnailUrl = computed(() => `https://${locale.value}.const-court.be/public/media/thumbnails/${baseSlug.value.toUpperCase()}.jpg`)
+const videoSrc = computed(() => `https://${locale.value}.const-court.be/public/media/${locale.value}/${filename.value}`)
+const thumbnailUrl = computed(() => `https://${locale.value}.const-court.be/public/media/${locale.value}/thumbnails/${baseSlug.value.toUpperCase()}.jpg`)
 const videoKey = ref(0)
 
 useHead({
