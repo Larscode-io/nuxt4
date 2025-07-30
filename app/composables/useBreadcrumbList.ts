@@ -11,14 +11,31 @@ export function useBreadcrumbList() {
 
     const breadcrumbList = computed(() => {
         const langPrefix = `/${locale.value}`
-        let pathWithoutLocale = route.fullPath.startsWith(langPrefix)
-            ? route.fullPath.slice(langPrefix.length)
-            : route.fullPath
+        let pathWithoutLocale = route.fullPath
 
+        // Fallback: strip taalpad alleen als het echt in de URL zit (voor backwards compat.)
+        if (/^\/(nl|fr|de|en)(\/|$)/.test(pathWithoutLocale)) {
+            pathWithoutLocale = pathWithoutLocale.replace(/^\/(nl|fr|de|en)(?=\/|$)/, '')
+        }
+
+        // Verwijder trailing slash
         pathWithoutLocale = pathWithoutLocale.replace(/\/$/, '') || '/'
 
         const entries = baseBreadcrumbMap[pathWithoutLocale]
-        if (!entries) return null
+        if (!entries) {
+            return {
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                    {
+                        '@type': 'ListItem',
+                        position: 1,
+                        name: 'Home',
+                        item: baseUrl + '/'
+                    }
+                ]
+            }
+        }
 
         return {
             '@context': 'https://schema.org',
