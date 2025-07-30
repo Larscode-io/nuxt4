@@ -247,7 +247,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
             cols="12"
             md="3"
           >
-            <DatePicker />
+            <!-- <DatePicker /> -->
           </v-col>
           <!-- Agenda Cards Column with increased offset -->
           <v-col

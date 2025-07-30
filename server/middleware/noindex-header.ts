@@ -1,3 +1,4 @@
+// todo: test
 // Samenvatting: Gebruik de X-Robots-Tag header (noindex, nofollow) als extra beveiliging tegen indexering door zoekmachines.
 // Dit werkt per pagina, ook als robots.txt te laat is, en wordt direct door bots gelezen uit de HTTP-respons.
 

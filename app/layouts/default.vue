@@ -29,8 +29,8 @@ const description = computed(() => t('general.banner'))
 const ogTitle = computed(() => t('general.message.consts-court'))
 
 // we use domain to get the base URL dynamically, not from config
-const { host } = useRequestURL()
-const baseUrl = `https://${host}`
+const baseUrl = useBaseUrl()
+
 const ogImage = `${baseUrl}/img/ogImageFront.jpg`
 
 const ogUrl = `${baseUrl}${route.fullPath}`.replace(/\/+$/, '')
@@ -69,22 +69,7 @@ const alternateNames = Object.entries(namesByLocale)
 
 const i18nHead = useLocaleHead()
 
-const breadcrumbList = computed(() => {
-  const pathWithoutLocale = route.fullPath.replace(/^\/(nl|fr|de|en)/, '')
-  const entries = baseBreadcrumbMap[pathWithoutLocale]
-  if (!entries) return null
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: entries.map((entry, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: entry.nameByLang[locale.value],
-      item: `${baseUrl}/${locale.value}/${[...entries.slice(0, index + 1).map((e) => e.key)].filter(Boolean).join('/')}`
-    }))
-  }
-})
+const breadcrumbList = useBreadcrumbList()
 
 watchEffect(() => {
   if (breadcrumbList.value) {
