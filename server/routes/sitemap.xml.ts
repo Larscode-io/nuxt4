@@ -12,9 +12,12 @@ export default defineEventHandler((event) => {
     ? `http://${host}`
     : `https://${locale}.const-court.be`
 
+  const videoSlugs = ['film1', 'film1-trans', 'film2', 'film2-trans', 'film3', 'film3-trans']
+
+  const videoPaths = videoSlugs.map(slug => `/video/${slug}`)
+
   const pathList = [
     '/judgments',
-    '/media/video',
     '/search/judgment',
     '/court/basic-text',
     '/judgments/pending-cases',
@@ -24,7 +27,8 @@ export default defineEventHandler((event) => {
     '/court/presentation/history-of-the-court',
     '/court/presentation/how-the-court-operates',
     '/court/presentation/publications-on-the-court',
-    '/media/press-releases-concerning-the-judgments'
+    '/media/press-releases-concerning-the-judgments',
+    ...videoPaths
   ]
 
   const today = new Date().toISOString().split('T')[0]
