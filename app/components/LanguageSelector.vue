@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useLanguage } from '@/composables/useLanguage'
+
 interface Language {
   code: string
   name: string
@@ -8,6 +10,7 @@ interface Language {
   cookieText: string
 }
 
+const { t } = useLanguage()
 const localeCookie = useCookie('i18n_redirected', {
   path: '/',
   domain: '.const-court.be',
@@ -15,47 +18,41 @@ const localeCookie = useCookie('i18n_redirected', {
   sameSite: 'lax',
   secure: true
 })
-const languagesRaw: Language[] = [
+
+const languages: Language[] = [
   {
     code: 'nl',
-    name: 'Nederlands',
-    title: 'Gelieve uw voorkeurstaal te kiezen',
-    description: 'Na uw keuze wordt u automatisch doorgestuurd naar de juiste versie van onze website.',
-    buttonText: 'Nederlands',
-    cookieText: 'Uw taalkeuze wordt onthouden via een cookie.'
+    name: t('general.language.dutch'),
+    title: t('entry.select'),
+    description: t('entry.subtitle'),
+    buttonText: t('general.language.dutch'),
+    cookieText: t('entry.cookie-hint')
   },
   {
     code: 'fr',
-    name: 'Français',
-    title: 'Veuillez choisir votre langue préférée',
-    description: 'Après votre choix, vous serez automatiquement redirigé vers la version appropriée de notre site.',
-    buttonText: 'Français',
-    cookieText: 'Votre choix linguistique sera mémorisé à l\'aide d\'un cookie.'
+    name: t('general.language.french'),
+    title: t('entry.select'),
+    description: t('entry.subtitle'),
+    buttonText: t('general.language.french'),
+    cookieText: t('entry.cookie-hint')
   },
   {
     code: 'de',
-    name: 'Deutsch',
-    title: 'Bitte wählen Sie Ihre bevorzugte Sprache',
-    description: 'Nach Ihrer Auswahl werden Sie automatisch zur passenden Version unserer Website weitergeleitet.',
-    buttonText: 'Deutsch',
-    cookieText: 'Ihre Sprachauswahl wird in einem Cookie gespeichert.'
+    name: t('general.language.german'),
+    title: t('entry.select'),
+    description: t('entry.subtitle'),
+    buttonText: t('general.language.german'),
+    cookieText: t('entry.cookie-hint')
   },
   {
     code: 'en',
-    name: 'English',
-    title: 'Please select your preferred language',
-    description: 'After your choice, you will be automatically redirected to the appropriate version of our website.',
-    buttonText: 'English',
-    cookieText: 'Your language choice will be remembered using a cookie.'
+    name: t('general.language.english'),
+    title: t('entry.select'),
+    description: t('entry.subtitle'),
+    buttonText: t('general.language.english'),
+    cookieText: t('entry.cookie-hint')
   }
 ]
-const languages= languagesRaw.sort(() => Math.random() - 0.5)
-
-const chipsRaw = [
-  'Cour constitutionnelle',
-  'Grondwettelijk Hof'
-]
-const chips = chipsRaw.sort(() => Math.random() - 0.5)
 
 function chooseLanguage(langCode: string) {
   localeCookie.value = langCode
@@ -65,28 +62,12 @@ function chooseLanguage(langCode: string) {
 
 <template>
   <v-container class="d-flex justify-center align-center min-height-screen">
-
     <v-row justify="center" class="w-100">
-      <v-col
-        cols="12"
-        md="10"
-        lg="8"
-        color="surface"
-      >
-        <v-img
-          src="/img/fed.svg"
-          width="64"
-          height="64"
-          aspect-ratio="1"
-          class="mx-auto"
-          alt="Grondwettelijk Hof"
-        />
-      </v-col>
       <v-col cols="12" md="10" lg="8">
         <v-card class="elevation-4 pa-8" color="surface">
-          <!-- <v-card-title class="text-center text-h4 mb-6" style="color: var(--v-theme-primary)">
-            Language Selection / Taalkeuze / Choix de langue / Sprachauswahl
-          </v-card-title> -->
+          <v-card-title class="text-center text-h4 mb-6" style="color: var(--v-theme-primary)">
+            {{ t('entry.select') }}
+          </v-card-title>
 
           <v-row>
             <v-col
@@ -136,14 +117,12 @@ function chooseLanguage(langCode: string) {
 
           <div class="text-center">
             <v-chip
-              v-for="chip in chips"
-              :key="chip"
               color="skyBlue"
               variant="outlined"
               class="ma-1"
               small
             >
-              {{ chip }}
+              {{ t('general.banner') }}
             </v-chip>
           </div>
         </v-card>
@@ -169,6 +148,6 @@ function chooseLanguage(langCode: string) {
 }
 
 .v-btn {
-  color: var(--v-theme-textOnRajah)
+  color: var(--v-theme-textOnRajah) !important;
 }
 </style>
