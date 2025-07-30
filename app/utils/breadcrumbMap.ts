@@ -1,21 +1,23 @@
 // app/utils/breadcrumbMap.ts
 
-type LangMap = Record<string, string>
-type Crumb = { key: string; nameByLang: LangMap }
+type Crumb = {
+  key: string;
+  translationKey: string;
+}
 
 const home: Crumb = {
   key: '',
-  nameByLang: { nl: 'Home', fr: 'Accueil', de: 'Startseite', en: 'Home' }
+  translationKey: 'menu.home'
 }
 
 const court: Crumb = {
   key: 'court',
-  nameByLang: { nl: 'Het Hof', fr: 'La Cour', de: 'Das Gericht', en: 'The Court' }
+  translationKey: 'menu.court.title'
 }
 
 const judgments: Crumb = {
   key: 'judgments',
-  nameByLang: { nl: 'Arresten', fr: 'Arrêts', de: 'Urteile', en: 'Judgments' }
+  translationKey: 'general.message.judgment'
 }
 
 const make = (...crumbs: Crumb[]) => crumbs
@@ -26,83 +28,67 @@ export const baseBreadcrumbMap: Record<string, Crumb[]> = {
   '/court/presentation/jurisdiction': make(
     home,
     court,
-    {
-      key: 'jurisdiction',
-      nameByLang: { nl: 'Bevoegdheden', fr: 'Compétences', de: 'Zuständigkeit', en: 'Jurisdiction' }
-    }
+    { key: 'jurisdiction', translationKey: 'court.jurisdiction.title' }
   ),
 
   '/court/presentation/organization': make(
     home,
     court,
-    {
-      key: 'organization',
-      nameByLang: { nl: 'Organisatie', fr: 'Organisation', de: 'Organisation', en: 'Organization' }
-    }
+    { key: 'organization', translationKey: 'court.organization.title' }
   ),
 
   '/search/judgment': make(
     home,
-    {
-      key: 'search',
-      nameByLang: { nl: 'Zoeken', fr: 'Recherche', de: 'Suche', en: 'Search' }
-    }
+    { key: 'search', translationKey: 'general.message.search-label' }
   ),
 
   '/court/basic-text': make(
     home,
     court,
-    {
-      key: 'basic-text',
-      nameByLang: { nl: 'Grondtekst', fr: 'Texte fondamental', de: 'Grundtext', en: 'Basic Text' }
-    }
+    { key: 'basic-text', translationKey: 'basic-text.constitution.title' }
   ),
 
   '/court/presentation/history-of-the-court': make(
     home,
     court,
-    {
-      key: 'history-of-the-court',
-      nameByLang: { nl: 'Historiek', fr: 'Historique', de: 'Geschichte', en: 'History' }
-    }
+    { key: 'history-of-the-court', translationKey: 'court.history-court.title' }
   ),
 
   '/judgments/pending-cases': make(
     home,
     judgments,
-    {
-      key: 'pending-cases',
-      nameByLang: { nl: 'Hangende zaken', fr: 'Affaires en cours', de: 'Laufende Verfahren', en: 'Pending Cases' }
-    }
+    { key: 'pending-cases', translationKey: 'general.message.pending-case' }
   ),
 
   '/court/presentation/how-the-court-operates': make(
     home,
     court,
-    {
-      key: 'how-the-court-operates',
-      nameByLang: { nl: 'Werking', fr: 'Fonctionnement', de: 'Arbeitsweise', en: 'Operation' }
-    }
+    { key: 'how-the-court-operates', translationKey: 'court.how-court-operates.title' }
   ),
 
   '/court/presentation/publications-on-the-court': make(
     home,
     court,
-    {
-      key: 'publications-on-the-court',
-      nameByLang: { nl: 'Publicaties', fr: 'Publications', de: 'Veröffentlichungen', en: 'Publications' }
-    }
+    { key: 'publications-on-the-court', translationKey: 'general.message.publication' }
   ),
 
   '/media/press-releases-concerning-the-judgments': make(
     home,
-    {
-      key: 'media',
-      nameByLang: { nl: 'Media', fr: 'Médias', de: 'Medien', en: 'Media' }
-    },
+    { key: 'media', translationKey: 'contact.media' },
     {
       key: 'press-releases-concerning-the-judgments',
-      nameByLang: { nl: 'Persberichten', fr: 'Communiqués relatifs aux arrêts', de: 'Pressemitteilungen', en: 'Press Releases' }
+      translationKey: 'general.message.press-releases-about-judgments'
     }
   )
+}
+
+// Helper function to get translated breadcrumbs
+export const getTranslatedBreadcrumbs = (path: string, t: Function): Array<{ key: string, name: string }> => {
+  const crumbs = baseBreadcrumbMap[path] || []
+  const translatedCrumbs = crumbs.map(crumb => ({
+    key: crumb.key,
+    name: t(crumb.translationKey)
+  }))
+  console.log(translatedCrumbs)
+  return translatedCrumbs
 }

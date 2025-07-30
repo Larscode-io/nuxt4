@@ -6,7 +6,7 @@ import { useI18n } from 'vue-i18n'
 
 export function useBreadcrumbList() {
     const route = useRoute()
-    const { locale } = useI18n()
+    const { locale, t } = useI18n()
     const baseUrl = useBaseUrl()
 
     const breadcrumbList = computed(() => {
@@ -30,7 +30,7 @@ export function useBreadcrumbList() {
                     {
                         '@type': 'ListItem',
                         position: 1,
-                        name: 'Home',
+                        name: t('menu.home'),
                         item: baseUrl + '/'
                     }
                 ]
@@ -43,7 +43,7 @@ export function useBreadcrumbList() {
             itemListElement: entries.map((entry, index) => ({
                 '@type': 'ListItem',
                 position: index + 1,
-                name: entry.nameByLang[locale.value],
+                name: t(entry.translationKey),
                 item:
                     index === 0 && entry.key === ''
                         ? `${baseUrl}/`
