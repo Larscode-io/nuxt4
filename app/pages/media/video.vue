@@ -1,4 +1,75 @@
+ <!-- app/pages/media/video.vue -->
 <!-- Content based Page -->
+
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+import { useAsyncData } from '#app'
+import { ContentKeys } from '~/core/constants'
+import img from '/img/banner-video.png'
+import ErrorCard from '~/components/ErrorCard.vue'
+
+const { t, locale, langCollection } = useLanguage()
+
+const contentPath = ref(`${ContentKeys.mediaVideo}`)
+const pad = computed(() => `/${locale.value}/${contentPath.value}`)
+
+const { data: page, pending, error } = useAsyncData(
+  `content-${locale.value}-${contentPath.value}`,
+  async () => {
+    try {
+      return await queryCollection(langCollection[locale.value]).path(pad.value).first()
+    } catch (err) {
+      console.error('Error fetching page content:', err)
+      return null
+    }
+  }
+)
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify([
+        {
+          '@context': 'https://schema.org',
+          '@type': 'VideoObject',
+          'name': 'Rol en bevoegdheid van het Grondwettelijk Hof',
+          'description': 'In deze video krijgt u inzicht in de rol en bevoegdheden van het Grondwettelijk Hof.',
+          'thumbnailUrl': `https://${locale.value}.const-court.be/public/thumbnails/FILM1.jpg`,
+          'uploadDate': '2025-03-31',
+          'contentUrl': `https://${locale.value}.const-court.be/public/media/FILM1-${locale.value.toUpperCase()}-DEF31032025-SUBTI-XX.mp4`,
+          'embedUrl': `https://${locale.value}.const-court.be/media/video`,
+          'duration': 'PT2M45S'
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'VideoObject',
+          'name': 'Inleiding van een zaak bij het Grondwettelijk Hof',
+          'description': 'U krijgt inzicht in hoe een zaak wordt gestart bij het Hof.',
+          'thumbnailUrl': `https://${locale.value}.const-court.be/public/thumbnails/FILM2.jpg`,
+          'uploadDate': '2025-03-31',
+          'contentUrl': `https://${locale.value}.const-court.be/public/media/FILM2-${locale.value.toUpperCase()}-DEF31032025-SUBTI-XX.mp4`,
+          'embedUrl': `https://${locale.value}.const-court.be/media/video`,
+          'duration': 'PT2M30S'
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'VideoObject',
+          'name': 'Werking van het Grondwettelijk Hof',
+          'description': 'Een overzicht van de praktische werking van het Hof.',
+          'thumbnailUrl': `https://${locale.value}.const-court.be/public/thumbnails/FILM3.jpg`,
+          'uploadDate': '2025-03-31',
+          'contentUrl': `https://${locale.value}.const-court.be/public/media/FILM3-${locale.value.toUpperCase()}-DEF31032025-SUBTI-XX.mp4`,
+          'embedUrl': `https://${locale.value}.const-court.be/media/video`,
+          'duration': 'PT2M20S'
+        }
+      ])
+    }
+  ]
+})
+
+</script>
+
 <template>
   <BannerImage
     v-if="page"
@@ -46,31 +117,6 @@
     </v-col>
   </v-row>
 </template>
-
-<script setup lang="ts">
-import { ref, computed } from 'vue'
-import { useAsyncData } from '#app'
-import { ContentKeys } from '~/core/constants'
-import img from '/img/banner-video.png'
-import ErrorCard from '~/components/ErrorCard.vue'
-
-const { t, locale, langCollection } = useLanguage()
-
-const contentPath = ref(`${ContentKeys.mediaVideo}`)
-const pad = computed(() => `/${locale.value}/${contentPath.value}`)
-
-const { data: page, pending, error } = useAsyncData(
-  `content-${locale.value}-${contentPath.value}`,
-  async () => {
-    try {
-      return await queryCollection(langCollection[locale.value]).path(pad.value).first()
-    } catch (err) {
-      console.error('Error fetching page content:', err)
-      return null
-    }
-  }
-)
-</script>
 
 <style lang="scss" scoped>
 .container {

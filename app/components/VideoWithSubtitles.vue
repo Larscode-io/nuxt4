@@ -1,3 +1,4 @@
+<!-- app/components/VideoWithSubtitles.vue -->
 <template>
   <div class="d-flex flex-column align-center justify-center w-100 overflow-hidden">
     <video
@@ -26,6 +27,7 @@ const props = defineProps({
 const accessible = ref(false)
 const videoKey = ref(0) // Force reload when source changes
 
+// todo: translation to json language files
 const translations = {
   en: 'Accessible version (hearing impaired)',
   fr: 'Version accessible (malentendants)',
@@ -35,14 +37,15 @@ const translations = {
 const { t, locale } = useLanguage()
 
 const accessibleLabel = computed(() => translations[locale.value] || translations.en)
+const lang_upper = locale.value.toUpperCase()
+const videoLabel = 'DEF31032025'
 const videoFilename = computed(() => {
   const version = accessible.value ? 'TRANS' : 'SUBTI'
-  const label = 'DEF31032025'
-  return `${props.videoId}-${locale.value.toUpperCase()}-${label}-${version}-XX.mp4`
+  return `${props.videoId}-${lang_upper}-${videoLabel}-${version}-XX.mp4`
 })
 
 const videoSrc = computed(() => {
-  return `https://www.const-court.be/public/media/${videoFilename.value}`
+  return `https://${lang_upper}.const-court.be/public/media/${videoFilename.value}`
 })
 
 // Watchers
