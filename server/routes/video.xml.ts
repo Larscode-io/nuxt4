@@ -80,30 +80,35 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-${videoFiles.map((file) => {
+  const lines = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+    '        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">'
+  ]
+
+  for (const file of videoFiles) {
     const isTrans = file.includes('TRANS')
     const base = file.match(/FILM[123]/)?.[0].toLowerCase() || 'film1'
     const slug = isTrans ? `${base}-trans` : base
-
     const meta = videoMeta[base]
 
-    return `  <url>
-  <loc>${pageBase}/${slug}</loc>
-  <video:video>
-    <video:title>${meta.title[locale]}</video:title>
-    <video:description>${meta.description[locale]}</video:description>
-    <video:content_loc>${publicBase}/${file}</video:content_loc>
-    <video:thumbnail_loc>${publicBase}/thumbnails/${base.toUpperCase()}.jpg</video:thumbnail_loc>
-    <video:publication_date>${today}</video:publication_date>
-    <video:duration>${meta.duration}</video:duration>
-  </video:video>
-</url>`
+    lines.push('  <url>')
+    lines.push(`    <loc>${pageBase}/${slug}</loc>`)
+    lines.push('    <video:video>')
+    lines.push(`      <video:title>${meta.title[locale]}</video:title>`)
+    lines.push(`      <video:description>${meta.description[locale]}</video:description>`)
+    lines.push(`      <video:content_loc>${publicBase}/${file}</video:content_loc>`)
+    lines.push(`      <video:thumbnail_loc>${publicBase}/thumbnails/${base.toUpperCase()}.jpg</video:thumbnail_loc>`)
+    lines.push(`      <video:publication_date>${today}</video:publication_date>`)
+    lines.push(`      <video:duration>${meta.duration}</video:duration>`)
+    lines.push('    </video:video>')
+    lines.push('  </url>')
+  }
 
-  }).join('\n')}
-</urlset>`
+  lines.push('</urlset>')
+
+  const xml = lines.join('\n')
+
 
   setResponseHeader(event, 'Content-Type', 'application/xml')
   return xml
