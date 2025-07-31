@@ -1,5 +1,6 @@
 // server/api/video.xml.ts
 // view-source:http://localhost:3003/video.xml
+// curl -H "Accept: application/xml" http://localhost:3003/video.xml
 
 export default defineEventHandler((event) => {
   const host = getRequestHeader(event, 'host') || ''
@@ -102,5 +103,7 @@ ${videoFiles.map(file => {
     ].join('\n')
   }).join('\n')}
 </urlset>`
+
+  setResponseHeader(event, 'Content-Type', 'application/xml')
   return xml
 })
