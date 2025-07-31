@@ -45,7 +45,7 @@ const videoFilename = computed(() => {
 })
 
 const videoSrc = computed(() => {
-  return `https://${lang_upper}.const-court.be/public/media/${videoFilename.value}`
+  return `https://${lang_upper}.const-court.be/public/media/${locale.value}/${videoFilename.value}`
 })
 
 // Watchers
