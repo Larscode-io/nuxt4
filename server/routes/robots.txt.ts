@@ -38,8 +38,8 @@ Disallow: /
 User-agent: *
 Disallow: /search/
 Disallow: *?term=*
-Allow: /public/${subdomain.charAt(0)}/
 Disallow: /public/
+Allow: /public/${subdomain.charAt(0)}/
 ${sitemap}
 ${videoSitemap}
 `.trim()
