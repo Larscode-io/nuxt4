@@ -1,3 +1,6 @@
+// server/routes/video.xml.ts
+// view-source:http://localhost:3003/sitemap.xml
+
 export default defineEventHandler((event) => {
   const host = getRequestHeader(event, 'host') || ''
   const supportedLocales = ['nl', 'fr', 'en', 'de']

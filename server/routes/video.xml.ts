@@ -1,4 +1,5 @@
 // server/api/video.xml.ts
+// view-source:http://localhost:3003/video.xml
 
 export default defineEventHandler((event) => {
   const host = getRequestHeader(event, 'host') || ''
@@ -86,17 +87,19 @@ ${videoFiles.map(file => {
     const slug = isTrans ? `${base}-trans` : base
     const meta = videoMeta[base]
 
-    return `  <url>
-    <loc>${pageBase}/${slug}</loc>
-    <video:video>
-      <video:title><![CDATA[${meta.title[locale]}]]></video:title>
-      <video:description><![CDATA[${meta.description[locale]}]]></video:description>
-      <video:content_loc>${publicBase}/${file}</video:content_loc>
-      <video:thumbnail_loc>${publicBase}/thumbnails/${base.toUpperCase()}.jpg</video:thumbnail_loc>
-      <video:publication_date>${today}</video:publication_date>
-      <video:duration>${meta.durationSeconds}</video:duration>
-    </video:video>
-  </url>`
+    return [
+      '  <url>',
+      `    <loc>${pageBase}/${slug}</loc>`,
+      '    <video:video>',
+      `      <video:title><![CDATA[${meta.title[locale]}]]></video:title>`,
+      `      <video:description><![CDATA[${meta.description[locale]}]]></video:description>`,
+      `      <video:content_loc>${publicBase}/${file}</video:content_loc>`,
+      `      <video:thumbnail_loc>${publicBase}/thumbnails/${base.toUpperCase()}.jpg</video:thumbnail_loc>`,
+      `      <video:publication_date>${today}</video:publication_date>`,
+      `      <video:duration>${meta.durationSeconds}</video:duration>`,
+      '    </video:video>',
+      '  </url>'
+    ].join('\n')
   }).join('\n')}
 </urlset>`
   return xml
