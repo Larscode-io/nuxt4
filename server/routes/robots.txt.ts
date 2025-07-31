@@ -33,13 +33,15 @@ Disallow: /
   if (allowedLangs.includes(subdomain)) {
     const sitemap = `Sitemap: https://${host}/sitemap.xml`
     const videoSitemap = `Sitemap: https://${host}/video.xml`
+    const langPrefix = subdomain.charAt(0) //
 
     content = `
 User-agent: *
 Disallow: /search/
 Disallow: *?term=*
 Disallow: /public/
-Allow: /public/${subdomain.charAt(0)}/
+Allow: /public/${langPrefix}/
+Allow: /public/${langPrefix}/thumbnails/
 ${sitemap}
 ${videoSitemap}
 `.trim()
