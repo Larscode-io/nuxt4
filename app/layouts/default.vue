@@ -118,6 +118,7 @@ useHead({
     // { name: 'robots', content: 'noindex, nofollow' },
     { name: 'description', content: description.value ?? '' },
     { property: 'og:title', content: ogTitle.value ?? '' },
+    { property: 'og:site_name', content: namesByLocale[locale.value] ?? '' },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: ogUrl ?? '' },
     { property: 'og:locale', content: ogLocale ?? '' },
