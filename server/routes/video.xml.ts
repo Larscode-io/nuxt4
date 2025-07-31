@@ -1,13 +1,19 @@
 // server/api/video.xml.ts
 
-import { defineEventHandler, setResponseHeader, getRequestHeader } from 'h3'
+export default defineEventHandler((event) => {
+  const host = getRequestHeader(event, 'host') || ''
+  const supportedLocales = ['nl', 'fr', 'en', 'de']
+  const isLocal = host.includes('localhost') || host.includes('127.0.0.1')
 
-export default defineEventHandler(async (event) => {
+  const domainPrefix = isLocal
+    ? 'nl'
+    : host.split('.')[0]
+
+  const locale = supportedLocales.includes(domainPrefix) ? domainPrefix : 'nl'
+
   const today = new Date().toISOString().split('T')[0]
 
-  const host = getRequestHeader(event, 'host') || ''
   const subdomain = host.split('.')[0]
-  const locale = ['nl', 'fr', 'de', 'en'].includes(subdomain) ? subdomain : 'nl'
   const langCode = locale.toUpperCase()
 
   const publicBase = `https://${locale}.const-court.be/public/media/${locale}`
@@ -70,34 +76,28 @@ export default defineEventHandler(async (event) => {
     `FILM3-${langCode}-DEF31032025-TRANS-XX.mp4`
   ]
 
-  const lines = [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
-    '        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">'
-  ]
-
-  for (const file of videoFiles) {
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+${videoFiles.map(file => {
     const isTrans = file.includes('TRANS')
     const base = file.match(/FILM[123]/)?.[0].toLowerCase() || 'film1'
     const slug = isTrans ? `${base}-trans` : base
     const meta = videoMeta[base]
 
-    lines.push('  <url>')
-    lines.push(`    <loc>${pageBase}/${slug}</loc>`)
-    lines.push('    <video:video>')
-    lines.push(`      <video:title>${meta.title[locale]}</video:title>`)
-    lines.push(`      <video:description>${meta.description[locale]}</video:description>`)
-    lines.push(`      <video:content_loc>${publicBase}/${file}</video:content_loc>`)
-    lines.push(`      <video:thumbnail_loc>${publicBase}/thumbnails/${base.toUpperCase()}.jpg</video:thumbnail_loc>`)
-    lines.push(`      <video:publication_date>${today}</video:publication_date>`)
-    lines.push(`      <video:duration>${meta.durationSeconds}</video:duration>`)
-    lines.push('    </video:video>')
-    lines.push('  </url>')
-  }
-
-  lines.push('</urlset>')
-
-  const xml = lines.join('\n')
-  setResponseHeader(event, 'Content-Type', 'application/xml')
+    return `  <url>
+    <loc>${pageBase}/${slug}</loc>
+    <video:video>
+      <video:title><![CDATA[${meta.title[locale]}]]></video:title>
+      <video:description><![CDATA[${meta.description[locale]}]]></video:description>
+      <video:content_loc>${publicBase}/${file}</video:content_loc>
+      <video:thumbnail_loc>${publicBase}/thumbnails/${base.toUpperCase()}.jpg</video:thumbnail_loc>
+      <video:publication_date>${today}</video:publication_date>
+      <video:duration>${meta.durationSeconds}</video:duration>
+    </video:video>
+  </url>`
+  }).join('\n')}
+</urlset>`
   return xml
 })
