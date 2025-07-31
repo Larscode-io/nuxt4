@@ -16,6 +16,13 @@ defineProps<{
 
 const { t } = useLanguage()
 const emptyValue = EMPTY_VALUE
+
+function smoothScroll(linkedCaseNumber: string | number) {
+  const el = document.getElementById(`pending-cases-card-${linkedCaseNumber}`)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <template>
@@ -98,6 +105,7 @@ const emptyValue = EMPTY_VALUE
             <a
               :href="`#pending-cases-card-${caseItem.linkedCaseNumber}`"
               :aria-label="`Link to pending case card ${caseItem.linkedCaseNumber}`"
+              @click.prevent="smoothScroll(caseItem.linkedCaseNumber)"
             >
               <span class="link">{{ caseItem.linkedCaseNumber }}</span>
             </a>
