@@ -35,9 +35,9 @@ const titles = {
 }
 // todo: use translations
 const descriptions = {
-  film1: 'In deze video krijgt u inzicht in de rol en bevoegdheden van het Grondwettelijk Hof.',
-  film2: 'U krijgt inzicht in hoe een zaak wordt gestart bij het Hof.',
-  film3: 'Een overzicht van de praktische werking van het Hof.'
+  film1: t('menu.press-and-media.video.film1.description'),
+  film2: t('menu.press-and-media.video.film2.description'),
+  film3: t('menu.press-and-media.video.film3.description')
 }
 const durations = {
   film1: 'PT2M45S',
