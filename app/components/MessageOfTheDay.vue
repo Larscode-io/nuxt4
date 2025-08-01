@@ -80,26 +80,26 @@ messages.value = [
   //   onlyShowLocale: [Languages.DUTCH, Languages.FRENCH],
   //   expiresAt: '2025-07-29T21:59:59', // optional
   // },
-  // { id: 'motd-2',
-  //   title: t('motd.video.title'),
-  //   content: t('motd.video.description'),
-  //   link: localePath(RoutePathKeys?.mediaVideopresentaties),
-  //   image: '/prize/40.png',
-  //   expiresAt: '2025-08-30T23:59:59',
-  // },
-  // {
-  //   id: 'motd-1',
-  //   title: t('motd.accessibility.title'),
-  //   content: t('motd.accessibility.description1'),
-  //   link: accessLinkUrl({
-  //     [Languages.DUTCH]: 'https://www.beliris.be/nl/projecten/koningsplein.html',
-  //     [Languages.FRENCH]: 'https://www.beliris.be/fr/projets/place-royale.html',
-  //     [Languages.GERMAN]: 'https://www.beliris.be/nl/projecten/koningsplein.html',
-  //     [Languages.ENGLISH]: 'https://www.beliris.be/fr/projets/place-royale.html',
-  //   }),
-  //   icon: 'mdi-crane',
-  //   expiresAt: '2026-08-30T23:59:59',
-  // },
+  { id: 'motd-2',
+    title: t('motd.video.title'),
+    content: t('motd.video.description'),
+    link: localePath(RoutePathKeys?.mediaVideopresentaties),
+    image: '/prize/40.png',
+    expiresAt: '2025-08-30T23:59:59',
+  },
+  {
+    id: 'motd-1',
+    title: t('motd.accessibility.title'),
+    content: t('motd.accessibility.description1'),
+    link: accessLinkUrl({
+      [Languages.DUTCH]: 'https://www.beliris.be/nl/projecten/koningsplein.html',
+      [Languages.FRENCH]: 'https://www.beliris.be/fr/projets/place-royale.html',
+      [Languages.GERMAN]: 'https://www.beliris.be/nl/projecten/koningsplein.html',
+      [Languages.ENGLISH]: 'https://www.beliris.be/fr/projets/place-royale.html',
+    }),
+    icon: 'mdi-crane',
+    expiresAt: '2026-08-30T23:59:59',
+  },
 ].filter((msg) => !msg.expiresAt || new Date(msg.expiresAt) > now)
 
 dismissedMessageIds.value = Array.isArray(dismissedCookie.value) ? dismissedCookie.value : []
