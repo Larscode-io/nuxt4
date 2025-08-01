@@ -467,6 +467,7 @@ const goToMailings = ({ mailinfo }: { mailinfo: string }) => {
 
   // Smartphones
   @media (max-width: 768px) {
+    display: none;
     background-image: url("/img/banner-index-small.jpg");
     background-position: 50% 80%;
     height: 30vh;
