@@ -5,7 +5,7 @@
 // fr.const-court.be	French version (locale = fr)	✅ Yes
 // de.const-court.be	German version	✅ Yes
 // en.const-court.be	English version	✅ Yes
-// www.const-court.be	Locale selector (/lang) — no real content, is only used for locale selection	❌ No
+// www.const-court.be	Locale selector (/language_selection_page) — no real content, is only used for locale selection	❌ No
 // staging.const-court.be	Testing / previews, should never be indexed or crawled	❌ No
 
 // todo:
