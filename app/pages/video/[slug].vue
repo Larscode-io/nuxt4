@@ -22,17 +22,18 @@ import { useRoute } from 'vue-router'
 import { ref, computed } from 'vue'
 
 const route = useRoute()
-const { locale } = useLanguage()
+const { t, locale, langCollection } = useLanguage()
 
 const slug = computed(() => route.params.slug as string)
 const isTrans = computed(() => slug.value.endsWith('-trans'))
 const baseSlug = computed(() => slug.value.replace('-trans', ''))
 
 const titles = {
-  film1: 'Rol en bevoegdheid van het Grondwettelijk Hof',
-  film2: 'Inleiding van een zaak bij het Grondwettelijk Hof',
-  film3: 'Werking van het Grondwettelijk Hof'
+  film1: t('menu.press-and-media.video.film1.title'),
+  film2: t('menu.press-and-media.video.film2.title'),
+  film3: t('menu.press-and-media.video.film3.title')
 }
+// todo: use translations
 const descriptions = {
   film1: 'In deze video krijgt u inzicht in de rol en bevoegdheden van het Grondwettelijk Hof.',
   film2: 'U krijgt inzicht in hoe een zaak wordt gestart bij het Hof.',
