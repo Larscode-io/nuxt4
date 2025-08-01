@@ -39,7 +39,7 @@ function smoothScroll(linkedCaseNumber: string | number) {
             {{ t('general.message.roll-number') }}: {{ caseItem.id }} ({{ caseItem.processingLanguage }})
           </h3>
         </v-col>
-        <v-col
+        <!-- <v-col
           cols="3"
           class="d-flex justify-end"
         >
@@ -54,7 +54,7 @@ function smoothScroll(linkedCaseNumber: string | number) {
           <v-btn v-else>
             {{ t('newsletter.rol.subscribe') }}
           </v-btn>
-        </v-col>
+        </v-col> -->
       </v-row>
 
       <!-- ROW 2: Receipt date -->
