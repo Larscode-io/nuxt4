@@ -1,6 +1,9 @@
 // server/api/video.xml.ts
 // view-source:http://localhost:3003/video.xml
 // curl -H "Accept: application/xml" http://localhost:3003/video.xml
+// https://securityheaders.com/
+// https://httpstatus.io/
+// https://technicalseo.com/tools/hreflang/
 
 export default defineEventHandler((event) => {
   const host = getRequestHeader(event, 'host') || ''
@@ -71,11 +74,11 @@ export default defineEventHandler((event) => {
 
   const videoFiles = [
     `FILM1-${langCode}-DEF31032025-SUBTI-XX.mp4`,
-    `FILM1-${langCode}-DEF31032025-TRANS-XX.mp4`,
+    // `FILM1-${langCode}-DEF31032025-TRANS-XX.mp4`,
     `FILM2-${langCode}-DEF31032025-SUBTI-XX.mp4`,
-    `FILM2-${langCode}-DEF31032025-TRANS-XX.mp4`,
+    // `FILM2-${langCode}-DEF31032025-TRANS-XX.mp4`,
     `FILM3-${langCode}-DEF31032025-SUBTI-XX.mp4`,
-    `FILM3-${langCode}-DEF31032025-TRANS-XX.mp4`
+    // `FILM3-${langCode}-DEF31032025-TRANS-XX.mp4`
   ]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
